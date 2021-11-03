@@ -598,6 +598,63 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   boolean deleteLog(String log);
 
   /**
+   * Deletes a log and all its log entries for given log destination (see 'logName' parameter in
+   * https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry). The log will reappear if
+   * new entries are written to it.
+   *
+   * <p>Example of deleting a log by folder destination.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String logName = "my_log_name";
+   *   String folder = "my_folder";
+   *   boolean deleted = logging.deleteLog(logName, LogDestinationName.folder(folder));
+   *   if (deleted) {
+   *     // the log was deleted
+   *   } else {
+   *     // the log was not found
+   *   }
+   * }
+   * </pre>
+   *
+   * @return {@code true} if the log was deleted, {@code false} if it was not found
+   */
+  default boolean deleteLog(String log, LogDestinationName destination) {
+    throw new UnsupportedOperationException(
+        "method deleteLog() does not have default implementation");
+  }
+
+  /**
+   * Sends a request for deleting a log and all its log entries for given log destination (see
+   * 'logName' parameter in https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry).
+   * This method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
+   * returns {@code true} if the log was deleted, {@code false} if it was not found.
+   *
+   * <p>Example of asynchronously deleting a log by folder destination.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String logName = "my_log_name";
+   *   String folder = "my_folder";
+   *   ApiFuture<Boolean> future = logging.deleteLogAsync(logName, LogDestinationName.folder(folder));
+   *   // ...
+   *   boolean deleted = future.get();
+   *   if (deleted) {
+   *     // the log was deleted
+   *   } else {
+   *     // the log was not found
+   *   }
+   * }
+   * </pre>
+   */
+  default ApiFuture<Boolean> deleteLogAsync(String log, LogDestinationName destination) {
+    throw new UnsupportedOperationException(
+        "method deleteLogAsync() does not have default implementation");
+  }
+
+  /**
    * Sends a request for deleting a log and all its log entries. This method returns a {@code
    * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns {@code true} if the
    * log was deleted, {@code false} if it was not found.
