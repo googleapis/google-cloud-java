@@ -15,7 +15,7 @@
   </description>
   <properties>
     <site.installationModule>google-cloud-testing</site.installationModule>
-    <appengine.sdk.version>1.9.91</appengine.sdk.version>
+    <appengine.sdk.version>1.9.92</appengine.sdk.version>
   </properties>
 
   <modules>
