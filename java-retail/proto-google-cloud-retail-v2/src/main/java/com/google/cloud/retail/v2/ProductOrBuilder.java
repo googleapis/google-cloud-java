@@ -810,7 +810,7 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -838,7 +838,7 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -869,7 +869,7 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -897,7 +897,7 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -926,7 +926,7 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
