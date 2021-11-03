@@ -616,11 +616,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
-   * This can only be set for the SCORE integration type.
+   * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
+   * websites. This is supported only for the SCORE integration type.
    * </pre>
    *
-   * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bool allow_amp_traffic = 2;</code>
    *
    * @return The allowAmpTraffic.
    */
@@ -1381,11 +1381,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
-     * This can only be set for the SCORE integration type.
+     * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
+     * websites. This is supported only for the SCORE integration type.
      * </pre>
      *
-     * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool allow_amp_traffic = 2;</code>
      *
      * @return The allowAmpTraffic.
      */
@@ -1397,11 +1397,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
-     * This can only be set for the SCORE integration type.
+     * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
+     * websites. This is supported only for the SCORE integration type.
      * </pre>
      *
-     * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool allow_amp_traffic = 2;</code>
      *
      * @param value The allowAmpTraffic to set.
      * @return This builder for chaining.
@@ -1416,11 +1416,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
-     * This can only be set for the SCORE integration type.
+     * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
+     * websites. This is supported only for the SCORE integration type.
      * </pre>
      *
-     * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool allow_amp_traffic = 2;</code>
      *
      * @return This builder for chaining.
      */

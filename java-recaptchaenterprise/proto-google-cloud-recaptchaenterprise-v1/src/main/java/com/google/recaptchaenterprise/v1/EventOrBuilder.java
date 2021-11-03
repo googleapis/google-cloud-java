@@ -157,4 +157,18 @@ public interface EventOrBuilder
    * @return The bytes for expectedAction.
    */
   com.google.protobuf.ByteString getExpectedActionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional unique stable hashed user identifier for the request. The
+   * identifier should ideally be hashed using sha256 with stable secret.
+   * </pre>
+   *
+   * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The hashedAccountId.
+   */
+  com.google.protobuf.ByteString getHashedAccountId();
 }

@@ -160,4 +160,21 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The enum numeric value on the wire of reasons at the given index.
    */
   int getReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+   * This is an alternative to setting the hashed_account_id in
+   * CreateAssessment, for example when the account identifier is not yet known
+   * in the initial request. It is recommended that the identifier is hashed
+   * using hmac-sha256 with stable secret.
+   * </pre>
+   *
+   * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The hashedAccountId.
+   */
+  com.google.protobuf.ByteString getHashedAccountId();
 }

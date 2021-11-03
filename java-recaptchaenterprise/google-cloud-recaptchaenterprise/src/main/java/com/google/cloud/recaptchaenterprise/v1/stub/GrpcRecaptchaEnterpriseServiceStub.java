@@ -17,6 +17,9 @@
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.SearchRelatedAccountGroupMembershipsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -38,8 +41,14 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -142,6 +151,56 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setResponseMarshaller(ProtoUtils.marshaller(Metrics.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<
+          ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
+      listRelatedAccountGroupsMethodDescriptor =
+          MethodDescriptor
+              .<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListRelatedAccountGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRelatedAccountGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRelatedAccountGroupsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListRelatedAccountGroupMembershipsRequest, ListRelatedAccountGroupMembershipsResponse>
+      listRelatedAccountGroupMembershipsMethodDescriptor =
+          MethodDescriptor
+              .<ListRelatedAccountGroupMembershipsRequest,
+                  ListRelatedAccountGroupMembershipsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListRelatedAccountGroupMemberships")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListRelatedAccountGroupMembershipsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListRelatedAccountGroupMembershipsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          SearchRelatedAccountGroupMembershipsRequest, SearchRelatedAccountGroupMembershipsResponse>
+      searchRelatedAccountGroupMembershipsMethodDescriptor =
+          MethodDescriptor
+              .<SearchRelatedAccountGroupMembershipsRequest,
+                  SearchRelatedAccountGroupMembershipsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/SearchRelatedAccountGroupMemberships")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      SearchRelatedAccountGroupMembershipsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      SearchRelatedAccountGroupMembershipsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable;
   private final UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentCallable;
@@ -153,6 +212,25 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
   private final UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable;
   private final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable;
+  private final UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
+      listRelatedAccountGroupsCallable;
+  private final UnaryCallable<
+          ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsPagedResponse>
+      listRelatedAccountGroupsPagedCallable;
+  private final UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest, ListRelatedAccountGroupMembershipsResponse>
+      listRelatedAccountGroupMembershipsCallable;
+  private final UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsPagedResponse>
+      listRelatedAccountGroupMembershipsPagedCallable;
+  private final UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest, SearchRelatedAccountGroupMembershipsResponse>
+      searchRelatedAccountGroupMembershipsCallable;
+  private final UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsPagedResponse>
+      searchRelatedAccountGroupMembershipsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -292,6 +370,49 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
+        listRelatedAccountGroupsTransportSettings =
+            GrpcCallSettings
+                .<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>newBuilder()
+                .setMethodDescriptor(listRelatedAccountGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListRelatedAccountGroupMembershipsRequest, ListRelatedAccountGroupMembershipsResponse>
+        listRelatedAccountGroupMembershipsTransportSettings =
+            GrpcCallSettings
+                .<ListRelatedAccountGroupMembershipsRequest,
+                    ListRelatedAccountGroupMembershipsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRelatedAccountGroupMembershipsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            SearchRelatedAccountGroupMembershipsRequest,
+            SearchRelatedAccountGroupMembershipsResponse>
+        searchRelatedAccountGroupMembershipsTransportSettings =
+            GrpcCallSettings
+                .<SearchRelatedAccountGroupMembershipsRequest,
+                    SearchRelatedAccountGroupMembershipsResponse>
+                    newBuilder()
+                .setMethodDescriptor(searchRelatedAccountGroupMembershipsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
 
     this.createAssessmentCallable =
         callableFactory.createUnaryCallable(
@@ -325,6 +446,36 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     this.getMetricsCallable =
         callableFactory.createUnaryCallable(
             getMetricsTransportSettings, settings.getMetricsSettings(), clientContext);
+    this.listRelatedAccountGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listRelatedAccountGroupsTransportSettings,
+            settings.listRelatedAccountGroupsSettings(),
+            clientContext);
+    this.listRelatedAccountGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRelatedAccountGroupsTransportSettings,
+            settings.listRelatedAccountGroupsSettings(),
+            clientContext);
+    this.listRelatedAccountGroupMembershipsCallable =
+        callableFactory.createUnaryCallable(
+            listRelatedAccountGroupMembershipsTransportSettings,
+            settings.listRelatedAccountGroupMembershipsSettings(),
+            clientContext);
+    this.listRelatedAccountGroupMembershipsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRelatedAccountGroupMembershipsTransportSettings,
+            settings.listRelatedAccountGroupMembershipsSettings(),
+            clientContext);
+    this.searchRelatedAccountGroupMembershipsCallable =
+        callableFactory.createUnaryCallable(
+            searchRelatedAccountGroupMembershipsTransportSettings,
+            settings.searchRelatedAccountGroupMembershipsSettings(),
+            clientContext);
+    this.searchRelatedAccountGroupMembershipsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchRelatedAccountGroupMembershipsTransportSettings,
+            settings.searchRelatedAccountGroupMembershipsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -383,6 +534,48 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     return getMetricsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
+      listRelatedAccountGroupsCallable() {
+    return listRelatedAccountGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsPagedResponse>
+      listRelatedAccountGroupsPagedCallable() {
+    return listRelatedAccountGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest, ListRelatedAccountGroupMembershipsResponse>
+      listRelatedAccountGroupMembershipsCallable() {
+    return listRelatedAccountGroupMembershipsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsPagedResponse>
+      listRelatedAccountGroupMembershipsPagedCallable() {
+    return listRelatedAccountGroupMembershipsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest, SearchRelatedAccountGroupMembershipsResponse>
+      searchRelatedAccountGroupMembershipsCallable() {
+    return searchRelatedAccountGroupMembershipsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsPagedResponse>
+      searchRelatedAccountGroupMembershipsPagedCallable() {
+    return searchRelatedAccountGroupMembershipsPagedCallable;
   }
 
   @Override

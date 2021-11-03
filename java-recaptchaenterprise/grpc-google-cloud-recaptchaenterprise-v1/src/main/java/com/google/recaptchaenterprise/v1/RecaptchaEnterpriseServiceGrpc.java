@@ -447,6 +447,176 @@ public final class RecaptchaEnterpriseServiceGrpc {
     return getGetMetricsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
+      getListRelatedAccountGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRelatedAccountGroups",
+      requestType = com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
+      getListRelatedAccountGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
+        getListRelatedAccountGroupsMethod;
+    if ((getListRelatedAccountGroupsMethod =
+            RecaptchaEnterpriseServiceGrpc.getListRelatedAccountGroupsMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getListRelatedAccountGroupsMethod =
+                RecaptchaEnterpriseServiceGrpc.getListRelatedAccountGroupsMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getListRelatedAccountGroupsMethod =
+              getListRelatedAccountGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
+                          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRelatedAccountGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "ListRelatedAccountGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListRelatedAccountGroupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest,
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>
+      getListRelatedAccountGroupMembershipsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRelatedAccountGroupMemberships",
+      requestType =
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest.class,
+      responseType =
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest,
+          com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>
+      getListRelatedAccountGroupMembershipsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest,
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>
+        getListRelatedAccountGroupMembershipsMethod;
+    if ((getListRelatedAccountGroupMembershipsMethod =
+            RecaptchaEnterpriseServiceGrpc.getListRelatedAccountGroupMembershipsMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getListRelatedAccountGroupMembershipsMethod =
+                RecaptchaEnterpriseServiceGrpc.getListRelatedAccountGroupMembershipsMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getListRelatedAccountGroupMembershipsMethod =
+              getListRelatedAccountGroupMembershipsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest,
+                          com.google.recaptchaenterprise.v1
+                              .ListRelatedAccountGroupMembershipsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListRelatedAccountGroupMemberships"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1
+                                  .ListRelatedAccountGroupMembershipsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1
+                                  .ListRelatedAccountGroupMembershipsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "ListRelatedAccountGroupMemberships"))
+                      .build();
+        }
+      }
+    }
+    return getListRelatedAccountGroupMembershipsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest,
+          com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>
+      getSearchRelatedAccountGroupMembershipsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchRelatedAccountGroupMemberships",
+      requestType =
+          com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest.class,
+      responseType =
+          com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest,
+          com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>
+      getSearchRelatedAccountGroupMembershipsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest,
+            com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>
+        getSearchRelatedAccountGroupMembershipsMethod;
+    if ((getSearchRelatedAccountGroupMembershipsMethod =
+            RecaptchaEnterpriseServiceGrpc.getSearchRelatedAccountGroupMembershipsMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getSearchRelatedAccountGroupMembershipsMethod =
+                RecaptchaEnterpriseServiceGrpc.getSearchRelatedAccountGroupMembershipsMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getSearchRelatedAccountGroupMembershipsMethod =
+              getSearchRelatedAccountGroupMembershipsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1
+                              .SearchRelatedAccountGroupMembershipsRequest,
+                          com.google.recaptchaenterprise.v1
+                              .SearchRelatedAccountGroupMembershipsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "SearchRelatedAccountGroupMemberships"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1
+                                  .SearchRelatedAccountGroupMembershipsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1
+                                  .SearchRelatedAccountGroupMembershipsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "SearchRelatedAccountGroupMemberships"))
+                      .build();
+        }
+      }
+    }
+    return getSearchRelatedAccountGroupMembershipsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static RecaptchaEnterpriseServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceStub> factory =
@@ -627,6 +797,54 @@ public final class RecaptchaEnterpriseServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMetricsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * List groups of related accounts.
+     * </pre>
+     */
+    public void listRelatedAccountGroups(
+        com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRelatedAccountGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the memberships in a group of related accounts.
+     * </pre>
+     */
+    public void listRelatedAccountGroupMemberships(
+        com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRelatedAccountGroupMembershipsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search group memberships related to a given account.
+     * </pre>
+     */
+    public void searchRelatedAccountGroupMemberships(
+        com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchRelatedAccountGroupMembershipsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -687,6 +905,28 @@ public final class RecaptchaEnterpriseServiceGrpc {
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1.GetMetricsRequest,
                       com.google.recaptchaenterprise.v1.Metrics>(this, METHODID_GET_METRICS)))
+          .addMethod(
+              getListRelatedAccountGroupsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
+                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>(
+                      this, METHODID_LIST_RELATED_ACCOUNT_GROUPS)))
+          .addMethod(
+              getListRelatedAccountGroupMembershipsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest,
+                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>(
+                      this, METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS)))
+          .addMethod(
+              getSearchRelatedAccountGroupMembershipsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest,
+                      com.google.recaptchaenterprise.v1
+                          .SearchRelatedAccountGroupMembershipsResponse>(
+                      this, METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS)))
           .build();
     }
   }
@@ -850,6 +1090,60 @@ public final class RecaptchaEnterpriseServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMetricsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List groups of related accounts.
+     * </pre>
+     */
+    public void listRelatedAccountGroups(
+        com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRelatedAccountGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the memberships in a group of related accounts.
+     * </pre>
+     */
+    public void listRelatedAccountGroupMemberships(
+        com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRelatedAccountGroupMembershipsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search group memberships related to a given account.
+     * </pre>
+     */
+    public void searchRelatedAccountGroupMemberships(
+        com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchRelatedAccountGroupMembershipsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -994,6 +1288,48 @@ public final class RecaptchaEnterpriseServiceGrpc {
         com.google.recaptchaenterprise.v1.GetMetricsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List groups of related accounts.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse
+        listRelatedAccountGroups(
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRelatedAccountGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the memberships in a group of related accounts.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse
+        listRelatedAccountGroupMemberships(
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRelatedAccountGroupMembershipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search group memberships related to a given account.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse
+        searchRelatedAccountGroupMemberships(
+            com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchRelatedAccountGroupMembershipsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1144,6 +1480,53 @@ public final class RecaptchaEnterpriseServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMetricsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List groups of related accounts.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
+        listRelatedAccountGroups(
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRelatedAccountGroupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the memberships in a group of related accounts.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>
+        listRelatedAccountGroupMemberships(
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRelatedAccountGroupMembershipsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search group memberships related to a given account.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>
+        searchRelatedAccountGroupMemberships(
+            com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchRelatedAccountGroupMembershipsMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_CREATE_ASSESSMENT = 0;
@@ -1155,6 +1538,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final int METHODID_DELETE_KEY = 6;
   private static final int METHODID_MIGRATE_KEY = 7;
   private static final int METHODID_GET_METRICS = 8;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 9;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 10;
+  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1225,6 +1611,29 @@ public final class RecaptchaEnterpriseServiceGrpc {
           serviceImpl.getMetrics(
               (com.google.recaptchaenterprise.v1.GetMetricsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RELATED_ACCOUNT_GROUPS:
+          serviceImpl.listRelatedAccountGroups(
+              (com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS:
+          serviceImpl.listRelatedAccountGroupMemberships(
+              (com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS:
+          serviceImpl.searchRelatedAccountGroupMemberships(
+              (com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1
+                          .SearchRelatedAccountGroupMembershipsResponse>)
                   responseObserver);
           break;
         default:
@@ -1300,6 +1709,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       .addMethod(getDeleteKeyMethod())
                       .addMethod(getMigrateKeyMethod())
                       .addMethod(getGetMetricsMethod())
+                      .addMethod(getListRelatedAccountGroupsMethod())
+                      .addMethod(getListRelatedAccountGroupMembershipsMethod())
+                      .addMethod(getSearchRelatedAccountGroupMembershipsMethod())
                       .build();
         }
       }

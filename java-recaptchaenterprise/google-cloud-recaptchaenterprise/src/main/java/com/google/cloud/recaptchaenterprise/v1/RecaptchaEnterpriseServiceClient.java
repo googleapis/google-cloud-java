@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recaptchaenterprise.v1.stub.RecaptchaEnterpriseServiceStub;
 import com.google.cloud.recaptchaenterprise.v1.stub.RecaptchaEnterpriseServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
@@ -41,10 +42,19 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.ProjectName;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
 import java.util.List;
@@ -357,6 +367,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
+   *           .setHashedAccountId(ByteString.EMPTY)
    *           .build();
    *   AnnotateAssessmentResponse response =
    *       recaptchaEnterpriseServiceClient.annotateAssessment(request);
@@ -384,6 +395,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
+   *           .setHashedAccountId(ByteString.EMPTY)
    *           .build();
    *   ApiFuture<AnnotateAssessmentResponse> future =
    *       recaptchaEnterpriseServiceClient.annotateAssessmentCallable().futureCall(request);
@@ -828,6 +840,534 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
     return stub.getMetricsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List groups of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (RelatedAccountGroup element :
+   *       recaptchaEnterpriseServiceClient.listRelatedAccountGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list related account groups from, in the
+   *     format "projects/{project}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRelatedAccountGroupsPagedResponse listRelatedAccountGroups(ProjectName parent) {
+    ListRelatedAccountGroupsRequest request =
+        ListRelatedAccountGroupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRelatedAccountGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List groups of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
+   *   for (RelatedAccountGroup element :
+   *       recaptchaEnterpriseServiceClient.listRelatedAccountGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list related account groups from, in the
+   *     format "projects/{project}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRelatedAccountGroupsPagedResponse listRelatedAccountGroups(String parent) {
+    ListRelatedAccountGroupsRequest request =
+        ListRelatedAccountGroupsRequest.newBuilder().setParent(parent).build();
+    return listRelatedAccountGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List groups of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListRelatedAccountGroupsRequest request =
+   *       ListRelatedAccountGroupsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RelatedAccountGroup element :
+   *       recaptchaEnterpriseServiceClient.listRelatedAccountGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRelatedAccountGroupsPagedResponse listRelatedAccountGroups(
+      ListRelatedAccountGroupsRequest request) {
+    return listRelatedAccountGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List groups of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListRelatedAccountGroupsRequest request =
+   *       ListRelatedAccountGroupsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RelatedAccountGroup> future =
+   *       recaptchaEnterpriseServiceClient
+   *           .listRelatedAccountGroupsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (RelatedAccountGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsPagedResponse>
+      listRelatedAccountGroupsPagedCallable() {
+    return stub.listRelatedAccountGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List groups of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListRelatedAccountGroupsRequest request =
+   *       ListRelatedAccountGroupsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRelatedAccountGroupsResponse response =
+   *         recaptchaEnterpriseServiceClient.listRelatedAccountGroupsCallable().call(request);
+   *     for (RelatedAccountGroup element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
+      listRelatedAccountGroupsCallable() {
+    return stub.listRelatedAccountGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the memberships in a group of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   RelatedAccountGroupName parent =
+   *       RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+   *   for (RelatedAccountGroupMembership element :
+   *       recaptchaEnterpriseServiceClient
+   *           .listRelatedAccountGroupMemberships(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name for the related account group in the format
+   *     `projects/{project}/relatedaccountgroups/{relatedaccountgroup}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRelatedAccountGroupMembershipsPagedResponse listRelatedAccountGroupMemberships(
+      RelatedAccountGroupName parent) {
+    ListRelatedAccountGroupMembershipsRequest request =
+        ListRelatedAccountGroupMembershipsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRelatedAccountGroupMemberships(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the memberships in a group of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent =
+   *       RelatedAccountGroupMembershipName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *           .toString();
+   *   for (RelatedAccountGroupMembership element :
+   *       recaptchaEnterpriseServiceClient
+   *           .listRelatedAccountGroupMemberships(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name for the related account group in the format
+   *     `projects/{project}/relatedaccountgroups/{relatedaccountgroup}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRelatedAccountGroupMembershipsPagedResponse listRelatedAccountGroupMemberships(
+      String parent) {
+    ListRelatedAccountGroupMembershipsRequest request =
+        ListRelatedAccountGroupMembershipsRequest.newBuilder().setParent(parent).build();
+    return listRelatedAccountGroupMemberships(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the memberships in a group of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListRelatedAccountGroupMembershipsRequest request =
+   *       ListRelatedAccountGroupMembershipsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupMembershipName.of(
+   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RelatedAccountGroupMembership element :
+   *       recaptchaEnterpriseServiceClient
+   *           .listRelatedAccountGroupMemberships(request)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRelatedAccountGroupMembershipsPagedResponse listRelatedAccountGroupMemberships(
+      ListRelatedAccountGroupMembershipsRequest request) {
+    return listRelatedAccountGroupMembershipsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the memberships in a group of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListRelatedAccountGroupMembershipsRequest request =
+   *       ListRelatedAccountGroupMembershipsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupMembershipName.of(
+   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RelatedAccountGroupMembership> future =
+   *       recaptchaEnterpriseServiceClient
+   *           .listRelatedAccountGroupMembershipsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (RelatedAccountGroupMembership element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsPagedResponse>
+      listRelatedAccountGroupMembershipsPagedCallable() {
+    return stub.listRelatedAccountGroupMembershipsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the memberships in a group of related accounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListRelatedAccountGroupMembershipsRequest request =
+   *       ListRelatedAccountGroupMembershipsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupMembershipName.of(
+   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRelatedAccountGroupMembershipsResponse response =
+   *         recaptchaEnterpriseServiceClient
+   *             .listRelatedAccountGroupMembershipsCallable()
+   *             .call(request);
+   *     for (RelatedAccountGroupMembership element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest, ListRelatedAccountGroupMembershipsResponse>
+      listRelatedAccountGroupMembershipsCallable() {
+    return stub.listRelatedAccountGroupMembershipsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search group memberships related to a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   RelatedAccountGroupName parent =
+   *       RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+   *   ByteString hashedAccountId = ByteString.EMPTY;
+   *   for (RelatedAccountGroupMembership element :
+   *       recaptchaEnterpriseServiceClient
+   *           .searchRelatedAccountGroupMemberships(parent, hashedAccountId)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to search related account group memberships
+   *     from, in the format "projects/{project}".
+   * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
+   *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
+   *     previous CreateAssessment or AnnotateAssessment call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchRelatedAccountGroupMembershipsPagedResponse
+      searchRelatedAccountGroupMemberships(
+          RelatedAccountGroupName parent, ByteString hashedAccountId) {
+    SearchRelatedAccountGroupMembershipsRequest request =
+        SearchRelatedAccountGroupMembershipsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setHashedAccountId(hashedAccountId)
+            .build();
+    return searchRelatedAccountGroupMemberships(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search group memberships related to a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent =
+   *       RelatedAccountGroupMembershipName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *           .toString();
+   *   ByteString hashedAccountId = ByteString.EMPTY;
+   *   for (RelatedAccountGroupMembership element :
+   *       recaptchaEnterpriseServiceClient
+   *           .searchRelatedAccountGroupMemberships(parent, hashedAccountId)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to search related account group memberships
+   *     from, in the format "projects/{project}".
+   * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
+   *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
+   *     previous CreateAssessment or AnnotateAssessment call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchRelatedAccountGroupMembershipsPagedResponse
+      searchRelatedAccountGroupMemberships(String parent, ByteString hashedAccountId) {
+    SearchRelatedAccountGroupMembershipsRequest request =
+        SearchRelatedAccountGroupMembershipsRequest.newBuilder()
+            .setParent(parent)
+            .setHashedAccountId(hashedAccountId)
+            .build();
+    return searchRelatedAccountGroupMemberships(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search group memberships related to a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   SearchRelatedAccountGroupMembershipsRequest request =
+   *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupMembershipName.of(
+   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *                   .toString())
+   *           .setHashedAccountId(ByteString.EMPTY)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RelatedAccountGroupMembership element :
+   *       recaptchaEnterpriseServiceClient
+   *           .searchRelatedAccountGroupMemberships(request)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchRelatedAccountGroupMembershipsPagedResponse
+      searchRelatedAccountGroupMemberships(SearchRelatedAccountGroupMembershipsRequest request) {
+    return searchRelatedAccountGroupMembershipsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search group memberships related to a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   SearchRelatedAccountGroupMembershipsRequest request =
+   *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupMembershipName.of(
+   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *                   .toString())
+   *           .setHashedAccountId(ByteString.EMPTY)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RelatedAccountGroupMembership> future =
+   *       recaptchaEnterpriseServiceClient
+   *           .searchRelatedAccountGroupMembershipsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (RelatedAccountGroupMembership element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsPagedResponse>
+      searchRelatedAccountGroupMembershipsPagedCallable() {
+    return stub.searchRelatedAccountGroupMembershipsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search group memberships related to a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   SearchRelatedAccountGroupMembershipsRequest request =
+   *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
+   *           .setParent(
+   *               RelatedAccountGroupMembershipName.of(
+   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
+   *                   .toString())
+   *           .setHashedAccountId(ByteString.EMPTY)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     SearchRelatedAccountGroupMembershipsResponse response =
+   *         recaptchaEnterpriseServiceClient
+   *             .searchRelatedAccountGroupMembershipsCallable()
+   *             .call(request);
+   *     for (RelatedAccountGroupMembership element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest, SearchRelatedAccountGroupMembershipsResponse>
+      searchRelatedAccountGroupMembershipsCallable() {
+    return stub.searchRelatedAccountGroupMembershipsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -918,6 +1458,298 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
     protected ListKeysFixedSizeCollection createCollection(
         List<ListKeysPage> pages, int collectionSize) {
       return new ListKeysFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRelatedAccountGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRelatedAccountGroupsRequest,
+          ListRelatedAccountGroupsResponse,
+          RelatedAccountGroup,
+          ListRelatedAccountGroupsPage,
+          ListRelatedAccountGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListRelatedAccountGroupsPagedResponse> createAsync(
+        PageContext<
+                ListRelatedAccountGroupsRequest,
+                ListRelatedAccountGroupsResponse,
+                RelatedAccountGroup>
+            context,
+        ApiFuture<ListRelatedAccountGroupsResponse> futureResponse) {
+      ApiFuture<ListRelatedAccountGroupsPage> futurePage =
+          ListRelatedAccountGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRelatedAccountGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRelatedAccountGroupsPagedResponse(ListRelatedAccountGroupsPage page) {
+      super(page, ListRelatedAccountGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRelatedAccountGroupsPage
+      extends AbstractPage<
+          ListRelatedAccountGroupsRequest,
+          ListRelatedAccountGroupsResponse,
+          RelatedAccountGroup,
+          ListRelatedAccountGroupsPage> {
+
+    private ListRelatedAccountGroupsPage(
+        PageContext<
+                ListRelatedAccountGroupsRequest,
+                ListRelatedAccountGroupsResponse,
+                RelatedAccountGroup>
+            context,
+        ListRelatedAccountGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListRelatedAccountGroupsPage createEmptyPage() {
+      return new ListRelatedAccountGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListRelatedAccountGroupsPage createPage(
+        PageContext<
+                ListRelatedAccountGroupsRequest,
+                ListRelatedAccountGroupsResponse,
+                RelatedAccountGroup>
+            context,
+        ListRelatedAccountGroupsResponse response) {
+      return new ListRelatedAccountGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRelatedAccountGroupsPage> createPageAsync(
+        PageContext<
+                ListRelatedAccountGroupsRequest,
+                ListRelatedAccountGroupsResponse,
+                RelatedAccountGroup>
+            context,
+        ApiFuture<ListRelatedAccountGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRelatedAccountGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRelatedAccountGroupsRequest,
+          ListRelatedAccountGroupsResponse,
+          RelatedAccountGroup,
+          ListRelatedAccountGroupsPage,
+          ListRelatedAccountGroupsFixedSizeCollection> {
+
+    private ListRelatedAccountGroupsFixedSizeCollection(
+        List<ListRelatedAccountGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRelatedAccountGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListRelatedAccountGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRelatedAccountGroupsFixedSizeCollection createCollection(
+        List<ListRelatedAccountGroupsPage> pages, int collectionSize) {
+      return new ListRelatedAccountGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRelatedAccountGroupMembershipsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership,
+          ListRelatedAccountGroupMembershipsPage,
+          ListRelatedAccountGroupMembershipsFixedSizeCollection> {
+
+    public static ApiFuture<ListRelatedAccountGroupMembershipsPagedResponse> createAsync(
+        PageContext<
+                ListRelatedAccountGroupMembershipsRequest,
+                ListRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        ApiFuture<ListRelatedAccountGroupMembershipsResponse> futureResponse) {
+      ApiFuture<ListRelatedAccountGroupMembershipsPage> futurePage =
+          ListRelatedAccountGroupMembershipsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRelatedAccountGroupMembershipsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRelatedAccountGroupMembershipsPagedResponse(
+        ListRelatedAccountGroupMembershipsPage page) {
+      super(page, ListRelatedAccountGroupMembershipsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRelatedAccountGroupMembershipsPage
+      extends AbstractPage<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership,
+          ListRelatedAccountGroupMembershipsPage> {
+
+    private ListRelatedAccountGroupMembershipsPage(
+        PageContext<
+                ListRelatedAccountGroupMembershipsRequest,
+                ListRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        ListRelatedAccountGroupMembershipsResponse response) {
+      super(context, response);
+    }
+
+    private static ListRelatedAccountGroupMembershipsPage createEmptyPage() {
+      return new ListRelatedAccountGroupMembershipsPage(null, null);
+    }
+
+    @Override
+    protected ListRelatedAccountGroupMembershipsPage createPage(
+        PageContext<
+                ListRelatedAccountGroupMembershipsRequest,
+                ListRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        ListRelatedAccountGroupMembershipsResponse response) {
+      return new ListRelatedAccountGroupMembershipsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRelatedAccountGroupMembershipsPage> createPageAsync(
+        PageContext<
+                ListRelatedAccountGroupMembershipsRequest,
+                ListRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        ApiFuture<ListRelatedAccountGroupMembershipsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRelatedAccountGroupMembershipsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership,
+          ListRelatedAccountGroupMembershipsPage,
+          ListRelatedAccountGroupMembershipsFixedSizeCollection> {
+
+    private ListRelatedAccountGroupMembershipsFixedSizeCollection(
+        List<ListRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRelatedAccountGroupMembershipsFixedSizeCollection createEmptyCollection() {
+      return new ListRelatedAccountGroupMembershipsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRelatedAccountGroupMembershipsFixedSizeCollection createCollection(
+        List<ListRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+      return new ListRelatedAccountGroupMembershipsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchRelatedAccountGroupMembershipsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership,
+          SearchRelatedAccountGroupMembershipsPage,
+          SearchRelatedAccountGroupMembershipsFixedSizeCollection> {
+
+    public static ApiFuture<SearchRelatedAccountGroupMembershipsPagedResponse> createAsync(
+        PageContext<
+                SearchRelatedAccountGroupMembershipsRequest,
+                SearchRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        ApiFuture<SearchRelatedAccountGroupMembershipsResponse> futureResponse) {
+      ApiFuture<SearchRelatedAccountGroupMembershipsPage> futurePage =
+          SearchRelatedAccountGroupMembershipsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchRelatedAccountGroupMembershipsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchRelatedAccountGroupMembershipsPagedResponse(
+        SearchRelatedAccountGroupMembershipsPage page) {
+      super(page, SearchRelatedAccountGroupMembershipsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchRelatedAccountGroupMembershipsPage
+      extends AbstractPage<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership,
+          SearchRelatedAccountGroupMembershipsPage> {
+
+    private SearchRelatedAccountGroupMembershipsPage(
+        PageContext<
+                SearchRelatedAccountGroupMembershipsRequest,
+                SearchRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        SearchRelatedAccountGroupMembershipsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchRelatedAccountGroupMembershipsPage createEmptyPage() {
+      return new SearchRelatedAccountGroupMembershipsPage(null, null);
+    }
+
+    @Override
+    protected SearchRelatedAccountGroupMembershipsPage createPage(
+        PageContext<
+                SearchRelatedAccountGroupMembershipsRequest,
+                SearchRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        SearchRelatedAccountGroupMembershipsResponse response) {
+      return new SearchRelatedAccountGroupMembershipsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchRelatedAccountGroupMembershipsPage> createPageAsync(
+        PageContext<
+                SearchRelatedAccountGroupMembershipsRequest,
+                SearchRelatedAccountGroupMembershipsResponse,
+                RelatedAccountGroupMembership>
+            context,
+        ApiFuture<SearchRelatedAccountGroupMembershipsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchRelatedAccountGroupMembershipsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership,
+          SearchRelatedAccountGroupMembershipsPage,
+          SearchRelatedAccountGroupMembershipsFixedSizeCollection> {
+
+    private SearchRelatedAccountGroupMembershipsFixedSizeCollection(
+        List<SearchRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchRelatedAccountGroupMembershipsFixedSizeCollection createEmptyCollection() {
+      return new SearchRelatedAccountGroupMembershipsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchRelatedAccountGroupMembershipsFixedSizeCollection createCollection(
+        List<SearchRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+      return new SearchRelatedAccountGroupMembershipsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

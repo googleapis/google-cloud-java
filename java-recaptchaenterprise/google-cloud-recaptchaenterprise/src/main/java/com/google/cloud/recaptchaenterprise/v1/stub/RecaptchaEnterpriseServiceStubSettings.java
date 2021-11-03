@@ -17,6 +17,9 @@
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.SearchRelatedAccountGroupMembershipsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -56,8 +59,16 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
 import java.util.List;
@@ -116,6 +127,21 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings;
   private final UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings;
   private final UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings;
+  private final PagedCallSettings<
+          ListRelatedAccountGroupsRequest,
+          ListRelatedAccountGroupsResponse,
+          ListRelatedAccountGroupsPagedResponse>
+      listRelatedAccountGroupsSettings;
+  private final PagedCallSettings<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsResponse,
+          ListRelatedAccountGroupMembershipsPagedResponse>
+      listRelatedAccountGroupMembershipsSettings;
+  private final PagedCallSettings<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsResponse,
+          SearchRelatedAccountGroupMembershipsPagedResponse>
+      searchRelatedAccountGroupMembershipsSettings;
 
   private static final PagedListDescriptor<ListKeysRequest, ListKeysResponse, Key>
       LIST_KEYS_PAGE_STR_DESC =
@@ -153,6 +179,151 @@ public class RecaptchaEnterpriseServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse, RelatedAccountGroup>
+      LIST_RELATED_ACCOUNT_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRelatedAccountGroupsRequest,
+              ListRelatedAccountGroupsResponse,
+              RelatedAccountGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRelatedAccountGroupsRequest injectToken(
+                ListRelatedAccountGroupsRequest payload, String token) {
+              return ListRelatedAccountGroupsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRelatedAccountGroupsRequest injectPageSize(
+                ListRelatedAccountGroupsRequest payload, int pageSize) {
+              return ListRelatedAccountGroupsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRelatedAccountGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRelatedAccountGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RelatedAccountGroup> extractResources(
+                ListRelatedAccountGroupsResponse payload) {
+              return payload.getRelatedAccountGroupsList() == null
+                  ? ImmutableList.<RelatedAccountGroup>of()
+                  : payload.getRelatedAccountGroupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership>
+      LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRelatedAccountGroupMembershipsRequest,
+              ListRelatedAccountGroupMembershipsResponse,
+              RelatedAccountGroupMembership>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRelatedAccountGroupMembershipsRequest injectToken(
+                ListRelatedAccountGroupMembershipsRequest payload, String token) {
+              return ListRelatedAccountGroupMembershipsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRelatedAccountGroupMembershipsRequest injectPageSize(
+                ListRelatedAccountGroupMembershipsRequest payload, int pageSize) {
+              return ListRelatedAccountGroupMembershipsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRelatedAccountGroupMembershipsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRelatedAccountGroupMembershipsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RelatedAccountGroupMembership> extractResources(
+                ListRelatedAccountGroupMembershipsResponse payload) {
+              return payload.getRelatedAccountGroupMembershipsList() == null
+                  ? ImmutableList.<RelatedAccountGroupMembership>of()
+                  : payload.getRelatedAccountGroupMembershipsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsResponse,
+          RelatedAccountGroupMembership>
+      SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchRelatedAccountGroupMembershipsRequest,
+              SearchRelatedAccountGroupMembershipsResponse,
+              RelatedAccountGroupMembership>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchRelatedAccountGroupMembershipsRequest injectToken(
+                SearchRelatedAccountGroupMembershipsRequest payload, String token) {
+              return SearchRelatedAccountGroupMembershipsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public SearchRelatedAccountGroupMembershipsRequest injectPageSize(
+                SearchRelatedAccountGroupMembershipsRequest payload, int pageSize) {
+              return SearchRelatedAccountGroupMembershipsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchRelatedAccountGroupMembershipsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchRelatedAccountGroupMembershipsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RelatedAccountGroupMembership> extractResources(
+                SearchRelatedAccountGroupMembershipsResponse payload) {
+              return payload.getRelatedAccountGroupMembershipsList() == null
+                  ? ImmutableList.<RelatedAccountGroupMembership>of()
+                  : payload.getRelatedAccountGroupMembershipsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
       LIST_KEYS_PAGE_STR_FACT =
@@ -166,6 +337,101 @@ public class RecaptchaEnterpriseServiceStubSettings
               PageContext<ListKeysRequest, ListKeysResponse, Key> pageContext =
                   PageContext.create(callable, LIST_KEYS_PAGE_STR_DESC, request, context);
               return ListKeysPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRelatedAccountGroupsRequest,
+          ListRelatedAccountGroupsResponse,
+          ListRelatedAccountGroupsPagedResponse>
+      LIST_RELATED_ACCOUNT_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRelatedAccountGroupsRequest,
+              ListRelatedAccountGroupsResponse,
+              ListRelatedAccountGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRelatedAccountGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
+                    callable,
+                ListRelatedAccountGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRelatedAccountGroupsResponse> futureResponse) {
+              PageContext<
+                      ListRelatedAccountGroupsRequest,
+                      ListRelatedAccountGroupsResponse,
+                      RelatedAccountGroup>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RELATED_ACCOUNT_GROUPS_PAGE_STR_DESC, request, context);
+              return ListRelatedAccountGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsResponse,
+          ListRelatedAccountGroupMembershipsPagedResponse>
+      LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRelatedAccountGroupMembershipsRequest,
+              ListRelatedAccountGroupMembershipsResponse,
+              ListRelatedAccountGroupMembershipsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRelatedAccountGroupMembershipsPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListRelatedAccountGroupMembershipsRequest,
+                            ListRelatedAccountGroupMembershipsResponse>
+                        callable,
+                    ListRelatedAccountGroupMembershipsRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListRelatedAccountGroupMembershipsResponse> futureResponse) {
+              PageContext<
+                      ListRelatedAccountGroupMembershipsRequest,
+                      ListRelatedAccountGroupMembershipsResponse,
+                      RelatedAccountGroupMembership>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListRelatedAccountGroupMembershipsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsResponse,
+          SearchRelatedAccountGroupMembershipsPagedResponse>
+      SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchRelatedAccountGroupMembershipsRequest,
+              SearchRelatedAccountGroupMembershipsResponse,
+              SearchRelatedAccountGroupMembershipsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchRelatedAccountGroupMembershipsPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            SearchRelatedAccountGroupMembershipsRequest,
+                            SearchRelatedAccountGroupMembershipsResponse>
+                        callable,
+                    SearchRelatedAccountGroupMembershipsRequest request,
+                    ApiCallContext context,
+                    ApiFuture<SearchRelatedAccountGroupMembershipsResponse> futureResponse) {
+              PageContext<
+                      SearchRelatedAccountGroupMembershipsRequest,
+                      SearchRelatedAccountGroupMembershipsResponse,
+                      RelatedAccountGroupMembership>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return SearchRelatedAccountGroupMembershipsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -214,6 +480,35 @@ public class RecaptchaEnterpriseServiceStubSettings
   /** Returns the object with the settings used for calls to getMetrics. */
   public UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings() {
     return getMetricsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRelatedAccountGroups. */
+  public PagedCallSettings<
+          ListRelatedAccountGroupsRequest,
+          ListRelatedAccountGroupsResponse,
+          ListRelatedAccountGroupsPagedResponse>
+      listRelatedAccountGroupsSettings() {
+    return listRelatedAccountGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRelatedAccountGroupMemberships. */
+  public PagedCallSettings<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsResponse,
+          ListRelatedAccountGroupMembershipsPagedResponse>
+      listRelatedAccountGroupMembershipsSettings() {
+    return listRelatedAccountGroupMembershipsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to searchRelatedAccountGroupMemberships.
+   */
+  public PagedCallSettings<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsResponse,
+          SearchRelatedAccountGroupMembershipsPagedResponse>
+      searchRelatedAccountGroupMembershipsSettings() {
+    return searchRelatedAccountGroupMembershipsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -301,6 +596,11 @@ public class RecaptchaEnterpriseServiceStubSettings
     deleteKeySettings = settingsBuilder.deleteKeySettings().build();
     migrateKeySettings = settingsBuilder.migrateKeySettings().build();
     getMetricsSettings = settingsBuilder.getMetricsSettings().build();
+    listRelatedAccountGroupsSettings = settingsBuilder.listRelatedAccountGroupsSettings().build();
+    listRelatedAccountGroupMembershipsSettings =
+        settingsBuilder.listRelatedAccountGroupMembershipsSettings().build();
+    searchRelatedAccountGroupMembershipsSettings =
+        settingsBuilder.searchRelatedAccountGroupMembershipsSettings().build();
   }
 
   /** Builder for RecaptchaEnterpriseServiceStubSettings. */
@@ -320,6 +620,21 @@ public class RecaptchaEnterpriseServiceStubSettings
     private final UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings;
     private final UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings;
     private final UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings;
+    private final PagedCallSettings.Builder<
+            ListRelatedAccountGroupsRequest,
+            ListRelatedAccountGroupsResponse,
+            ListRelatedAccountGroupsPagedResponse>
+        listRelatedAccountGroupsSettings;
+    private final PagedCallSettings.Builder<
+            ListRelatedAccountGroupMembershipsRequest,
+            ListRelatedAccountGroupMembershipsResponse,
+            ListRelatedAccountGroupMembershipsPagedResponse>
+        listRelatedAccountGroupMembershipsSettings;
+    private final PagedCallSettings.Builder<
+            SearchRelatedAccountGroupMembershipsRequest,
+            SearchRelatedAccountGroupMembershipsResponse,
+            SearchRelatedAccountGroupMembershipsPagedResponse>
+        searchRelatedAccountGroupMembershipsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -366,6 +681,12 @@ public class RecaptchaEnterpriseServiceStubSettings
       deleteKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       migrateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMetricsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRelatedAccountGroupsSettings =
+          PagedCallSettings.newBuilder(LIST_RELATED_ACCOUNT_GROUPS_PAGE_STR_FACT);
+      listRelatedAccountGroupMembershipsSettings =
+          PagedCallSettings.newBuilder(LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_FACT);
+      searchRelatedAccountGroupMembershipsSettings =
+          PagedCallSettings.newBuilder(SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -377,7 +698,10 @@ public class RecaptchaEnterpriseServiceStubSettings
               updateKeySettings,
               deleteKeySettings,
               migrateKeySettings,
-              getMetricsSettings);
+              getMetricsSettings,
+              listRelatedAccountGroupsSettings,
+              listRelatedAccountGroupMembershipsSettings,
+              searchRelatedAccountGroupMembershipsSettings);
       initDefaults(this);
     }
 
@@ -393,6 +717,11 @@ public class RecaptchaEnterpriseServiceStubSettings
       deleteKeySettings = settings.deleteKeySettings.toBuilder();
       migrateKeySettings = settings.migrateKeySettings.toBuilder();
       getMetricsSettings = settings.getMetricsSettings.toBuilder();
+      listRelatedAccountGroupsSettings = settings.listRelatedAccountGroupsSettings.toBuilder();
+      listRelatedAccountGroupMembershipsSettings =
+          settings.listRelatedAccountGroupMembershipsSettings.toBuilder();
+      searchRelatedAccountGroupMembershipsSettings =
+          settings.searchRelatedAccountGroupMembershipsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -404,7 +733,10 @@ public class RecaptchaEnterpriseServiceStubSettings
               updateKeySettings,
               deleteKeySettings,
               migrateKeySettings,
-              getMetricsSettings);
+              getMetricsSettings,
+              listRelatedAccountGroupsSettings,
+              listRelatedAccountGroupMembershipsSettings,
+              searchRelatedAccountGroupMembershipsSettings);
     }
 
     private static Builder createDefault() {
@@ -463,6 +795,21 @@ public class RecaptchaEnterpriseServiceStubSettings
 
       builder
           .getMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listRelatedAccountGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listRelatedAccountGroupMembershipsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .searchRelatedAccountGroupMembershipsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -530,6 +877,37 @@ public class RecaptchaEnterpriseServiceStubSettings
     /** Returns the builder for the settings used for calls to getMetrics. */
     public UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings() {
       return getMetricsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRelatedAccountGroups. */
+    public PagedCallSettings.Builder<
+            ListRelatedAccountGroupsRequest,
+            ListRelatedAccountGroupsResponse,
+            ListRelatedAccountGroupsPagedResponse>
+        listRelatedAccountGroupsSettings() {
+      return listRelatedAccountGroupsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listRelatedAccountGroupMemberships.
+     */
+    public PagedCallSettings.Builder<
+            ListRelatedAccountGroupMembershipsRequest,
+            ListRelatedAccountGroupMembershipsResponse,
+            ListRelatedAccountGroupMembershipsPagedResponse>
+        listRelatedAccountGroupMembershipsSettings() {
+      return listRelatedAccountGroupMembershipsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to searchRelatedAccountGroupMemberships.
+     */
+    public PagedCallSettings.Builder<
+            SearchRelatedAccountGroupMembershipsRequest,
+            SearchRelatedAccountGroupMembershipsResponse,
+            SearchRelatedAccountGroupMembershipsPagedResponse>
+        searchRelatedAccountGroupMembershipsSettings() {
+      return searchRelatedAccountGroupMembershipsSettings;
     }
 
     @Override

@@ -31,8 +31,17 @@
             "ListKeys": {
               "methods": ["listKeys", "listKeysPagedCallable", "listKeysCallable"]
             },
+            "ListRelatedAccountGroupMemberships": {
+              "methods": ["listRelatedAccountGroupMemberships", "listRelatedAccountGroupMemberships", "listRelatedAccountGroupMemberships", "listRelatedAccountGroupMembershipsPagedCallable", "listRelatedAccountGroupMembershipsCallable"]
+            },
+            "ListRelatedAccountGroups": {
+              "methods": ["listRelatedAccountGroups", "listRelatedAccountGroups", "listRelatedAccountGroups", "listRelatedAccountGroupsPagedCallable", "listRelatedAccountGroupsCallable"]
+            },
             "MigrateKey": {
               "methods": ["migrateKey", "migrateKeyCallable"]
+            },
+            "SearchRelatedAccountGroupMemberships": {
+              "methods": ["searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMembershipsPagedCallable", "searchRelatedAccountGroupMembershipsCallable"]
             },
             "UpdateKey": {
               "methods": ["updateKey", "updateKeyCallable"]

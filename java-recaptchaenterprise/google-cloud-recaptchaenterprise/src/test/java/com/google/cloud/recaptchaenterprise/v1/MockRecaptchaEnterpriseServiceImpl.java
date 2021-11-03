@@ -30,9 +30,15 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RecaptchaEnterpriseServiceGrpc.RecaptchaEnterpriseServiceImplBase;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -252,6 +258,72 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
                   "Unrecognized response type %s for method GetMetrics, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Metrics.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRelatedAccountGroups(
+      ListRelatedAccountGroupsRequest request,
+      StreamObserver<ListRelatedAccountGroupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRelatedAccountGroupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRelatedAccountGroupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRelatedAccountGroups, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRelatedAccountGroupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRelatedAccountGroupMemberships(
+      ListRelatedAccountGroupMembershipsRequest request,
+      StreamObserver<ListRelatedAccountGroupMembershipsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRelatedAccountGroupMembershipsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRelatedAccountGroupMembershipsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRelatedAccountGroupMemberships, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRelatedAccountGroupMembershipsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchRelatedAccountGroupMemberships(
+      SearchRelatedAccountGroupMembershipsRequest request,
+      StreamObserver<SearchRelatedAccountGroupMembershipsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchRelatedAccountGroupMembershipsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchRelatedAccountGroupMembershipsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchRelatedAccountGroupMemberships, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchRelatedAccountGroupMembershipsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

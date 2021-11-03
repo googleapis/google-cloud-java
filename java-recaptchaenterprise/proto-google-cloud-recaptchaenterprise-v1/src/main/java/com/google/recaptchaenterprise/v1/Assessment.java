@@ -126,6 +126,23 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 50:
+            {
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder subBuilder = null;
+              if (accountDefenderAssessment_ != null) {
+                subBuilder = accountDefenderAssessment_.toBuilder();
+              }
+              accountDefenderAssessment_ =
+                  input.readMessage(
+                      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(accountDefenderAssessment_);
+                accountDefenderAssessment_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -365,6 +382,65 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     return getTokenProperties();
   }
 
+  public static final int ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER = 6;
+  private com.google.recaptchaenterprise.v1.AccountDefenderAssessment accountDefenderAssessment_;
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * </code>
+   *
+   * @return Whether the accountDefenderAssessment field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccountDefenderAssessment() {
+    return accountDefenderAssessment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * </code>
+   *
+   * @return The accountDefenderAssessment.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+      getAccountDefenderAssessment() {
+    return accountDefenderAssessment_ == null
+        ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.getDefaultInstance()
+        : accountDefenderAssessment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder
+      getAccountDefenderAssessmentOrBuilder() {
+    return getAccountDefenderAssessment();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -391,6 +467,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (tokenProperties_ != null) {
       output.writeMessage(4, getTokenProperties());
     }
+    if (accountDefenderAssessment_ != null) {
+      output.writeMessage(6, getAccountDefenderAssessment());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -411,6 +490,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     }
     if (tokenProperties_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTokenProperties());
+    }
+    if (accountDefenderAssessment_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getAccountDefenderAssessment());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -441,6 +525,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasTokenProperties()) {
       if (!getTokenProperties().equals(other.getTokenProperties())) return false;
     }
+    if (hasAccountDefenderAssessment() != other.hasAccountDefenderAssessment()) return false;
+    if (hasAccountDefenderAssessment()) {
+      if (!getAccountDefenderAssessment().equals(other.getAccountDefenderAssessment()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -465,6 +554,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasTokenProperties()) {
       hash = (37 * hash) + TOKEN_PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + getTokenProperties().hashCode();
+    }
+    if (hasAccountDefenderAssessment()) {
+      hash = (37 * hash) + ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountDefenderAssessment().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -631,6 +724,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         tokenProperties_ = null;
         tokenPropertiesBuilder_ = null;
       }
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessment_ = null;
+      } else {
+        accountDefenderAssessment_ = null;
+        accountDefenderAssessmentBuilder_ = null;
+      }
       return this;
     }
 
@@ -673,6 +772,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         result.tokenProperties_ = tokenProperties_;
       } else {
         result.tokenProperties_ = tokenPropertiesBuilder_.build();
+      }
+      if (accountDefenderAssessmentBuilder_ == null) {
+        result.accountDefenderAssessment_ = accountDefenderAssessment_;
+      } else {
+        result.accountDefenderAssessment_ = accountDefenderAssessmentBuilder_.build();
       }
       onBuilt();
       return result;
@@ -735,6 +839,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTokenProperties()) {
         mergeTokenProperties(other.getTokenProperties());
+      }
+      if (other.hasAccountDefenderAssessment()) {
+        mergeAccountDefenderAssessment(other.getAccountDefenderAssessment());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1468,6 +1575,225 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         tokenProperties_ = null;
       }
       return tokenPropertiesBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.AccountDefenderAssessment accountDefenderAssessment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder>
+        accountDefenderAssessmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     *
+     * @return Whether the accountDefenderAssessment field is set.
+     */
+    public boolean hasAccountDefenderAssessment() {
+      return accountDefenderAssessmentBuilder_ != null || accountDefenderAssessment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     *
+     * @return The accountDefenderAssessment.
+     */
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+        getAccountDefenderAssessment() {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        return accountDefenderAssessment_ == null
+            ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.getDefaultInstance()
+            : accountDefenderAssessment_;
+      } else {
+        return accountDefenderAssessmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     */
+    public Builder setAccountDefenderAssessment(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment value) {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accountDefenderAssessment_ = value;
+        onChanged();
+      } else {
+        accountDefenderAssessmentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     */
+    public Builder setAccountDefenderAssessment(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder builderForValue) {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessment_ = builderForValue.build();
+        onChanged();
+      } else {
+        accountDefenderAssessmentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     */
+    public Builder mergeAccountDefenderAssessment(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment value) {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        if (accountDefenderAssessment_ != null) {
+          accountDefenderAssessment_ =
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.newBuilder(
+                      accountDefenderAssessment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          accountDefenderAssessment_ = value;
+        }
+        onChanged();
+      } else {
+        accountDefenderAssessmentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     */
+    public Builder clearAccountDefenderAssessment() {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessment_ = null;
+        onChanged();
+      } else {
+        accountDefenderAssessment_ = null;
+        accountDefenderAssessmentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder
+        getAccountDefenderAssessmentBuilder() {
+
+      onChanged();
+      return getAccountDefenderAssessmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder
+        getAccountDefenderAssessmentOrBuilder() {
+      if (accountDefenderAssessmentBuilder_ != null) {
+        return accountDefenderAssessmentBuilder_.getMessageOrBuilder();
+      } else {
+        return accountDefenderAssessment_ == null
+            ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.getDefaultInstance()
+            : accountDefenderAssessment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder>
+        getAccountDefenderAssessmentFieldBuilder() {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder>(
+                getAccountDefenderAssessment(), getParentForChildren(), isClean());
+        accountDefenderAssessment_ = null;
+      }
+      return accountDefenderAssessmentBuilder_;
     }
 
     @java.lang.Override

@@ -17,6 +17,9 @@
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.SearchRelatedAccountGroupMembershipsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -32,8 +35,14 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import javax.annotation.Generated;
 
@@ -85,6 +94,47 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     throw new UnsupportedOperationException("Not implemented: getMetricsCallable()");
+  }
+
+  public UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsPagedResponse>
+      listRelatedAccountGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRelatedAccountGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
+      listRelatedAccountGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRelatedAccountGroupsCallable()");
+  }
+
+  public UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest,
+          ListRelatedAccountGroupMembershipsPagedResponse>
+      listRelatedAccountGroupMembershipsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRelatedAccountGroupMembershipsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListRelatedAccountGroupMembershipsRequest, ListRelatedAccountGroupMembershipsResponse>
+      listRelatedAccountGroupMembershipsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRelatedAccountGroupMembershipsCallable()");
+  }
+
+  public UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest,
+          SearchRelatedAccountGroupMembershipsPagedResponse>
+      searchRelatedAccountGroupMembershipsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: searchRelatedAccountGroupMembershipsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          SearchRelatedAccountGroupMembershipsRequest, SearchRelatedAccountGroupMembershipsResponse>
+      searchRelatedAccountGroupMembershipsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: searchRelatedAccountGroupMembershipsCallable()");
   }
 
   @Override

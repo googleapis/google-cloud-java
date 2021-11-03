@@ -142,7 +142,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Challenge requests for this key will always return a nocaptcha, which
+     * Challenge requests for this key always return a nocaptcha, which
      * does not require a solution.
      * </pre>
      *
@@ -153,7 +153,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Challenge requests for this key will always return an unsolvable
+     * Challenge requests for this key always return an unsolvable
      * challenge.
      * </pre>
      *
@@ -178,7 +178,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Challenge requests for this key will always return a nocaptcha, which
+     * Challenge requests for this key always return a nocaptcha, which
      * does not require a solution.
      * </pre>
      *
@@ -189,7 +189,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Challenge requests for this key will always return an unsolvable
+     * Challenge requests for this key always return an unsolvable
      * challenge.
      * </pre>
      *

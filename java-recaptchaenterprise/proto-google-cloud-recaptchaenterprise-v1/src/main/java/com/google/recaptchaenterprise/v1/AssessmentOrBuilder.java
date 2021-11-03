@@ -166,4 +166,49 @@ public interface AssessmentOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.TokenPropertiesOrBuilder getTokenPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * </code>
+   *
+   * @return Whether the accountDefenderAssessment field is set.
+   */
+  boolean hasAccountDefenderAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * </code>
+   *
+   * @return The accountDefenderAssessment.
+   */
+  com.google.recaptchaenterprise.v1.AccountDefenderAssessment getAccountDefenderAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder
+      getAccountDefenderAssessmentOrBuilder();
 }

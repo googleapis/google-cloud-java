@@ -17,6 +17,9 @@
 package com.google.cloud.recaptchaenterprise.v1;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.SearchRelatedAccountGroupMembershipsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -27,9 +30,11 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.recaptchaenterprise.v1.AccountDefenderAssessment;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -45,12 +50,21 @@ import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
+import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.ProjectName;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
+import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
 import com.google.recaptchaenterprise.v1.RiskAnalysis;
 import com.google.recaptchaenterprise.v1.ScoreMetrics;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
+import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.TestingOptions;
 import com.google.recaptchaenterprise.v1.TokenProperties;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
@@ -116,6 +130,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setEvent(Event.newBuilder().build())
             .setRiskAnalysis(RiskAnalysis.newBuilder().build())
             .setTokenProperties(TokenProperties.newBuilder().build())
+            .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -160,6 +175,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setEvent(Event.newBuilder().build())
             .setRiskAnalysis(RiskAnalysis.newBuilder().build())
             .setTokenProperties(TokenProperties.newBuilder().build())
+            .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -638,6 +654,304 @@ public class RecaptchaEnterpriseServiceClientTest {
     try {
       String name = "name3373707";
       client.getMetrics(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRelatedAccountGroupsTest() throws Exception {
+    RelatedAccountGroup responsesElement = RelatedAccountGroup.newBuilder().build();
+    ListRelatedAccountGroupsResponse expectedResponse =
+        ListRelatedAccountGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRelatedAccountGroups(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListRelatedAccountGroupsPagedResponse pagedListResponse =
+        client.listRelatedAccountGroups(parent);
+
+    List<RelatedAccountGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRelatedAccountGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRelatedAccountGroupsRequest actualRequest =
+        ((ListRelatedAccountGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRelatedAccountGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listRelatedAccountGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRelatedAccountGroupsTest2() throws Exception {
+    RelatedAccountGroup responsesElement = RelatedAccountGroup.newBuilder().build();
+    ListRelatedAccountGroupsResponse expectedResponse =
+        ListRelatedAccountGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRelatedAccountGroups(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRelatedAccountGroupsPagedResponse pagedListResponse =
+        client.listRelatedAccountGroups(parent);
+
+    List<RelatedAccountGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRelatedAccountGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRelatedAccountGroupsRequest actualRequest =
+        ((ListRelatedAccountGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRelatedAccountGroupsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRelatedAccountGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRelatedAccountGroupMembershipsTest() throws Exception {
+    RelatedAccountGroupMembership responsesElement =
+        RelatedAccountGroupMembership.newBuilder().build();
+    ListRelatedAccountGroupMembershipsResponse expectedResponse =
+        ListRelatedAccountGroupMembershipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRelatedAccountGroupMemberships(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    RelatedAccountGroupName parent =
+        RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+
+    ListRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
+        client.listRelatedAccountGroupMemberships(parent);
+
+    List<RelatedAccountGroupMembership> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRelatedAccountGroupMembershipsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRelatedAccountGroupMembershipsRequest actualRequest =
+        ((ListRelatedAccountGroupMembershipsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRelatedAccountGroupMembershipsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      RelatedAccountGroupName parent =
+          RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+      client.listRelatedAccountGroupMemberships(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRelatedAccountGroupMembershipsTest2() throws Exception {
+    RelatedAccountGroupMembership responsesElement =
+        RelatedAccountGroupMembership.newBuilder().build();
+    ListRelatedAccountGroupMembershipsResponse expectedResponse =
+        ListRelatedAccountGroupMembershipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRelatedAccountGroupMemberships(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
+        client.listRelatedAccountGroupMemberships(parent);
+
+    List<RelatedAccountGroupMembership> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRelatedAccountGroupMembershipsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRelatedAccountGroupMembershipsRequest actualRequest =
+        ((ListRelatedAccountGroupMembershipsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRelatedAccountGroupMembershipsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRelatedAccountGroupMemberships(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchRelatedAccountGroupMembershipsTest() throws Exception {
+    RelatedAccountGroupMembership responsesElement =
+        RelatedAccountGroupMembership.newBuilder().build();
+    SearchRelatedAccountGroupMembershipsResponse expectedResponse =
+        SearchRelatedAccountGroupMembershipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRelatedAccountGroupMemberships(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    RelatedAccountGroupName parent =
+        RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+    ByteString hashedAccountId = ByteString.EMPTY;
+
+    SearchRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
+        client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
+
+    List<RelatedAccountGroupMembership> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRelatedAccountGroupMembershipsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchRelatedAccountGroupMembershipsRequest actualRequest =
+        ((SearchRelatedAccountGroupMembershipsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(hashedAccountId, actualRequest.getHashedAccountId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchRelatedAccountGroupMembershipsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      RelatedAccountGroupName parent =
+          RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+      ByteString hashedAccountId = ByteString.EMPTY;
+      client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchRelatedAccountGroupMembershipsTest2() throws Exception {
+    RelatedAccountGroupMembership responsesElement =
+        RelatedAccountGroupMembership.newBuilder().build();
+    SearchRelatedAccountGroupMembershipsResponse expectedResponse =
+        SearchRelatedAccountGroupMembershipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRelatedAccountGroupMemberships(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ByteString hashedAccountId = ByteString.EMPTY;
+
+    SearchRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
+        client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
+
+    List<RelatedAccountGroupMembership> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRelatedAccountGroupMembershipsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchRelatedAccountGroupMembershipsRequest actualRequest =
+        ((SearchRelatedAccountGroupMembershipsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(hashedAccountId, actualRequest.getHashedAccountId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchRelatedAccountGroupMembershipsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ByteString hashedAccountId = ByteString.EMPTY;
+      client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
