@@ -377,7 +377,7 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
     }
     if (actionTypeCase_ == 2) {
@@ -395,7 +395,7 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
     }
     if (actionTypeCase_ == 2) {

@@ -534,7 +534,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < universalActions_.size(); i++) {
       output.writeMessage(4, universalActions_.get(i));
     }
-    if (!getAuthorizationCheckFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationCheckFunction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, authorizationCheckFunction_);
     }
     if (composeTrigger_ != null) {
@@ -559,7 +559,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < universalActions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, universalActions_.get(i));
     }
-    if (!getAuthorizationCheckFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationCheckFunction_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(7, authorizationCheckFunction_);
     }

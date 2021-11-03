@@ -384,7 +384,7 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
     }
     if (actionTypeCase_ == 2) {
@@ -402,7 +402,7 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
     }
     if (actionTypeCase_ == 2) {

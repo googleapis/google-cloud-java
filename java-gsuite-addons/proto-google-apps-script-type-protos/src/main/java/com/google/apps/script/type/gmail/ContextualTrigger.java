@@ -296,7 +296,7 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     if (triggerCase_ == 1) {
       output.writeMessage(1, (com.google.apps.script.type.gmail.UnconditionalTrigger) trigger_);
     }
-    if (!getOnTriggerFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onTriggerFunction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, onTriggerFunction_);
     }
     unknownFields.writeTo(output);
@@ -313,7 +313,7 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.apps.script.type.gmail.UnconditionalTrigger) trigger_);
     }
-    if (!getOnTriggerFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onTriggerFunction_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, onTriggerFunction_);
     }
     size += unknownFields.getSerializedSize();

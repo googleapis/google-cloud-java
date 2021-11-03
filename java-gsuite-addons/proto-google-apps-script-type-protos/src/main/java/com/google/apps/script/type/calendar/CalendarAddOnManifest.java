@@ -755,7 +755,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < conferenceSolution_.size(); i++) {
       output.writeMessage(3, conferenceSolution_.get(i));
     }
-    if (!getCreateSettingsUrlFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createSettingsUrlFunction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createSettingsUrlFunction_);
     }
     if (homepageTrigger_ != null) {
@@ -785,7 +785,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, conferenceSolution_.get(i));
     }
-    if (!getCreateSettingsUrlFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createSettingsUrlFunction_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createSettingsUrlFunction_);
     }
