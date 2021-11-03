@@ -751,18 +751,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
-   * * Example: {
+   * * Example:
+   * ```
+   * {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;condition" : null
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-   *   }
+   * }
+   * ```
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
    * </pre>
@@ -791,18 +800,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
-   * * Example: {
+   * * Example:
+   * ```
+   * {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;condition" : null
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-   *   }
+   * }
+   * ```
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
    * </pre>
@@ -822,18 +840,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
-   * * Example: {
+   * * Example:
+   * ```
+   * {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;condition" : null
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-   *   }
+   * }
+   * ```
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
    * </pre>
@@ -859,18 +886,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
-   * * Example: {
+   * * Example:
+   * ```
+   * {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;condition" : null
-   *   }
-   * * Example: {
+   * }
+   * ```
+   * * Example:
+   * ```
+   * {
    *   "/bindings/&#42;&#47;role": "roles/owner"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-   *   }
+   * }
+   * ```
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
    * </pre>
@@ -2759,18 +2795,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
-     * * Example: {
+     * * Example:
+     * ```
+     * {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;condition" : null
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-     *   }
+     * }
+     * ```
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
      * </pre>
@@ -2799,18 +2844,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
-     * * Example: {
+     * * Example:
+     * ```
+     * {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;condition" : null
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-     *   }
+     * }
+     * ```
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
      * </pre>
@@ -2830,18 +2884,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
-     * * Example: {
+     * * Example:
+     * ```
+     * {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;condition" : null
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-     *   }
+     * }
+     * ```
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
      * </pre>
@@ -2867,18 +2930,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
-     * * Example: {
+     * * Example:
+     * ```
+     * {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;condition" : null
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-     *   }
+     * }
+     * ```
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
      * </pre>
@@ -2911,18 +2983,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
-     * * Example: {
+     * * Example:
+     * ```
+     * {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;condition" : null
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-     *   }
+     * }
+     * ```
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
      * </pre>
@@ -2950,18 +3031,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
-     * * Example: {
+     * * Example:
+     * ```
+     * {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;condition" : null
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-     *   }
+     * }
+     * ```
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
      * </pre>
@@ -2987,18 +3077,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
-     * * Example: {
+     * * Example:
+     * ```
+     * {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;condition" : null
-     *   }
-     * * Example: {
+     * }
+     * ```
+     * * Example:
+     * ```
+     * {
      *   "/bindings/&#42;&#47;role": "roles/owner"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
-     *   }
+     * }
+     * ```
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
      * </pre>
