@@ -32,6 +32,20 @@
  * }
  * }</pre>
  *
+ * <p>======================= ChangelogsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Changelogs][google.cloud.dialogflow.cx.v3.Changelog].
+ *
+ * <p>Sample for ChangelogsClient:
+ *
+ * <pre>{@code
+ * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
+ *   ChangelogName name = ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]");
+ *   Changelog response = changelogsClient.getChangelog(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= DeploymentsClient =======================
  *
  * <p>Service Description: Service for managing

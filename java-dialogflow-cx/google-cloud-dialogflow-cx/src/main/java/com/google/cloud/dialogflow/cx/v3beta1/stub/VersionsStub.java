@@ -22,6 +22,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest;
@@ -86,6 +88,10 @@ public abstract class VersionsStub implements BackgroundResource {
 
   public UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: loadVersionCallable()");
+  }
+
+  public UnaryCallable<CompareVersionsRequest, CompareVersionsResponse> compareVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: compareVersionsCallable()");
   }
 
   @Override

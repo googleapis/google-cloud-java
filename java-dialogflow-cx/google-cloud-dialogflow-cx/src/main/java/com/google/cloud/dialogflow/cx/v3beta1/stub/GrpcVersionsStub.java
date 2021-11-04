@@ -26,6 +26,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest;
@@ -109,6 +111,17 @@ public class GrpcVersionsStub extends VersionsStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CompareVersionsRequest, CompareVersionsResponse>
+      compareVersionsMethodDescriptor =
+          MethodDescriptor.<CompareVersionsRequest, CompareVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Versions/CompareVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CompareVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CompareVersionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable;
   private final UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse>
       listVersionsPagedCallable;
@@ -120,6 +133,8 @@ public class GrpcVersionsStub extends VersionsStub {
   private final UnaryCallable<DeleteVersionRequest, Empty> deleteVersionCallable;
   private final UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable;
   private final OperationCallable<LoadVersionRequest, Empty, Struct> loadVersionOperationCallable;
+  private final UnaryCallable<CompareVersionsRequest, CompareVersionsResponse>
+      compareVersionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -220,6 +235,17 @@ public class GrpcVersionsStub extends VersionsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<CompareVersionsRequest, CompareVersionsResponse>
+        compareVersionsTransportSettings =
+            GrpcCallSettings.<CompareVersionsRequest, CompareVersionsResponse>newBuilder()
+                .setMethodDescriptor(compareVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("base_version", String.valueOf(request.getBaseVersion()));
+                      return params.build();
+                    })
+                .build();
 
     this.listVersionsCallable =
         callableFactory.createUnaryCallable(
@@ -254,6 +280,9 @@ public class GrpcVersionsStub extends VersionsStub {
             settings.loadVersionOperationSettings(),
             clientContext,
             operationsStub);
+    this.compareVersionsCallable =
+        callableFactory.createUnaryCallable(
+            compareVersionsTransportSettings, settings.compareVersionsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -307,6 +336,11 @@ public class GrpcVersionsStub extends VersionsStub {
   @Override
   public OperationCallable<LoadVersionRequest, Empty, Struct> loadVersionOperationCallable() {
     return loadVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CompareVersionsRequest, CompareVersionsResponse> compareVersionsCallable() {
+    return compareVersionsCallable;
   }
 
   @Override

@@ -63,6 +63,14 @@ public final class VersionProto {
       internal_static_google_cloud_dialogflow_cx_v3beta1_LoadVersionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_LoadVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -122,49 +130,64 @@ public final class VersionProto {
           + "oogleapis.com/Version\"u\n\022LoadVersionRequ"
           + "est\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!dialogflow.go"
           + "ogleapis.com/Version\022&\n\036allow_override_a"
-          + "gent_resources\030\002 \001(\0102\271\013\n\010Versions\022\326\001\n\014Li"
-          + "stVersions\0227.google.cloud.dialogflow.cx."
-          + "v3beta1.ListVersionsRequest\0328.google.clo"
-          + "ud.dialogflow.cx.v3beta1.ListVersionsRes"
-          + "ponse\"S\202\323\344\223\002D\022B/v3beta1/{parent=projects"
-          + "/*/locations/*/agents/*/flows/*}/version"
-          + "s\332A\006parent\022\303\001\n\nGetVersion\0225.google.cloud"
-          + ".dialogflow.cx.v3beta1.GetVersionRequest"
-          + "\032+.google.cloud.dialogflow.cx.v3beta1.Ve"
-          + "rsion\"Q\202\323\344\223\002D\022B/v3beta1/{name=projects/*"
-          + "/locations/*/agents/*/flows/*/versions/*"
-          + "}\332A\004name\022\373\001\n\rCreateVersion\0228.google.clou"
-          + "d.dialogflow.cx.v3beta1.CreateVersionReq"
-          + "uest\032\035.google.longrunning.Operation\"\220\001\202\323"
-          + "\344\223\002M\"B/v3beta1/{parent=projects/*/locati"
-          + "ons/*/agents/*/flows/*}/versions:\007versio"
-          + "n\332A\016parent,version\312A)\n\007Version\022\036CreateVe"
-          + "rsionOperationMetadata\022\351\001\n\rUpdateVersion"
-          + "\0228.google.cloud.dialogflow.cx.v3beta1.Up"
-          + "dateVersionRequest\032+.google.cloud.dialog"
-          + "flow.cx.v3beta1.Version\"q\202\323\344\223\002U2J/v3beta"
-          + "1/{version.name=projects/*/locations/*/a"
-          + "gents/*/flows/*/versions/*}:\007version\332A\023v"
-          + "ersion,update_mask\022\264\001\n\rDeleteVersion\0228.g"
-          + "oogle.cloud.dialogflow.cx.v3beta1.Delete"
-          + "VersionRequest\032\026.google.protobuf.Empty\"Q"
-          + "\202\323\344\223\002D*B/v3beta1/{name=projects/*/locati"
-          + "ons/*/agents/*/flows/*/versions/*}\332A\004nam"
-          + "e\022\362\001\n\013LoadVersion\0226.google.cloud.dialogf"
-          + "low.cx.v3beta1.LoadVersionRequest\032\035.goog"
-          + "le.longrunning.Operation\"\213\001\202\323\344\223\002L\"G/v3be"
-          + "ta1/{name=projects/*/locations/*/agents/"
-          + "*/flows/*/versions/*}:load:\001*\332A\004name\312A/\n"
-          + "\025google.protobuf.Empty\022\026google.protobuf."
-          + "Struct\032x\312A\031dialogflow.googleapis.com\322AYh"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tform,https://www.googleapis.com/auth/di"
-          + "alogflowB\324\001\n&com.google.cloud.dialogflow"
-          + ".cx.v3beta1B\014VersionProtoP\001ZDgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/dialogf"
-          + "low/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cloud"
-          + ".Dialogflow.Cx.V3Beta1\352\002&Google::Cloud::"
-          + "Dialogflow::CX::V3beta1b\006proto3"
+          + "gent_resources\030\002 \001(\010\"\263\001\n\026CompareVersions"
+          + "Request\022?\n\014base_version\030\001 \001(\tB)\340A\002\372A#\n!d"
+          + "ialogflow.googleapis.com/Version\022A\n\016targ"
+          + "et_version\030\002 \001(\tB)\340A\002\372A#\n!dialogflow.goo"
+          + "gleapis.com/Version\022\025\n\rlanguage_code\030\003 \001"
+          + "(\t\"\223\001\n\027CompareVersionsResponse\022!\n\031base_v"
+          + "ersion_content_json\030\001 \001(\t\022#\n\033target_vers"
+          + "ion_content_json\030\002 \001(\t\0220\n\014compare_time\030\003"
+          + " \001(\0132\032.google.protobuf.Timestamp2\274\r\n\010Ver"
+          + "sions\022\326\001\n\014ListVersions\0227.google.cloud.di"
+          + "alogflow.cx.v3beta1.ListVersionsRequest\032"
+          + "8.google.cloud.dialogflow.cx.v3beta1.Lis"
+          + "tVersionsResponse\"S\202\323\344\223\002D\022B/v3beta1/{par"
+          + "ent=projects/*/locations/*/agents/*/flow"
+          + "s/*}/versions\332A\006parent\022\303\001\n\nGetVersion\0225."
+          + "google.cloud.dialogflow.cx.v3beta1.GetVe"
+          + "rsionRequest\032+.google.cloud.dialogflow.c"
+          + "x.v3beta1.Version\"Q\202\323\344\223\002D\022B/v3beta1/{nam"
+          + "e=projects/*/locations/*/agents/*/flows/"
+          + "*/versions/*}\332A\004name\022\373\001\n\rCreateVersion\0228"
+          + ".google.cloud.dialogflow.cx.v3beta1.Crea"
+          + "teVersionRequest\032\035.google.longrunning.Op"
+          + "eration\"\220\001\202\323\344\223\002M\"B/v3beta1/{parent=proje"
+          + "cts/*/locations/*/agents/*/flows/*}/vers"
+          + "ions:\007version\332A\016parent,version\312A)\n\007Versi"
+          + "on\022\036CreateVersionOperationMetadata\022\351\001\n\rU"
+          + "pdateVersion\0228.google.cloud.dialogflow.c"
+          + "x.v3beta1.UpdateVersionRequest\032+.google."
+          + "cloud.dialogflow.cx.v3beta1.Version\"q\202\323\344"
+          + "\223\002U2J/v3beta1/{version.name=projects/*/l"
+          + "ocations/*/agents/*/flows/*/versions/*}:"
+          + "\007version\332A\023version,update_mask\022\264\001\n\rDelet"
+          + "eVersion\0228.google.cloud.dialogflow.cx.v3"
+          + "beta1.DeleteVersionRequest\032\026.google.prot"
+          + "obuf.Empty\"Q\202\323\344\223\002D*B/v3beta1/{name=proje"
+          + "cts/*/locations/*/agents/*/flows/*/versi"
+          + "ons/*}\332A\004name\022\362\001\n\013LoadVersion\0226.google.c"
+          + "loud.dialogflow.cx.v3beta1.LoadVersionRe"
+          + "quest\032\035.google.longrunning.Operation\"\213\001\202"
+          + "\323\344\223\002L\"G/v3beta1/{name=projects/*/locatio"
+          + "ns/*/agents/*/flows/*/versions/*}:load:\001"
+          + "*\332A\004name\312A/\n\025google.protobuf.Empty\022\026goog"
+          + "le.protobuf.Struct\022\200\002\n\017CompareVersions\022:"
+          + ".google.cloud.dialogflow.cx.v3beta1.Comp"
+          + "areVersionsRequest\032;.google.cloud.dialog"
+          + "flow.cx.v3beta1.CompareVersionsResponse\""
+          + "t\202\323\344\223\002_\"Z/v3beta1/{base_version=projects"
+          + "/*/locations/*/agents/*/flows/*/versions"
+          + "/*}:compareVersions:\001*\332A\014base_version\032x\312"
+          + "A\031dialogflow.googleapis.com\322AYhttps://ww"
+          + "w.googleapis.com/auth/cloud-platform,htt"
+          + "ps://www.googleapis.com/auth/dialogflowB"
+          + "\324\001\n&com.google.cloud.dialogflow.cx.v3bet"
+          + "a1B\014VersionProtoP\001ZDgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/dialogflow/cx/v3"
+          + "beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogfl"
+          + "ow.Cx.V3Beta1\352\002&Google::Cloud::Dialogflo"
+          + "w::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -256,6 +279,22 @@ public final class VersionProto {
             internal_static_google_cloud_dialogflow_cx_v3beta1_LoadVersionRequest_descriptor,
             new java.lang.String[] {
               "Name", "AllowOverrideAgentResources",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsRequest_descriptor,
+            new java.lang.String[] {
+              "BaseVersion", "TargetVersion", "LanguageCode",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsResponse_descriptor,
+            new java.lang.String[] {
+              "BaseVersionContentJson", "TargetVersionContentJson", "CompareTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

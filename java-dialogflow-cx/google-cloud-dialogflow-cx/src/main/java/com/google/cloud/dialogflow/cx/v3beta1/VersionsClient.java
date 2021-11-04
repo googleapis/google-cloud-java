@@ -937,6 +937,119 @@ public class VersionsClient implements BackgroundResource {
     return stub.loadVersionCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   VersionName baseVersion =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+   *   CompareVersionsResponse response = versionsClient.compareVersions(baseVersion);
+   * }
+   * }</pre>
+   *
+   * @param baseVersion Required. Name of the base flow version to compare with the target version.
+   *     Use version ID `0` to indicate the draft version of the specified flow.
+   *     <p>Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/ &lt;Agent
+   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompareVersionsResponse compareVersions(VersionName baseVersion) {
+    CompareVersionsRequest request =
+        CompareVersionsRequest.newBuilder()
+            .setBaseVersion(baseVersion == null ? null : baseVersion.toString())
+            .build();
+    return compareVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   String baseVersion =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]").toString();
+   *   CompareVersionsResponse response = versionsClient.compareVersions(baseVersion);
+   * }
+   * }</pre>
+   *
+   * @param baseVersion Required. Name of the base flow version to compare with the target version.
+   *     Use version ID `0` to indicate the draft version of the specified flow.
+   *     <p>Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/ &lt;Agent
+   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompareVersionsResponse compareVersions(String baseVersion) {
+    CompareVersionsRequest request =
+        CompareVersionsRequest.newBuilder().setBaseVersion(baseVersion).build();
+    return compareVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   CompareVersionsRequest request =
+   *       CompareVersionsRequest.newBuilder()
+   *           .setBaseVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setTargetVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   CompareVersionsResponse response = versionsClient.compareVersions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompareVersionsResponse compareVersions(CompareVersionsRequest request) {
+    return compareVersionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   CompareVersionsRequest request =
+   *       CompareVersionsRequest.newBuilder()
+   *           .setBaseVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setTargetVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<CompareVersionsResponse> future =
+   *       versionsClient.compareVersionsCallable().futureCall(request);
+   *   // Do something.
+   *   CompareVersionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CompareVersionsRequest, CompareVersionsResponse>
+      compareVersionsCallable() {
+    return stub.compareVersionsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

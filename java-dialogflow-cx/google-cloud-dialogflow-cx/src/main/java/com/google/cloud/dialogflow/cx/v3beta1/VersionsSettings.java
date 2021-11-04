@@ -115,6 +115,12 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
     return ((VersionsStubSettings) getStubSettings()).loadVersionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to compareVersions. */
+  public UnaryCallSettings<CompareVersionsRequest, CompareVersionsResponse>
+      compareVersionsSettings() {
+    return ((VersionsStubSettings) getStubSettings()).compareVersionsSettings();
+  }
+
   public static final VersionsSettings create(VersionsStubSettings stub) throws IOException {
     return new VersionsSettings.Builder(stub.toBuilder()).build();
   }
@@ -254,6 +260,12 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
     public OperationCallSettings.Builder<LoadVersionRequest, Empty, Struct>
         loadVersionOperationSettings() {
       return getStubSettingsBuilder().loadVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to compareVersions. */
+    public UnaryCallSettings.Builder<CompareVersionsRequest, CompareVersionsResponse>
+        compareVersionsSettings() {
+      return getStubSettingsBuilder().compareVersionsSettings();
     }
 
     @Override
