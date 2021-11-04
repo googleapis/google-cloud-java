@@ -133,7 +133,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If it is unspeified, PROTO will be used.
+     * If it is unspecified, PROTO will be used.
      * </pre>
      *
      * <code>MESSAGE_FORMAT_UNSPECIFIED = 0;</code>
@@ -143,7 +143,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Pubsub message will be serialized proto.
+     * Pub/Sub message will be serialized proto.
      * </pre>
      *
      * <code>PROTO = 1;</code>
@@ -153,7 +153,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Pubsub message will be json.
+     * Pub/Sub message will be json.
      * </pre>
      *
      * <code>JSON = 2;</code>
@@ -166,7 +166,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If it is unspeified, PROTO will be used.
+     * If it is unspecified, PROTO will be used.
      * </pre>
      *
      * <code>MESSAGE_FORMAT_UNSPECIFIED = 0;</code>
@@ -176,7 +176,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Pubsub message will be serialized proto.
+     * Pub/Sub message will be serialized proto.
      * </pre>
      *
      * <code>PROTO = 1;</code>
@@ -186,7 +186,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Pubsub message will be json.
+     * Pub/Sub message will be json.
      * </pre>
      *
      * <code>JSON = 2;</code>

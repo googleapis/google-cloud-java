@@ -4412,7 +4412,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * desired results.
      * If this field is not set, it defaults to 0.0, which means that all
      * suggestions are returned.
-     * Supported features: ARTICLE_SUGGESTION.
+     * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
      * </pre>
      *
      * <code>float confidence_threshold = 5;</code>
@@ -8454,7 +8454,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * desired results.
      * If this field is not set, it defaults to 0.0, which means that all
      * suggestions are returned.
-     * Supported features: ARTICLE_SUGGESTION.
+     * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
      * </pre>
      *
      * <code>float confidence_threshold = 5;</code>
@@ -9947,7 +9947,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * desired results.
        * If this field is not set, it defaults to 0.0, which means that all
        * suggestions are returned.
-       * Supported features: ARTICLE_SUGGESTION.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
        * </pre>
        *
        * <code>float confidence_threshold = 5;</code>
@@ -9975,7 +9975,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * desired results.
        * If this field is not set, it defaults to 0.0, which means that all
        * suggestions are returned.
-       * Supported features: ARTICLE_SUGGESTION.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
        * </pre>
        *
        * <code>float confidence_threshold = 5;</code>
@@ -10006,7 +10006,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * desired results.
        * If this field is not set, it defaults to 0.0, which means that all
        * suggestions are returned.
-       * Supported features: ARTICLE_SUGGESTION.
+       * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
        * </pre>
        *
        * <code>float confidence_threshold = 5;</code>
