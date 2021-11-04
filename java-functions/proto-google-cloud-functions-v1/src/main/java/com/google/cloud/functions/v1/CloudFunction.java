@@ -24,6 +24,7 @@ package com.google.cloud.functions.v1;
  * <pre>
  * Describes a Cloud Function that contains user computation executed in
  * response to an event. It encapsulate function and triggers configurations.
+ * Next tag: 36
  * </pre>
  *
  * Protobuf type {@code google.cloud.functions.v1.CloudFunction}
@@ -49,7 +50,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     vpcConnector_ = "";
     vpcConnectorEgressSettings_ = 0;
     ingressSettings_ = 0;
+    kmsKeyName_ = "";
+    buildWorkerPool_ = "";
     buildId_ = "";
+    buildName_ = "";
+    secretEnvironmentVariables_ = java.util.Collections.emptyList();
+    secretVolumes_ = java.util.Collections.emptyList();
+    sourceToken_ = "";
+    dockerRepository_ = "";
   }
 
   @java.lang.Override
@@ -291,11 +299,95 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
               ingressSettings_ = rawValue;
               break;
             }
+          case 202:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kmsKeyName_ = s;
+              break;
+            }
+          case 210:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              buildWorkerPool_ = s;
+              break;
+            }
           case 218:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               buildId_ = s;
+              break;
+            }
+          case 226:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                buildEnvironmentVariables_ =
+                    com.google.protobuf.MapField.newMapField(
+                        BuildEnvironmentVariablesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                  buildEnvironmentVariables__ =
+                      input.readMessage(
+                          BuildEnvironmentVariablesDefaultEntryHolder.defaultEntry
+                              .getParserForType(),
+                          extensionRegistry);
+              buildEnvironmentVariables_
+                  .getMutableMap()
+                  .put(
+                      buildEnvironmentVariables__.getKey(), buildEnvironmentVariables__.getValue());
+              break;
+            }
+          case 234:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                secretEnvironmentVariables_ =
+                    new java.util.ArrayList<com.google.cloud.functions.v1.SecretEnvVar>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              secretEnvironmentVariables_.add(
+                  input.readMessage(
+                      com.google.cloud.functions.v1.SecretEnvVar.parser(), extensionRegistry));
+              break;
+            }
+          case 242:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                secretVolumes_ =
+                    new java.util.ArrayList<com.google.cloud.functions.v1.SecretVolume>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              secretVolumes_.add(
+                  input.readMessage(
+                      com.google.cloud.functions.v1.SecretVolume.parser(), extensionRegistry));
+              break;
+            }
+          case 250:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceToken_ = s;
+              break;
+            }
+          case 256:
+            {
+              minInstances_ = input.readInt32();
+              break;
+            }
+          case 266:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              buildName_ = s;
+              break;
+            }
+          case 274:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dockerRepository_ = s;
               break;
             }
           default:
@@ -312,6 +404,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        secretEnvironmentVariables_ =
+            java.util.Collections.unmodifiableList(secretEnvironmentVariables_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        secretVolumes_ = java.util.Collections.unmodifiableList(secretVolumes_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -330,6 +429,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return internalGetLabels();
       case 17:
         return internalGetEnvironmentVariables();
+      case 28:
+        return internalGetBuildEnvironmentVariables();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1747,6 +1848,110 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int BUILD_ENVIRONMENT_VARIABLES_FIELD_NUMBER = 28;
+
+  private static final class BuildEnvironmentVariablesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.functions.v1.FunctionsProto
+                .internal_static_google_cloud_functions_v1_CloudFunction_BuildEnvironmentVariablesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      buildEnvironmentVariables_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetBuildEnvironmentVariables() {
+    if (buildEnvironmentVariables_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          BuildEnvironmentVariablesDefaultEntryHolder.defaultEntry);
+    }
+    return buildEnvironmentVariables_;
+  }
+
+  public int getBuildEnvironmentVariablesCount() {
+    return internalGetBuildEnvironmentVariables().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  @java.lang.Override
+  public boolean containsBuildEnvironmentVariables(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetBuildEnvironmentVariables().getMap().containsKey(key);
+  }
+  /** Use {@link #getBuildEnvironmentVariablesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariables() {
+    return getBuildEnvironmentVariablesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariablesMap() {
+    return internalGetBuildEnvironmentVariables().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getBuildEnvironmentVariablesOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetBuildEnvironmentVariables().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getBuildEnvironmentVariablesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetBuildEnvironmentVariables().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int NETWORK_FIELD_NUMBER = 18;
   private volatile java.lang.Object network_;
   /**
@@ -1826,6 +2031,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The limit on the maximum number of function instances that may coexist at a
    * given time.
+   * In some cases, such as rapid traffic surges, Cloud Functions may, for a
+   * short period of time, create more instances than the specified max
+   * instances limit. If your function cannot tolerate this temporary behavior,
+   * you may want to factor in a safety margin and set a lower max instances
+   * value than your function can tolerate.
+   * See the [Max
+   * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
+   * more details.
    * </pre>
    *
    * <code>int32 max_instances = 20;</code>
@@ -1835,6 +2048,25 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getMaxInstances() {
     return maxInstances_;
+  }
+
+  public static final int MIN_INSTANCES_FIELD_NUMBER = 32;
+  private int minInstances_;
+  /**
+   *
+   *
+   * <pre>
+   * A lower bound for the number function instances that may coexist at a
+   * given time.
+   * </pre>
+   *
+   * <code>int32 min_instances = 32;</code>
+   *
+   * @return The minInstances.
+   */
+  @java.lang.Override
+  public int getMinInstances() {
+    return minInstances_;
   }
 
   public static final int VPC_CONNECTOR_FIELD_NUMBER = 22;
@@ -1986,6 +2218,168 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 25;
+  private volatile java.lang.Object kmsKeyName_;
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * If specified, you must also provide an artifact registry repository using
+   * the `docker_repository` field that was created with the same KMS crypto
+   * key.
+   * The following service accounts need to be granted Cloud KMS crypto key
+   * encrypter/decrypter roles on the key.
+   * 1. Google Cloud Functions service account
+   *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+   *    Required to protect the function's image.
+   * 2. Google Storage service account
+   *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+   *    Required to protect the function's source code.
+   *    If this service account does not exist, deploying a function without a
+   *    KMS key or retrieving the service agent name provisions it. For more
+   *    information, see
+   *    https://cloud.google.com/storage/docs/projects#service-agents and
+   *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   * Google Cloud Functions delegates access to service agents to protect
+   * function resources in internal projects that are not accessible by the
+   * end user.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * If specified, you must also provide an artifact registry repository using
+   * the `docker_repository` field that was created with the same KMS crypto
+   * key.
+   * The following service accounts need to be granted Cloud KMS crypto key
+   * encrypter/decrypter roles on the key.
+   * 1. Google Cloud Functions service account
+   *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+   *    Required to protect the function's image.
+   * 2. Google Storage service account
+   *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+   *    Required to protect the function's source code.
+   *    If this service account does not exist, deploying a function without a
+   *    KMS key or retrieving the service agent name provisions it. For more
+   *    information, see
+   *    https://cloud.google.com/storage/docs/projects#service-agents and
+   *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   * Google Cloud Functions delegates access to service agents to protect
+   * function resources in internal projects that are not accessible by the
+   * end user.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BUILD_WORKER_POOL_FIELD_NUMBER = 26;
+  private volatile java.lang.Object buildWorkerPool_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Build Custom Worker Pool that should be used to build the
+   * function. The format of this field is
+   * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+   * `{project}` and `{region}` are the project id and region respectively where
+   * the worker pool is defined and `{workerPool}` is the short name of the
+   * worker pool.
+   * If the project id is not the same as the function, then the Cloud
+   * Functions Service Agent
+   * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+   * be granted the role Cloud Build Custom Workers Builder
+   * (`roles/cloudbuild.customworkers.builder`) in the project.
+   * </pre>
+   *
+   * <code>string build_worker_pool = 26;</code>
+   *
+   * @return The buildWorkerPool.
+   */
+  @java.lang.Override
+  public java.lang.String getBuildWorkerPool() {
+    java.lang.Object ref = buildWorkerPool_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      buildWorkerPool_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Build Custom Worker Pool that should be used to build the
+   * function. The format of this field is
+   * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+   * `{project}` and `{region}` are the project id and region respectively where
+   * the worker pool is defined and `{workerPool}` is the short name of the
+   * worker pool.
+   * If the project id is not the same as the function, then the Cloud
+   * Functions Service Agent
+   * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+   * be granted the role Cloud Build Custom Workers Builder
+   * (`roles/cloudbuild.customworkers.builder`) in the project.
+   * </pre>
+   *
+   * <code>string build_worker_pool = 26;</code>
+   *
+   * @return The bytes for buildWorkerPool.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBuildWorkerPoolBytes() {
+    java.lang.Object ref = buildWorkerPool_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      buildWorkerPool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int BUILD_ID_FIELD_NUMBER = 27;
   private volatile java.lang.Object buildId_;
   /**
@@ -2031,6 +2425,322 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       buildId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BUILD_NAME_FIELD_NUMBER = 33;
+  private volatile java.lang.Object buildName_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Cloud Build Name of the function deployment.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The buildName.
+   */
+  @java.lang.Override
+  public java.lang.String getBuildName() {
+    java.lang.Object ref = buildName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      buildName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Cloud Build Name of the function deployment.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for buildName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBuildNameBytes() {
+    java.lang.Object ref = buildName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      buildName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECRET_ENVIRONMENT_VARIABLES_FIELD_NUMBER = 29;
+  private java.util.List<com.google.cloud.functions.v1.SecretEnvVar> secretEnvironmentVariables_;
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.functions.v1.SecretEnvVar>
+      getSecretEnvironmentVariablesList() {
+    return secretEnvironmentVariables_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.functions.v1.SecretEnvVarOrBuilder>
+      getSecretEnvironmentVariablesOrBuilderList() {
+    return secretEnvironmentVariables_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  @java.lang.Override
+  public int getSecretEnvironmentVariablesCount() {
+    return secretEnvironmentVariables_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v1.SecretEnvVar getSecretEnvironmentVariables(int index) {
+    return secretEnvironmentVariables_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v1.SecretEnvVarOrBuilder getSecretEnvironmentVariablesOrBuilder(
+      int index) {
+    return secretEnvironmentVariables_.get(index);
+  }
+
+  public static final int SECRET_VOLUMES_FIELD_NUMBER = 30;
+  private java.util.List<com.google.cloud.functions.v1.SecretVolume> secretVolumes_;
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.functions.v1.SecretVolume> getSecretVolumesList() {
+    return secretVolumes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.functions.v1.SecretVolumeOrBuilder>
+      getSecretVolumesOrBuilderList() {
+    return secretVolumes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  @java.lang.Override
+  public int getSecretVolumesCount() {
+    return secretVolumes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v1.SecretVolume getSecretVolumes(int index) {
+    return secretVolumes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v1.SecretVolumeOrBuilder getSecretVolumesOrBuilder(int index) {
+    return secretVolumes_.get(index);
+  }
+
+  public static final int SOURCE_TOKEN_FIELD_NUMBER = 31;
+  private volatile java.lang.Object sourceToken_;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The sourceToken.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceToken() {
+    java.lang.Object ref = sourceToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The bytes for sourceToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceTokenBytes() {
+    java.lang.Object ref = sourceToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DOCKER_REPOSITORY_FIELD_NUMBER = 34;
+  private volatile java.lang.Object dockerRepository_;
+  /**
+   *
+   *
+   * <pre>
+   * User managed repository created in Artifact Registry optionally with a
+   * customer managed encryption key. If specified, deployments will use
+   * Artifact Registry. If unspecified and the deployment is eligible to use
+   * Artifact Registry, GCF will create and use a repository named
+   * 'gcf-artifacts' for every deployed region. This is the repository to which
+   * the function docker image will be pushed after it is built by Cloud Build.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/repositories/{repository}`.
+   * Cross-project repositories are not supported.
+   * Cross-location repositories are not supported.
+   * Repository format must be 'DOCKER'.
+   * </pre>
+   *
+   * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The dockerRepository.
+   */
+  @java.lang.Override
+  public java.lang.String getDockerRepository() {
+    java.lang.Object ref = dockerRepository_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dockerRepository_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User managed repository created in Artifact Registry optionally with a
+   * customer managed encryption key. If specified, deployments will use
+   * Artifact Registry. If unspecified and the deployment is eligible to use
+   * Artifact Registry, GCF will create and use a repository named
+   * 'gcf-artifacts' for every deployed region. This is the repository to which
+   * the function docker image will be pushed after it is built by Cloud Build.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/repositories/{repository}`.
+   * Cross-project repositories are not supported.
+   * Cross-location repositories are not supported.
+   * Repository format must be 'DOCKER'.
+   * </pre>
+   *
+   * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for dockerRepository.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDockerRepositoryBytes() {
+    java.lang.Object ref = dockerRepository_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dockerRepository_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2125,8 +2835,37 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(24, ingressSettings_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, kmsKeyName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildWorkerPool_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, buildWorkerPool_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, buildId_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetBuildEnvironmentVariables(),
+        BuildEnvironmentVariablesDefaultEntryHolder.defaultEntry,
+        28);
+    for (int i = 0; i < secretEnvironmentVariables_.size(); i++) {
+      output.writeMessage(29, secretEnvironmentVariables_.get(i));
+    }
+    for (int i = 0; i < secretVolumes_.size(); i++) {
+      output.writeMessage(30, secretVolumes_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 31, sourceToken_);
+    }
+    if (minInstances_ != 0) {
+      output.writeInt32(32, minInstances_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 33, buildName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dockerRepository_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 34, dockerRepository_);
     }
     unknownFields.writeTo(output);
   }
@@ -2231,8 +2970,45 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(24, ingressSettings_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, kmsKeyName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildWorkerPool_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, buildWorkerPool_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, buildId_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetBuildEnvironmentVariables().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> buildEnvironmentVariables__ =
+          BuildEnvironmentVariablesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, buildEnvironmentVariables__);
+    }
+    for (int i = 0; i < secretEnvironmentVariables_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, secretEnvironmentVariables_.get(i));
+    }
+    for (int i = 0; i < secretVolumes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, secretVolumes_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31, sourceToken_);
+    }
+    if (minInstances_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(32, minInstances_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, buildName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dockerRepository_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, dockerRepository_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2269,12 +3045,23 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!internalGetEnvironmentVariables().equals(other.internalGetEnvironmentVariables()))
       return false;
+    if (!internalGetBuildEnvironmentVariables()
+        .equals(other.internalGetBuildEnvironmentVariables())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (getMaxInstances() != other.getMaxInstances()) return false;
+    if (getMinInstances() != other.getMinInstances()) return false;
     if (!getVpcConnector().equals(other.getVpcConnector())) return false;
     if (vpcConnectorEgressSettings_ != other.vpcConnectorEgressSettings_) return false;
     if (ingressSettings_ != other.ingressSettings_) return false;
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (!getBuildWorkerPool().equals(other.getBuildWorkerPool())) return false;
     if (!getBuildId().equals(other.getBuildId())) return false;
+    if (!getBuildName().equals(other.getBuildName())) return false;
+    if (!getSecretEnvironmentVariablesList().equals(other.getSecretEnvironmentVariablesList()))
+      return false;
+    if (!getSecretVolumesList().equals(other.getSecretVolumesList())) return false;
+    if (!getSourceToken().equals(other.getSourceToken())) return false;
+    if (!getDockerRepository().equals(other.getDockerRepository())) return false;
     if (!getSourceCodeCase().equals(other.getSourceCodeCase())) return false;
     switch (sourceCodeCase_) {
       case 3:
@@ -2343,18 +3130,42 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENVIRONMENT_VARIABLES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetEnvironmentVariables().hashCode();
     }
+    if (!internalGetBuildEnvironmentVariables().getMap().isEmpty()) {
+      hash = (37 * hash) + BUILD_ENVIRONMENT_VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetBuildEnvironmentVariables().hashCode();
+    }
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + MAX_INSTANCES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxInstances();
+    hash = (37 * hash) + MIN_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + getMinInstances();
     hash = (37 * hash) + VPC_CONNECTOR_FIELD_NUMBER;
     hash = (53 * hash) + getVpcConnector().hashCode();
     hash = (37 * hash) + VPC_CONNECTOR_EGRESS_SETTINGS_FIELD_NUMBER;
     hash = (53 * hash) + vpcConnectorEgressSettings_;
     hash = (37 * hash) + INGRESS_SETTINGS_FIELD_NUMBER;
     hash = (53 * hash) + ingressSettings_;
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
+    hash = (37 * hash) + BUILD_WORKER_POOL_FIELD_NUMBER;
+    hash = (53 * hash) + getBuildWorkerPool().hashCode();
     hash = (37 * hash) + BUILD_ID_FIELD_NUMBER;
     hash = (53 * hash) + getBuildId().hashCode();
+    hash = (37 * hash) + BUILD_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBuildName().hashCode();
+    if (getSecretEnvironmentVariablesCount() > 0) {
+      hash = (37 * hash) + SECRET_ENVIRONMENT_VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretEnvironmentVariablesList().hashCode();
+    }
+    if (getSecretVolumesCount() > 0) {
+      hash = (37 * hash) + SECRET_VOLUMES_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretVolumesList().hashCode();
+    }
+    hash = (37 * hash) + SOURCE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceToken().hashCode();
+    hash = (37 * hash) + DOCKER_REPOSITORY_FIELD_NUMBER;
+    hash = (53 * hash) + getDockerRepository().hashCode();
     switch (sourceCodeCase_) {
       case 3:
         hash = (37 * hash) + SOURCE_ARCHIVE_URL_FIELD_NUMBER;
@@ -2489,6 +3300,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Describes a Cloud Function that contains user computation executed in
    * response to an event. It encapsulate function and triggers configurations.
+   * Next tag: 36
    * </pre>
    *
    * Protobuf type {@code google.cloud.functions.v1.CloudFunction}
@@ -2509,6 +3321,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           return internalGetLabels();
         case 17:
           return internalGetEnvironmentVariables();
+        case 28:
+          return internalGetBuildEnvironmentVariables();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2521,6 +3335,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableLabels();
         case 17:
           return internalGetMutableEnvironmentVariables();
+        case 28:
+          return internalGetMutableBuildEnvironmentVariables();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2547,7 +3363,10 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSecretEnvironmentVariablesFieldBuilder();
+        getSecretVolumesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -2583,9 +3402,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableLabels().clear();
       internalGetMutableEnvironmentVariables().clear();
+      internalGetMutableBuildEnvironmentVariables().clear();
       network_ = "";
 
       maxInstances_ = 0;
+
+      minInstances_ = 0;
 
       vpcConnector_ = "";
 
@@ -2593,7 +3415,29 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
       ingressSettings_ = 0;
 
+      kmsKeyName_ = "";
+
+      buildWorkerPool_ = "";
+
       buildId_ = "";
+
+      buildName_ = "";
+
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        secretEnvironmentVariables_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        secretEnvironmentVariablesBuilder_.clear();
+      }
+      if (secretVolumesBuilder_ == null) {
+        secretVolumes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        secretVolumesBuilder_.clear();
+      }
+      sourceToken_ = "";
+
+      dockerRepository_ = "";
 
       sourceCodeCase_ = 0;
       sourceCode_ = null;
@@ -2676,12 +3520,39 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       result.labels_.makeImmutable();
       result.environmentVariables_ = internalGetEnvironmentVariables();
       result.environmentVariables_.makeImmutable();
+      result.buildEnvironmentVariables_ = internalGetBuildEnvironmentVariables();
+      result.buildEnvironmentVariables_.makeImmutable();
       result.network_ = network_;
       result.maxInstances_ = maxInstances_;
+      result.minInstances_ = minInstances_;
       result.vpcConnector_ = vpcConnector_;
       result.vpcConnectorEgressSettings_ = vpcConnectorEgressSettings_;
       result.ingressSettings_ = ingressSettings_;
+      result.kmsKeyName_ = kmsKeyName_;
+      result.buildWorkerPool_ = buildWorkerPool_;
       result.buildId_ = buildId_;
+      result.buildName_ = buildName_;
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          secretEnvironmentVariables_ =
+              java.util.Collections.unmodifiableList(secretEnvironmentVariables_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.secretEnvironmentVariables_ = secretEnvironmentVariables_;
+      } else {
+        result.secretEnvironmentVariables_ = secretEnvironmentVariablesBuilder_.build();
+      }
+      if (secretVolumesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          secretVolumes_ = java.util.Collections.unmodifiableList(secretVolumes_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.secretVolumes_ = secretVolumes_;
+      } else {
+        result.secretVolumes_ = secretVolumesBuilder_.build();
+      }
+      result.sourceToken_ = sourceToken_;
+      result.dockerRepository_ = dockerRepository_;
       result.sourceCodeCase_ = sourceCodeCase_;
       result.triggerCase_ = triggerCase_;
       onBuilt();
@@ -2770,12 +3641,17 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       internalGetMutableEnvironmentVariables().mergeFrom(other.internalGetEnvironmentVariables());
+      internalGetMutableBuildEnvironmentVariables()
+          .mergeFrom(other.internalGetBuildEnvironmentVariables());
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
         onChanged();
       }
       if (other.getMaxInstances() != 0) {
         setMaxInstances(other.getMaxInstances());
+      }
+      if (other.getMinInstances() != 0) {
+        setMinInstances(other.getMinInstances());
       }
       if (!other.getVpcConnector().isEmpty()) {
         vpcConnector_ = other.vpcConnector_;
@@ -2787,8 +3663,82 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       if (other.ingressSettings_ != 0) {
         setIngressSettingsValue(other.getIngressSettingsValue());
       }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        onChanged();
+      }
+      if (!other.getBuildWorkerPool().isEmpty()) {
+        buildWorkerPool_ = other.buildWorkerPool_;
+        onChanged();
+      }
       if (!other.getBuildId().isEmpty()) {
         buildId_ = other.buildId_;
+        onChanged();
+      }
+      if (!other.getBuildName().isEmpty()) {
+        buildName_ = other.buildName_;
+        onChanged();
+      }
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        if (!other.secretEnvironmentVariables_.isEmpty()) {
+          if (secretEnvironmentVariables_.isEmpty()) {
+            secretEnvironmentVariables_ = other.secretEnvironmentVariables_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureSecretEnvironmentVariablesIsMutable();
+            secretEnvironmentVariables_.addAll(other.secretEnvironmentVariables_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.secretEnvironmentVariables_.isEmpty()) {
+          if (secretEnvironmentVariablesBuilder_.isEmpty()) {
+            secretEnvironmentVariablesBuilder_.dispose();
+            secretEnvironmentVariablesBuilder_ = null;
+            secretEnvironmentVariables_ = other.secretEnvironmentVariables_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            secretEnvironmentVariablesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSecretEnvironmentVariablesFieldBuilder()
+                    : null;
+          } else {
+            secretEnvironmentVariablesBuilder_.addAllMessages(other.secretEnvironmentVariables_);
+          }
+        }
+      }
+      if (secretVolumesBuilder_ == null) {
+        if (!other.secretVolumes_.isEmpty()) {
+          if (secretVolumes_.isEmpty()) {
+            secretVolumes_ = other.secretVolumes_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureSecretVolumesIsMutable();
+            secretVolumes_.addAll(other.secretVolumes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.secretVolumes_.isEmpty()) {
+          if (secretVolumesBuilder_.isEmpty()) {
+            secretVolumesBuilder_.dispose();
+            secretVolumesBuilder_ = null;
+            secretVolumes_ = other.secretVolumes_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            secretVolumesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSecretVolumesFieldBuilder()
+                    : null;
+          } else {
+            secretVolumesBuilder_.addAllMessages(other.secretVolumes_);
+          }
+        }
+      }
+      if (!other.getSourceToken().isEmpty()) {
+        sourceToken_ = other.sourceToken_;
+        onChanged();
+      }
+      if (!other.getDockerRepository().isEmpty()) {
+        dockerRepository_ = other.dockerRepository_;
         onChanged();
       }
       switch (other.getSourceCodeCase()) {
@@ -5342,6 +6292,171 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        buildEnvironmentVariables_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetBuildEnvironmentVariables() {
+      if (buildEnvironmentVariables_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            BuildEnvironmentVariablesDefaultEntryHolder.defaultEntry);
+      }
+      return buildEnvironmentVariables_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableBuildEnvironmentVariables() {
+      onChanged();
+      ;
+      if (buildEnvironmentVariables_ == null) {
+        buildEnvironmentVariables_ =
+            com.google.protobuf.MapField.newMapField(
+                BuildEnvironmentVariablesDefaultEntryHolder.defaultEntry);
+      }
+      if (!buildEnvironmentVariables_.isMutable()) {
+        buildEnvironmentVariables_ = buildEnvironmentVariables_.copy();
+      }
+      return buildEnvironmentVariables_;
+    }
+
+    public int getBuildEnvironmentVariablesCount() {
+      return internalGetBuildEnvironmentVariables().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Build environment variables that shall be available during build time.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+     */
+    @java.lang.Override
+    public boolean containsBuildEnvironmentVariables(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetBuildEnvironmentVariables().getMap().containsKey(key);
+    }
+    /** Use {@link #getBuildEnvironmentVariablesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariables() {
+      return getBuildEnvironmentVariablesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Build environment variables that shall be available during build time.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariablesMap() {
+      return internalGetBuildEnvironmentVariables().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Build environment variables that shall be available during build time.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getBuildEnvironmentVariablesOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetBuildEnvironmentVariables().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Build environment variables that shall be available during build time.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getBuildEnvironmentVariablesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetBuildEnvironmentVariables().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearBuildEnvironmentVariables() {
+      internalGetMutableBuildEnvironmentVariables().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Build environment variables that shall be available during build time.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+     */
+    public Builder removeBuildEnvironmentVariables(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableBuildEnvironmentVariables().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableBuildEnvironmentVariables() {
+      return internalGetMutableBuildEnvironmentVariables().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Build environment variables that shall be available during build time.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+     */
+    public Builder putBuildEnvironmentVariables(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableBuildEnvironmentVariables().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Build environment variables that shall be available during build time.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+     */
+    public Builder putAllBuildEnvironmentVariables(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableBuildEnvironmentVariables().getMutableMap().putAll(values);
+      return this;
+    }
+
     private java.lang.Object network_ = "";
     /**
      *
@@ -5510,6 +6625,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the maximum number of function instances that may coexist at a
      * given time.
+     * In some cases, such as rapid traffic surges, Cloud Functions may, for a
+     * short period of time, create more instances than the specified max
+     * instances limit. If your function cannot tolerate this temporary behavior,
+     * you may want to factor in a safety margin and set a lower max instances
+     * value than your function can tolerate.
+     * See the [Max
+     * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
+     * more details.
      * </pre>
      *
      * <code>int32 max_instances = 20;</code>
@@ -5526,6 +6649,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the maximum number of function instances that may coexist at a
      * given time.
+     * In some cases, such as rapid traffic surges, Cloud Functions may, for a
+     * short period of time, create more instances than the specified max
+     * instances limit. If your function cannot tolerate this temporary behavior,
+     * you may want to factor in a safety margin and set a lower max instances
+     * value than your function can tolerate.
+     * See the [Max
+     * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
+     * more details.
      * </pre>
      *
      * <code>int32 max_instances = 20;</code>
@@ -5545,6 +6676,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the maximum number of function instances that may coexist at a
      * given time.
+     * In some cases, such as rapid traffic surges, Cloud Functions may, for a
+     * short period of time, create more instances than the specified max
+     * instances limit. If your function cannot tolerate this temporary behavior,
+     * you may want to factor in a safety margin and set a lower max instances
+     * value than your function can tolerate.
+     * See the [Max
+     * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
+     * more details.
      * </pre>
      *
      * <code>int32 max_instances = 20;</code>
@@ -5554,6 +6693,61 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMaxInstances() {
 
       maxInstances_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int minInstances_;
+    /**
+     *
+     *
+     * <pre>
+     * A lower bound for the number function instances that may coexist at a
+     * given time.
+     * </pre>
+     *
+     * <code>int32 min_instances = 32;</code>
+     *
+     * @return The minInstances.
+     */
+    @java.lang.Override
+    public int getMinInstances() {
+      return minInstances_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A lower bound for the number function instances that may coexist at a
+     * given time.
+     * </pre>
+     *
+     * <code>int32 min_instances = 32;</code>
+     *
+     * @param value The minInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinInstances(int value) {
+
+      minInstances_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A lower bound for the number function instances that may coexist at a
+     * given time.
+     * </pre>
+     *
+     * <code>int32 min_instances = 32;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinInstances() {
+
+      minInstances_ = 0;
       onChanged();
       return this;
     }
@@ -5909,6 +7103,378 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object kmsKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * If specified, you must also provide an artifact registry repository using
+     * the `docker_repository` field that was created with the same KMS crypto
+     * key.
+     * The following service accounts need to be granted Cloud KMS crypto key
+     * encrypter/decrypter roles on the key.
+     * 1. Google Cloud Functions service account
+     *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+     *    Required to protect the function's image.
+     * 2. Google Storage service account
+     *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+     *    Required to protect the function's source code.
+     *    If this service account does not exist, deploying a function without a
+     *    KMS key or retrieving the service agent name provisions it. For more
+     *    information, see
+     *    https://cloud.google.com/storage/docs/projects#service-agents and
+     *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     * Google Cloud Functions delegates access to service agents to protect
+     * function resources in internal projects that are not accessible by the
+     * end user.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * If specified, you must also provide an artifact registry repository using
+     * the `docker_repository` field that was created with the same KMS crypto
+     * key.
+     * The following service accounts need to be granted Cloud KMS crypto key
+     * encrypter/decrypter roles on the key.
+     * 1. Google Cloud Functions service account
+     *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+     *    Required to protect the function's image.
+     * 2. Google Storage service account
+     *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+     *    Required to protect the function's source code.
+     *    If this service account does not exist, deploying a function without a
+     *    KMS key or retrieving the service agent name provisions it. For more
+     *    information, see
+     *    https://cloud.google.com/storage/docs/projects#service-agents and
+     *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     * Google Cloud Functions delegates access to service agents to protect
+     * function resources in internal projects that are not accessible by the
+     * end user.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * If specified, you must also provide an artifact registry repository using
+     * the `docker_repository` field that was created with the same KMS crypto
+     * key.
+     * The following service accounts need to be granted Cloud KMS crypto key
+     * encrypter/decrypter roles on the key.
+     * 1. Google Cloud Functions service account
+     *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+     *    Required to protect the function's image.
+     * 2. Google Storage service account
+     *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+     *    Required to protect the function's source code.
+     *    If this service account does not exist, deploying a function without a
+     *    KMS key or retrieving the service agent name provisions it. For more
+     *    information, see
+     *    https://cloud.google.com/storage/docs/projects#service-agents and
+     *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     * Google Cloud Functions delegates access to service agents to protect
+     * function resources in internal projects that are not accessible by the
+     * end user.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      kmsKeyName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * If specified, you must also provide an artifact registry repository using
+     * the `docker_repository` field that was created with the same KMS crypto
+     * key.
+     * The following service accounts need to be granted Cloud KMS crypto key
+     * encrypter/decrypter roles on the key.
+     * 1. Google Cloud Functions service account
+     *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+     *    Required to protect the function's image.
+     * 2. Google Storage service account
+     *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+     *    Required to protect the function's source code.
+     *    If this service account does not exist, deploying a function without a
+     *    KMS key or retrieving the service agent name provisions it. For more
+     *    information, see
+     *    https://cloud.google.com/storage/docs/projects#service-agents and
+     *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     * Google Cloud Functions delegates access to service agents to protect
+     * function resources in internal projects that are not accessible by the
+     * end user.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * If specified, you must also provide an artifact registry repository using
+     * the `docker_repository` field that was created with the same KMS crypto
+     * key.
+     * The following service accounts need to be granted Cloud KMS crypto key
+     * encrypter/decrypter roles on the key.
+     * 1. Google Cloud Functions service account
+     *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+     *    Required to protect the function's image.
+     * 2. Google Storage service account
+     *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+     *    Required to protect the function's source code.
+     *    If this service account does not exist, deploying a function without a
+     *    KMS key or retrieving the service agent name provisions it. For more
+     *    information, see
+     *    https://cloud.google.com/storage/docs/projects#service-agents and
+     *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     * Google Cloud Functions delegates access to service agents to protect
+     * function resources in internal projects that are not accessible by the
+     * end user.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      kmsKeyName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object buildWorkerPool_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Build Custom Worker Pool that should be used to build the
+     * function. The format of this field is
+     * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+     * `{project}` and `{region}` are the project id and region respectively where
+     * the worker pool is defined and `{workerPool}` is the short name of the
+     * worker pool.
+     * If the project id is not the same as the function, then the Cloud
+     * Functions Service Agent
+     * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+     * be granted the role Cloud Build Custom Workers Builder
+     * (`roles/cloudbuild.customworkers.builder`) in the project.
+     * </pre>
+     *
+     * <code>string build_worker_pool = 26;</code>
+     *
+     * @return The buildWorkerPool.
+     */
+    public java.lang.String getBuildWorkerPool() {
+      java.lang.Object ref = buildWorkerPool_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        buildWorkerPool_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Build Custom Worker Pool that should be used to build the
+     * function. The format of this field is
+     * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+     * `{project}` and `{region}` are the project id and region respectively where
+     * the worker pool is defined and `{workerPool}` is the short name of the
+     * worker pool.
+     * If the project id is not the same as the function, then the Cloud
+     * Functions Service Agent
+     * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+     * be granted the role Cloud Build Custom Workers Builder
+     * (`roles/cloudbuild.customworkers.builder`) in the project.
+     * </pre>
+     *
+     * <code>string build_worker_pool = 26;</code>
+     *
+     * @return The bytes for buildWorkerPool.
+     */
+    public com.google.protobuf.ByteString getBuildWorkerPoolBytes() {
+      java.lang.Object ref = buildWorkerPool_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        buildWorkerPool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Build Custom Worker Pool that should be used to build the
+     * function. The format of this field is
+     * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+     * `{project}` and `{region}` are the project id and region respectively where
+     * the worker pool is defined and `{workerPool}` is the short name of the
+     * worker pool.
+     * If the project id is not the same as the function, then the Cloud
+     * Functions Service Agent
+     * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+     * be granted the role Cloud Build Custom Workers Builder
+     * (`roles/cloudbuild.customworkers.builder`) in the project.
+     * </pre>
+     *
+     * <code>string build_worker_pool = 26;</code>
+     *
+     * @param value The buildWorkerPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildWorkerPool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      buildWorkerPool_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Build Custom Worker Pool that should be used to build the
+     * function. The format of this field is
+     * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+     * `{project}` and `{region}` are the project id and region respectively where
+     * the worker pool is defined and `{workerPool}` is the short name of the
+     * worker pool.
+     * If the project id is not the same as the function, then the Cloud
+     * Functions Service Agent
+     * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+     * be granted the role Cloud Build Custom Workers Builder
+     * (`roles/cloudbuild.customworkers.builder`) in the project.
+     * </pre>
+     *
+     * <code>string build_worker_pool = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBuildWorkerPool() {
+
+      buildWorkerPool_ = getDefaultInstance().getBuildWorkerPool();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Build Custom Worker Pool that should be used to build the
+     * function. The format of this field is
+     * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+     * `{project}` and `{region}` are the project id and region respectively where
+     * the worker pool is defined and `{workerPool}` is the short name of the
+     * worker pool.
+     * If the project id is not the same as the function, then the Cloud
+     * Functions Service Agent
+     * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+     * be granted the role Cloud Build Custom Workers Builder
+     * (`roles/cloudbuild.customworkers.builder`) in the project.
+     * </pre>
+     *
+     * <code>string build_worker_pool = 26;</code>
+     *
+     * @param value The bytes for buildWorkerPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildWorkerPoolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      buildWorkerPool_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object buildId_ = "";
     /**
      *
@@ -6016,6 +7582,1119 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       buildId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object buildName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud Build Name of the function deployment.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The buildName.
+     */
+    public java.lang.String getBuildName() {
+      java.lang.Object ref = buildName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        buildName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud Build Name of the function deployment.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for buildName.
+     */
+    public com.google.protobuf.ByteString getBuildNameBytes() {
+      java.lang.Object ref = buildName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        buildName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud Build Name of the function deployment.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The buildName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      buildName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud Build Name of the function deployment.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBuildName() {
+
+      buildName_ = getDefaultInstance().getBuildName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud Build Name of the function deployment.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for buildName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      buildName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.functions.v1.SecretEnvVar> secretEnvironmentVariables_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSecretEnvironmentVariablesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        secretEnvironmentVariables_ =
+            new java.util.ArrayList<com.google.cloud.functions.v1.SecretEnvVar>(
+                secretEnvironmentVariables_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.functions.v1.SecretEnvVar,
+            com.google.cloud.functions.v1.SecretEnvVar.Builder,
+            com.google.cloud.functions.v1.SecretEnvVarOrBuilder>
+        secretEnvironmentVariablesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.functions.v1.SecretEnvVar>
+        getSecretEnvironmentVariablesList() {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(secretEnvironmentVariables_);
+      } else {
+        return secretEnvironmentVariablesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public int getSecretEnvironmentVariablesCount() {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        return secretEnvironmentVariables_.size();
+      } else {
+        return secretEnvironmentVariablesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public com.google.cloud.functions.v1.SecretEnvVar getSecretEnvironmentVariables(int index) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        return secretEnvironmentVariables_.get(index);
+      } else {
+        return secretEnvironmentVariablesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder setSecretEnvironmentVariables(
+        int index, com.google.cloud.functions.v1.SecretEnvVar value) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretEnvironmentVariablesIsMutable();
+        secretEnvironmentVariables_.set(index, value);
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder setSecretEnvironmentVariables(
+        int index, com.google.cloud.functions.v1.SecretEnvVar.Builder builderForValue) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        ensureSecretEnvironmentVariablesIsMutable();
+        secretEnvironmentVariables_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder addSecretEnvironmentVariables(com.google.cloud.functions.v1.SecretEnvVar value) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretEnvironmentVariablesIsMutable();
+        secretEnvironmentVariables_.add(value);
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder addSecretEnvironmentVariables(
+        int index, com.google.cloud.functions.v1.SecretEnvVar value) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretEnvironmentVariablesIsMutable();
+        secretEnvironmentVariables_.add(index, value);
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder addSecretEnvironmentVariables(
+        com.google.cloud.functions.v1.SecretEnvVar.Builder builderForValue) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        ensureSecretEnvironmentVariablesIsMutable();
+        secretEnvironmentVariables_.add(builderForValue.build());
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder addSecretEnvironmentVariables(
+        int index, com.google.cloud.functions.v1.SecretEnvVar.Builder builderForValue) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        ensureSecretEnvironmentVariablesIsMutable();
+        secretEnvironmentVariables_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder addAllSecretEnvironmentVariables(
+        java.lang.Iterable<? extends com.google.cloud.functions.v1.SecretEnvVar> values) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        ensureSecretEnvironmentVariablesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secretEnvironmentVariables_);
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder clearSecretEnvironmentVariables() {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        secretEnvironmentVariables_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public Builder removeSecretEnvironmentVariables(int index) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        ensureSecretEnvironmentVariablesIsMutable();
+        secretEnvironmentVariables_.remove(index);
+        onChanged();
+      } else {
+        secretEnvironmentVariablesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public com.google.cloud.functions.v1.SecretEnvVar.Builder getSecretEnvironmentVariablesBuilder(
+        int index) {
+      return getSecretEnvironmentVariablesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public com.google.cloud.functions.v1.SecretEnvVarOrBuilder
+        getSecretEnvironmentVariablesOrBuilder(int index) {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        return secretEnvironmentVariables_.get(index);
+      } else {
+        return secretEnvironmentVariablesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.functions.v1.SecretEnvVarOrBuilder>
+        getSecretEnvironmentVariablesOrBuilderList() {
+      if (secretEnvironmentVariablesBuilder_ != null) {
+        return secretEnvironmentVariablesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(secretEnvironmentVariables_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public com.google.cloud.functions.v1.SecretEnvVar.Builder
+        addSecretEnvironmentVariablesBuilder() {
+      return getSecretEnvironmentVariablesFieldBuilder()
+          .addBuilder(com.google.cloud.functions.v1.SecretEnvVar.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public com.google.cloud.functions.v1.SecretEnvVar.Builder addSecretEnvironmentVariablesBuilder(
+        int index) {
+      return getSecretEnvironmentVariablesFieldBuilder()
+          .addBuilder(index, com.google.cloud.functions.v1.SecretEnvVar.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret environment variables configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.functions.v1.SecretEnvVar.Builder>
+        getSecretEnvironmentVariablesBuilderList() {
+      return getSecretEnvironmentVariablesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.functions.v1.SecretEnvVar,
+            com.google.cloud.functions.v1.SecretEnvVar.Builder,
+            com.google.cloud.functions.v1.SecretEnvVarOrBuilder>
+        getSecretEnvironmentVariablesFieldBuilder() {
+      if (secretEnvironmentVariablesBuilder_ == null) {
+        secretEnvironmentVariablesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.functions.v1.SecretEnvVar,
+                com.google.cloud.functions.v1.SecretEnvVar.Builder,
+                com.google.cloud.functions.v1.SecretEnvVarOrBuilder>(
+                secretEnvironmentVariables_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        secretEnvironmentVariables_ = null;
+      }
+      return secretEnvironmentVariablesBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.functions.v1.SecretVolume> secretVolumes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSecretVolumesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        secretVolumes_ =
+            new java.util.ArrayList<com.google.cloud.functions.v1.SecretVolume>(secretVolumes_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.functions.v1.SecretVolume,
+            com.google.cloud.functions.v1.SecretVolume.Builder,
+            com.google.cloud.functions.v1.SecretVolumeOrBuilder>
+        secretVolumesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public java.util.List<com.google.cloud.functions.v1.SecretVolume> getSecretVolumesList() {
+      if (secretVolumesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(secretVolumes_);
+      } else {
+        return secretVolumesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public int getSecretVolumesCount() {
+      if (secretVolumesBuilder_ == null) {
+        return secretVolumes_.size();
+      } else {
+        return secretVolumesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public com.google.cloud.functions.v1.SecretVolume getSecretVolumes(int index) {
+      if (secretVolumesBuilder_ == null) {
+        return secretVolumes_.get(index);
+      } else {
+        return secretVolumesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder setSecretVolumes(int index, com.google.cloud.functions.v1.SecretVolume value) {
+      if (secretVolumesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretVolumesIsMutable();
+        secretVolumes_.set(index, value);
+        onChanged();
+      } else {
+        secretVolumesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder setSecretVolumes(
+        int index, com.google.cloud.functions.v1.SecretVolume.Builder builderForValue) {
+      if (secretVolumesBuilder_ == null) {
+        ensureSecretVolumesIsMutable();
+        secretVolumes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        secretVolumesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder addSecretVolumes(com.google.cloud.functions.v1.SecretVolume value) {
+      if (secretVolumesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretVolumesIsMutable();
+        secretVolumes_.add(value);
+        onChanged();
+      } else {
+        secretVolumesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder addSecretVolumes(int index, com.google.cloud.functions.v1.SecretVolume value) {
+      if (secretVolumesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretVolumesIsMutable();
+        secretVolumes_.add(index, value);
+        onChanged();
+      } else {
+        secretVolumesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder addSecretVolumes(
+        com.google.cloud.functions.v1.SecretVolume.Builder builderForValue) {
+      if (secretVolumesBuilder_ == null) {
+        ensureSecretVolumesIsMutable();
+        secretVolumes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        secretVolumesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder addSecretVolumes(
+        int index, com.google.cloud.functions.v1.SecretVolume.Builder builderForValue) {
+      if (secretVolumesBuilder_ == null) {
+        ensureSecretVolumesIsMutable();
+        secretVolumes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        secretVolumesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder addAllSecretVolumes(
+        java.lang.Iterable<? extends com.google.cloud.functions.v1.SecretVolume> values) {
+      if (secretVolumesBuilder_ == null) {
+        ensureSecretVolumesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secretVolumes_);
+        onChanged();
+      } else {
+        secretVolumesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder clearSecretVolumes() {
+      if (secretVolumesBuilder_ == null) {
+        secretVolumes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        secretVolumesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public Builder removeSecretVolumes(int index) {
+      if (secretVolumesBuilder_ == null) {
+        ensureSecretVolumesIsMutable();
+        secretVolumes_.remove(index);
+        onChanged();
+      } else {
+        secretVolumesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public com.google.cloud.functions.v1.SecretVolume.Builder getSecretVolumesBuilder(int index) {
+      return getSecretVolumesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public com.google.cloud.functions.v1.SecretVolumeOrBuilder getSecretVolumesOrBuilder(
+        int index) {
+      if (secretVolumesBuilder_ == null) {
+        return secretVolumes_.get(index);
+      } else {
+        return secretVolumesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public java.util.List<? extends com.google.cloud.functions.v1.SecretVolumeOrBuilder>
+        getSecretVolumesOrBuilderList() {
+      if (secretVolumesBuilder_ != null) {
+        return secretVolumesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(secretVolumes_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public com.google.cloud.functions.v1.SecretVolume.Builder addSecretVolumesBuilder() {
+      return getSecretVolumesFieldBuilder()
+          .addBuilder(com.google.cloud.functions.v1.SecretVolume.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public com.google.cloud.functions.v1.SecretVolume.Builder addSecretVolumesBuilder(int index) {
+      return getSecretVolumesFieldBuilder()
+          .addBuilder(index, com.google.cloud.functions.v1.SecretVolume.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret volumes configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+     */
+    public java.util.List<com.google.cloud.functions.v1.SecretVolume.Builder>
+        getSecretVolumesBuilderList() {
+      return getSecretVolumesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.functions.v1.SecretVolume,
+            com.google.cloud.functions.v1.SecretVolume.Builder,
+            com.google.cloud.functions.v1.SecretVolumeOrBuilder>
+        getSecretVolumesFieldBuilder() {
+      if (secretVolumesBuilder_ == null) {
+        secretVolumesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.functions.v1.SecretVolume,
+                com.google.cloud.functions.v1.SecretVolume.Builder,
+                com.google.cloud.functions.v1.SecretVolumeOrBuilder>(
+                secretVolumes_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        secretVolumes_ = null;
+      }
+      return secretVolumesBuilder_;
+    }
+
+    private java.lang.Object sourceToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The sourceToken.
+     */
+    public java.lang.String getSourceToken() {
+      java.lang.Object ref = sourceToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for sourceToken.
+     */
+    public com.google.protobuf.ByteString getSourceTokenBytes() {
+      java.lang.Object ref = sourceToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The sourceToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      sourceToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceToken() {
+
+      sourceToken_ = getDefaultInstance().getSourceToken();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The bytes for sourceToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      sourceToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dockerRepository_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * User managed repository created in Artifact Registry optionally with a
+     * customer managed encryption key. If specified, deployments will use
+     * Artifact Registry. If unspecified and the deployment is eligible to use
+     * Artifact Registry, GCF will create and use a repository named
+     * 'gcf-artifacts' for every deployed region. This is the repository to which
+     * the function docker image will be pushed after it is built by Cloud Build.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/repositories/{repository}`.
+     * Cross-project repositories are not supported.
+     * Cross-location repositories are not supported.
+     * Repository format must be 'DOCKER'.
+     * </pre>
+     *
+     * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The dockerRepository.
+     */
+    public java.lang.String getDockerRepository() {
+      java.lang.Object ref = dockerRepository_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dockerRepository_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User managed repository created in Artifact Registry optionally with a
+     * customer managed encryption key. If specified, deployments will use
+     * Artifact Registry. If unspecified and the deployment is eligible to use
+     * Artifact Registry, GCF will create and use a repository named
+     * 'gcf-artifacts' for every deployed region. This is the repository to which
+     * the function docker image will be pushed after it is built by Cloud Build.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/repositories/{repository}`.
+     * Cross-project repositories are not supported.
+     * Cross-location repositories are not supported.
+     * Repository format must be 'DOCKER'.
+     * </pre>
+     *
+     * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for dockerRepository.
+     */
+    public com.google.protobuf.ByteString getDockerRepositoryBytes() {
+      java.lang.Object ref = dockerRepository_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dockerRepository_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User managed repository created in Artifact Registry optionally with a
+     * customer managed encryption key. If specified, deployments will use
+     * Artifact Registry. If unspecified and the deployment is eligible to use
+     * Artifact Registry, GCF will create and use a repository named
+     * 'gcf-artifacts' for every deployed region. This is the repository to which
+     * the function docker image will be pushed after it is built by Cloud Build.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/repositories/{repository}`.
+     * Cross-project repositories are not supported.
+     * Cross-location repositories are not supported.
+     * Repository format must be 'DOCKER'.
+     * </pre>
+     *
+     * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The dockerRepository to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerRepository(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      dockerRepository_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User managed repository created in Artifact Registry optionally with a
+     * customer managed encryption key. If specified, deployments will use
+     * Artifact Registry. If unspecified and the deployment is eligible to use
+     * Artifact Registry, GCF will create and use a repository named
+     * 'gcf-artifacts' for every deployed region. This is the repository to which
+     * the function docker image will be pushed after it is built by Cloud Build.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/repositories/{repository}`.
+     * Cross-project repositories are not supported.
+     * Cross-location repositories are not supported.
+     * Repository format must be 'DOCKER'.
+     * </pre>
+     *
+     * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDockerRepository() {
+
+      dockerRepository_ = getDefaultInstance().getDockerRepository();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User managed repository created in Artifact Registry optionally with a
+     * customer managed encryption key. If specified, deployments will use
+     * Artifact Registry. If unspecified and the deployment is eligible to use
+     * Artifact Registry, GCF will create and use a repository named
+     * 'gcf-artifacts' for every deployed region. This is the repository to which
+     * the function docker image will be pushed after it is built by Cloud Build.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/repositories/{repository}`.
+     * Cross-project repositories are not supported.
+     * Cross-location repositories are not supported.
+     * Repository format must be 'DOCKER'.
+     * </pre>
+     *
+     * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for dockerRepository to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerRepositoryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      dockerRepository_ = value;
       onChanged();
       return this;
     }

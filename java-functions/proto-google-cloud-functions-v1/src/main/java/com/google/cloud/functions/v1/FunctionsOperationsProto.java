@@ -44,18 +44,19 @@ public final class FunctionsOperationsProto {
           + "roto\022\031google.cloud.functions.v1\032\031google/"
           + "protobuf/any.proto\032\037google/protobuf/time"
           + "stamp.proto\032\034google/api/annotations.prot"
-          + "o\"\333\001\n\023OperationMetadataV1\022\016\n\006target\030\001 \001("
+          + "o\"\205\002\n\023OperationMetadataV1\022\016\n\006target\030\001 \001("
           + "\t\0226\n\004type\030\002 \001(\0162(.google.cloud.functions"
           + ".v1.OperationType\022%\n\007request\030\003 \001(\0132\024.goo"
           + "gle.protobuf.Any\022\022\n\nversion_id\030\004 \001(\003\022/\n\013"
           + "update_time\030\005 \001(\0132\032.google.protobuf.Time"
-          + "stamp\022\020\n\010build_id\030\006 \001(\t*i\n\rOperationType"
-          + "\022\031\n\025OPERATION_UNSPECIFIED\020\000\022\023\n\017CREATE_FU"
-          + "NCTION\020\001\022\023\n\017UPDATE_FUNCTION\020\002\022\023\n\017DELETE_"
-          + "FUNCTION\020\003B\177\n\035com.google.cloud.functions"
-          + ".v1B\030FunctionsOperationsProtoP\001ZBgoogle."
-          + "golang.org/genproto/googleapis/cloud/fun"
-          + "ctions/v1;functionsb\006proto3"
+          + "stamp\022\020\n\010build_id\030\006 \001(\t\022\024\n\014source_token\030"
+          + "\007 \001(\t\022\022\n\nbuild_name\030\010 \001(\t*i\n\rOperationTy"
+          + "pe\022\031\n\025OPERATION_UNSPECIFIED\020\000\022\023\n\017CREATE_"
+          + "FUNCTION\020\001\022\023\n\017UPDATE_FUNCTION\020\002\022\023\n\017DELET"
+          + "E_FUNCTION\020\003B\177\n\035com.google.cloud.functio"
+          + "ns.v1B\030FunctionsOperationsProtoP\001ZBgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/f"
+          + "unctions/v1;functionsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -71,7 +72,14 @@ public final class FunctionsOperationsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_functions_v1_OperationMetadataV1_descriptor,
             new java.lang.String[] {
-              "Target", "Type", "Request", "VersionId", "UpdateTime", "BuildId",
+              "Target",
+              "Type",
+              "Request",
+              "VersionId",
+              "UpdateTime",
+              "BuildId",
+              "SourceToken",
+              "BuildName",
             });
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

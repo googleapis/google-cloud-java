@@ -185,4 +185,60 @@ public interface OperationMetadataV1OrBuilder
    * @return The bytes for buildId.
    */
   com.google.protobuf.ByteString getBuildIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 7;</code>
+   *
+   * @return The sourceToken.
+   */
+  java.lang.String getSourceToken();
+  /**
+   *
+   *
+   * <pre>
+   * An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 7;</code>
+   *
+   * @return The bytes for sourceToken.
+   */
+  com.google.protobuf.ByteString getSourceTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Build Name of the function deployment.
+   * This field is only populated for Create and Update operations.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 8;</code>
+   *
+   * @return The buildName.
+   */
+  java.lang.String getBuildName();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Build Name of the function deployment.
+   * This field is only populated for Create and Update operations.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 8;</code>
+   *
+   * @return The bytes for buildName.
+   */
+  com.google.protobuf.ByteString getBuildNameBytes();
 }

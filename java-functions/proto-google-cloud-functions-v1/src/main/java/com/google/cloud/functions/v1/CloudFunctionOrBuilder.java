@@ -616,6 +616,61 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  int getBuildEnvironmentVariablesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  boolean containsBuildEnvironmentVariables(java.lang.String key);
+  /** Use {@link #getBuildEnvironmentVariablesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariables();
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariablesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  java.lang.String getBuildEnvironmentVariablesOrDefault(
+      java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Build environment variables that shall be available during build time.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
+   */
+  java.lang.String getBuildEnvironmentVariablesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * The VPC Network that this cloud function can connect to. It can be
    * either the fully-qualified URI, or the short name of the network resource.
    * If the short network name is used, the network must belong to the same
@@ -665,6 +720,14 @@ public interface CloudFunctionOrBuilder
    * <pre>
    * The limit on the maximum number of function instances that may coexist at a
    * given time.
+   * In some cases, such as rapid traffic surges, Cloud Functions may, for a
+   * short period of time, create more instances than the specified max
+   * instances limit. If your function cannot tolerate this temporary behavior,
+   * you may want to factor in a safety margin and set a lower max instances
+   * value than your function can tolerate.
+   * See the [Max
+   * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
+   * more details.
    * </pre>
    *
    * <code>int32 max_instances = 20;</code>
@@ -672,6 +735,20 @@ public interface CloudFunctionOrBuilder
    * @return The maxInstances.
    */
   int getMaxInstances();
+
+  /**
+   *
+   *
+   * <pre>
+   * A lower bound for the number function instances that may coexist at a
+   * given time.
+   * </pre>
+   *
+   * <code>int32 min_instances = 32;</code>
+   *
+   * @return The minInstances.
+   */
+  int getMinInstances();
 
   /**
    *
@@ -775,6 +852,120 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * If specified, you must also provide an artifact registry repository using
+   * the `docker_repository` field that was created with the same KMS crypto
+   * key.
+   * The following service accounts need to be granted Cloud KMS crypto key
+   * encrypter/decrypter roles on the key.
+   * 1. Google Cloud Functions service account
+   *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+   *    Required to protect the function's image.
+   * 2. Google Storage service account
+   *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+   *    Required to protect the function's source code.
+   *    If this service account does not exist, deploying a function without a
+   *    KMS key or retrieving the service agent name provisions it. For more
+   *    information, see
+   *    https://cloud.google.com/storage/docs/projects#service-agents and
+   *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   * Google Cloud Functions delegates access to service agents to protect
+   * function resources in internal projects that are not accessible by the
+   * end user.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * If specified, you must also provide an artifact registry repository using
+   * the `docker_repository` field that was created with the same KMS crypto
+   * key.
+   * The following service accounts need to be granted Cloud KMS crypto key
+   * encrypter/decrypter roles on the key.
+   * 1. Google Cloud Functions service account
+   *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
+   *    Required to protect the function's image.
+   * 2. Google Storage service account
+   *    (service-{project_number}&#64;gs-project-accounts.iam.gserviceaccount.com) -
+   *    Required to protect the function's source code.
+   *    If this service account does not exist, deploying a function without a
+   *    KMS key or retrieving the service agent name provisions it. For more
+   *    information, see
+   *    https://cloud.google.com/storage/docs/projects#service-agents and
+   *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   * Google Cloud Functions delegates access to service agents to protect
+   * function resources in internal projects that are not accessible by the
+   * end user.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Build Custom Worker Pool that should be used to build the
+   * function. The format of this field is
+   * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+   * `{project}` and `{region}` are the project id and region respectively where
+   * the worker pool is defined and `{workerPool}` is the short name of the
+   * worker pool.
+   * If the project id is not the same as the function, then the Cloud
+   * Functions Service Agent
+   * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+   * be granted the role Cloud Build Custom Workers Builder
+   * (`roles/cloudbuild.customworkers.builder`) in the project.
+   * </pre>
+   *
+   * <code>string build_worker_pool = 26;</code>
+   *
+   * @return The buildWorkerPool.
+   */
+  java.lang.String getBuildWorkerPool();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Build Custom Worker Pool that should be used to build the
+   * function. The format of this field is
+   * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
+   * `{project}` and `{region}` are the project id and region respectively where
+   * the worker pool is defined and `{workerPool}` is the short name of the
+   * worker pool.
+   * If the project id is not the same as the function, then the Cloud
+   * Functions Service Agent
+   * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
+   * be granted the role Cloud Build Custom Workers Builder
+   * (`roles/cloudbuild.customworkers.builder`) in the project.
+   * </pre>
+   *
+   * <code>string build_worker_pool = 26;</code>
+   *
+   * @return The bytes for buildWorkerPool.
+   */
+  com.google.protobuf.ByteString getBuildWorkerPoolBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The Cloud Build ID of the latest successful deployment of the
    * function.
    * </pre>
@@ -797,6 +988,215 @@ public interface CloudFunctionOrBuilder
    * @return The bytes for buildId.
    */
   com.google.protobuf.ByteString getBuildIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Cloud Build Name of the function deployment.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The buildName.
+   */
+  java.lang.String getBuildName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Cloud Build Name of the function deployment.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for buildName.
+   */
+  com.google.protobuf.ByteString getBuildNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  java.util.List<com.google.cloud.functions.v1.SecretEnvVar> getSecretEnvironmentVariablesList();
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  com.google.cloud.functions.v1.SecretEnvVar getSecretEnvironmentVariables(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  int getSecretEnvironmentVariablesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.functions.v1.SecretEnvVarOrBuilder>
+      getSecretEnvironmentVariablesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Secret environment variables configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretEnvVar secret_environment_variables = 29;
+   * </code>
+   */
+  com.google.cloud.functions.v1.SecretEnvVarOrBuilder getSecretEnvironmentVariablesOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  java.util.List<com.google.cloud.functions.v1.SecretVolume> getSecretVolumesList();
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  com.google.cloud.functions.v1.SecretVolume getSecretVolumes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  int getSecretVolumesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  java.util.List<? extends com.google.cloud.functions.v1.SecretVolumeOrBuilder>
+      getSecretVolumesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Secret volumes configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
+   */
+  com.google.cloud.functions.v1.SecretVolumeOrBuilder getSecretVolumesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The sourceToken.
+   */
+  java.lang.String getSourceToken();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The bytes for sourceToken.
+   */
+  com.google.protobuf.ByteString getSourceTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * User managed repository created in Artifact Registry optionally with a
+   * customer managed encryption key. If specified, deployments will use
+   * Artifact Registry. If unspecified and the deployment is eligible to use
+   * Artifact Registry, GCF will create and use a repository named
+   * 'gcf-artifacts' for every deployed region. This is the repository to which
+   * the function docker image will be pushed after it is built by Cloud Build.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/repositories/{repository}`.
+   * Cross-project repositories are not supported.
+   * Cross-location repositories are not supported.
+   * Repository format must be 'DOCKER'.
+   * </pre>
+   *
+   * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The dockerRepository.
+   */
+  java.lang.String getDockerRepository();
+  /**
+   *
+   *
+   * <pre>
+   * User managed repository created in Artifact Registry optionally with a
+   * customer managed encryption key. If specified, deployments will use
+   * Artifact Registry. If unspecified and the deployment is eligible to use
+   * Artifact Registry, GCF will create and use a repository named
+   * 'gcf-artifacts' for every deployed region. This is the repository to which
+   * the function docker image will be pushed after it is built by Cloud Build.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/repositories/{repository}`.
+   * Cross-project repositories are not supported.
+   * Cross-location repositories are not supported.
+   * Repository format must be 'DOCKER'.
+   * </pre>
+   *
+   * <code>string docker_repository = 34 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for dockerRepository.
+   */
+  com.google.protobuf.ByteString getDockerRepositoryBytes();
 
   public com.google.cloud.functions.v1.CloudFunction.SourceCodeCase getSourceCodeCase();
 
