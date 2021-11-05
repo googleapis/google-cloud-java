@@ -3202,6 +3202,7 @@ public class ITBigQueryTest {
     assertEquals(2L, statistics.getOutputRows().longValue());
     LoadJobConfiguration jobConfiguration = job.getConfiguration();
     assertEquals(TABLE_SCHEMA, jobConfiguration.getSchema());
+    assertNull(jobConfiguration.getSourceUris());
     assertNull(job.getStatus().getError());
     Page<FieldValueList> rows = bigquery.listTableData(tableId);
     int rowCount = 0;
