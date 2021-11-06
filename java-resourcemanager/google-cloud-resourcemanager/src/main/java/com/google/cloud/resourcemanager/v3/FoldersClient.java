@@ -446,10 +446,10 @@ public class FoldersClient implements BackgroundResource {
    *     suffix wildcard symbol `&#42;`.
    *     <p>The `displayName` field in a query expression should use escaped quotes for values that
    *     include whitespace to prevent unexpected behavior.
-   *     <p>| Field | Description |
+   *     <p>``` | Field | Description |
    *     |-------------------------|----------------------------------------| | displayName |
    *     Filters by displayName. | | parent | Filters by parent (for example: folders/123). | |
-   *     state, lifecycleState | Filters by state. |
+   *     state, lifecycleState | Filters by state. | ```
    *     <p>Some example queries are:
    *     <ul>
    *       <li>Query `displayName=Test&#42;` returns Folder resources whose display name starts with

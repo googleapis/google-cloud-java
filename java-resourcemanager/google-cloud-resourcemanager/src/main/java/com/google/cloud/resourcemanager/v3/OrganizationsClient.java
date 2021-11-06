@@ -267,10 +267,10 @@ public class OrganizationsClient implements BackgroundResource {
    *
    * @param query Optional. An optional query string used to filter the Organizations to return in
    *     the response. Query rules are case-insensitive.
-   *     <p>| Field | Description |
+   *     <p>``` | Field | Description |
    *     |------------------|--------------------------------------------| | directoryCustomerId,
    *     owner.directoryCustomerId | Filters by directory customer id. | | domain | Filters by
-   *     domain. |
+   *     domain. | ```
    *     <p>Organizations may be queried by `directoryCustomerId` or by `domain`, where the domain
    *     is a G Suite domain, for example:
    *     <ul>
