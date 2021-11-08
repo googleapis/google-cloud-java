@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-shared-config/compare/v1.2.0...v1.2.1) (2021-11-08)
+
+
+### Bug Fixes
+
+* Add native image feature to register protobuf reflection in tests ([#347](https://www.github.com/googleapis/java-shared-config/issues/347)) ([88c3e3b](https://www.github.com/googleapis/java-shared-config/commit/88c3e3b0ad1e480e0fdbe9f6fe1f9df183066ee6))
+
+
+### Dependencies
+
+* update dependency com.google.auto.service:auto-service-annotations to v1.0.1 ([#346](https://www.github.com/googleapis/java-shared-config/issues/346)) ([9c1f943](https://www.github.com/googleapis/java-shared-config/commit/9c1f94345fb47346fe66f901976c2347b8102bc8))
+* update dependency com.google.cloud:native-image-support to v0.9.0 ([#350](https://www.github.com/googleapis/java-shared-config/issues/350)) ([3b496b0](https://www.github.com/googleapis/java-shared-config/commit/3b496b03bd95e59fcd1a3a1eb6cc0dfd330db769))
+* update dependency com.puppycrawl.tools:checkstyle to v9.1 ([#345](https://www.github.com/googleapis/java-shared-config/issues/345)) ([f5c03d3](https://www.github.com/googleapis/java-shared-config/commit/f5c03d35684ef4e0bb3178ab6056f231f3f4faf6))
+
 ## [1.2.0](https://www.github.com/googleapis/java-shared-config/compare/v1.1.0...v1.2.0) (2021-10-21)
 
 
