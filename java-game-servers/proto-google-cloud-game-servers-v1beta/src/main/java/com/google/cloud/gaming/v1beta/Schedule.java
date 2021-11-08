@@ -27,8 +27,10 @@ package com.google.cloud.gaming.v1beta;
  * larger than the cron_spec + cron_job_duration, the event will be recurring.
  * If only cron_spec + cron_job_duration are specified, the event is effective
  * starting at the local time specified by cron_spec, and is recurring.
- *   start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time
- *   cron job: cron spec start time + duration
+ * ```
+ * start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time
+ * cron job: cron spec start time + duration
+ * ```
  * </pre>
  *
  * Protobuf type {@code google.cloud.gaming.v1beta.Schedule}
@@ -567,8 +569,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * larger than the cron_spec + cron_job_duration, the event will be recurring.
    * If only cron_spec + cron_job_duration are specified, the event is effective
    * starting at the local time specified by cron_spec, and is recurring.
-   *   start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time
-   *   cron job: cron spec start time + duration
+   * ```
+   * start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time
+   * cron job: cron spec start time + duration
+   * ```
    * </pre>
    *
    * Protobuf type {@code google.cloud.gaming.v1beta.Schedule}
