@@ -57,13 +57,13 @@ implementation 'com.google.cloud:google-cloud-recaptchaenterprise'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-recaptchaenterprise:2.2.3'
+implementation 'com.google.cloud:google-cloud-recaptchaenterprise:2.3.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "2.2.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "2.3.0"
 ```
 
 ## Authentication
