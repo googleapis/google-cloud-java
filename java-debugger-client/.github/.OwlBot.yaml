@@ -22,7 +22,6 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/proto-google-devtools-source-protos"
 
 deep-copy-regex:
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/proto-google-.*/src"
@@ -31,3 +30,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-debugger-client-$1/src"
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-debugger-client/src"
+- source: "/google/devtools/source/v1/google-devtools-source-v1-java/proto-google-devtools-source-v1-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-devtools-source-protos/src"

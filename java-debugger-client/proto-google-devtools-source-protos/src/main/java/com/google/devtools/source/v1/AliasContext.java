@@ -404,7 +404,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     if (kind_ != com.google.devtools.source.v1.AliasContext.Kind.ANY.getNumber()) {
       output.writeEnum(1, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     unknownFields.writeTo(output);
@@ -419,7 +419,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     if (kind_ != com.google.devtools.source.v1.AliasContext.Kind.ANY.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     size += unknownFields.getSerializedSize();

@@ -243,7 +243,7 @@ public final class CloudWorkspaceId extends com.google.protobuf.GeneratedMessage
     if (repoId_ != null) {
       output.writeMessage(1, getRepoId());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     unknownFields.writeTo(output);
@@ -258,7 +258,7 @@ public final class CloudWorkspaceId extends com.google.protobuf.GeneratedMessage
     if (repoId_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getRepoId());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     size += unknownFields.getSerializedSize();

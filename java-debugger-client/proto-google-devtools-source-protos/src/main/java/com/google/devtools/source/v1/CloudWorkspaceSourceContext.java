@@ -243,7 +243,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     if (workspaceId_ != null) {
       output.writeMessage(1, getWorkspaceId());
     }
-    if (!getSnapshotIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(snapshotId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, snapshotId_);
     }
     unknownFields.writeTo(output);
@@ -258,7 +258,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     if (workspaceId_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWorkspaceId());
     }
-    if (!getSnapshotIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(snapshotId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, snapshotId_);
     }
     size += unknownFields.getSerializedSize();
