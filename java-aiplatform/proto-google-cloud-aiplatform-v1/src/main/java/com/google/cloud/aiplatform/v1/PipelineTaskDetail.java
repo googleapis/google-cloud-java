@@ -40,6 +40,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
   private PipelineTaskDetail() {
     taskName_ = "";
     state_ = 0;
+    pipelineTaskStatus_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -185,10 +186,10 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 inputs_ =
                     com.google.protobuf.MapField.newMapField(InputsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String,
@@ -202,11 +203,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 outputs_ =
                     com.google.protobuf.MapField.newMapField(
                         OutputsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String,
@@ -223,6 +224,20 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
               parentTaskId_ = input.readInt64();
               break;
             }
+          case 106:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                pipelineTaskStatus_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              pipelineTaskStatus_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -237,6 +252,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        pipelineTaskStatus_ = java.util.Collections.unmodifiableList(pipelineTaskStatus_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -585,6 +603,1378 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.PipelineTaskDetail.State)
+  }
+
+  public interface PipelineTaskStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Update time of this status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    boolean hasUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Update time of this status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    com.google.protobuf.Timestamp getUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Update time of this status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.cloud.aiplatform.v1.PipelineTaskDetail.State getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error that occurred during the state. May be set when the state is
+     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+     * If the state is FAILED, the error here is final and not going to be
+     * retried.
+     * If the state is a non-final state, the error indicates a system-error
+     * being retried.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error that occurred during the state. May be set when the state is
+     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+     * If the state is FAILED, the error here is final and not going to be
+     * retried.
+     * If the state is a non-final state, the error indicates a system-error
+     * being retried.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    com.google.rpc.Status getError();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error that occurred during the state. May be set when the state is
+     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+     * If the state is FAILED, the error here is final and not going to be
+     * retried.
+     * If the state is a non-final state, the error indicates a system-error
+     * being retried.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A single record of the task status.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus}
+   */
+  public static final class PipelineTaskStatus extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus)
+      PipelineTaskStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PipelineTaskStatus.newBuilder() to construct.
+    private PipelineTaskStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PipelineTaskStatus() {
+      state_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PipelineTaskStatus();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PipelineTaskStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (updateTime_ != null) {
+                  subBuilder = updateTime_.toBuilder();
+                }
+                updateTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(updateTime_);
+                  updateTime_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                state_ = rawValue;
+                break;
+              }
+            case 26:
+              {
+                com.google.rpc.Status.Builder subBuilder = null;
+                if (error_ != null) {
+                  subBuilder = error_.toBuilder();
+                }
+                error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(error_);
+                  error_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.Pipeline
+          .internal_static_google_cloud_aiplatform_v1_PipelineTaskDetail_PipelineTaskStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.Pipeline
+          .internal_static_google_cloud_aiplatform_v1_PipelineTaskDetail_PipelineTaskStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.class,
+              com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder.class);
+    }
+
+    public static final int UPDATE_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp updateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Update time of this status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateTime() {
+      return updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Update time of this status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Update time of this status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      return getUpdateTime();
+    }
+
+    public static final int STATE_FIELD_NUMBER = 2;
+    private int state_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PipelineTaskDetail.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.aiplatform.v1.PipelineTaskDetail.State result =
+          com.google.cloud.aiplatform.v1.PipelineTaskDetail.State.valueOf(state_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.PipelineTaskDetail.State.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 3;
+    private com.google.rpc.Status error_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error that occurred during the state. May be set when the state is
+     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+     * If the state is FAILED, the error here is final and not going to be
+     * retried.
+     * If the state is a non-final state, the error indicates a system-error
+     * being retried.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return error_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error that occurred during the state. May be set when the state is
+     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+     * If the state is FAILED, the error here is final and not going to be
+     * retried.
+     * If the state is a non-final state, the error indicates a system-error
+     * being retried.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    @java.lang.Override
+    public com.google.rpc.Status getError() {
+      return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error that occurred during the state. May be set when the state is
+     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+     * If the state is FAILED, the error here is final and not going to be
+     * retried.
+     * If the state is a non-final state, the error indicates a system-error
+     * being retried.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      return getError();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (updateTime_ != null) {
+        output.writeMessage(1, getUpdateTime());
+      }
+      if (state_
+          != com.google.cloud.aiplatform.v1.PipelineTaskDetail.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, state_);
+      }
+      if (error_ != null) {
+        output.writeMessage(3, getError());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (updateTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getUpdateTime());
+      }
+      if (state_
+          != com.google.cloud.aiplatform.v1.PipelineTaskDetail.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
+      }
+      if (error_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getError());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus other =
+          (com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus) obj;
+
+      if (hasUpdateTime() != other.hasUpdateTime()) return false;
+      if (hasUpdateTime()) {
+        if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+      }
+      if (state_ != other.state_) return false;
+      if (hasError() != other.hasError()) return false;
+      if (hasError()) {
+        if (!getError().equals(other.getError())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUpdateTime()) {
+        hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateTime().hashCode();
+      }
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      if (hasError()) {
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + getError().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A single record of the task status.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus)
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1_PipelineTaskDetail_PipelineTaskStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1_PipelineTaskDetail_PipelineTaskStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.class,
+                com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (updateTimeBuilder_ == null) {
+          updateTime_ = null;
+        } else {
+          updateTime_ = null;
+          updateTimeBuilder_ = null;
+        }
+        state_ = 0;
+
+        if (errorBuilder_ == null) {
+          error_ = null;
+        } else {
+          error_ = null;
+          errorBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1_PipelineTaskDetail_PipelineTaskStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus build() {
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus buildPartial() {
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus result =
+            new com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus(this);
+        if (updateTimeBuilder_ == null) {
+          result.updateTime_ = updateTime_;
+        } else {
+          result.updateTime_ = updateTimeBuilder_.build();
+        }
+        result.state_ = state_;
+        if (errorBuilder_ == null) {
+          result.error_ = error_;
+        } else {
+          result.error_ = errorBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+                .getDefaultInstance()) return this;
+        if (other.hasUpdateTime()) {
+          mergeUpdateTime(other.getUpdateTime());
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (other.hasError()) {
+          mergeError(other.getError());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp updateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          updateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the updateTime field is set.
+       */
+      public boolean hasUpdateTime() {
+        return updateTimeBuilder_ != null || updateTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The updateTime.
+       */
+      public com.google.protobuf.Timestamp getUpdateTime() {
+        if (updateTimeBuilder_ == null) {
+          return updateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : updateTime_;
+        } else {
+          return updateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+        if (updateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateTime_ = value;
+          onChanged();
+        } else {
+          updateTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateTimeBuilder_ == null) {
+          updateTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          updateTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+        if (updateTimeBuilder_ == null) {
+          if (updateTime_ != null) {
+            updateTime_ =
+                com.google.protobuf.Timestamp.newBuilder(updateTime_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            updateTime_ = value;
+          }
+          onChanged();
+        } else {
+          updateTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearUpdateTime() {
+        if (updateTimeBuilder_ == null) {
+          updateTime_ = null;
+          onChanged();
+        } else {
+          updateTime_ = null;
+          updateTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+        onChanged();
+        return getUpdateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+        if (updateTimeBuilder_ != null) {
+          return updateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return updateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : updateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Update time of this status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getUpdateTimeFieldBuilder() {
+        if (updateTimeBuilder_ == null) {
+          updateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateTime(), getParentForChildren(), isClean());
+          updateTime_ = null;
+        }
+        return updateTimeBuilder_;
+      }
+
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The state of the task.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The state of the task.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The state of the task.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.PipelineTaskDetail.State getState() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.State result =
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.State.valueOf(state_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.PipelineTaskDetail.State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The state of the task.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(com.google.cloud.aiplatform.v1.PipelineTaskDetail.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The state of the task.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PipelineTaskDetail.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.rpc.Status error_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          errorBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the error field is set.
+       */
+      public boolean hasError() {
+        return errorBuilder_ != null || error_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The error.
+       */
+      public com.google.rpc.Status getError() {
+        if (errorBuilder_ == null) {
+          return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+        } else {
+          return errorBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setError(com.google.rpc.Status value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          error_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          error_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder mergeError(com.google.rpc.Status value) {
+        if (errorBuilder_ == null) {
+          if (error_ != null) {
+            error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+          } else {
+            error_ = value;
+          }
+          onChanged();
+        } else {
+          errorBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          error_ = null;
+          onChanged();
+        } else {
+          error_ = null;
+          errorBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.rpc.Status.Builder getErrorBuilder() {
+
+        onChanged();
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+        if (errorBuilder_ != null) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error that occurred during the state. May be set when the state is
+       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+       * If the state is FAILED, the error here is final and not going to be
+       * retried.
+       * If the state is a non-final state, the error indicates a system-error
+       * being retried.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          errorBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.rpc.Status,
+                  com.google.rpc.Status.Builder,
+                  com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+          error_ = null;
+        }
+        return errorBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus)
+    private static final com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus();
+    }
+
+    public static com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PipelineTaskStatus> PARSER =
+        new com.google.protobuf.AbstractParser<PipelineTaskStatus>() {
+          @java.lang.Override
+          public PipelineTaskStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PipelineTaskStatus(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PipelineTaskStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PipelineTaskStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public interface ArtifactListOrBuilder
@@ -2078,6 +3468,95 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     return getError();
   }
 
+  public static final int PIPELINE_TASK_STATUS_FIELD_NUMBER = 13;
+  private java.util.List<com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus>
+      pipelineTaskStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus>
+      getPipelineTaskStatusList() {
+    return pipelineTaskStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder>
+      getPipelineTaskStatusOrBuilderList() {
+    return pipelineTaskStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPipelineTaskStatusCount() {
+    return pipelineTaskStatus_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus getPipelineTaskStatus(
+      int index) {
+    return pipelineTaskStatus_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder
+      getPipelineTaskStatusOrBuilder(int index) {
+    return pipelineTaskStatus_.get(index);
+  }
+
   public static final int INPUTS_FIELD_NUMBER = 10;
 
   private static final class InputsDefaultEntryHolder {
@@ -2375,6 +3854,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     if (parentTaskId_ != 0L) {
       output.writeInt64(12, parentTaskId_);
     }
+    for (int i = 0; i < pipelineTaskStatus_.size(); i++) {
+      output.writeMessage(13, pipelineTaskStatus_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2441,6 +3923,10 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     if (parentTaskId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, parentTaskId_);
     }
+    for (int i = 0; i < pipelineTaskStatus_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, pipelineTaskStatus_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2485,6 +3971,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
     }
+    if (!getPipelineTaskStatusList().equals(other.getPipelineTaskStatusList())) return false;
     if (!internalGetInputs().equals(other.internalGetInputs())) return false;
     if (!internalGetOutputs().equals(other.internalGetOutputs())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2529,6 +4016,10 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    if (getPipelineTaskStatusCount() > 0) {
+      hash = (37 * hash) + PIPELINE_TASK_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getPipelineTaskStatusList().hashCode();
     }
     if (!internalGetInputs().getMap().isEmpty()) {
       hash = (37 * hash) + INPUTS_FIELD_NUMBER;
@@ -2701,7 +4192,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPipelineTaskStatusFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -2750,6 +4243,12 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       } else {
         error_ = null;
         errorBuilder_ = null;
+      }
+      if (pipelineTaskStatusBuilder_ == null) {
+        pipelineTaskStatus_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        pipelineTaskStatusBuilder_.clear();
       }
       internalGetMutableInputs().clear();
       internalGetMutableOutputs().clear();
@@ -2814,6 +4313,15 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         result.error_ = error_;
       } else {
         result.error_ = errorBuilder_.build();
+      }
+      if (pipelineTaskStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          pipelineTaskStatus_ = java.util.Collections.unmodifiableList(pipelineTaskStatus_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.pipelineTaskStatus_ = pipelineTaskStatus_;
+      } else {
+        result.pipelineTaskStatus_ = pipelineTaskStatusBuilder_.build();
       }
       result.inputs_ = internalGetInputs();
       result.inputs_.makeImmutable();
@@ -2899,6 +4407,33 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasError()) {
         mergeError(other.getError());
+      }
+      if (pipelineTaskStatusBuilder_ == null) {
+        if (!other.pipelineTaskStatus_.isEmpty()) {
+          if (pipelineTaskStatus_.isEmpty()) {
+            pipelineTaskStatus_ = other.pipelineTaskStatus_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePipelineTaskStatusIsMutable();
+            pipelineTaskStatus_.addAll(other.pipelineTaskStatus_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pipelineTaskStatus_.isEmpty()) {
+          if (pipelineTaskStatusBuilder_.isEmpty()) {
+            pipelineTaskStatusBuilder_.dispose();
+            pipelineTaskStatusBuilder_ = null;
+            pipelineTaskStatus_ = other.pipelineTaskStatus_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            pipelineTaskStatusBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPipelineTaskStatusFieldBuilder()
+                    : null;
+          } else {
+            pipelineTaskStatusBuilder_.addAllMessages(other.pipelineTaskStatus_);
+          }
+        }
       }
       internalGetMutableInputs().mergeFrom(other.internalGetInputs());
       internalGetMutableOutputs().mergeFrom(other.internalGetOutputs());
@@ -4423,6 +5958,439 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         error_ = null;
       }
       return errorBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus>
+        pipelineTaskStatus_ = java.util.Collections.emptyList();
+
+    private void ensurePipelineTaskStatusIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        pipelineTaskStatus_ =
+            new java.util.ArrayList<
+                com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus>(
+                pipelineTaskStatus_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus,
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder,
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder>
+        pipelineTaskStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus>
+        getPipelineTaskStatusList() {
+      if (pipelineTaskStatusBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pipelineTaskStatus_);
+      } else {
+        return pipelineTaskStatusBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPipelineTaskStatusCount() {
+      if (pipelineTaskStatusBuilder_ == null) {
+        return pipelineTaskStatus_.size();
+      } else {
+        return pipelineTaskStatusBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+        getPipelineTaskStatus(int index) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        return pipelineTaskStatus_.get(index);
+      } else {
+        return pipelineTaskStatusBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPipelineTaskStatus(
+        int index, com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus value) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePipelineTaskStatusIsMutable();
+        pipelineTaskStatus_.set(index, value);
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPipelineTaskStatus(
+        int index,
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder
+            builderForValue) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        ensurePipelineTaskStatusIsMutable();
+        pipelineTaskStatus_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskStatus(
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus value) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePipelineTaskStatusIsMutable();
+        pipelineTaskStatus_.add(value);
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskStatus(
+        int index, com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus value) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePipelineTaskStatusIsMutable();
+        pipelineTaskStatus_.add(index, value);
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskStatus(
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder
+            builderForValue) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        ensurePipelineTaskStatusIsMutable();
+        pipelineTaskStatus_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskStatus(
+        int index,
+        com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder
+            builderForValue) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        ensurePipelineTaskStatusIsMutable();
+        pipelineTaskStatus_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPipelineTaskStatus(
+        java.lang.Iterable<
+                ? extends com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus>
+            values) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        ensurePipelineTaskStatusIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pipelineTaskStatus_);
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPipelineTaskStatus() {
+      if (pipelineTaskStatusBuilder_ == null) {
+        pipelineTaskStatus_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePipelineTaskStatus(int index) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        ensurePipelineTaskStatusIsMutable();
+        pipelineTaskStatus_.remove(index);
+        onChanged();
+      } else {
+        pipelineTaskStatusBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder
+        getPipelineTaskStatusBuilder(int index) {
+      return getPipelineTaskStatusFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder
+        getPipelineTaskStatusOrBuilder(int index) {
+      if (pipelineTaskStatusBuilder_ == null) {
+        return pipelineTaskStatus_.get(index);
+      } else {
+        return pipelineTaskStatusBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder>
+        getPipelineTaskStatusOrBuilderList() {
+      if (pipelineTaskStatusBuilder_ != null) {
+        return pipelineTaskStatusBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pipelineTaskStatus_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder
+        addPipelineTaskStatusBuilder() {
+      return getPipelineTaskStatusFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder
+        addPipelineTaskStatusBuilder(int index) {
+      return getPipelineTaskStatusFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of task status. This field keeps a record of task status evolving
+     * over time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder>
+        getPipelineTaskStatusBuilderList() {
+      return getPipelineTaskStatusFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus,
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder,
+            com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder>
+        getPipelineTaskStatusFieldBuilder() {
+      if (pipelineTaskStatusBuilder_ == null) {
+        pipelineTaskStatusBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus,
+                com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatus.Builder,
+                com.google.cloud.aiplatform.v1.PipelineTaskDetail.PipelineTaskStatusOrBuilder>(
+                pipelineTaskStatus_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        pipelineTaskStatus_ = null;
+      }
+      return pipelineTaskStatusBuilder_;
     }
 
     private com.google.protobuf.MapField<

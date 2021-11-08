@@ -315,25 +315,31 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     int getParametersCount();
     /**
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     boolean containsParameters(java.lang.String key);
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Deprecated
@@ -342,38 +348,47 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value> getParametersMap();
     /**
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     com.google.cloud.aiplatform.v1.Value getParametersOrDefault(
         java.lang.String key, com.google.cloud.aiplatform.v1.Value defaultValue);
     /**
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     com.google.cloud.aiplatform.v1.Value getParametersOrThrow(java.lang.String key);
 
     /**
@@ -412,6 +427,71 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for gcsOutputDirectory.
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    int getParameterValuesCount();
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    boolean containsParameterValues(java.lang.String key);
+    /** Use {@link #getParameterValuesMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.protobuf.Value> getParameterValues();
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    java.util.Map<java.lang.String, com.google.protobuf.Value> getParameterValuesMap();
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    com.google.protobuf.Value getParameterValuesOrDefault(
+        java.lang.String key, com.google.protobuf.Value defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    com.google.protobuf.Value getParameterValuesOrThrow(java.lang.String key);
   }
   /**
    *
@@ -489,6 +569,24 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
                 gcsOutputDirectory_ = s;
                 break;
               }
+            case 26:
+              {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  parameterValues_ =
+                      com.google.protobuf.MapField.newMapField(
+                          ParameterValuesDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+                    parameterValues__ =
+                        input.readMessage(
+                            ParameterValuesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                parameterValues_
+                    .getMutableMap()
+                    .put(parameterValues__.getKey(), parameterValues__.getValue());
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -519,6 +617,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 1:
           return internalGetParameters();
+        case 3:
+          return internalGetParameterValues();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -562,6 +662,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       return parameters_;
     }
 
+    @java.lang.Deprecated
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
@@ -569,13 +670,16 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     @java.lang.Override
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
@@ -593,14 +697,17 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value>
         getParametersMap() {
       return internalGetParameters().getMap();
@@ -609,14 +716,17 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1.Value getParametersOrDefault(
         java.lang.String key, com.google.cloud.aiplatform.v1.Value defaultValue) {
       if (key == null) {
@@ -630,14 +740,17 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1.Value getParametersOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -711,6 +824,120 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int PARAMETER_VALUES_FIELD_NUMBER = 3;
+
+    private static final class ParameterValuesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
+                      com.google.cloud.aiplatform.v1.Pipeline
+                          .internal_static_google_cloud_aiplatform_v1_PipelineJob_RuntimeConfig_ParameterValuesEntry_descriptor,
+                      com.google.protobuf.WireFormat.FieldType.STRING,
+                      "",
+                      com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                      com.google.protobuf.Value.getDefaultInstance());
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+        parameterValues_;
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+        internalGetParameterValues() {
+      if (parameterValues_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ParameterValuesDefaultEntryHolder.defaultEntry);
+      }
+      return parameterValues_;
+    }
+
+    public int getParameterValuesCount() {
+      return internalGetParameterValues().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    @java.lang.Override
+    public boolean containsParameterValues(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetParameterValues().getMap().containsKey(key);
+    }
+    /** Use {@link #getParameterValuesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getParameterValues() {
+      return getParameterValuesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getParameterValuesMap() {
+      return internalGetParameterValues().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Value getParameterValuesOrDefault(
+        java.lang.String key, com.google.protobuf.Value defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+          internalGetParameterValues().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Value getParameterValuesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+          internalGetParameterValues().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -730,6 +957,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsOutputDirectory_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gcsOutputDirectory_);
       }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetParameterValues(), ParameterValuesDefaultEntryHolder.defaultEntry, 3);
       unknownFields.writeTo(output);
     }
 
@@ -753,6 +982,17 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsOutputDirectory_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gcsOutputDirectory_);
       }
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry :
+          internalGetParameterValues().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+            parameterValues__ =
+                ParameterValuesDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, parameterValues__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -771,6 +1011,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
 
       if (!internalGetParameters().equals(other.internalGetParameters())) return false;
       if (!getGcsOutputDirectory().equals(other.getGcsOutputDirectory())) return false;
+      if (!internalGetParameterValues().equals(other.internalGetParameterValues())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -788,6 +1029,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + GCS_OUTPUT_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getGcsOutputDirectory().hashCode();
+      if (!internalGetParameterValues().getMap().isEmpty()) {
+        hash = (37 * hash) + PARAMETER_VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetParameterValues().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -914,6 +1159,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         switch (number) {
           case 1:
             return internalGetParameters();
+          case 3:
+            return internalGetParameterValues();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -924,6 +1171,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         switch (number) {
           case 1:
             return internalGetMutableParameters();
+          case 3:
+            return internalGetMutableParameterValues();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -959,6 +1208,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableParameters().clear();
         gcsOutputDirectory_ = "";
 
+        internalGetMutableParameterValues().clear();
         return this;
       }
 
@@ -990,6 +1240,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         result.parameters_ = internalGetParameters();
         result.parameters_.makeImmutable();
         result.gcsOutputDirectory_ = gcsOutputDirectory_;
+        result.parameterValues_ = internalGetParameterValues();
+        result.parameterValues_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -1047,6 +1299,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
           gcsOutputDirectory_ = other.gcsOutputDirectory_;
           onChanged();
         }
+        internalGetMutableParameterValues().mergeFrom(other.internalGetParameterValues());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1105,6 +1358,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         return parameters_;
       }
 
+      @java.lang.Deprecated
       public int getParametersCount() {
         return internalGetParameters().getMap().size();
       }
@@ -1112,13 +1366,16 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * parameters of the PipelineJob. The parameters will be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       @java.lang.Override
       public boolean containsParameters(java.lang.String key) {
         if (key == null) {
@@ -1136,14 +1393,17 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * parameters of the PipelineJob. The parameters will be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value>
           getParametersMap() {
         return internalGetParameters().getMap();
@@ -1152,14 +1412,17 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * parameters of the PipelineJob. The parameters will be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.aiplatform.v1.Value getParametersOrDefault(
           java.lang.String key, com.google.cloud.aiplatform.v1.Value defaultValue) {
         if (key == null) {
@@ -1173,14 +1436,17 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * parameters of the PipelineJob. The parameters will be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.aiplatform.v1.Value getParametersOrThrow(java.lang.String key) {
         if (key == null) {
           throw new java.lang.NullPointerException();
@@ -1193,6 +1459,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         return map.get(key);
       }
 
+      @java.lang.Deprecated
       public Builder clearParameters() {
         internalGetMutableParameters().getMutableMap().clear();
         return this;
@@ -1201,13 +1468,16 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * parameters of the PipelineJob. The parameters will be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder removeParameters(java.lang.String key) {
         if (key == null) {
           throw new java.lang.NullPointerException();
@@ -1225,13 +1495,16 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * parameters of the PipelineJob. The parameters will be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder putParameters(
           java.lang.String key, com.google.cloud.aiplatform.v1.Value value) {
         if (key == null) {
@@ -1247,13 +1520,16 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * parameters of the PipelineJob. The parameters will be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1;</code>
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder putAllParameters(
           java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value> values) {
         internalGetMutableParameters().getMutableMap().putAll(values);
@@ -1393,6 +1669,186 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
 
         gcsOutputDirectory_ = value;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+          parameterValues_;
+
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+          internalGetParameterValues() {
+        if (parameterValues_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ParameterValuesDefaultEntryHolder.defaultEntry);
+        }
+        return parameterValues_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+          internalGetMutableParameterValues() {
+        onChanged();
+        ;
+        if (parameterValues_ == null) {
+          parameterValues_ =
+              com.google.protobuf.MapField.newMapField(
+                  ParameterValuesDefaultEntryHolder.defaultEntry);
+        }
+        if (!parameterValues_.isMutable()) {
+          parameterValues_ = parameterValues_.copy();
+        }
+        return parameterValues_;
+      }
+
+      public int getParameterValuesCount() {
+        return internalGetParameterValues().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime parameters of the PipelineJob. The parameters will be
+       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+       * at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+       */
+      @java.lang.Override
+      public boolean containsParameterValues(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        return internalGetParameterValues().getMap().containsKey(key);
+      }
+      /** Use {@link #getParameterValuesMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.Value> getParameterValues() {
+        return getParameterValuesMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime parameters of the PipelineJob. The parameters will be
+       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+       * at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, com.google.protobuf.Value> getParameterValuesMap() {
+        return internalGetParameterValues().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime parameters of the PipelineJob. The parameters will be
+       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+       * at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.Value getParameterValuesOrDefault(
+          java.lang.String key, com.google.protobuf.Value defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+            internalGetParameterValues().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime parameters of the PipelineJob. The parameters will be
+       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+       * at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.Value getParameterValuesOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+            internalGetParameterValues().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearParameterValues() {
+        internalGetMutableParameterValues().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime parameters of the PipelineJob. The parameters will be
+       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+       * at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+       */
+      public Builder removeParameterValues(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableParameterValues().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.Value>
+          getMutableParameterValues() {
+        return internalGetMutableParameterValues().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime parameters of the PipelineJob. The parameters will be
+       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+       * at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+       */
+      public Builder putParameterValues(java.lang.String key, com.google.protobuf.Value value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        if (value == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableParameterValues().getMutableMap().put(key, value);
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime parameters of the PipelineJob. The parameters will be
+       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+       * at runtime.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
+       */
+      public Builder putAllParameterValues(
+          java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
+        internalGetMutableParameterValues().getMutableMap().putAll(values);
         return this;
       }
 
