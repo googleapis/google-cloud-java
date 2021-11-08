@@ -58,13 +58,13 @@ implementation 'com.google.cloud:google-cloud-logging'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-logging:3.3.0'
+implementation 'com.google.cloud:google-cloud-logging:3.4.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "3.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "3.4.0"
 ```
 
 ## Authentication
