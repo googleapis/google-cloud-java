@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.4.0](https://www.github.com/googleapis/java-logging/compare/v3.3.0...v3.4.0) (2021-11-06)
+
+
+### Features
+
+* Add an ability to delete logs based on project, folder, organization or billing account resource names ([#731](https://www.github.com/googleapis/java-logging/issues/731)) ([25673fd](https://www.github.com/googleapis/java-logging/commit/25673fdc2622f19926e3634ae187182f64efec18))
+* Add destination property into LogEntry ([#720](https://www.github.com/googleapis/java-logging/issues/720)) ([43ea0b4](https://www.github.com/googleapis/java-logging/commit/43ea0b465b29c22e7eb439811f19ada90b9d23dd))
+* add population of the SourceLocation from context ([#721](https://www.github.com/googleapis/java-logging/issues/721)) ([1fa3a6e](https://www.github.com/googleapis/java-logging/commit/1fa3a6e286336a861f83d9b59f28f309fc846d70))
+* Extend a set of options in WriteOption to allow defining the log location as custom project, folder, organization or billing account ([#727](https://www.github.com/googleapis/java-logging/issues/727)) ([1996cb4](https://www.github.com/googleapis/java-logging/commit/1996cb49fa0dc3dd4d35d7d2876c9ac3698a450b))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-logging/issues/1266)) ([#724](https://www.github.com/googleapis/java-logging/issues/724)) ([5a8cedf](https://www.github.com/googleapis/java-logging/commit/5a8cedfcd30b59c0630edb5769c850bc26467bb3))
+
 ## [3.3.0](https://www.github.com/googleapis/java-logging/compare/v3.2.0...v3.3.0) (2021-10-20)
 
 
