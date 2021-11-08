@@ -20,9 +20,6 @@ deep-remove-regex:
 - "/proto-google-.*/src"
 - "/google-.*/src"
 
-deep-preserve-regex:
-- "/proto-google-apps-script-type-protos"
-
 deep-copy-regex:
 - source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/$1/proto-google-cloud-gsuite-addons-$1/src"
@@ -30,3 +27,17 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-gsuite-addons-$1/src"
 - source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-gsuite-addons/src"
+- source: "/google/apps/script/type/google-apps-script-type-java/proto-google-apps-script-type-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
+- source: "/google/apps/script/type/calendar/google-apps-script-type-calendar-java/proto-google-apps-script-type-calendar-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
+- source: "/google/apps/script/type/docs/google-apps-script-type-docs-java/proto-google-apps-script-type-docs-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
+- source: "/google/apps/script/type/drive/google-apps-script-type-drive-java/proto-google-apps-script-type-drive-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
+- source: "/google/apps/script/type/gmail/google-apps-script-type-gmail-java/proto-google-apps-script-type-gmail-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
+- source: "/google/apps/script/type/sheets/google-apps-script-type-sheets-java/proto-google-apps-script-type-sheets-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
+- source: "/google/apps/script/type/slides/google-apps-script-type-slides-java/proto-google-apps-script-type-slides-java/src"
+  dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"

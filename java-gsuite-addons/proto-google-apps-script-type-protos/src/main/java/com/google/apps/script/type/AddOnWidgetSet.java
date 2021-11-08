@@ -119,14 +119,14 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.apps.script.type.AddonWidgetSet
+    return com.google.apps.script.type.AddOnWidgetSetProto
         .internal_static_google_apps_script_type_AddOnWidgetSet_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.apps.script.type.AddonWidgetSet
+    return com.google.apps.script.type.AddOnWidgetSetProto
         .internal_static_google_apps_script_type_AddOnWidgetSet_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.apps.script.type.AddOnWidgetSet.class,
@@ -689,14 +689,14 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.apps.script.type.AddOnWidgetSet)
       com.google.apps.script.type.AddOnWidgetSetOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.apps.script.type.AddonWidgetSet
+      return com.google.apps.script.type.AddOnWidgetSetProto
           .internal_static_google_apps_script_type_AddOnWidgetSet_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.apps.script.type.AddonWidgetSet
+      return com.google.apps.script.type.AddOnWidgetSetProto
           .internal_static_google_apps_script_type_AddOnWidgetSet_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.apps.script.type.AddOnWidgetSet.class,
@@ -727,7 +727,7 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.apps.script.type.AddonWidgetSet
+      return com.google.apps.script.type.AddOnWidgetSetProto
           .internal_static_google_apps_script_type_AddOnWidgetSet_descriptor;
     }
 
