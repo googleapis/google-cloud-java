@@ -36,13 +36,9 @@ mvn clean install -B -q -DskipTests=true
 export NAME=google-cloud-life-sciences
 export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
-# V3 generates docfx yml from javadoc
-# generate yml
-mvn clean site -B -q -P docFX
-
-# copy README to docfx-yml dir and rename index.md
-cp README.md target/docfx-yml/index.md
-# copy CHANGELOG to docfx-yml dir and rename history.md
+# cloud RAD generation
+mvn clean javadoc:aggregate -B -q -P docFX
+# include CHANGELOG
 cp CHANGELOG.md target/docfx-yml/history.md
 
 pushd target/docfx-yml
