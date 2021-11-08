@@ -338,16 +338,17 @@ public class Recognize {
   public static void asyncRecognizeGcs(String gcsUri) throws Exception {
     // Configure polling algorithm
     SpeechSettings.Builder speechSettings = SpeechSettings.newBuilder();
-    TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
-        RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofMillis(500L))
-            .setRetryDelayMultiplier(1.5)
-            .setMaxRetryDelay(Duration.ofMillis(5000L))
-            .setInitialRpcTimeout(Duration.ZERO) // ignored
-            .setRpcTimeoutMultiplier(1.0) // ignored
-            .setMaxRpcTimeout(Duration.ZERO) // ignored
-            .setTotalTimeout(Duration.ofHours(24L))  // set polling timeout to 24 hours
-            .build());
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationTimedPollAlgorithm.create(
+            RetrySettings.newBuilder()
+                .setInitialRetryDelay(Duration.ofMillis(500L))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelay(Duration.ofMillis(5000L))
+                .setInitialRpcTimeout(Duration.ZERO) // ignored
+                .setRpcTimeoutMultiplier(1.0) // ignored
+                .setMaxRpcTimeout(Duration.ZERO) // ignored
+                .setTotalTimeout(Duration.ofHours(24L)) // set polling timeout to 24 hours
+                .build());
     speechSettings.longRunningRecognizeOperationSettings().setPollingAlgorithm(timedRetryAlgorithm);
 
     // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
