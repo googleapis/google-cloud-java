@@ -64,6 +64,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-tpu-v2alpha1</artifactId>
+        <version>2.1.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tpu-v2alpha1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-tpu-v2alpha1</artifactId>
+        <version>2.1.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v2alpha1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tpu-v1</artifactId>
         <version>2.1.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v1:current} -->
       </dependency>
@@ -103,7 +113,9 @@
   <modules>
     <module>google-cloud-tpu</module>
     <module>grpc-google-cloud-tpu-v1</module>
+    <module>grpc-google-cloud-tpu-v2alpha1</module>
     <module>proto-google-cloud-tpu-v1</module>
+    <module>proto-google-cloud-tpu-v2alpha1</module>
     <module>google-cloud-tpu-bom</module>
   </modules>
 
