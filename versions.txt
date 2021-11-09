@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-logging:3.4.0:3.4.0
-grpc-google-cloud-logging-v2:0.93.0:0.93.0
-proto-google-cloud-logging-v2:0.93.0:0.93.0
+google-cloud-logging:3.4.0:3.4.1-SNAPSHOT
+grpc-google-cloud-logging-v2:0.93.0:0.93.1-SNAPSHOT
+proto-google-cloud-logging-v2:0.93.0:0.93.1-SNAPSHOT

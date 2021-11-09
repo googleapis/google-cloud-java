@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
-<differences>
-  <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/cloud/logging/Logging</className>
-    <method>* deleteLog*(java.lang.String, com.google.cloud.logging.LogDestinationName)</method>
-  </difference>
-</differences>
