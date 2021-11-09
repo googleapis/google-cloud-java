@@ -25,6 +25,7 @@ import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.UninitializedMessageException;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
 import org.json.JSONArray;
@@ -269,6 +270,15 @@ public class JsonToProtoMessage {
         }
         break;
       case INT32:
+        if (fieldSchema != null && fieldSchema.getType() == TableFieldSchema.Type.DATE) {
+          if (val instanceof String) {
+            protoMsg.setField(fieldDescriptor, (int) LocalDate.parse((String) val).toEpochDay());
+            return;
+          } else if (val instanceof Integer || val instanceof Long) {
+            protoMsg.setField(fieldDescriptor, ((Number) val).intValue());
+            return;
+          }
+        }
         if (val instanceof Integer) {
           protoMsg.setField(fieldDescriptor, (Integer) val);
           return;
@@ -281,11 +291,8 @@ public class JsonToProtoMessage {
         }
         break;
       case DOUBLE:
-        if (val instanceof Double) {
-          protoMsg.setField(fieldDescriptor, (Double) val);
-          return;
-        } else if (val instanceof Float) {
-          protoMsg.setField(fieldDescriptor, new Double((Float) val));
+        if (val instanceof Number) {
+          protoMsg.setField(fieldDescriptor, ((Number) val).doubleValue());
           return;
         }
         break;
@@ -435,7 +442,16 @@ public class JsonToProtoMessage {
           }
           break;
         case INT32:
-          if (val instanceof Integer) {
+          if (fieldSchema != null && fieldSchema.getType() == TableFieldSchema.Type.DATE) {
+            if (val instanceof String) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor, (int) LocalDate.parse((String) val).toEpochDay());
+            } else if (val instanceof Integer || val instanceof Long) {
+              protoMsg.addRepeatedField(fieldDescriptor, ((Number) val).intValue());
+            } else {
+              fail = true;
+            }
+          } else if (val instanceof Integer) {
             protoMsg.addRepeatedField(fieldDescriptor, (Integer) val);
           } else {
             fail = true;
@@ -449,10 +465,8 @@ public class JsonToProtoMessage {
           }
           break;
         case DOUBLE:
-          if (val instanceof Double) {
-            protoMsg.addRepeatedField(fieldDescriptor, (Double) val);
-          } else if (val instanceof Float) {
-            protoMsg.addRepeatedField(fieldDescriptor, new Double((float) val));
+          if (val instanceof Number) {
+            protoMsg.addRepeatedField(fieldDescriptor, ((Number) val).doubleValue());
           } else {
             fail = true;
           }

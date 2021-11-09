@@ -119,6 +119,15 @@ message TestInt32 {
 message TestDouble {
   optional double double = 1;
   optional double float = 2;
+  optional double byte = 3;
+  optional double short = 4;
+  optional double int = 5;
+  optional double long = 6;
+}
+
+message TestDate {
+  optional int32 test_string = 1;
+  optional int32 test_long = 2;
 }
 
 message NestedRepeated {

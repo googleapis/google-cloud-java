@@ -76,7 +76,11 @@ public class JsonToProtoMessageTest {
               new Message[] {Int32Type.newBuilder().setTestFieldType(Integer.MAX_VALUE).build()})
           .put(
               DoubleType.getDescriptor(),
-              new Message[] {DoubleType.newBuilder().setTestFieldType(1.23).build()})
+              new Message[] {
+                DoubleType.newBuilder().setTestFieldType(Long.MAX_VALUE).build(),
+                DoubleType.newBuilder().setTestFieldType(Integer.MAX_VALUE).build(),
+                DoubleType.newBuilder().setTestFieldType(1.23).build()
+              })
           .put(
               StringType.getDescriptor(),
               new Message[] {StringType.newBuilder().setTestFieldType("test").build()})
@@ -181,6 +185,26 @@ public class JsonToProtoMessageTest {
           .put(
               RepeatedDouble.getDescriptor(),
               new Message[] {
+                RepeatedDouble.newBuilder()
+                    .addTestRepeated(Long.MAX_VALUE)
+                    .addTestRepeated(Long.MIN_VALUE)
+                    .addTestRepeated(Integer.MAX_VALUE)
+                    .addTestRepeated(Integer.MIN_VALUE)
+                    .addTestRepeated(Short.MAX_VALUE)
+                    .addTestRepeated(Short.MIN_VALUE)
+                    .addTestRepeated(Byte.MAX_VALUE)
+                    .addTestRepeated(Byte.MIN_VALUE)
+                    .addTestRepeated(0)
+                    .build(),
+                RepeatedDouble.newBuilder()
+                    .addTestRepeated(Integer.MAX_VALUE)
+                    .addTestRepeated(Integer.MIN_VALUE)
+                    .addTestRepeated(Short.MAX_VALUE)
+                    .addTestRepeated(Short.MIN_VALUE)
+                    .addTestRepeated(Byte.MAX_VALUE)
+                    .addTestRepeated(Byte.MIN_VALUE)
+                    .addTestRepeated(0)
+                    .build(),
                 RepeatedDouble.newBuilder()
                     .addTestRepeated(Double.MAX_VALUE)
                     .addTestRepeated(Double.MIN_VALUE)
@@ -593,12 +617,40 @@ public class JsonToProtoMessageTest {
 
   @Test
   public void testDouble() throws Exception {
-    TestDouble expectedProto = TestDouble.newBuilder().setDouble(1.2).setFloat(3.4f).build();
+    TestDouble expectedProto =
+        TestDouble.newBuilder()
+            .setDouble(1.2)
+            .setFloat(3.4f)
+            .setByte(5)
+            .setShort(6)
+            .setInt(7)
+            .setLong(8)
+            .build();
     JSONObject json = new JSONObject();
     json.put("double", 1.2);
     json.put("float", 3.4f);
+    json.put("byte", new Byte((byte) 5));
+    json.put("short", new Short((short) 6));
+    json.put("int", 7);
+    json.put("long", 8L);
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(TestDouble.getDescriptor(), json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testDate() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(TableFieldSchema.newBuilder(TEST_DATE).setName("test_string").build())
+            .addFields(TableFieldSchema.newBuilder(TEST_DATE).setName("test_long").build())
+            .build();
+    TestDate expectedProto = TestDate.newBuilder().setTestString(18935).setTestLong(18935).build();
+    JSONObject json = new JSONObject();
+    json.put("test_string", "2021-11-04");
+    json.put("test_long", 18935L);
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(TestDate.getDescriptor(), tableSchema, json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -620,7 +672,9 @@ public class JsonToProtoMessageTest {
               e.getMessage());
         }
       }
-      if (entry.getKey() == Int64Type.getDescriptor()
+      if (entry.getKey() == DoubleType.getDescriptor()) {
+        assertEquals(entry.getKey().getFullName(), 3, success);
+      } else if (entry.getKey() == Int64Type.getDescriptor()
           || entry.getKey() == BytesType.getDescriptor()) {
         assertEquals(entry.getKey().getFullName(), 2, success);
       } else {
@@ -656,8 +710,9 @@ public class JsonToProtoMessageTest {
                       .equals("Error: root.test_repeated[0] could not be converted to byte[]."));
         }
       }
-      if (entry.getKey() == RepeatedInt64.getDescriptor()
-          || entry.getKey() == RepeatedDouble.getDescriptor()) {
+      if (entry.getKey() == RepeatedDouble.getDescriptor()) {
+        assertEquals(entry.getKey().getFullName(), 4, success);
+      } else if (entry.getKey() == RepeatedInt64.getDescriptor()) {
         assertEquals(entry.getKey().getFullName(), 2, success);
       } else {
         assertEquals(entry.getKey().getFullName(), 1, success);
