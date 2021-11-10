@@ -195,7 +195,7 @@ public class AdaptationClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   *   String parent = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   PhraseSet phraseSet = PhraseSet.newBuilder().build();
    *   String phraseSetId = "phraseSetId959902180";
    *   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
@@ -232,7 +232,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreatePhraseSetRequest request =
    *       CreatePhraseSetRequest.newBuilder()
-   *           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPhraseSetId("phraseSetId959902180")
    *           .setPhraseSet(PhraseSet.newBuilder().build())
    *           .build();
@@ -259,7 +259,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreatePhraseSetRequest request =
    *       CreatePhraseSetRequest.newBuilder()
-   *           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPhraseSetId("phraseSetId959902180")
    *           .setPhraseSet(PhraseSet.newBuilder().build())
    *           .build();
@@ -398,7 +398,7 @@ public class AdaptationClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   *   String parent = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -424,7 +424,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListPhraseSetRequest request =
    *       ListPhraseSetRequest.newBuilder()
-   *           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -451,7 +451,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListPhraseSetRequest request =
    *       ListPhraseSetRequest.newBuilder()
-   *           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -479,7 +479,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListPhraseSetRequest request =
    *       ListPhraseSetRequest.newBuilder()
-   *           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -710,7 +710,7 @@ public class AdaptationClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   *   String parent = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   CustomClass customClass = CustomClass.newBuilder().build();
    *   String customClassId = "customClassId1871032322";
    *   CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);
@@ -746,7 +746,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreateCustomClassRequest request =
    *       CreateCustomClassRequest.newBuilder()
-   *           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setCustomClassId("customClassId1871032322")
    *           .setCustomClass(CustomClass.newBuilder().build())
    *           .build();
@@ -771,7 +771,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreateCustomClassRequest request =
    *       CreateCustomClassRequest.newBuilder()
-   *           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setCustomClassId("customClassId1871032322")
    *           .setCustomClass(CustomClass.newBuilder().build())
    *           .build();
@@ -911,7 +911,7 @@ public class AdaptationClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   *   String parent = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -938,7 +938,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListCustomClassesRequest request =
    *       ListCustomClassesRequest.newBuilder()
-   *           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -965,7 +965,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListCustomClassesRequest request =
    *       ListCustomClassesRequest.newBuilder()
-   *           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -993,7 +993,7 @@ public class AdaptationClient implements BackgroundResource {
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListCustomClassesRequest request =
    *       ListCustomClassesRequest.newBuilder()
-   *           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/speech/v1p1beta1/cloud_speech.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class SpeechGrpc {
 
   private SpeechGrpc() {}
