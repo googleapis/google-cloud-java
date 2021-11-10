@@ -451,8 +451,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String parent =
-   *       ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   FetchProcessorTypesResponse response =
    *       documentProcessorServiceClient.fetchProcessorTypes(parent);
    * }
@@ -479,8 +478,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   FetchProcessorTypesRequest request =
    *       FetchProcessorTypesRequest.newBuilder()
-   *           .setParent(
-   *               ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .build();
    *   FetchProcessorTypesResponse response =
    *       documentProcessorServiceClient.fetchProcessorTypes(request);
@@ -505,8 +503,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   FetchProcessorTypesRequest request =
    *       FetchProcessorTypesRequest.newBuilder()
-   *           .setParent(
-   *               ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .build();
    *   ApiFuture<FetchProcessorTypesResponse> future =
    *       documentProcessorServiceClient.fetchProcessorTypesCallable().futureCall(request);
@@ -557,7 +554,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Processor element : documentProcessorServiceClient.listProcessors(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -584,7 +581,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   ListProcessorsRequest request =
    *       ListProcessorsRequest.newBuilder()
-   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -613,7 +610,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   ListProcessorsRequest request =
    *       ListProcessorsRequest.newBuilder()
-   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -642,7 +639,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   ListProcessorsRequest request =
    *       ListProcessorsRequest.newBuilder()
-   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -708,7 +705,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Processor processor = Processor.newBuilder().build();
    *   Processor response = documentProcessorServiceClient.createProcessor(parent, processor);
    * }
@@ -738,7 +735,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   CreateProcessorRequest request =
    *       CreateProcessorRequest.newBuilder()
-   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProcessor(Processor.newBuilder().build())
    *           .build();
    *   Processor response = documentProcessorServiceClient.createProcessor(request);
@@ -764,7 +761,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   CreateProcessorRequest request =
    *       CreateProcessorRequest.newBuilder()
-   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProcessor(Processor.newBuilder().build())
    *           .build();
    *   ApiFuture<Processor> future =

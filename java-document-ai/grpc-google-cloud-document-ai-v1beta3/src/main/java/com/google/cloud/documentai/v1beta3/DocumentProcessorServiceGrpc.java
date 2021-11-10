@@ -30,6 +30,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/documentai/v1beta3/document_processor_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentProcessorServiceGrpc {
 
   private DocumentProcessorServiceGrpc() {}
