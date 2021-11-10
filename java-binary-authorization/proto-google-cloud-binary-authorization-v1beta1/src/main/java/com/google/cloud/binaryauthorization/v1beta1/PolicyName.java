@@ -16,7 +16,9 @@
 
 package com.google.cloud.binaryauthorization.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -31,24 +33,52 @@ import javax.annotation.Generated;
 public class PolicyName implements ResourceName {
   private static final PathTemplate PROJECT =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/policy");
+  private static final PathTemplate LOCATION =
+      PathTemplate.createWithoutUrlEncoding("locations/{location}/policy");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
+  private final String location;
 
   @Deprecated
   protected PolicyName() {
     project = null;
+    location = null;
   }
 
   private PolicyName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
+    location = null;
+    pathTemplate = PROJECT;
+  }
+
+  private PolicyName(LocationBuilder builder) {
+    location = Preconditions.checkNotNull(builder.getLocation());
+    project = null;
+    pathTemplate = LOCATION;
   }
 
   public String getProject() {
     return project;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static LocationBuilder newLocationBuilder() {
+    return new LocationBuilder();
   }
 
   public Builder toBuilder() {
@@ -59,18 +89,42 @@ public class PolicyName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static PolicyName ofProjectName(String project) {
+    return newBuilder().setProject(project).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static PolicyName ofLocationName(String location) {
+    return newLocationBuilder().setLocation(location).build();
+  }
+
   public static String format(String project) {
     return newBuilder().setProject(project).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectName(String project) {
+    return newBuilder().setProject(project).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatLocationName(String location) {
+    return newLocationBuilder().setLocation(location).build().toString();
   }
 
   public static PolicyName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT.validatedMatch(
-            formattedString, "PolicyName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"));
+    if (PROJECT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT.match(formattedString);
+      return ofProjectName(matchMap.get("project"));
+    } else if (LOCATION.matches(formattedString)) {
+      Map<String, String> matchMap = LOCATION.match(formattedString);
+      return ofLocationName(matchMap.get("location"));
+    }
+    throw new ValidationException("PolicyName.parse: formattedString not in valid format");
   }
 
   public static List<PolicyName> parseList(List<String> formattedStrings) {
@@ -94,7 +148,7 @@ public class PolicyName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT.matches(formattedString);
+    return PROJECT.matches(formattedString) || LOCATION.matches(formattedString);
   }
 
   @Override
@@ -105,6 +159,9 @@ public class PolicyName implements ResourceName {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           if (project != null) {
             fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +176,7 @@ public class PolicyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT.instantiate("project", project);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -129,7 +186,8 @@ public class PolicyName implements ResourceName {
     }
     if (o != null || getClass() == o.getClass()) {
       PolicyName that = ((PolicyName) o);
-      return Objects.equals(this.project, that.project);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -138,7 +196,11 @@ public class PolicyName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -158,7 +220,31 @@ public class PolicyName implements ResourceName {
     }
 
     private Builder(PolicyName policyName) {
+      Preconditions.checkArgument(
+          Objects.equals(policyName.pathTemplate, PROJECT),
+          "toBuilder is only supported when PolicyName has the pattern of projects/{project}/policy");
       this.project = policyName.project;
+    }
+
+    public PolicyName build() {
+      return new PolicyName(this);
+    }
+  }
+
+  /** Builder for locations/{location}/policy. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class LocationBuilder {
+    private String location;
+
+    protected LocationBuilder() {}
+
+    public String getLocation() {
+      return location;
+    }
+
+    public LocationBuilder setLocation(String location) {
+      this.location = location;
+      return this;
     }
 
     public PolicyName build() {

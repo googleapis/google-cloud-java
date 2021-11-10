@@ -18,17 +18,17 @@
 
 package com.google.cloud.binaryauthorization.v1beta1;
 
-public interface GetPolicyRequestOrBuilder
+public interface GetSystemPolicyRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.binaryauthorization.v1beta1.GetPolicyRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1beta1.Policy] to retrieve,
-   * in the format `projects/&#42;&#47;policy`.
+   * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+   * Note that the system policy is not associated with a project.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1beta1.Policy] to retrieve,
-   * in the format `projects/&#42;&#47;policy`.
+   * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+   * Note that the system policy is not associated with a project.
    * </pre>
    *
    * <code>

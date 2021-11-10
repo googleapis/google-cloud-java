@@ -22,8 +22,7 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for container
- * image binary authorization.
+ * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for Binary Authorization.
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Policy}
@@ -162,6 +161,72 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
               globalPolicyEvaluationMode_ = rawValue;
               break;
             }
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                kubernetesServiceAccountAdmissionRules_ =
+                    com.google.protobuf.MapField.newMapField(
+                        KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+                  kubernetesServiceAccountAdmissionRules__ =
+                      input.readMessage(
+                          KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry
+                              .getParserForType(),
+                          extensionRegistry);
+              kubernetesServiceAccountAdmissionRules_
+                  .getMutableMap()
+                  .put(
+                      kubernetesServiceAccountAdmissionRules__.getKey(),
+                      kubernetesServiceAccountAdmissionRules__.getValue());
+              break;
+            }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                istioServiceIdentityAdmissionRules_ =
+                    com.google.protobuf.MapField.newMapField(
+                        IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+                  istioServiceIdentityAdmissionRules__ =
+                      input.readMessage(
+                          IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry
+                              .getParserForType(),
+                          extensionRegistry);
+              istioServiceIdentityAdmissionRules_
+                  .getMutableMap()
+                  .put(
+                      istioServiceIdentityAdmissionRules__.getKey(),
+                      istioServiceIdentityAdmissionRules__.getValue());
+              break;
+            }
+          case 82:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                kubernetesNamespaceAdmissionRules_ =
+                    com.google.protobuf.MapField.newMapField(
+                        KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+                  kubernetesNamespaceAdmissionRules__ =
+                      input.readMessage(
+                          KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry
+                              .getParserForType(),
+                          extensionRegistry);
+              kubernetesNamespaceAdmissionRules_
+                  .getMutableMap()
+                  .put(
+                      kubernetesNamespaceAdmissionRules__.getKey(),
+                      kubernetesNamespaceAdmissionRules__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -196,6 +261,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 3:
         return internalGetClusterAdmissionRules();
+      case 10:
+        return internalGetKubernetesNamespaceAdmissionRules();
+      case 8:
+        return internalGetKubernetesServiceAccountAdmissionRules();
+      case 9:
+        return internalGetIstioServiceIdentityAdmissionRules();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -762,6 +833,405 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int KUBERNETES_NAMESPACE_ADMISSION_RULES_FIELD_NUMBER = 10;
+
+  private static final class KubernetesNamespaceAdmissionRulesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+                    newDefaultInstance(
+                        com.google.cloud.binaryauthorization.v1beta1
+                            .BinaryAuthorizationResourcesProto
+                            .internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesNamespaceAdmissionRulesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+                            .getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      kubernetesNamespaceAdmissionRules_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      internalGetKubernetesNamespaceAdmissionRules() {
+    if (kubernetesNamespaceAdmissionRules_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry);
+    }
+    return kubernetesNamespaceAdmissionRules_;
+  }
+
+  public int getKubernetesNamespaceAdmissionRulesCount() {
+    return internalGetKubernetesNamespaceAdmissionRules().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
+  }
+  /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesNamespaceAdmissionRules() {
+    return getKubernetesNamespaceAdmissionRulesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesNamespaceAdmissionRulesMap() {
+    return internalGetKubernetesNamespaceAdmissionRules().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesNamespaceAdmissionRulesOrDefault(
+          java.lang.String key,
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        map = internalGetKubernetesNamespaceAdmissionRules().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesNamespaceAdmissionRulesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        map = internalGetKubernetesNamespaceAdmissionRules().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int KUBERNETES_SERVICE_ACCOUNT_ADMISSION_RULES_FIELD_NUMBER = 8;
+
+  private static final class KubernetesServiceAccountAdmissionRulesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+                    newDefaultInstance(
+                        com.google.cloud.binaryauthorization.v1beta1
+                            .BinaryAuthorizationResourcesProto
+                            .internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesServiceAccountAdmissionRulesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+                            .getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      kubernetesServiceAccountAdmissionRules_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      internalGetKubernetesServiceAccountAdmissionRules() {
+    if (kubernetesServiceAccountAdmissionRules_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry);
+    }
+    return kubernetesServiceAccountAdmissionRules_;
+  }
+
+  public int getKubernetesServiceAccountAdmissionRulesCount() {
+    return internalGetKubernetesServiceAccountAdmissionRules().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
+  }
+  /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesServiceAccountAdmissionRules() {
+    return getKubernetesServiceAccountAdmissionRulesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesServiceAccountAdmissionRulesMap() {
+    return internalGetKubernetesServiceAccountAdmissionRules().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesServiceAccountAdmissionRulesOrDefault(
+          java.lang.String key,
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesServiceAccountAdmissionRulesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int ISTIO_SERVICE_IDENTITY_ADMISSION_RULES_FIELD_NUMBER = 9;
+
+  private static final class IstioServiceIdentityAdmissionRulesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+                    newDefaultInstance(
+                        com.google.cloud.binaryauthorization.v1beta1
+                            .BinaryAuthorizationResourcesProto
+                            .internal_static_google_cloud_binaryauthorization_v1beta1_Policy_IstioServiceIdentityAdmissionRulesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+                            .getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      istioServiceIdentityAdmissionRules_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      internalGetIstioServiceIdentityAdmissionRules() {
+    if (istioServiceIdentityAdmissionRules_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry);
+    }
+    return istioServiceIdentityAdmissionRules_;
+  }
+
+  public int getIstioServiceIdentityAdmissionRulesCount() {
+    return internalGetIstioServiceIdentityAdmissionRules().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
+  }
+  /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getIstioServiceIdentityAdmissionRules() {
+    return getIstioServiceIdentityAdmissionRulesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getIstioServiceIdentityAdmissionRulesMap() {
+    return internalGetIstioServiceIdentityAdmissionRules().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getIstioServiceIdentityAdmissionRulesOrDefault(
+          java.lang.String key,
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        map = internalGetIstioServiceIdentityAdmissionRules().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getIstioServiceIdentityAdmissionRulesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        map = internalGetIstioServiceIdentityAdmissionRules().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int DEFAULT_ADMISSION_RULE_FIELD_NUMBER = 4;
   private com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultAdmissionRule_;
   /**
@@ -909,6 +1379,21 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(7, globalPolicyEvaluationMode_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetKubernetesServiceAccountAdmissionRules(),
+        KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry,
+        8);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetIstioServiceIdentityAdmissionRules(),
+        IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry,
+        9);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetKubernetesNamespaceAdmissionRules(),
+        KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry,
+        10);
     unknownFields.writeTo(output);
   }
 
@@ -955,6 +1440,51 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, globalPolicyEvaluationMode_);
     }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        entry : internalGetKubernetesServiceAccountAdmissionRules().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          kubernetesServiceAccountAdmissionRules__ =
+              KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, kubernetesServiceAccountAdmissionRules__);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        entry : internalGetIstioServiceIdentityAdmissionRules().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          istioServiceIdentityAdmissionRules__ =
+              IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, istioServiceIdentityAdmissionRules__);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        entry : internalGetKubernetesNamespaceAdmissionRules().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          kubernetesNamespaceAdmissionRules__ =
+              KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, kubernetesNamespaceAdmissionRules__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -978,6 +1508,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (!internalGetClusterAdmissionRules().equals(other.internalGetClusterAdmissionRules()))
       return false;
+    if (!internalGetKubernetesNamespaceAdmissionRules()
+        .equals(other.internalGetKubernetesNamespaceAdmissionRules())) return false;
+    if (!internalGetKubernetesServiceAccountAdmissionRules()
+        .equals(other.internalGetKubernetesServiceAccountAdmissionRules())) return false;
+    if (!internalGetIstioServiceIdentityAdmissionRules()
+        .equals(other.internalGetIstioServiceIdentityAdmissionRules())) return false;
     if (hasDefaultAdmissionRule() != other.hasDefaultAdmissionRule()) return false;
     if (hasDefaultAdmissionRule()) {
       if (!getDefaultAdmissionRule().equals(other.getDefaultAdmissionRule())) return false;
@@ -1010,6 +1546,18 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetClusterAdmissionRules().getMap().isEmpty()) {
       hash = (37 * hash) + CLUSTER_ADMISSION_RULES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetClusterAdmissionRules().hashCode();
+    }
+    if (!internalGetKubernetesNamespaceAdmissionRules().getMap().isEmpty()) {
+      hash = (37 * hash) + KUBERNETES_NAMESPACE_ADMISSION_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetKubernetesNamespaceAdmissionRules().hashCode();
+    }
+    if (!internalGetKubernetesServiceAccountAdmissionRules().getMap().isEmpty()) {
+      hash = (37 * hash) + KUBERNETES_SERVICE_ACCOUNT_ADMISSION_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetKubernetesServiceAccountAdmissionRules().hashCode();
+    }
+    if (!internalGetIstioServiceIdentityAdmissionRules().getMap().isEmpty()) {
+      hash = (37 * hash) + ISTIO_SERVICE_IDENTITY_ADMISSION_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetIstioServiceIdentityAdmissionRules().hashCode();
     }
     if (hasDefaultAdmissionRule()) {
       hash = (37 * hash) + DEFAULT_ADMISSION_RULE_FIELD_NUMBER;
@@ -1123,8 +1671,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for container
-   * image binary authorization.
+   * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for Binary Authorization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Policy}
@@ -1143,6 +1690,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 3:
           return internalGetClusterAdmissionRules();
+        case 10:
+          return internalGetKubernetesNamespaceAdmissionRules();
+        case 8:
+          return internalGetKubernetesServiceAccountAdmissionRules();
+        case 9:
+          return internalGetIstioServiceIdentityAdmissionRules();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1153,6 +1706,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 3:
           return internalGetMutableClusterAdmissionRules();
+        case 10:
+          return internalGetMutableKubernetesNamespaceAdmissionRules();
+        case 8:
+          return internalGetMutableKubernetesServiceAccountAdmissionRules();
+        case 9:
+          return internalGetMutableIstioServiceIdentityAdmissionRules();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1200,6 +1759,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         admissionWhitelistPatternsBuilder_.clear();
       }
       internalGetMutableClusterAdmissionRules().clear();
+      internalGetMutableKubernetesNamespaceAdmissionRules().clear();
+      internalGetMutableKubernetesServiceAccountAdmissionRules().clear();
+      internalGetMutableIstioServiceIdentityAdmissionRules().clear();
       if (defaultAdmissionRuleBuilder_ == null) {
         defaultAdmissionRule_ = null;
       } else {
@@ -1255,6 +1817,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       result.clusterAdmissionRules_ = internalGetClusterAdmissionRules();
       result.clusterAdmissionRules_.makeImmutable();
+      result.kubernetesNamespaceAdmissionRules_ = internalGetKubernetesNamespaceAdmissionRules();
+      result.kubernetesNamespaceAdmissionRules_.makeImmutable();
+      result.kubernetesServiceAccountAdmissionRules_ =
+          internalGetKubernetesServiceAccountAdmissionRules();
+      result.kubernetesServiceAccountAdmissionRules_.makeImmutable();
+      result.istioServiceIdentityAdmissionRules_ = internalGetIstioServiceIdentityAdmissionRules();
+      result.istioServiceIdentityAdmissionRules_.makeImmutable();
       if (defaultAdmissionRuleBuilder_ == null) {
         result.defaultAdmissionRule_ = defaultAdmissionRule_;
       } else {
@@ -1354,6 +1923,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableClusterAdmissionRules().mergeFrom(other.internalGetClusterAdmissionRules());
+      internalGetMutableKubernetesNamespaceAdmissionRules()
+          .mergeFrom(other.internalGetKubernetesNamespaceAdmissionRules());
+      internalGetMutableKubernetesServiceAccountAdmissionRules()
+          .mergeFrom(other.internalGetKubernetesServiceAccountAdmissionRules());
+      internalGetMutableIstioServiceIdentityAdmissionRules()
+          .mergeFrom(other.internalGetIstioServiceIdentityAdmissionRules());
       if (other.hasDefaultAdmissionRule()) {
         mergeDefaultAdmissionRule(other.getDefaultAdmissionRule());
       }
@@ -2415,6 +2990,627 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
             values) {
       internalGetMutableClusterAdmissionRules().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        kubernetesNamespaceAdmissionRules_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        internalGetKubernetesNamespaceAdmissionRules() {
+      if (kubernetesNamespaceAdmissionRules_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry);
+      }
+      return kubernetesNamespaceAdmissionRules_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        internalGetMutableKubernetesNamespaceAdmissionRules() {
+      onChanged();
+      ;
+      if (kubernetesNamespaceAdmissionRules_ == null) {
+        kubernetesNamespaceAdmissionRules_ =
+            com.google.protobuf.MapField.newMapField(
+                KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry);
+      }
+      if (!kubernetesNamespaceAdmissionRules_.isMutable()) {
+        kubernetesNamespaceAdmissionRules_ = kubernetesNamespaceAdmissionRules_.copy();
+      }
+      return kubernetesNamespaceAdmissionRules_;
+    }
+
+    public int getKubernetesNamespaceAdmissionRulesCount() {
+      return internalGetKubernetesNamespaceAdmissionRules().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     *   `[a-z.-]+`, e.g. `some-namespace`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
+    }
+    /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getKubernetesNamespaceAdmissionRules() {
+      return getKubernetesNamespaceAdmissionRulesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     *   `[a-z.-]+`, e.g. `some-namespace`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getKubernetesNamespaceAdmissionRulesMap() {
+      return internalGetKubernetesNamespaceAdmissionRules().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     *   `[a-z.-]+`, e.g. `some-namespace`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+        getKubernetesNamespaceAdmissionRulesOrDefault(
+            java.lang.String key,
+            com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          map = internalGetKubernetesNamespaceAdmissionRules().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     *   `[a-z.-]+`, e.g. `some-namespace`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+        getKubernetesNamespaceAdmissionRulesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          map = internalGetKubernetesNamespaceAdmissionRules().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearKubernetesNamespaceAdmissionRules() {
+      internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     *   `[a-z.-]+`, e.g. `some-namespace`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeKubernetesNamespaceAdmissionRules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getMutableKubernetesNamespaceAdmissionRules() {
+      return internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     *   `[a-z.-]+`, e.g. `some-namespace`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putKubernetesNamespaceAdmissionRules(
+        java.lang.String key, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     *   `[a-z.-]+`, e.g. `some-namespace`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllKubernetesNamespaceAdmissionRules(
+        java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+            values) {
+      internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        kubernetesServiceAccountAdmissionRules_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        internalGetKubernetesServiceAccountAdmissionRules() {
+      if (kubernetesServiceAccountAdmissionRules_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry);
+      }
+      return kubernetesServiceAccountAdmissionRules_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        internalGetMutableKubernetesServiceAccountAdmissionRules() {
+      onChanged();
+      ;
+      if (kubernetesServiceAccountAdmissionRules_ == null) {
+        kubernetesServiceAccountAdmissionRules_ =
+            com.google.protobuf.MapField.newMapField(
+                KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry);
+      }
+      if (!kubernetesServiceAccountAdmissionRules_.isMutable()) {
+        kubernetesServiceAccountAdmissionRules_ = kubernetesServiceAccountAdmissionRules_.copy();
+      }
+      return kubernetesServiceAccountAdmissionRules_;
+    }
+
+    public int getKubernetesServiceAccountAdmissionRulesCount() {
+      return internalGetKubernetesServiceAccountAdmissionRules().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-service-account admission rules. Service account
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
+    }
+    /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getKubernetesServiceAccountAdmissionRules() {
+      return getKubernetesServiceAccountAdmissionRulesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-service-account admission rules. Service account
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getKubernetesServiceAccountAdmissionRulesMap() {
+      return internalGetKubernetesServiceAccountAdmissionRules().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-service-account admission rules. Service account
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+        getKubernetesServiceAccountAdmissionRulesOrDefault(
+            java.lang.String key,
+            com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-service-account admission rules. Service account
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+        getKubernetesServiceAccountAdmissionRulesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearKubernetesServiceAccountAdmissionRules() {
+      internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-service-account admission rules. Service account
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeKubernetesServiceAccountAdmissionRules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getMutableKubernetesServiceAccountAdmissionRules() {
+      return internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-service-account admission rules. Service account
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putKubernetesServiceAccountAdmissionRules(
+        java.lang.String key, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-kubernetes-service-account admission rules. Service account
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllKubernetesServiceAccountAdmissionRules(
+        java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+            values) {
+      internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        istioServiceIdentityAdmissionRules_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        internalGetIstioServiceIdentityAdmissionRules() {
+      if (istioServiceIdentityAdmissionRules_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry);
+      }
+      return istioServiceIdentityAdmissionRules_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        internalGetMutableIstioServiceIdentityAdmissionRules() {
+      onChanged();
+      ;
+      if (istioServiceIdentityAdmissionRules_ == null) {
+        istioServiceIdentityAdmissionRules_ =
+            com.google.protobuf.MapField.newMapField(
+                IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry);
+      }
+      if (!istioServiceIdentityAdmissionRules_.isMutable()) {
+        istioServiceIdentityAdmissionRules_ = istioServiceIdentityAdmissionRules_.copy();
+      }
+      return istioServiceIdentityAdmissionRules_;
+    }
+
+    public int getIstioServiceIdentityAdmissionRulesCount() {
+      return internalGetIstioServiceIdentityAdmissionRules().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-istio-service-identity admission rules. Istio service
+     * identity spec format:
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
+    }
+    /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getIstioServiceIdentityAdmissionRules() {
+      return getIstioServiceIdentityAdmissionRulesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-istio-service-identity admission rules. Istio service
+     * identity spec format:
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getIstioServiceIdentityAdmissionRulesMap() {
+      return internalGetIstioServiceIdentityAdmissionRules().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-istio-service-identity admission rules. Istio service
+     * identity spec format:
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+        getIstioServiceIdentityAdmissionRulesOrDefault(
+            java.lang.String key,
+            com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          map = internalGetIstioServiceIdentityAdmissionRules().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-istio-service-identity admission rules. Istio service
+     * identity spec format:
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+        getIstioServiceIdentityAdmissionRulesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+          map = internalGetIstioServiceIdentityAdmissionRules().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearIstioServiceIdentityAdmissionRules() {
+      internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-istio-service-identity admission rules. Istio service
+     * identity spec format:
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeIstioServiceIdentityAdmissionRules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+        getMutableIstioServiceIdentityAdmissionRules() {
+      return internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-istio-service-identity admission rules. Istio service
+     * identity spec format:
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putIstioServiceIdentityAdmissionRules(
+        java.lang.String key, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Per-istio-service-identity admission rules. Istio service
+     * identity spec format:
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllIstioServiceIdentityAdmissionRules(
+        java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+            values) {
+      internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().putAll(values);
       return this;
     }
 

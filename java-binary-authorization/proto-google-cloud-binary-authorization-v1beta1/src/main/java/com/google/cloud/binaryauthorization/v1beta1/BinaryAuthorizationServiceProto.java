@@ -59,6 +59,10 @@ public final class BinaryAuthorizationServiceProto {
       internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -98,52 +102,62 @@ public final class BinaryAuthorizationServiceProto {
           + "eta1.Attestor\022\027\n\017next_page_token\030\002 \001(\t\"Z"
           + "\n\025DeleteAttestorRequest\022A\n\004name\030\001 \001(\tB3\340"
           + "A\002\372A-\n+binaryauthorization.googleapis.co"
-          + "m/Attestor2\313\013\n BinauthzManagementService"
-          + "V1Beta1\022\253\001\n\tGetPolicy\022:.google.cloud.bin"
-          + "aryauthorization.v1beta1.GetPolicyReques"
-          + "t\0320.google.cloud.binaryauthorization.v1b"
-          + "eta1.Policy\"0\202\323\344\223\002#\022!/v1beta1/{name=proj"
-          + "ects/*/policy}\332A\004name\022\302\001\n\014UpdatePolicy\022="
-          + ".google.cloud.binaryauthorization.v1beta"
-          + "1.UpdatePolicyRequest\0320.google.cloud.bin"
-          + "aryauthorization.v1beta1.Policy\"A\202\323\344\223\0022\032"
-          + "(/v1beta1/{policy.name=projects/*/policy"
-          + "}:\006policy\332A\006policy\022\335\001\n\016CreateAttestor\022?."
-          + "google.cloud.binaryauthorization.v1beta1"
-          + ".CreateAttestorRequest\0322.google.cloud.bi"
-          + "naryauthorization.v1beta1.Attestor\"V\202\323\344\223"
-          + "\0022\"&/v1beta1/{parent=projects/*}/attesto"
-          + "rs:\010attestor\332A\033parent,attestor_id,attest"
-          + "or\022\266\001\n\013GetAttestor\022<.google.cloud.binary"
-          + "authorization.v1beta1.GetAttestorRequest"
-          + "\0322.google.cloud.binaryauthorization.v1be"
-          + "ta1.Attestor\"5\202\323\344\223\002(\022&/v1beta1/{name=pro"
-          + "jects/*/attestors/*}\332A\004name\022\323\001\n\016UpdateAt"
-          + "testor\022?.google.cloud.binaryauthorizatio"
-          + "n.v1beta1.UpdateAttestorRequest\0322.google"
-          + ".cloud.binaryauthorization.v1beta1.Attes"
-          + "tor\"L\202\323\344\223\002;\032//v1beta1/{attestor.name=pro"
-          + "jects/*/attestors/*}:\010attestor\332A\010attesto"
-          + "r\022\311\001\n\rListAttestors\022>.google.cloud.binar"
-          + "yauthorization.v1beta1.ListAttestorsRequ"
-          + "est\032?.google.cloud.binaryauthorization.v"
-          + "1beta1.ListAttestorsResponse\"7\202\323\344\223\002(\022&/v"
-          + "1beta1/{parent=projects/*}/attestors\332A\006p"
-          + "arent\022\240\001\n\016DeleteAttestor\022?.google.cloud."
-          + "binaryauthorization.v1beta1.DeleteAttest"
-          + "orRequest\032\026.google.protobuf.Empty\"5\202\323\344\223\002"
-          + "(*&/v1beta1/{name=projects/*/attestors/*"
-          + "}\332A\004name\032V\312A\"binaryauthorization.googlea"
-          + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\265\002\n,com.google.cloud.bi"
-          + "naryauthorization.v1beta1B\037BinaryAuthori"
-          + "zationServiceProtoP\001Z[google.golang.org/"
-          + "genproto/googleapis/cloud/binaryauthoriz"
-          + "ation/v1beta1;binaryauthorization\370\001\001\252\002(G"
-          + "oogle.Cloud.BinaryAuthorization.V1Beta1\312"
-          + "\002(Google\\Cloud\\BinaryAuthorization\\V1bet"
-          + "a1\352\002+Google::Cloud::BinaryAuthorization:"
-          + ":V1beta1b\006proto3"
+          + "m/Attestor\"Y\n\026GetSystemPolicyRequest\022?\n\004"
+          + "name\030\001 \001(\tB1\340A\002\372A+\n)binaryauthorization."
+          + "googleapis.com/Policy2\313\013\n BinauthzManage"
+          + "mentServiceV1Beta1\022\253\001\n\tGetPolicy\022:.googl"
+          + "e.cloud.binaryauthorization.v1beta1.GetP"
+          + "olicyRequest\0320.google.cloud.binaryauthor"
+          + "ization.v1beta1.Policy\"0\202\323\344\223\002#\022!/v1beta1"
+          + "/{name=projects/*/policy}\332A\004name\022\302\001\n\014Upd"
+          + "atePolicy\022=.google.cloud.binaryauthoriza"
+          + "tion.v1beta1.UpdatePolicyRequest\0320.googl"
+          + "e.cloud.binaryauthorization.v1beta1.Poli"
+          + "cy\"A\202\323\344\223\0022\032(/v1beta1/{policy.name=projec"
+          + "ts/*/policy}:\006policy\332A\006policy\022\335\001\n\016Create"
+          + "Attestor\022?.google.cloud.binaryauthorizat"
+          + "ion.v1beta1.CreateAttestorRequest\0322.goog"
+          + "le.cloud.binaryauthorization.v1beta1.Att"
+          + "estor\"V\202\323\344\223\0022\"&/v1beta1/{parent=projects"
+          + "/*}/attestors:\010attestor\332A\033parent,attesto"
+          + "r_id,attestor\022\266\001\n\013GetAttestor\022<.google.c"
+          + "loud.binaryauthorization.v1beta1.GetAtte"
+          + "storRequest\0322.google.cloud.binaryauthori"
+          + "zation.v1beta1.Attestor\"5\202\323\344\223\002(\022&/v1beta"
+          + "1/{name=projects/*/attestors/*}\332A\004name\022\323"
+          + "\001\n\016UpdateAttestor\022?.google.cloud.binarya"
+          + "uthorization.v1beta1.UpdateAttestorReque"
+          + "st\0322.google.cloud.binaryauthorization.v1"
+          + "beta1.Attestor\"L\202\323\344\223\002;\032//v1beta1/{attest"
+          + "or.name=projects/*/attestors/*}:\010attesto"
+          + "r\332A\010attestor\022\311\001\n\rListAttestors\022>.google."
+          + "cloud.binaryauthorization.v1beta1.ListAt"
+          + "testorsRequest\032?.google.cloud.binaryauth"
+          + "orization.v1beta1.ListAttestorsResponse\""
+          + "7\202\323\344\223\002(\022&/v1beta1/{parent=projects/*}/at"
+          + "testors\332A\006parent\022\240\001\n\016DeleteAttestor\022?.go"
+          + "ogle.cloud.binaryauthorization.v1beta1.D"
+          + "eleteAttestorRequest\032\026.google.protobuf.E"
+          + "mpty\"5\202\323\344\223\002(*&/v1beta1/{name=projects/*/"
+          + "attestors/*}\332A\004name\032V\312A\"binaryauthorizat"
+          + "ion.googleapis.com\322A.https://www.googlea"
+          + "pis.com/auth/cloud-platform2\250\002\n\023SystemPo"
+          + "licyV1Beta1\022\270\001\n\017GetSystemPolicy\022@.google"
+          + ".cloud.binaryauthorization.v1beta1.GetSy"
+          + "stemPolicyRequest\0320.google.cloud.binarya"
+          + "uthorization.v1beta1.Policy\"1\202\323\344\223\002$\022\"/v1"
+          + "beta1/{name=locations/*/policy}\332A\004name\032V"
+          + "\312A\"binaryauthorization.googleapis.com\322A."
+          + "https://www.googleapis.com/auth/cloud-pl"
+          + "atformB\265\002\n,com.google.cloud.binaryauthor"
+          + "ization.v1beta1B\037BinaryAuthorizationServ"
+          + "iceProtoP\001Z[google.golang.org/genproto/g"
+          + "oogleapis/cloud/binaryauthorization/v1be"
+          + "ta1;binaryauthorization\370\001\001\252\002(Google.Clou"
+          + "d.BinaryAuthorization.V1Beta1\312\002(Google\\C"
+          + "loud\\BinaryAuthorization\\V1beta1\352\002+Googl"
+          + "e::Cloud::BinaryAuthorization::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -218,6 +232,14 @@ public final class BinaryAuthorizationServiceProto {
     internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });

@@ -34,8 +34,21 @@
  * <pre>{@code
  * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
  *     BinauthzManagementServiceV1Beta1Client.create()) {
- *   PolicyName name = PolicyName.of("[PROJECT]");
+ *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
  *   Policy response = binauthzManagementServiceV1Beta1Client.getPolicy(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SystemPolicyV1Beta1Client =======================
+ *
+ * <p>Service Description: API for working with the system policy.
+ *
+ * <p>Sample for SystemPolicyV1Beta1Client:
+ *
+ * <pre>{@code
+ * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
+ *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
+ *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(name);
  * }
  * }</pre>
  */

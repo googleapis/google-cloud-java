@@ -22,9 +22,8 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * An [user owned drydock
- * note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote]
- * references a Drydock ATTESTATION_AUTHORITY Note created by the user.
+ * An [user owned drydock note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote] references a Drydock
+ * ATTESTATION_AUTHORITY Note created by the user.
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote}
@@ -565,9 +564,8 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * An [user owned drydock
-   * note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote]
-   * references a Drydock ATTESTATION_AUTHORITY Note created by the user.
+   * An [user owned drydock note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote] references a Drydock
+   * ATTESTATION_AUTHORITY Note created by the user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote}

@@ -36,6 +36,18 @@ public final class BinaryAuthorizationResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_binaryauthorization_v1beta1_Policy_ClusterAdmissionRulesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesNamespaceAdmissionRulesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesNamespaceAdmissionRulesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesServiceAccountAdmissionRulesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesServiceAccountAdmissionRulesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_binaryauthorization_v1beta1_Policy_IstioServiceIdentityAdmissionRulesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_binaryauthorization_v1beta1_Policy_IstioServiceIdentityAdmissionRulesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_binaryauthorization_v1beta1_AdmissionWhitelistPattern_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_binaryauthorization_v1beta1_AdmissionWhitelistPattern_fieldAccessorTable;
@@ -70,10 +82,10 @@ public final class BinaryAuthorizationResourcesProto {
     java.lang.String[] descriptorData = {
       "\n8google/cloud/binaryauthorization/v1bet"
           + "a1/resources.proto\022(google.cloud.binarya"
-          + "uthorization.v1beta1\032\034google/api/annotat"
-          + "ions.proto\032\037google/api/field_behavior.pr"
-          + "oto\032\031google/api/resource.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\315\006\n\006Policy\022\021\n\004na"
+          + "uthorization.v1beta1\032\037google/api/field_b"
+          + "ehavior.proto\032\031google/api/resource.proto"
+          + "\032\037google/protobuf/timestamp.proto\032\034googl"
+          + "e/api/annotations.proto\"\261\r\n\006Policy\022\021\n\004na"
           + "me\030\001 \001(\tB\003\340A\003\022\030\n\013description\030\006 \001(\tB\003\340A\001\022"
           + "w\n\035global_policy_evaluation_mode\030\007 \001(\0162K"
           + ".google.cloud.binaryauthorization.v1beta"
@@ -83,79 +95,103 @@ public final class BinaryAuthorizationResourcesProto {
           + "1.AdmissionWhitelistPatternB\003\340A\001\022q\n\027clus"
           + "ter_admission_rules\030\003 \003(\0132K.google.cloud"
           + ".binaryauthorization.v1beta1.Policy.Clus"
-          + "terAdmissionRulesEntryB\003\340A\001\022\\\n\026default_a"
-          + "dmission_rule\030\004 \001(\01327.google.cloud.binar"
-          + "yauthorization.v1beta1.AdmissionRuleB\003\340A"
-          + "\002\0224\n\013update_time\030\005 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\032u\n\032ClusterAdmissionRules"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.goog"
+          + "terAdmissionRulesEntryB\003\340A\001\022\212\001\n$kubernet"
+          + "es_namespace_admission_rules\030\n \003(\0132W.goo"
+          + "gle.cloud.binaryauthorization.v1beta1.Po"
+          + "licy.KubernetesNamespaceAdmissionRulesEn"
+          + "tryB\003\340A\001\022\225\001\n*kubernetes_service_account_"
+          + "admission_rules\030\010 \003(\0132\\.google.cloud.bin"
+          + "aryauthorization.v1beta1.Policy.Kubernet"
+          + "esServiceAccountAdmissionRulesEntryB\003\340A\001"
+          + "\022\215\001\n&istio_service_identity_admission_ru"
+          + "les\030\t \003(\0132X.google.cloud.binaryauthoriza"
+          + "tion.v1beta1.Policy.IstioServiceIdentity"
+          + "AdmissionRulesEntryB\003\340A\001\022\\\n\026default_admi"
+          + "ssion_rule\030\004 \001(\01327.google.cloud.binaryau"
+          + "thorization.v1beta1.AdmissionRuleB\003\340A\002\0224"
+          + "\n\013update_time\030\005 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\032u\n\032ClusterAdmissionRulesEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.google."
+          + "cloud.binaryauthorization.v1beta1.Admiss"
+          + "ionRule:\0028\001\032\201\001\n&KubernetesNamespaceAdmis"
+          + "sionRulesEntry\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001"
+          + "(\01327.google.cloud.binaryauthorization.v1"
+          + "beta1.AdmissionRule:\0028\001\032\206\001\n+KubernetesSe"
+          + "rviceAccountAdmissionRulesEntry\022\013\n\003key\030\001"
+          + " \001(\t\022F\n\005value\030\002 \001(\01327.google.cloud.binar"
+          + "yauthorization.v1beta1.AdmissionRule:\0028\001"
+          + "\032\202\001\n\'IstioServiceIdentityAdmissionRulesE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.googl"
+          + "e.cloud.binaryauthorization.v1beta1.Admi"
+          + "ssionRule:\0028\001\"d\n\032GlobalPolicyEvaluationM"
+          + "ode\022-\n)GLOBAL_POLICY_EVALUATION_MODE_UNS"
+          + "PECIFIED\020\000\022\n\n\006ENABLE\020\001\022\013\n\007DISABLE\020\002:f\352Ac"
+          + "\n)binaryauthorization.googleapis.com/Pol"
+          + "icy\022\031projects/{project}/policy\022\033location"
+          + "s/{location}/policy\"1\n\031AdmissionWhitelis"
+          + "tPattern\022\024\n\014name_pattern\030\001 \001(\t\"\344\003\n\rAdmis"
+          + "sionRule\022d\n\017evaluation_mode\030\001 \001(\0162F.goog"
           + "le.cloud.binaryauthorization.v1beta1.Adm"
-          + "issionRule:\0028\001\"d\n\032GlobalPolicyEvaluation"
-          + "Mode\022-\n)GLOBAL_POLICY_EVALUATION_MODE_UN"
-          + "SPECIFIED\020\000\022\n\n\006ENABLE\020\001\022\013\n\007DISABLE\020\002:I\352A"
-          + "F\n)binaryauthorization.googleapis.com/Po"
-          + "licy\022\031projects/{project}/policy\"1\n\031Admis"
-          + "sionWhitelistPattern\022\024\n\014name_pattern\030\001 \001"
-          + "(\t\"\344\003\n\rAdmissionRule\022d\n\017evaluation_mode\030"
-          + "\001 \001(\0162F.google.cloud.binaryauthorization"
-          + ".v1beta1.AdmissionRule.EvaluationModeB\003\340"
-          + "A\002\022$\n\027require_attestations_by\030\002 \003(\tB\003\340A\001"
-          + "\022f\n\020enforcement_mode\030\003 \001(\0162G.google.clou"
-          + "d.binaryauthorization.v1beta1.AdmissionR"
-          + "ule.EnforcementModeB\003\340A\002\"m\n\016EvaluationMo"
-          + "de\022\037\n\033EVALUATION_MODE_UNSPECIFIED\020\000\022\020\n\014A"
-          + "LWAYS_ALLOW\020\001\022\027\n\023REQUIRE_ATTESTATION\020\002\022\017"
-          + "\n\013ALWAYS_DENY\020\003\"p\n\017EnforcementMode\022 \n\034EN"
-          + "FORCEMENT_MODE_UNSPECIFIED\020\000\022 \n\034ENFORCED"
-          + "_BLOCK_AND_AUDIT_LOG\020\001\022\031\n\025DRYRUN_AUDIT_L"
-          + "OG_ONLY\020\002\"\274\002\n\010Attestor\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\002\022\030\n\013description\030\006 \001(\tB\003\340A\001\022a\n\027user_owne"
-          + "d_drydock_note\030\003 \001(\0132>.google.cloud.bina"
-          + "ryauthorization.v1beta1.UserOwnedDrydock"
-          + "NoteH\000\0224\n\013update_time\030\004 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003:Y\352AV\n+binaryauthori"
-          + "zation.googleapis.com/Attestor\022\'projects"
-          + "/{project}/attestors/{attestor}B\017\n\rattes"
-          + "tor_type\"\271\001\n\024UserOwnedDrydockNote\022\033\n\016not"
-          + "e_reference\030\001 \001(\tB\003\340A\002\022U\n\013public_keys\030\002 "
-          + "\003(\0132;.google.cloud.binaryauthorization.v"
-          + "1beta1.AttestorPublicKeyB\003\340A\001\022-\n delegat"
-          + "ion_service_account_email\030\003 \001(\tB\003\340A\003\"\365\003\n"
-          + "\rPkixPublicKey\022\026\n\016public_key_pem\030\001 \001(\t\022g"
-          + "\n\023signature_algorithm\030\002 \001(\0162J.google.clo"
-          + "ud.binaryauthorization.v1beta1.PkixPubli"
-          + "cKey.SignatureAlgorithm\"\342\002\n\022SignatureAlg"
-          + "orithm\022#\n\037SIGNATURE_ALGORITHM_UNSPECIFIE"
-          + "D\020\000\022\027\n\023RSA_PSS_2048_SHA256\020\001\022\027\n\023RSA_PSS_"
-          + "3072_SHA256\020\002\022\027\n\023RSA_PSS_4096_SHA256\020\003\022\027"
-          + "\n\023RSA_PSS_4096_SHA512\020\004\022\036\n\032RSA_SIGN_PKCS"
-          + "1_2048_SHA256\020\005\022\036\n\032RSA_SIGN_PKCS1_3072_S"
-          + "HA256\020\006\022\036\n\032RSA_SIGN_PKCS1_4096_SHA256\020\007\022"
-          + "\036\n\032RSA_SIGN_PKCS1_4096_SHA512\020\010\022\025\n\021ECDSA"
-          + "_P256_SHA256\020\t\022\025\n\021ECDSA_P384_SHA384\020\n\022\025\n"
-          + "\021ECDSA_P521_SHA512\020\013\"\277\001\n\021AttestorPublicK"
-          + "ey\022\024\n\007comment\030\001 \001(\tB\003\340A\001\022\n\n\002id\030\002 \001(\t\022&\n\034"
-          + "ascii_armored_pgp_public_key\030\003 \001(\tH\000\022R\n\017"
-          + "pkix_public_key\030\005 \001(\01327.google.cloud.bin"
-          + "aryauthorization.v1beta1.PkixPublicKeyH\000"
-          + "B\014\n\npublic_keyB\267\002\n,com.google.cloud.bina"
-          + "ryauthorization.v1beta1B!BinaryAuthoriza"
-          + "tionResourcesProtoP\001Z[google.golang.org/"
-          + "genproto/googleapis/cloud/binaryauthoriz"
-          + "ation/v1beta1;binaryauthorization\370\001\001\252\002(G"
-          + "oogle.Cloud.BinaryAuthorization.V1Beta1\312"
-          + "\002(Google\\Cloud\\BinaryAuthorization\\V1bet"
-          + "a1\352\002+Google::Cloud::BinaryAuthorization:"
-          + ":V1beta1b\006proto3"
+          + "issionRule.EvaluationModeB\003\340A\002\022$\n\027requir"
+          + "e_attestations_by\030\002 \003(\tB\003\340A\001\022f\n\020enforcem"
+          + "ent_mode\030\003 \001(\0162G.google.cloud.binaryauth"
+          + "orization.v1beta1.AdmissionRule.Enforcem"
+          + "entModeB\003\340A\002\"m\n\016EvaluationMode\022\037\n\033EVALUA"
+          + "TION_MODE_UNSPECIFIED\020\000\022\020\n\014ALWAYS_ALLOW\020"
+          + "\001\022\027\n\023REQUIRE_ATTESTATION\020\002\022\017\n\013ALWAYS_DEN"
+          + "Y\020\003\"p\n\017EnforcementMode\022 \n\034ENFORCEMENT_MO"
+          + "DE_UNSPECIFIED\020\000\022 \n\034ENFORCED_BLOCK_AND_A"
+          + "UDIT_LOG\020\001\022\031\n\025DRYRUN_AUDIT_LOG_ONLY\020\002\"\274\002"
+          + "\n\010Attestor\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\030\n\013descrip"
+          + "tion\030\006 \001(\tB\003\340A\001\022a\n\027user_owned_drydock_no"
+          + "te\030\003 \001(\0132>.google.cloud.binaryauthorizat"
+          + "ion.v1beta1.UserOwnedDrydockNoteH\000\0224\n\013up"
+          + "date_time\030\004 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003:Y\352AV\n+binaryauthorization.googl"
+          + "eapis.com/Attestor\022\'projects/{project}/a"
+          + "ttestors/{attestor}B\017\n\rattestor_type\"\271\001\n"
+          + "\024UserOwnedDrydockNote\022\033\n\016note_reference\030"
+          + "\001 \001(\tB\003\340A\002\022U\n\013public_keys\030\002 \003(\0132;.google"
+          + ".cloud.binaryauthorization.v1beta1.Attes"
+          + "torPublicKeyB\003\340A\001\022-\n delegation_service_"
+          + "account_email\030\003 \001(\tB\003\340A\003\"\304\004\n\rPkixPublicK"
+          + "ey\022\026\n\016public_key_pem\030\001 \001(\t\022g\n\023signature_"
+          + "algorithm\030\002 \001(\0162J.google.cloud.binaryaut"
+          + "horization.v1beta1.PkixPublicKey.Signatu"
+          + "reAlgorithm\"\261\003\n\022SignatureAlgorithm\022#\n\037SI"
+          + "GNATURE_ALGORITHM_UNSPECIFIED\020\000\022\027\n\023RSA_P"
+          + "SS_2048_SHA256\020\001\022\027\n\023RSA_PSS_3072_SHA256\020"
+          + "\002\022\027\n\023RSA_PSS_4096_SHA256\020\003\022\027\n\023RSA_PSS_40"
+          + "96_SHA512\020\004\022\036\n\032RSA_SIGN_PKCS1_2048_SHA25"
+          + "6\020\005\022\036\n\032RSA_SIGN_PKCS1_3072_SHA256\020\006\022\036\n\032R"
+          + "SA_SIGN_PKCS1_4096_SHA256\020\007\022\036\n\032RSA_SIGN_"
+          + "PKCS1_4096_SHA512\020\010\022\025\n\021ECDSA_P256_SHA256"
+          + "\020\t\022\027\n\023EC_SIGN_P256_SHA256\020\t\022\025\n\021ECDSA_P38"
+          + "4_SHA384\020\n\022\027\n\023EC_SIGN_P384_SHA384\020\n\022\025\n\021E"
+          + "CDSA_P521_SHA512\020\013\022\027\n\023EC_SIGN_P521_SHA51"
+          + "2\020\013\032\002\020\001\"\277\001\n\021AttestorPublicKey\022\024\n\007comment"
+          + "\030\001 \001(\tB\003\340A\001\022\n\n\002id\030\002 \001(\t\022&\n\034ascii_armored"
+          + "_pgp_public_key\030\003 \001(\tH\000\022R\n\017pkix_public_k"
+          + "ey\030\005 \001(\01327.google.cloud.binaryauthorizat"
+          + "ion.v1beta1.PkixPublicKeyH\000B\014\n\npublic_ke"
+          + "yB\267\002\n,com.google.cloud.binaryauthorizati"
+          + "on.v1beta1B!BinaryAuthorizationResources"
+          + "ProtoP\001Z[google.golang.org/genproto/goog"
+          + "leapis/cloud/binaryauthorization/v1beta1"
+          + ";binaryauthorization\370\001\001\252\002(Google.Cloud.B"
+          + "inaryAuthorization.V1Beta1\312\002(Google\\Clou"
+          + "d\\BinaryAuthorization\\V1beta1\352\002+Google::"
+          + "Cloud::BinaryAuthorization::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_binaryauthorization_v1beta1_Policy_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -168,6 +204,9 @@ public final class BinaryAuthorizationResourcesProto {
               "GlobalPolicyEvaluationMode",
               "AdmissionWhitelistPatterns",
               "ClusterAdmissionRules",
+              "KubernetesNamespaceAdmissionRules",
+              "KubernetesServiceAccountAdmissionRules",
+              "IstioServiceIdentityAdmissionRules",
               "DefaultAdmissionRule",
               "UpdateTime",
             });
@@ -178,6 +217,36 @@ public final class BinaryAuthorizationResourcesProto {
     internal_static_google_cloud_binaryauthorization_v1beta1_Policy_ClusterAdmissionRulesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_binaryauthorization_v1beta1_Policy_ClusterAdmissionRulesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesNamespaceAdmissionRulesEntry_descriptor =
+        internal_static_google_cloud_binaryauthorization_v1beta1_Policy_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesNamespaceAdmissionRulesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesNamespaceAdmissionRulesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesServiceAccountAdmissionRulesEntry_descriptor =
+        internal_static_google_cloud_binaryauthorization_v1beta1_Policy_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesServiceAccountAdmissionRulesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_binaryauthorization_v1beta1_Policy_KubernetesServiceAccountAdmissionRulesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_binaryauthorization_v1beta1_Policy_IstioServiceIdentityAdmissionRulesEntry_descriptor =
+        internal_static_google_cloud_binaryauthorization_v1beta1_Policy_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_binaryauthorization_v1beta1_Policy_IstioServiceIdentityAdmissionRulesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_binaryauthorization_v1beta1_Policy_IstioServiceIdentityAdmissionRulesEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
@@ -235,10 +304,10 @@ public final class BinaryAuthorizationResourcesProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -290,6 +290,246 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getKubernetesNamespaceAdmissionRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key);
+  /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesNamespaceAdmissionRules();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesNamespaceAdmissionRulesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesNamespaceAdmissionRulesOrDefault(
+          java.lang.String key,
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   *   `[a-z.-]+`, e.g. `some-namespace`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesNamespaceAdmissionRulesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getKubernetesServiceAccountAdmissionRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key);
+  /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesServiceAccountAdmissionRules();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getKubernetesServiceAccountAdmissionRulesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesServiceAccountAdmissionRulesOrDefault(
+          java.lang.String key,
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-kubernetes-service-account admission rules. Service account
+   * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getKubernetesServiceAccountAdmissionRulesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getIstioServiceIdentityAdmissionRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key);
+  /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getIstioServiceIdentityAdmissionRules();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
+      getIstioServiceIdentityAdmissionRulesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getIstioServiceIdentityAdmissionRulesOrDefault(
+          java.lang.String key,
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Per-istio-service-identity admission rules. Istio service
+   * identity spec format:
+   * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+   * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+   * e.g. `spiffe://example.com/ns/test-ns/sa/default`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
+      getIstioServiceIdentityAdmissionRulesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Default admission rule for a cluster without a per-cluster, per-
    * kubernetes-service-account, or per-istio-service-identity admission rule.
    * </pre>

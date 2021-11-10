@@ -87,16 +87,19 @@ public class BinauthzManagementServiceV1Beta1ClientTest {
   public void getPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
-            .setName(PolicyName.of("[PROJECT]").toString())
+            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllKubernetesNamespaceAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllKubernetesServiceAccountAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockBinauthzManagementServiceV1Beta1.addResponse(expectedResponse);
 
-    PolicyName name = PolicyName.of("[PROJECT]");
+    PolicyName name = PolicyName.ofProjectName("[PROJECT]");
 
     Policy actualResponse = client.getPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -118,7 +121,7 @@ public class BinauthzManagementServiceV1Beta1ClientTest {
     mockBinauthzManagementServiceV1Beta1.addException(exception);
 
     try {
-      PolicyName name = PolicyName.of("[PROJECT]");
+      PolicyName name = PolicyName.ofProjectName("[PROJECT]");
       client.getPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -130,10 +133,13 @@ public class BinauthzManagementServiceV1Beta1ClientTest {
   public void getPolicyTest2() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
-            .setName(PolicyName.of("[PROJECT]").toString())
+            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllKubernetesNamespaceAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllKubernetesServiceAccountAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -173,10 +179,13 @@ public class BinauthzManagementServiceV1Beta1ClientTest {
   public void updatePolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
-            .setName(PolicyName.of("[PROJECT]").toString())
+            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllKubernetesNamespaceAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllKubernetesServiceAccountAdmissionRules(new HashMap<String, AdmissionRule>())
+            .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();

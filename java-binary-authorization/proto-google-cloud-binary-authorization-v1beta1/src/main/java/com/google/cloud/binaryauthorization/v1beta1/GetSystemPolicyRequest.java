@@ -22,29 +22,29 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * Request message for [BinauthzManagementService.DeleteAttestor][].
+ * Request to read the current system policy.
  * </pre>
  *
- * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest}
+ * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest}
  */
-public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMessageV3
+public final class GetSystemPolicyRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest)
-    DeleteAttestorRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest)
+    GetSystemPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use DeleteAttestorRequest.newBuilder() to construct.
-  private DeleteAttestorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetSystemPolicyRequest.newBuilder() to construct.
+  private GetSystemPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private DeleteAttestorRequest() {
+  private GetSystemPolicyRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new DeleteAttestorRequest();
+    return new GetSystemPolicyRequest();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private DeleteAttestorRequest(
+  private GetSystemPolicyRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -98,17 +98,17 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationServiceProto
-        .internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_descriptor;
+        .internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationServiceProto
-        .internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_fieldAccessorTable
+        .internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest.class,
-            com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest.Builder.class);
+            com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest.class,
+            com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -117,8 +117,8 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+   * Note that the system policy is not associated with a project.
    * </pre>
    *
    * <code>
@@ -143,8 +143,8 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+   * Note that the system policy is not associated with a project.
    * </pre>
    *
    * <code>
@@ -205,11 +205,11 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest)) {
+    if (!(obj instanceof com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest other =
-        (com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest) obj;
+    com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest other =
+        (com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -230,59 +230,59 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
     return hash;
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -290,12 +290,12 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parseFrom(
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -313,7 +313,7 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static Builder newBuilder(
-      com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest prototype) {
+      com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -331,32 +331,32 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.DeleteAttestor][].
+   * Request to read the current system policy.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest}
+   * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest)
-      com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest)
+      com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationServiceProto
-          .internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_descriptor;
+          .internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationServiceProto
-          .internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_fieldAccessorTable
+          .internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest.class,
-              com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest.Builder.class);
+              com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest.class,
+              com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest.Builder.class);
     }
 
     // Construct using
-    // com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest.newBuilder()
+    // com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -381,19 +381,19 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationServiceProto
-          .internal_static_google_cloud_binaryauthorization_v1beta1_DeleteAttestorRequest_descriptor;
+          .internal_static_google_cloud_binaryauthorization_v1beta1_GetSystemPolicyRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+    public com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
         getDefaultInstanceForType() {
-      return com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+      return com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
           .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest build() {
-      com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest result = buildPartial();
+    public com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest build() {
+      com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -401,9 +401,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest buildPartial() {
-      com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest result =
-          new com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest(this);
+    public com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest buildPartial() {
+      com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest result =
+          new com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest(this);
       result.name_ = name_;
       onBuilt();
       return result;
@@ -444,9 +444,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest) {
+      if (other instanceof com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest) {
         return mergeFrom(
-            (com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest) other);
+            (com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -454,9 +454,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
     }
 
     public Builder mergeFrom(
-        com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest other) {
+        com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest other) {
       if (other
-          == com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+          == com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
@@ -477,12 +477,12 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest parsedMessage = null;
+      com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest)
+            (com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -498,8 +498,8 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+     * Note that the system policy is not associated with a project.
      * </pre>
      *
      * <code>
@@ -523,8 +523,8 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+     * Note that the system policy is not associated with a project.
      * </pre>
      *
      * <code>
@@ -548,8 +548,8 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+     * Note that the system policy is not associated with a project.
      * </pre>
      *
      * <code>
@@ -572,8 +572,8 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+     * Note that the system policy is not associated with a project.
      * </pre>
      *
      * <code>
@@ -592,8 +592,8 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The resource name, in the format `locations/&#42;&#47;policy`.
+     * Note that the system policy is not associated with a project.
      * </pre>
      *
      * <code>
@@ -625,44 +625,44 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest)
-  private static final com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+  // @@protoc_insertion_point(class_scope:google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest)
+  private static final com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest();
   }
 
-  public static com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+  public static com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteAttestorRequest> PARSER =
-      new com.google.protobuf.AbstractParser<DeleteAttestorRequest>() {
+  private static final com.google.protobuf.Parser<GetSystemPolicyRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GetSystemPolicyRequest>() {
         @java.lang.Override
-        public DeleteAttestorRequest parsePartialFrom(
+        public GetSystemPolicyRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteAttestorRequest(input, extensionRegistry);
+          return new GetSystemPolicyRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<DeleteAttestorRequest> parser() {
+  public static com.google.protobuf.Parser<GetSystemPolicyRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteAttestorRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetSystemPolicyRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest
+  public com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

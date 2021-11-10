@@ -22,13 +22,11 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule]
- * specifies either that all container images used in a pod creation request
- * must be attested to by one or more
- * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod
- * creations will be allowed, or that all pod creations will be denied.
- * Images matching an [admission allowlist
- * pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
+ * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule] specifies either that all container images
+ * used in a pod creation request must be attested to by one or more
+ * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod creations will be allowed, or that all
+ * pod creations will be denied.
+ * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
  * are exempted from admission rules and will never block a pod creation.
  * </pre>
  *
@@ -168,7 +166,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This rule allows a pod creation if all the attestors listed in
-     * 'require_attestations_by' have valid attestations for all of the
+     * `require_attestations_by` have valid attestations for all of the
      * images in the pod spec.
      * </pre>
      *
@@ -213,7 +211,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This rule allows a pod creation if all the attestors listed in
-     * 'require_attestations_by' have valid attestations for all of the
+     * `require_attestations_by` have valid attestations for all of the
      * images in the pod spec.
      * </pre>
      *
@@ -861,13 +859,11 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule]
-   * specifies either that all container images used in a pod creation request
-   * must be attested to by one or more
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod
-   * creations will be allowed, or that all pod creations will be denied.
-   * Images matching an [admission allowlist
-   * pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
+   * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule] specifies either that all container images
+   * used in a pod creation request must be attested to by one or more
+   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod creations will be allowed, or that all
+   * pod creations will be denied.
+   * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
    * are exempted from admission rules and will never block a pod creation.
    * </pre>
    *

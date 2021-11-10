@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>{@code
  * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
  *     BinauthzManagementServiceV1Beta1Client.create()) {
- *   PolicyName name = PolicyName.of("[PROJECT]");
+ *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
  *   Policy response = binauthzManagementServiceV1Beta1Client.getPolicy(name);
  * }
  * }</pre>
@@ -181,7 +181,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <pre>{@code
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
-   *   PolicyName name = PolicyName.of("[PROJECT]");
+   *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
    *   Policy response = binauthzManagementServiceV1Beta1Client.getPolicy(name);
    * }
    * }</pre>
@@ -213,7 +213,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <pre>{@code
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
-   *   String name = PolicyName.of("[PROJECT]").toString();
+   *   String name = PolicyName.ofProjectName("[PROJECT]").toString();
    *   Policy response = binauthzManagementServiceV1Beta1Client.getPolicy(name);
    * }
    * }</pre>
@@ -245,7 +245,9 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetPolicyRequest request =
-   *       GetPolicyRequest.newBuilder().setName(PolicyName.of("[PROJECT]").toString()).build();
+   *       GetPolicyRequest.newBuilder()
+   *           .setName(PolicyName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   Policy response = binauthzManagementServiceV1Beta1Client.getPolicy(request);
    * }
    * }</pre>
@@ -274,7 +276,9 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetPolicyRequest request =
-   *       GetPolicyRequest.newBuilder().setName(PolicyName.of("[PROJECT]").toString()).build();
+   *       GetPolicyRequest.newBuilder()
+   *           .setName(PolicyName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<Policy> future =
    *       binauthzManagementServiceV1Beta1Client.getPolicyCallable().futureCall(request);
    *   // Do something.
