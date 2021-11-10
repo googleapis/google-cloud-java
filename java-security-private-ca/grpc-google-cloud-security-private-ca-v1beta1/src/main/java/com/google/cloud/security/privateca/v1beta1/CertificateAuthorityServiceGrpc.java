@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/security/privateca/v1beta1/service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CertificateAuthorityServiceGrpc {
 
   private CertificateAuthorityServiceGrpc() {}
