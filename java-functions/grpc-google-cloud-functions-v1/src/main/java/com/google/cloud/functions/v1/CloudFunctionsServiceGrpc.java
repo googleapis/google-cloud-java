@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/functions/v1/functions.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CloudFunctionsServiceGrpc {
 
   private CloudFunctionsServiceGrpc() {}
