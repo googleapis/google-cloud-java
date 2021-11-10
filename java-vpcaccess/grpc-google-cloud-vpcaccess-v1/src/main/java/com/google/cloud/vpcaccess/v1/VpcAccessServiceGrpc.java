@@ -29,6 +29,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/vpcaccess/v1/vpc_access.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class VpcAccessServiceGrpc {
 
   private VpcAccessServiceGrpc() {}
