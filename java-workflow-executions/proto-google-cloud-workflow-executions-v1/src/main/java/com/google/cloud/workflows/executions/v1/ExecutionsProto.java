@@ -32,6 +32,18 @@ public final class ExecutionsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_workflows_executions_v1_Execution_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workflows_executions_v1_Execution_Error_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_workflows_executions_v1_Execution_Error_fieldAccessorTable;
@@ -70,7 +82,7 @@ public final class ExecutionsProto {
           + "oto\032\027google/api/client.proto\032\037google/api"
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\032\037google/protobuf/timestamp.prot"
-          + "o\"\360\004\n\tExecution\022\021\n\004name\030\001 \001(\tB\003\340A\003\0223\n\nst"
+          + "o\"\237\t\n\tExecution\022\021\n\004name\030\001 \001(\tB\003\340A\003\0223\n\nst"
           + "art_time\030\002 \001(\0132\032.google.protobuf.Timesta"
           + "mpB\003\340A\003\0221\n\010end_time\030\003 \001(\0132\032.google.proto"
           + "buf.TimestampB\003\340A\003\022I\n\005state\030\004 \001(\01625.goog"
@@ -79,64 +91,78 @@ public final class ExecutionsProto {
           + "t\030\006 \001(\tB\003\340A\003\022I\n\005error\030\007 \001(\01325.google.clo"
           + "ud.workflows.executions.v1.Execution.Err"
           + "orB\003\340A\003\022!\n\024workflow_revision_id\030\010 \001(\tB\003\340"
-          + "A\003\032)\n\005Error\022\017\n\007payload\030\001 \001(\t\022\017\n\007context\030"
-          + "\002 \001(\t\"T\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n"
-          + "\006ACTIVE\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED\020\003\022\r\n\t"
-          + "CANCELLED\020\004:\206\001\352A\202\001\n+workflowexecutions.g"
-          + "oogleapis.com/Execution\022Sprojects/{proje"
-          + "ct}/locations/{location}/workflows/{work"
-          + "flow}/executions/{execution}\"\301\001\n\025ListExe"
-          + "cutionsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!"
-          + "workflows.googleapis.com/Workflow\022\021\n\tpag"
-          + "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022F\n\004view"
-          + "\030\004 \001(\01623.google.cloud.workflows.executio"
-          + "ns.v1.ExecutionViewB\003\340A\001\"v\n\026ListExecutio"
-          + "nsResponse\022C\n\nexecutions\030\001 \003(\0132/.google."
-          + "cloud.workflows.executions.v1.Execution\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\"\234\001\n\026CreateExecu"
-          + "tionRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!wor"
-          + "kflows.googleapis.com/Workflow\022G\n\texecut"
-          + "ion\030\002 \001(\0132/.google.cloud.workflows.execu"
-          + "tions.v1.ExecutionB\003\340A\002\"\240\001\n\023GetExecution"
-          + "Request\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+workflowe"
-          + "xecutions.googleapis.com/Execution\022F\n\004vi"
-          + "ew\030\002 \001(\01623.google.cloud.workflows.execut"
-          + "ions.v1.ExecutionViewB\003\340A\001\"[\n\026CancelExec"
-          + "utionRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+work"
-          + "flowexecutions.googleapis.com/Execution*"
-          + "D\n\rExecutionView\022\036\n\032EXECUTION_VIEW_UNSPE"
-          + "CIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\0022\303\007\n\nExecut"
-          + "ions\022\330\001\n\016ListExecutions\022;.google.cloud.w"
-          + "orkflows.executions.v1.ListExecutionsReq"
-          + "uest\032<.google.cloud.workflows.executions"
-          + ".v1.ListExecutionsResponse\"K\202\323\344\223\002<\022:/v1/"
-          + "{parent=projects/*/locations/*/workflows"
-          + "/*}/executions\332A\006parent\022\342\001\n\017CreateExecut"
-          + "ion\022<.google.cloud.workflows.executions."
-          + "v1.CreateExecutionRequest\032/.google.cloud"
-          + ".workflows.executions.v1.Execution\"`\202\323\344\223"
-          + "\002G\":/v1/{parent=projects/*/locations/*/w"
-          + "orkflows/*}/executions:\texecution\332A\020pare"
-          + "nt,execution\022\305\001\n\014GetExecution\0229.google.c"
-          + "loud.workflows.executions.v1.GetExecutio"
-          + "nRequest\032/.google.cloud.workflows.execut"
-          + "ions.v1.Execution\"I\202\323\344\223\002<\022:/v1/{name=pro"
-          + "jects/*/locations/*/workflows/*/executio"
-          + "ns/*}\332A\004name\022\325\001\n\017CancelExecution\022<.googl"
-          + "e.cloud.workflows.executions.v1.CancelEx"
-          + "ecutionRequest\032/.google.cloud.workflows."
-          + "executions.v1.Execution\"S\202\323\344\223\002F\"A/v1/{na"
-          + "me=projects/*/locations/*/workflows/*/ex"
-          + "ecutions/*}:cancel:\001*\332A\004name\032U\312A!workflo"
-          + "wexecutions.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\361\001\n("
-          + "com.google.cloud.workflows.executions.v1"
-          + "B\017ExecutionsProtoP\001ZNgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/workflows/execu"
-          + "tions/v1;executions\352Aa\n!workflows.google"
-          + "apis.com/Workflow\022<projects/{project}/lo"
-          + "cations/{location}/workflows/{workflow}b"
-          + "\006proto3"
+          + "A\003\022T\n\016call_log_level\030\t \001(\0162<.google.clou"
+          + "d.workflows.executions.v1.Execution.Call"
+          + "LogLevel\032\312\001\n\021StackTraceElement\022\014\n\004step\030\001"
+          + " \001(\t\022\017\n\007routine\030\002 \001(\t\022\\\n\010position\030\003 \001(\0132"
+          + "J.google.cloud.workflows.executions.v1.E"
+          + "xecution.StackTraceElement.Position\0328\n\010P"
+          + "osition\022\014\n\004line\030\001 \001(\003\022\016\n\006column\030\002 \001(\003\022\016\n"
+          + "\006length\030\003 \001(\003\032a\n\nStackTrace\022S\n\010elements\030"
+          + "\001 \003(\0132A.google.cloud.workflows.execution"
+          + "s.v1.Execution.StackTraceElement\032z\n\005Erro"
+          + "r\022\017\n\007payload\030\001 \001(\t\022\017\n\007context\030\002 \001(\t\022O\n\013s"
+          + "tack_trace\030\003 \001(\0132:.google.cloud.workflow"
+          + "s.executions.v1.Execution.StackTrace\"T\n\005"
+          + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001"
+          + "\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED\020\003\022\r\n\tCANCELLED"
+          + "\020\004\"V\n\014CallLogLevel\022\036\n\032CALL_LOG_LEVEL_UNS"
+          + "PECIFIED\020\000\022\021\n\rLOG_ALL_CALLS\020\001\022\023\n\017LOG_ERR"
+          + "ORS_ONLY\020\002:\206\001\352A\202\001\n+workflowexecutions.go"
+          + "ogleapis.com/Execution\022Sprojects/{projec"
+          + "t}/locations/{location}/workflows/{workf"
+          + "low}/executions/{execution}\"\301\001\n\025ListExec"
+          + "utionsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!w"
+          + "orkflows.googleapis.com/Workflow\022\021\n\tpage"
+          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022F\n\004view\030"
+          + "\004 \001(\01623.google.cloud.workflows.execution"
+          + "s.v1.ExecutionViewB\003\340A\001\"v\n\026ListExecution"
+          + "sResponse\022C\n\nexecutions\030\001 \003(\0132/.google.c"
+          + "loud.workflows.executions.v1.Execution\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"\234\001\n\026CreateExecut"
+          + "ionRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!work"
+          + "flows.googleapis.com/Workflow\022G\n\texecuti"
+          + "on\030\002 \001(\0132/.google.cloud.workflows.execut"
+          + "ions.v1.ExecutionB\003\340A\002\"\240\001\n\023GetExecutionR"
+          + "equest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+workflowex"
+          + "ecutions.googleapis.com/Execution\022F\n\004vie"
+          + "w\030\002 \001(\01623.google.cloud.workflows.executi"
+          + "ons.v1.ExecutionViewB\003\340A\001\"[\n\026CancelExecu"
+          + "tionRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+workf"
+          + "lowexecutions.googleapis.com/Execution*D"
+          + "\n\rExecutionView\022\036\n\032EXECUTION_VIEW_UNSPEC"
+          + "IFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\0022\303\007\n\nExecuti"
+          + "ons\022\330\001\n\016ListExecutions\022;.google.cloud.wo"
+          + "rkflows.executions.v1.ListExecutionsRequ"
+          + "est\032<.google.cloud.workflows.executions."
+          + "v1.ListExecutionsResponse\"K\202\323\344\223\002<\022:/v1/{"
+          + "parent=projects/*/locations/*/workflows/"
+          + "*}/executions\332A\006parent\022\342\001\n\017CreateExecuti"
+          + "on\022<.google.cloud.workflows.executions.v"
+          + "1.CreateExecutionRequest\032/.google.cloud."
+          + "workflows.executions.v1.Execution\"`\202\323\344\223\002"
+          + "G\":/v1/{parent=projects/*/locations/*/wo"
+          + "rkflows/*}/executions:\texecution\332A\020paren"
+          + "t,execution\022\305\001\n\014GetExecution\0229.google.cl"
+          + "oud.workflows.executions.v1.GetExecution"
+          + "Request\032/.google.cloud.workflows.executi"
+          + "ons.v1.Execution\"I\202\323\344\223\002<\022:/v1/{name=proj"
+          + "ects/*/locations/*/workflows/*/execution"
+          + "s/*}\332A\004name\022\325\001\n\017CancelExecution\022<.google"
+          + ".cloud.workflows.executions.v1.CancelExe"
+          + "cutionRequest\032/.google.cloud.workflows.e"
+          + "xecutions.v1.Execution\"S\202\323\344\223\002F\"A/v1/{nam"
+          + "e=projects/*/locations/*/workflows/*/exe"
+          + "cutions/*}:cancel:\001*\332A\004name\032U\312A!workflow"
+          + "executions.googleapis.com\322A.https://www."
+          + "googleapis.com/auth/cloud-platformB\361\001\n(c"
+          + "om.google.cloud.workflows.executions.v1B"
+          + "\017ExecutionsProtoP\001ZNgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/workflows/execut"
+          + "ions/v1;executions\352Aa\n!workflows.googlea"
+          + "pis.com/Workflow\022<projects/{project}/loc"
+          + "ations/{location}/workflows/{workflow}b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -162,16 +188,47 @@ public final class ExecutionsProto {
               "Result",
               "Error",
               "WorkflowRevisionId",
+              "CallLogLevel",
+            });
+    internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor =
+        internal_static_google_cloud_workflows_executions_v1_Execution_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor,
+            new java.lang.String[] {
+              "Step", "Routine", "Position",
+            });
+    internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_descriptor =
+        internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_descriptor,
+            new java.lang.String[] {
+              "Line", "Column", "Length",
+            });
+    internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_descriptor =
+        internal_static_google_cloud_workflows_executions_v1_Execution_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_descriptor,
+            new java.lang.String[] {
+              "Elements",
             });
     internal_static_google_cloud_workflows_executions_v1_Execution_Error_descriptor =
         internal_static_google_cloud_workflows_executions_v1_Execution_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(2);
     internal_static_google_cloud_workflows_executions_v1_Execution_Error_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_workflows_executions_v1_Execution_Error_descriptor,
             new java.lang.String[] {
-              "Payload", "Context",
+              "Payload", "Context", "StackTrace",
             });
     internal_static_google_cloud_workflows_executions_v1_ListExecutionsRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);

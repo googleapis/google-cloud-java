@@ -44,6 +44,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     argument_ = "";
     result_ = "";
     workflowRevisionId_ = "";
+    callLogLevel_ = 0;
   }
 
   @java.lang.Override
@@ -157,6 +158,13 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
               workflowRevisionId_ = s;
               break;
             }
+          case 72:
+            {
+              int rawValue = input.readEnum();
+
+              callLogLevel_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -195,7 +203,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes the current state of the execution. More states may be added
+   * Describes the current state of the execution. More states might be added
    * in the future.
    * </pre>
    *
@@ -395,6 +403,3298 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.workflows.executions.v1.Execution.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Describes the level of platform logging to apply to calls and call
+   * responses during workflow executions.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.workflows.executions.v1.Execution.CallLogLevel}
+   */
+  public enum CallLogLevel implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No call logging specified.
+     * </pre>
+     *
+     * <code>CALL_LOG_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    CALL_LOG_LEVEL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Log all call steps within workflows, all call returns, and all exceptions
+     * raised.
+     * </pre>
+     *
+     * <code>LOG_ALL_CALLS = 1;</code>
+     */
+    LOG_ALL_CALLS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Log only exceptions that are raised from call steps within workflows.
+     * </pre>
+     *
+     * <code>LOG_ERRORS_ONLY = 2;</code>
+     */
+    LOG_ERRORS_ONLY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No call logging specified.
+     * </pre>
+     *
+     * <code>CALL_LOG_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int CALL_LOG_LEVEL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Log all call steps within workflows, all call returns, and all exceptions
+     * raised.
+     * </pre>
+     *
+     * <code>LOG_ALL_CALLS = 1;</code>
+     */
+    public static final int LOG_ALL_CALLS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Log only exceptions that are raised from call steps within workflows.
+     * </pre>
+     *
+     * <code>LOG_ERRORS_ONLY = 2;</code>
+     */
+    public static final int LOG_ERRORS_ONLY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CallLogLevel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CallLogLevel forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CALL_LOG_LEVEL_UNSPECIFIED;
+        case 1:
+          return LOG_ALL_CALLS;
+        case 2:
+          return LOG_ERRORS_ONLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CallLogLevel> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CallLogLevel> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CallLogLevel>() {
+          public CallLogLevel findValueByNumber(int number) {
+            return CallLogLevel.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.workflows.executions.v1.Execution.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final CallLogLevel[] VALUES = values();
+
+    public static CallLogLevel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CallLogLevel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.workflows.executions.v1.Execution.CallLogLevel)
+  }
+
+  public interface StackTraceElementOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workflows.executions.v1.Execution.StackTraceElement)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The step the error occurred at.
+     * </pre>
+     *
+     * <code>string step = 1;</code>
+     *
+     * @return The step.
+     */
+    java.lang.String getStep();
+    /**
+     *
+     *
+     * <pre>
+     * The step the error occurred at.
+     * </pre>
+     *
+     * <code>string step = 1;</code>
+     *
+     * @return The bytes for step.
+     */
+    com.google.protobuf.ByteString getStepBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The routine where the error occurred.
+     * </pre>
+     *
+     * <code>string routine = 2;</code>
+     *
+     * @return The routine.
+     */
+    java.lang.String getRoutine();
+    /**
+     *
+     *
+     * <pre>
+     * The routine where the error occurred.
+     * </pre>
+     *
+     * <code>string routine = 2;</code>
+     *
+     * @return The bytes for routine.
+     */
+    com.google.protobuf.ByteString getRoutineBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The source position information of the stack trace element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+     * </code>
+     *
+     * @return Whether the position field is set.
+     */
+    boolean hasPosition();
+    /**
+     *
+     *
+     * <pre>
+     * The source position information of the stack trace element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+     * </code>
+     *
+     * @return The position.
+     */
+    com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position getPosition();
+    /**
+     *
+     *
+     * <pre>
+     * The source position information of the stack trace element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+     * </code>
+     */
+    com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.PositionOrBuilder
+        getPositionOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A single stack element (frame) where an error occurred.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workflows.executions.v1.Execution.StackTraceElement}
+   */
+  public static final class StackTraceElement extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workflows.executions.v1.Execution.StackTraceElement)
+      StackTraceElementOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use StackTraceElement.newBuilder() to construct.
+    private StackTraceElement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StackTraceElement() {
+      step_ = "";
+      routine_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StackTraceElement();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private StackTraceElement(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                step_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                routine_ = s;
+                break;
+              }
+            case 26:
+              {
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                        .Builder
+                    subBuilder = null;
+                if (position_ != null) {
+                  subBuilder = position_.toBuilder();
+                }
+                position_ =
+                    input.readMessage(
+                        com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                            .Position.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(position_);
+                  position_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workflows.executions.v1.ExecutionsProto
+          .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workflows.executions.v1.ExecutionsProto
+          .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.class,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder.class);
+    }
+
+    public interface PositionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The source code line number the current instruction was generated from.
+       * </pre>
+       *
+       * <code>int64 line = 1;</code>
+       *
+       * @return The line.
+       */
+      long getLine();
+
+      /**
+       *
+       *
+       * <pre>
+       * The source code column position (of the line) the current instruction
+       * was generated from.
+       * </pre>
+       *
+       * <code>int64 column = 2;</code>
+       *
+       * @return The column.
+       */
+      long getColumn();
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of bytes of source code making up this stack trace element.
+       * </pre>
+       *
+       * <code>int64 length = 3;</code>
+       *
+       * @return The length.
+       */
+      long getLength();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Position contains source position information about the stack trace
+     * element such as line number, column number and length of the code block
+     * in bytes.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position}
+     */
+    public static final class Position extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)
+        PositionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Position.newBuilder() to construct.
+      private Position(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Position() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Position();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private Position(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  line_ = input.readInt64();
+                  break;
+                }
+              case 16:
+                {
+                  column_ = input.readInt64();
+                  break;
+                }
+              case 24:
+                {
+                  length_ = input.readInt64();
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position.class,
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                    .Builder.class);
+      }
+
+      public static final int LINE_FIELD_NUMBER = 1;
+      private long line_;
+      /**
+       *
+       *
+       * <pre>
+       * The source code line number the current instruction was generated from.
+       * </pre>
+       *
+       * <code>int64 line = 1;</code>
+       *
+       * @return The line.
+       */
+      @java.lang.Override
+      public long getLine() {
+        return line_;
+      }
+
+      public static final int COLUMN_FIELD_NUMBER = 2;
+      private long column_;
+      /**
+       *
+       *
+       * <pre>
+       * The source code column position (of the line) the current instruction
+       * was generated from.
+       * </pre>
+       *
+       * <code>int64 column = 2;</code>
+       *
+       * @return The column.
+       */
+      @java.lang.Override
+      public long getColumn() {
+        return column_;
+      }
+
+      public static final int LENGTH_FIELD_NUMBER = 3;
+      private long length_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of bytes of source code making up this stack trace element.
+       * </pre>
+       *
+       * <code>int64 length = 3;</code>
+       *
+       * @return The length.
+       */
+      @java.lang.Override
+      public long getLength() {
+        return length_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (line_ != 0L) {
+          output.writeInt64(1, line_);
+        }
+        if (column_ != 0L) {
+          output.writeInt64(2, column_);
+        }
+        if (length_ != 0L) {
+          output.writeInt64(3, length_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (line_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, line_);
+        }
+        if (column_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, column_);
+        }
+        if (length_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, length_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position other =
+            (com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position) obj;
+
+        if (getLine() != other.getLine()) return false;
+        if (getColumn() != other.getColumn()) return false;
+        if (getLength() != other.getLength()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + LINE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLine());
+        hash = (37 * hash) + COLUMN_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getColumn());
+        hash = (37 * hash) + LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLength());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Position contains source position information about the stack trace
+       * element such as line number, column number and length of the code block
+       * in bytes.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.PositionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.workflows.executions.v1.ExecutionsProto
+              .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.workflows.executions.v1.ExecutionsProto
+              .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                      .class,
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          line_ = 0L;
+
+          column_ = 0L;
+
+          length_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.workflows.executions.v1.ExecutionsProto
+              .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_Position_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+            getDefaultInstanceForType() {
+          return com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+            build() {
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+            buildPartial() {
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position result =
+              new com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position(
+                  this);
+          result.line_ = line_;
+          result.column_ = column_;
+          result.length_ = length_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position) {
+            return mergeFrom(
+                (com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position other) {
+          if (other
+              == com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                  .getDefaultInstance()) return this;
+          if (other.getLine() != 0L) {
+            setLine(other.getLine());
+          }
+          if (other.getColumn() != 0L) {
+            setColumn(other.getColumn());
+          }
+          if (other.getLength() != 0L) {
+            setLength(other.getLength());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+              parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long line_;
+        /**
+         *
+         *
+         * <pre>
+         * The source code line number the current instruction was generated from.
+         * </pre>
+         *
+         * <code>int64 line = 1;</code>
+         *
+         * @return The line.
+         */
+        @java.lang.Override
+        public long getLine() {
+          return line_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The source code line number the current instruction was generated from.
+         * </pre>
+         *
+         * <code>int64 line = 1;</code>
+         *
+         * @param value The line to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLine(long value) {
+
+          line_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The source code line number the current instruction was generated from.
+         * </pre>
+         *
+         * <code>int64 line = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLine() {
+
+          line_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long column_;
+        /**
+         *
+         *
+         * <pre>
+         * The source code column position (of the line) the current instruction
+         * was generated from.
+         * </pre>
+         *
+         * <code>int64 column = 2;</code>
+         *
+         * @return The column.
+         */
+        @java.lang.Override
+        public long getColumn() {
+          return column_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The source code column position (of the line) the current instruction
+         * was generated from.
+         * </pre>
+         *
+         * <code>int64 column = 2;</code>
+         *
+         * @param value The column to set.
+         * @return This builder for chaining.
+         */
+        public Builder setColumn(long value) {
+
+          column_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The source code column position (of the line) the current instruction
+         * was generated from.
+         * </pre>
+         *
+         * <code>int64 column = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearColumn() {
+
+          column_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long length_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of bytes of source code making up this stack trace element.
+         * </pre>
+         *
+         * <code>int64 length = 3;</code>
+         *
+         * @return The length.
+         */
+        @java.lang.Override
+        public long getLength() {
+          return length_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of bytes of source code making up this stack trace element.
+         * </pre>
+         *
+         * <code>int64 length = 3;</code>
+         *
+         * @param value The length to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLength(long value) {
+
+          length_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of bytes of source code making up this stack trace element.
+         * </pre>
+         *
+         * <code>int64 length = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLength() {
+
+          length_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position)
+      private static final com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+              .Position
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position();
+      }
+
+      public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Position> PARSER =
+          new com.google.protobuf.AbstractParser<Position>() {
+            @java.lang.Override
+            public Position parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new Position(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<Position> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Position> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int STEP_FIELD_NUMBER = 1;
+    private volatile java.lang.Object step_;
+    /**
+     *
+     *
+     * <pre>
+     * The step the error occurred at.
+     * </pre>
+     *
+     * <code>string step = 1;</code>
+     *
+     * @return The step.
+     */
+    @java.lang.Override
+    public java.lang.String getStep() {
+      java.lang.Object ref = step_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        step_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The step the error occurred at.
+     * </pre>
+     *
+     * <code>string step = 1;</code>
+     *
+     * @return The bytes for step.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStepBytes() {
+      java.lang.Object ref = step_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        step_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROUTINE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object routine_;
+    /**
+     *
+     *
+     * <pre>
+     * The routine where the error occurred.
+     * </pre>
+     *
+     * <code>string routine = 2;</code>
+     *
+     * @return The routine.
+     */
+    @java.lang.Override
+    public java.lang.String getRoutine() {
+      java.lang.Object ref = routine_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routine_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The routine where the error occurred.
+     * </pre>
+     *
+     * <code>string routine = 2;</code>
+     *
+     * @return The bytes for routine.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRoutineBytes() {
+      java.lang.Object ref = routine_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        routine_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POSITION_FIELD_NUMBER = 3;
+    private com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position_;
+    /**
+     *
+     *
+     * <pre>
+     * The source position information of the stack trace element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+     * </code>
+     *
+     * @return Whether the position field is set.
+     */
+    @java.lang.Override
+    public boolean hasPosition() {
+      return position_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source position information of the stack trace element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+     * </code>
+     *
+     * @return The position.
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+        getPosition() {
+      return position_ == null
+          ? com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+              .getDefaultInstance()
+          : position_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source position information of the stack trace element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.PositionOrBuilder
+        getPositionOrBuilder() {
+      return getPosition();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(step_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, step_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routine_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, routine_);
+      }
+      if (position_ != null) {
+        output.writeMessage(3, getPosition());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(step_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, step_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routine_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, routine_);
+      }
+      if (position_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPosition());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workflows.executions.v1.Execution.StackTraceElement)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workflows.executions.v1.Execution.StackTraceElement other =
+          (com.google.cloud.workflows.executions.v1.Execution.StackTraceElement) obj;
+
+      if (!getStep().equals(other.getStep())) return false;
+      if (!getRoutine().equals(other.getRoutine())) return false;
+      if (hasPosition() != other.hasPosition()) return false;
+      if (hasPosition()) {
+        if (!getPosition().equals(other.getPosition())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STEP_FIELD_NUMBER;
+      hash = (53 * hash) + getStep().hashCode();
+      hash = (37 * hash) + ROUTINE_FIELD_NUMBER;
+      hash = (53 * hash) + getRoutine().hashCode();
+      if (hasPosition()) {
+        hash = (37 * hash) + POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getPosition().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workflows.executions.v1.Execution.StackTraceElement prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A single stack element (frame) where an error occurred.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workflows.executions.v1.Execution.StackTraceElement}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workflows.executions.v1.Execution.StackTraceElement)
+        com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.class,
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        step_ = "";
+
+        routine_ = "";
+
+        if (positionBuilder_ == null) {
+          position_ = null;
+        } else {
+          position_ = null;
+          positionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+          getDefaultInstanceForType() {
+        return com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement build() {
+        com.google.cloud.workflows.executions.v1.Execution.StackTraceElement result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement buildPartial() {
+        com.google.cloud.workflows.executions.v1.Execution.StackTraceElement result =
+            new com.google.cloud.workflows.executions.v1.Execution.StackTraceElement(this);
+        result.step_ = step_;
+        result.routine_ = routine_;
+        if (positionBuilder_ == null) {
+          result.position_ = position_;
+        } else {
+          result.position_ = positionBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.workflows.executions.v1.Execution.StackTraceElement) {
+          return mergeFrom(
+              (com.google.cloud.workflows.executions.v1.Execution.StackTraceElement) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement other) {
+        if (other
+            == com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                .getDefaultInstance()) return this;
+        if (!other.getStep().isEmpty()) {
+          step_ = other.step_;
+          onChanged();
+        }
+        if (!other.getRoutine().isEmpty()) {
+          routine_ = other.routine_;
+          onChanged();
+        }
+        if (other.hasPosition()) {
+          mergePosition(other.getPosition());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.workflows.executions.v1.Execution.StackTraceElement parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.workflows.executions.v1.Execution.StackTraceElement)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object step_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The step the error occurred at.
+       * </pre>
+       *
+       * <code>string step = 1;</code>
+       *
+       * @return The step.
+       */
+      public java.lang.String getStep() {
+        java.lang.Object ref = step_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          step_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The step the error occurred at.
+       * </pre>
+       *
+       * <code>string step = 1;</code>
+       *
+       * @return The bytes for step.
+       */
+      public com.google.protobuf.ByteString getStepBytes() {
+        java.lang.Object ref = step_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          step_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The step the error occurred at.
+       * </pre>
+       *
+       * <code>string step = 1;</code>
+       *
+       * @param value The step to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStep(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        step_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The step the error occurred at.
+       * </pre>
+       *
+       * <code>string step = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStep() {
+
+        step_ = getDefaultInstance().getStep();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The step the error occurred at.
+       * </pre>
+       *
+       * <code>string step = 1;</code>
+       *
+       * @param value The bytes for step to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStepBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        step_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object routine_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The routine where the error occurred.
+       * </pre>
+       *
+       * <code>string routine = 2;</code>
+       *
+       * @return The routine.
+       */
+      public java.lang.String getRoutine() {
+        java.lang.Object ref = routine_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          routine_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The routine where the error occurred.
+       * </pre>
+       *
+       * <code>string routine = 2;</code>
+       *
+       * @return The bytes for routine.
+       */
+      public com.google.protobuf.ByteString getRoutineBytes() {
+        java.lang.Object ref = routine_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          routine_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The routine where the error occurred.
+       * </pre>
+       *
+       * <code>string routine = 2;</code>
+       *
+       * @param value The routine to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoutine(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        routine_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The routine where the error occurred.
+       * </pre>
+       *
+       * <code>string routine = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRoutine() {
+
+        routine_ = getDefaultInstance().getRoutine();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The routine where the error occurred.
+       * </pre>
+       *
+       * <code>string routine = 2;</code>
+       *
+       * @param value The bytes for routine to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoutineBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        routine_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          position_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position.Builder,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                  .PositionOrBuilder>
+          positionBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       *
+       * @return Whether the position field is set.
+       */
+      public boolean hasPosition() {
+        return positionBuilder_ != null || position_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       *
+       * @return The position.
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+          getPosition() {
+        if (positionBuilder_ == null) {
+          return position_ == null
+              ? com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                  .getDefaultInstance()
+              : position_;
+        } else {
+          return positionBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       */
+      public Builder setPosition(
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position value) {
+        if (positionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          position_ = value;
+          onChanged();
+        } else {
+          positionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       */
+      public Builder setPosition(
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position.Builder
+              builderForValue) {
+        if (positionBuilder_ == null) {
+          position_ = builderForValue.build();
+          onChanged();
+        } else {
+          positionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       */
+      public Builder mergePosition(
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position value) {
+        if (positionBuilder_ == null) {
+          if (position_ != null) {
+            position_ =
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                    .newBuilder(position_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            position_ = value;
+          }
+          onChanged();
+        } else {
+          positionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       */
+      public Builder clearPosition() {
+        if (positionBuilder_ == null) {
+          position_ = null;
+          onChanged();
+        } else {
+          position_ = null;
+          positionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position.Builder
+          getPositionBuilder() {
+
+        onChanged();
+        return getPositionFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.PositionOrBuilder
+          getPositionOrBuilder() {
+        if (positionBuilder_ != null) {
+          return positionBuilder_.getMessageOrBuilder();
+        } else {
+          return position_ == null
+              ? com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                  .getDefaultInstance()
+              : position_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The source position information of the stack trace element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position position = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position.Builder,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                  .PositionOrBuilder>
+          getPositionFieldBuilder() {
+        if (positionBuilder_ == null) {
+          positionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position,
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Position
+                      .Builder,
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                      .PositionOrBuilder>(getPosition(), getParentForChildren(), isClean());
+          position_ = null;
+        }
+        return positionBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workflows.executions.v1.Execution.StackTraceElement)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workflows.executions.v1.Execution.StackTraceElement)
+    private static final com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.workflows.executions.v1.Execution.StackTraceElement();
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StackTraceElement> PARSER =
+        new com.google.protobuf.AbstractParser<StackTraceElement>() {
+          @java.lang.Override
+          public StackTraceElement parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new StackTraceElement(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<StackTraceElement> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StackTraceElement> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface StackTraceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workflows.executions.v1.Execution.StackTrace)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>
+        getElementsList();
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    com.google.cloud.workflows.executions.v1.Execution.StackTraceElement getElements(int index);
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    int getElementsCount();
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder>
+        getElementsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder
+        getElementsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A collection of stack elements (frames) where an error occurred.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workflows.executions.v1.Execution.StackTrace}
+   */
+  public static final class StackTrace extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workflows.executions.v1.Execution.StackTrace)
+      StackTraceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use StackTrace.newBuilder() to construct.
+    private StackTrace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StackTrace() {
+      elements_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StackTrace();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private StackTrace(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  elements_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                elements_.add(
+                    input.readMessage(
+                        com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                            .parser(),
+                        extensionRegistry));
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workflows.executions.v1.ExecutionsProto
+          .internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workflows.executions.v1.ExecutionsProto
+          .internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workflows.executions.v1.Execution.StackTrace.class,
+              com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder.class);
+    }
+
+    public static final int ELEMENTS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>
+        elements_;
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>
+        getElementsList() {
+      return elements_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder>
+        getElementsOrBuilderList() {
+      return elements_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getElementsCount() {
+      return elements_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement getElements(
+        int index) {
+      return elements_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An array of stack elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder
+        getElementsOrBuilder(int index) {
+      return elements_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < elements_.size(); i++) {
+        output.writeMessage(1, elements_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < elements_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, elements_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workflows.executions.v1.Execution.StackTrace)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workflows.executions.v1.Execution.StackTrace other =
+          (com.google.cloud.workflows.executions.v1.Execution.StackTrace) obj;
+
+      if (!getElementsList().equals(other.getElementsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getElementsCount() > 0) {
+        hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getElementsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workflows.executions.v1.Execution.StackTrace prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of stack elements (frames) where an error occurred.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workflows.executions.v1.Execution.StackTrace}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workflows.executions.v1.Execution.StackTrace)
+        com.google.cloud.workflows.executions.v1.Execution.StackTraceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workflows.executions.v1.Execution.StackTrace.class,
+                com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder.class);
+      }
+
+      // Construct using com.google.cloud.workflows.executions.v1.Execution.StackTrace.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (elementsBuilder_ == null) {
+          elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          elementsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workflows.executions.v1.ExecutionsProto
+            .internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.executions.v1.Execution.StackTrace
+          getDefaultInstanceForType() {
+        return com.google.cloud.workflows.executions.v1.Execution.StackTrace.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.executions.v1.Execution.StackTrace build() {
+        com.google.cloud.workflows.executions.v1.Execution.StackTrace result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.executions.v1.Execution.StackTrace buildPartial() {
+        com.google.cloud.workflows.executions.v1.Execution.StackTrace result =
+            new com.google.cloud.workflows.executions.v1.Execution.StackTrace(this);
+        int from_bitField0_ = bitField0_;
+        if (elementsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            elements_ = java.util.Collections.unmodifiableList(elements_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.elements_ = elements_;
+        } else {
+          result.elements_ = elementsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.workflows.executions.v1.Execution.StackTrace) {
+          return mergeFrom((com.google.cloud.workflows.executions.v1.Execution.StackTrace) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.workflows.executions.v1.Execution.StackTrace other) {
+        if (other
+            == com.google.cloud.workflows.executions.v1.Execution.StackTrace.getDefaultInstance())
+          return this;
+        if (elementsBuilder_ == null) {
+          if (!other.elements_.isEmpty()) {
+            if (elements_.isEmpty()) {
+              elements_ = other.elements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureElementsIsMutable();
+              elements_.addAll(other.elements_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.elements_.isEmpty()) {
+            if (elementsBuilder_.isEmpty()) {
+              elementsBuilder_.dispose();
+              elementsBuilder_ = null;
+              elements_ = other.elements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              elementsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getElementsFieldBuilder()
+                      : null;
+            } else {
+              elementsBuilder_.addAllMessages(other.elements_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.workflows.executions.v1.Execution.StackTrace parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.workflows.executions.v1.Execution.StackTrace)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>
+          elements_ = java.util.Collections.emptyList();
+
+      private void ensureElementsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          elements_ =
+              new java.util.ArrayList<
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>(elements_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder>
+          elementsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>
+          getElementsList() {
+        if (elementsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(elements_);
+        } else {
+          return elementsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public int getElementsCount() {
+        if (elementsBuilder_ == null) {
+          return elements_.size();
+        } else {
+          return elementsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement getElements(
+          int index) {
+        if (elementsBuilder_ == null) {
+          return elements_.get(index);
+        } else {
+          return elementsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder setElements(
+          int index, com.google.cloud.workflows.executions.v1.Execution.StackTraceElement value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.set(index, value);
+          onChanged();
+        } else {
+          elementsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder setElements(
+          int index,
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder
+              builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder addElements(
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.add(value);
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder addElements(
+          int index, com.google.cloud.workflows.executions.v1.Execution.StackTraceElement value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.add(index, value);
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder addElements(
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder
+              builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.add(builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder addElements(
+          int index,
+          com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder
+              builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder addAllElements(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.workflows.executions.v1.Execution.StackTraceElement>
+              values) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, elements_);
+          onChanged();
+        } else {
+          elementsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder clearElements() {
+        if (elementsBuilder_ == null) {
+          elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          elementsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public Builder removeElements(int index) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.remove(index);
+          onChanged();
+        } else {
+          elementsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder
+          getElementsBuilder(int index) {
+        return getElementsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder
+          getElementsOrBuilder(int index) {
+        if (elementsBuilder_ == null) {
+          return elements_.get(index);
+        } else {
+          return elementsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder>
+          getElementsOrBuilderList() {
+        if (elementsBuilder_ != null) {
+          return elementsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(elements_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder
+          addElementsBuilder() {
+        return getElementsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder
+          addElementsBuilder(int index) {
+        return getElementsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.workflows.executions.v1.Execution.StackTraceElement
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An array of stack elements.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workflows.executions.v1.Execution.StackTraceElement elements = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder>
+          getElementsBuilderList() {
+        return getElementsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder>
+          getElementsFieldBuilder() {
+        if (elementsBuilder_ == null) {
+          elementsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement,
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElement.Builder,
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceElementOrBuilder>(
+                  elements_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          elements_ = null;
+        }
+        return elementsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workflows.executions.v1.Execution.StackTrace)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workflows.executions.v1.Execution.StackTrace)
+    private static final com.google.cloud.workflows.executions.v1.Execution.StackTrace
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.workflows.executions.v1.Execution.StackTrace();
+    }
+
+    public static com.google.cloud.workflows.executions.v1.Execution.StackTrace
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StackTrace> PARSER =
+        new com.google.protobuf.AbstractParser<StackTrace>() {
+          @java.lang.Override
+          public StackTrace parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new StackTrace(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<StackTrace> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StackTrace> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTrace
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ErrorOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.workflows.executions.v1.Execution.Error)
@@ -404,7 +3704,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Error payload returned by the execution, represented as a JSON string.
+     * Error message and data returned represented as a JSON string.
      * </pre>
      *
      * <code>string payload = 1;</code>
@@ -416,7 +3716,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Error payload returned by the execution, represented as a JSON string.
+     * Error message and data returned represented as a JSON string.
      * </pre>
      *
      * <code>string payload = 1;</code>
@@ -429,7 +3729,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable error context, helpful for debugging purposes.
+     * Human-readable stack trace string.
      * </pre>
      *
      * <code>string context = 2;</code>
@@ -441,7 +3741,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable error context, helpful for debugging purposes.
+     * Human-readable stack trace string.
      * </pre>
      *
      * <code>string context = 2;</code>
@@ -449,6 +3749,41 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for context.
      */
     com.google.protobuf.ByteString getContextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Stack trace with detailed information of where error was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     *
+     * @return Whether the stackTrace field is set.
+     */
+    boolean hasStackTrace();
+    /**
+     *
+     *
+     * <pre>
+     * Stack trace with detailed information of where error was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     *
+     * @return The stackTrace.
+     */
+    com.google.cloud.workflows.executions.v1.Execution.StackTrace getStackTrace();
+    /**
+     *
+     *
+     * <pre>
+     * Stack trace with detailed information of where error was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     */
+    com.google.cloud.workflows.executions.v1.Execution.StackTraceOrBuilder getStackTraceOrBuilder();
   }
   /**
    *
@@ -517,6 +3852,24 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
                 context_ = s;
                 break;
               }
+            case 26:
+              {
+                com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder subBuilder =
+                    null;
+                if (stackTrace_ != null) {
+                  subBuilder = stackTrace_.toBuilder();
+                }
+                stackTrace_ =
+                    input.readMessage(
+                        com.google.cloud.workflows.executions.v1.Execution.StackTrace.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(stackTrace_);
+                  stackTrace_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -557,7 +3910,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Error payload returned by the execution, represented as a JSON string.
+     * Error message and data returned represented as a JSON string.
      * </pre>
      *
      * <code>string payload = 1;</code>
@@ -580,7 +3933,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Error payload returned by the execution, represented as a JSON string.
+     * Error message and data returned represented as a JSON string.
      * </pre>
      *
      * <code>string payload = 1;</code>
@@ -606,7 +3959,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable error context, helpful for debugging purposes.
+     * Human-readable stack trace string.
      * </pre>
      *
      * <code>string context = 2;</code>
@@ -629,7 +3982,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable error context, helpful for debugging purposes.
+     * Human-readable stack trace string.
      * </pre>
      *
      * <code>string context = 2;</code>
@@ -647,6 +4000,55 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int STACK_TRACE_FIELD_NUMBER = 3;
+    private com.google.cloud.workflows.executions.v1.Execution.StackTrace stackTrace_;
+    /**
+     *
+     *
+     * <pre>
+     * Stack trace with detailed information of where error was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     *
+     * @return Whether the stackTrace field is set.
+     */
+    @java.lang.Override
+    public boolean hasStackTrace() {
+      return stackTrace_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stack trace with detailed information of where error was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     *
+     * @return The stackTrace.
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTrace getStackTrace() {
+      return stackTrace_ == null
+          ? com.google.cloud.workflows.executions.v1.Execution.StackTrace.getDefaultInstance()
+          : stackTrace_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stack trace with detailed information of where error was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.StackTraceOrBuilder
+        getStackTraceOrBuilder() {
+      return getStackTrace();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -669,6 +4071,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, context_);
       }
+      if (stackTrace_ != null) {
+        output.writeMessage(3, getStackTrace());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -683,6 +4088,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, context_);
+      }
+      if (stackTrace_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStackTrace());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -702,6 +4110,10 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
 
       if (!getPayload().equals(other.getPayload())) return false;
       if (!getContext().equals(other.getContext())) return false;
+      if (hasStackTrace() != other.hasStackTrace()) return false;
+      if (hasStackTrace()) {
+        if (!getStackTrace().equals(other.getStackTrace())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -717,6 +4129,10 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getPayload().hashCode();
       hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getContext().hashCode();
+      if (hasStackTrace()) {
+        hash = (37 * hash) + STACK_TRACE_FIELD_NUMBER;
+        hash = (53 * hash) + getStackTrace().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -869,6 +4285,12 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
 
         context_ = "";
 
+        if (stackTraceBuilder_ == null) {
+          stackTrace_ = null;
+        } else {
+          stackTrace_ = null;
+          stackTraceBuilder_ = null;
+        }
         return this;
       }
 
@@ -898,6 +4320,11 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
             new com.google.cloud.workflows.executions.v1.Execution.Error(this);
         result.payload_ = payload_;
         result.context_ = context_;
+        if (stackTraceBuilder_ == null) {
+          result.stackTrace_ = stackTrace_;
+        } else {
+          result.stackTrace_ = stackTraceBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -958,6 +4385,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
           context_ = other.context_;
           onChanged();
         }
+        if (other.hasStackTrace()) {
+          mergeStackTrace(other.getStackTrace());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -993,7 +4423,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Error payload returned by the execution, represented as a JSON string.
+       * Error message and data returned represented as a JSON string.
        * </pre>
        *
        * <code>string payload = 1;</code>
@@ -1015,7 +4445,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Error payload returned by the execution, represented as a JSON string.
+       * Error message and data returned represented as a JSON string.
        * </pre>
        *
        * <code>string payload = 1;</code>
@@ -1037,7 +4467,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Error payload returned by the execution, represented as a JSON string.
+       * Error message and data returned represented as a JSON string.
        * </pre>
        *
        * <code>string payload = 1;</code>
@@ -1058,7 +4488,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Error payload returned by the execution, represented as a JSON string.
+       * Error message and data returned represented as a JSON string.
        * </pre>
        *
        * <code>string payload = 1;</code>
@@ -1075,7 +4505,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Error payload returned by the execution, represented as a JSON string.
+       * Error message and data returned represented as a JSON string.
        * </pre>
        *
        * <code>string payload = 1;</code>
@@ -1099,7 +4529,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable error context, helpful for debugging purposes.
+       * Human-readable stack trace string.
        * </pre>
        *
        * <code>string context = 2;</code>
@@ -1121,7 +4551,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable error context, helpful for debugging purposes.
+       * Human-readable stack trace string.
        * </pre>
        *
        * <code>string context = 2;</code>
@@ -1143,7 +4573,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable error context, helpful for debugging purposes.
+       * Human-readable stack trace string.
        * </pre>
        *
        * <code>string context = 2;</code>
@@ -1164,7 +4594,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable error context, helpful for debugging purposes.
+       * Human-readable stack trace string.
        * </pre>
        *
        * <code>string context = 2;</code>
@@ -1181,7 +4611,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable error context, helpful for debugging purposes.
+       * Human-readable stack trace string.
        * </pre>
        *
        * <code>string context = 2;</code>
@@ -1198,6 +4628,197 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         context_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.workflows.executions.v1.Execution.StackTrace stackTrace_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.workflows.executions.v1.Execution.StackTrace,
+              com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceOrBuilder>
+          stackTraceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       *
+       * @return Whether the stackTrace field is set.
+       */
+      public boolean hasStackTrace() {
+        return stackTraceBuilder_ != null || stackTrace_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       *
+       * @return The stackTrace.
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTrace getStackTrace() {
+        if (stackTraceBuilder_ == null) {
+          return stackTrace_ == null
+              ? com.google.cloud.workflows.executions.v1.Execution.StackTrace.getDefaultInstance()
+              : stackTrace_;
+        } else {
+          return stackTraceBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       */
+      public Builder setStackTrace(
+          com.google.cloud.workflows.executions.v1.Execution.StackTrace value) {
+        if (stackTraceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          stackTrace_ = value;
+          onChanged();
+        } else {
+          stackTraceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       */
+      public Builder setStackTrace(
+          com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder builderForValue) {
+        if (stackTraceBuilder_ == null) {
+          stackTrace_ = builderForValue.build();
+          onChanged();
+        } else {
+          stackTraceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       */
+      public Builder mergeStackTrace(
+          com.google.cloud.workflows.executions.v1.Execution.StackTrace value) {
+        if (stackTraceBuilder_ == null) {
+          if (stackTrace_ != null) {
+            stackTrace_ =
+                com.google.cloud.workflows.executions.v1.Execution.StackTrace.newBuilder(
+                        stackTrace_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            stackTrace_ = value;
+          }
+          onChanged();
+        } else {
+          stackTraceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       */
+      public Builder clearStackTrace() {
+        if (stackTraceBuilder_ == null) {
+          stackTrace_ = null;
+          onChanged();
+        } else {
+          stackTrace_ = null;
+          stackTraceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder
+          getStackTraceBuilder() {
+
+        onChanged();
+        return getStackTraceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       */
+      public com.google.cloud.workflows.executions.v1.Execution.StackTraceOrBuilder
+          getStackTraceOrBuilder() {
+        if (stackTraceBuilder_ != null) {
+          return stackTraceBuilder_.getMessageOrBuilder();
+        } else {
+          return stackTrace_ == null
+              ? com.google.cloud.workflows.executions.v1.Execution.StackTrace.getDefaultInstance()
+              : stackTrace_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Stack trace with detailed information of where error was generated.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.workflows.executions.v1.Execution.StackTrace,
+              com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder,
+              com.google.cloud.workflows.executions.v1.Execution.StackTraceOrBuilder>
+          getStackTraceFieldBuilder() {
+        if (stackTraceBuilder_ == null) {
+          stackTraceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.workflows.executions.v1.Execution.StackTrace,
+                  com.google.cloud.workflows.executions.v1.Execution.StackTrace.Builder,
+                  com.google.cloud.workflows.executions.v1.Execution.StackTraceOrBuilder>(
+                  getStackTrace(), getParentForChildren(), isClean());
+          stackTrace_ = null;
+        }
+        return stackTraceBuilder_;
       }
 
       @java.lang.Override
@@ -1453,6 +5074,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input parameters of the execution represented as a JSON string.
    * The size limit is 32KB.
+   * *Note*: If you are using the REST API directly to run your workflow, you
+   * must escape any JSON string value of `argument`. Example:
+   * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
    * </pre>
    *
    * <code>string argument = 5;</code>
@@ -1477,6 +5101,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input parameters of the execution represented as a JSON string.
    * The size limit is 32KB.
+   * *Note*: If you are using the REST API directly to run your workflow, you
+   * must escape any JSON string value of `argument`. Example:
+   * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
    * </pre>
    *
    * <code>string argument = 5;</code>
@@ -1656,6 +5283,44 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CALL_LOG_LEVEL_FIELD_NUMBER = 9;
+  private int callLogLevel_;
+  /**
+   *
+   *
+   * <pre>
+   * The call logging level associated to this execution.
+   * </pre>
+   *
+   * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+   *
+   * @return The enum numeric value on the wire for callLogLevel.
+   */
+  @java.lang.Override
+  public int getCallLogLevelValue() {
+    return callLogLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The call logging level associated to this execution.
+   * </pre>
+   *
+   * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+   *
+   * @return The callLogLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.workflows.executions.v1.Execution.CallLogLevel getCallLogLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.workflows.executions.v1.Execution.CallLogLevel result =
+        com.google.cloud.workflows.executions.v1.Execution.CallLogLevel.valueOf(callLogLevel_);
+    return result == null
+        ? com.google.cloud.workflows.executions.v1.Execution.CallLogLevel.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1695,6 +5360,12 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowRevisionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, workflowRevisionId_);
     }
+    if (callLogLevel_
+        != com.google.cloud.workflows.executions.v1.Execution.CallLogLevel
+            .CALL_LOG_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, callLogLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1729,6 +5400,12 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowRevisionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, workflowRevisionId_);
     }
+    if (callLogLevel_
+        != com.google.cloud.workflows.executions.v1.Execution.CallLogLevel
+            .CALL_LOG_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, callLogLevel_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1762,6 +5439,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (!getError().equals(other.getError())) return false;
     }
     if (!getWorkflowRevisionId().equals(other.getWorkflowRevisionId())) return false;
+    if (callLogLevel_ != other.callLogLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1795,6 +5473,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + WORKFLOW_REVISION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflowRevisionId().hashCode();
+    hash = (37 * hash) + CALL_LOG_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + callLogLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1969,6 +5649,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       }
       workflowRevisionId_ = "";
 
+      callLogLevel_ = 0;
+
       return this;
     }
 
@@ -2016,6 +5698,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
         result.error_ = errorBuilder_.build();
       }
       result.workflowRevisionId_ = workflowRevisionId_;
+      result.callLogLevel_ = callLogLevel_;
       onBuilt();
       return result;
     }
@@ -2093,6 +5776,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       if (!other.getWorkflowRevisionId().isEmpty()) {
         workflowRevisionId_ = other.workflowRevisionId_;
         onChanged();
+      }
+      if (other.callLogLevel_ != 0) {
+        setCallLogLevelValue(other.getCallLogLevelValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2726,6 +6412,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
      * </pre>
      *
      * <code>string argument = 5;</code>
@@ -2749,6 +6438,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
      * </pre>
      *
      * <code>string argument = 5;</code>
@@ -2772,6 +6464,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
      * </pre>
      *
      * <code>string argument = 5;</code>
@@ -2794,6 +6489,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
      * </pre>
      *
      * <code>string argument = 5;</code>
@@ -2812,6 +6510,9 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
      * </pre>
      *
      * <code>string argument = 5;</code>
@@ -3265,6 +6966,100 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       workflowRevisionId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int callLogLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The call logging level associated to this execution.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     *
+     * @return The enum numeric value on the wire for callLogLevel.
+     */
+    @java.lang.Override
+    public int getCallLogLevelValue() {
+      return callLogLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The call logging level associated to this execution.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for callLogLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallLogLevelValue(int value) {
+
+      callLogLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The call logging level associated to this execution.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     *
+     * @return The callLogLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.executions.v1.Execution.CallLogLevel getCallLogLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.workflows.executions.v1.Execution.CallLogLevel result =
+          com.google.cloud.workflows.executions.v1.Execution.CallLogLevel.valueOf(callLogLevel_);
+      return result == null
+          ? com.google.cloud.workflows.executions.v1.Execution.CallLogLevel.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The call logging level associated to this execution.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     *
+     * @param value The callLogLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallLogLevel(
+        com.google.cloud.workflows.executions.v1.Execution.CallLogLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      callLogLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The call logging level associated to this execution.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCallLogLevel() {
+
+      callLogLevel_ = 0;
       onChanged();
       return this;
     }
