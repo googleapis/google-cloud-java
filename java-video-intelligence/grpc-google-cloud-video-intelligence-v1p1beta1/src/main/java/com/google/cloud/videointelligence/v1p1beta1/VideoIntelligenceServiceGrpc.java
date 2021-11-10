@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/videointelligence/v1p1beta1/video_intelligence.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class VideoIntelligenceServiceGrpc {
 
   private VideoIntelligenceServiceGrpc() {}
