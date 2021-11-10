@@ -53,6 +53,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/accessapproval/v1/accessapproval.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AccessApprovalGrpc {
 
   private AccessApprovalGrpc() {}
