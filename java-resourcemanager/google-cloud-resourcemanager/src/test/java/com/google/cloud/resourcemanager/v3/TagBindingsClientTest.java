@@ -94,7 +94,7 @@ public class TagBindingsClientTest {
             .build();
     mockTagBindings.addResponse(expectedResponse);
 
-    ResourceName parent = TagValueName.of("[TAG_VALUE]");
+    ResourceName parent = FolderName.of("[FOLDER]");
 
     ListTagBindingsPagedResponse pagedListResponse = client.listTagBindings(parent);
 
@@ -120,7 +120,7 @@ public class TagBindingsClientTest {
     mockTagBindings.addException(exception);
 
     try {
-      ResourceName parent = TagValueName.of("[TAG_VALUE]");
+      ResourceName parent = FolderName.of("[FOLDER]");
       client.listTagBindings(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

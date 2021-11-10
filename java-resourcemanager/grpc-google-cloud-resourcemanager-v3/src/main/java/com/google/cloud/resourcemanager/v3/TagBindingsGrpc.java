@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/resourcemanager/v3/tag_bindings.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class TagBindingsGrpc {
 
   private TagBindingsGrpc() {}

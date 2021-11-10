@@ -103,7 +103,7 @@ public class TagKeysClientTest {
             .build();
     mockTagKeys.addResponse(expectedResponse);
 
-    ResourceName parent = TagValueName.of("[TAG_VALUE]");
+    ResourceName parent = FolderName.of("[FOLDER]");
 
     ListTagKeysPagedResponse pagedListResponse = client.listTagKeys(parent);
 
@@ -129,7 +129,7 @@ public class TagKeysClientTest {
     mockTagKeys.addException(exception);
 
     try {
-      ResourceName parent = TagValueName.of("[TAG_VALUE]");
+      ResourceName parent = FolderName.of("[FOLDER]");
       client.listTagKeys(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -496,7 +496,7 @@ public class TagKeysClientTest {
             .build();
     mockTagKeys.addResponse(expectedResponse);
 
-    ResourceName resource = TagValueName.of("[TAG_VALUE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -518,7 +518,7 @@ public class TagKeysClientTest {
     mockTagKeys.addException(exception);
 
     try {
-      ResourceName resource = TagValueName.of("[TAG_VALUE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -576,7 +576,7 @@ public class TagKeysClientTest {
             .build();
     mockTagKeys.addResponse(expectedResponse);
 
-    ResourceName resource = TagValueName.of("[TAG_VALUE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -600,7 +600,7 @@ public class TagKeysClientTest {
     mockTagKeys.addException(exception);
 
     try {
-      ResourceName resource = TagValueName.of("[TAG_VALUE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -658,7 +658,7 @@ public class TagKeysClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockTagKeys.addResponse(expectedResponse);
 
-    ResourceName resource = TagValueName.of("[TAG_VALUE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -682,7 +682,7 @@ public class TagKeysClientTest {
     mockTagKeys.addException(exception);
 
     try {
-      ResourceName resource = TagValueName.of("[TAG_VALUE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");

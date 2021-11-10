@@ -192,7 +192,7 @@ public class FoldersClientTest {
             .build();
     mockFolders.addResponse(expectedResponse);
 
-    ResourceName parent = TagValueName.of("[TAG_VALUE]");
+    ResourceName parent = FolderName.of("[FOLDER]");
 
     ListFoldersPagedResponse pagedListResponse = client.listFolders(parent);
 
@@ -218,7 +218,7 @@ public class FoldersClientTest {
     mockFolders.addException(exception);
 
     try {
-      ResourceName parent = TagValueName.of("[TAG_VALUE]");
+      ResourceName parent = FolderName.of("[FOLDER]");
       client.listFolders(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -442,7 +442,7 @@ public class FoldersClientTest {
     mockFolders.addResponse(resultOperation);
 
     FolderName name = FolderName.of("[FOLDER]");
-    ResourceName destinationParent = TagValueName.of("[TAG_VALUE]");
+    ResourceName destinationParent = FolderName.of("[FOLDER]");
 
     Folder actualResponse = client.moveFolderAsync(name, destinationParent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -466,7 +466,7 @@ public class FoldersClientTest {
 
     try {
       FolderName name = FolderName.of("[FOLDER]");
-      ResourceName destinationParent = TagValueName.of("[TAG_VALUE]");
+      ResourceName destinationParent = FolderName.of("[FOLDER]");
       client.moveFolderAsync(name, destinationParent).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -552,7 +552,7 @@ public class FoldersClientTest {
     mockFolders.addResponse(resultOperation);
 
     String name = "name3373707";
-    ResourceName destinationParent = TagValueName.of("[TAG_VALUE]");
+    ResourceName destinationParent = FolderName.of("[FOLDER]");
 
     Folder actualResponse = client.moveFolderAsync(name, destinationParent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -576,7 +576,7 @@ public class FoldersClientTest {
 
     try {
       String name = "name3373707";
-      ResourceName destinationParent = TagValueName.of("[TAG_VALUE]");
+      ResourceName destinationParent = FolderName.of("[FOLDER]");
       client.moveFolderAsync(name, destinationParent).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -859,7 +859,7 @@ public class FoldersClientTest {
             .build();
     mockFolders.addResponse(expectedResponse);
 
-    ResourceName resource = TagValueName.of("[TAG_VALUE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -881,7 +881,7 @@ public class FoldersClientTest {
     mockFolders.addException(exception);
 
     try {
-      ResourceName resource = TagValueName.of("[TAG_VALUE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -939,7 +939,7 @@ public class FoldersClientTest {
             .build();
     mockFolders.addResponse(expectedResponse);
 
-    ResourceName resource = TagValueName.of("[TAG_VALUE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -963,7 +963,7 @@ public class FoldersClientTest {
     mockFolders.addException(exception);
 
     try {
-      ResourceName resource = TagValueName.of("[TAG_VALUE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1021,7 +1021,7 @@ public class FoldersClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockFolders.addResponse(expectedResponse);
 
-    ResourceName resource = TagValueName.of("[TAG_VALUE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1045,7 +1045,7 @@ public class FoldersClientTest {
     mockFolders.addException(exception);
 
     try {
-      ResourceName resource = TagValueName.of("[TAG_VALUE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
