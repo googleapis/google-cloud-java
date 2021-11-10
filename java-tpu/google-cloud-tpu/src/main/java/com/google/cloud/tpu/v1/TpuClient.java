@@ -192,7 +192,7 @@ public class TpuClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TpuClient tpuClient = TpuClient.create()) {
-   *   String parent = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Node element : tpuClient.listNodes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -217,7 +217,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListNodesRequest request =
    *       ListNodesRequest.newBuilder()
-   *           .setParent(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -244,7 +244,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListNodesRequest request =
    *       ListNodesRequest.newBuilder()
-   *           .setParent(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -270,7 +270,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListNodesRequest request =
    *       ListNodesRequest.newBuilder()
-   *           .setParent(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -420,7 +420,7 @@ public class TpuClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TpuClient tpuClient = TpuClient.create()) {
-   *   String parent = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Node node = Node.newBuilder().build();
    *   String nodeId = "nodeId-1040171331";
    *   Node response = tpuClient.createNodeAsync(parent, node, nodeId).get();
@@ -449,7 +449,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   CreateNodeRequest request =
    *       CreateNodeRequest.newBuilder()
-   *           .setParent(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setNodeId("nodeId-1040171331")
    *           .setNode(Node.newBuilder().build())
    *           .build();
@@ -474,7 +474,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   CreateNodeRequest request =
    *       CreateNodeRequest.newBuilder()
-   *           .setParent(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setNodeId("nodeId-1040171331")
    *           .setNode(Node.newBuilder().build())
    *           .build();
@@ -500,7 +500,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   CreateNodeRequest request =
    *       CreateNodeRequest.newBuilder()
-   *           .setParent(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setNodeId("nodeId-1040171331")
    *           .setNode(Node.newBuilder().build())
    *           .build();
