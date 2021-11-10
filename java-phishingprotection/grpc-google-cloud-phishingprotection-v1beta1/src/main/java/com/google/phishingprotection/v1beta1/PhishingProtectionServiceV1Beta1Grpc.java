@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/phishingprotection/v1beta1/phishingprotection.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class PhishingProtectionServiceV1Beta1Grpc {
 
   private PhishingProtectionServiceV1Beta1Grpc() {}
