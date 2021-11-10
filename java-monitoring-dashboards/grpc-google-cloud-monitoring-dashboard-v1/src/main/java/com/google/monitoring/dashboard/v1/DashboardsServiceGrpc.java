@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/monitoring/dashboard/v1/dashboards_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DashboardsServiceGrpc {
 
   private DashboardsServiceGrpc() {}
