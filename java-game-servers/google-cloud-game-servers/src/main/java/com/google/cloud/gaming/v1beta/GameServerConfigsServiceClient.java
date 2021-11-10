@@ -211,7 +211,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * try (GameServerConfigsServiceClient gameServerConfigsServiceClient =
    *     GameServerConfigsServiceClient.create()) {
    *   String parent =
-   *       GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]").toString();
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
    *   for (GameServerConfig element :
    *       gameServerConfigsServiceClient.listGameServerConfigs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -241,8 +241,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *   ListGameServerConfigsRequest request =
    *       ListGameServerConfigsRequest.newBuilder()
    *           .setParent(
-   *               GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
-   *                   .toString())
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -275,8 +274,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *   ListGameServerConfigsRequest request =
    *       ListGameServerConfigsRequest.newBuilder()
    *           .setParent(
-   *               GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
-   *                   .toString())
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -308,8 +306,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *   ListGameServerConfigsRequest request =
    *       ListGameServerConfigsRequest.newBuilder()
    *           .setParent(
-   *               GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
-   *                   .toString())
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -489,7 +486,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * try (GameServerConfigsServiceClient gameServerConfigsServiceClient =
    *     GameServerConfigsServiceClient.create()) {
    *   String parent =
-   *       GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]").toString();
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
    *   GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
    *   GameServerConfig response =
    *       gameServerConfigsServiceClient
@@ -527,8 +524,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *   CreateGameServerConfigRequest request =
    *       CreateGameServerConfigRequest.newBuilder()
    *           .setParent(
-   *               GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
-   *                   .toString())
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
    *           .setConfigId("configId-580140035")
    *           .setGameServerConfig(GameServerConfig.newBuilder().build())
    *           .build();
@@ -559,8 +555,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *   CreateGameServerConfigRequest request =
    *       CreateGameServerConfigRequest.newBuilder()
    *           .setParent(
-   *               GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
-   *                   .toString())
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
    *           .setConfigId("configId-580140035")
    *           .setGameServerConfig(GameServerConfig.newBuilder().build())
    *           .build();
@@ -592,8 +587,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *   CreateGameServerConfigRequest request =
    *       CreateGameServerConfigRequest.newBuilder()
    *           .setParent(
-   *               GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
-   *                   .toString())
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
    *           .setConfigId("configId-580140035")
    *           .setGameServerConfig(GameServerConfig.newBuilder().build())
    *           .build();

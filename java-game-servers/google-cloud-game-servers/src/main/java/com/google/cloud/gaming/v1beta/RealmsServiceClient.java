@@ -198,7 +198,7 @@ public class RealmsServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   String parent = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Realm element : realmsServiceClient.listRealms(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -224,7 +224,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   ListRealmsRequest request =
    *       ListRealmsRequest.newBuilder()
-   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -253,7 +253,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   ListRealmsRequest request =
    *       ListRealmsRequest.newBuilder()
-   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -281,7 +281,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   ListRealmsRequest request =
    *       ListRealmsRequest.newBuilder()
-   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -436,7 +436,7 @@ public class RealmsServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   String parent = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Realm realm = Realm.newBuilder().build();
    *   String realmId = "realmId1080654858";
    *   Realm response = realmsServiceClient.createRealmAsync(parent, realm, realmId).get();
@@ -470,7 +470,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   CreateRealmRequest request =
    *       CreateRealmRequest.newBuilder()
-   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setRealmId("realmId1080654858")
    *           .setRealm(Realm.newBuilder().build())
    *           .build();
@@ -496,7 +496,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   CreateRealmRequest request =
    *       CreateRealmRequest.newBuilder()
-   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setRealmId("realmId1080654858")
    *           .setRealm(Realm.newBuilder().build())
    *           .build();
@@ -522,7 +522,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   CreateRealmRequest request =
    *       CreateRealmRequest.newBuilder()
-   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setRealmId("realmId1080654858")
    *           .setRealm(Realm.newBuilder().build())
    *           .build();

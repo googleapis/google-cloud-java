@@ -408,9 +408,7 @@ public class GameServerClustersServiceClientTest {
 
     PreviewCreateGameServerClusterRequest request =
         PreviewCreateGameServerClusterRequest.newBuilder()
-            .setParent(
-                GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-                    .toString())
+            .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
             .setGameServerClusterId("gameServerClusterId-1301104032")
             .setGameServerCluster(GameServerCluster.newBuilder().build())
             .setPreviewTime(Timestamp.newBuilder().build())
@@ -443,9 +441,7 @@ public class GameServerClustersServiceClientTest {
     try {
       PreviewCreateGameServerClusterRequest request =
           PreviewCreateGameServerClusterRequest.newBuilder()
-              .setParent(
-                  GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-                      .toString())
+              .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
               .setGameServerClusterId("gameServerClusterId-1301104032")
               .setGameServerCluster(GameServerCluster.newBuilder().build())
               .setPreviewTime(Timestamp.newBuilder().build())

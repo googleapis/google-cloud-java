@@ -214,8 +214,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
-   *   String parent =
-   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (GameServerDeployment element :
    *       gameServerDeploymentsServiceClient.listGameServerDeployments(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -244,8 +243,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
    *       ListGameServerDeploymentsRequest.newBuilder()
-   *           .setParent(
-   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -277,8 +275,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
    *       ListGameServerDeploymentsRequest.newBuilder()
-   *           .setParent(
-   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -312,8 +309,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
    *       ListGameServerDeploymentsRequest.newBuilder()
-   *           .setParent(
-   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -490,8 +486,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
-   *   String parent =
-   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   GameServerDeployment gameServerDeployment = GameServerDeployment.newBuilder().build();
    *   GameServerDeployment response =
    *       gameServerDeploymentsServiceClient
@@ -526,8 +521,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
    *       CreateGameServerDeploymentRequest.newBuilder()
-   *           .setParent(
-   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDeploymentId("deploymentId-136894784")
    *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
    *           .build();
@@ -555,8 +549,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
    *       CreateGameServerDeploymentRequest.newBuilder()
-   *           .setParent(
-   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDeploymentId("deploymentId-136894784")
    *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
    *           .build();
@@ -586,8 +579,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
    *       CreateGameServerDeploymentRequest.newBuilder()
-   *           .setParent(
-   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDeploymentId("deploymentId-136894784")
    *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
    *           .build();

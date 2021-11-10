@@ -210,8 +210,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GameServerClustersServiceClient gameServerClustersServiceClient =
    *     GameServerClustersServiceClient.create()) {
-   *   String parent =
-   *       GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]").toString();
+   *   String parent = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString();
    *   for (GameServerCluster element :
    *       gameServerClustersServiceClient.listGameServerClusters(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -240,9 +239,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   ListGameServerClustersRequest request =
    *       ListGameServerClustersRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -274,9 +271,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   ListGameServerClustersRequest request =
    *       ListGameServerClustersRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -307,9 +302,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   ListGameServerClustersRequest request =
    *       ListGameServerClustersRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -486,8 +479,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GameServerClustersServiceClient gameServerClustersServiceClient =
    *     GameServerClustersServiceClient.create()) {
-   *   String parent =
-   *       GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]").toString();
+   *   String parent = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString();
    *   GameServerCluster gameServerCluster = GameServerCluster.newBuilder().build();
    *   String gameServerClusterId = "gameServerClusterId-1301104032";
    *   GameServerCluster response =
@@ -525,9 +517,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   CreateGameServerClusterRequest request =
    *       CreateGameServerClusterRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setGameServerClusterId("gameServerClusterId-1301104032")
    *           .setGameServerCluster(GameServerCluster.newBuilder().build())
    *           .build();
@@ -555,9 +545,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   CreateGameServerClusterRequest request =
    *       CreateGameServerClusterRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setGameServerClusterId("gameServerClusterId-1301104032")
    *           .setGameServerCluster(GameServerCluster.newBuilder().build())
    *           .build();
@@ -587,9 +575,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   CreateGameServerClusterRequest request =
    *       CreateGameServerClusterRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setGameServerClusterId("gameServerClusterId-1301104032")
    *           .setGameServerCluster(GameServerCluster.newBuilder().build())
    *           .build();
@@ -616,9 +602,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   PreviewCreateGameServerClusterRequest request =
    *       PreviewCreateGameServerClusterRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setGameServerClusterId("gameServerClusterId-1301104032")
    *           .setGameServerCluster(GameServerCluster.newBuilder().build())
    *           .setPreviewTime(Timestamp.newBuilder().build())
@@ -647,9 +631,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     GameServerClustersServiceClient.create()) {
    *   PreviewCreateGameServerClusterRequest request =
    *       PreviewCreateGameServerClusterRequest.newBuilder()
-   *           .setParent(
-   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
-   *                   .toString())
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
    *           .setGameServerClusterId("gameServerClusterId-1301104032")
    *           .setGameServerCluster(GameServerCluster.newBuilder().build())
    *           .setPreviewTime(Timestamp.newBuilder().build())
