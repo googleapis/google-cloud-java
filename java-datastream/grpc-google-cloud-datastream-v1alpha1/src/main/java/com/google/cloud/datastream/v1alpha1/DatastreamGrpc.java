@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datastream/v1alpha1/datastream.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DatastreamGrpc {
 
   private DatastreamGrpc() {}

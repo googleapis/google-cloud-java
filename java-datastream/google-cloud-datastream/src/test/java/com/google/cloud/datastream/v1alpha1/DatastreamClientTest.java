@@ -546,9 +546,7 @@ public class DatastreamClientTest {
 
     DiscoverConnectionProfileRequest request =
         DiscoverConnectionProfileRequest.newBuilder()
-            .setParent(
-                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-                    .toString())
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
 
     DiscoverConnectionProfileResponse actualResponse = client.discoverConnectionProfile(request);
@@ -581,9 +579,7 @@ public class DatastreamClientTest {
     try {
       DiscoverConnectionProfileRequest request =
           DiscoverConnectionProfileRequest.newBuilder()
-              .setParent(
-                  ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .build();
       client.discoverConnectionProfile(request);
       Assert.fail("No exception raised");
