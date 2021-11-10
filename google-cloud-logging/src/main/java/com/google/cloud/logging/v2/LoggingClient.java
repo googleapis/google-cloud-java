@@ -848,7 +848,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   String parent = LogName.ofProjectLogName("[PROJECT]", "[LOG]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -876,7 +876,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListLogsRequest request =
    *       ListLogsRequest.newBuilder()
-   *           .setParent(LogName.ofProjectLogName("[PROJECT]", "[LOG]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .addAllResourceNames(new ArrayList<String>())
@@ -905,7 +905,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListLogsRequest request =
    *       ListLogsRequest.newBuilder()
-   *           .setParent(LogName.ofProjectLogName("[PROJECT]", "[LOG]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .addAllResourceNames(new ArrayList<String>())
@@ -933,7 +933,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListLogsRequest request =
    *       ListLogsRequest.newBuilder()
-   *           .setParent(LogName.ofProjectLogName("[PROJECT]", "[LOG]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .addAllResourceNames(new ArrayList<String>())

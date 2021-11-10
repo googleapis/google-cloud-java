@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/logging/v2/logging_metrics.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class MetricsServiceV2Grpc {
 
   private MetricsServiceV2Grpc() {}

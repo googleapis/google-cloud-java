@@ -427,9 +427,7 @@ public class ConfigClientTest {
 
     CreateBucketRequest request =
         CreateBucketRequest.newBuilder()
-            .setParent(
-                LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
-                    .toString())
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBucketId("bucketId-1603305307")
             .setBucket(LogBucket.newBuilder().build())
             .build();
@@ -458,9 +456,7 @@ public class ConfigClientTest {
     try {
       CreateBucketRequest request =
           CreateBucketRequest.newBuilder()
-              .setParent(
-                  LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setBucketId("bucketId-1603305307")
               .setBucket(LogBucket.newBuilder().build())
               .build();

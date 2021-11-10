@@ -423,7 +423,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   String parent = LogMetricName.of("[PROJECT]", "[METRIC]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsClient.createLogMetric(parent, metric);
    * }
@@ -452,7 +452,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   CreateLogMetricRequest request =
    *       CreateLogMetricRequest.newBuilder()
-   *           .setParent(LogMetricName.of("[PROJECT]", "[METRIC]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setMetric(LogMetric.newBuilder().build())
    *           .build();
    *   LogMetric response = metricsClient.createLogMetric(request);
@@ -476,7 +476,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   CreateLogMetricRequest request =
    *       CreateLogMetricRequest.newBuilder()
-   *           .setParent(LogMetricName.of("[PROJECT]", "[METRIC]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setMetric(LogMetric.newBuilder().build())
    *           .build();
    *   ApiFuture<LogMetric> future = metricsClient.createLogMetricCallable().futureCall(request);
