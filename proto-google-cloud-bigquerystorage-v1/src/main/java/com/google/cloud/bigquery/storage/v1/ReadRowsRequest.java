@@ -175,7 +175,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Position in the stream.
+   * The offset requested must be less than the last row read from Read.
+   * Requesting a larger offset is undefined. If not specified, start reading
+   * from offset zero.
    * </pre>
    *
    * <code>int64 offset = 2;</code>
@@ -641,7 +643,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Position in the stream.
+     * The offset requested must be less than the last row read from Read.
+     * Requesting a larger offset is undefined. If not specified, start reading
+     * from offset zero.
      * </pre>
      *
      * <code>int64 offset = 2;</code>
@@ -656,7 +660,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The offset requested must be less than the maximum row previously read in the stream.
+     * The offset requested must be less than the last row read from Read.
      * Requesting a larger offset is undefined. If not specified, start reading
      * from offset zero.
      * </pre>
@@ -676,7 +680,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Reset offset to zero.
+     * The offset requested must be less than the last row read from Read.
+     * Requesting a larger offset is undefined. If not specified, start reading
+     * from offset zero.
      * </pre>
      *
      * <code>int64 offset = 2;</code>
