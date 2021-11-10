@@ -34,6 +34,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/privacy/dlp/v2/dlp.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DlpServiceGrpc {
 
   private DlpServiceGrpc() {}

@@ -49,7 +49,6 @@ import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
-import com.google.privacy.dlp.v2.DlpContentName;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
@@ -168,7 +167,7 @@ public class DlpServiceClientTest {
 
     InspectContentRequest request =
         InspectContentRequest.newBuilder()
-            .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setInspectConfig(InspectConfig.newBuilder().build())
             .setItem(ContentItem.newBuilder().build())
             .setInspectTemplateName("inspectTemplateName1828857433")
@@ -201,7 +200,7 @@ public class DlpServiceClientTest {
     try {
       InspectContentRequest request =
           InspectContentRequest.newBuilder()
-              .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setInspectConfig(InspectConfig.newBuilder().build())
               .setItem(ContentItem.newBuilder().build())
               .setInspectTemplateName("inspectTemplateName1828857433")
@@ -226,7 +225,7 @@ public class DlpServiceClientTest {
 
     RedactImageRequest request =
         RedactImageRequest.newBuilder()
-            .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setLocationId("locationId1541836720")
             .setInspectConfig(InspectConfig.newBuilder().build())
             .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
@@ -262,7 +261,7 @@ public class DlpServiceClientTest {
     try {
       RedactImageRequest request =
           RedactImageRequest.newBuilder()
-              .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setLocationId("locationId1541836720")
               .setInspectConfig(InspectConfig.newBuilder().build())
               .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
@@ -287,7 +286,7 @@ public class DlpServiceClientTest {
 
     DeidentifyContentRequest request =
         DeidentifyContentRequest.newBuilder()
-            .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setDeidentifyConfig(DeidentifyConfig.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
             .setItem(ContentItem.newBuilder().build())
@@ -325,7 +324,7 @@ public class DlpServiceClientTest {
     try {
       DeidentifyContentRequest request =
           DeidentifyContentRequest.newBuilder()
-              .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setDeidentifyConfig(DeidentifyConfig.newBuilder().build())
               .setInspectConfig(InspectConfig.newBuilder().build())
               .setItem(ContentItem.newBuilder().build())
@@ -351,7 +350,7 @@ public class DlpServiceClientTest {
 
     ReidentifyContentRequest request =
         ReidentifyContentRequest.newBuilder()
-            .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setReidentifyConfig(DeidentifyConfig.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
             .setItem(ContentItem.newBuilder().build())
@@ -389,7 +388,7 @@ public class DlpServiceClientTest {
     try {
       ReidentifyContentRequest request =
           ReidentifyContentRequest.newBuilder()
-              .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setReidentifyConfig(DeidentifyConfig.newBuilder().build())
               .setInspectConfig(InspectConfig.newBuilder().build())
               .setItem(ContentItem.newBuilder().build())

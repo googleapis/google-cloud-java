@@ -33,7 +33,7 @@
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
  *   InspectContentRequest request =
  *       InspectContentRequest.newBuilder()
- *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
  *           .setInspectConfig(InspectConfig.newBuilder().build())
  *           .setItem(ContentItem.newBuilder().build())
  *           .setInspectTemplateName("inspectTemplateName1828857433")

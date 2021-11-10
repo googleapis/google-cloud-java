@@ -114,7 +114,7 @@ import javax.annotation.Generated;
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
  *   InspectContentRequest request =
  *       InspectContentRequest.newBuilder()
- *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
  *           .setInspectConfig(InspectConfig.newBuilder().build())
  *           .setItem(ContentItem.newBuilder().build())
  *           .setInspectTemplateName("inspectTemplateName1828857433")
@@ -239,7 +239,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectContentRequest request =
    *       InspectContentRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .setItem(ContentItem.newBuilder().build())
    *           .setInspectTemplateName("inspectTemplateName1828857433")
@@ -274,7 +274,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectContentRequest request =
    *       InspectContentRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .setItem(ContentItem.newBuilder().build())
    *           .setInspectTemplateName("inspectTemplateName1828857433")
@@ -308,7 +308,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   RedactImageRequest request =
    *       RedactImageRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setLocationId("locationId1541836720")
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
@@ -342,7 +342,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   RedactImageRequest request =
    *       RedactImageRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setLocationId("locationId1541836720")
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
@@ -376,7 +376,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   DeidentifyContentRequest request =
    *       DeidentifyContentRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setDeidentifyConfig(DeidentifyConfig.newBuilder().build())
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .setItem(ContentItem.newBuilder().build())
@@ -411,7 +411,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   DeidentifyContentRequest request =
    *       DeidentifyContentRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setDeidentifyConfig(DeidentifyConfig.newBuilder().build())
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .setItem(ContentItem.newBuilder().build())
@@ -443,7 +443,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ReidentifyContentRequest request =
    *       ReidentifyContentRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setReidentifyConfig(DeidentifyConfig.newBuilder().build())
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .setItem(ContentItem.newBuilder().build())
@@ -474,7 +474,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ReidentifyContentRequest request =
    *       ReidentifyContentRequest.newBuilder()
-   *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setReidentifyConfig(DeidentifyConfig.newBuilder().build())
    *           .setInspectConfig(InspectConfig.newBuilder().build())
    *           .setItem(ContentItem.newBuilder().build())
@@ -753,10 +753,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *               "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
-   *           .toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
    *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate);
    * }
@@ -801,10 +798,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateInspectTemplateRequest request =
    *       CreateInspectTemplateRequest.newBuilder()
-   *           .setParent(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setInspectTemplate(InspectTemplate.newBuilder().build())
    *           .setTemplateId("templateId1304010549")
    *           .setLocationId("locationId1541836720")
@@ -831,10 +825,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateInspectTemplateRequest request =
    *       CreateInspectTemplateRequest.newBuilder()
-   *           .setParent(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setInspectTemplate(InspectTemplate.newBuilder().build())
    *           .setTemplateId("templateId1304010549")
    *           .setLocationId("locationId1541836720")
@@ -1266,10 +1257,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *               "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
-   *           .toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   for (InspectTemplate element : dlpServiceClient.listInspectTemplates(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1309,10 +1297,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListInspectTemplatesRequest request =
    *       ListInspectTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -1342,10 +1327,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListInspectTemplatesRequest request =
    *       ListInspectTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -1375,10 +1357,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListInspectTemplatesRequest request =
    *       ListInspectTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -1706,10 +1685,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-   *               "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
-   *           .toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
    *   DeidentifyTemplate response =
    *       dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate);
@@ -1756,10 +1732,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateDeidentifyTemplateRequest request =
    *       CreateDeidentifyTemplateRequest.newBuilder()
-   *           .setParent(
-   *               DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-   *                       "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setDeidentifyTemplate(DeidentifyTemplate.newBuilder().build())
    *           .setTemplateId("templateId1304010549")
    *           .setLocationId("locationId1541836720")
@@ -1788,10 +1761,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateDeidentifyTemplateRequest request =
    *       CreateDeidentifyTemplateRequest.newBuilder()
-   *           .setParent(
-   *               DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-   *                       "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setDeidentifyTemplate(DeidentifyTemplate.newBuilder().build())
    *           .setTemplateId("templateId1304010549")
    *           .setLocationId("locationId1541836720")
@@ -2234,10 +2204,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-   *               "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
-   *           .toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   for (DeidentifyTemplate element :
    *       dlpServiceClient.listDeidentifyTemplates(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -2279,10 +2246,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListDeidentifyTemplatesRequest request =
    *       ListDeidentifyTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-   *                       "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -2314,10 +2278,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListDeidentifyTemplatesRequest request =
    *       ListDeidentifyTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-   *                       "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -2348,10 +2309,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListDeidentifyTemplatesRequest request =
    *       ListDeidentifyTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-   *                       "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -2573,8 +2531,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
    *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger);
    * }
@@ -2610,8 +2567,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateJobTriggerRequest request =
    *       CreateJobTriggerRequest.newBuilder()
-   *           .setParent(
-   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setJobTrigger(JobTrigger.newBuilder().build())
    *           .setTriggerId("triggerId-648752909")
    *           .setLocationId("locationId1541836720")
@@ -2638,8 +2594,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateJobTriggerRequest request =
    *       CreateJobTriggerRequest.newBuilder()
-   *           .setParent(
-   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setJobTrigger(JobTrigger.newBuilder().build())
    *           .setTriggerId("triggerId-648752909")
    *           .setLocationId("locationId1541836720")
@@ -3057,8 +3012,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -3092,8 +3046,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListJobTriggersRequest request =
    *       ListJobTriggersRequest.newBuilder()
-   *           .setParent(
-   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -3123,8 +3076,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListJobTriggersRequest request =
    *       ListJobTriggersRequest.newBuilder()
-   *           .setParent(
-   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -3155,8 +3107,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListJobTriggersRequest request =
    *       ListJobTriggersRequest.newBuilder()
-   *           .setParent(
-   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -3510,7 +3461,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
    *   DlpJob response = dlpServiceClient.createDlpJob(parent, inspectJob);
    * }
@@ -3549,7 +3500,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
    *   DlpJob response = dlpServiceClient.createDlpJob(parent, riskJob);
    * }
@@ -3590,7 +3541,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateDlpJobRequest request =
    *       CreateDlpJobRequest.newBuilder()
-   *           .setParent(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setJobId("jobId101296568")
    *           .setLocationId("locationId1541836720")
    *           .build();
@@ -3621,7 +3572,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateDlpJobRequest request =
    *       CreateDlpJobRequest.newBuilder()
-   *           .setParent(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setJobId("jobId101296568")
    *           .setLocationId("locationId1541836720")
    *           .build();
@@ -3719,7 +3670,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (DlpJob element : dlpServiceClient.listDlpJobs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -3755,7 +3706,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListDlpJobsRequest request =
    *       ListDlpJobsRequest.newBuilder()
-   *           .setParent(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -3788,7 +3739,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListDlpJobsRequest request =
    *       ListDlpJobsRequest.newBuilder()
-   *           .setParent(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -3821,7 +3772,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListDlpJobsRequest request =
    *       ListDlpJobsRequest.newBuilder()
-   *           .setParent(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -4276,10 +4227,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
-   *               "[ORGANIZATION]", "[STORED_INFO_TYPE]")
-   *           .toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
    *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config);
    * }
@@ -4320,10 +4268,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateStoredInfoTypeRequest request =
    *       CreateStoredInfoTypeRequest.newBuilder()
-   *           .setParent(
-   *               StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
-   *                       "[ORGANIZATION]", "[STORED_INFO_TYPE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setConfig(StoredInfoTypeConfig.newBuilder().build())
    *           .setStoredInfoTypeId("storedInfoTypeId-1409591226")
    *           .setLocationId("locationId1541836720")
@@ -4350,10 +4295,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateStoredInfoTypeRequest request =
    *       CreateStoredInfoTypeRequest.newBuilder()
-   *           .setParent(
-   *               StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
-   *                       "[ORGANIZATION]", "[STORED_INFO_TYPE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setConfig(StoredInfoTypeConfig.newBuilder().build())
    *           .setStoredInfoTypeId("storedInfoTypeId-1409591226")
    *           .setLocationId("locationId1541836720")
@@ -4792,10 +4734,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent =
-   *       StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
-   *               "[ORGANIZATION]", "[STORED_INFO_TYPE]")
-   *           .toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   for (StoredInfoType element : dlpServiceClient.listStoredInfoTypes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -4836,10 +4775,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListStoredInfoTypesRequest request =
    *       ListStoredInfoTypesRequest.newBuilder()
-   *           .setParent(
-   *               StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
-   *                       "[ORGANIZATION]", "[STORED_INFO_TYPE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -4870,10 +4806,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListStoredInfoTypesRequest request =
    *       ListStoredInfoTypesRequest.newBuilder()
-   *           .setParent(
-   *               StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
-   *                       "[ORGANIZATION]", "[STORED_INFO_TYPE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
@@ -4904,10 +4837,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListStoredInfoTypesRequest request =
    *       ListStoredInfoTypesRequest.newBuilder()
-   *           .setParent(
-   *               StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
-   *                       "[ORGANIZATION]", "[STORED_INFO_TYPE]")
-   *                   .toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
