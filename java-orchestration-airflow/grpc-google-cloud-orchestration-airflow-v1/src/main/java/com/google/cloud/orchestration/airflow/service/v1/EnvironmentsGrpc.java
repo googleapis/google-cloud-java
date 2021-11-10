@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/orchestration/airflow/service/v1/environments.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class EnvironmentsGrpc {
 
   private EnvironmentsGrpc() {}

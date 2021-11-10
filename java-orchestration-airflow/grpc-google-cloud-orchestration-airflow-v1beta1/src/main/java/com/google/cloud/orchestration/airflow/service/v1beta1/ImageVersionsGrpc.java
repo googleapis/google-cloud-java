@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/orchestration/airflow/service/v1beta1/image_versions.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ImageVersionsGrpc {
 
   private ImageVersionsGrpc() {}
