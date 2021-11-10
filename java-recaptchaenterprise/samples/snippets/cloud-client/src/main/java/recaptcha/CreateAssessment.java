@@ -89,15 +89,20 @@ public class CreateAssessment {
         return;
       }
 
-      // Get the risk score and the reason(s).
+      // Get the reason(s) and the risk score.
       // For more information on interpreting the assessment,
       // see: https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment
-      float recaptchaScore = response.getRiskAnalysis().getScore();
-      System.out.println("The reCAPTCHA score is: " + recaptchaScore);
-
       for (ClassificationReason reason : response.getRiskAnalysis().getReasonsList()) {
         System.out.println(reason);
       }
+
+      float recaptchaScore = response.getRiskAnalysis().getScore();
+      System.out.println("The reCAPTCHA score is: " + recaptchaScore);
+
+      // Get the assessment name (id). Use this to annotate the assessment.
+      String assessmentName = response.getName();
+      System.out.println(
+          "Assessment name: " + assessmentName.substring(assessmentName.lastIndexOf("/") + 1));
     }
   }
 }

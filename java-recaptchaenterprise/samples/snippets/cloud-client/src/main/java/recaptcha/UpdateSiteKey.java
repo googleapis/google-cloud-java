@@ -60,6 +60,7 @@ public class UpdateSiteKey {
           UpdateKeyRequest.newBuilder()
               .setKey(
                   Key.newBuilder()
+                      .setDisplayName("any descriptive name for the key")
                       .setName(KeyName.of(projectID, recaptchaSiteKeyID).toString())
                       .setWebSettings(
                           WebKeySettings.newBuilder()

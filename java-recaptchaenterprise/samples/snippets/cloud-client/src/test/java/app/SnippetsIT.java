@@ -24,10 +24,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URI;
+import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,6 +49,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.util.UriComponentsBuilder;
+import recaptcha.AnnotateAssessment;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @EnableAutoConfiguration
@@ -55,6 +58,7 @@ public class SnippetsIT {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String DOMAIN_NAME = "localhost";
+  private static String ASSESSMENT_NAME = "";
   private static String RECAPTCHA_SITE_KEY_1 = "recaptcha-site-key1";
   private static String RECAPTCHA_SITE_KEY_2 = "recaptcha-site-key2";
   private static WebDriver browser;
@@ -69,7 +73,7 @@ public class SnippetsIT {
   }
 
   @BeforeClass
-  public static void setUp() throws IOException, InterruptedException {
+  public static void setUp() throws IOException, InterruptedException, JSONException {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
@@ -144,11 +148,59 @@ public class SnippetsIT {
   }
 
   @Test
-  public void testCreateAssessment() throws IOException, JSONException, InterruptedException {
+  public void testCreateAnnotateAssessment()
+      throws JSONException, IOException, InterruptedException {
+    // Create an assessment.
+    String testURL = "http://localhost:" + randomServerPort + "/";
+    JSONObject createAssessmentResult = createAssessment(testURL);
+    ASSESSMENT_NAME = createAssessmentResult.getString("assessmentName");
+    // Verify that the assessment name has been modified post the assessment creation.
+    assertThat(ASSESSMENT_NAME).isNotEmpty();
+
+    // Annotate the assessment.
+    AnnotateAssessment.annotateAssessment(PROJECT_ID, ASSESSMENT_NAME);
+    assertThat(stdOut.toString()).contains("Annotated response sent successfully ! ");
+  }
+
+  public JSONObject createAssessment(String testURL)
+      throws IOException, JSONException, InterruptedException {
+
+    // Setup the automated browser test and retrieve the token and action.
+    JSONObject tokenActionPair = initiateBrowserTest(testURL);
+
+    // Send the token for analysis. The analysis score ranges from 0.0 to 1.0
+    recaptcha.CreateAssessment.createAssessment(
+        PROJECT_ID,
+        RECAPTCHA_SITE_KEY_1,
+        tokenActionPair.getString("token"),
+        tokenActionPair.getString("action"));
+
+    // Analyse the response.
+    String response = stdOut.toString();
+    assertThat(response).contains("Assessment name: ");
+    assertThat(response).contains("The reCAPTCHA score is: ");
+    float recaptchaScore = 0;
+    String assessmentName = "";
+    for (String line : response.split("\n")) {
+      if (line.contains("The reCAPTCHA score is: ")) {
+        recaptchaScore = Float.parseFloat(substr(line));
+      } else if (line.contains("Assessment name: ")) {
+        assessmentName = substr(line);
+      }
+    }
+
+    // Set the score.
+    browser.findElement(By.cssSelector("#assessment")).sendKeys(String.valueOf(recaptchaScore));
+    return new JSONObject()
+        .put("recaptchaScore", recaptchaScore)
+        .put("assessmentName", assessmentName);
+  }
+
+  public JSONObject initiateBrowserTest(String testURL)
+      throws IOException, JSONException, InterruptedException {
     // Construct the URL to call for validating the assessment.
-    String assessURL = "http://localhost:" + randomServerPort + "/";
     URI url =
-        UriComponentsBuilder.fromUriString(assessURL)
+        UriComponentsBuilder.fromUriString(testURL)
             .queryParam("recaptchaSiteKey", RECAPTCHA_SITE_KEY_1)
             .build()
             .encode()
@@ -158,7 +210,7 @@ public class SnippetsIT {
 
     // Wait until the page is loaded.
     JavascriptExecutor js = (JavascriptExecutor) browser;
-    new WebDriverWait(browser, 10)
+    new WebDriverWait(browser, Duration.ofSeconds(10))
         .until(webDriver -> js.executeScript("return document.readyState").equals("complete"));
 
     // Pass the values to be entered.
@@ -175,21 +227,10 @@ public class SnippetsIT {
     String token = element.getAttribute("data-token");
     String action = element.getAttribute("data-action");
 
-    // The obtained token must be further analyzed to get the score.
-    float recaptchaScore = assessToken(token, action);
-
-    // Set the score.
-    browser.findElement(By.cssSelector("#assessment")).sendKeys(String.valueOf(recaptchaScore));
-    return;
+    return new JSONObject().put("token", token).put("action", action);
   }
 
-  public float assessToken(String token, String action) throws IOException {
-    // Send the token for analysis. The analysis score ranges from 0.0 to 1.0
-    recaptcha.CreateAssessment.createAssessment(PROJECT_ID, RECAPTCHA_SITE_KEY_1, token, action);
-    String response = stdOut.toString();
-    assertThat(response).contains("The reCAPTCHA score is: ");
-    float recaptchaScore =
-        Float.parseFloat(response.substring(response.lastIndexOf(":") + 1).trim());
-    return recaptchaScore;
+  public String substr(String line) {
+    return line.substring((line.lastIndexOf(":") + 1)).trim();
   }
 }
