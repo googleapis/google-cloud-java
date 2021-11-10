@@ -251,7 +251,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
-   *   String parent = ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Contact contact = Contact.newBuilder().build();
    *   Contact response = essentialContactsServiceClient.createContact(parent, contact);
    * }
@@ -279,7 +279,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   CreateContactRequest request =
    *       CreateContactRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setContact(Contact.newBuilder().build())
    *           .build();
    *   Contact response = essentialContactsServiceClient.createContact(request);
@@ -304,7 +304,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   CreateContactRequest request =
    *       CreateContactRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setContact(Contact.newBuilder().build())
    *           .build();
    *   ApiFuture<Contact> future =
@@ -489,7 +489,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
-   *   String parent = ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Contact element : essentialContactsServiceClient.listContacts(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -516,7 +516,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   ListContactsRequest request =
    *       ListContactsRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -544,7 +544,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   ListContactsRequest request =
    *       ListContactsRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -573,7 +573,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   ListContactsRequest request =
    *       ListContactsRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -803,7 +803,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   ComputeContactsRequest request =
    *       ComputeContactsRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .addAllNotificationCategories(new ArrayList<NotificationCategory>())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -833,7 +833,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   ComputeContactsRequest request =
    *       ComputeContactsRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .addAllNotificationCategories(new ArrayList<NotificationCategory>())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -864,7 +864,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *     EssentialContactsServiceClient.create()) {
    *   ComputeContactsRequest request =
    *       ComputeContactsRequest.newBuilder()
-   *           .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .addAllNotificationCategories(new ArrayList<NotificationCategory>())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -903,7 +903,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *   SendTestMessageRequest request =
    *       SendTestMessageRequest.newBuilder()
    *           .addAllContacts(new ArrayList<String>())
-   *           .setResource(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setNotificationCategory(NotificationCategory.forNumber(0))
    *           .build();
    *   essentialContactsServiceClient.sendTestMessage(request);
@@ -930,7 +930,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *   SendTestMessageRequest request =
    *       SendTestMessageRequest.newBuilder()
    *           .addAllContacts(new ArrayList<String>())
-   *           .setResource(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setNotificationCategory(NotificationCategory.forNumber(0))
    *           .build();
    *   ApiFuture<Empty> future =

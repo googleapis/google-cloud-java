@@ -656,7 +656,7 @@ public class EssentialContactsServiceClientTest {
 
     ComputeContactsRequest request =
         ComputeContactsRequest.newBuilder()
-            .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .addAllNotificationCategories(new ArrayList<NotificationCategory>())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -692,7 +692,7 @@ public class EssentialContactsServiceClientTest {
     try {
       ComputeContactsRequest request =
           ComputeContactsRequest.newBuilder()
-              .setParent(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .addAllNotificationCategories(new ArrayList<NotificationCategory>())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
@@ -712,7 +712,7 @@ public class EssentialContactsServiceClientTest {
     SendTestMessageRequest request =
         SendTestMessageRequest.newBuilder()
             .addAllContacts(new ArrayList<String>())
-            .setResource(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+            .setResource(ProjectName.of("[PROJECT]").toString())
             .setNotificationCategory(NotificationCategory.forNumber(0))
             .build();
 
@@ -740,7 +740,7 @@ public class EssentialContactsServiceClientTest {
       SendTestMessageRequest request =
           SendTestMessageRequest.newBuilder()
               .addAllContacts(new ArrayList<String>())
-              .setResource(ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .setNotificationCategory(NotificationCategory.forNumber(0))
               .build();
       client.sendTestMessage(request);
