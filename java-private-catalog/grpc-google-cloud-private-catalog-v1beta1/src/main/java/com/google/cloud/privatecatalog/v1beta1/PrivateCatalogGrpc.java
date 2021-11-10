@@ -44,6 +44,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/privatecatalog/v1beta1/private_catalog.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class PrivateCatalogGrpc {
 
   private PrivateCatalogGrpc() {}
