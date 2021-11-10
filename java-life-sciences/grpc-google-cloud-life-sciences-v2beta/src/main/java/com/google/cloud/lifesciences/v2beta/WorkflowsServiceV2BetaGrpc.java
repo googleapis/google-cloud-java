@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/lifesciences/v2beta/workflows.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class WorkflowsServiceV2BetaGrpc {
 
   private WorkflowsServiceV2BetaGrpc() {}
