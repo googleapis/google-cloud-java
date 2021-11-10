@@ -203,7 +203,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   String parent = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Runtime element : managedNotebookServiceClient.listRuntimes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -229,7 +229,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     ManagedNotebookServiceClient.create()) {
    *   ListRuntimesRequest request =
    *       ListRuntimesRequest.newBuilder()
-   *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -257,7 +257,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     ManagedNotebookServiceClient.create()) {
    *   ListRuntimesRequest request =
    *       ListRuntimesRequest.newBuilder()
-   *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -286,7 +286,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     ManagedNotebookServiceClient.create()) {
    *   ListRuntimesRequest request =
    *       ListRuntimesRequest.newBuilder()
-   *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
