@@ -302,6 +302,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -370,6 +371,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -1432,6 +1434,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1499,6 +1502,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1566,6 +1570,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1632,6 +1637,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1694,6 +1700,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>

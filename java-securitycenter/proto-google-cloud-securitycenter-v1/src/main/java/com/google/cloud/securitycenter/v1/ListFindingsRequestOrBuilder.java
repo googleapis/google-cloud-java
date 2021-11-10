@@ -114,6 +114,7 @@ public interface ListFindingsRequestOrBuilder
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -171,6 +172,7 @@ public interface ListFindingsRequestOrBuilder
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>

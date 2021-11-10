@@ -246,4 +246,29 @@ public interface ResourceOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

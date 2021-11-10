@@ -44,18 +44,19 @@ public final class ResourceProto {
           + "e.proto\022\036google.cloud.securitycenter.v1\032"
           + "\037google/api/field_behavior.proto\032+google"
           + "/cloud/securitycenter/v1/folder.proto\032\034g"
-          + "oogle/api/annotations.proto\"\300\001\n\010Resource"
+          + "oogle/api/annotations.proto\"\326\001\n\010Resource"
           + "\022\014\n\004name\030\001 \001(\t\022\017\n\007project\030\002 \001(\t\022\034\n\024proje"
           + "ct_display_name\030\003 \001(\t\022\016\n\006parent\030\004 \001(\t\022\033\n"
           + "\023parent_display_name\030\005 \001(\t\022\014\n\004type\030\006 \001(\t"
           + "\022<\n\007folders\030\007 \003(\0132&.google.cloud.securit"
-          + "ycenter.v1.FolderB\003\340A\003B\351\001\n\"com.google.cl"
-          + "oud.securitycenter.v1B\rResourceProtoP\001ZL"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/securitycenter/v1;securitycenter\252\002\036G"
-          + "oogle.Cloud.SecurityCenter.V1\312\002\036Google\\C"
-          + "loud\\SecurityCenter\\V1\352\002!Google::Cloud::"
-          + "SecurityCenter::V1b\006proto3"
+          + "ycenter.v1.FolderB\003\340A\003\022\024\n\014display_name\030\010"
+          + " \001(\tB\351\001\n\"com.google.cloud.securitycenter"
+          + ".v1B\rResourceProtoP\001ZLgoogle.golang.org/"
+          + "genproto/googleapis/cloud/securitycenter"
+          + "/v1;securitycenter\252\002\036Google.Cloud.Securi"
+          + "tyCenter.V1\312\002\036Google\\Cloud\\SecurityCente"
+          + "r\\V1\352\002!Google::Cloud::SecurityCenter::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -78,6 +79,7 @@ public final class ResourceProto {
               "ParentDisplayName",
               "Type",
               "Folders",
+              "DisplayName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

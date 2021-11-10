@@ -1125,7 +1125,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1156,7 +1156,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1188,7 +1188,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1519,7 +1519,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   for (ListAssetsResponse.ListAssetsResult element :
    *       securityCenterClient.listAssets(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1546,7 +1546,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1579,7 +1579,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1611,7 +1611,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -2058,7 +2058,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   for (Source element : securityCenterClient.listSources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2084,8 +2084,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(
-   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -2112,8 +2111,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(
-   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -2141,8 +2139,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(
-   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();

@@ -45,6 +45,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     parentDisplayName_ = "";
     type_ = "";
     folders_ = java.util.Collections.emptyList();
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -128,6 +129,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
               folders_.add(
                   input.readMessage(
                       com.google.cloud.securitycenter.v1.Folder.parser(), extensionRegistry));
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
               break;
             }
           default:
@@ -552,6 +560,55 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     return folders_.get(index);
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 8;
+  private volatile java.lang.Object displayName_;
+  /**
+   *
+   *
+   * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -587,6 +644,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < folders_.size(); i++) {
       output.writeMessage(7, folders_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, displayName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -617,6 +677,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < folders_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, folders_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, displayName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -640,6 +703,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (!getParentDisplayName().equals(other.getParentDisplayName())) return false;
     if (!getType().equals(other.getType())) return false;
     if (!getFoldersList().equals(other.getFoldersList())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -667,6 +731,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
       hash = (53 * hash) + getFoldersList().hashCode();
     }
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -832,6 +898,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       } else {
         foldersBuilder_.clear();
       }
+      displayName_ = "";
+
       return this;
     }
 
@@ -875,6 +943,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.folders_ = foldersBuilder_.build();
       }
+      result.displayName_ = displayName_;
       onBuilt();
       return result;
     }
@@ -974,6 +1043,10 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
             foldersBuilder_.addAllMessages(other.folders_);
           }
         }
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2066,6 +2139,112 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         folders_ = null;
       }
       return foldersBuilder_;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      displayName_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -580,7 +580,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -602,7 +602,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -914,7 +914,7 @@ public class SecurityCenterClientTest {
 
     GroupAssetsRequest request =
         GroupAssetsRequest.newBuilder()
-            .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+            .setParent(OrganizationName.of("[ORGANIZATION]").toString())
             .setFilter("filter-1274492040")
             .setGroupBy("groupBy293428022")
             .setCompareDuration(Duration.newBuilder().build())
@@ -955,7 +955,7 @@ public class SecurityCenterClientTest {
     try {
       GroupAssetsRequest request =
           GroupAssetsRequest.newBuilder()
-              .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+              .setParent(OrganizationName.of("[ORGANIZATION]").toString())
               .setFilter("filter-1274492040")
               .setGroupBy("groupBy293428022")
               .setCompareDuration(Duration.newBuilder().build())
@@ -1077,7 +1077,7 @@ public class SecurityCenterClientTest {
 
     ListAssetsRequest request =
         ListAssetsRequest.newBuilder()
-            .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+            .setParent(OrganizationName.of("[ORGANIZATION]").toString())
             .setFilter("filter-1274492040")
             .setOrderBy("orderBy-1207110587")
             .setReadTime(Timestamp.newBuilder().build())
@@ -1121,7 +1121,7 @@ public class SecurityCenterClientTest {
     try {
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
-              .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+              .setParent(OrganizationName.of("[ORGANIZATION]").toString())
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
               .setReadTime(Timestamp.newBuilder().build())
@@ -1693,7 +1693,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -1717,7 +1717,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1775,7 +1775,7 @@ public class SecurityCenterClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1799,7 +1799,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
