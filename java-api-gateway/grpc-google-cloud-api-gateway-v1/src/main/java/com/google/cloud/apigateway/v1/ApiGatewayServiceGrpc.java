@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/apigateway/v1/apigateway_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ApiGatewayServiceGrpc {
 
   private ApiGatewayServiceGrpc() {}
