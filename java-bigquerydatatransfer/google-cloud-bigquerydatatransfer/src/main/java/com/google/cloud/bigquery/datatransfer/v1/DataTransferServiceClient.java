@@ -311,8 +311,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   String parent =
-   *       DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -338,8 +337,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
-   *           .setParent(
-   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -366,8 +364,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
-   *           .setParent(
-   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -395,8 +392,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
-   *           .setParent(
-   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -493,9 +489,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   String parent =
-   *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
-   *           .toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   TransferConfig transferConfig = TransferConfig.newBuilder().build();
    *   TransferConfig response =
    *       dataTransferServiceClient.createTransferConfig(parent, transferConfig);
@@ -528,9 +522,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CreateTransferConfigRequest request =
    *       CreateTransferConfigRequest.newBuilder()
-   *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTransferConfig(TransferConfig.newBuilder().build())
    *           .setAuthorizationCode("authorizationCode742596102")
    *           .setVersionInfo("versionInfo688769446")
@@ -557,9 +549,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CreateTransferConfigRequest request =
    *       CreateTransferConfigRequest.newBuilder()
-   *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTransferConfig(TransferConfig.newBuilder().build())
    *           .setAuthorizationCode("authorizationCode742596102")
    *           .setVersionInfo("versionInfo688769446")
@@ -930,9 +920,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   String parent =
-   *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
-   *           .toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (TransferConfig element :
    *       dataTransferServiceClient.listTransferConfigs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -960,9 +948,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
-   *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .addAllDataSourceIds(new ArrayList<String>())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -992,9 +978,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
-   *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .addAllDataSourceIds(new ArrayList<String>())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1023,9 +1007,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
-   *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .addAllDataSourceIds(new ArrayList<String>())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1502,7 +1484,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String parent =
-   *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
    *           .toString();
    *   for (TransferRun element : dataTransferServiceClient.listTransferRuns(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1533,7 +1515,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .addAllStates(new ArrayList<TransferState>())
    *           .setPageToken("pageToken873572522")
@@ -1563,7 +1545,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .addAllStates(new ArrayList<TransferState>())
    *           .setPageToken("pageToken873572522")
@@ -1594,7 +1576,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .addAllStates(new ArrayList<TransferState>())
    *           .setPageToken("pageToken873572522")

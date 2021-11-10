@@ -30,6 +30,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/datatransfer/v1/datatransfer.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DataTransferServiceGrpc {
 
   private DataTransferServiceGrpc() {}
