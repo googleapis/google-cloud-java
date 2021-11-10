@@ -204,7 +204,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
-   *   String parent = MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (MigrationJob element :
    *       dataMigrationServiceClient.listMigrationJobs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -232,8 +232,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   ListMigrationJobsRequest request =
    *       ListMigrationJobsRequest.newBuilder()
-   *           .setParent(
-   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -264,8 +263,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   ListMigrationJobsRequest request =
    *       ListMigrationJobsRequest.newBuilder()
-   *           .setParent(
-   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -296,8 +294,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   ListMigrationJobsRequest request =
    *       ListMigrationJobsRequest.newBuilder()
-   *           .setParent(
-   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -463,7 +460,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
-   *   String parent = MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   MigrationJob migrationJob = MigrationJob.newBuilder().build();
    *   String migrationJobId = "migrationJobId1870575242";
    *   MigrationJob response =
@@ -502,8 +499,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   CreateMigrationJobRequest request =
    *       CreateMigrationJobRequest.newBuilder()
-   *           .setParent(
-   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMigrationJobId("migrationJobId1870575242")
    *           .setMigrationJob(MigrationJob.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -531,8 +527,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   CreateMigrationJobRequest request =
    *       CreateMigrationJobRequest.newBuilder()
-   *           .setParent(
-   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMigrationJobId("migrationJobId1870575242")
    *           .setMigrationJob(MigrationJob.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -560,8 +555,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   CreateMigrationJobRequest request =
    *       CreateMigrationJobRequest.newBuilder()
-   *           .setParent(
-   *               MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMigrationJobId("migrationJobId1870575242")
    *           .setMigrationJob(MigrationJob.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1364,8 +1358,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
-   *   String parent =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (ConnectionProfile element :
    *       dataMigrationServiceClient.listConnectionProfiles(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1393,9 +1386,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
-   *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1427,9 +1418,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
-   *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1460,9 +1449,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
-   *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
