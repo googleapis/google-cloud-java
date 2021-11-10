@@ -740,7 +740,7 @@ public class CloudTasksClientTest {
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+    ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -762,7 +762,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+      ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -820,7 +820,7 @@ public class CloudTasksClientTest {
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+    ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -844,7 +844,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+      ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -902,7 +902,7 @@ public class CloudTasksClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+    ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -926,7 +926,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+      ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
