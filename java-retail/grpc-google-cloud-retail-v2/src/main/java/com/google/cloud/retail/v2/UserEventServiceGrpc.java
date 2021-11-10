@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/retail/v2/user_event_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class UserEventServiceGrpc {
 
   private UserEventServiceGrpc() {}
