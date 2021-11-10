@@ -272,8 +272,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   String name =
-   *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (AlertPolicy element : alertPolicyServiceClient.listAlertPolicies(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -304,9 +303,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ListAlertPoliciesRequest request =
    *       ListAlertPoliciesRequest.newBuilder()
-   *           .setName(
-   *               AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
@@ -335,9 +332,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ListAlertPoliciesRequest request =
    *       ListAlertPoliciesRequest.newBuilder()
-   *           .setName(
-   *               AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
@@ -367,9 +362,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ListAlertPoliciesRequest request =
    *       ListAlertPoliciesRequest.newBuilder()
-   *           .setName(
-   *               AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
@@ -612,8 +605,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   String name =
-   *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
    *   AlertPolicy response = alertPolicyServiceClient.createAlertPolicy(name, alertPolicy);
    * }
@@ -649,9 +641,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   CreateAlertPolicyRequest request =
    *       CreateAlertPolicyRequest.newBuilder()
-   *           .setName(
-   *               AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setAlertPolicy(AlertPolicy.newBuilder().build())
    *           .build();
    *   AlertPolicy response = alertPolicyServiceClient.createAlertPolicy(request);
@@ -675,9 +665,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   CreateAlertPolicyRequest request =
    *       CreateAlertPolicyRequest.newBuilder()
-   *           .setName(
-   *               AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setAlertPolicy(AlertPolicy.newBuilder().build())
    *           .build();
    *   ApiFuture<AlertPolicy> future =

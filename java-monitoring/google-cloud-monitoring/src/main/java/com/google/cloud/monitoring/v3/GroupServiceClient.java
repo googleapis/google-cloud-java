@@ -254,7 +254,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -281,7 +281,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupsRequest request =
    *       ListGroupsRequest.newBuilder()
-   *           .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -308,7 +308,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupsRequest request =
    *       ListGroupsRequest.newBuilder()
-   *           .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -334,7 +334,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupsRequest request =
    *       ListGroupsRequest.newBuilder()
-   *           .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -545,7 +545,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   Group group = Group.newBuilder().build();
    *   Group response = groupServiceClient.createGroup(name, group);
    * }
@@ -574,7 +574,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   CreateGroupRequest request =
    *       CreateGroupRequest.newBuilder()
-   *           .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setGroup(Group.newBuilder().build())
    *           .setValidateOnly(true)
    *           .build();
@@ -599,7 +599,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   CreateGroupRequest request =
    *       CreateGroupRequest.newBuilder()
-   *           .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setGroup(Group.newBuilder().build())
    *           .setValidateOnly(true)
    *           .build();

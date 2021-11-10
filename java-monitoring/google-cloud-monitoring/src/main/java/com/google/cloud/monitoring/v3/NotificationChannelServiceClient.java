@@ -299,10 +299,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
-   *   String name =
-   *       NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
-   *               "[PROJECT]", "[CHANNEL_DESCRIPTOR]")
-   *           .toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (NotificationChannelDescriptor element :
    *       notificationChannelServiceClient.listNotificationChannelDescriptors(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -339,10 +336,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelDescriptorsRequest request =
    *       ListNotificationChannelDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
-   *                       "[PROJECT]", "[CHANNEL_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -375,10 +369,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelDescriptorsRequest request =
    *       ListNotificationChannelDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
-   *                       "[PROJECT]", "[CHANNEL_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -412,10 +403,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelDescriptorsRequest request =
    *       ListNotificationChannelDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
-   *                       "[PROJECT]", "[CHANNEL_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -676,10 +664,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
-   *   String name =
-   *       NotificationChannelName.ofProjectNotificationChannelName(
-   *               "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-   *           .toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (NotificationChannel element :
    *       notificationChannelServiceClient.listNotificationChannels(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -713,10 +698,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelsRequest request =
    *       ListNotificationChannelsRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelName.ofProjectNotificationChannelName(
-   *                       "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
@@ -748,10 +730,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelsRequest request =
    *       ListNotificationChannelsRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelName.ofProjectNotificationChannelName(
-   *                       "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
@@ -784,10 +763,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelsRequest request =
    *       ListNotificationChannelsRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelName.ofProjectNotificationChannelName(
-   *                       "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
@@ -1058,10 +1034,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
-   *   String name =
-   *       NotificationChannelName.ofProjectNotificationChannelName(
-   *               "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-   *           .toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   NotificationChannel notificationChannel = NotificationChannel.newBuilder().build();
    *   NotificationChannel response =
    *       notificationChannelServiceClient.createNotificationChannel(name, notificationChannel);
@@ -1100,10 +1073,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   CreateNotificationChannelRequest request =
    *       CreateNotificationChannelRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelName.ofProjectNotificationChannelName(
-   *                       "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setNotificationChannel(NotificationChannel.newBuilder().build())
    *           .build();
    *   NotificationChannel response =
@@ -1131,10 +1101,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     NotificationChannelServiceClient.create()) {
    *   CreateNotificationChannelRequest request =
    *       CreateNotificationChannelRequest.newBuilder()
-   *           .setName(
-   *               NotificationChannelName.ofProjectNotificationChannelName(
-   *                       "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setNotificationChannel(NotificationChannel.newBuilder().build())
    *           .build();
    *   ApiFuture<NotificationChannel> future =

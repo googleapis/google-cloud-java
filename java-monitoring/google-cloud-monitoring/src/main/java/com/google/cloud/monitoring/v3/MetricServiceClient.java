@@ -273,10 +273,7 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String name =
-   *       MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
-   *               "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
-   *           .toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (MonitoredResourceDescriptor element :
    *       metricServiceClient.listMonitoredResourceDescriptors(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -307,10 +304,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request =
    *       ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
-   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -341,10 +335,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request =
    *       ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
-   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -375,10 +366,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request =
    *       ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
-   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -613,9 +601,7 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String name =
-   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]")
-   *           .toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (MetricDescriptor element :
    *       metricServiceClient.listMetricDescriptors(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -644,10 +630,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListMetricDescriptorsRequest request =
    *       ListMetricDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               MetricDescriptorName.ofProjectMetricDescriptorName(
-   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -677,10 +660,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListMetricDescriptorsRequest request =
    *       ListMetricDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               MetricDescriptorName.ofProjectMetricDescriptorName(
-   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -709,10 +689,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListMetricDescriptorsRequest request =
    *       ListMetricDescriptorsRequest.newBuilder()
-   *           .setName(
-   *               MetricDescriptorName.ofProjectMetricDescriptorName(
-   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -955,9 +932,7 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String name =
-   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]")
-   *           .toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   MetricDescriptor response =
    *       metricServiceClient.createMetricDescriptor(name, metricDescriptor);
@@ -992,10 +967,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   CreateMetricDescriptorRequest request =
    *       CreateMetricDescriptorRequest.newBuilder()
-   *           .setName(
-   *               MetricDescriptorName.ofProjectMetricDescriptorName(
-   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setMetricDescriptor(MetricDescriptor.newBuilder().build())
    *           .build();
    *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(request);
@@ -1021,10 +993,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   CreateMetricDescriptorRequest request =
    *       CreateMetricDescriptorRequest.newBuilder()
-   *           .setName(
-   *               MetricDescriptorName.ofProjectMetricDescriptorName(
-   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
-   *                   .toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setMetricDescriptor(MetricDescriptor.newBuilder().build())
    *           .build();
    *   ApiFuture<MetricDescriptor> future =
@@ -1301,7 +1270,7 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String name = TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString();
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   String filter = "filter-1274492040";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
@@ -1351,8 +1320,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListTimeSeriesRequest request =
    *       ListTimeSeriesRequest.newBuilder()
-   *           .setName(
-   *               TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setInterval(TimeInterval.newBuilder().build())
    *           .setAggregation(Aggregation.newBuilder().build())
@@ -1384,8 +1352,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListTimeSeriesRequest request =
    *       ListTimeSeriesRequest.newBuilder()
-   *           .setName(
-   *               TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setInterval(TimeInterval.newBuilder().build())
    *           .setAggregation(Aggregation.newBuilder().build())
@@ -1418,8 +1385,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListTimeSeriesRequest request =
    *       ListTimeSeriesRequest.newBuilder()
-   *           .setName(
-   *               TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setInterval(TimeInterval.newBuilder().build())
    *           .setAggregation(Aggregation.newBuilder().build())

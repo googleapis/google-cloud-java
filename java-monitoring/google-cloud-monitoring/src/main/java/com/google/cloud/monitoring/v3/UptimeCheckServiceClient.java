@@ -270,9 +270,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String parent =
-   *       UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]")
-   *           .toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (UptimeCheckConfig element :
    *       uptimeCheckServiceClient.listUptimeCheckConfigs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -302,10 +300,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
    *   ListUptimeCheckConfigsRequest request =
    *       ListUptimeCheckConfigsRequest.newBuilder()
-   *           .setParent(
-   *               UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
-   *                       "[PROJECT]", "[UPTIME_CHECK_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -335,10 +330,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
    *   ListUptimeCheckConfigsRequest request =
    *       ListUptimeCheckConfigsRequest.newBuilder()
-   *           .setParent(
-   *               UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
-   *                       "[PROJECT]", "[UPTIME_CHECK_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -367,10 +359,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
    *   ListUptimeCheckConfigsRequest request =
    *       ListUptimeCheckConfigsRequest.newBuilder()
-   *           .setParent(
-   *               UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
-   *                       "[PROJECT]", "[UPTIME_CHECK_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -601,9 +590,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String parent =
-   *       UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]")
-   *           .toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
    *   UptimeCheckConfig response =
    *       uptimeCheckServiceClient.createUptimeCheckConfig(parent, uptimeCheckConfig);
@@ -636,10 +623,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
    *   CreateUptimeCheckConfigRequest request =
    *       CreateUptimeCheckConfigRequest.newBuilder()
-   *           .setParent(
-   *               UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
-   *                       "[PROJECT]", "[UPTIME_CHECK_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setUptimeCheckConfig(UptimeCheckConfig.newBuilder().build())
    *           .build();
    *   UptimeCheckConfig response = uptimeCheckServiceClient.createUptimeCheckConfig(request);
@@ -663,10 +647,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
    *   CreateUptimeCheckConfigRequest request =
    *       CreateUptimeCheckConfigRequest.newBuilder()
-   *           .setParent(
-   *               UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
-   *                       "[PROJECT]", "[UPTIME_CHECK_CONFIG]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setUptimeCheckConfig(UptimeCheckConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<UptimeCheckConfig> future =

@@ -277,7 +277,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
-   *   String parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Service service = Service.newBuilder().build();
    *   Service response = serviceMonitoringServiceClient.createService(parent, service);
    * }
@@ -307,7 +307,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     ServiceMonitoringServiceClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
-   *           .setParent(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setServiceId("serviceId-194185552")
    *           .setService(Service.newBuilder().build())
    *           .build();
@@ -333,7 +333,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     ServiceMonitoringServiceClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
-   *           .setParent(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setServiceId("serviceId-194185552")
    *           .setService(Service.newBuilder().build())
    *           .build();
@@ -542,7 +542,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
-   *   String parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Service element : serviceMonitoringServiceClient.listServices(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -571,7 +571,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
-   *           .setParent(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -600,7 +600,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
-   *           .setParent(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -630,7 +630,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
-   *           .setParent(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
