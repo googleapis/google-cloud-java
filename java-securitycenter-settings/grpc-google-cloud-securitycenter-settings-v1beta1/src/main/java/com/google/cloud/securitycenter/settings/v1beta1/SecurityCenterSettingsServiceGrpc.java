@@ -32,6 +32,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler",
     comments =
         "Source: google/cloud/securitycenter/settings/v1beta1/securitycenter_settings_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class SecurityCenterSettingsServiceGrpc {
 
   private SecurityCenterSettingsServiceGrpc() {}
