@@ -50,6 +50,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/managedidentities/v1/managed_identities_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ManagedIdentitiesServiceGrpc {
 
   private ManagedIdentitiesServiceGrpc() {}

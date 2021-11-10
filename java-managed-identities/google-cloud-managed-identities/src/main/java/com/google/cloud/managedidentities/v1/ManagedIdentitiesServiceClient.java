@@ -248,7 +248,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
-   *   String parent = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String domainName = "domainName-1244085905";
    *   Domain domain = Domain.newBuilder().build();
    *   Domain response =
@@ -292,7 +292,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
    *       CreateMicrosoftAdDomainRequest.newBuilder()
-   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDomainName("domainName-1244085905")
    *           .setDomain(Domain.newBuilder().build())
    *           .build();
@@ -319,7 +319,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
    *       CreateMicrosoftAdDomainRequest.newBuilder()
-   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDomainName("domainName-1244085905")
    *           .setDomain(Domain.newBuilder().build())
    *           .build();
@@ -348,7 +348,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
    *       CreateMicrosoftAdDomainRequest.newBuilder()
-   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDomainName("domainName-1244085905")
    *           .setDomain(Domain.newBuilder().build())
    *           .build();
@@ -501,7 +501,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
-   *   String parent = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Domain element : managedIdentitiesServiceClient.listDomains(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -528,7 +528,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
    *       ListDomainsRequest.newBuilder()
-   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -558,7 +558,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
    *       ListDomainsRequest.newBuilder()
-   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -589,7 +589,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
    *       ListDomainsRequest.newBuilder()
-   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
