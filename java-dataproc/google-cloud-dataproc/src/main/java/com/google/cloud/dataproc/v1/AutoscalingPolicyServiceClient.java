@@ -244,10 +244,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
-   *   String parent =
-   *       AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
-   *               "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
-   *           .toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
    *   AutoscalingPolicy response =
    *       autoscalingPolicyServiceClient.createAutoscalingPolicy(parent, policy);
@@ -285,10 +282,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     AutoscalingPolicyServiceClient.create()) {
    *   CreateAutoscalingPolicyRequest request =
    *       CreateAutoscalingPolicyRequest.newBuilder()
-   *           .setParent(
-   *               AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
-   *                       "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(AutoscalingPolicy.newBuilder().build())
    *           .build();
    *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(request);
@@ -313,10 +307,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     AutoscalingPolicyServiceClient.create()) {
    *   CreateAutoscalingPolicyRequest request =
    *       CreateAutoscalingPolicyRequest.newBuilder()
-   *           .setParent(
-   *               AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
-   *                       "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(AutoscalingPolicy.newBuilder().build())
    *           .build();
    *   ApiFuture<AutoscalingPolicy> future =
@@ -626,10 +617,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
-   *   String parent =
-   *       AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
-   *               "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
-   *           .toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (AutoscalingPolicy element :
    *       autoscalingPolicyServiceClient.listAutoscalingPolicies(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -667,10 +655,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     AutoscalingPolicyServiceClient.create()) {
    *   ListAutoscalingPoliciesRequest request =
    *       ListAutoscalingPoliciesRequest.newBuilder()
-   *           .setParent(
-   *               AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
-   *                       "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -700,10 +685,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     AutoscalingPolicyServiceClient.create()) {
    *   ListAutoscalingPoliciesRequest request =
    *       ListAutoscalingPoliciesRequest.newBuilder()
-   *           .setParent(
-   *               AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
-   *                       "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -732,10 +714,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     AutoscalingPolicyServiceClient.create()) {
    *   ListAutoscalingPoliciesRequest request =
    *       ListAutoscalingPoliciesRequest.newBuilder()
-   *           .setParent(
-   *               AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
-   *                       "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

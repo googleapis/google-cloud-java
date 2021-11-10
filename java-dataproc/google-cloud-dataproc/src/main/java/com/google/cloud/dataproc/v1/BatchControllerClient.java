@@ -206,7 +206,7 @@ public class BatchControllerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
-   *   String parent = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Batch batch = Batch.newBuilder().build();
    *   String batchId = "batchId-331744779";
    *   Batch response = batchControllerClient.createBatchAsync(parent, batch, batchId).get();
@@ -241,7 +241,7 @@ public class BatchControllerClient implements BackgroundResource {
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   CreateBatchRequest request =
    *       CreateBatchRequest.newBuilder()
-   *           .setParent(BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setBatch(Batch.newBuilder().build())
    *           .setBatchId("batchId-331744779")
    *           .setRequestId("requestId693933066")
@@ -268,7 +268,7 @@ public class BatchControllerClient implements BackgroundResource {
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   CreateBatchRequest request =
    *       CreateBatchRequest.newBuilder()
-   *           .setParent(BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setBatch(Batch.newBuilder().build())
    *           .setBatchId("batchId-331744779")
    *           .setRequestId("requestId693933066")
@@ -295,7 +295,7 @@ public class BatchControllerClient implements BackgroundResource {
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   CreateBatchRequest request =
    *       CreateBatchRequest.newBuilder()
-   *           .setParent(BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setBatch(Batch.newBuilder().build())
    *           .setBatchId("batchId-331744779")
    *           .setRequestId("requestId693933066")
@@ -432,7 +432,7 @@ public class BatchControllerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
-   *   String parent = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Batch element : batchControllerClient.listBatches(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -457,7 +457,7 @@ public class BatchControllerClient implements BackgroundResource {
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   ListBatchesRequest request =
    *       ListBatchesRequest.newBuilder()
-   *           .setParent(BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -484,7 +484,7 @@ public class BatchControllerClient implements BackgroundResource {
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   ListBatchesRequest request =
    *       ListBatchesRequest.newBuilder()
-   *           .setParent(BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -512,7 +512,7 @@ public class BatchControllerClient implements BackgroundResource {
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   ListBatchesRequest request =
    *       ListBatchesRequest.newBuilder()
-   *           .setParent(BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dataproc/v1/autoscaling_policies.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AutoscalingPolicyServiceGrpc {
 
   private AutoscalingPolicyServiceGrpc() {}

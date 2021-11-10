@@ -259,10 +259,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
-   *   String parent =
-   *       WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *               "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *           .toString();
+   *   String parent = RegionName.of("[PROJECT]", "[REGION]").toString();
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
    *   WorkflowTemplate response =
    *       workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
@@ -300,10 +297,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   CreateWorkflowTemplateRequest request =
    *       CreateWorkflowTemplateRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setTemplate(WorkflowTemplate.newBuilder().build())
    *           .build();
    *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(request);
@@ -328,10 +322,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   CreateWorkflowTemplateRequest request =
    *       CreateWorkflowTemplateRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setTemplate(WorkflowTemplate.newBuilder().build())
    *           .build();
    *   ApiFuture<WorkflowTemplate> future =
@@ -1013,10 +1004,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
-   *   String parent =
-   *       WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *               "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *           .toString();
+   *   String parent = RegionName.of("[PROJECT]", "[REGION]").toString();
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
    *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(parent, template).get();
    * }
@@ -1078,10 +1066,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateInlineWorkflowTemplateRequest request =
    *       InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setTemplate(WorkflowTemplate.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -1129,10 +1114,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateInlineWorkflowTemplateRequest request =
    *       InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setTemplate(WorkflowTemplate.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -1182,10 +1164,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateInlineWorkflowTemplateRequest request =
    *       InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setTemplate(WorkflowTemplate.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -1364,10 +1343,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
-   *   String parent =
-   *       WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *               "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *           .toString();
+   *   String parent = RegionName.of("[PROJECT]", "[REGION]").toString();
    *   for (WorkflowTemplate element :
    *       workflowTemplateServiceClient.listWorkflowTemplates(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1405,10 +1381,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   ListWorkflowTemplatesRequest request =
    *       ListWorkflowTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1438,10 +1411,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   ListWorkflowTemplatesRequest request =
    *       ListWorkflowTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1470,10 +1440,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     WorkflowTemplateServiceClient.create()) {
    *   ListWorkflowTemplatesRequest request =
    *       ListWorkflowTemplatesRequest.newBuilder()
-   *           .setParent(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
-   *                   .toString())
+   *           .setParent(RegionName.of("[PROJECT]", "[REGION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
