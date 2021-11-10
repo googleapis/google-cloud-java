@@ -430,7 +430,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String entryGroupId = "entryGroupId1228924712";
    *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
    *   EntryGroup response = dataCatalogClient.createEntryGroup(parent, entryGroupId, entryGroup);
@@ -493,7 +493,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateEntryGroupRequest request =
    *       CreateEntryGroupRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEntryGroupId("entryGroupId1228924712")
    *           .setEntryGroup(EntryGroup.newBuilder().build())
    *           .build();
@@ -543,7 +543,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateEntryGroupRequest request =
    *       CreateEntryGroupRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEntryGroupId("entryGroupId1228924712")
    *           .setEntryGroup(EntryGroup.newBuilder().build())
    *           .build();
@@ -1607,6 +1607,10 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Lists entries.
    *
+   * <p>Note: Currently, this method can list only custom entries. To get a list of both custom and
+   * automatically created entries, use
+   * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1634,6 +1638,10 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Lists entries.
    *
+   * <p>Note: Currently, this method can list only custom entries. To get a list of both custom and
+   * automatically created entries, use
+   * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1657,6 +1665,10 @@ public class DataCatalogClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists entries.
+   *
+   * <p>Note: Currently, this method can list only custom entries. To get a list of both custom and
+   * automatically created entries, use
+   * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
    *
    * <p>Sample code:
    *
@@ -1686,6 +1698,10 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Lists entries.
    *
+   * <p>Note: Currently, this method can list only custom entries. To get a list of both custom and
+   * automatically created entries, use
+   * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1713,6 +1729,10 @@ public class DataCatalogClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists entries.
+   *
+   * <p>Note: Currently, this method can list only custom entries. To get a list of both custom and
+   * automatically created entries, use
+   * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
    *
    * <p>Sample code:
    *
@@ -1795,7 +1815,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String parent = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String tagTemplateId = "tagTemplateId-1438776721";
    *   TagTemplate tagTemplate = TagTemplate.newBuilder().build();
    *   TagTemplate response =
@@ -1836,7 +1856,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateTagTemplateRequest request =
    *       CreateTagTemplateRequest.newBuilder()
-   *           .setParent(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTagTemplateId("tagTemplateId-1438776721")
    *           .setTagTemplate(TagTemplate.newBuilder().build())
    *           .build();
@@ -1865,7 +1885,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateTagTemplateRequest request =
    *       CreateTagTemplateRequest.newBuilder()
-   *           .setParent(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTagTemplateId("tagTemplateId-1438776721")
    *           .setTagTemplate(TagTemplate.newBuilder().build())
    *           .build();
@@ -2021,9 +2041,12 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param tagTemplate Required. The template to update. The `name` field must be set.
    * @param updateMask Names of fields whose values to overwrite on a tag template. Currently, only
-   *     `display_name` can be overwritten.
+   *     `display_name` and `is_publicly_readable` can be overwritten.
    *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
    *     fields are non-required and omitted in the request body, their values are emptied.
+   *     <p>Note: Updating the `is_publicly_readable` field may require up to 12 hours to take
+   *     effect in search results. Additionally, it also requires the `tagTemplates.getIamPolicy`
+   *     and `tagTemplates.setIamPolicy` permissions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TagTemplate updateTagTemplate(TagTemplate tagTemplate, FieldMask updateMask) {
@@ -2623,7 +2646,7 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the tag template.
+   * @param name Required. The name of the tag template field.
    * @param newTagTemplateFieldId Required. The new ID of this tag template field. For example,
    *     `my_new_field`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2659,7 +2682,7 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the tag template.
+   * @param name Required. The name of the tag template field.
    * @param newTagTemplateFieldId Required. The new ID of this tag template field. For example,
    *     `my_new_field`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3014,9 +3037,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3058,9 +3081,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3099,9 +3122,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3138,9 +3161,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3295,8 +3318,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String name =
-   *       TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]").toString();
+   *   String name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   dataCatalogClient.deleteTag(name);
    * }
    * }</pre>
@@ -3320,8 +3342,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   DeleteTagRequest request =
    *       DeleteTagRequest.newBuilder()
    *           .setName(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .build();
    *   dataCatalogClient.deleteTag(request);
    * }
@@ -3345,8 +3366,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   DeleteTagRequest request =
    *       DeleteTagRequest.newBuilder()
    *           .setName(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .build();
    *   ApiFuture<Empty> future = dataCatalogClient.deleteTagCallable().futureCall(request);
    *   // Do something.
@@ -3394,7 +3414,7 @@ public class DataCatalogClient implements BackgroundResource {
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   String parent =
-   *       TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]").toString();
+   *       EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   for (Tag element : dataCatalogClient.listTags(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -3423,8 +3443,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3452,8 +3471,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3480,8 +3498,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

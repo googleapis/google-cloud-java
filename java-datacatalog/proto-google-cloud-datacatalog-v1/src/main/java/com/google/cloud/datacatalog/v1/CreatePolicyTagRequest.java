@@ -134,8 +134,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>
@@ -160,8 +159,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>
@@ -584,8 +582,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>
@@ -609,8 +606,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>
@@ -634,8 +630,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>
@@ -658,8 +653,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>
@@ -678,8 +672,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>

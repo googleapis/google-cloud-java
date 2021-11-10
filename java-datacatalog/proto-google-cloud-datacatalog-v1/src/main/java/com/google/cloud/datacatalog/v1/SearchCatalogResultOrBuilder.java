@@ -304,5 +304,57 @@ public interface SearchCatalogResultOrBuilder
    */
   com.google.protobuf.ByteString getFullyQualifiedNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the result.
+   * </pre>
+   *
+   * <code>string display_name = 12;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the result.
+   * </pre>
+   *
+   * <code>string display_name = 12;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry description that can consist of several sentences or paragraphs that
+   * describe entry contents.
+   * </pre>
+   *
+   * <code>string description = 13;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Entry description that can consist of several sentences or paragraphs that
+   * describe entry contents.
+   * </pre>
+   *
+   * <code>string description = 13;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
   public com.google.cloud.datacatalog.v1.SearchCatalogResult.SystemCase getSystemCase();
 }

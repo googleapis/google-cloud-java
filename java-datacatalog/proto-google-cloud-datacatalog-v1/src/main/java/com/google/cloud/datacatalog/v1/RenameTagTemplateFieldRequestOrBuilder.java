@@ -27,7 +27,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag template.
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag template.
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>

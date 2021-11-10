@@ -126,7 +126,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template.
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>
@@ -151,7 +151,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template.
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>
@@ -566,7 +566,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template.
+     * Required. The name of the tag template field.
      * </pre>
      *
      * <code>
@@ -590,7 +590,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template.
+     * Required. The name of the tag template field.
      * </pre>
      *
      * <code>
@@ -614,7 +614,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template.
+     * Required. The name of the tag template field.
      * </pre>
      *
      * <code>
@@ -637,7 +637,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template.
+     * Required. The name of the tag template field.
      * </pre>
      *
      * <code>
@@ -656,7 +656,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template.
+     * Required. The name of the tag template field.
      * </pre>
      *
      * <code>

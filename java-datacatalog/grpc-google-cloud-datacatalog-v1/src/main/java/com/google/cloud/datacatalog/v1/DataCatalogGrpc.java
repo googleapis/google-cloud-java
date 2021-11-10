@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datacatalog/v1/datacatalog.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DataCatalogGrpc {
 
   private DataCatalogGrpc() {}
@@ -1553,6 +1554,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public void listEntries(
@@ -1728,9 +1732,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]
@@ -2304,6 +2308,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public void listEntries(
@@ -2499,9 +2506,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]
@@ -2866,6 +2873,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ListEntriesResponse listEntries(
@@ -3026,9 +3036,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]
@@ -3381,6 +3391,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3555,9 +3568,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]

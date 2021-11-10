@@ -27,8 +27,7 @@ public interface CreatePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface CreatePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>

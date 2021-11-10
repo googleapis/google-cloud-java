@@ -44,6 +44,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     relativeResourceName_ = "";
     linkedResource_ = "";
     fullyQualifiedName_ = "";
+    displayName_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
@@ -137,6 +139,20 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
               java.lang.String s = input.readStringRequireUtf8();
 
               fullyQualifiedName_ = s;
+              break;
+            }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           default:
@@ -670,6 +686,106 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 12;
+  private volatile java.lang.Object displayName_;
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the result.
+   * </pre>
+   *
+   * <code>string display_name = 12;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the result.
+   * </pre>
+   *
+   * <code>string display_name = 12;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 13;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Entry description that can consist of several sentences or paragraphs that
+   * describe entry contents.
+   * </pre>
+   *
+   * <code>string description = 13;</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Entry description that can consist of several sentences or paragraphs that
+   * describe entry contents.
+   * </pre>
+   *
+   * <code>string description = 13;</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -710,6 +826,12 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, fullyQualifiedName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, displayName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, description_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -746,6 +868,12 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, fullyQualifiedName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, displayName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, description_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -771,6 +899,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (!getModifyTime().equals(other.getModifyTime())) return false;
     }
     if (!getFullyQualifiedName().equals(other.getFullyQualifiedName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!getSystemCase().equals(other.getSystemCase())) return false;
     switch (systemCase_) {
       case 8:
@@ -807,6 +937,10 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + FULLY_QUALIFIED_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getFullyQualifiedName().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     switch (systemCase_) {
       case 8:
         hash = (37 * hash) + INTEGRATED_SYSTEM_FIELD_NUMBER;
@@ -981,6 +1115,10 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       }
       fullyQualifiedName_ = "";
 
+      displayName_ = "";
+
+      description_ = "";
+
       systemCase_ = 0;
       system_ = null;
       return this;
@@ -1026,6 +1164,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         result.system_ = system_;
       }
       result.fullyQualifiedName_ = fullyQualifiedName_;
+      result.displayName_ = displayName_;
+      result.description_ = description_;
       result.systemCase_ = systemCase_;
       onBuilt();
       return result;
@@ -1097,6 +1237,14 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       }
       if (!other.getFullyQualifiedName().isEmpty()) {
         fullyQualifiedName_ = other.fullyQualifiedName_;
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
         onChanged();
       }
       switch (other.getSystemCase()) {
@@ -2219,6 +2367,223 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
 
       fullyQualifiedName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the result.
+     * </pre>
+     *
+     * <code>string display_name = 12;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the result.
+     * </pre>
+     *
+     * <code>string display_name = 12;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the result.
+     * </pre>
+     *
+     * <code>string display_name = 12;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the result.
+     * </pre>
+     *
+     * <code>string display_name = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the result.
+     * </pre>
+     *
+     * <code>string display_name = 12;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     * </pre>
+     *
+     * <code>string description = 13;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     * </pre>
+     *
+     * <code>string description = 13;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     * </pre>
+     *
+     * <code>string description = 13;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     * </pre>
+     *
+     * <code>string description = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     * </pre>
+     *
+     * <code>string description = 13;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }

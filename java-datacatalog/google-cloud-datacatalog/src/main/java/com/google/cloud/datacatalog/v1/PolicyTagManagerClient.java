@@ -199,7 +199,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   String parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Taxonomy taxonomy = Taxonomy.newBuilder().build();
    *   Taxonomy response = policyTagManagerClient.createTaxonomy(parent, taxonomy);
    * }
@@ -227,7 +227,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   CreateTaxonomyRequest request =
    *       CreateTaxonomyRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTaxonomy(Taxonomy.newBuilder().build())
    *           .build();
    *   Taxonomy response = policyTagManagerClient.createTaxonomy(request);
@@ -253,7 +253,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   CreateTaxonomyRequest request =
    *       CreateTaxonomyRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTaxonomy(Taxonomy.newBuilder().build())
    *           .build();
    *   ApiFuture<Taxonomy> future =
@@ -466,7 +466,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   String parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Taxonomy element : policyTagManagerClient.listTaxonomies(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -491,7 +491,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   ListTaxonomiesRequest request =
    *       ListTaxonomiesRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -518,7 +518,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   ListTaxonomiesRequest request =
    *       ListTaxonomiesRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -546,7 +546,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   ListTaxonomiesRequest request =
    *       ListTaxonomiesRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -673,8 +673,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br
-   *     /&gt;&lt;br /&gt;
+   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.
    * @param policyTag The policy tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -695,15 +694,13 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   String parent =
-   *       PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]").toString();
+   *   String parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString();
    *   PolicyTag policyTag = PolicyTag.newBuilder().build();
    *   PolicyTag response = policyTagManagerClient.createPolicyTag(parent, policyTag);
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br
-   *     /&gt;&lt;br /&gt;
+   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.
    * @param policyTag The policy tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -723,9 +720,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   CreatePolicyTagRequest request =
    *       CreatePolicyTagRequest.newBuilder()
-   *           .setParent(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
    *           .setPolicyTag(PolicyTag.newBuilder().build())
    *           .build();
    *   PolicyTag response = policyTagManagerClient.createPolicyTag(request);
@@ -749,9 +744,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   CreatePolicyTagRequest request =
    *       CreatePolicyTagRequest.newBuilder()
-   *           .setParent(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
    *           .setPolicyTag(PolicyTag.newBuilder().build())
    *           .build();
    *   ApiFuture<PolicyTag> future =
@@ -991,8 +984,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   String parent =
-   *       PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]").toString();
+   *   String parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString();
    *   for (PolicyTag element : policyTagManagerClient.listPolicyTags(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1017,9 +1009,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   ListPolicyTagsRequest request =
    *       ListPolicyTagsRequest.newBuilder()
-   *           .setParent(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1046,9 +1036,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   ListPolicyTagsRequest request =
    *       ListPolicyTagsRequest.newBuilder()
-   *           .setParent(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1076,9 +1064,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   ListPolicyTagsRequest request =
    *       ListPolicyTagsRequest.newBuilder()
-   *           .setParent(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

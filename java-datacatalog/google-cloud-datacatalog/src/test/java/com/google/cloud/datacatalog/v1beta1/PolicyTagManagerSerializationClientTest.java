@@ -85,7 +85,7 @@ public class PolicyTagManagerSerializationClientTest {
 
     ImportTaxonomiesRequest request =
         ImportTaxonomiesRequest.newBuilder()
-            .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
 
     ImportTaxonomiesResponse actualResponse = client.importTaxonomies(request);
@@ -111,7 +111,7 @@ public class PolicyTagManagerSerializationClientTest {
     try {
       ImportTaxonomiesRequest request =
           ImportTaxonomiesRequest.newBuilder()
-              .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .build();
       client.importTaxonomies(request);
       Assert.fail("No exception raised");
@@ -130,7 +130,7 @@ public class PolicyTagManagerSerializationClientTest {
 
     ExportTaxonomiesRequest request =
         ExportTaxonomiesRequest.newBuilder()
-            .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .addAllTaxonomies(new ArrayList<String>())
             .build();
 
@@ -158,7 +158,7 @@ public class PolicyTagManagerSerializationClientTest {
     try {
       ExportTaxonomiesRequest request =
           ExportTaxonomiesRequest.newBuilder()
-              .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllTaxonomies(new ArrayList<String>())
               .build();
       client.exportTaxonomies(request);
