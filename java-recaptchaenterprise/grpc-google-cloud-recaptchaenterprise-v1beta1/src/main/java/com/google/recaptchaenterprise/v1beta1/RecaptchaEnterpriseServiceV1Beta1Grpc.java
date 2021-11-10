@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/recaptchaenterprise/v1beta1/recaptchaenterprise.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
 
   private RecaptchaEnterpriseServiceV1Beta1Grpc() {}

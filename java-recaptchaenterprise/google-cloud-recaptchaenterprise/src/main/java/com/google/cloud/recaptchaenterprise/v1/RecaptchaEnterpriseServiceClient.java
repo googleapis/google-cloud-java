@@ -878,7 +878,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   String parent = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (RelatedAccountGroup element :
    *       recaptchaEnterpriseServiceClient.listRelatedAccountGroups(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -907,8 +907,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
    *       ListRelatedAccountGroupsRequest.newBuilder()
-   *           .setParent(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -938,8 +937,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
    *       ListRelatedAccountGroupsRequest.newBuilder()
-   *           .setParent(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -970,8 +968,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
    *       ListRelatedAccountGroupsRequest.newBuilder()
-   *           .setParent(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1038,9 +1035,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   String parent =
-   *       RelatedAccountGroupMembershipName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *           .toString();
+   *   String parent = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
    *           .listRelatedAccountGroupMemberships(parent)
@@ -1073,9 +1068,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   ListRelatedAccountGroupMembershipsRequest request =
    *       ListRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setParent(
-   *               RelatedAccountGroupMembershipName.of(
-   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *                   .toString())
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1108,9 +1101,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   ListRelatedAccountGroupMembershipsRequest request =
    *       ListRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setParent(
-   *               RelatedAccountGroupMembershipName.of(
-   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *                   .toString())
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1144,9 +1135,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   ListRelatedAccountGroupMembershipsRequest request =
    *       ListRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setParent(
-   *               RelatedAccountGroupMembershipName.of(
-   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *                   .toString())
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1222,9 +1211,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   String parent =
-   *       RelatedAccountGroupMembershipName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *           .toString();
+   *   String parent = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
    *   ByteString hashedAccountId = ByteString.EMPTY;
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
@@ -1264,9 +1251,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setParent(
-   *               RelatedAccountGroupMembershipName.of(
-   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *                   .toString())
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1300,9 +1285,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setParent(
-   *               RelatedAccountGroupMembershipName.of(
-   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *                   .toString())
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1337,9 +1320,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setParent(
-   *               RelatedAccountGroupMembershipName.of(
-   *                       "[PROJECT]", "[RELATEDACCOUNTGROUP]", "[MEMBERSHIP]")
-   *                   .toString())
+   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
