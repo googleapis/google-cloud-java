@@ -33,8 +33,7 @@ public class SetPublicAccessPreventionInherited {
     Bucket bucket = storage.get(bucketName);
 
     // Sets public access prevention to 'inherited' for the bucket
-    bucket
-        .toBuilder()
+    bucket.toBuilder()
         .setIamConfiguration(
             BucketInfo.IamConfiguration.newBuilder()
                 .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)

@@ -33,8 +33,7 @@ public class SetPublicAccessPreventionUnspecified {
     Bucket bucket = storage.get(bucketName);
 
     // Sets public access prevention to 'unspecified' for the bucket
-    bucket
-        .toBuilder()
+    bucket.toBuilder()
         .setIamConfiguration(
             BucketInfo.IamConfiguration.newBuilder()
                 .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
