@@ -204,7 +204,7 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String parent = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Membership element : gkeHubClient.listMemberships(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -230,7 +230,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListMembershipsRequest request =
    *       ListMembershipsRequest.newBuilder()
-   *           .setParent(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -259,7 +259,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListMembershipsRequest request =
    *       ListMembershipsRequest.newBuilder()
-   *           .setParent(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -289,7 +289,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListMembershipsRequest request =
    *       ListMembershipsRequest.newBuilder()
-   *           .setParent(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -459,7 +459,7 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String parent = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Membership resource = Membership.newBuilder().build();
    *   String membershipId = "membershipId517665681";
    *   Membership response =
@@ -503,7 +503,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateMembershipRequest request =
    *       CreateMembershipRequest.newBuilder()
-   *           .setParent(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
    *           .build();
@@ -533,7 +533,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateMembershipRequest request =
    *       CreateMembershipRequest.newBuilder()
-   *           .setParent(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
    *           .build();
@@ -563,7 +563,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateMembershipRequest request =
    *       CreateMembershipRequest.newBuilder()
-   *           .setParent(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
    *           .build();
