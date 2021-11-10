@@ -28,7 +28,7 @@
  * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
  *   CreateBudgetRequest request =
  *       CreateBudgetRequest.newBuilder()
- *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+ *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
  *           .setBudget(Budget.newBuilder().build())
  *           .build();
  *   Budget response = budgetServiceClient.createBudget(request);

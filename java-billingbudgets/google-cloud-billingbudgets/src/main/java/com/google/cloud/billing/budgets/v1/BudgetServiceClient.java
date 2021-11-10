@@ -188,7 +188,7 @@ public class BudgetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
-   *   String parent = BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString();
+   *   String parent = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   Budget budget = Budget.newBuilder().build();
    *   Budget response = budgetServiceClient.createBudget(parent, budget);
    * }
@@ -216,7 +216,7 @@ public class BudgetServiceClient implements BackgroundResource {
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   CreateBudgetRequest request =
    *       CreateBudgetRequest.newBuilder()
-   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
    *           .setBudget(Budget.newBuilder().build())
    *           .build();
    *   Budget response = budgetServiceClient.createBudget(request);
@@ -241,7 +241,7 @@ public class BudgetServiceClient implements BackgroundResource {
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   CreateBudgetRequest request =
    *       CreateBudgetRequest.newBuilder()
-   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
    *           .setBudget(Budget.newBuilder().build())
    *           .build();
    *   ApiFuture<Budget> future = budgetServiceClient.createBudgetCallable().futureCall(request);
@@ -488,7 +488,7 @@ public class BudgetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
-   *   String parent = BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString();
+   *   String parent = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   for (Budget element : budgetServiceClient.listBudgets(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -518,7 +518,7 @@ public class BudgetServiceClient implements BackgroundResource {
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   ListBudgetsRequest request =
    *       ListBudgetsRequest.newBuilder()
-   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -549,7 +549,7 @@ public class BudgetServiceClient implements BackgroundResource {
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   ListBudgetsRequest request =
    *       ListBudgetsRequest.newBuilder()
-   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -580,7 +580,7 @@ public class BudgetServiceClient implements BackgroundResource {
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   ListBudgetsRequest request =
    *       ListBudgetsRequest.newBuilder()
-   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
