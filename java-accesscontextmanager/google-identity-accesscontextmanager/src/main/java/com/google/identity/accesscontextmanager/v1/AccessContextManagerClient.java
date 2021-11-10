@@ -768,7 +768,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessContextManagerClient accessContextManagerClient =
    *     AccessContextManagerClient.create()) {
-   *   String parent = AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString();
+   *   String parent = AccessPolicyName.of("[ACCESS_POLICY]").toString();
    *   for (AccessLevel element : accessContextManagerClient.listAccessLevels(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -798,7 +798,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ListAccessLevelsRequest request =
    *       ListAccessLevelsRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setAccessLevelFormat(LevelFormat.forNumber(0))
@@ -829,7 +829,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ListAccessLevelsRequest request =
    *       ListAccessLevelsRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setAccessLevelFormat(LevelFormat.forNumber(0))
@@ -860,7 +860,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ListAccessLevelsRequest request =
    *       ListAccessLevelsRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setAccessLevelFormat(LevelFormat.forNumber(0))
@@ -1037,7 +1037,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessContextManagerClient accessContextManagerClient =
    *     AccessContextManagerClient.create()) {
-   *   String parent = AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString();
+   *   String parent = AccessPolicyName.of("[ACCESS_POLICY]").toString();
    *   AccessLevel accessLevel = AccessLevel.newBuilder().build();
    *   AccessLevel response =
    *       accessContextManagerClient.createAccessLevelAsync(parent, accessLevel).get();
@@ -1075,7 +1075,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CreateAccessLevelRequest request =
    *       CreateAccessLevelRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setAccessLevel(AccessLevel.newBuilder().build())
    *           .build();
    *   AccessLevel response = accessContextManagerClient.createAccessLevelAsync(request).get();
@@ -1105,7 +1105,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CreateAccessLevelRequest request =
    *       CreateAccessLevelRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setAccessLevel(AccessLevel.newBuilder().build())
    *           .build();
    *   OperationFuture<AccessLevel, AccessContextManagerOperationMetadata> future =
@@ -1136,7 +1136,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CreateAccessLevelRequest request =
    *       CreateAccessLevelRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setAccessLevel(AccessLevel.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1441,7 +1441,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ReplaceAccessLevelsRequest request =
    *       ReplaceAccessLevelsRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .addAllAccessLevels(new ArrayList<AccessLevel>())
    *           .setEtag("etag3123477")
    *           .build();
@@ -1479,7 +1479,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ReplaceAccessLevelsRequest request =
    *       ReplaceAccessLevelsRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .addAllAccessLevels(new ArrayList<AccessLevel>())
    *           .setEtag("etag3123477")
    *           .build();
@@ -1519,7 +1519,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ReplaceAccessLevelsRequest request =
    *       ReplaceAccessLevelsRequest.newBuilder()
-   *           .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .addAllAccessLevels(new ArrayList<AccessLevel>())
    *           .setEtag("etag3123477")
    *           .build();
@@ -1575,7 +1575,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessContextManagerClient accessContextManagerClient =
    *     AccessContextManagerClient.create()) {
-   *   String parent = ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString();
+   *   String parent = AccessPolicyName.of("[ACCESS_POLICY]").toString();
    *   for (ServicePerimeter element :
    *       accessContextManagerClient.listServicePerimeters(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1606,8 +1606,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ListServicePerimetersRequest request =
    *       ListServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1638,8 +1637,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ListServicePerimetersRequest request =
    *       ListServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1669,8 +1667,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ListServicePerimetersRequest request =
    *       ListServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1852,7 +1849,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessContextManagerClient accessContextManagerClient =
    *     AccessContextManagerClient.create()) {
-   *   String parent = ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString();
+   *   String parent = AccessPolicyName.of("[ACCESS_POLICY]").toString();
    *   ServicePerimeter servicePerimeter = ServicePerimeter.newBuilder().build();
    *   ServicePerimeter response =
    *       accessContextManagerClient.createServicePerimeterAsync(parent, servicePerimeter).get();
@@ -1893,8 +1890,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CreateServicePerimeterRequest request =
    *       CreateServicePerimeterRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setServicePerimeter(ServicePerimeter.newBuilder().build())
    *           .build();
    *   ServicePerimeter response =
@@ -1925,8 +1921,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CreateServicePerimeterRequest request =
    *       CreateServicePerimeterRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setServicePerimeter(ServicePerimeter.newBuilder().build())
    *           .build();
    *   OperationFuture<ServicePerimeter, AccessContextManagerOperationMetadata> future =
@@ -1957,8 +1952,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CreateServicePerimeterRequest request =
    *       CreateServicePerimeterRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setServicePerimeter(ServicePerimeter.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -2270,8 +2264,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ReplaceServicePerimetersRequest request =
    *       ReplaceServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .addAllServicePerimeters(new ArrayList<ServicePerimeter>())
    *           .setEtag("etag3123477")
    *           .build();
@@ -2308,8 +2301,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ReplaceServicePerimetersRequest request =
    *       ReplaceServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .addAllServicePerimeters(new ArrayList<ServicePerimeter>())
    *           .setEtag("etag3123477")
    *           .build();
@@ -2350,8 +2342,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   ReplaceServicePerimetersRequest request =
    *       ReplaceServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .addAllServicePerimeters(new ArrayList<ServicePerimeter>())
    *           .setEtag("etag3123477")
    *           .build();
@@ -2389,8 +2380,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CommitServicePerimetersRequest request =
    *       CommitServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setEtag("etag3123477")
    *           .build();
    *   CommitServicePerimetersResponse response =
@@ -2429,8 +2419,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CommitServicePerimetersRequest request =
    *       CommitServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setEtag("etag3123477")
    *           .build();
    *   OperationFuture<CommitServicePerimetersResponse, AccessContextManagerOperationMetadata>
@@ -2473,8 +2462,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   CommitServicePerimetersRequest request =
    *       CommitServicePerimetersRequest.newBuilder()
-   *           .setParent(
-   *               ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+   *           .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<Operation> future =

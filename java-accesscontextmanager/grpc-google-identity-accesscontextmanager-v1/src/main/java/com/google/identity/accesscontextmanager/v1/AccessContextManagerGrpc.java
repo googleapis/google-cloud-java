@@ -37,6 +37,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/identity/accesscontextmanager/v1/access_context_manager.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AccessContextManagerGrpc {
 
   private AccessContextManagerGrpc() {}

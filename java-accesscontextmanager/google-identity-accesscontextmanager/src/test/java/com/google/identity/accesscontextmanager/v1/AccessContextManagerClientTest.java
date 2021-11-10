@@ -872,7 +872,7 @@ public class AccessContextManagerClientTest {
 
     ReplaceAccessLevelsRequest request =
         ReplaceAccessLevelsRequest.newBuilder()
-            .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+            .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
             .addAllAccessLevels(new ArrayList<AccessLevel>())
             .setEtag("etag3123477")
             .build();
@@ -901,7 +901,7 @@ public class AccessContextManagerClientTest {
     try {
       ReplaceAccessLevelsRequest request =
           ReplaceAccessLevelsRequest.newBuilder()
-              .setParent(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+              .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
               .addAllAccessLevels(new ArrayList<AccessLevel>())
               .setEtag("etag3123477")
               .build();
@@ -1370,7 +1370,7 @@ public class AccessContextManagerClientTest {
 
     ReplaceServicePerimetersRequest request =
         ReplaceServicePerimetersRequest.newBuilder()
-            .setParent(ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+            .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
             .addAllServicePerimeters(new ArrayList<ServicePerimeter>())
             .setEtag("etag3123477")
             .build();
@@ -1402,8 +1402,7 @@ public class AccessContextManagerClientTest {
     try {
       ReplaceServicePerimetersRequest request =
           ReplaceServicePerimetersRequest.newBuilder()
-              .setParent(
-                  ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+              .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
               .addAllServicePerimeters(new ArrayList<ServicePerimeter>())
               .setEtag("etag3123477")
               .build();
@@ -1432,7 +1431,7 @@ public class AccessContextManagerClientTest {
 
     CommitServicePerimetersRequest request =
         CommitServicePerimetersRequest.newBuilder()
-            .setParent(ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+            .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
             .setEtag("etag3123477")
             .build();
 
@@ -1461,8 +1460,7 @@ public class AccessContextManagerClientTest {
     try {
       CommitServicePerimetersRequest request =
           CommitServicePerimetersRequest.newBuilder()
-              .setParent(
-                  ServicePerimeterName.of("[ACCESS_POLICY]", "[SERVICE_PERIMETER]").toString())
+              .setParent(AccessPolicyName.of("[ACCESS_POLICY]").toString())
               .setEtag("etag3123477")
               .build();
       client.commitServicePerimetersAsync(request).get();
