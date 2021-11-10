@@ -271,8 +271,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
-   *   String parent =
-   *       ConstraintName.ofProjectConstraintName("[PROJECT]", "[CONSTRAINT]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Constraint element : orgPolicyClient.listConstraints(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -305,8 +304,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListConstraintsRequest request =
    *       ListConstraintsRequest.newBuilder()
-   *           .setParent(
-   *               ConstraintName.ofProjectConstraintName("[PROJECT]", "[CONSTRAINT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -333,8 +331,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListConstraintsRequest request =
    *       ListConstraintsRequest.newBuilder()
-   *           .setParent(
-   *               ConstraintName.ofProjectConstraintName("[PROJECT]", "[CONSTRAINT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -362,8 +359,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListConstraintsRequest request =
    *       ListConstraintsRequest.newBuilder()
-   *           .setParent(
-   *               ConstraintName.ofProjectConstraintName("[PROJECT]", "[CONSTRAINT]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -497,7 +493,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
-   *   String parent = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Policy element : orgPolicyClient.listPolicies(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -530,7 +526,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
-   *           .setParent(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -557,7 +553,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
-   *           .setParent(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -584,7 +580,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
-   *           .setParent(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -939,7 +935,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
-   *   String parent = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = orgPolicyClient.createPolicy(parent, policy);
    * }
@@ -977,7 +973,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   CreatePolicyRequest request =
    *       CreatePolicyRequest.newBuilder()
-   *           .setParent(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = orgPolicyClient.createPolicy(request);
@@ -1005,7 +1001,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   CreatePolicyRequest request =
    *       CreatePolicyRequest.newBuilder()
-   *           .setParent(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = orgPolicyClient.createPolicyCallable().futureCall(request);
