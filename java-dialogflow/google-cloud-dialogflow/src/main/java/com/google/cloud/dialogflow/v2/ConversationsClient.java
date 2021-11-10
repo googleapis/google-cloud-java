@@ -260,8 +260,7 @@ public class ConversationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
-   *   String parent =
-   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Conversation conversation = Conversation.newBuilder().build();
    *   Conversation response = conversationsClient.createConversation(parent, conversation);
    * }
@@ -307,9 +306,7 @@ public class ConversationsClient implements BackgroundResource {
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   CreateConversationRequest request =
    *       CreateConversationRequest.newBuilder()
-   *           .setParent(
-   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setConversation(Conversation.newBuilder().build())
    *           .setConversationId("conversationId-1676095234")
    *           .build();
@@ -350,9 +347,7 @@ public class ConversationsClient implements BackgroundResource {
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   CreateConversationRequest request =
    *       CreateConversationRequest.newBuilder()
-   *           .setParent(
-   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setConversation(Conversation.newBuilder().build())
    *           .setConversationId("conversationId-1676095234")
    *           .build();
@@ -429,8 +424,7 @@ public class ConversationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
-   *   String parent =
-   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Conversation element : conversationsClient.listConversations(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -457,9 +451,7 @@ public class ConversationsClient implements BackgroundResource {
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListConversationsRequest request =
    *       ListConversationsRequest.newBuilder()
-   *           .setParent(
-   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -487,9 +479,7 @@ public class ConversationsClient implements BackgroundResource {
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListConversationsRequest request =
    *       ListConversationsRequest.newBuilder()
-   *           .setParent(
-   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -518,9 +508,7 @@ public class ConversationsClient implements BackgroundResource {
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListConversationsRequest request =
    *       ListConversationsRequest.newBuilder()
-   *           .setParent(
-   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -794,8 +782,7 @@ public class ConversationsClient implements BackgroundResource {
    * <pre>{@code
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String parent =
-   *       MessageName.ofProjectConversationMessageName("[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
-   *           .toString();
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
    *   for (Message element : conversationsClient.listMessages(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -826,8 +813,7 @@ public class ConversationsClient implements BackgroundResource {
    *   ListMessagesRequest request =
    *       ListMessagesRequest.newBuilder()
    *           .setParent(
-   *               MessageName.ofProjectConversationMessageName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -860,8 +846,7 @@ public class ConversationsClient implements BackgroundResource {
    *   ListMessagesRequest request =
    *       ListMessagesRequest.newBuilder()
    *           .setParent(
-   *               MessageName.ofProjectConversationMessageName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -895,8 +880,7 @@ public class ConversationsClient implements BackgroundResource {
    *   ListMessagesRequest request =
    *       ListMessagesRequest.newBuilder()
    *           .setParent(
-   *               MessageName.ofProjectConversationMessageName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)

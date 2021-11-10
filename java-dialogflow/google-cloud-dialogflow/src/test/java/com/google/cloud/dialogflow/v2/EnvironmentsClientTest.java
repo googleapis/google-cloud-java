@@ -238,8 +238,7 @@ public class EnvironmentsClientTest {
 
     CreateEnvironmentRequest request =
         CreateEnvironmentRequest.newBuilder()
-            .setParent(
-                EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+            .setParent(AgentName.ofProjectName("[PROJECT]").toString())
             .setEnvironment(Environment.newBuilder().build())
             .setEnvironmentId("environmentId-950205810")
             .build();
@@ -268,8 +267,7 @@ public class EnvironmentsClientTest {
     try {
       CreateEnvironmentRequest request =
           CreateEnvironmentRequest.newBuilder()
-              .setParent(
-                  EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+              .setParent(AgentName.ofProjectName("[PROJECT]").toString())
               .setEnvironment(Environment.newBuilder().build())
               .setEnvironmentId("environmentId-950205810")
               .build();

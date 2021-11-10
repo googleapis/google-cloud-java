@@ -798,8 +798,7 @@ public class EntityTypesClientTest {
 
     BatchUpdateEntityTypesRequest request =
         BatchUpdateEntityTypesRequest.newBuilder()
-            .setParent(
-                EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
+            .setParent(AgentName.ofProjectName("[PROJECT]").toString())
             .setLanguageCode("languageCode-2092349083")
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -833,8 +832,7 @@ public class EntityTypesClientTest {
     try {
       BatchUpdateEntityTypesRequest request =
           BatchUpdateEntityTypesRequest.newBuilder()
-              .setParent(
-                  EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
+              .setParent(AgentName.ofProjectName("[PROJECT]").toString())
               .setLanguageCode("languageCode-2092349083")
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

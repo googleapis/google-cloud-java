@@ -188,8 +188,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   String parent =
-   *       EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -217,8 +216,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -245,8 +243,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -274,8 +271,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -358,8 +354,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setEnvironment(Environment.newBuilder().build())
    *           .setEnvironmentId("environmentId-950205810")
    *           .build();
@@ -384,8 +379,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setEnvironment(Environment.newBuilder().build())
    *           .setEnvironmentId("environmentId-950205810")
    *           .build();

@@ -769,9 +769,7 @@ public class AgentsClientTest {
     mockAgents.addResponse(resultOperation);
 
     ImportAgentRequest request =
-        ImportAgentRequest.newBuilder()
-            .setParent(AgentName.ofProjectName("[PROJECT]").toString())
-            .build();
+        ImportAgentRequest.newBuilder().setParent(ProjectName.of("[PROJECT]").toString()).build();
 
     client.importAgentAsync(request).get();
 
@@ -795,9 +793,7 @@ public class AgentsClientTest {
 
     try {
       ImportAgentRequest request =
-          ImportAgentRequest.newBuilder()
-              .setParent(AgentName.ofProjectName("[PROJECT]").toString())
-              .build();
+          ImportAgentRequest.newBuilder().setParent(ProjectName.of("[PROJECT]").toString()).build();
       client.importAgentAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -819,9 +815,7 @@ public class AgentsClientTest {
     mockAgents.addResponse(resultOperation);
 
     RestoreAgentRequest request =
-        RestoreAgentRequest.newBuilder()
-            .setParent(AgentName.ofProjectName("[PROJECT]").toString())
-            .build();
+        RestoreAgentRequest.newBuilder().setParent(ProjectName.of("[PROJECT]").toString()).build();
 
     client.restoreAgentAsync(request).get();
 
@@ -846,7 +840,7 @@ public class AgentsClientTest {
     try {
       RestoreAgentRequest request =
           RestoreAgentRequest.newBuilder()
-              .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .build();
       client.restoreAgentAsync(request).get();
       Assert.fail("No exception raised");
@@ -867,7 +861,7 @@ public class AgentsClientTest {
 
     GetValidationResultRequest request =
         GetValidationResultRequest.newBuilder()
-            .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setLanguageCode("languageCode-2092349083")
             .build();
 
@@ -894,7 +888,7 @@ public class AgentsClientTest {
     try {
       GetValidationResultRequest request =
           GetValidationResultRequest.newBuilder()
-              .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setLanguageCode("languageCode-2092349083")
               .build();
       client.getValidationResult(request);

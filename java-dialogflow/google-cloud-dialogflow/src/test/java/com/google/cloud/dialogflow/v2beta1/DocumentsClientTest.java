@@ -408,8 +408,7 @@ public class DocumentsClientTest {
     ImportDocumentsRequest request =
         ImportDocumentsRequest.newBuilder()
             .setParent(
-                DocumentName.ofProjectKnowledgeBaseDocumentName(
-                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
             .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
             .setImportGcsCustomMetadata(true)
@@ -442,8 +441,7 @@ public class DocumentsClientTest {
       ImportDocumentsRequest request =
           ImportDocumentsRequest.newBuilder()
               .setParent(
-                  DocumentName.ofProjectKnowledgeBaseDocumentName(
-                          "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                  KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                       .toString())
               .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
               .setImportGcsCustomMetadata(true)

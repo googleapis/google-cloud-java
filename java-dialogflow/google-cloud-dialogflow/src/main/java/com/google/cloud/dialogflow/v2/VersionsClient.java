@@ -182,7 +182,7 @@ public class VersionsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (VersionsClient versionsClient = VersionsClient.create()) {
-   *   String parent = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   for (Version element : versionsClient.listVersions(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -209,7 +209,7 @@ public class VersionsClient implements BackgroundResource {
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
-   *           .setParent(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -236,7 +236,7 @@ public class VersionsClient implements BackgroundResource {
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
-   *           .setParent(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -263,7 +263,7 @@ public class VersionsClient implements BackgroundResource {
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
-   *           .setParent(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -421,7 +421,7 @@ public class VersionsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (VersionsClient versionsClient = VersionsClient.create()) {
-   *   String parent = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   Version version = Version.newBuilder().build();
    *   Version response = versionsClient.createVersion(parent, version);
    * }
@@ -451,7 +451,7 @@ public class VersionsClient implements BackgroundResource {
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   CreateVersionRequest request =
    *       CreateVersionRequest.newBuilder()
-   *           .setParent(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setVersion(Version.newBuilder().build())
    *           .build();
    *   Version response = versionsClient.createVersion(request);
@@ -477,7 +477,7 @@ public class VersionsClient implements BackgroundResource {
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   CreateVersionRequest request =
    *       CreateVersionRequest.newBuilder()
-   *           .setParent(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setVersion(Version.newBuilder().build())
    *           .build();
    *   ApiFuture<Version> future = versionsClient.createVersionCallable().futureCall(request);

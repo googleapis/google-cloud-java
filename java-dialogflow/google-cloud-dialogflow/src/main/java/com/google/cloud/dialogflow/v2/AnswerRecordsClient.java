@@ -211,8 +211,7 @@ public class AnswerRecordsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
-   *   String parent =
-   *       AnswerRecordName.ofProjectAnswerRecordName("[PROJECT]", "[ANSWER_RECORD]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (AnswerRecord element : answerRecordsClient.listAnswerRecords(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -239,9 +238,7 @@ public class AnswerRecordsClient implements BackgroundResource {
    * try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
    *   ListAnswerRecordsRequest request =
    *       ListAnswerRecordsRequest.newBuilder()
-   *           .setParent(
-   *               AnswerRecordName.ofProjectAnswerRecordName("[PROJECT]", "[ANSWER_RECORD]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -269,9 +266,7 @@ public class AnswerRecordsClient implements BackgroundResource {
    * try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
    *   ListAnswerRecordsRequest request =
    *       ListAnswerRecordsRequest.newBuilder()
-   *           .setParent(
-   *               AnswerRecordName.ofProjectAnswerRecordName("[PROJECT]", "[ANSWER_RECORD]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -300,9 +295,7 @@ public class AnswerRecordsClient implements BackgroundResource {
    * try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
    *   ListAnswerRecordsRequest request =
    *       ListAnswerRecordsRequest.newBuilder()
-   *           .setParent(
-   *               AnswerRecordName.ofProjectAnswerRecordName("[PROJECT]", "[ANSWER_RECORD]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

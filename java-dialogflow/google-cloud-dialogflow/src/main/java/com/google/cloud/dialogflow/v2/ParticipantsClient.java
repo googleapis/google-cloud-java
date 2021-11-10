@@ -187,9 +187,7 @@ public class ParticipantsClient implements BackgroundResource {
    * <pre>{@code
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String parent =
-   *       ParticipantName.ofProjectConversationParticipantName(
-   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
-   *           .toString();
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
    *   Participant participant = Participant.newBuilder().build();
    *   Participant response = participantsClient.createParticipant(parent, participant);
    * }
@@ -218,8 +216,7 @@ public class ParticipantsClient implements BackgroundResource {
    *   CreateParticipantRequest request =
    *       CreateParticipantRequest.newBuilder()
    *           .setParent(
-   *               ParticipantName.ofProjectConversationParticipantName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setParticipant(Participant.newBuilder().build())
    *           .build();
@@ -245,8 +242,7 @@ public class ParticipantsClient implements BackgroundResource {
    *   CreateParticipantRequest request =
    *       CreateParticipantRequest.newBuilder()
    *           .setParent(
-   *               ParticipantName.ofProjectConversationParticipantName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setParticipant(Participant.newBuilder().build())
    *           .build();
@@ -403,9 +399,7 @@ public class ParticipantsClient implements BackgroundResource {
    * <pre>{@code
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String parent =
-   *       ParticipantName.ofProjectConversationParticipantName(
-   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
-   *           .toString();
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
    *   for (Participant element : participantsClient.listParticipants(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -434,8 +428,7 @@ public class ParticipantsClient implements BackgroundResource {
    *   ListParticipantsRequest request =
    *       ListParticipantsRequest.newBuilder()
    *           .setParent(
-   *               ParticipantName.ofProjectConversationParticipantName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -464,8 +457,7 @@ public class ParticipantsClient implements BackgroundResource {
    *   ListParticipantsRequest request =
    *       ListParticipantsRequest.newBuilder()
    *           .setParent(
-   *               ParticipantName.ofProjectConversationParticipantName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -495,8 +487,7 @@ public class ParticipantsClient implements BackgroundResource {
    *   ListParticipantsRequest request =
    *       ListParticipantsRequest.newBuilder()
    *           .setParent(
-   *               ParticipantName.ofProjectConversationParticipantName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

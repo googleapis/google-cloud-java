@@ -205,10 +205,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   String parent =
-   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
-   *               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-   *           .toString();
+   *   String parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString();
    *   for (SessionEntityType element :
    *       sessionEntityTypesClient.listSessionEntityTypes(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -247,10 +244,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
-   *           .setParent(
-   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
-   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -282,10 +276,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
-   *           .setParent(
-   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
-   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -316,10 +307,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
-   *           .setParent(
-   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
-   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -538,10 +526,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   String parent =
-   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
-   *               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-   *           .toString();
+   *   String parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString();
    *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
    *   SessionEntityType response =
    *       sessionEntityTypesClient.createSessionEntityType(parent, sessionEntityType);
@@ -586,10 +571,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   CreateSessionEntityTypeRequest request =
    *       CreateSessionEntityTypeRequest.newBuilder()
-   *           .setParent(
-   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
-   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setSessionEntityType(SessionEntityType.newBuilder().build())
    *           .build();
    *   SessionEntityType response = sessionEntityTypesClient.createSessionEntityType(request);
@@ -618,10 +600,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   CreateSessionEntityTypeRequest request =
    *       CreateSessionEntityTypeRequest.newBuilder()
-   *           .setParent(
-   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
-   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setSessionEntityType(SessionEntityType.newBuilder().build())
    *           .build();
    *   ApiFuture<SessionEntityType> future =

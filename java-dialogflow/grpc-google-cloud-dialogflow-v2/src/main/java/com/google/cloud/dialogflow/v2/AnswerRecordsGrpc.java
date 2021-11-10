@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2/answer_record.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AnswerRecordsGrpc {
 
   private AnswerRecordsGrpc() {}

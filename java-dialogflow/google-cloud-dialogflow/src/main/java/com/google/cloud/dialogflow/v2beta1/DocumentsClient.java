@@ -209,9 +209,7 @@ public class DocumentsClient implements BackgroundResource {
    * <pre>{@code
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
    *   String parent =
-   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *               "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
-   *           .toString();
+   *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]").toString();
    *   for (Document element : documentsClient.listDocuments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -242,8 +240,7 @@ public class DocumentsClient implements BackgroundResource {
    *   ListDocumentsRequest request =
    *       ListDocumentsRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -276,8 +273,7 @@ public class DocumentsClient implements BackgroundResource {
    *   ListDocumentsRequest request =
    *       ListDocumentsRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -310,8 +306,7 @@ public class DocumentsClient implements BackgroundResource {
    *   ListDocumentsRequest request =
    *       ListDocumentsRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -513,9 +508,7 @@ public class DocumentsClient implements BackgroundResource {
    * <pre>{@code
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
    *   String parent =
-   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *               "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
-   *           .toString();
+   *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]").toString();
    *   Document document = Document.newBuilder().build();
    *   Document response = documentsClient.createDocumentAsync(parent, document).get();
    * }
@@ -556,8 +549,7 @@ public class DocumentsClient implements BackgroundResource {
    *   CreateDocumentRequest request =
    *       CreateDocumentRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setImportGcsCustomMetadata(true)
@@ -596,8 +588,7 @@ public class DocumentsClient implements BackgroundResource {
    *   CreateDocumentRequest request =
    *       CreateDocumentRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setImportGcsCustomMetadata(true)
@@ -636,8 +627,7 @@ public class DocumentsClient implements BackgroundResource {
    *   CreateDocumentRequest request =
    *       CreateDocumentRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setImportGcsCustomMetadata(true)
@@ -672,8 +662,7 @@ public class DocumentsClient implements BackgroundResource {
    *   ImportDocumentsRequest request =
    *       ImportDocumentsRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
    *           .setImportGcsCustomMetadata(true)
@@ -710,8 +699,7 @@ public class DocumentsClient implements BackgroundResource {
    *   ImportDocumentsRequest request =
    *       ImportDocumentsRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
    *           .setImportGcsCustomMetadata(true)
@@ -749,8 +737,7 @@ public class DocumentsClient implements BackgroundResource {
    *   ImportDocumentsRequest request =
    *       ImportDocumentsRequest.newBuilder()
    *           .setParent(
-   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
-   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
    *                   .toString())
    *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
    *           .setImportGcsCustomMetadata(true)

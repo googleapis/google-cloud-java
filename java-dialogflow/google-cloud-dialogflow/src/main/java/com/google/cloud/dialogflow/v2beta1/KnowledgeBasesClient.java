@@ -222,8 +222,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   String parent =
-   *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (KnowledgeBase element : knowledgeBasesClient.listKnowledgeBases(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -253,9 +252,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
    *   ListKnowledgeBasesRequest request =
    *       ListKnowledgeBasesRequest.newBuilder()
-   *           .setParent(
-   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -287,9 +284,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
    *   ListKnowledgeBasesRequest request =
    *       ListKnowledgeBasesRequest.newBuilder()
-   *           .setParent(
-   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -321,9 +316,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
    *   ListKnowledgeBasesRequest request =
    *       ListKnowledgeBasesRequest.newBuilder()
-   *           .setParent(
-   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -531,8 +524,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   String parent =
-   *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
    *   KnowledgeBase response = knowledgeBasesClient.createKnowledgeBase(parent, knowledgeBase);
    * }
@@ -565,9 +557,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
    *   CreateKnowledgeBaseRequest request =
    *       CreateKnowledgeBaseRequest.newBuilder()
-   *           .setParent(
-   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setKnowledgeBase(KnowledgeBase.newBuilder().build())
    *           .build();
    *   KnowledgeBase response = knowledgeBasesClient.createKnowledgeBase(request);
@@ -594,9 +584,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
    *   CreateKnowledgeBaseRequest request =
    *       CreateKnowledgeBaseRequest.newBuilder()
-   *           .setParent(
-   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setKnowledgeBase(KnowledgeBase.newBuilder().build())
    *           .build();
    *   ApiFuture<KnowledgeBase> future =

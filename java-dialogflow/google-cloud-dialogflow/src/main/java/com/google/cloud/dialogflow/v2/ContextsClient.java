@@ -185,8 +185,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   String parent =
-   *       ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]").toString();
+   *   String parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString();
    *   for (Context element : contextsClient.listContexts(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -215,9 +214,7 @@ public class ContextsClient implements BackgroundResource {
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
-   *           .setParent(
-   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -244,9 +241,7 @@ public class ContextsClient implements BackgroundResource {
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
-   *           .setParent(
-   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -273,9 +268,7 @@ public class ContextsClient implements BackgroundResource {
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
-   *           .setParent(
-   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -445,8 +438,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   String parent =
-   *       ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]").toString();
+   *   String parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString();
    *   Context context = Context.newBuilder().build();
    *   Context response = contextsClient.createContext(parent, context);
    * }
@@ -478,9 +470,7 @@ public class ContextsClient implements BackgroundResource {
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   CreateContextRequest request =
    *       CreateContextRequest.newBuilder()
-   *           .setParent(
-   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setContext(Context.newBuilder().build())
    *           .build();
    *   Context response = contextsClient.createContext(request);
@@ -506,9 +496,7 @@ public class ContextsClient implements BackgroundResource {
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   CreateContextRequest request =
    *       CreateContextRequest.newBuilder()
-   *           .setParent(
-   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .setContext(Context.newBuilder().build())
    *           .build();
    *   ApiFuture<Context> future = contextsClient.createContextCallable().futureCall(request);
@@ -732,8 +720,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   String parent =
-   *       ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]").toString();
+   *   String parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString();
    *   contextsClient.deleteAllContexts(parent);
    * }
    * }</pre>
@@ -761,9 +748,7 @@ public class ContextsClient implements BackgroundResource {
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   DeleteAllContextsRequest request =
    *       DeleteAllContextsRequest.newBuilder()
-   *           .setParent(
-   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .build();
    *   contextsClient.deleteAllContexts(request);
    * }
@@ -786,9 +771,7 @@ public class ContextsClient implements BackgroundResource {
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   DeleteAllContextsRequest request =
    *       DeleteAllContextsRequest.newBuilder()
-   *           .setParent(
-   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-   *                   .toString())
+   *           .setParent(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
    *           .build();
    *   ApiFuture<Empty> future = contextsClient.deleteAllContextsCallable().futureCall(request);
    *   // Do something.

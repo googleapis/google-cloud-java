@@ -223,10 +223,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    * <pre>{@code
    * try (ConversationProfilesClient conversationProfilesClient =
    *     ConversationProfilesClient.create()) {
-   *   String parent =
-   *       ConversationProfileName.ofProjectConversationProfileName(
-   *               "[PROJECT]", "[CONVERSATION_PROFILE]")
-   *           .toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (ConversationProfile element :
    *       conversationProfilesClient.listConversationProfiles(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -255,10 +252,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     ConversationProfilesClient.create()) {
    *   ListConversationProfilesRequest request =
    *       ListConversationProfilesRequest.newBuilder()
-   *           .setParent(
-   *               ConversationProfileName.ofProjectConversationProfileName(
-   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -288,10 +282,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     ConversationProfilesClient.create()) {
    *   ListConversationProfilesRequest request =
    *       ListConversationProfilesRequest.newBuilder()
-   *           .setParent(
-   *               ConversationProfileName.ofProjectConversationProfileName(
-   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -320,10 +311,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     ConversationProfilesClient.create()) {
    *   ListConversationProfilesRequest request =
    *       ListConversationProfilesRequest.newBuilder()
-   *           .setParent(
-   *               ConversationProfileName.ofProjectConversationProfileName(
-   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -546,10 +534,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    * <pre>{@code
    * try (ConversationProfilesClient conversationProfilesClient =
    *     ConversationProfilesClient.create()) {
-   *   String parent =
-   *       ConversationProfileName.ofProjectConversationProfileName(
-   *               "[PROJECT]", "[CONVERSATION_PROFILE]")
-   *           .toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   ConversationProfile conversationProfile = ConversationProfile.newBuilder().build();
    *   ConversationProfile response =
    *       conversationProfilesClient.createConversationProfile(parent, conversationProfile);
@@ -587,10 +572,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     ConversationProfilesClient.create()) {
    *   CreateConversationProfileRequest request =
    *       CreateConversationProfileRequest.newBuilder()
-   *           .setParent(
-   *               ConversationProfileName.ofProjectConversationProfileName(
-   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setConversationProfile(ConversationProfile.newBuilder().build())
    *           .build();
    *   ConversationProfile response = conversationProfilesClient.createConversationProfile(request);
@@ -621,10 +603,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     ConversationProfilesClient.create()) {
    *   CreateConversationProfileRequest request =
    *       CreateConversationProfileRequest.newBuilder()
-   *           .setParent(
-   *               ConversationProfileName.ofProjectConversationProfileName(
-   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
-   *                   .toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setConversationProfile(ConversationProfile.newBuilder().build())
    *           .build();
    *   ApiFuture<ConversationProfile> future =
