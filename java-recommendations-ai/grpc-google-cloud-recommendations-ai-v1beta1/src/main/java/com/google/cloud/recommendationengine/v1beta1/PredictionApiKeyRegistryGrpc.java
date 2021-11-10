@@ -32,6 +32,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler",
     comments =
         "Source: google/cloud/recommendationengine/v1beta1/prediction_apikey_registry_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class PredictionApiKeyRegistryGrpc {
 
   private PredictionApiKeyRegistryGrpc() {}
