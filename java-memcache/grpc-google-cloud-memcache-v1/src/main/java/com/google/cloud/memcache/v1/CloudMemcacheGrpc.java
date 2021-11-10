@@ -38,6 +38,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/memcache/v1/cloud_memcache.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CloudMemcacheGrpc {
 
   private CloudMemcacheGrpc() {}
