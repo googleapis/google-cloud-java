@@ -35,6 +35,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/area120/tables/v1alpha1/tables.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class TablesServiceGrpc {
 
   private TablesServiceGrpc() {}
