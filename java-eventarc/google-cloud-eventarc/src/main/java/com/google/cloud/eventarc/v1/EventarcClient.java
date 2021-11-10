@@ -283,7 +283,7 @@ public class EventarcClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
-   *   String parent = TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Trigger element : eventarcClient.listTriggers(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -308,7 +308,7 @@ public class EventarcClient implements BackgroundResource {
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
    *   ListTriggersRequest request =
    *       ListTriggersRequest.newBuilder()
-   *           .setParent(TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
@@ -336,7 +336,7 @@ public class EventarcClient implements BackgroundResource {
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
    *   ListTriggersRequest request =
    *       ListTriggersRequest.newBuilder()
-   *           .setParent(TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
@@ -364,7 +364,7 @@ public class EventarcClient implements BackgroundResource {
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
    *   ListTriggersRequest request =
    *       ListTriggersRequest.newBuilder()
-   *           .setParent(TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
@@ -427,7 +427,7 @@ public class EventarcClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
-   *   String parent = TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Trigger trigger = Trigger.newBuilder().build();
    *   String triggerId = "triggerId-648752909";
    *   Trigger response = eventarcClient.createTriggerAsync(parent, trigger, triggerId).get();
@@ -460,7 +460,7 @@ public class EventarcClient implements BackgroundResource {
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
    *   CreateTriggerRequest request =
    *       CreateTriggerRequest.newBuilder()
-   *           .setParent(TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTrigger(Trigger.newBuilder().build())
    *           .setTriggerId("triggerId-648752909")
    *           .setValidateOnly(true)
@@ -487,7 +487,7 @@ public class EventarcClient implements BackgroundResource {
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
    *   CreateTriggerRequest request =
    *       CreateTriggerRequest.newBuilder()
-   *           .setParent(TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTrigger(Trigger.newBuilder().build())
    *           .setTriggerId("triggerId-648752909")
    *           .setValidateOnly(true)
@@ -514,7 +514,7 @@ public class EventarcClient implements BackgroundResource {
    * try (EventarcClient eventarcClient = EventarcClient.create()) {
    *   CreateTriggerRequest request =
    *       CreateTriggerRequest.newBuilder()
-   *           .setParent(TriggerName.of("[PROJECT]", "[LOCATION]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTrigger(Trigger.newBuilder().build())
    *           .setTriggerId("triggerId-648752909")
    *           .setValidateOnly(true)
