@@ -217,8 +217,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   String parent =
-   *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   Company company = Company.newBuilder().build();
    *   Company response = companyServiceClient.createCompany(parent, company);
    * }
@@ -247,9 +246,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CreateCompanyRequest request =
    *       CreateCompanyRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setCompany(Company.newBuilder().build())
    *           .build();
    *   Company response = companyServiceClient.createCompany(request);
@@ -273,9 +270,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CreateCompanyRequest request =
    *       CreateCompanyRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setCompany(Company.newBuilder().build())
    *           .build();
    *   ApiFuture<Company> future = companyServiceClient.createCompanyCallable().futureCall(request);
@@ -628,8 +623,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   String parent =
-   *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -658,9 +652,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setRequireOpenJobs(true)
@@ -688,9 +680,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setRequireOpenJobs(true)
@@ -719,9 +709,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .setRequireOpenJobs(true)

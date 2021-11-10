@@ -36,9 +36,7 @@ import javax.annotation.Generated;
  * try (CompletionClient completionClient = CompletionClient.create()) {
  *   CompleteQueryRequest request =
  *       CompleteQueryRequest.newBuilder()
- *           .setParent(
- *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
- *                   .toString())
+ *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
  *           .setQuery("query107944136")
  *           .addAllLanguageCodes(new ArrayList<String>())
  *           .setPageSize(883849137)
@@ -159,9 +157,7 @@ public class CompletionClient implements BackgroundResource {
    * try (CompletionClient completionClient = CompletionClient.create()) {
    *   CompleteQueryRequest request =
    *       CompleteQueryRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setQuery("query107944136")
    *           .addAllLanguageCodes(new ArrayList<String>())
    *           .setPageSize(883849137)
@@ -191,9 +187,7 @@ public class CompletionClient implements BackgroundResource {
    * try (CompletionClient completionClient = CompletionClient.create()) {
    *   CompleteQueryRequest request =
    *       CompleteQueryRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setQuery("query107944136")
    *           .addAllLanguageCodes(new ArrayList<String>())
    *           .setPageSize(883849137)

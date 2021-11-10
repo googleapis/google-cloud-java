@@ -1138,7 +1138,7 @@ public class JobServiceClientTest {
 
     SearchJobsRequest request =
         SearchJobsRequest.newBuilder()
-            .setParent(JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+            .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
             .setRequestMetadata(RequestMetadata.newBuilder().build())
             .setJobQuery(JobQuery.newBuilder().build())
             .setEnableBroadening(true)
@@ -1195,8 +1195,7 @@ public class JobServiceClientTest {
     try {
       SearchJobsRequest request =
           SearchJobsRequest.newBuilder()
-              .setParent(
-                  JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+              .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
               .setRequestMetadata(RequestMetadata.newBuilder().build())
               .setJobQuery(JobQuery.newBuilder().build())
               .setEnableBroadening(true)
@@ -1230,7 +1229,7 @@ public class JobServiceClientTest {
 
     SearchJobsRequest request =
         SearchJobsRequest.newBuilder()
-            .setParent(JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+            .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
             .setRequestMetadata(RequestMetadata.newBuilder().build())
             .setJobQuery(JobQuery.newBuilder().build())
             .setEnableBroadening(true)
@@ -1287,8 +1286,7 @@ public class JobServiceClientTest {
     try {
       SearchJobsRequest request =
           SearchJobsRequest.newBuilder()
-              .setParent(
-                  JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+              .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
               .setRequestMetadata(RequestMetadata.newBuilder().build())
               .setJobQuery(JobQuery.newBuilder().build())
               .setEnableBroadening(true)

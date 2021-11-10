@@ -237,7 +237,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String parent = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   Job job = Job.newBuilder().build();
    *   Job response = jobServiceClient.createJob(parent, job);
    * }
@@ -267,8 +267,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setJob(Job.newBuilder().build())
    *           .build();
    *   Job response = jobServiceClient.createJob(request);
@@ -294,8 +293,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setJob(Job.newBuilder().build())
    *           .build();
    *   ApiFuture<Job> future = jobServiceClient.createJobCallable().futureCall(request);
@@ -378,7 +376,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String parent = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   List<Job> jobs = new ArrayList<>();
    *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
    * }
@@ -408,8 +406,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchCreateJobsRequest request =
    *       BatchCreateJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .addAllJobs(new ArrayList<Job>())
    *           .build();
    *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(request).get();
@@ -434,8 +431,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchCreateJobsRequest request =
    *       BatchCreateJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .addAllJobs(new ArrayList<Job>())
    *           .build();
    *   OperationFuture<JobOperationResult, BatchOperationMetadata> future =
@@ -460,8 +456,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchCreateJobsRequest request =
    *       BatchCreateJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .addAllJobs(new ArrayList<Job>())
    *           .build();
    *   ApiFuture<Operation> future = jobServiceClient.batchCreateJobsCallable().futureCall(request);
@@ -717,7 +712,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String parent = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   List<Job> jobs = new ArrayList<>();
    *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
    * }
@@ -747,8 +742,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchUpdateJobsRequest request =
    *       BatchUpdateJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .addAllJobs(new ArrayList<Job>())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -774,8 +768,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchUpdateJobsRequest request =
    *       BatchUpdateJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .addAllJobs(new ArrayList<Job>())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -801,8 +794,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchUpdateJobsRequest request =
    *       BatchUpdateJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .addAllJobs(new ArrayList<Job>())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1002,7 +994,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String parent = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   String filter = "filter-1274492040";
    *   jobServiceClient.batchDeleteJobs(parent, filter);
    * }
@@ -1038,8 +1030,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchDeleteJobsRequest request =
    *       BatchDeleteJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .build();
    *   jobServiceClient.batchDeleteJobs(request);
@@ -1063,8 +1054,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   BatchDeleteJobsRequest request =
    *       BatchDeleteJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Empty> future = jobServiceClient.batchDeleteJobsCallable().futureCall(request);
@@ -1179,7 +1169,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String parent = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   String filter = "filter-1274492040";
    *   for (Job element : jobServiceClient.listJobs(parent, filter).iterateAll()) {
    *     // doThingsWith(element);
@@ -1225,8 +1215,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1255,8 +1244,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1284,8 +1272,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1325,8 +1312,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   SearchJobsRequest request =
    *       SearchJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setRequestMetadata(RequestMetadata.newBuilder().build())
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
@@ -1369,8 +1355,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   SearchJobsRequest request =
    *       SearchJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setRequestMetadata(RequestMetadata.newBuilder().build())
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
@@ -1412,8 +1397,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   SearchJobsRequest request =
    *       SearchJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setRequestMetadata(RequestMetadata.newBuilder().build())
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
@@ -1464,8 +1448,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   SearchJobsRequest request =
    *       SearchJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setRequestMetadata(RequestMetadata.newBuilder().build())
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
@@ -1511,8 +1494,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   SearchJobsRequest request =
    *       SearchJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setRequestMetadata(RequestMetadata.newBuilder().build())
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
@@ -1558,8 +1540,7 @@ public class JobServiceClient implements BackgroundResource {
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
    *   SearchJobsRequest request =
    *       SearchJobsRequest.newBuilder()
-   *           .setParent(
-   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setRequestMetadata(RequestMetadata.newBuilder().build())
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)

@@ -186,7 +186,7 @@ public class ProfileServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   String parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   for (Profile element : profileServiceClient.listProfiles(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -213,7 +213,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ListProfilesRequest request =
    *       ListProfilesRequest.newBuilder()
-   *           .setParent(ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -242,7 +242,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ListProfilesRequest request =
    *       ListProfilesRequest.newBuilder()
-   *           .setParent(ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -272,7 +272,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ListProfilesRequest request =
    *       ListProfilesRequest.newBuilder()
-   *           .setParent(ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)

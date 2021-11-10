@@ -218,8 +218,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   String parent =
-   *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
    * }
@@ -252,9 +251,7 @@ public class EventServiceClient implements BackgroundResource {
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
    *   CreateClientEventRequest request =
    *       CreateClientEventRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setClientEvent(ClientEvent.newBuilder().build())
    *           .build();
    *   ClientEvent response = eventServiceClient.createClientEvent(request);
@@ -281,9 +278,7 @@ public class EventServiceClient implements BackgroundResource {
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
    *   CreateClientEventRequest request =
    *       CreateClientEventRequest.newBuilder()
-   *           .setParent(
-   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-   *                   .toString())
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
    *           .setClientEvent(ClientEvent.newBuilder().build())
    *           .build();
    *   ApiFuture<ClientEvent> future =

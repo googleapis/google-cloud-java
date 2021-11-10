@@ -87,9 +87,7 @@ public class CompletionClientTest {
 
     CompleteQueryRequest request =
         CompleteQueryRequest.newBuilder()
-            .setParent(
-                CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-                    .toString())
+            .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
             .setQuery("query107944136")
             .addAllLanguageCodes(new ArrayList<String>())
             .setPageSize(883849137)
@@ -126,9 +124,7 @@ public class CompletionClientTest {
     try {
       CompleteQueryRequest request =
           CompleteQueryRequest.newBuilder()
-              .setParent(
-                  CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
-                      .toString())
+              .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
               .setQuery("query107944136")
               .addAllLanguageCodes(new ArrayList<String>())
               .setPageSize(883849137)
