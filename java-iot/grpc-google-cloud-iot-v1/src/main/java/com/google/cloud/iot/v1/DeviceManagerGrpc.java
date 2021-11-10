@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/iot/v1/device_manager.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DeviceManagerGrpc {
 
   private DeviceManagerGrpc() {}
