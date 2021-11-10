@@ -183,7 +183,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String parent = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Job element : cloudSchedulerClient.listJobs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -209,7 +209,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
-   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -236,7 +236,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
-   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -262,7 +262,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
-   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -415,7 +415,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String parent = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Job job = Job.newBuilder().build();
    *   Job response = cloudSchedulerClient.createJob(parent, job);
    * }
@@ -445,7 +445,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
-   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setJob(Job.newBuilder().build())
    *           .build();
    *   Job response = cloudSchedulerClient.createJob(request);
@@ -469,7 +469,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
-   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setJob(Job.newBuilder().build())
    *           .build();
    *   ApiFuture<Job> future = cloudSchedulerClient.createJobCallable().futureCall(request);

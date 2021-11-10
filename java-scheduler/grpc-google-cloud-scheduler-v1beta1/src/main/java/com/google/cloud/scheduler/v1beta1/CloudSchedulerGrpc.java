@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/scheduler/v1beta1/cloudscheduler.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CloudSchedulerGrpc {
 
   private CloudSchedulerGrpc() {}
