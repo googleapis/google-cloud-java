@@ -310,7 +310,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Repository element : artifactRegistryClient.listRepositories(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -336,7 +336,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListRepositoriesRequest request =
    *       ListRepositoriesRequest.newBuilder()
-   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -363,7 +363,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListRepositoriesRequest request =
    *       ListRepositoriesRequest.newBuilder()
-   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -391,7 +391,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListRepositoriesRequest request =
    *       ListRepositoriesRequest.newBuilder()
-   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
