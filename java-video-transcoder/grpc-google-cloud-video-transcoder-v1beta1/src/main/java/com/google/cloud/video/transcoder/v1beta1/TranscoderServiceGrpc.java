@@ -32,6 +32,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/video/transcoder/v1beta1/services.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 @java.lang.Deprecated
 public final class TranscoderServiceGrpc {
 
