@@ -36,6 +36,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/resourcesettings/v1/resource_settings.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ResourceSettingsServiceGrpc {
 
   private ResourceSettingsServiceGrpc() {}
