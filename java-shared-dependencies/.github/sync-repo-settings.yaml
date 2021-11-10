@@ -67,6 +67,26 @@ branchProtectionRules:
       - dependencies (11, java-storage)
       - dependencies (11, java-pubsub)
       - cla/google
+  - pattern: 0.20.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - dependencies (8, java-bigqueryconnection)
+      - dependencies (8, java-storage)
+      - dependencies (8, java-pubsub)
+      - dependencies (11, java-bigqueryconnection)
+      - dependencies (11, java-storage)
+      - dependencies (11, java-pubsub)
+      - cla/google
 permissionRules:
   - team: yoshi-admins
     permission: admin
