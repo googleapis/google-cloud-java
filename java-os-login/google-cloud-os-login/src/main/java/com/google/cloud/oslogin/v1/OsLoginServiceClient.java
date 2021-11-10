@@ -368,7 +368,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   String name = ProjectName.of("[USER]", "[PROJECT]").toString();
+   *   String name = UserName.of("[USER]").toString();
    *   LoginProfile response = osLoginServiceClient.getLoginProfile(name);
    * }
    * }</pre>
@@ -392,7 +392,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   GetLoginProfileRequest request =
    *       GetLoginProfileRequest.newBuilder()
-   *           .setName(ProjectName.of("[USER]", "[PROJECT]").toString())
+   *           .setName(UserName.of("[USER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setSystemId("systemId1976085418")
    *           .build();
@@ -418,7 +418,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   GetLoginProfileRequest request =
    *       GetLoginProfileRequest.newBuilder()
-   *           .setName(ProjectName.of("[USER]", "[PROJECT]").toString())
+   *           .setName(UserName.of("[USER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setSystemId("systemId1976085418")
    *           .build();
@@ -566,7 +566,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   String parent = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   String parent = UserName.of("[USER]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
    *   ImportSshPublicKeyResponse response =
    *       osLoginServiceClient.importSshPublicKey(parent, sshPublicKey);
@@ -629,7 +629,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   String parent = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   String parent = UserName.of("[USER]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
    *   String projectId = "projectId-894832108";
    *   ImportSshPublicKeyResponse response =
@@ -664,7 +664,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
-   *           .setParent(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setParent(UserName.of("[USER]").toString())
    *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .build();
@@ -690,7 +690,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
-   *           .setParent(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setParent(UserName.of("[USER]").toString())
    *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .build();
