@@ -37,15 +37,13 @@ function determineMavenOpts() {
       | sed -E 's/^(1\.[0-9]\.0).*$/\1/g'
   )
 
-  case $javaVersion in
-    "17")
+  if [[ $javaVersion == 17* ]]
+    then
       # MaxPermSize is no longer supported as of jdk 17
       echo -n "-Xmx1024m"
-      ;;
-    *)
+  else
       echo -n "-Xmx1024m -XX:MaxPermSize=128m"
-      ;;
-  esac
+  fi
 }
 
 export MAVEN_OPTS=$(determineMavenOpts)
@@ -74,7 +72,7 @@ function completenessCheck() {
   # Raised issue: https://issues.apache.org/jira/browse/MDEP-737
   msg "Generating dependency list using flattened pom..."
   mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -DexcludeArtifactIds=annotations,protobuf-java-util,commons-codec,commons-logging,animal-sniffer-annotations -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' >.new-list.txt
-  
+
   # Compare two dependency lists
   msg "Comparing dependency lists..."
   diff .org-list.txt .new-list.txt >.diff.txt
