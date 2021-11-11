@@ -17,6 +17,7 @@
 package com.example.bigqueryconnection;
 
 // [START bigqueryconnection_create_aws_connection]
+import com.google.cloud.bigquery.connection.v1.AwsAccessRole;
 import com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole;
 import com.google.cloud.bigquery.connection.v1.AwsProperties;
 import com.google.cloud.bigquery.connection.v1.Connection;
@@ -54,12 +55,12 @@ public class CreateAwsConnection {
               .setConnectionId(connectionId)
               .build();
       Connection response = client.createConnection(request);
-      AwsCrossAccountRole role = response.getAws().getCrossAccountRole();
+      AwsAccessRole role = response.getAws().getAccessRole();
       System.out.println(
           "Aws connection created successfully : Aws userId :"
-              + role.getIamUserId()
+              + role.getIamRoleId()
               + " Aws externalId :"
-              + role.getExternalId());
+              + role.getIdentity());
     }
   }
 }

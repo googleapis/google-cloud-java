@@ -19,7 +19,7 @@ package com.example.bigqueryconnection;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole;
+import com.google.cloud.bigquery.connection.v1.AwsAccessRole;
 import com.google.cloud.bigquery.connection.v1.AwsProperties;
 import com.google.cloud.bigquery.connection.v1.Connection;
 import java.io.ByteArrayOutputStream;
@@ -83,8 +83,8 @@ public class CreateAwsConnectionIT {
   @Test
   public void testCreateAwsConnection() throws IOException {
     String iamRoleId = String.format("arn:aws:iam::%s:role/%s", AWS_ACCOUNT_ID, AWS_ROLE_ID);
-    AwsCrossAccountRole role = AwsCrossAccountRole.newBuilder().setIamRoleId(iamRoleId).build();
-    AwsProperties awsProperties = AwsProperties.newBuilder().setCrossAccountRole(role).build();
+    AwsAccessRole awsRole = AwsAccessRole.newBuilder().setIamRoleId(iamRoleId).build();
+    AwsProperties awsProperties = AwsProperties.newBuilder().setAccessRole(awsRole).build();
     Connection connection = Connection.newBuilder().setAws(awsProperties).build();
     CreateAwsConnection.createAwsConnection(PROJECT_ID, LOCATION, connectionId, connection);
     assertThat(bout.toString()).contains("Aws connection created successfully :");
