@@ -32,7 +32,22 @@
       <version>0.10.1</version>
     </dependency>
     <!-- [END dialogflow_cx_install_without_bom] -->
-
+    <dependency>
+      <groupId>com.google.cloud.functions</groupId>
+      <artifactId>functions-framework-api</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>3.12.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.7</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
