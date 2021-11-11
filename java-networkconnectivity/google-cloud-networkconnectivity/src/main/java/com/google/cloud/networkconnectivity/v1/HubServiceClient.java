@@ -403,7 +403,7 @@ public class HubServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource.
    * @param hub Required. The initial values for a new hub.
-   * @param hubId Optional. A unique identifier for the hub.
+   * @param hubId Required. A unique identifier for the hub.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hub, OperationMetadata> createHubAsync(
@@ -434,7 +434,7 @@ public class HubServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource.
    * @param hub Required. The initial values for a new hub.
-   * @param hubId Optional. A unique identifier for the hub.
+   * @param hubId Required. A unique identifier for the hub.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hub, OperationMetadata> createHubAsync(
@@ -984,7 +984,7 @@ public class HubServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource.
    * @param spoke Required. The initial values for a new spoke.
-   * @param spokeId Optional. Unique id for the spoke to create.
+   * @param spokeId Required. Unique id for the spoke to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Spoke, OperationMetadata> createSpokeAsync(
@@ -1015,7 +1015,7 @@ public class HubServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource.
    * @param spoke Required. The initial values for a new spoke.
-   * @param spokeId Optional. Unique id for the spoke to create.
+   * @param spokeId Required. Unique id for the spoke to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Spoke, OperationMetadata> createSpokeAsync(

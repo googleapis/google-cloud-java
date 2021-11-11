@@ -202,10 +202,10 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The spokeId.
    */
@@ -225,10 +225,10 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for spokeId.
    */
@@ -870,10 +870,10 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The spokeId.
      */
@@ -892,10 +892,10 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for spokeId.
      */
@@ -914,10 +914,10 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The spokeId to set.
      * @return This builder for chaining.
@@ -935,10 +935,10 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -952,10 +952,10 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for spokeId to set.
      * @return This builder for chaining.

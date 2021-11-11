@@ -202,10 +202,10 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique identifier for the hub.
+   * Required. A unique identifier for the hub.
    * </pre>
    *
-   * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The hubId.
    */
@@ -225,10 +225,10 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique identifier for the hub.
+   * Required. A unique identifier for the hub.
    * </pre>
    *
-   * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for hubId.
    */
@@ -868,10 +868,10 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The hubId.
      */
@@ -890,10 +890,10 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for hubId.
      */
@@ -912,10 +912,10 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The hubId to set.
      * @return This builder for chaining.
@@ -933,10 +933,10 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -950,10 +950,10 @@ public final class CreateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for hubId to set.
      * @return This builder for chaining.

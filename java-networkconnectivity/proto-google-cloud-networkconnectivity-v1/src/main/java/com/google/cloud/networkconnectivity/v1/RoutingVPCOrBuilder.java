@@ -27,7 +27,7 @@ public interface RoutingVPCOrBuilder
    *
    *
    * <pre>
-   * The URI of a VPC network.
+   * The URI of the VPC network.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -39,7 +39,7 @@ public interface RoutingVPCOrBuilder
    *
    *
    * <pre>
-   * The URI of a VPC network.
+   * The URI of the VPC network.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>

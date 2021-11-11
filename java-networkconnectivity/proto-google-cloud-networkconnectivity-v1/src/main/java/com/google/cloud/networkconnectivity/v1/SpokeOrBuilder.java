@@ -221,7 +221,7 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Immutable. The URI of the hub that this spoke is attached to.
+   * Immutable. The name of the hub that this spoke is attached to.
    * </pre>
    *
    * <code>
@@ -235,7 +235,7 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Immutable. The URI of the hub that this spoke is attached to.
+   * Immutable. The name of the hub that this spoke is attached to.
    * </pre>
    *
    * <code>

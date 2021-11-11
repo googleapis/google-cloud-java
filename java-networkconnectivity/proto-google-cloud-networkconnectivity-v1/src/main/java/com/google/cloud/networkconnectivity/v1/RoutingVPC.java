@@ -22,7 +22,7 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * RoutingsVPC contains information about a VPC network that is associated with
+ * RoutingVPC contains information about the VPC network that is associated with
  * a hub's spokes.
  * </pre>
  *
@@ -118,7 +118,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URI of a VPC network.
+   * The URI of the VPC network.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -141,7 +141,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URI of a VPC network.
+   * The URI of the VPC network.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -324,7 +324,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * RoutingsVPC contains information about a VPC network that is associated with
+   * RoutingVPC contains information about the VPC network that is associated with
    * a hub's spokes.
    * </pre>
    *
@@ -485,7 +485,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -507,7 +507,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -529,7 +529,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -550,7 +550,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -567,7 +567,7 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>

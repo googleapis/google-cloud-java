@@ -56,10 +56,10 @@ public interface CreateSpokeRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The spokeId.
    */
@@ -68,10 +68,10 @@ public interface CreateSpokeRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for spokeId.
    */

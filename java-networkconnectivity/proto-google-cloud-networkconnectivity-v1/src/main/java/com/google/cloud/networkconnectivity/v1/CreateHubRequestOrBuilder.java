@@ -56,10 +56,10 @@ public interface CreateHubRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A unique identifier for the hub.
+   * Required. A unique identifier for the hub.
    * </pre>
    *
-   * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The hubId.
    */
@@ -68,10 +68,10 @@ public interface CreateHubRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A unique identifier for the hub.
+   * Required. A unique identifier for the hub.
    * </pre>
    *
-   * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for hubId.
    */
