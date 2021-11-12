@@ -29,6 +29,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/bigtable/admin/v2/bigtable_table_admin.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class BigtableTableAdminGrpc {
 
   private BigtableTableAdminGrpc() {}
