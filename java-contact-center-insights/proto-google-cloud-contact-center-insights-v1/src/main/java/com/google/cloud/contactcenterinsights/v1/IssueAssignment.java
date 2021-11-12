@@ -257,13 +257,13 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIssueBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issue_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, issue_);
     }
     if (score_ != 0D) {
       output.writeDouble(2, score_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
     }
     unknownFields.writeTo(output);
@@ -275,13 +275,13 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getIssueBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issue_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, issue_);
     }
     if (score_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, score_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
     size += unknownFields.getSerializedSize();

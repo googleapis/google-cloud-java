@@ -390,7 +390,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getReplyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reply_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reply_);
     }
     if (confidenceScore_ != 0D) {
@@ -398,7 +398,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 3);
-    if (!getQueryRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryRecord_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, queryRecord_);
     }
     unknownFields.writeTo(output);
@@ -410,7 +410,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getReplyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reply_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reply_);
     }
     if (confidenceScore_ != 0D) {
@@ -426,7 +426,7 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, metadata__);
     }
-    if (!getQueryRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryRecord_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, queryRecord_);
     }
     size += unknownFields.getSerializedSize();

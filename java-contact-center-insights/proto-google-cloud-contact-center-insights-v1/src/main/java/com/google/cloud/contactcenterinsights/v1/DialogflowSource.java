@@ -237,10 +237,10 @@ public final class DialogflowSource extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDialogflowConversationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowConversation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dialogflowConversation_);
     }
-    if (!getAudioUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, audioUri_);
     }
     unknownFields.writeTo(output);
@@ -252,10 +252,10 @@ public final class DialogflowSource extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getDialogflowConversationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowConversation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dialogflowConversation_);
     }
-    if (!getAudioUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, audioUri_);
     }
     size += unknownFields.getSerializedSize();

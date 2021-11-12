@@ -95,6 +95,7 @@ import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -200,6 +201,8 @@ public class ContactCenterInsightsStubSettings
           ListPhraseMatchersRequest, ListPhraseMatchersResponse, ListPhraseMatchersPagedResponse>
       listPhraseMatchersSettings;
   private final UnaryCallSettings<DeletePhraseMatcherRequest, Empty> deletePhraseMatcherSettings;
+  private final UnaryCallSettings<UpdatePhraseMatcherRequest, PhraseMatcher>
+      updatePhraseMatcherSettings;
   private final UnaryCallSettings<CalculateStatsRequest, CalculateStatsResponse>
       calculateStatsSettings;
   private final UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings;
@@ -552,6 +555,12 @@ public class ContactCenterInsightsStubSettings
     return deletePhraseMatcherSettings;
   }
 
+  /** Returns the object with the settings used for calls to updatePhraseMatcher. */
+  public UnaryCallSettings<UpdatePhraseMatcherRequest, PhraseMatcher>
+      updatePhraseMatcherSettings() {
+    return updatePhraseMatcherSettings;
+  }
+
   /** Returns the object with the settings used for calls to calculateStats. */
   public UnaryCallSettings<CalculateStatsRequest, CalculateStatsResponse> calculateStatsSettings() {
     return calculateStatsSettings;
@@ -676,6 +685,7 @@ public class ContactCenterInsightsStubSettings
     getPhraseMatcherSettings = settingsBuilder.getPhraseMatcherSettings().build();
     listPhraseMatchersSettings = settingsBuilder.listPhraseMatchersSettings().build();
     deletePhraseMatcherSettings = settingsBuilder.deletePhraseMatcherSettings().build();
+    updatePhraseMatcherSettings = settingsBuilder.updatePhraseMatcherSettings().build();
     calculateStatsSettings = settingsBuilder.calculateStatsSettings().build();
     getSettingsSettings = settingsBuilder.getSettingsSettings().build();
     updateSettingsSettings = settingsBuilder.updateSettingsSettings().build();
@@ -752,6 +762,8 @@ public class ContactCenterInsightsStubSettings
         listPhraseMatchersSettings;
     private final UnaryCallSettings.Builder<DeletePhraseMatcherRequest, Empty>
         deletePhraseMatcherSettings;
+    private final UnaryCallSettings.Builder<UpdatePhraseMatcherRequest, PhraseMatcher>
+        updatePhraseMatcherSettings;
     private final UnaryCallSettings.Builder<CalculateStatsRequest, CalculateStatsResponse>
         calculateStatsSettings;
     private final UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings;
@@ -825,6 +837,7 @@ public class ContactCenterInsightsStubSettings
       getPhraseMatcherSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPhraseMatchersSettings = PagedCallSettings.newBuilder(LIST_PHRASE_MATCHERS_PAGE_STR_FACT);
       deletePhraseMatcherSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePhraseMatcherSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       calculateStatsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -856,6 +869,7 @@ public class ContactCenterInsightsStubSettings
               getPhraseMatcherSettings,
               listPhraseMatchersSettings,
               deletePhraseMatcherSettings,
+              updatePhraseMatcherSettings,
               calculateStatsSettings,
               getSettingsSettings,
               updateSettingsSettings);
@@ -898,6 +912,7 @@ public class ContactCenterInsightsStubSettings
       getPhraseMatcherSettings = settings.getPhraseMatcherSettings.toBuilder();
       listPhraseMatchersSettings = settings.listPhraseMatchersSettings.toBuilder();
       deletePhraseMatcherSettings = settings.deletePhraseMatcherSettings.toBuilder();
+      updatePhraseMatcherSettings = settings.updatePhraseMatcherSettings.toBuilder();
       calculateStatsSettings = settings.calculateStatsSettings.toBuilder();
       getSettingsSettings = settings.getSettingsSettings.toBuilder();
       updateSettingsSettings = settings.updateSettingsSettings.toBuilder();
@@ -929,6 +944,7 @@ public class ContactCenterInsightsStubSettings
               getPhraseMatcherSettings,
               listPhraseMatchersSettings,
               deletePhraseMatcherSettings,
+              updatePhraseMatcherSettings,
               calculateStatsSettings,
               getSettingsSettings,
               updateSettingsSettings);
@@ -1070,6 +1086,11 @@ public class ContactCenterInsightsStubSettings
 
       builder
           .deletePhraseMatcherSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updatePhraseMatcherSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1453,6 +1474,12 @@ public class ContactCenterInsightsStubSettings
     public UnaryCallSettings.Builder<DeletePhraseMatcherRequest, Empty>
         deletePhraseMatcherSettings() {
       return deletePhraseMatcherSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePhraseMatcher. */
+    public UnaryCallSettings.Builder<UpdatePhraseMatcherRequest, PhraseMatcher>
+        updatePhraseMatcherSettings() {
+      return updatePhraseMatcherSettings;
     }
 
     /** Returns the builder for the settings used for calls to calculateStats. */

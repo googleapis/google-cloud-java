@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/contactcenterinsights/v1/contact_center_insights.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ContactCenterInsightsGrpc {
 
   private ContactCenterInsightsGrpc() {}
@@ -1235,6 +1236,56 @@ public final class ContactCenterInsightsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest,
+          com.google.cloud.contactcenterinsights.v1.PhraseMatcher>
+      getUpdatePhraseMatcherMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePhraseMatcher",
+      requestType = com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.PhraseMatcher.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest,
+          com.google.cloud.contactcenterinsights.v1.PhraseMatcher>
+      getUpdatePhraseMatcherMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest,
+            com.google.cloud.contactcenterinsights.v1.PhraseMatcher>
+        getUpdatePhraseMatcherMethod;
+    if ((getUpdatePhraseMatcherMethod = ContactCenterInsightsGrpc.getUpdatePhraseMatcherMethod)
+        == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getUpdatePhraseMatcherMethod = ContactCenterInsightsGrpc.getUpdatePhraseMatcherMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getUpdatePhraseMatcherMethod =
+              getUpdatePhraseMatcherMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest,
+                          com.google.cloud.contactcenterinsights.v1.PhraseMatcher>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdatePhraseMatcher"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.PhraseMatcher
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("UpdatePhraseMatcher"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePhraseMatcherMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest,
           com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse>
       getCalculateStatsMethod;
@@ -1800,6 +1851,21 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Updates a phrase matcher.
+     * </pre>
+     */
+    public void updatePhraseMatcher(
+        com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.PhraseMatcher>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePhraseMatcherMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets conversation statistics.
      * </pre>
      */
@@ -2010,6 +2076,13 @@ public final class ContactCenterInsightsGrpc {
                   new MethodHandlers<
                       com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_PHRASE_MATCHER)))
+          .addMethod(
+              getUpdatePhraseMatcherMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest,
+                      com.google.cloud.contactcenterinsights.v1.PhraseMatcher>(
+                      this, METHODID_UPDATE_PHRASE_MATCHER)))
           .addMethod(
               getCalculateStatsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2477,6 +2550,23 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Updates a phrase matcher.
+     * </pre>
+     */
+    public void updatePhraseMatcher(
+        com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.PhraseMatcher>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePhraseMatcherMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets conversation statistics.
      * </pre>
      */
@@ -2873,6 +2963,19 @@ public final class ContactCenterInsightsGrpc {
         com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePhraseMatcherMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a phrase matcher.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.PhraseMatcher updatePhraseMatcher(
+        com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePhraseMatcherMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3298,6 +3401,21 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Updates a phrase matcher.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.contactcenterinsights.v1.PhraseMatcher>
+        updatePhraseMatcher(
+            com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePhraseMatcherMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets conversation statistics.
      * </pre>
      */
@@ -3362,9 +3480,10 @@ public final class ContactCenterInsightsGrpc {
   private static final int METHODID_GET_PHRASE_MATCHER = 22;
   private static final int METHODID_LIST_PHRASE_MATCHERS = 23;
   private static final int METHODID_DELETE_PHRASE_MATCHER = 24;
-  private static final int METHODID_CALCULATE_STATS = 25;
-  private static final int METHODID_GET_SETTINGS = 26;
-  private static final int METHODID_UPDATE_SETTINGS = 27;
+  private static final int METHODID_UPDATE_PHRASE_MATCHER = 25;
+  private static final int METHODID_CALCULATE_STATS = 26;
+  private static final int METHODID_GET_SETTINGS = 27;
+  private static final int METHODID_UPDATE_SETTINGS = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3530,6 +3649,12 @@ public final class ContactCenterInsightsGrpc {
               (com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_UPDATE_PHRASE_MATCHER:
+          serviceImpl.updatePhraseMatcher(
+              (com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.PhraseMatcher>)
+                  responseObserver);
+          break;
         case METHODID_CALCULATE_STATS:
           serviceImpl.calculateStats(
               (com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest) request,
@@ -3638,6 +3763,7 @@ public final class ContactCenterInsightsGrpc {
                       .addMethod(getGetPhraseMatcherMethod())
                       .addMethod(getListPhraseMatchersMethod())
                       .addMethod(getDeletePhraseMatcherMethod())
+                      .addMethod(getUpdatePhraseMatcherMethod())
                       .addMethod(getCalculateStatsMethod())
                       .addMethod(getGetSettingsMethod())
                       .addMethod(getUpdateSettingsMethod())

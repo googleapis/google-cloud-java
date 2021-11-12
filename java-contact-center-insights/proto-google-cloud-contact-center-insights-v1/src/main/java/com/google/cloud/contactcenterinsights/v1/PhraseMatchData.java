@@ -232,10 +232,10 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPhraseMatcherBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phraseMatcher_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phraseMatcher_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     unknownFields.writeTo(output);
@@ -247,10 +247,10 @@ public final class PhraseMatchData extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getPhraseMatcherBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phraseMatcher_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, phraseMatcher_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     size += unknownFields.getSerializedSize();

@@ -586,6 +586,27 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
   }
 
   @Override
+  public void updatePhraseMatcher(
+      UpdatePhraseMatcherRequest request, StreamObserver<PhraseMatcher> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PhraseMatcher) {
+      requests.add(request);
+      responseObserver.onNext(((PhraseMatcher) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdatePhraseMatcher, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PhraseMatcher.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void calculateStats(
       CalculateStatsRequest request, StreamObserver<CalculateStatsResponse> responseObserver) {
     Object response = responses.poll();

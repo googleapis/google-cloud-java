@@ -2146,6 +2146,55 @@ public class ContactCenterInsightsClientTest {
   }
 
   @Test
+  public void updatePhraseMatcherTest() throws Exception {
+    PhraseMatcher expectedResponse =
+        PhraseMatcher.newBuilder()
+            .setName(PhraseMatcherName.of("[PROJECT]", "[LOCATION]", "[PHRASE_MATCHER]").toString())
+            .setRevisionId("revisionId-1507445162")
+            .setVersionTag("versionTag-670508126")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setActive(true)
+            .addAllPhraseMatchRuleGroups(new ArrayList<PhraseMatchRuleGroup>())
+            .setActivationUpdateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    PhraseMatcher phraseMatcher = PhraseMatcher.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    PhraseMatcher actualResponse = client.updatePhraseMatcher(phraseMatcher, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdatePhraseMatcherRequest actualRequest = ((UpdatePhraseMatcherRequest) actualRequests.get(0));
+
+    Assert.assertEquals(phraseMatcher, actualRequest.getPhraseMatcher());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePhraseMatcherExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      PhraseMatcher phraseMatcher = PhraseMatcher.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePhraseMatcher(phraseMatcher, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void calculateStatsTest() throws Exception {
     CalculateStatsResponse expectedResponse =
         CalculateStatsResponse.newBuilder()
@@ -2155,6 +2204,7 @@ public class ContactCenterInsightsClientTest {
             .putAllSmartHighlighterMatches(new HashMap<String, Integer>())
             .putAllCustomHighlighterMatches(new HashMap<String, Integer>())
             .putAllIssueMatches(new HashMap<String, Integer>())
+            .putAllIssueMatchesStats(new HashMap<String, IssueModelLabelStats.IssueStats>())
             .setConversationCountTimeSeries(CalculateStatsResponse.TimeSeries.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
@@ -2199,6 +2249,7 @@ public class ContactCenterInsightsClientTest {
             .putAllSmartHighlighterMatches(new HashMap<String, Integer>())
             .putAllCustomHighlighterMatches(new HashMap<String, Integer>())
             .putAllIssueMatches(new HashMap<String, Integer>())
+            .putAllIssueMatchesStats(new HashMap<String, IssueModelLabelStats.IssueStats>())
             .setConversationCountTimeSeries(CalculateStatsResponse.TimeSeries.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);

@@ -288,6 +288,90 @@ public interface CalculateStatsResponseOrBuilder
    *
    *
    * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;
+   * </code>
+   */
+  int getIssueMatchesStatsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;
+   * </code>
+   */
+  boolean containsIssueMatchesStats(java.lang.String key);
+  /** Use {@link #getIssueMatchesStatsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<
+          java.lang.String,
+          com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+      getIssueMatchesStats();
+  /**
+   *
+   *
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;
+   * </code>
+   */
+  java.util.Map<
+          java.lang.String,
+          com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+      getIssueMatchesStatsMap();
+  /**
+   *
+   *
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
+      getIssueMatchesStatsOrDefault(
+          java.lang.String key,
+          com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
+      getIssueMatchesStatsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * A time series representing the count of conversations created over time
    * that match that requested filter criteria.
    * </pre>

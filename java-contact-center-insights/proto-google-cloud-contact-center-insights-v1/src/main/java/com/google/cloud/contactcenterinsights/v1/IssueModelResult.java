@@ -264,7 +264,7 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIssueModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issueModel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, issueModel_);
     }
     for (int i = 0; i < issues_.size(); i++) {
@@ -279,7 +279,7 @@ public final class IssueModelResult extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getIssueModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issueModel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, issueModel_);
     }
     for (int i = 0; i < issues_.size(); i++) {

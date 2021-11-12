@@ -76,6 +76,7 @@ import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -368,6 +369,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdatePhraseMatcherRequest, PhraseMatcher>
+      updatePhraseMatcherMethodDescriptor =
+          MethodDescriptor.<UpdatePhraseMatcherRequest, PhraseMatcher>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdatePhraseMatcher")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdatePhraseMatcherRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PhraseMatcher.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CalculateStatsRequest, CalculateStatsResponse>
       calculateStatsMethodDescriptor =
           MethodDescriptor.<CalculateStatsRequest, CalculateStatsResponse>newBuilder()
@@ -451,6 +463,8 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final UnaryCallable<ListPhraseMatchersRequest, ListPhraseMatchersPagedResponse>
       listPhraseMatchersPagedCallable;
   private final UnaryCallable<DeletePhraseMatcherRequest, Empty> deletePhraseMatcherCallable;
+  private final UnaryCallable<UpdatePhraseMatcherRequest, PhraseMatcher>
+      updatePhraseMatcherCallable;
   private final UnaryCallable<CalculateStatsRequest, CalculateStatsResponse> calculateStatsCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
@@ -756,6 +770,19 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<UpdatePhraseMatcherRequest, PhraseMatcher>
+        updatePhraseMatcherTransportSettings =
+            GrpcCallSettings.<UpdatePhraseMatcherRequest, PhraseMatcher>newBuilder()
+                .setMethodDescriptor(updatePhraseMatcherMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "phrase_matcher.name",
+                          String.valueOf(request.getPhraseMatcher().getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<CalculateStatsRequest, CalculateStatsResponse>
         calculateStatsTransportSettings =
             GrpcCallSettings.<CalculateStatsRequest, CalculateStatsResponse>newBuilder()
@@ -931,6 +958,11 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
         callableFactory.createUnaryCallable(
             deletePhraseMatcherTransportSettings,
             settings.deletePhraseMatcherSettings(),
+            clientContext);
+    this.updatePhraseMatcherCallable =
+        callableFactory.createUnaryCallable(
+            updatePhraseMatcherTransportSettings,
+            settings.updatePhraseMatcherSettings(),
             clientContext);
     this.calculateStatsCallable =
         callableFactory.createUnaryCallable(
@@ -1132,6 +1164,11 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   @Override
   public UnaryCallable<DeletePhraseMatcherRequest, Empty> deletePhraseMatcherCallable() {
     return deletePhraseMatcherCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePhraseMatcherRequest, PhraseMatcher> updatePhraseMatcherCallable() {
+    return updatePhraseMatcherCallable;
   }
 
   @Override

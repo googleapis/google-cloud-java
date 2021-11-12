@@ -690,7 +690,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDialogflowParticipantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowParticipant_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dialogflowParticipant_);
     }
     if (role_
@@ -698,7 +698,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
             .getNumber()) {
       output.writeEnum(2, role_);
     }
-    if (!getObfuscatedExternalUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedExternalUserId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, obfuscatedExternalUserId_);
     }
     if (participantCase_ == 5) {
@@ -716,7 +716,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getDialogflowParticipantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowParticipant_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dialogflowParticipant_);
     }
     if (role_
@@ -724,7 +724,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, role_);
     }
-    if (!getObfuscatedExternalUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedExternalUserId_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(3, obfuscatedExternalUserId_);
     }

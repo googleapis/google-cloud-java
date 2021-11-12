@@ -72,6 +72,7 @@ import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -241,6 +242,10 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
 
   public UnaryCallable<DeletePhraseMatcherRequest, Empty> deletePhraseMatcherCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePhraseMatcherCallable()");
+  }
+
+  public UnaryCallable<UpdatePhraseMatcherRequest, PhraseMatcher> updatePhraseMatcherCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePhraseMatcherCallable()");
   }
 
   public UnaryCallable<CalculateStatsRequest, CalculateStatsResponse> calculateStatsCallable() {

@@ -91,6 +91,9 @@
             "UpdateIssueModel": {
               "methods": ["updateIssueModel", "updateIssueModel", "updateIssueModelCallable"]
             },
+            "UpdatePhraseMatcher": {
+              "methods": ["updatePhraseMatcher", "updatePhraseMatcher", "updatePhraseMatcherCallable"]
+            },
             "UpdateSettings": {
               "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
             }

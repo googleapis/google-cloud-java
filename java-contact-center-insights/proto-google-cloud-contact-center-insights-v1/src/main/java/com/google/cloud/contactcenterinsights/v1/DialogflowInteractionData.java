@@ -200,7 +200,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDialogflowIntentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowIntentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dialogflowIntentId_);
     }
     if (confidence_ != 0F) {
@@ -215,7 +215,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getDialogflowIntentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowIntentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dialogflowIntentId_);
     }
     if (confidence_ != 0F) {

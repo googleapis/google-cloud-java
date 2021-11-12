@@ -390,7 +390,7 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSuggestionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, suggestion_);
     }
     if (confidenceScore_ != 0D) {
@@ -398,7 +398,7 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 3);
-    if (!getQueryRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryRecord_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, queryRecord_);
     }
     unknownFields.writeTo(output);
@@ -410,7 +410,7 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getSuggestionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, suggestion_);
     }
     if (confidenceScore_ != 0D) {
@@ -426,7 +426,7 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, metadata__);
     }
-    if (!getQueryRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryRecord_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, queryRecord_);
     }
     size += unknownFields.getSerializedSize();

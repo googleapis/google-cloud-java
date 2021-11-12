@@ -2948,6 +2948,87 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates a phrase matcher.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   PhraseMatcher phraseMatcher = PhraseMatcher.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PhraseMatcher response =
+   *       contactCenterInsightsClient.updatePhraseMatcher(phraseMatcher, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param phraseMatcher Required. The new values for the phrase matcher.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PhraseMatcher updatePhraseMatcher(
+      PhraseMatcher phraseMatcher, FieldMask updateMask) {
+    UpdatePhraseMatcherRequest request =
+        UpdatePhraseMatcherRequest.newBuilder()
+            .setPhraseMatcher(phraseMatcher)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePhraseMatcher(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a phrase matcher.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdatePhraseMatcherRequest request =
+   *       UpdatePhraseMatcherRequest.newBuilder()
+   *           .setPhraseMatcher(PhraseMatcher.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   PhraseMatcher response = contactCenterInsightsClient.updatePhraseMatcher(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PhraseMatcher updatePhraseMatcher(UpdatePhraseMatcherRequest request) {
+    return updatePhraseMatcherCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a phrase matcher.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdatePhraseMatcherRequest request =
+   *       UpdatePhraseMatcherRequest.newBuilder()
+   *           .setPhraseMatcher(PhraseMatcher.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<PhraseMatcher> future =
+   *       contactCenterInsightsClient.updatePhraseMatcherCallable().futureCall(request);
+   *   // Do something.
+   *   PhraseMatcher response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePhraseMatcherRequest, PhraseMatcher>
+      updatePhraseMatcherCallable() {
+    return stub.updatePhraseMatcherCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets conversation statistics.
    *
    * <p>Sample code:
