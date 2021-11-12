@@ -194,7 +194,7 @@ With Logging you can also list log entries that have been previously written. Ad
 imports at the top of your file:
 
 ```java
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging.EntryListOption;
 ```
@@ -204,12 +204,13 @@ Then, to list the log entries, use the following code:
 ``` java
 Page<LogEntry> entries = logging.listLogEntries(
     EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
-Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
-while (entryIterator.hasNext()) {
-  System.out.println(entryIterator.next());
+while (entries != null) {
+  for (LogEntry logEntry : entries.iterateAll()) {
+    System.out.println(logEntry);
+  }
+  entries = entries.getNextPage();
 }
 ```
-
 #### Add a Cloud Logging handler to a logger
 
 You can also register a `LoggingHandler` to a `java.util.logging.Logger` that publishes log entries
@@ -234,15 +235,6 @@ file. Adding, for instance, the following line:
 com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
 ```
 
-#### Complete source code
-
-In
-[CreateAndListMetrics.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/CreateAndListMetrics.java),
-[WriteAndListLogEntries.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java)
-and
-[AddLoggingHandler.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java)
-we put together all the code shown above into three programs. The programs assume that you are
-running on Compute Engine or from your own desktop.
 
 
 
