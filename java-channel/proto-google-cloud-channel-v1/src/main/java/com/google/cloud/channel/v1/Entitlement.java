@@ -1289,7 +1289,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * parameter names and values are defined in the
    * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
    * The response may include the following output-only Parameters:
-   * - assigned_units: The number of licenses assigned to a user.
+   * - assigned_units: The number of licenses assigned to users.
    * - max_units: The maximum assignable units for a flexible offer.
    * - num_units: The total commitment for commitment-based offers.
    * </pre>
@@ -1308,7 +1308,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * parameter names and values are defined in the
    * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
    * The response may include the following output-only Parameters:
-   * - assigned_units: The number of licenses assigned to a user.
+   * - assigned_units: The number of licenses assigned to users.
    * - max_units: The maximum assignable units for a flexible offer.
    * - num_units: The total commitment for commitment-based offers.
    * </pre>
@@ -1328,7 +1328,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * parameter names and values are defined in the
    * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
    * The response may include the following output-only Parameters:
-   * - assigned_units: The number of licenses assigned to a user.
+   * - assigned_units: The number of licenses assigned to users.
    * - max_units: The maximum assignable units for a flexible offer.
    * - num_units: The total commitment for commitment-based offers.
    * </pre>
@@ -1347,7 +1347,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * parameter names and values are defined in the
    * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
    * The response may include the following output-only Parameters:
-   * - assigned_units: The number of licenses assigned to a user.
+   * - assigned_units: The number of licenses assigned to users.
    * - max_units: The maximum assignable units for a flexible offer.
    * - num_units: The total commitment for commitment-based offers.
    * </pre>
@@ -1366,7 +1366,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * parameter names and values are defined in the
    * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
    * The response may include the following output-only Parameters:
-   * - assigned_units: The number of licenses assigned to a user.
+   * - assigned_units: The number of licenses assigned to users.
    * - max_units: The maximum assignable units for a flexible offer.
    * - num_units: The total commitment for commitment-based offers.
    * </pre>
@@ -3938,7 +3938,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -3960,7 +3960,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -3982,7 +3982,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4004,7 +4004,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4032,7 +4032,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4058,7 +4058,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4086,7 +4086,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4114,7 +4114,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4139,7 +4139,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4165,7 +4165,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4191,7 +4191,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4216,7 +4216,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4241,7 +4241,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4259,7 +4259,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4281,7 +4281,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4304,7 +4304,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4323,7 +4323,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
@@ -4342,7 +4342,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * parameter names and values are defined in the
      * [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions].
      * The response may include the following output-only Parameters:
-     * - assigned_units: The number of licenses assigned to a user.
+     * - assigned_units: The number of licenses assigned to users.
      * - max_units: The maximum assignable units for a flexible offer.
      * - num_units: The total commitment for commitment-based offers.
      * </pre>
