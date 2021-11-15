@@ -27,7 +27,9 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
+import com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode;
 import com.google.common.base.Strings;
+import com.google.protobuf.Any;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
@@ -303,6 +305,96 @@ public class StreamWriterTest {
 
     writer.close();
   }
+
+  @Test
+  public void testAppendFailedSchemaError() throws Exception {
+    StreamWriter writer = getTestStreamWriter();
+
+    StorageError storageError =
+        StorageError.newBuilder()
+            .setCode(StorageErrorCode.SCHEMA_MISMATCH_EXTRA_FIELDS)
+            .setEntity("foobar")
+            .build();
+    com.google.rpc.Status statusProto =
+        com.google.rpc.Status.newBuilder()
+            .setCode(Code.INVALID_ARGUMENT.getHttpStatusCode())
+            .addDetails(Any.pack(storageError))
+            .build();
+
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setError(statusProto).build());
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
+
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    Exceptions.SchemaMismatchedException actualError =
+        assertFutureException(Exceptions.SchemaMismatchedException.class, appendFuture2);
+    assertEquals("foobar", actualError.getStreamName());
+    assertEquals(1, appendFuture3.get().getAppendResult().getOffset().getValue());
+
+    writer.close();
+  }
+
+  @Test
+  public void testAppendFailedOnDone() throws Exception {
+    StreamWriter writer = getTestStreamWriter();
+
+    StatusRuntimeException exception =
+        new StatusRuntimeException(
+            io.grpc.Status.INVALID_ARGUMENT.withDescription(
+                "io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Input schema has more fields than BigQuery schema"));
+
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addException(exception);
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    Exceptions.SchemaMismatchedException actualError =
+        assertFutureException(Exceptions.SchemaMismatchedException.class, appendFuture2);
+    assertTrue(
+        actualError
+            .getMessage()
+            .contains(
+                "io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Input schema has more fields than BigQuery schema"));
+
+    writer.close();
+  }
+
+  // TODO(stephwang): update test case to below when toStorageException is updated
+  // @Test
+  // public void testAppendFailedOnDone2() throws Exception {
+  //   StreamWriter writer = getTestStreamWriter();
+  //
+  //   StorageError storageError =
+  //       StorageError.newBuilder()
+  //           .setCode(StorageErrorCode.SCHEMA_MISMATCH_EXTRA_FIELDS)
+  //           .setEntity("foobar")
+  //           .build();
+  //   com.google.rpc.Status statusProto =
+  //       com.google.rpc.Status.newBuilder()
+  //           .addDetails(Any.pack(storageError))
+  //           .build();
+  //
+  //   StatusRuntimeException exception = StatusProto.toStatusRuntimeException(statusProto);
+  //
+  //   testBigQueryWrite.addResponse(createAppendResponse(0));
+  //   testBigQueryWrite.addException(exception);
+  //
+  //   ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+  //   ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+  //
+  //   assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+  //   Exceptions.SchemaMismatchedException actualError =
+  //       assertFutureException(Exceptions.SchemaMismatchedException.class, appendFuture2);
+  //   assertEquals("foobar", actualError.getStreamName());
+  //
+  //   writer.close();
+  // }
 
   @Test
   public void longIdleBetweenAppends() throws Exception {

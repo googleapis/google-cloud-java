@@ -460,11 +460,17 @@ public class StreamWriter implements AutoCloseable {
       this.lock.unlock();
     }
     if (response.hasError()) {
-      StatusRuntimeException exception =
-          new StatusRuntimeException(
-              Status.fromCodeValue(response.getError().getCode())
-                  .withDescription(response.getError().getMessage()));
-      requestWrapper.appendResult.setException(exception);
+      Exceptions.StorageException storageException =
+          Exceptions.toStorageException(response.getError(), null);
+      if (storageException != null) {
+        requestWrapper.appendResult.setException(storageException);
+      } else {
+        StatusRuntimeException exception =
+            new StatusRuntimeException(
+                Status.fromCodeValue(response.getError().getCode())
+                    .withDescription(response.getError().getMessage()));
+        requestWrapper.appendResult.setException(exception);
+      }
     } else {
       requestWrapper.appendResult.set(response);
     }
@@ -481,6 +487,10 @@ public class StreamWriter implements AutoCloseable {
       this.connectionFinalStatus = finalStatus;
     } finally {
       this.lock.unlock();
+    }
+    Exceptions.StorageException storageException = Exceptions.toStorageException(finalStatus);
+    if (storageException != null) {
+      this.connectionFinalStatus = storageException;
     }
   }
 

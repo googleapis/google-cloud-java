@@ -153,6 +153,15 @@ public class ITBigQueryWriteManualClientTest {
     return rows.build();
   }
 
+  ProtoRows CreateProtoRowsMultipleColumns(String[] messages) {
+    ProtoRows.Builder rows = ProtoRows.newBuilder();
+    for (String message : messages) {
+      UpdatedFooType foo = UpdatedFooType.newBuilder().setFoo(message).setBar(message).build();
+      rows.addSerializedRows(foo.toByteString());
+    }
+    return rows.build();
+  }
+
   ProtoRows CreateProtoRowsComplex(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
@@ -496,6 +505,68 @@ public class ITBigQueryWriteManualClientTest {
           streamWriter.append(CreateProtoRows(new String[] {"aaa"}), -1L);
       assertEquals(1L, response3.get().getAppendResult().getOffset().getValue());
     } finally {
+    }
+  }
+
+  @Test
+  public void testStreamSchemaMisMatchError() throws IOException, InterruptedException {
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(tableId)
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+
+    try (StreamWriter streamWriter =
+        StreamWriter.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(UpdatedFooType.getDescriptor()))
+            .build()) {
+      // Create a proto row that has extra fields than the table schema defined which should trigger
+      // the SCHEMA_MISMATCH_EXTRA_FIELDS error
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+      try {
+        response.get();
+        Assert.fail("Should fail");
+      } catch (ExecutionException e) {
+        // TODO(stephwang): update test case when toStroageException is updated
+        assertThat(e.getCause().getMessage())
+            .contains(
+                "io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Input schema has more fields than BigQuery schema");
+      }
+    }
+  }
+
+  @Test
+  public void testStreamFinalizedError()
+      throws IOException, InterruptedException, ExecutionException {
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(tableId)
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    try (StreamWriter streamWriter =
+        StreamWriter.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(UpdatedFooType.getDescriptor()))
+            .build()) {
+      // Finalize the stream in order to trigger STREAM_FINALIZED error
+      client.finalizeWriteStream(
+          FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
+      // Try to append to a finalized stream
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+      try {
+        response.get();
+        Assert.fail("Should fail");
+      } catch (ExecutionException e) {
+        //   //TODO(stephwang): update test case when toStroageException is updated
+        assertThat(e.getCause().getMessage())
+            .contains(
+                "io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Stream has been finalized and cannot be appended");
+      }
     }
   }
 
