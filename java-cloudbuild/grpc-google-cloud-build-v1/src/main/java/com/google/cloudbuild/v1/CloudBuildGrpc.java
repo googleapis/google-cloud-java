@@ -32,6 +32,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/devtools/cloudbuild/v1/cloudbuild.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CloudBuildGrpc {
 
   private CloudBuildGrpc() {}

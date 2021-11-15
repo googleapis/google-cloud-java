@@ -242,7 +242,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
-   *           .setParent(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setBuild(Build.newBuilder().build())
    *           .build();
@@ -271,7 +271,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
-   *           .setParent(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setBuild(Build.newBuilder().build())
    *           .build();
@@ -300,7 +300,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
-   *           .setParent(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setBuild(Build.newBuilder().build())
    *           .build();
@@ -438,7 +438,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
-   *           .setParent(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -470,7 +470,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
-   *           .setParent(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -501,7 +501,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
-   *           .setParent(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -973,7 +973,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
-   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger(BuildTrigger.newBuilder().build())
    *           .build();
@@ -1000,7 +1000,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
-   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger(BuildTrigger.newBuilder().build())
    *           .build();
@@ -1133,7 +1133,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
-   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1163,7 +1163,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
-   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1194,7 +1194,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
-   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
