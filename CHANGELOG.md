@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-bigquery/compare/v2.3.3...v2.4.0) (2021-11-15)
+
+
+### Features
+
+* induce minor version bump for lts ([#1688](https://www.github.com/googleapis/java-bigquery/issues/1688)) ([6cb11db](https://www.github.com/googleapis/java-bigquery/commit/6cb11db5f15e7d617bc5aa4a3ac5fdacbe515b77))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1683](https://www.github.com/googleapis/java-bigquery/issues/1683)) ([bef2705](https://www.github.com/googleapis/java-bigquery/commit/bef2705208abfc837d16f01758c802d817420dd4))
+* removing a new line character in a property ([#1700](https://www.github.com/googleapis/java-bigquery/issues/1700)) ([5185801](https://www.github.com/googleapis/java-bigquery/commit/5185801797c620dba9de7e72b7dea8ddc600ed58))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20211106-1.32.1 ([#1703](https://www.github.com/googleapis/java-bigquery/issues/1703)) ([8987086](https://www.github.com/googleapis/java-bigquery/commit/8987086469ff3ce6320332353744b0adfbb2aefd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#1702](https://www.github.com/googleapis/java-bigquery/issues/1702)) ([33ab54f](https://www.github.com/googleapis/java-bigquery/commit/33ab54f1559f903ec78f6d568c0aee666b2ad804))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.0 ([#1691](https://www.github.com/googleapis/java-bigquery/issues/1691)) ([1f46d8d](https://www.github.com/googleapis/java-bigquery/commit/1f46d8dd316f1c8df392f749428986d4d9c7fa07))
+
 ### [2.3.3](https://www.github.com/googleapis/java-bigquery/compare/v2.3.2...v2.3.3) (2021-10-25)
 
 
