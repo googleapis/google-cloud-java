@@ -1,5 +1,13 @@
 # Changelog
 
+### [3.2.9](https://www.github.com/googleapis/java-asset/compare/v3.2.8...v3.2.9) (2021-11-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.0 ([#1009](https://www.github.com/googleapis/java-asset/issues/1009)) ([166b394](https://www.github.com/googleapis/java-asset/commit/166b3949e9ed6d1f1ed9146115541fbe071722f0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#1010](https://www.github.com/googleapis/java-asset/issues/1010)) ([03fa141](https://www.github.com/googleapis/java-asset/commit/03fa14130f3399267538b8e5a6ded4f1058e4f11))
+
 ### [3.2.8](https://www.github.com/googleapis/java-asset/compare/v3.2.7...v3.2.8) (2021-11-08)
 
 
