@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/googleapis/java-core/compare/v2.3.0...v2.3.1) (2021-11-15)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.42.1 ([#629](https://www.github.com/googleapis/java-core/issues/629)) ([85fcd99](https://www.github.com/googleapis/java-core/commit/85fcd99237d7526b1b373d07204c4114c49b08b8))
+
 ## [2.3.0](https://www.github.com/googleapis/java-core/compare/v2.2.0...v2.3.0) (2021-11-11)
 
 
