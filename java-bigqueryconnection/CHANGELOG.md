@@ -1,5 +1,24 @@
 # Changelog
 
+### [2.1.6](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.1.5...v2.1.6) (2021-11-12)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-bigqueryconnection/issues/1266)) ([#562](https://www.github.com/googleapis/java-bigqueryconnection/issues/562)) ([5a8ce2e](https://www.github.com/googleapis/java-bigqueryconnection/commit/5a8ce2e13aad83d5eb7dba256559238d60a3d89d))
+
+
+### Documentation
+
+* **samples:** update AWS sample due to API changes ([#576](https://www.github.com/googleapis/java-bigqueryconnection/issues/576)) ([e5907fe](https://www.github.com/googleapis/java-bigqueryconnection/commit/e5907fe5b33ebabd17e3a1c6ccbd646c8ffaa217)), closes [#571](https://www.github.com/googleapis/java-bigqueryconnection/issues/571)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#577](https://www.github.com/googleapis/java-bigqueryconnection/issues/577)) ([8337fff](https://www.github.com/googleapis/java-bigqueryconnection/commit/8337fff6f67dce7c1d43f7d77fb571e8db4da1e7))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#560](https://www.github.com/googleapis/java-bigqueryconnection/issues/560)) ([b90c49f](https://www.github.com/googleapis/java-bigqueryconnection/commit/b90c49fda9f29bd4e1c55fece6a0f5fae7c85dcf))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#574](https://www.github.com/googleapis/java-bigqueryconnection/issues/574)) ([a7f2a79](https://www.github.com/googleapis/java-bigqueryconnection/commit/a7f2a79e355ae1a176d26aa6092a3c27e142bc5f))
+
 ### [2.1.5](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.1.4...v2.1.5) (2021-10-19)
 
 
