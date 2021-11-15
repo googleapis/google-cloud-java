@@ -559,8 +559,7 @@ public class TestCasesClientTest {
 
     BatchRunTestCasesRequest request =
         BatchRunTestCasesRequest.newBuilder()
-            .setParent(
-                TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setEnvironment(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
@@ -591,8 +590,7 @@ public class TestCasesClientTest {
     try {
       BatchRunTestCasesRequest request =
           BatchRunTestCasesRequest.newBuilder()
-              .setParent(
-                  TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
               .setEnvironment(
                   EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                       .toString())
@@ -666,8 +664,7 @@ public class TestCasesClientTest {
 
     ImportTestCasesRequest request =
         ImportTestCasesRequest.newBuilder()
-            .setParent(
-                TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .build();
 
     ImportTestCasesResponse actualResponse = client.importTestCasesAsync(request).get();
@@ -694,8 +691,7 @@ public class TestCasesClientTest {
     try {
       ImportTestCasesRequest request =
           ImportTestCasesRequest.newBuilder()
-              .setParent(
-                  TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
               .build();
       client.importTestCasesAsync(request).get();
       Assert.fail("No exception raised");
@@ -719,8 +715,7 @@ public class TestCasesClientTest {
 
     ExportTestCasesRequest request =
         ExportTestCasesRequest.newBuilder()
-            .setParent(
-                TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setFilter("filter-1274492040")
             .build();
 
@@ -749,8 +744,7 @@ public class TestCasesClientTest {
     try {
       ExportTestCasesRequest request =
           ExportTestCasesRequest.newBuilder()
-              .setParent(
-                  TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
               .setFilter("filter-1274492040")
               .build();
       client.exportTestCasesAsync(request).get();

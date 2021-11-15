@@ -184,8 +184,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   String parent =
-   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -211,9 +210,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ListEntityTypesRequest request =
    *       ListEntityTypesRequest.newBuilder()
-   *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -241,9 +238,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ListEntityTypesRequest request =
    *       ListEntityTypesRequest.newBuilder()
-   *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -272,9 +267,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ListEntityTypesRequest request =
    *       ListEntityTypesRequest.newBuilder()
-   *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -442,8 +435,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   String parent =
-   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   EntityType entityType = EntityType.newBuilder().build();
    *   EntityType response = entityTypesClient.createEntityType(parent, entityType);
    * }
@@ -473,9 +465,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   CreateEntityTypeRequest request =
    *       CreateEntityTypeRequest.newBuilder()
-   *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEntityType(EntityType.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
@@ -503,9 +493,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   CreateEntityTypeRequest request =
    *       CreateEntityTypeRequest.newBuilder()
-   *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEntityType(EntityType.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();

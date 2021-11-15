@@ -195,10 +195,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * <pre>{@code
    * try (TransitionRouteGroupsClient transitionRouteGroupsClient =
    *     TransitionRouteGroupsClient.create()) {
-   *   String parent =
-   *       TransitionRouteGroupName.of(
-   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
-   *           .toString();
+   *   String parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
    *   for (TransitionRouteGroup element :
    *       transitionRouteGroupsClient.listTransitionRouteGroups(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -228,14 +225,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *     TransitionRouteGroupsClient.create()) {
    *   ListTransitionRouteGroupsRequest request =
    *       ListTransitionRouteGroupsRequest.newBuilder()
-   *           .setParent(
-   *               TransitionRouteGroupName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[FLOW]",
-   *                       "[TRANSITION_ROUTE_GROUP]")
-   *                   .toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
@@ -266,14 +256,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *     TransitionRouteGroupsClient.create()) {
    *   ListTransitionRouteGroupsRequest request =
    *       ListTransitionRouteGroupsRequest.newBuilder()
-   *           .setParent(
-   *               TransitionRouteGroupName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[FLOW]",
-   *                       "[TRANSITION_ROUTE_GROUP]")
-   *                   .toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
@@ -304,14 +287,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *     TransitionRouteGroupsClient.create()) {
    *   ListTransitionRouteGroupsRequest request =
    *       ListTransitionRouteGroupsRequest.newBuilder()
-   *           .setParent(
-   *               TransitionRouteGroupName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[FLOW]",
-   *                       "[TRANSITION_ROUTE_GROUP]")
-   *                   .toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
@@ -516,10 +492,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * <pre>{@code
    * try (TransitionRouteGroupsClient transitionRouteGroupsClient =
    *     TransitionRouteGroupsClient.create()) {
-   *   String parent =
-   *       TransitionRouteGroupName.of(
-   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
-   *           .toString();
+   *   String parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
    *   TransitionRouteGroup transitionRouteGroup = TransitionRouteGroup.newBuilder().build();
    *   TransitionRouteGroup response =
    *       transitionRouteGroupsClient.createTransitionRouteGroup(parent, transitionRouteGroup);
@@ -558,14 +531,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *     TransitionRouteGroupsClient.create()) {
    *   CreateTransitionRouteGroupRequest request =
    *       CreateTransitionRouteGroupRequest.newBuilder()
-   *           .setParent(
-   *               TransitionRouteGroupName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[FLOW]",
-   *                       "[TRANSITION_ROUTE_GROUP]")
-   *                   .toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setTransitionRouteGroup(TransitionRouteGroup.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
@@ -597,14 +563,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *     TransitionRouteGroupsClient.create()) {
    *   CreateTransitionRouteGroupRequest request =
    *       CreateTransitionRouteGroupRequest.newBuilder()
-   *           .setParent(
-   *               TransitionRouteGroupName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[FLOW]",
-   *                       "[TRANSITION_ROUTE_GROUP]")
-   *                   .toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setTransitionRouteGroup(TransitionRouteGroup.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();

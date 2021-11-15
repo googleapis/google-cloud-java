@@ -196,8 +196,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
-   *   String parent =
-   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
    *   SecuritySettings response =
    *       securitySettingsServiceClient.createSecuritySettings(parent, securitySettings);
@@ -231,9 +230,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     SecuritySettingsServiceClient.create()) {
    *   CreateSecuritySettingsRequest request =
    *       CreateSecuritySettingsRequest.newBuilder()
-   *           .setParent(
-   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSecuritySettings(SecuritySettings.newBuilder().build())
    *           .build();
    *   SecuritySettings response = securitySettingsServiceClient.createSecuritySettings(request);
@@ -258,9 +255,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     SecuritySettingsServiceClient.create()) {
    *   CreateSecuritySettingsRequest request =
    *       CreateSecuritySettingsRequest.newBuilder()
-   *           .setParent(
-   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSecuritySettings(SecuritySettings.newBuilder().build())
    *           .build();
    *   ApiFuture<SecuritySettings> future =
@@ -505,8 +500,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
-   *   String parent =
-   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (SecuritySettings element :
    *       securitySettingsServiceClient.listSecuritySettings(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -535,9 +529,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     SecuritySettingsServiceClient.create()) {
    *   ListSecuritySettingsRequest request =
    *       ListSecuritySettingsRequest.newBuilder()
-   *           .setParent(
-   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -567,9 +559,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     SecuritySettingsServiceClient.create()) {
    *   ListSecuritySettingsRequest request =
    *       ListSecuritySettingsRequest.newBuilder()
-   *           .setParent(
-   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -598,9 +588,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     SecuritySettingsServiceClient.create()) {
    *   ListSecuritySettingsRequest request =
    *       ListSecuritySettingsRequest.newBuilder()
-   *           .setParent(
-   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

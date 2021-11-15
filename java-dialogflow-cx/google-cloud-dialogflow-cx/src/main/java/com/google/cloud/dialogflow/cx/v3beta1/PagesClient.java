@@ -179,8 +179,7 @@ public class PagesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PagesClient pagesClient = PagesClient.create()) {
-   *   String parent =
-   *       PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString();
+   *   String parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
    *   for (Page element : pagesClient.listPages(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -206,8 +205,7 @@ public class PagesClient implements BackgroundResource {
    * try (PagesClient pagesClient = PagesClient.create()) {
    *   ListPagesRequest request =
    *       ListPagesRequest.newBuilder()
-   *           .setParent(
-   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -235,8 +233,7 @@ public class PagesClient implements BackgroundResource {
    * try (PagesClient pagesClient = PagesClient.create()) {
    *   ListPagesRequest request =
    *       ListPagesRequest.newBuilder()
-   *           .setParent(
-   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -263,8 +260,7 @@ public class PagesClient implements BackgroundResource {
    * try (PagesClient pagesClient = PagesClient.create()) {
    *   ListPagesRequest request =
    *       ListPagesRequest.newBuilder()
-   *           .setParent(
-   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -421,8 +417,7 @@ public class PagesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PagesClient pagesClient = PagesClient.create()) {
-   *   String parent =
-   *       PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString();
+   *   String parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
    *   Page page = Page.newBuilder().build();
    *   Page response = pagesClient.createPage(parent, page);
    * }
@@ -449,8 +444,7 @@ public class PagesClient implements BackgroundResource {
    * try (PagesClient pagesClient = PagesClient.create()) {
    *   CreatePageRequest request =
    *       CreatePageRequest.newBuilder()
-   *           .setParent(
-   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setPage(Page.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
@@ -475,8 +469,7 @@ public class PagesClient implements BackgroundResource {
    * try (PagesClient pagesClient = PagesClient.create()) {
    *   CreatePageRequest request =
    *       CreatePageRequest.newBuilder()
-   *           .setParent(
-   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
    *           .setPage(Page.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();

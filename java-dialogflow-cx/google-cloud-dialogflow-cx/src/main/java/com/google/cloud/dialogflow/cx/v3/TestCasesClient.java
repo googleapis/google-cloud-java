@@ -197,8 +197,7 @@ public class TestCasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
-   *   String parent =
-   *       TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (TestCase element : testCasesClient.listTestCases(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -224,8 +223,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ListTestCasesRequest request =
    *       ListTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -252,8 +250,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ListTestCasesRequest request =
    *       ListTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -280,8 +277,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ListTestCasesRequest request =
    *       ListTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -337,8 +333,7 @@ public class TestCasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
-   *   String parent =
-   *       TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   testCasesClient.batchDeleteTestCases(parent);
    * }
    * }</pre>
@@ -363,8 +358,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   BatchDeleteTestCasesRequest request =
    *       BatchDeleteTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .addAllNames(new ArrayList<String>())
    *           .build();
    *   testCasesClient.batchDeleteTestCases(request);
@@ -388,8 +382,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   BatchDeleteTestCasesRequest request =
    *       BatchDeleteTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .addAllNames(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Empty> future = testCasesClient.batchDeleteTestCasesCallable().futureCall(request);
@@ -532,8 +525,7 @@ public class TestCasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
-   *   String parent =
-   *       TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   TestCase testCase = TestCase.newBuilder().build();
    *   TestCase response = testCasesClient.createTestCase(parent, testCase);
    * }
@@ -560,8 +552,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   CreateTestCaseRequest request =
    *       CreateTestCaseRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setTestCase(TestCase.newBuilder().build())
    *           .build();
    *   TestCase response = testCasesClient.createTestCase(request);
@@ -585,8 +576,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   CreateTestCaseRequest request =
    *       CreateTestCaseRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setTestCase(TestCase.newBuilder().build())
    *           .build();
    *   ApiFuture<TestCase> future = testCasesClient.createTestCaseCallable().futureCall(request);
@@ -795,8 +785,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   BatchRunTestCasesRequest request =
    *       BatchRunTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEnvironment(
    *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
@@ -833,8 +822,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   BatchRunTestCasesRequest request =
    *       BatchRunTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEnvironment(
    *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
@@ -872,8 +860,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   BatchRunTestCasesRequest request =
    *       BatchRunTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEnvironment(
    *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
@@ -956,8 +943,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ImportTestCasesRequest request =
    *       ImportTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .build();
    *   ImportTestCasesResponse response = testCasesClient.importTestCasesAsync(request).get();
    * }
@@ -991,8 +977,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ImportTestCasesRequest request =
    *       ImportTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .build();
    *   OperationFuture<ImportTestCasesResponse, ImportTestCasesMetadata> future =
    *       testCasesClient.importTestCasesOperationCallable().futureCall(request);
@@ -1027,8 +1012,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ImportTestCasesRequest request =
    *       ImportTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .build();
    *   ApiFuture<Operation> future = testCasesClient.importTestCasesCallable().futureCall(request);
    *   // Do something.
@@ -1059,8 +1043,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ExportTestCasesRequest request =
    *       ExportTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFilter("filter-1274492040")
    *           .build();
    *   ExportTestCasesResponse response = testCasesClient.exportTestCasesAsync(request).get();
@@ -1094,8 +1077,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ExportTestCasesRequest request =
    *       ExportTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFilter("filter-1274492040")
    *           .build();
    *   OperationFuture<ExportTestCasesResponse, ExportTestCasesMetadata> future =
@@ -1130,8 +1112,7 @@ public class TestCasesClient implements BackgroundResource {
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   ExportTestCasesRequest request =
    *       ExportTestCasesRequest.newBuilder()
-   *           .setParent(
-   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Operation> future = testCasesClient.exportTestCasesCallable().futureCall(request);
@@ -1182,8 +1163,7 @@ public class TestCasesClient implements BackgroundResource {
    * <pre>{@code
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
    *   String parent =
-   *       TestCaseResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
-   *           .toString();
+   *       TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString();
    *   for (TestCaseResult element : testCasesClient.listTestCaseResults(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1213,9 +1193,7 @@ public class TestCasesClient implements BackgroundResource {
    *   ListTestCaseResultsRequest request =
    *       ListTestCaseResultsRequest.newBuilder()
    *           .setParent(
-   *               TestCaseResultName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
-   *                   .toString())
+   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1245,9 +1223,7 @@ public class TestCasesClient implements BackgroundResource {
    *   ListTestCaseResultsRequest request =
    *       ListTestCaseResultsRequest.newBuilder()
    *           .setParent(
-   *               TestCaseResultName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
-   *                   .toString())
+   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1277,9 +1253,7 @@ public class TestCasesClient implements BackgroundResource {
    *   ListTestCaseResultsRequest request =
    *       ListTestCaseResultsRequest.newBuilder()
    *           .setParent(
-   *               TestCaseResultName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
-   *                   .toString())
+   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")

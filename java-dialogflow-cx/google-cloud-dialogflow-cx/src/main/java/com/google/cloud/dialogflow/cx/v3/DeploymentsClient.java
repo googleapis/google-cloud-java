@@ -187,8 +187,7 @@ public class DeploymentsClient implements BackgroundResource {
    * <pre>{@code
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   String parent =
-   *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]")
-   *           .toString();
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
    *   for (Deployment element : deploymentsClient.listDeployments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -217,8 +216,7 @@ public class DeploymentsClient implements BackgroundResource {
    *   ListDeploymentsRequest request =
    *       ListDeploymentsRequest.newBuilder()
    *           .setParent(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -248,8 +246,7 @@ public class DeploymentsClient implements BackgroundResource {
    *   ListDeploymentsRequest request =
    *       ListDeploymentsRequest.newBuilder()
    *           .setParent(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -280,8 +277,7 @@ public class DeploymentsClient implements BackgroundResource {
    *   ListDeploymentsRequest request =
    *       ListDeploymentsRequest.newBuilder()
    *           .setParent(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

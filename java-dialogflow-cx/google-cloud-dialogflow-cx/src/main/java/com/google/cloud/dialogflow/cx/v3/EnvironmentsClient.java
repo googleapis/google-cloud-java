@@ -203,8 +203,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   String parent =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -233,9 +232,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -263,9 +260,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -294,9 +289,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -476,8 +469,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   String parent =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Environment environment = Environment.newBuilder().build();
    *   Environment response = environmentsClient.createEnvironmentAsync(parent, environment).get();
    * }
@@ -515,9 +507,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEnvironment(Environment.newBuilder().build())
    *           .build();
    *   Environment response = environmentsClient.createEnvironmentAsync(request).get();
@@ -551,9 +541,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEnvironment(Environment.newBuilder().build())
    *           .build();
    *   OperationFuture<Environment, Struct> future =
@@ -587,9 +575,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
-   *                   .toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setEnvironment(Environment.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1141,9 +1127,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * <pre>{@code
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   String parent =
-   *       ContinuousTestResultName.of(
-   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[CONTINUOUS_TEST_RESULT]")
-   *           .toString();
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
    *   for (ContinuousTestResult element :
    *       environmentsClient.listContinuousTestResults(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1173,12 +1157,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *   ListContinuousTestResultsRequest request =
    *       ListContinuousTestResultsRequest.newBuilder()
    *           .setParent(
-   *               ContinuousTestResultName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[ENVIRONMENT]",
-   *                       "[CONTINUOUS_TEST_RESULT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1209,12 +1188,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *   ListContinuousTestResultsRequest request =
    *       ListContinuousTestResultsRequest.newBuilder()
    *           .setParent(
-   *               ContinuousTestResultName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[ENVIRONMENT]",
-   *                       "[CONTINUOUS_TEST_RESULT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1245,12 +1219,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *   ListContinuousTestResultsRequest request =
    *       ListContinuousTestResultsRequest.newBuilder()
    *           .setParent(
-   *               ContinuousTestResultName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[AGENT]",
-   *                       "[ENVIRONMENT]",
-   *                       "[CONTINUOUS_TEST_RESULT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

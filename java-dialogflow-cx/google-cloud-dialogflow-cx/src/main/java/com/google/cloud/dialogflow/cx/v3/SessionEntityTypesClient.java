@@ -196,8 +196,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <pre>{@code
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   String parent =
-   *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
-   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *       SessionName.ofProjectLocationAgentSessionName(
+   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
    *           .toString();
    *   for (SessionEntityType element :
    *       sessionEntityTypesClient.listSessionEntityTypes(parent).iterateAll()) {
@@ -230,8 +230,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
    *           .setParent(
-   *               SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -262,8 +262,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
    *           .setParent(
-   *               SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -293,8 +293,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
    *           .setParent(
-   *               SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -478,8 +478,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <pre>{@code
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   String parent =
-   *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
-   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *       SessionName.ofProjectLocationAgentSessionName(
+   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
    *           .toString();
    *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
    *   SessionEntityType response =
@@ -516,8 +516,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *   CreateSessionEntityTypeRequest request =
    *       CreateSessionEntityTypeRequest.newBuilder()
    *           .setParent(
-   *               SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
    *                   .toString())
    *           .setSessionEntityType(SessionEntityType.newBuilder().build())
    *           .build();
@@ -543,8 +543,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *   CreateSessionEntityTypeRequest request =
    *       CreateSessionEntityTypeRequest.newBuilder()
    *           .setParent(
-   *               SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
    *                   .toString())
    *           .setSessionEntityType(SessionEntityType.newBuilder().build())
    *           .build();

@@ -180,7 +180,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -206,7 +206,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
@@ -235,7 +235,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
@@ -264,7 +264,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
@@ -423,7 +423,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Intent intent = Intent.newBuilder().build();
    *   Intent response = intentsClient.createIntent(parent, intent);
    * }
@@ -453,7 +453,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   CreateIntentRequest request =
    *       CreateIntentRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
@@ -481,7 +481,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   CreateIntentRequest request =
    *       CreateIntentRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();

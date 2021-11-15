@@ -710,7 +710,7 @@ public class FlowsClientTest {
 
     ImportFlowRequest request =
         ImportFlowRequest.newBuilder()
-            .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .build();
 
     ImportFlowResponse actualResponse = client.importFlowAsync(request).get();
@@ -738,7 +738,7 @@ public class FlowsClientTest {
     try {
       ImportFlowRequest request =
           ImportFlowRequest.newBuilder()
-              .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
               .build();
       client.importFlowAsync(request).get();
       Assert.fail("No exception raised");

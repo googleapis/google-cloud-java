@@ -181,8 +181,7 @@ public class ChangelogsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
-   *   String parent =
-   *       ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Changelog element : changelogsClient.listChangelogs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -208,8 +207,7 @@ public class ChangelogsClient implements BackgroundResource {
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   ListChangelogsRequest request =
    *       ListChangelogsRequest.newBuilder()
-   *           .setParent(
-   *               ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -237,8 +235,7 @@ public class ChangelogsClient implements BackgroundResource {
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   ListChangelogsRequest request =
    *       ListChangelogsRequest.newBuilder()
-   *           .setParent(
-   *               ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -267,8 +264,7 @@ public class ChangelogsClient implements BackgroundResource {
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   ListChangelogsRequest request =
    *       ListChangelogsRequest.newBuilder()
-   *           .setParent(
-   *               ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

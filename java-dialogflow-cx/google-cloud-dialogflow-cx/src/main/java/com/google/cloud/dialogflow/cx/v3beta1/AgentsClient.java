@@ -195,7 +195,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Agent element : agentsClient.listAgents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -221,7 +221,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ListAgentsRequest request =
    *       ListAgentsRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -248,7 +248,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ListAgentsRequest request =
    *       ListAgentsRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -274,7 +274,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ListAgentsRequest request =
    *       ListAgentsRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -429,7 +429,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Agent agent = Agent.newBuilder().build();
    *   Agent response = agentsClient.createAgent(parent, agent);
    * }
@@ -459,7 +459,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   CreateAgentRequest request =
    *       CreateAgentRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAgent(Agent.newBuilder().build())
    *           .build();
    *   Agent response = agentsClient.createAgent(request);
@@ -486,7 +486,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   CreateAgentRequest request =
    *       CreateAgentRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAgent(Agent.newBuilder().build())
    *           .build();
    *   ApiFuture<Agent> future = agentsClient.createAgentCallable().futureCall(request);

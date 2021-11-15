@@ -189,8 +189,7 @@ public class ExperimentsClient implements BackgroundResource {
    * <pre>{@code
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String parent =
-   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
-   *           .toString();
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
    *   for (Experiment element : experimentsClient.listExperiments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -219,8 +218,7 @@ public class ExperimentsClient implements BackgroundResource {
    *   ListExperimentsRequest request =
    *       ListExperimentsRequest.newBuilder()
    *           .setParent(
-   *               ExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -250,8 +248,7 @@ public class ExperimentsClient implements BackgroundResource {
    *   ListExperimentsRequest request =
    *       ListExperimentsRequest.newBuilder()
    *           .setParent(
-   *               ExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -282,8 +279,7 @@ public class ExperimentsClient implements BackgroundResource {
    *   ListExperimentsRequest request =
    *       ListExperimentsRequest.newBuilder()
    *           .setParent(
-   *               ExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -452,8 +448,7 @@ public class ExperimentsClient implements BackgroundResource {
    * <pre>{@code
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String parent =
-   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
-   *           .toString();
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
    *   Experiment experiment = Experiment.newBuilder().build();
    *   Experiment response = experimentsClient.createExperiment(parent, experiment);
    * }
@@ -484,8 +479,7 @@ public class ExperimentsClient implements BackgroundResource {
    *   CreateExperimentRequest request =
    *       CreateExperimentRequest.newBuilder()
    *           .setParent(
-   *               ExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setExperiment(Experiment.newBuilder().build())
    *           .build();
@@ -512,8 +506,7 @@ public class ExperimentsClient implements BackgroundResource {
    *   CreateExperimentRequest request =
    *       CreateExperimentRequest.newBuilder()
    *           .setParent(
-   *               ExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
    *                   .toString())
    *           .setExperiment(Experiment.newBuilder().build())
    *           .build();

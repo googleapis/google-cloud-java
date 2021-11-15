@@ -205,7 +205,7 @@ public class FlowsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   String parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Flow flow = Flow.newBuilder().build();
    *   Flow response = flowsClient.createFlow(parent, flow);
    * }
@@ -235,7 +235,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   CreateFlowRequest request =
    *       CreateFlowRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFlow(Flow.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
@@ -263,7 +263,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   CreateFlowRequest request =
    *       CreateFlowRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setFlow(Flow.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
@@ -402,7 +402,7 @@ public class FlowsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   String parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Flow element : flowsClient.listFlows(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -428,7 +428,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ListFlowsRequest request =
    *       ListFlowsRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
@@ -456,7 +456,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ListFlowsRequest request =
    *       ListFlowsRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
@@ -483,7 +483,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ListFlowsRequest request =
    *       ListFlowsRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
@@ -1036,7 +1036,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .build();
    *   ImportFlowResponse response = flowsClient.importFlowAsync(request).get();
    * }
@@ -1071,7 +1071,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .build();
    *   OperationFuture<ImportFlowResponse, Struct> future =
    *       flowsClient.importFlowOperationCallable().futureCall(request);
@@ -1106,7 +1106,7 @@ public class FlowsClient implements BackgroundResource {
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
-   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .build();
    *   ApiFuture<Operation> future = flowsClient.importFlowCallable().futureCall(request);
    *   // Do something.

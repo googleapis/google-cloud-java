@@ -181,7 +181,7 @@ public class WebhooksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
-   *   String parent = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Webhook element : webhooksClient.listWebhooks(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -207,8 +207,7 @@ public class WebhooksClient implements BackgroundResource {
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   ListWebhooksRequest request =
    *       ListWebhooksRequest.newBuilder()
-   *           .setParent(
-   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -235,8 +234,7 @@ public class WebhooksClient implements BackgroundResource {
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   ListWebhooksRequest request =
    *       ListWebhooksRequest.newBuilder()
-   *           .setParent(
-   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -263,8 +261,7 @@ public class WebhooksClient implements BackgroundResource {
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   ListWebhooksRequest request =
    *       ListWebhooksRequest.newBuilder()
-   *           .setParent(
-   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -413,7 +410,7 @@ public class WebhooksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
-   *   String parent = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Webhook webhook = Webhook.newBuilder().build();
    *   Webhook response = webhooksClient.createWebhook(parent, webhook);
    * }
@@ -440,8 +437,7 @@ public class WebhooksClient implements BackgroundResource {
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   CreateWebhookRequest request =
    *       CreateWebhookRequest.newBuilder()
-   *           .setParent(
-   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setWebhook(Webhook.newBuilder().build())
    *           .build();
    *   Webhook response = webhooksClient.createWebhook(request);
@@ -465,8 +461,7 @@ public class WebhooksClient implements BackgroundResource {
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   CreateWebhookRequest request =
    *       CreateWebhookRequest.newBuilder()
-   *           .setParent(
-   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setWebhook(Webhook.newBuilder().build())
    *           .build();
    *   ApiFuture<Webhook> future = webhooksClient.createWebhookCallable().futureCall(request);
