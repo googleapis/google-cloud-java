@@ -461,14 +461,14 @@ public class ProjectsClient implements BackgroundResource {
    *     &#42;key&#42; is the name of a label) | Filters by label name. | ```
    *     <p>Search expressions are case insensitive.
    *     <p>Some examples queries:
-   *     <p>| Query | Description |
+   *     <p>``` | Query | Description |
    *     |------------------|-----------------------------------------------------| | name:how&#42;
    *     | The project's name starts with "how". | | name:Howl | The project's name is `Howl` or
    *     `howl`. | | name:HOWL | Equivalent to above. | | NAME:howl | Equivalent to above. | |
    *     labels.color:&#42; | The project has the label `color`. | | labels.color:red | The
    *     project's label `color` has the value `red`. | | labels.color:red&amp;nbsp;labels.size:big
    *     | The project's label `color` has the value `red` and its label `size` has the value `big`.
-   *     |
+   *     | ```
    *     <p>If no query is specified, the call will return projects for which the user has the
    *     `resourcemanager.projects.get` permission.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
