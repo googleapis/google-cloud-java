@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.6.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.5.1...v2.6.0) (2021-11-15)
+
+
+### Features
+
+* add support for StorageError ([#1391](https://www.github.com/googleapis/java-bigquerystorage/issues/1391)) ([176dc8b](https://www.github.com/googleapis/java-bigquerystorage/commit/176dc8b1fa30cf9a9a98628bd83c9ab487ddb094))
+* DATE and DOUBLE support more input formats ([#1397](https://www.github.com/googleapis/java-bigquerystorage/issues/1397)) ([9c8dc0a](https://www.github.com/googleapis/java-bigquerystorage/commit/9c8dc0aabb471fdb8580f434cc5a66bad585e8f2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#1406](https://www.github.com/googleapis/java-bigquerystorage/issues/1406)) ([38f5eb9](https://www.github.com/googleapis/java-bigquerystorage/commit/38f5eb9788e1f090c0034a789a512dcec2384fdb))
+
 ### [2.5.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.5.0...v2.5.1) (2021-11-03)
 
 
