@@ -44,6 +44,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/iam/v1/iam_policy.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class IAMPolicyGrpc {
 
   private IAMPolicyGrpc() {}
