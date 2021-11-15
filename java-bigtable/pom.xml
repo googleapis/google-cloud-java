@@ -267,6 +267,11 @@
                     </links>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -301,6 +306,21 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <!-- Shading workaround for IDEs: This project relocates some of its internal dependencies. Since IDEs can't
+             resolve the relocated symbols on their own, a workaround is added: first mvn install the shaded module,
+             then disable the with-shaded profile to force IDEs to resolve the relocated dependencies from the local
+             repository -->
+            <id>with-shaded</id>
+            <activation>
+                <property>
+                    <name>!skip-shaded</name>
+                </property>
+            </activation>
+            <modules>
+                <module>google-cloud-bigtable-stats</module>
+            </modules>
         </profile>
     </profiles>
 

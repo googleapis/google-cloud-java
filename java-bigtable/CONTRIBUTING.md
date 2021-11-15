@@ -15,6 +15,14 @@ You generally only need to submit a CLA once, so if you've already submitted one
 (even if it was for a different project), you probably don't need to do it
 again.
 
+## Developing
+
+This project relocates some of its internal dependencies. Since IDEs can't resolve the relocated symbols on their own,
+a workaround is:
+
+1. Install the shaded module `mvn install -pl google-cloud-bigtable-stats`
+2. Disable the `with-shaded` profile to force IDEs to resolve the relocated dependencies from the local repository
+
 ## Code reviews
 
 All submissions, including submissions by project members, require review. We
