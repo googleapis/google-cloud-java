@@ -473,6 +473,33 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Indicates the mute state of a finding (either unspecified, muted, unmuted
+   * or undefined).
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+   *
+   * @return The enum numeric value on the wire for mute.
+   */
+  int getMuteValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the mute state of a finding (either unspecified, muted, unmuted
+   * or undefined).
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+   *
+   * @return The mute.
+   */
+  com.google.cloud.securitycenter.v1.Finding.Mute getMute();
+
+  /**
+   *
+   *
+   * <pre>
    * The class of the finding.
    * </pre>
    *
@@ -581,4 +608,74 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
    */
   com.google.cloud.securitycenter.v1.VulnerabilityOrBuilder getVulnerabilityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time this finding was muted or unmuted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the muteUpdateTime field is set.
+   */
+  boolean hasMuteUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time this finding was muted or unmuted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The muteUpdateTime.
+   */
+  com.google.protobuf.Timestamp getMuteUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time this finding was muted or unmuted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getMuteUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * First known as mute_annotation. Records additional information about the
+   * mute operation e.g. mute config that muted the finding, user who muted the
+   * finding, etc.
+   * </pre>
+   *
+   * <code>string mute_initiator = 28;</code>
+   *
+   * @return The muteInitiator.
+   */
+  java.lang.String getMuteInitiator();
+  /**
+   *
+   *
+   * <pre>
+   * First known as mute_annotation. Records additional information about the
+   * mute operation e.g. mute config that muted the finding, user who muted the
+   * finding, etc.
+   * </pre>
+   *
+   * <code>string mute_initiator = 28;</code>
+   *
+   * @return The bytes for muteInitiator.
+   */
+  com.google.protobuf.ByteString getMuteInitiatorBytes();
 }
