@@ -62,6 +62,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -93,6 +94,25 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
               sipRecordingMediaLabel_ = s;
               break;
             }
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                documentsMetadataFilters_ =
+                    com.google.protobuf.MapField.newMapField(
+                        DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                  documentsMetadataFilters__ =
+                      input.readMessage(
+                          DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry
+                              .getParserForType(),
+                          extensionRegistry);
+              documentsMetadataFilters_
+                  .getMutableMap()
+                  .put(documentsMetadataFilters__.getKey(), documentsMetadataFilters__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -115,6 +135,17 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2_Participant_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 8:
+        return internalGetDocumentsMetadataFilters();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -367,8 +398,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field must be set
-   * during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field
+   * must be set during participant creation and is then immutable.
    * </pre>
    *
    * <code>
@@ -385,8 +416,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field must be set
-   * during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field
+   * must be set during participant creation and is then immutable.
    * </pre>
    *
    * <code>
@@ -456,6 +487,182 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DOCUMENTS_METADATA_FILTERS_FIELD_NUMBER = 8;
+
+  private static final class DocumentsMetadataFiltersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dialogflow.v2.ParticipantProto
+                .internal_static_google_cloud_dialogflow_v2_Participant_DocumentsMetadataFiltersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      documentsMetadataFilters_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetDocumentsMetadataFilters() {
+    if (documentsMetadataFilters_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry);
+    }
+    return documentsMetadataFilters_;
+  }
+
+  public int getDocumentsMetadataFiltersCount() {
+    return internalGetDocumentsMetadataFilters().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * values for a metadata key should be concatenated by comma. For example,
+   * filters to match all documents that have 'US' or 'CA' in their market
+   * metadata values and 'agent' in their user metadata values will be
+   * ```
+   * documents_metadata_filters {
+   *   key: "market"
+   *   value: "US,CA"
+   * }
+   * documents_metadata_filters {
+   *   key: "user"
+   *   value: "agent"
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsDocumentsMetadataFilters(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetDocumentsMetadataFilters().getMap().containsKey(key);
+  }
+  /** Use {@link #getDocumentsMetadataFiltersMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFilters() {
+    return getDocumentsMetadataFiltersMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * values for a metadata key should be concatenated by comma. For example,
+   * filters to match all documents that have 'US' or 'CA' in their market
+   * metadata values and 'agent' in their user metadata values will be
+   * ```
+   * documents_metadata_filters {
+   *   key: "market"
+   *   value: "US,CA"
+   * }
+   * documents_metadata_filters {
+   *   key: "user"
+   *   value: "agent"
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFiltersMap() {
+    return internalGetDocumentsMetadataFilters().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * values for a metadata key should be concatenated by comma. For example,
+   * filters to match all documents that have 'US' or 'CA' in their market
+   * metadata values and 'agent' in their user metadata values will be
+   * ```
+   * documents_metadata_filters {
+   *   key: "market"
+   *   value: "US,CA"
+   * }
+   * documents_metadata_filters {
+   *   key: "user"
+   *   value: "agent"
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getDocumentsMetadataFiltersOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetDocumentsMetadataFilters().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * values for a metadata key should be concatenated by comma. For example,
+   * filters to match all documents that have 'US' or 'CA' in their market
+   * metadata values and 'agent' in their user metadata values will be
+   * ```
+   * documents_metadata_filters {
+   *   key: "market"
+   *   value: "US,CA"
+   * }
+   * documents_metadata_filters {
+   *   key: "user"
+   *   value: "agent"
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getDocumentsMetadataFiltersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetDocumentsMetadataFilters().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -479,6 +686,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sipRecordingMediaLabel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sipRecordingMediaLabel_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetDocumentsMetadataFilters(),
+        DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry,
+        8);
     unknownFields.writeTo(output);
   }
 
@@ -496,6 +708,17 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sipRecordingMediaLabel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sipRecordingMediaLabel_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetDocumentsMetadataFilters().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> documentsMetadataFilters__ =
+          DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, documentsMetadataFilters__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -516,6 +739,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (role_ != other.role_) return false;
     if (!getSipRecordingMediaLabel().equals(other.getSipRecordingMediaLabel())) return false;
+    if (!internalGetDocumentsMetadataFilters().equals(other.internalGetDocumentsMetadataFilters()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -533,6 +758,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + role_;
     hash = (37 * hash) + SIP_RECORDING_MEDIA_LABEL_FIELD_NUMBER;
     hash = (53 * hash) + getSipRecordingMediaLabel().hashCode();
+    if (!internalGetDocumentsMetadataFilters().getMap().isEmpty()) {
+      hash = (37 * hash) + DOCUMENTS_METADATA_FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetDocumentsMetadataFilters().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -651,6 +880,26 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_dialogflow_v2_Participant_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 8:
+          return internalGetDocumentsMetadataFilters();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 8:
+          return internalGetMutableDocumentsMetadataFilters();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -684,6 +933,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
       sipRecordingMediaLabel_ = "";
 
+      internalGetMutableDocumentsMetadataFilters().clear();
       return this;
     }
 
@@ -711,9 +961,12 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.Participant buildPartial() {
       com.google.cloud.dialogflow.v2.Participant result =
           new com.google.cloud.dialogflow.v2.Participant(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.role_ = role_;
       result.sipRecordingMediaLabel_ = sipRecordingMediaLabel_;
+      result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
+      result.documentsMetadataFilters_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -774,6 +1027,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         sipRecordingMediaLabel_ = other.sipRecordingMediaLabel_;
         onChanged();
       }
+      internalGetMutableDocumentsMetadataFilters()
+          .mergeFrom(other.internalGetDocumentsMetadataFilters());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -802,6 +1057,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -924,8 +1181,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -942,8 +1199,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -963,8 +1220,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -984,8 +1241,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -1008,8 +1265,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -1138,6 +1395,297 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
       sipRecordingMediaLabel_ = value;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        documentsMetadataFilters_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetDocumentsMetadataFilters() {
+      if (documentsMetadataFilters_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry);
+      }
+      return documentsMetadataFilters_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableDocumentsMetadataFilters() {
+      onChanged();
+      ;
+      if (documentsMetadataFilters_ == null) {
+        documentsMetadataFilters_ =
+            com.google.protobuf.MapField.newMapField(
+                DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry);
+      }
+      if (!documentsMetadataFilters_.isMutable()) {
+        documentsMetadataFilters_ = documentsMetadataFilters_.copy();
+      }
+      return documentsMetadataFilters_;
+    }
+
+    public int getDocumentsMetadataFiltersCount() {
+      return internalGetDocumentsMetadataFilters().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * values for a metadata key should be concatenated by comma. For example,
+     * filters to match all documents that have 'US' or 'CA' in their market
+     * metadata values and 'agent' in their user metadata values will be
+     * ```
+     * documents_metadata_filters {
+     *   key: "market"
+     *   value: "US,CA"
+     * }
+     * documents_metadata_filters {
+     *   key: "user"
+     *   value: "agent"
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsDocumentsMetadataFilters(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetDocumentsMetadataFilters().getMap().containsKey(key);
+    }
+    /** Use {@link #getDocumentsMetadataFiltersMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFilters() {
+      return getDocumentsMetadataFiltersMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * values for a metadata key should be concatenated by comma. For example,
+     * filters to match all documents that have 'US' or 'CA' in their market
+     * metadata values and 'agent' in their user metadata values will be
+     * ```
+     * documents_metadata_filters {
+     *   key: "market"
+     *   value: "US,CA"
+     * }
+     * documents_metadata_filters {
+     *   key: "user"
+     *   value: "agent"
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFiltersMap() {
+      return internalGetDocumentsMetadataFilters().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * values for a metadata key should be concatenated by comma. For example,
+     * filters to match all documents that have 'US' or 'CA' in their market
+     * metadata values and 'agent' in their user metadata values will be
+     * ```
+     * documents_metadata_filters {
+     *   key: "market"
+     *   value: "US,CA"
+     * }
+     * documents_metadata_filters {
+     *   key: "user"
+     *   value: "agent"
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentsMetadataFiltersOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDocumentsMetadataFilters().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * values for a metadata key should be concatenated by comma. For example,
+     * filters to match all documents that have 'US' or 'CA' in their market
+     * metadata values and 'agent' in their user metadata values will be
+     * ```
+     * documents_metadata_filters {
+     *   key: "market"
+     *   value: "US,CA"
+     * }
+     * documents_metadata_filters {
+     *   key: "user"
+     *   value: "agent"
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentsMetadataFiltersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDocumentsMetadataFilters().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearDocumentsMetadataFilters() {
+      internalGetMutableDocumentsMetadataFilters().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * values for a metadata key should be concatenated by comma. For example,
+     * filters to match all documents that have 'US' or 'CA' in their market
+     * metadata values and 'agent' in their user metadata values will be
+     * ```
+     * documents_metadata_filters {
+     *   key: "market"
+     *   value: "US,CA"
+     * }
+     * documents_metadata_filters {
+     *   key: "user"
+     *   value: "agent"
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDocumentsMetadataFilters(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableDocumentsMetadataFilters().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableDocumentsMetadataFilters() {
+      return internalGetMutableDocumentsMetadataFilters().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * values for a metadata key should be concatenated by comma. For example,
+     * filters to match all documents that have 'US' or 'CA' in their market
+     * metadata values and 'agent' in their user metadata values will be
+     * ```
+     * documents_metadata_filters {
+     *   key: "market"
+     *   value: "US,CA"
+     * }
+     * documents_metadata_filters {
+     *   key: "user"
+     *   value: "agent"
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putDocumentsMetadataFilters(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableDocumentsMetadataFilters().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * values for a metadata key should be concatenated by comma. For example,
+     * filters to match all documents that have 'US' or 'CA' in their market
+     * metadata values and 'agent' in their user metadata values will be
+     * ```
+     * documents_metadata_filters {
+     *   key: "market"
+     *   value: "US,CA"
+     * }
+     * documents_metadata_filters {
+     *   key: "user"
+     *   value: "agent"
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllDocumentsMetadataFilters(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableDocumentsMetadataFilters().getMutableMap().putAll(values);
       return this;
     }
 

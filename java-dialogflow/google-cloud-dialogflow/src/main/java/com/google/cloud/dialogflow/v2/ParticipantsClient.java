@@ -752,6 +752,7 @@ public class ParticipantsClient implements BackgroundResource {
    *                   .toString())
    *           .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
    *           .setQueryParams(QueryParameters.newBuilder().build())
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
    *   AnalyzeContentResponse response = participantsClient.analyzeContent(request);
@@ -785,6 +786,7 @@ public class ParticipantsClient implements BackgroundResource {
    *                   .toString())
    *           .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
    *           .setQueryParams(QueryParameters.newBuilder().build())
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<AnalyzeContentResponse> future =
@@ -872,6 +874,7 @@ public class ParticipantsClient implements BackgroundResource {
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
    *           .setContextSize(1116903569)
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .build();
    *   SuggestArticlesResponse response = participantsClient.suggestArticles(request);
    * }
@@ -903,6 +906,7 @@ public class ParticipantsClient implements BackgroundResource {
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
    *           .setContextSize(1116903569)
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .build();
    *   ApiFuture<SuggestArticlesResponse> future =
    *       participantsClient.suggestArticlesCallable().futureCall(request);
@@ -990,6 +994,7 @@ public class ParticipantsClient implements BackgroundResource {
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
    *           .setContextSize(1116903569)
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .build();
    *   SuggestFaqAnswersResponse response = participantsClient.suggestFaqAnswers(request);
    * }
@@ -1021,6 +1026,7 @@ public class ParticipantsClient implements BackgroundResource {
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
    *           .setContextSize(1116903569)
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .build();
    *   ApiFuture<SuggestFaqAnswersResponse> future =
    *       participantsClient.suggestFaqAnswersCallable().futureCall(request);

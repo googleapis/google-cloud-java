@@ -153,6 +153,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>FAQ = 2;</code>
      */
     FAQ(2),
+    /**
+     *
+     *
+     * <pre>
+     * Run smart reply model.
+     * </pre>
+     *
+     * <code>SMART_REPLY = 3;</code>
+     */
+    SMART_REPLY(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -186,6 +196,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>FAQ = 2;</code>
      */
     public static final int FAQ_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Run smart reply model.
+     * </pre>
+     *
+     * <code>SMART_REPLY = 3;</code>
+     */
+    public static final int SMART_REPLY_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -217,6 +237,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
           return ARTICLE_SUGGESTION;
         case 2:
           return FAQ;
+        case 3:
+          return SMART_REPLY;
         default:
           return null;
       }

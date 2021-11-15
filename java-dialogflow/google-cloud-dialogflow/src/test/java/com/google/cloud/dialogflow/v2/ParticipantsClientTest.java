@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -89,6 +90,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
 
@@ -136,6 +138,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
 
@@ -181,6 +184,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
 
@@ -227,6 +231,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
 
@@ -359,6 +364,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
 

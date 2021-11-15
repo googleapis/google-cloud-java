@@ -305,7 +305,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+   * Response of the Dialogflow
+   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+   * call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -320,7 +322,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+   * Response of the Dialogflow
+   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+   * call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -337,7 +341,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+   * Response of the Dialogflow
+   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+   * call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -789,7 +795,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -803,7 +811,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -823,7 +833,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -846,7 +858,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -866,7 +880,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -893,7 +909,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -913,7 +931,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -928,7 +948,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -947,7 +969,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>

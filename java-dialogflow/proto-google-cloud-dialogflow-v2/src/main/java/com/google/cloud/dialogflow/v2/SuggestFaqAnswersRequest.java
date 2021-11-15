@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
+ * The request message for
+ * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.SuggestFaqAnswersRequest}
@@ -88,6 +89,23 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
           case 24:
             {
               contextSize_ = input.readInt32();
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder subBuilder = null;
+              if (assistQueryParams_ != null) {
+                subBuilder = assistQueryParams_.toBuilder();
+              }
+              assistQueryParams_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.AssistQueryParameters.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(assistQueryParams_);
+                assistQueryParams_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -256,6 +274,55 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     return contextSize_;
   }
 
+  public static final int ASSIST_QUERY_PARAMS_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.v2.AssistQueryParameters assistQueryParams_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+   *
+   * @return Whether the assistQueryParams field is set.
+   */
+  @java.lang.Override
+  public boolean hasAssistQueryParams() {
+    return assistQueryParams_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+   *
+   * @return The assistQueryParams.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams() {
+    return assistQueryParams_ == null
+        ? com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()
+        : assistQueryParams_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder
+      getAssistQueryParamsOrBuilder() {
+    return getAssistQueryParams();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -279,6 +346,9 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     if (contextSize_ != 0) {
       output.writeInt32(3, contextSize_);
     }
+    if (assistQueryParams_ != null) {
+      output.writeMessage(4, getAssistQueryParams());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -296,6 +366,9 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     }
     if (contextSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, contextSize_);
+    }
+    if (assistQueryParams_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAssistQueryParams());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -316,6 +389,10 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     if (!getParent().equals(other.getParent())) return false;
     if (!getLatestMessage().equals(other.getLatestMessage())) return false;
     if (getContextSize() != other.getContextSize()) return false;
+    if (hasAssistQueryParams() != other.hasAssistQueryParams()) return false;
+    if (hasAssistQueryParams()) {
+      if (!getAssistQueryParams().equals(other.getAssistQueryParams())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -333,6 +410,10 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + getLatestMessage().hashCode();
     hash = (37 * hash) + CONTEXT_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getContextSize();
+    if (hasAssistQueryParams()) {
+      hash = (37 * hash) + ASSIST_QUERY_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getAssistQueryParams().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -438,7 +519,8 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
+   * The request message for
+   * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.SuggestFaqAnswersRequest}
@@ -485,6 +567,12 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
 
       contextSize_ = 0;
 
+      if (assistQueryParamsBuilder_ == null) {
+        assistQueryParams_ = null;
+      } else {
+        assistQueryParams_ = null;
+        assistQueryParamsBuilder_ = null;
+      }
       return this;
     }
 
@@ -515,6 +603,11 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       result.parent_ = parent_;
       result.latestMessage_ = latestMessage_;
       result.contextSize_ = contextSize_;
+      if (assistQueryParamsBuilder_ == null) {
+        result.assistQueryParams_ = assistQueryParams_;
+      } else {
+        result.assistQueryParams_ = assistQueryParamsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -575,6 +668,9 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       }
       if (other.getContextSize() != 0) {
         setContextSize(other.getContextSize());
+      }
+      if (other.hasAssistQueryParams()) {
+        mergeAssistQueryParams(other.getAssistQueryParams());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -909,6 +1005,196 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       contextSize_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.AssistQueryParameters assistQueryParams_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AssistQueryParameters,
+            com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder,
+            com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder>
+        assistQueryParamsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     *
+     * @return Whether the assistQueryParams field is set.
+     */
+    public boolean hasAssistQueryParams() {
+      return assistQueryParamsBuilder_ != null || assistQueryParams_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     *
+     * @return The assistQueryParams.
+     */
+    public com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams() {
+      if (assistQueryParamsBuilder_ == null) {
+        return assistQueryParams_ == null
+            ? com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()
+            : assistQueryParams_;
+      } else {
+        return assistQueryParamsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     */
+    public Builder setAssistQueryParams(
+        com.google.cloud.dialogflow.v2.AssistQueryParameters value) {
+      if (assistQueryParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        assistQueryParams_ = value;
+        onChanged();
+      } else {
+        assistQueryParamsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     */
+    public Builder setAssistQueryParams(
+        com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder builderForValue) {
+      if (assistQueryParamsBuilder_ == null) {
+        assistQueryParams_ = builderForValue.build();
+        onChanged();
+      } else {
+        assistQueryParamsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     */
+    public Builder mergeAssistQueryParams(
+        com.google.cloud.dialogflow.v2.AssistQueryParameters value) {
+      if (assistQueryParamsBuilder_ == null) {
+        if (assistQueryParams_ != null) {
+          assistQueryParams_ =
+              com.google.cloud.dialogflow.v2.AssistQueryParameters.newBuilder(assistQueryParams_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          assistQueryParams_ = value;
+        }
+        onChanged();
+      } else {
+        assistQueryParamsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     */
+    public Builder clearAssistQueryParams() {
+      if (assistQueryParamsBuilder_ == null) {
+        assistQueryParams_ = null;
+        onChanged();
+      } else {
+        assistQueryParams_ = null;
+        assistQueryParamsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder
+        getAssistQueryParamsBuilder() {
+
+      onChanged();
+      return getAssistQueryParamsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder
+        getAssistQueryParamsOrBuilder() {
+      if (assistQueryParamsBuilder_ != null) {
+        return assistQueryParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return assistQueryParams_ == null
+            ? com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()
+            : assistQueryParams_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for a human assist query.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AssistQueryParameters,
+            com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder,
+            com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder>
+        getAssistQueryParamsFieldBuilder() {
+      if (assistQueryParamsBuilder_ == null) {
+        assistQueryParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.AssistQueryParameters,
+                com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder,
+                com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder>(
+                getAssistQueryParams(), getParentForChildren(), isClean());
+        assistQueryParams_ = null;
+      }
+      return assistQueryParamsBuilder_;
     }
 
     @java.lang.Override
