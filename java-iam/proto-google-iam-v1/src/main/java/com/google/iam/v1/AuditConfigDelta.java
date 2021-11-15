@@ -508,13 +508,13 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
     if (action_ != com.google.iam.v1.AuditConfigDelta.Action.ACTION_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, action_);
     }
-    if (!getServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, service_);
     }
-    if (!getExemptedMemberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exemptedMember_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, exemptedMember_);
     }
-    if (!getLogTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, logType_);
     }
     unknownFields.writeTo(output);
@@ -529,13 +529,13 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
     if (action_ != com.google.iam.v1.AuditConfigDelta.Action.ACTION_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, action_);
     }
-    if (!getServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, service_);
     }
-    if (!getExemptedMemberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exemptedMember_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, exemptedMember_);
     }
-    if (!getLogTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, logType_);
     }
     size += unknownFields.getSerializedSize();

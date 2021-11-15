@@ -504,10 +504,10 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
     if (action_ != com.google.iam.v1.BindingDelta.Action.ACTION_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, action_);
     }
-    if (!getRoleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, role_);
     }
-    if (!getMemberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(member_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, member_);
     }
     if (condition_ != null) {
@@ -525,10 +525,10 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
     if (action_ != com.google.iam.v1.BindingDelta.Action.ACTION_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, action_);
     }
-    if (!getRoleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, role_);
     }
-    if (!getMemberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(member_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, member_);
     }
     if (condition_ != null) {
