@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-grafeas.git",
-        "sha": "fe1c69178317b713ac40c8fa71abb6fc67674c7f"
+        "sha": "05fb4c14cd5341f9872a9d5ed6e9dc7e0d4be729"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "717a6a1fe247df095092de1321eadc9da887a06c"
+        "sha": "42a3786737c17ece39924d7025f3be481812da53"
       }
     }
   ],
