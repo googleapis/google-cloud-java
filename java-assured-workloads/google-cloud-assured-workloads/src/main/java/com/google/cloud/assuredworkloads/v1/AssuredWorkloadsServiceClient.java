@@ -208,7 +208,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
-   *   String parent = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString();
+   *   String parent = LocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
    *   Workload workload = Workload.newBuilder().build();
    *   Workload response = assuredWorkloadsServiceClient.createWorkloadAsync(parent, workload).get();
    * }
@@ -237,7 +237,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     AssuredWorkloadsServiceClient.create()) {
    *   CreateWorkloadRequest request =
    *       CreateWorkloadRequest.newBuilder()
-   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setWorkload(Workload.newBuilder().build())
    *           .setExternalId("externalId-1699764666")
    *           .build();
@@ -264,7 +264,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     AssuredWorkloadsServiceClient.create()) {
    *   CreateWorkloadRequest request =
    *       CreateWorkloadRequest.newBuilder()
-   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setWorkload(Workload.newBuilder().build())
    *           .setExternalId("externalId-1699764666")
    *           .build();
@@ -291,7 +291,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     AssuredWorkloadsServiceClient.create()) {
    *   CreateWorkloadRequest request =
    *       CreateWorkloadRequest.newBuilder()
-   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setWorkload(Workload.newBuilder().build())
    *           .setExternalId("externalId-1699764666")
    *           .build();
@@ -626,7 +626,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
-   *   String parent = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString();
+   *   String parent = LocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
    *   for (Workload element : assuredWorkloadsServiceClient.listWorkloads(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -653,7 +653,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     AssuredWorkloadsServiceClient.create()) {
    *   ListWorkloadsRequest request =
    *       ListWorkloadsRequest.newBuilder()
-   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -682,7 +682,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     AssuredWorkloadsServiceClient.create()) {
    *   ListWorkloadsRequest request =
    *       ListWorkloadsRequest.newBuilder()
-   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -712,7 +712,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     AssuredWorkloadsServiceClient.create()) {
    *   ListWorkloadsRequest request =
    *       ListWorkloadsRequest.newBuilder()
-   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
