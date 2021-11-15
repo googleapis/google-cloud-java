@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-bigquerymigration/compare/v0.1.1...v0.1.2) (2021-11-12)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-bigquerymigration/issues/1266)) ([#24](https://www.github.com/googleapis/java-bigquerymigration/issues/24)) ([12b2d58](https://www.github.com/googleapis/java-bigquerymigration/commit/12b2d584ef60c8cc211dce144780ecfc3abff73c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#33](https://www.github.com/googleapis/java-bigquerymigration/issues/33)) ([822e53b](https://www.github.com/googleapis/java-bigquerymigration/commit/822e53b8fe9484452d8a71c1b392322c59ffced0))
+
 ### [0.1.1](https://www.github.com/googleapis/java-bigquerymigration/compare/v0.1.0...v0.1.1) (2021-10-19)
 
 
