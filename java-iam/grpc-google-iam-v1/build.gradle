@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
   compile 'io.grpc:grpc-stub:1.42.1'
-  compile 'io.grpc:grpc-protobuf:1.42.0'
+  compile 'io.grpc:grpc-protobuf:1.42.1'
   compile project(':proto-google-iam-v1')
 }
 
