@@ -127,4 +127,45 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The ssmlGender.
    */
   com.google.cloud.texttospeech.v1beta1.SsmlVoiceGender getSsmlGender();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+   * the service will choose the custom voice matching the specified
+   * configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+   *
+   * @return Whether the customVoice field is set.
+   */
+  boolean hasCustomVoice();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+   * the service will choose the custom voice matching the specified
+   * configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+   *
+   * @return The customVoice.
+   */
+  com.google.cloud.texttospeech.v1beta1.CustomVoiceParams getCustomVoice();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+   * the service will choose the custom voice matching the specified
+   * configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+   */
+  com.google.cloud.texttospeech.v1beta1.CustomVoiceParamsOrBuilder getCustomVoiceOrBuilder();
 }

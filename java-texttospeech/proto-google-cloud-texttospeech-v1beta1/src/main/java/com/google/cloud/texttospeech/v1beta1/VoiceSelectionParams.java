@@ -93,6 +93,23 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
               ssmlGender_ = rawValue;
               break;
             }
+          case 34:
+            {
+              com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.Builder subBuilder = null;
+              if (customVoice_ != null) {
+                subBuilder = customVoice_.toBuilder();
+              }
+              customVoice_ =
+                  input.readMessage(
+                      com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(customVoice_);
+                customVoice_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -293,6 +310,61 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         : result;
   }
 
+  public static final int CUSTOM_VOICE_FIELD_NUMBER = 4;
+  private com.google.cloud.texttospeech.v1beta1.CustomVoiceParams customVoice_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+   * the service will choose the custom voice matching the specified
+   * configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+   *
+   * @return Whether the customVoice field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomVoice() {
+    return customVoice_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+   * the service will choose the custom voice matching the specified
+   * configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+   *
+   * @return The customVoice.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.CustomVoiceParams getCustomVoice() {
+    return customVoice_ == null
+        ? com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.getDefaultInstance()
+        : customVoice_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+   * the service will choose the custom voice matching the specified
+   * configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.CustomVoiceParamsOrBuilder
+      getCustomVoiceOrBuilder() {
+    return getCustomVoice();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -318,6 +390,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       output.writeEnum(3, ssmlGender_);
     }
+    if (customVoice_ != null) {
+      output.writeMessage(4, getCustomVoice());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -338,6 +413,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, ssmlGender_);
     }
+    if (customVoice_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCustomVoice());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -357,6 +435,10 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getName().equals(other.getName())) return false;
     if (ssmlGender_ != other.ssmlGender_) return false;
+    if (hasCustomVoice() != other.hasCustomVoice()) return false;
+    if (hasCustomVoice()) {
+      if (!getCustomVoice().equals(other.getCustomVoice())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -374,6 +456,10 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + SSML_GENDER_FIELD_NUMBER;
     hash = (53 * hash) + ssmlGender_;
+    if (hasCustomVoice()) {
+      hash = (37 * hash) + CUSTOM_VOICE_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomVoice().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -526,6 +612,12 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
 
       ssmlGender_ = 0;
 
+      if (customVoiceBuilder_ == null) {
+        customVoice_ = null;
+      } else {
+        customVoice_ = null;
+        customVoiceBuilder_ = null;
+      }
       return this;
     }
 
@@ -556,6 +648,11 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       result.languageCode_ = languageCode_;
       result.name_ = name_;
       result.ssmlGender_ = ssmlGender_;
+      if (customVoiceBuilder_ == null) {
+        result.customVoice_ = customVoice_;
+      } else {
+        result.customVoice_ = customVoiceBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -616,6 +713,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       }
       if (other.ssmlGender_ != 0) {
         setSsmlGenderValue(other.getSsmlGenderValue());
+      }
+      if (other.hasCustomVoice()) {
+        mergeCustomVoice(other.getCustomVoice());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1025,6 +1125,211 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       ssmlGender_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.texttospeech.v1beta1.CustomVoiceParams customVoice_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.CustomVoiceParams,
+            com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.Builder,
+            com.google.cloud.texttospeech.v1beta1.CustomVoiceParamsOrBuilder>
+        customVoiceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     *
+     * @return Whether the customVoice field is set.
+     */
+    public boolean hasCustomVoice() {
+      return customVoiceBuilder_ != null || customVoice_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     *
+     * @return The customVoice.
+     */
+    public com.google.cloud.texttospeech.v1beta1.CustomVoiceParams getCustomVoice() {
+      if (customVoiceBuilder_ == null) {
+        return customVoice_ == null
+            ? com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.getDefaultInstance()
+            : customVoice_;
+      } else {
+        return customVoiceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     */
+    public Builder setCustomVoice(com.google.cloud.texttospeech.v1beta1.CustomVoiceParams value) {
+      if (customVoiceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customVoice_ = value;
+        onChanged();
+      } else {
+        customVoiceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     */
+    public Builder setCustomVoice(
+        com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.Builder builderForValue) {
+      if (customVoiceBuilder_ == null) {
+        customVoice_ = builderForValue.build();
+        onChanged();
+      } else {
+        customVoiceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     */
+    public Builder mergeCustomVoice(com.google.cloud.texttospeech.v1beta1.CustomVoiceParams value) {
+      if (customVoiceBuilder_ == null) {
+        if (customVoice_ != null) {
+          customVoice_ =
+              com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.newBuilder(customVoice_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          customVoice_ = value;
+        }
+        onChanged();
+      } else {
+        customVoiceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     */
+    public Builder clearCustomVoice() {
+      if (customVoiceBuilder_ == null) {
+        customVoice_ = null;
+        onChanged();
+      } else {
+        customVoice_ = null;
+        customVoiceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.Builder getCustomVoiceBuilder() {
+
+      onChanged();
+      return getCustomVoiceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.CustomVoiceParamsOrBuilder
+        getCustomVoiceOrBuilder() {
+      if (customVoiceBuilder_ != null) {
+        return customVoiceBuilder_.getMessageOrBuilder();
+      } else {
+        return customVoice_ == null
+            ? com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.getDefaultInstance()
+            : customVoice_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a custom voice. If [CustomVoiceParams.model] is set,
+     * the service will choose the custom voice matching the specified
+     * configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.CustomVoiceParams custom_voice = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.CustomVoiceParams,
+            com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.Builder,
+            com.google.cloud.texttospeech.v1beta1.CustomVoiceParamsOrBuilder>
+        getCustomVoiceFieldBuilder() {
+      if (customVoiceBuilder_ == null) {
+        customVoiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1beta1.CustomVoiceParams,
+                com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.Builder,
+                com.google.cloud.texttospeech.v1beta1.CustomVoiceParamsOrBuilder>(
+                getCustomVoice(), getParentForChildren(), isClean());
+        customVoice_ = null;
+      }
+      return customVoiceBuilder_;
     }
 
     @java.lang.Override
