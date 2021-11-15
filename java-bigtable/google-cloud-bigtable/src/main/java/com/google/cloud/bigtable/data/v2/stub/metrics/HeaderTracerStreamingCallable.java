@@ -27,8 +27,8 @@ import javax.annotation.Nonnull;
 
 /**
  * This callable will inject a {@link GrpcResponseMetadata} to access the headers and trailers
- * returned by gRPC methods upon completion. The {@link HeaderTracer} will process metrics that were
- * injected in the header/trailer and publish them to OpenCensus. If {@link
+ * returned by gRPC methods upon completion. The {@link BigtableTracer} will process metrics that
+ * were injected in the header/trailer and publish them to OpenCensus. If {@link
  * GrpcResponseMetadata#getMetadata()} returned null, it probably means that the request has never
  * reached GFE, and it'll increment the gfe_header_missing_counter in this case.
  *
@@ -44,26 +44,21 @@ public class HeaderTracerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
 
   private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
-  private final HeaderTracer headerTracer;
-  private final String spanName;
 
   public HeaderTracerStreamingCallable(
-      @Nonnull ServerStreamingCallable<RequestT, ResponseT> callable,
-      @Nonnull HeaderTracer headerTracer,
-      @Nonnull String spanName) {
+      @Nonnull ServerStreamingCallable<RequestT, ResponseT> callable) {
     this.innerCallable = Preconditions.checkNotNull(callable, "Inner callable must be set");
-    this.headerTracer = Preconditions.checkNotNull(headerTracer, "HeaderTracer must be set");
-    this.spanName = Preconditions.checkNotNull(spanName, "Span name must be set");
   }
 
   @Override
   public void call(
       RequestT request, ResponseObserver<ResponseT> responseObserver, ApiCallContext context) {
     final GrpcResponseMetadata responseMetadata = new GrpcResponseMetadata();
-    if (RpcViews.isGfeMetricsRegistered()) {
+    // tracer should always be an instance of bigtable tracer
+    if (RpcViews.isGfeMetricsRegistered() && context.getTracer() instanceof BigtableTracer) {
       HeaderTracerResponseObserver<ResponseT> innerObserver =
           new HeaderTracerResponseObserver<>(
-              responseObserver, headerTracer, responseMetadata, spanName);
+              responseObserver, (BigtableTracer) context.getTracer(), responseMetadata);
       innerCallable.call(request, innerObserver, responseMetadata.addHandlers(context));
     } else {
       innerCallable.call(request, responseObserver, context);
@@ -72,20 +67,17 @@ public class HeaderTracerStreamingCallable<RequestT, ResponseT>
 
   private class HeaderTracerResponseObserver<ResponseT> implements ResponseObserver<ResponseT> {
 
-    private ResponseObserver<ResponseT> outerObserver;
-    private HeaderTracer headerTracer;
-    private GrpcResponseMetadata responseMetadata;
-    private String spanName;
+    private final BigtableTracer tracer;
+    private final ResponseObserver<ResponseT> outerObserver;
+    private final GrpcResponseMetadata responseMetadata;
 
     HeaderTracerResponseObserver(
         ResponseObserver<ResponseT> observer,
-        HeaderTracer headerTracer,
-        GrpcResponseMetadata metadata,
-        String spanName) {
+        BigtableTracer tracer,
+        GrpcResponseMetadata metadata) {
+      this.tracer = tracer;
       this.outerObserver = observer;
-      this.headerTracer = headerTracer;
       this.responseMetadata = metadata;
-      this.spanName = spanName;
     }
 
     @Override
@@ -103,22 +95,16 @@ public class HeaderTracerStreamingCallable<RequestT, ResponseT>
       // server-timing metric will be added through GrpcResponseMetadata#onHeaders(Metadata),
       // so it's not checking trailing metadata here.
       Metadata metadata = responseMetadata.getMetadata();
-      if (metadata != null) {
-        headerTracer.recordGfeMetadata(metadata, spanName);
-      } else {
-        headerTracer.recordGfeMissingHeader(spanName);
-      }
+      Long latency = Util.getGfeLatency(metadata);
+      tracer.recordGfeMetadata(latency);
       outerObserver.onError(t);
     }
 
     @Override
     public void onComplete() {
       Metadata metadata = responseMetadata.getMetadata();
-      if (metadata != null) {
-        headerTracer.recordGfeMetadata(metadata, spanName);
-      } else {
-        headerTracer.recordGfeMissingHeader(spanName);
-      }
+      Long latency = Util.getGfeLatency(metadata);
+      tracer.recordGfeMetadata(latency);
       outerObserver.onComplete();
     }
   }

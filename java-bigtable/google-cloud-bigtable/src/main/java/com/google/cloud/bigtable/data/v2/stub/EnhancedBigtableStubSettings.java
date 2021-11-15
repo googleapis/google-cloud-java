@@ -40,7 +40,6 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracer;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.common.base.MoreObjects;
@@ -164,7 +163,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final String appProfileId;
   private final boolean isRefreshingChannel;
   private ImmutableList<String> primedTableIds;
-  private HeaderTracer headerTracer;
   private final Map<String, String> jwtAudienceMapping;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
@@ -199,7 +197,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     appProfileId = builder.appProfileId;
     isRefreshingChannel = builder.isRefreshingChannel;
     primedTableIds = builder.primedTableIds;
-    headerTracer = builder.headerTracer;
     jwtAudienceMapping = builder.jwtAudienceMapping;
 
     // Per method settings.
@@ -243,11 +240,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   @BetaApi("Channel priming is not currently stable and might change in the future")
   public List<String> getPrimedTableIds() {
     return primedTableIds;
-  }
-
-  /** Gets the tracer for capturing metrics in the header. */
-  HeaderTracer getHeaderTracer() {
-    return headerTracer;
   }
 
   @InternalApi("Used for internal testing")
@@ -512,7 +504,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private String appProfileId;
     private boolean isRefreshingChannel;
     private ImmutableList<String> primedTableIds;
-    private HeaderTracer headerTracer;
     private Map<String, String> jwtAudienceMapping;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
@@ -537,7 +528,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       this.appProfileId = SERVER_DEFAULT_APP_PROFILE_ID;
       this.isRefreshingChannel = false;
       primedTableIds = ImmutableList.of();
-      headerTracer = HeaderTracer.newBuilder().build();
       jwtAudienceMapping = DEFAULT_JWT_AUDIENCE_MAPPING;
       setCredentialsProvider(defaultCredentialsProviderBuilder().build());
 
@@ -645,7 +635,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       appProfileId = settings.appProfileId;
       isRefreshingChannel = settings.isRefreshingChannel;
       primedTableIds = settings.primedTableIds;
-      headerTracer = settings.headerTracer;
       jwtAudienceMapping = settings.jwtAudienceMapping;
 
       // Per method settings.
@@ -769,17 +758,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return primedTableIds;
     }
 
-    /** Configure the header tracer for surfacing metrics in the header. */
-    Builder setHeaderTracer(HeaderTracer headerTracer) {
-      this.headerTracer = headerTracer;
-      return this;
-    }
-
-    /** Gets the header tracer that'll be used to surface metrics in the header. */
-    HeaderTracer getHeaderTracer() {
-      return headerTracer;
-    }
-
     @InternalApi("Used for internal testing")
     public Builder setJwtAudienceMapping(Map<String, String> jwtAudienceMapping) {
       this.jwtAudienceMapping = Preconditions.checkNotNull(jwtAudienceMapping);
@@ -870,7 +848,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .add("appProfileId", appProfileId)
         .add("isRefreshingChannel", isRefreshingChannel)
         .add("primedTableIds", primedTableIds)
-        .add("headerTracer", headerTracer)
         .add("jwtAudienceMapping", jwtAudienceMapping)
         .add("readRowsSettings", readRowsSettings)
         .add("readRowSettings", readRowSettings)

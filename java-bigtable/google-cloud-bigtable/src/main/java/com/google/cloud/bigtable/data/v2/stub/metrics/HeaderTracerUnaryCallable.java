@@ -27,8 +27,8 @@ import javax.annotation.Nonnull;
 
 /**
  * This callable will inject a {@link GrpcResponseMetadata} to access the headers and trailers
- * returned by gRPC methods upon completion. The {@link HeaderTracer} will process metrics that were
- * injected in the header/trailer and publish them to OpenCensus. If {@link
+ * returned by gRPC methods upon completion. The {@link BigtableTracer} will process metrics that
+ * were injected in the header/trailer and publish them to OpenCensus. If {@link
  * GrpcResponseMetadata#getMetadata()} returned null, it probably means that the request has never
  * reached GFE, and it'll increment the gfe_header_missing_counter in this case.
  *
@@ -44,33 +44,27 @@ public class HeaderTracerUnaryCallable<RequestT, ResponseT>
     extends UnaryCallable<RequestT, ResponseT> {
 
   private final UnaryCallable<RequestT, ResponseT> innerCallable;
-  private final HeaderTracer headerTracer;
-  private final String spanName;
 
-  public HeaderTracerUnaryCallable(
-      @Nonnull UnaryCallable<RequestT, ResponseT> innerCallable,
-      @Nonnull HeaderTracer headerTracer,
-      @Nonnull String spanName) {
+  public HeaderTracerUnaryCallable(@Nonnull UnaryCallable<RequestT, ResponseT> innerCallable) {
     this.innerCallable = Preconditions.checkNotNull(innerCallable, "Inner callable must be set");
-    this.headerTracer = Preconditions.checkNotNull(headerTracer, "HeaderTracer must be set");
-    this.spanName = Preconditions.checkNotNull(spanName, "Span name must be set");
   }
 
   @Override
   public ApiFuture futureCall(RequestT request, ApiCallContext context) {
     if (RpcViews.isGfeMetricsRegistered()) {
       final GrpcResponseMetadata responseMetadata = new GrpcResponseMetadata();
-      ApiFuture<ResponseT> future =
-          innerCallable.futureCall(request, responseMetadata.addHandlers(context));
+      final ApiCallContext contextWithResponseMetadata = responseMetadata.addHandlers(context);
+      ApiFuture<ResponseT> future = innerCallable.futureCall(request, contextWithResponseMetadata);
       future.addListener(
           new Runnable() {
             @Override
             public void run() {
-              Metadata metadata = responseMetadata.getMetadata();
-              if (metadata != null) {
-                headerTracer.recordGfeMetadata(metadata, spanName);
-              } else {
-                headerTracer.recordGfeMissingHeader(spanName);
+              // this should always be true
+              if (contextWithResponseMetadata.getTracer() instanceof BigtableTracer) {
+                BigtableTracer tracer = (BigtableTracer) contextWithResponseMetadata.getTracer();
+                Metadata metadata = responseMetadata.getMetadata();
+                Long latency = Util.getGfeLatency(metadata);
+                tracer.recordGfeMetadata(latency);
               }
             }
           },

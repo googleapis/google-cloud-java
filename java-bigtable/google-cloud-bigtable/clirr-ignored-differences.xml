@@ -39,4 +39,26 @@
         <differenceType>8001</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/CompositeTracerFactory</className>
     </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracer</className>
+    </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracer$Builder</className>
+    </difference>
+     change method args is ok because HeaderTracerStreamingCallable is InternalApi
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerStreamingCallable</className>
+        <method>*</method>
+    </difference>
+    <!-- change method args is ok because HeaderTracerUnaryCallable is InternalApi -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerUnaryCallable</className>
+        <method>*</method>
+    </difference>
 </differences>

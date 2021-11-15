@@ -33,6 +33,8 @@ import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 /** Utilities to help integrating with OpenCensus. */
@@ -41,6 +43,10 @@ class Util {
       Metadata.Key.of("bigtable-attempt", Metadata.ASCII_STRING_MARSHALLER);
   static final Metadata.Key<String> ATTEMPT_EPOCH_KEY =
       Metadata.Key.of("bigtable-client-attempt-epoch-usec", Metadata.ASCII_STRING_MARSHALLER);
+
+  private static final Metadata.Key<String> SERVER_TIMING_HEADER_KEY =
+      Metadata.Key.of("server-timing", Metadata.ASCII_STRING_MARSHALLER);
+  private static final Pattern SERVER_TIMING_HEADER_PATTERN = Pattern.compile(".*dur=(?<dur>\\d+)");
 
   private static final TagValue OK_STATUS = TagValue.create(StatusCode.Code.OK.toString());
 
@@ -100,5 +106,18 @@ class Util {
       headers.put(ATTEMPT_HEADER_KEY.name(), Arrays.asList(String.valueOf(attemptCount)));
     }
     return headers.build();
+  }
+
+  static Long getGfeLatency(Metadata metadata) {
+    if (metadata != null && metadata.get(SERVER_TIMING_HEADER_KEY) != null) {
+      String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
+      Matcher matcher = SERVER_TIMING_HEADER_PATTERN.matcher(serverTiming);
+      // this should always be true
+      if (matcher.find()) {
+        long latency = Long.valueOf(matcher.group("dur"));
+        return latency;
+      }
+    }
+    return null;
   }
 }

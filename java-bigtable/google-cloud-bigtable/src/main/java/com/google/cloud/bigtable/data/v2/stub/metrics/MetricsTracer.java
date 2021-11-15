@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
-import com.google.api.gax.tracing.BaseApiTracer;
 import com.google.api.gax.tracing.SpanName;
 import com.google.common.base.Stopwatch;
 import io.opencensus.stats.MeasureMap;
@@ -34,7 +33,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
-class MetricsTracer extends BaseApiTracer {
+class MetricsTracer extends BigtableTracer {
 
   private final OperationType operationType;
 
@@ -56,6 +55,8 @@ class MetricsTracer extends BaseApiTracer {
   private int attemptCount = 0;
   private Stopwatch attemptTimer;
   private long attemptResponseCount = 0;
+
+  private volatile int attempt = 0;
 
   MetricsTracer(
       OperationType operationType,
@@ -129,6 +130,7 @@ class MetricsTracer extends BaseApiTracer {
 
   @Override
   public void attemptStarted(int i) {
+    attempt = i;
     attemptCount++;
     attemptTimer = Stopwatch.createStarted();
     attemptResponseCount = 0;
@@ -201,6 +203,24 @@ class MetricsTracer extends BaseApiTracer {
   @Override
   public void batchRequestSent(long elementCount, long requestSize) {
     // noop
+  }
+
+  @Override
+  public int getAttempt() {
+    return attempt;
+  }
+
+  @Override
+  public void recordGfeMetadata(@Nullable Long latency) {
+    MeasureMap measures = stats.newMeasureMap();
+    if (latency != null) {
+      measures
+          .put(RpcMeasureConstants.BIGTABLE_GFE_LATENCY, latency)
+          .put(RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT, 0L);
+    } else {
+      measures.put(RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT, 1L);
+    }
+    measures.record(newTagCtxBuilder().build());
   }
 
   private TagContextBuilder newTagCtxBuilder() {

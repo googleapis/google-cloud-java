@@ -33,7 +33,6 @@ import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracer;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Range;
@@ -77,7 +76,6 @@ public class EnhancedBigtableStubSettingsTest {
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
     WatchdogProvider watchdogProvider = Mockito.mock(WatchdogProvider.class);
     Duration watchdogInterval = Duration.ofSeconds(12);
-    HeaderTracer headerTracer = Mockito.mock(HeaderTracer.class);
 
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
@@ -88,8 +86,7 @@ public class EnhancedBigtableStubSettingsTest {
             .setEndpoint(endpoint)
             .setCredentialsProvider(credentialsProvider)
             .setStreamWatchdogProvider(watchdogProvider)
-            .setStreamWatchdogCheckInterval(watchdogInterval)
-            .setHeaderTracer(headerTracer);
+            .setStreamWatchdogCheckInterval(watchdogInterval);
 
     verifyBuilder(
         builder,
@@ -100,8 +97,7 @@ public class EnhancedBigtableStubSettingsTest {
         endpoint,
         credentialsProvider,
         watchdogProvider,
-        watchdogInterval,
-        headerTracer);
+        watchdogInterval);
     verifySettings(
         builder.build(),
         projectId,
@@ -111,8 +107,7 @@ public class EnhancedBigtableStubSettingsTest {
         endpoint,
         credentialsProvider,
         watchdogProvider,
-        watchdogInterval,
-        headerTracer);
+        watchdogInterval);
     verifyBuilder(
         builder.build().toBuilder(),
         projectId,
@@ -122,8 +117,7 @@ public class EnhancedBigtableStubSettingsTest {
         endpoint,
         credentialsProvider,
         watchdogProvider,
-        watchdogInterval,
-        headerTracer);
+        watchdogInterval);
   }
 
   private void verifyBuilder(
@@ -135,8 +129,7 @@ public class EnhancedBigtableStubSettingsTest {
       String endpoint,
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
-      Duration watchdogInterval,
-      HeaderTracer headerTracer) {
+      Duration watchdogInterval) {
     assertThat(builder.getProjectId()).isEqualTo(projectId);
     assertThat(builder.getInstanceId()).isEqualTo(instanceId);
     assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
@@ -145,7 +138,6 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(builder.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
     assertThat(builder.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
-    assertThat(builder.getHeaderTracer()).isEqualTo(headerTracer);
   }
 
   private void verifySettings(
@@ -157,8 +149,7 @@ public class EnhancedBigtableStubSettingsTest {
       String endpoint,
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
-      Duration watchdogInterval,
-      HeaderTracer headerTracer) {
+      Duration watchdogInterval) {
     assertThat(settings.getProjectId()).isEqualTo(projectId);
     assertThat(settings.getInstanceId()).isEqualTo(instanceId);
     assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
@@ -167,7 +158,6 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(settings.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
     assertThat(settings.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
-    assertThat(settings.getHeaderTracer()).isEqualTo(headerTracer);
   }
 
   @Test
@@ -696,26 +686,12 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.build().toBuilder().isRefreshingChannel()).isFalse();
   }
 
-  @Test
-  public void verifyDefaultHeaderTracerNotNullTest() {
-    String dummyProjectId = "my-project";
-    String dummyInstanceId = "my-instance";
-    EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder()
-            .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId);
-    assertThat(builder.getHeaderTracer()).isNotNull();
-    assertThat(builder.build().getHeaderTracer()).isNotNull();
-    assertThat(builder.build().toBuilder().getHeaderTracer()).isNotNull();
-  }
-
   static final String[] SETTINGS_LIST = {
     "projectId",
     "instanceId",
     "appProfileId",
     "isRefreshingChannel",
     "primedTableIds",
-    "headerTracer",
     "jwtAudienceMapping",
     "readRowsSettings",
     "readRowSettings",
