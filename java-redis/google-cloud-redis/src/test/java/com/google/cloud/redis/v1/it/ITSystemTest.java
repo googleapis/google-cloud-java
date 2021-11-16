@@ -19,6 +19,7 @@ package com.google.cloud.redis.v1.it;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.Timestamp;
 import com.google.cloud.redis.v1.CloudRedisClient;
 import com.google.cloud.redis.v1.CloudRedisSettings;
 import com.google.cloud.redis.v1.Instance;
@@ -27,7 +28,9 @@ import com.google.cloud.redis.v1.LocationName;
 import com.google.cloud.redis.v1.UpdateInstanceRequest;
 import com.google.common.collect.Lists;
 import com.google.protobuf.FieldMask;
+import java.text.ParseException;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -67,6 +70,8 @@ public class ITSystemTest {
                 .build());
     CloudRedisSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();
     client = CloudRedisClient.create(cloudRedisSettings);
+    /* Clean up old instances that were not deleted. */
+    cleanUpOldInstances();
     /* Creates a Redis instance based on the specified tier and memory size. */
     Instance instance =
         Instance.newBuilder()
@@ -84,6 +89,23 @@ public class ITSystemTest {
     client.deleteInstanceAsync(INSTANCE_NAME);
     LOG.info("redis instance deleted successfully.");
     client.close();
+  }
+
+  public static void cleanUpOldInstances() throws ParseException {
+    Calendar calendar = Calendar.getInstance();
+    calendar.add(Calendar.DAY_OF_MONTH, -1);
+    Timestamp cutoff = Timestamp.of(calendar.getTime());
+
+    List<Instance> instances = Lists.newArrayList(client.listInstances(PARENT).iterateAll());
+    for (Instance old_instance : instances) {
+      Timestamp createdAt =
+          Timestamp.ofTimeSecondsAndNanos(
+              old_instance.getCreateTime().getSeconds(), old_instance.getCreateTime().getNanos());
+      if (createdAt.compareTo(cutoff) < 0) {
+        client.deleteInstanceAsync(old_instance.getName());
+        LOG.info("redis instance " + old_instance.getName() + " deleted successfully.");
+      }
+    }
   }
 
   @Test
