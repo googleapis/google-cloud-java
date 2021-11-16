@@ -13,6 +13,7 @@
         through Stackdriver. Built-in metrics will be implemented with shaded OpenCensus so it won't interfere with
         customer's application metrics. -->
     <artifactId>google-cloud-bigtable-stats</artifactId>
+    <version>2.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <description>Experimental project to shade OpenCensus dependencies.</description>
 
     <dependencyManagement>
@@ -83,6 +84,59 @@
                     </ignoredUnusedDeclaredDependencies>
                 </configuration>
             </plugin>
+            <!-- TODO(mattiefu) remove skip publishing after we add built-in metrics implementation -->
+            <!-- Start Skip publishing -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <configuration>
+                    <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <skipDeploy>true</skipDeploy>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <skipSource>true</skipSource>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>clirr-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <!-- End Skip publishing -->
         </plugins>
     </build>
 </project>
