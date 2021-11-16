@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-bigtable/compare/v2.2.0...v2.3.0) (2021-11-16)
+
+
+### Features
+
+* configure branch 2.2.x as a release branch ([#1044](https://www.github.com/googleapis/java-bigtable/issues/1044)) ([68e8790](https://www.github.com/googleapis/java-bigtable/commit/68e8790f61b90ce2b5e7479b3d23e2f964199d3e))
+* send attempt and timestamp in headers ([#935](https://www.github.com/googleapis/java-bigtable/issues/935)) ([de3b476](https://www.github.com/googleapis/java-bigtable/commit/de3b476d4acd644d1e5bc782dc697ce5b145992e))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1046](https://www.github.com/googleapis/java-bigtable/issues/1046)) ([422efa0](https://www.github.com/googleapis/java-bigtable/commit/422efa0289b232118b446224c5e084fe3bc19491))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#1064](https://www.github.com/googleapis/java-bigtable/issues/1064)) ([5b72aa9](https://www.github.com/googleapis/java-bigtable/commit/5b72aa96bab018f4b5b1b565a6487dbb45ccd323))
+
 ## [2.2.0](https://www.github.com/googleapis/java-bigtable/compare/v2.1.4...v2.2.0) (2021-10-20)
 
 
