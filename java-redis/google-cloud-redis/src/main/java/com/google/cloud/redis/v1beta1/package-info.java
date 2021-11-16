@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Google Cloud Memorystore for Redis API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= CloudRedisClient =======================
  *
@@ -34,7 +36,7 @@
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  * </ul>
  *
- * <p>Note that location_id must be refering to a GCP `region`; for example:
+ * <p>Note that location_id must be referring to a GCP `region`; for example:
  *
  * <ul>
  *   <li>`projects/redpepper-1290/locations/us-central1/instances/my-redis`

@@ -22,7 +22,8 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
+ * Request for
+ * [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.FailoverInstanceRequest}
@@ -146,7 +147,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <pre>
      * Instance failover will be protected with data loss control. More
      * specifically, the failover will only be performed if the current
-     * replication offset diff between master and replica is under a certain
+     * replication offset diff between primary and replica is under a certain
      * threshold.
      * </pre>
      *
@@ -183,7 +184,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <pre>
      * Instance failover will be protected with data loss control. More
      * specifically, the failover will only be performed if the current
-     * replication offset diff between master and replica is under a certain
+     * replication offset diff between primary and replica is under a certain
      * threshold.
      * </pre>
      *
@@ -571,7 +572,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request for [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
+   * Request for
+   * [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.FailoverInstanceRequest}

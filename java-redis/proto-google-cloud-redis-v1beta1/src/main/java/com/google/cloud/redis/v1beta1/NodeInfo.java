@@ -22,31 +22,30 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
+ * Node specific properties.
  * </pre>
  *
- * Protobuf type {@code google.cloud.redis.v1beta1.UpgradeInstanceRequest}
+ * Protobuf type {@code google.cloud.redis.v1beta1.NodeInfo}
  */
-public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedMessageV3
+public final class NodeInfo extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.UpgradeInstanceRequest)
-    UpgradeInstanceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.NodeInfo)
+    NodeInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use UpgradeInstanceRequest.newBuilder() to construct.
-  private UpgradeInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use NodeInfo.newBuilder() to construct.
+  private NodeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpgradeInstanceRequest() {
-    name_ = "";
-    redisVersion_ = "";
+  private NodeInfo() {
+    id_ = "";
+    zone_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpgradeInstanceRequest();
+    return new NodeInfo();
   }
 
   @java.lang.Override
@@ -54,7 +53,7 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private UpgradeInstanceRequest(
+  private NodeInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -76,14 +75,14 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              id_ = s;
               break;
             }
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              redisVersion_ = s;
+              zone_ = s;
               break;
             }
           default:
@@ -107,45 +106,41 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-        .internal_static_google_cloud_redis_v1beta1_UpgradeInstanceRequest_descriptor;
+        .internal_static_google_cloud_redis_v1beta1_NodeInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-        .internal_static_google_cloud_redis_v1beta1_UpgradeInstanceRequest_fieldAccessorTable
+        .internal_static_google_cloud_redis_v1beta1_NodeInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.redis.v1beta1.UpgradeInstanceRequest.class,
-            com.google.cloud.redis.v1beta1.UpgradeInstanceRequest.Builder.class);
+            com.google.cloud.redis.v1beta1.NodeInfo.class,
+            com.google.cloud.redis.v1beta1.NodeInfo.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object id_;
   /**
    *
    *
    * <pre>
-   * Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region.
+   * Output only. Node identifying string. e.g. 'node-0', 'node-1'
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The name.
+   * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      id_ = s;
       return s;
     }
   }
@@ -153,52 +148,48 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region.
+   * Output only. Node identifying string. e.g. 'node-0', 'node-1'
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The bytes for name.
+   * @return The bytes for id.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getIdBytes() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      id_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int REDIS_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object redisVersion_;
+  public static final int ZONE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object zone_;
   /**
    *
    *
    * <pre>
-   * Required. Specifies the target version of Redis software to upgrade to.
+   * Output only. Location of the node.
    * </pre>
    *
-   * <code>string redis_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The redisVersion.
+   * @return The zone.
    */
   @java.lang.Override
-  public java.lang.String getRedisVersion() {
-    java.lang.Object ref = redisVersion_;
+  public java.lang.String getZone() {
+    java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      redisVersion_ = s;
+      zone_ = s;
       return s;
     }
   }
@@ -206,20 +197,20 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Specifies the target version of Redis software to upgrade to.
+   * Output only. Location of the node.
    * </pre>
    *
-   * <code>string redis_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The bytes for redisVersion.
+   * @return The bytes for zone.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getRedisVersionBytes() {
-    java.lang.Object ref = redisVersion_;
+  public com.google.protobuf.ByteString getZoneBytes() {
+    java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      redisVersion_ = b;
+      zone_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -240,11 +231,11 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redisVersion_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, redisVersion_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zone_);
     }
     unknownFields.writeTo(output);
   }
@@ -255,11 +246,11 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redisVersion_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, redisVersion_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zone_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -271,14 +262,13 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.redis.v1beta1.UpgradeInstanceRequest)) {
+    if (!(obj instanceof com.google.cloud.redis.v1beta1.NodeInfo)) {
       return super.equals(obj);
     }
-    com.google.cloud.redis.v1beta1.UpgradeInstanceRequest other =
-        (com.google.cloud.redis.v1beta1.UpgradeInstanceRequest) obj;
+    com.google.cloud.redis.v1beta1.NodeInfo other = (com.google.cloud.redis.v1beta1.NodeInfo) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (!getRedisVersion().equals(other.getRedisVersion())) return false;
+    if (!getId().equals(other.getId())) return false;
+    if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -290,80 +280,80 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + REDIS_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getRedisVersion().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(byte[] data)
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -380,8 +370,7 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(
-      com.google.cloud.redis.v1beta1.UpgradeInstanceRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.redis.v1beta1.NodeInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -399,32 +388,31 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request for
-   * [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
+   * Node specific properties.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.redis.v1beta1.UpgradeInstanceRequest}
+   * Protobuf type {@code google.cloud.redis.v1beta1.NodeInfo}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.UpgradeInstanceRequest)
-      com.google.cloud.redis.v1beta1.UpgradeInstanceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.NodeInfo)
+      com.google.cloud.redis.v1beta1.NodeInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-          .internal_static_google_cloud_redis_v1beta1_UpgradeInstanceRequest_descriptor;
+          .internal_static_google_cloud_redis_v1beta1_NodeInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-          .internal_static_google_cloud_redis_v1beta1_UpgradeInstanceRequest_fieldAccessorTable
+          .internal_static_google_cloud_redis_v1beta1_NodeInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.redis.v1beta1.UpgradeInstanceRequest.class,
-              com.google.cloud.redis.v1beta1.UpgradeInstanceRequest.Builder.class);
+              com.google.cloud.redis.v1beta1.NodeInfo.class,
+              com.google.cloud.redis.v1beta1.NodeInfo.Builder.class);
     }
 
-    // Construct using com.google.cloud.redis.v1beta1.UpgradeInstanceRequest.newBuilder()
+    // Construct using com.google.cloud.redis.v1beta1.NodeInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -441,9 +429,9 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      id_ = "";
 
-      redisVersion_ = "";
+      zone_ = "";
 
       return this;
     }
@@ -451,17 +439,17 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-          .internal_static_google_cloud_redis_v1beta1_UpgradeInstanceRequest_descriptor;
+          .internal_static_google_cloud_redis_v1beta1_NodeInfo_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.UpgradeInstanceRequest getDefaultInstanceForType() {
-      return com.google.cloud.redis.v1beta1.UpgradeInstanceRequest.getDefaultInstance();
+    public com.google.cloud.redis.v1beta1.NodeInfo getDefaultInstanceForType() {
+      return com.google.cloud.redis.v1beta1.NodeInfo.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.UpgradeInstanceRequest build() {
-      com.google.cloud.redis.v1beta1.UpgradeInstanceRequest result = buildPartial();
+    public com.google.cloud.redis.v1beta1.NodeInfo build() {
+      com.google.cloud.redis.v1beta1.NodeInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -469,11 +457,11 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.UpgradeInstanceRequest buildPartial() {
-      com.google.cloud.redis.v1beta1.UpgradeInstanceRequest result =
-          new com.google.cloud.redis.v1beta1.UpgradeInstanceRequest(this);
-      result.name_ = name_;
-      result.redisVersion_ = redisVersion_;
+    public com.google.cloud.redis.v1beta1.NodeInfo buildPartial() {
+      com.google.cloud.redis.v1beta1.NodeInfo result =
+          new com.google.cloud.redis.v1beta1.NodeInfo(this);
+      result.id_ = id_;
+      result.zone_ = zone_;
       onBuilt();
       return result;
     }
@@ -513,23 +501,22 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.redis.v1beta1.UpgradeInstanceRequest) {
-        return mergeFrom((com.google.cloud.redis.v1beta1.UpgradeInstanceRequest) other);
+      if (other instanceof com.google.cloud.redis.v1beta1.NodeInfo) {
+        return mergeFrom((com.google.cloud.redis.v1beta1.NodeInfo) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.redis.v1beta1.UpgradeInstanceRequest other) {
-      if (other == com.google.cloud.redis.v1beta1.UpgradeInstanceRequest.getDefaultInstance())
-        return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+    public Builder mergeFrom(com.google.cloud.redis.v1beta1.NodeInfo other) {
+      if (other == com.google.cloud.redis.v1beta1.NodeInfo.getDefaultInstance()) return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
         onChanged();
       }
-      if (!other.getRedisVersion().isEmpty()) {
-        redisVersion_ = other.redisVersion_;
+      if (!other.getZone().isEmpty()) {
+        zone_ = other.zone_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -547,12 +534,11 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.redis.v1beta1.UpgradeInstanceRequest parsedMessage = null;
+      com.google.cloud.redis.v1beta1.NodeInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.redis.v1beta1.UpgradeInstanceRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.redis.v1beta1.NodeInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -562,28 +548,24 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object id_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The name.
+     * @return The id.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        id_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -593,23 +575,19 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The bytes for name.
+     * @return The bytes for id.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -619,24 +597,20 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The name to set.
+     * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      name_ = value;
+      id_ = value;
       onChanged();
       return this;
     }
@@ -644,20 +618,16 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearId() {
 
-      name_ = getDefaultInstance().getName();
+      id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
@@ -665,47 +635,43 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The bytes for name to set.
+     * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      name_ = value;
+      id_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object redisVersion_ = "";
+    private java.lang.Object zone_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Specifies the target version of Redis software to upgrade to.
+     * Output only. Location of the node.
      * </pre>
      *
-     * <code>string redis_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The redisVersion.
+     * @return The zone.
      */
-    public java.lang.String getRedisVersion() {
-      java.lang.Object ref = redisVersion_;
+    public java.lang.String getZone() {
+      java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        redisVersion_ = s;
+        zone_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -715,19 +681,19 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Specifies the target version of Redis software to upgrade to.
+     * Output only. Location of the node.
      * </pre>
      *
-     * <code>string redis_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The bytes for redisVersion.
+     * @return The bytes for zone.
      */
-    public com.google.protobuf.ByteString getRedisVersionBytes() {
-      java.lang.Object ref = redisVersion_;
+    public com.google.protobuf.ByteString getZoneBytes() {
+      java.lang.Object ref = zone_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        redisVersion_ = b;
+        zone_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -737,20 +703,20 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Specifies the target version of Redis software to upgrade to.
+     * Output only. Location of the node.
      * </pre>
      *
-     * <code>string redis_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The redisVersion to set.
+     * @param value The zone to set.
      * @return This builder for chaining.
      */
-    public Builder setRedisVersion(java.lang.String value) {
+    public Builder setZone(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      redisVersion_ = value;
+      zone_ = value;
       onChanged();
       return this;
     }
@@ -758,16 +724,16 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Specifies the target version of Redis software to upgrade to.
+     * Output only. Location of the node.
      * </pre>
      *
-     * <code>string redis_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearRedisVersion() {
+    public Builder clearZone() {
 
-      redisVersion_ = getDefaultInstance().getRedisVersion();
+      zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
     }
@@ -775,21 +741,21 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Specifies the target version of Redis software to upgrade to.
+     * Output only. Location of the node.
      * </pre>
      *
-     * <code>string redis_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The bytes for redisVersion to set.
+     * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
-    public Builder setRedisVersionBytes(com.google.protobuf.ByteString value) {
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      redisVersion_ = value;
+      zone_ = value;
       onChanged();
       return this;
     }
@@ -805,42 +771,42 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.UpgradeInstanceRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.NodeInfo)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.UpgradeInstanceRequest)
-  private static final com.google.cloud.redis.v1beta1.UpgradeInstanceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.NodeInfo)
+  private static final com.google.cloud.redis.v1beta1.NodeInfo DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.UpgradeInstanceRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.NodeInfo();
   }
 
-  public static com.google.cloud.redis.v1beta1.UpgradeInstanceRequest getDefaultInstance() {
+  public static com.google.cloud.redis.v1beta1.NodeInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpgradeInstanceRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpgradeInstanceRequest>() {
+  private static final com.google.protobuf.Parser<NodeInfo> PARSER =
+      new com.google.protobuf.AbstractParser<NodeInfo>() {
         @java.lang.Override
-        public UpgradeInstanceRequest parsePartialFrom(
+        public NodeInfo parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpgradeInstanceRequest(input, extensionRegistry);
+          return new NodeInfo(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<UpgradeInstanceRequest> parser() {
+  public static com.google.protobuf.Parser<NodeInfo> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpgradeInstanceRequest> getParserForType() {
+  public com.google.protobuf.Parser<NodeInfo> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.redis.v1beta1.UpgradeInstanceRequest getDefaultInstanceForType() {
+  public com.google.cloud.redis.v1beta1.NodeInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

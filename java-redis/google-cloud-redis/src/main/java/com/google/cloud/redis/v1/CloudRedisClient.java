@@ -695,7 +695,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. The elements of the repeated paths field may only include these fields from
    *     [Instance][google.cloud.redis.v1.Instance]:
-   *     <p>&#42; `displayName` &#42; `labels` &#42; `memorySizeGb` &#42; `redisConfig`
+   *     <p>&#42; `displayName` &#42; `labels` &#42; `memorySizeGb` &#42; `redisConfig` &#42;
+   *     `replica_count`
    * @param instance Required. Update description. Only fields specified in update_mask are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1167,7 +1168,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1200,7 +1201,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1233,7 +1234,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1258,7 +1259,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1283,7 +1284,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:

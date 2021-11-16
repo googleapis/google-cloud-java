@@ -38,6 +38,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/redis/v1/cloud_redis.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CloudRedisGrpc {
 
   private CloudRedisGrpc() {}
@@ -609,7 +610,7 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */
@@ -867,7 +868,7 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */
@@ -1048,7 +1049,7 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */
@@ -1223,7 +1224,7 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */

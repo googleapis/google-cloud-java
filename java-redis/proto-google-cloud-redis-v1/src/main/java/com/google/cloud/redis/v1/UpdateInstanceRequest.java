@@ -145,6 +145,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -167,6 +168,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -189,6 +191,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -625,6 +628,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -646,6 +650,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -673,6 +678,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -702,6 +708,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -728,6 +735,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -759,6 +767,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -786,6 +795,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -807,6 +817,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -832,6 +843,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];

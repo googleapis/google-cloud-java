@@ -22,7 +22,8 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+ * Request for
+ * [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}
@@ -331,7 +332,8 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+   * Request for
+   * [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}

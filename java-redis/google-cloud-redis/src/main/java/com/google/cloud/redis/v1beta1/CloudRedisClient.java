@@ -57,7 +57,7 @@ import javax.annotation.Generated;
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  * </ul>
  *
- * <p>Note that location_id must be refering to a GCP `region`; for example:
+ * <p>Note that location_id must be referring to a GCP `region`; for example:
  *
  * <ul>
  *   <li>`projects/redpepper-1290/locations/us-central1/instances/my-redis`
@@ -472,7 +472,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
-   * functional. Completed longrunning.Operation will contain the new instance object in the
+   * functional. The completed longrunning.Operation will contain the new instance object in the
    * response field.
    *
    * <p>The returned operation is automatically deleted after a few hours, so there is no need to
@@ -524,7 +524,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
-   * functional. Completed longrunning.Operation will contain the new instance object in the
+   * functional. The completed longrunning.Operation will contain the new instance object in the
    * response field.
    *
    * <p>The returned operation is automatically deleted after a few hours, so there is no need to
@@ -576,7 +576,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
-   * functional. Completed longrunning.Operation will contain the new instance object in the
+   * functional. The completed longrunning.Operation will contain the new instance object in the
    * response field.
    *
    * <p>The returned operation is automatically deleted after a few hours, so there is no need to
@@ -612,7 +612,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
-   * functional. Completed longrunning.Operation will contain the new instance object in the
+   * functional. The completed longrunning.Operation will contain the new instance object in the
    * response field.
    *
    * <p>The returned operation is automatically deleted after a few hours, so there is no need to
@@ -649,7 +649,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
-   * functional. Completed longrunning.Operation will contain the new instance object in the
+   * functional. The completed longrunning.Operation will contain the new instance object in the
    * response field.
    *
    * <p>The returned operation is automatically deleted after a few hours, so there is no need to
@@ -696,7 +696,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. The elements of the repeated paths field may only include these fields from
    *     [Instance][google.cloud.redis.v1beta1.Instance]:
-   *     <p>&#42; `displayName` &#42; `labels` &#42; `memorySizeGb` &#42; `redisConfig`
+   *     <p>&#42; `displayName` &#42; `labels` &#42; `memorySizeGb` &#42; `redisConfig` &#42;
+   *     `replica_count`
    * @param instance Required. Update description. Only fields specified in update_mask are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1164,7 +1165,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1197,7 +1198,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1230,7 +1231,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1255,7 +1256,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:
@@ -1280,7 +1281,7 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Initiates a failover of the primary node to current replica node for a specific STANDARD tier
    * Cloud Memorystore for Redis instance.
    *
    * <p>Sample code:

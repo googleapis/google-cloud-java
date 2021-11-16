@@ -146,10 +146,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
-   * the service will choose a zone for the instance. For STANDARD_HA tier,
-   * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] is also provided, it must be
-   * different from [location_id][google.cloud.redis.v1.Instance.location_id].
+   * the service will choose a zone from the specified region for the instance.
+   * For standard tier, additional nodes will be added across multiple zones for
+   * protection against zonal failures. If specified, at least one node will be
+   * provisioned in this zone.
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -162,10 +162,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
-   * the service will choose a zone for the instance. For STANDARD_HA tier,
-   * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] is also provided, it must be
-   * different from [location_id][google.cloud.redis.v1.Instance.location_id].
+   * the service will choose a zone from the specified region for the instance.
+   * For standard tier, additional nodes will be added across multiple zones for
+   * protection against zonal failures. If specified, at least one node will be
+   * provisioned in this zone.
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -178,9 +178,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Only applicable to STANDARD_HA tier which protects the instance
-   * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1.Instance.location_id].
+   * Optional. If specified, at least one node will be provisioned in this zone
+   * in addition to the zone specified in location_id. Only applicable to
+   * standard tier. If provided, it must be a different zone from the one
+   * provided in [location_id]. Additional nodes beyond the first 2 will be
+   * placed in zones selected by the service.
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -192,9 +194,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Only applicable to STANDARD_HA tier which protects the instance
-   * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1.Instance.location_id].
+   * Optional. If specified, at least one node will be provisioned in this zone
+   * in addition to the zone specified in location_id. Only applicable to
+   * standard tier. If provided, it must be a different zone from the one
+   * provided in [location_id]. Additional nodes beyond the first 2 will be
+   * placed in zones selected by the service.
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -213,6 +217,7 @@ public interface InstanceOrBuilder
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
+   *  *   `REDIS_6_X` for Redis 6.x compatibility
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -230,6 +235,7 @@ public interface InstanceOrBuilder
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
+   *  *   `REDIS_6_X` for Redis 6.x compatibility
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -242,10 +248,14 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR range of internal addresses that are reserved for this
-   * instance. If not provided, the service will choose an unused /29 block,
-   * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-   * and non-overlapping with existing subnets in an authorized network.
+   * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+   * that are reserved for this instance. Range must
+   * be unique and non-overlapping with existing subnets in an authorized
+   * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+   * address ranges associated with this private service access connection.
+   * If not provided, the service will choose an unused /29 block, for
+   * example, 10.0.0.0/29 or 192.168.0.0/29.  For READ_REPLICAS_ENABLED
+   * the default block size is /28.
    * </pre>
    *
    * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -257,10 +267,14 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR range of internal addresses that are reserved for this
-   * instance. If not provided, the service will choose an unused /29 block,
-   * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-   * and non-overlapping with existing subnets in an authorized network.
+   * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+   * that are reserved for this instance. Range must
+   * be unique and non-overlapping with existing subnets in an authorized
+   * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+   * address ranges associated with this private service access connection.
+   * If not provided, the service will choose an unused /29 block, for
+   * example, 10.0.0.0/29 or 192.168.0.0/29.  For READ_REPLICAS_ENABLED
+   * the default block size is /28.
    * </pre>
    *
    * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -313,11 +327,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1.Instance.location_id]
-   * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id][google.cloud.redis.v1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] and can
-   * change after a failover event.
+   * Output only. The current zone where the Redis primary node is located. In
+   * basic tier, this will always be the same as [location_id]. In
+   * standard tier, this can be the zone of any node in the instance.
    * </pre>
    *
    * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -329,11 +341,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1.Instance.location_id]
-   * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id][google.cloud.redis.v1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] and can
-   * change after a failover event.
+   * Output only. The current zone where the Redis primary node is located. In
+   * basic tier, this will always be the same as [location_id]. In
+   * standard tier, this can be the zone of any node in the instance.
    * </pre>
    *
    * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -694,4 +704,154 @@ public interface InstanceOrBuilder
    * @return The connectMode.
    */
   com.google.cloud.redis.v1.Instance.ConnectMode getConnectMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of replica nodes. Valid range for standard tier
+   * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
+   * to 0.
+   * </pre>
+   *
+   * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The replicaCount.
+   */
+  int getReplicaCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.redis.v1.NodeInfo> getNodesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.v1.NodeInfo getNodes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getNodesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.redis.v1.NodeInfoOrBuilder> getNodesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.v1.NodeInfoOrBuilder getNodesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hostname or IP address of the exposed readonly Redis
+   * endpoint. Standard tier only. Targets all healthy replica nodes in
+   * instance. Replication is asynchronous and replica nodes will exhibit some
+   * lag behind the primary. Write requests must target 'host'.
+   * </pre>
+   *
+   * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The readEndpoint.
+   */
+  java.lang.String getReadEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hostname or IP address of the exposed readonly Redis
+   * endpoint. Standard tier only. Targets all healthy replica nodes in
+   * instance. Replication is asynchronous and replica nodes will exhibit some
+   * lag behind the primary. Write requests must target 'host'.
+   * </pre>
+   *
+   * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for readEndpoint.
+   */
+  com.google.protobuf.ByteString getReadEndpointBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The port number of the exposed readonly redis
+   * endpoint. Standard tier only. Write requests should target 'port'.
+   * </pre>
+   *
+   * <code>int32 read_endpoint_port = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The readEndpointPort.
+   */
+  int getReadEndpointPort();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read replica mode.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for readReplicasMode.
+   */
+  int getReadReplicasModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read replica mode.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The readReplicasMode.
+   */
+  com.google.cloud.redis.v1.Instance.ReadReplicasMode getReadReplicasMode();
 }

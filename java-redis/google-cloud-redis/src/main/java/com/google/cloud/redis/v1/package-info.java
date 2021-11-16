@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Google Cloud Memorystore for Redis API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= CloudRedisClient =======================
  *

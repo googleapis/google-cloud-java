@@ -35,6 +35,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -194,6 +195,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     mockCloudRedis.addResponse(expectedResponse);
 
@@ -247,6 +252,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     mockCloudRedis.addResponse(expectedResponse);
 
@@ -300,6 +309,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -367,6 +380,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -434,6 +451,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -498,6 +519,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -562,6 +587,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -626,6 +655,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -690,6 +723,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -754,6 +791,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -820,6 +861,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
