@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-datastore/compare/v2.1.3...v2.2.0) (2021-11-15)
+
+
+### Features
+
+* next release to 2.2.0 ([#567](https://www.github.com/googleapis/java-datastore/issues/567)) ([a23066f](https://www.github.com/googleapis/java-datastore/commit/a23066fcd13f4ad373ab16f13df014a23f639390))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#569](https://www.github.com/googleapis/java-datastore/issues/569)) ([19dd87f](https://www.github.com/googleapis/java-datastore/commit/19dd87fc0c929be278256d8fc25e0bf1fde29769))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#577](https://www.github.com/googleapis/java-datastore/issues/577)) ([931e6ec](https://www.github.com/googleapis/java-datastore/commit/931e6ec846b446c369b5394c5284f6f26bb299ee))
+
 ### [2.1.3](https://www.github.com/googleapis/java-datastore/compare/v2.1.2...v2.1.3) (2021-10-20)
 
 
