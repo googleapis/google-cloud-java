@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-shared-config/compare/v1.2.1...v1.2.2) (2021-11-16)
+
+
+### Bug Fixes
+
+* update dependency com.google.cloud:native-image-support to v0.10.0 ([#358](https://www.github.com/googleapis/java-shared-config/issues/358)) ([0441958](https://www.github.com/googleapis/java-shared-config/commit/044195865a1122d419cadae90fddbf8dc5b4a32d))
+
 ### [1.2.1](https://www.github.com/googleapis/java-shared-config/compare/v1.2.0...v1.2.1) (2021-11-08)
 
 
