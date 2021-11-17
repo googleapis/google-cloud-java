@@ -1,16 +1,16 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-asset:3.2.9:3.2.10-SNAPSHOT
-grpc-google-cloud-asset-v1:3.2.9:3.2.10-SNAPSHOT
-grpc-google-cloud-asset-v1p1beta1:0.102.9:0.102.10-SNAPSHOT
-grpc-google-cloud-asset-v1p2beta1:0.102.9:0.102.10-SNAPSHOT
-grpc-google-cloud-asset-v1p4beta1:0.102.9:0.102.10-SNAPSHOT
-grpc-google-cloud-asset-v1p5beta1:0.102.9:0.102.10-SNAPSHOT
-grpc-google-cloud-asset-v1p7beta1:3.2.9:3.2.10-SNAPSHOT
-proto-google-cloud-asset-v1:3.2.9:3.2.10-SNAPSHOT
-proto-google-cloud-asset-v1p1beta1:0.102.9:0.102.10-SNAPSHOT
-proto-google-cloud-asset-v1p2beta1:0.102.9:0.102.10-SNAPSHOT
-proto-google-cloud-asset-v1p4beta1:0.102.9:0.102.10-SNAPSHOT
-proto-google-cloud-asset-v1p5beta1:0.102.9:0.102.10-SNAPSHOT
-proto-google-cloud-asset-v1p7beta1:3.2.9:3.2.10-SNAPSHOT
+google-cloud-asset:3.2.10:3.2.10
+grpc-google-cloud-asset-v1:3.2.10:3.2.10
+grpc-google-cloud-asset-v1p1beta1:0.102.10:0.102.10
+grpc-google-cloud-asset-v1p2beta1:0.102.10:0.102.10
+grpc-google-cloud-asset-v1p4beta1:0.102.10:0.102.10
+grpc-google-cloud-asset-v1p5beta1:0.102.10:0.102.10
+grpc-google-cloud-asset-v1p7beta1:3.2.10:3.2.10
+proto-google-cloud-asset-v1:3.2.10:3.2.10
+proto-google-cloud-asset-v1p1beta1:0.102.10:0.102.10
+proto-google-cloud-asset-v1p2beta1:0.102.10:0.102.10
+proto-google-cloud-asset-v1p4beta1:0.102.10:0.102.10
+proto-google-cloud-asset-v1p5beta1:0.102.10:0.102.10
+proto-google-cloud-asset-v1p7beta1:3.2.10:3.2.10
