@@ -190,7 +190,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     error.
    * @param query Optional. The query string with a minimum of 3 characters and specific syntax. For
    *     more information, see [Data Catalog search
-   *     syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+   *     syntax](/data-catalog/docs/how-to/search-reference).
    *     <p>An empty query string returns all data assets (in the specified scope) that you have
    *     access to.
    *     <p>A query string can be a simple `xyz` or qualified by predicates:
@@ -2044,9 +2044,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     `display_name` and `is_publicly_readable` can be overwritten.
    *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
    *     fields are non-required and omitted in the request body, their values are emptied.
-   *     <p>Note: Updating the `is_publicly_readable` field may require up to 12 hours to take
-   *     effect in search results. Additionally, it also requires the `tagTemplates.getIamPolicy`
-   *     and `tagTemplates.setIamPolicy` permissions.
+   *     <p>Note: Updating the ``is_publicly_readable`` field may require up to 12 hours to take
+   *     effect in search results. Additionally, it also requires the ``tagTemplates.getIamPolicy``
+   *     and ``tagTemplates.setIamPolicy`` permissions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TagTemplate updateTagTemplate(TagTemplate tagTemplate, FieldMask updateMask) {
@@ -3037,9 +3037,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       `projects.locations.entryGroups.entries.tags.create`.
+   *       ``projects.locations.entryGroups.entries.tags.create``.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       `projects.locations.entryGroups.tags.create`.
+   *       ``projects.locations.entryGroups.tags.create``.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3081,9 +3081,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       `projects.locations.entryGroups.entries.tags.create`.
+   *       ``projects.locations.entryGroups.entries.tags.create``.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       `projects.locations.entryGroups.tags.create`.
+   *       ``projects.locations.entryGroups.tags.create``.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3122,9 +3122,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       `projects.locations.entryGroups.entries.tags.create`.
+   *       ``projects.locations.entryGroups.entries.tags.create``.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       `projects.locations.entryGroups.tags.create`.
+   *       ``projects.locations.entryGroups.tags.create``.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3161,9 +3161,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       `projects.locations.entryGroups.entries.tags.create`.
+   *       ``projects.locations.entryGroups.entries.tags.create``.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       `projects.locations.entryGroups.tags.create`.
+   *       ``projects.locations.entryGroups.tags.create``.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
