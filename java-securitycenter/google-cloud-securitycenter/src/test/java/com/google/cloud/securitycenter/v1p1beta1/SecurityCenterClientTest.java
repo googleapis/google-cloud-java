@@ -688,7 +688,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -710,7 +710,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1022,7 +1022,7 @@ public class SecurityCenterClientTest {
 
     GroupAssetsRequest request =
         GroupAssetsRequest.newBuilder()
-            .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+            .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
             .setFilter("filter-1274492040")
             .setGroupBy("groupBy293428022")
             .setCompareDuration(Duration.newBuilder().build())
@@ -1063,7 +1063,7 @@ public class SecurityCenterClientTest {
     try {
       GroupAssetsRequest request =
           GroupAssetsRequest.newBuilder()
-              .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+              .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
               .setFilter("filter-1274492040")
               .setGroupBy("groupBy293428022")
               .setCompareDuration(Duration.newBuilder().build())
@@ -1926,7 +1926,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -1950,7 +1950,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -2008,7 +2008,7 @@ public class SecurityCenterClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -2032,7 +2032,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");

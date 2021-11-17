@@ -20,7 +20,6 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
-import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
@@ -50,16 +49,11 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
-import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
-import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
-import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.Finding;
-import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
@@ -72,23 +66,18 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
-import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
-import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
-import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
-import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
-import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
@@ -148,19 +137,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsSettings;
-  private final OperationCallSettings<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
-      bulkMuteFindingsOperationSettings;
   private final UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings;
   private final UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings;
-  private final UnaryCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigSettings;
   private final UnaryCallSettings<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigSettings;
-  private final UnaryCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigSettings;
   private final UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings;
   private final UnaryCallSettings<GetNotificationConfigRequest, NotificationConfig>
       getNotificationConfigSettings;
   private final UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
@@ -177,9 +160,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings;
   private final PagedCallSettings<
-          ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>
-      listMuteConfigsSettings;
-  private final PagedCallSettings<
           ListNotificationConfigsRequest,
           ListNotificationConfigsResponse,
           ListNotificationConfigsPagedResponse>
@@ -190,12 +170,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final OperationCallSettings<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationSettings;
   private final UnaryCallSettings<SetFindingStateRequest, Finding> setFindingStateSettings;
-  private final UnaryCallSettings<SetMuteRequest, Finding> setMuteSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings;
-  private final UnaryCallSettings<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigSettings;
   private final UnaryCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
       updateNotificationConfigSettings;
   private final UnaryCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
@@ -357,45 +335,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           };
 
   private static final PagedListDescriptor<
-          ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig>
-      LIST_MUTE_CONFIGS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListMuteConfigsRequest injectToken(
-                ListMuteConfigsRequest payload, String token) {
-              return ListMuteConfigsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListMuteConfigsRequest injectPageSize(
-                ListMuteConfigsRequest payload, int pageSize) {
-              return ListMuteConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListMuteConfigsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListMuteConfigsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<MuteConfig> extractResources(ListMuteConfigsResponse payload) {
-              return payload.getMuteConfigsList() == null
-                  ? ImmutableList.<MuteConfig>of()
-                  : payload.getMuteConfigsList();
-            }
-          };
-
-  private static final PagedListDescriptor<
           ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
       LIST_NOTIFICATION_CONFIGS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -551,23 +490,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           };
 
   private static final PagedListResponseFactory<
-          ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>
-      LIST_MUTE_CONFIGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>() {
-            @Override
-            public ApiFuture<ListMuteConfigsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsResponse> callable,
-                ListMuteConfigsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListMuteConfigsResponse> futureResponse) {
-              PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> pageContext =
-                  PageContext.create(callable, LIST_MUTE_CONFIGS_PAGE_STR_DESC, request, context);
-              return ListMuteConfigsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListNotificationConfigsRequest,
           ListNotificationConfigsResponse,
           ListNotificationConfigsPagedResponse>
@@ -611,17 +533,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             }
           };
 
-  /** Returns the object with the settings used for calls to bulkMuteFindings. */
-  public UnaryCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsSettings() {
-    return bulkMuteFindingsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to bulkMuteFindings. */
-  public OperationCallSettings<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
-      bulkMuteFindingsOperationSettings() {
-    return bulkMuteFindingsOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to createSource. */
   public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
     return createSourceSettings;
@@ -632,20 +543,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return createFindingSettings;
   }
 
-  /** Returns the object with the settings used for calls to createMuteConfig. */
-  public UnaryCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigSettings() {
-    return createMuteConfigSettings;
-  }
-
   /** Returns the object with the settings used for calls to createNotificationConfig. */
   public UnaryCallSettings<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigSettings() {
     return createNotificationConfigSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteMuteConfig. */
-  public UnaryCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigSettings() {
-    return deleteMuteConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteNotificationConfig. */
@@ -657,11 +558,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getMuteConfig. */
-  public UnaryCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings() {
-    return getMuteConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to getNotificationConfig. */
@@ -705,13 +601,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return listFindingsSettings;
   }
 
-  /** Returns the object with the settings used for calls to listMuteConfigs. */
-  public PagedCallSettings<
-          ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>
-      listMuteConfigsSettings() {
-    return listMuteConfigsSettings;
-  }
-
   /** Returns the object with the settings used for calls to listNotificationConfigs. */
   public PagedCallSettings<
           ListNotificationConfigsRequest,
@@ -743,11 +632,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return setFindingStateSettings;
   }
 
-  /** Returns the object with the settings used for calls to setMute. */
-  public UnaryCallSettings<SetMuteRequest, Finding> setMuteSettings() {
-    return setMuteSettings;
-  }
-
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
@@ -762,11 +646,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   /** Returns the object with the settings used for calls to updateFinding. */
   public UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings() {
     return updateFindingSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateMuteConfig. */
-  public UnaryCallSettings<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigSettings() {
-    return updateMuteConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to updateNotificationConfig. */
@@ -868,16 +747,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   protected SecurityCenterStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    bulkMuteFindingsSettings = settingsBuilder.bulkMuteFindingsSettings().build();
-    bulkMuteFindingsOperationSettings = settingsBuilder.bulkMuteFindingsOperationSettings().build();
     createSourceSettings = settingsBuilder.createSourceSettings().build();
     createFindingSettings = settingsBuilder.createFindingSettings().build();
-    createMuteConfigSettings = settingsBuilder.createMuteConfigSettings().build();
     createNotificationConfigSettings = settingsBuilder.createNotificationConfigSettings().build();
-    deleteMuteConfigSettings = settingsBuilder.deleteMuteConfigSettings().build();
     deleteNotificationConfigSettings = settingsBuilder.deleteNotificationConfigSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    getMuteConfigSettings = settingsBuilder.getMuteConfigSettings().build();
     getNotificationConfigSettings = settingsBuilder.getNotificationConfigSettings().build();
     getOrganizationSettingsSettings = settingsBuilder.getOrganizationSettingsSettings().build();
     getSourceSettings = settingsBuilder.getSourceSettings().build();
@@ -885,18 +759,15 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     groupFindingsSettings = settingsBuilder.groupFindingsSettings().build();
     listAssetsSettings = settingsBuilder.listAssetsSettings().build();
     listFindingsSettings = settingsBuilder.listFindingsSettings().build();
-    listMuteConfigsSettings = settingsBuilder.listMuteConfigsSettings().build();
     listNotificationConfigsSettings = settingsBuilder.listNotificationConfigsSettings().build();
     listSourcesSettings = settingsBuilder.listSourcesSettings().build();
     runAssetDiscoverySettings = settingsBuilder.runAssetDiscoverySettings().build();
     runAssetDiscoveryOperationSettings =
         settingsBuilder.runAssetDiscoveryOperationSettings().build();
     setFindingStateSettings = settingsBuilder.setFindingStateSettings().build();
-    setMuteSettings = settingsBuilder.setMuteSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateFindingSettings = settingsBuilder.updateFindingSettings().build();
-    updateMuteConfigSettings = settingsBuilder.updateMuteConfigSettings().build();
     updateNotificationConfigSettings = settingsBuilder.updateNotificationConfigSettings().build();
     updateOrganizationSettingsSettings =
         settingsBuilder.updateOrganizationSettingsSettings().build();
@@ -907,23 +778,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   /** Builder for SecurityCenterStubSettings. */
   public static class Builder extends StubSettings.Builder<SecurityCenterStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-    private final UnaryCallSettings.Builder<BulkMuteFindingsRequest, Operation>
-        bulkMuteFindingsSettings;
-    private final OperationCallSettings.Builder<
-            BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
-        bulkMuteFindingsOperationSettings;
     private final UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings;
     private final UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings;
-    private final UnaryCallSettings.Builder<CreateMuteConfigRequest, MuteConfig>
-        createMuteConfigSettings;
     private final UnaryCallSettings.Builder<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigSettings;
-    private final UnaryCallSettings.Builder<DeleteMuteConfigRequest, Empty>
-        deleteMuteConfigSettings;
     private final UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings;
     private final UnaryCallSettings.Builder<GetNotificationConfigRequest, NotificationConfig>
         getNotificationConfigSettings;
     private final UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
@@ -942,9 +803,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
         listFindingsSettings;
     private final PagedCallSettings.Builder<
-            ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>
-        listMuteConfigsSettings;
-    private final PagedCallSettings.Builder<
             ListNotificationConfigsRequest,
             ListNotificationConfigsResponse,
             ListNotificationConfigsPagedResponse>
@@ -959,13 +817,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         runAssetDiscoveryOperationSettings;
     private final UnaryCallSettings.Builder<SetFindingStateRequest, Finding>
         setFindingStateSettings;
-    private final UnaryCallSettings.Builder<SetMuteRequest, Finding> setMuteSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings;
-    private final UnaryCallSettings.Builder<UpdateMuteConfigRequest, MuteConfig>
-        updateMuteConfigSettings;
     private final UnaryCallSettings.Builder<UpdateNotificationConfigRequest, NotificationConfig>
         updateNotificationConfigSettings;
     private final UnaryCallSettings.Builder<UpdateOrganizationSettingsRequest, OrganizationSettings>
@@ -979,7 +834,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
@@ -1002,8 +856,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -1052,16 +904,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      bulkMuteFindingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      bulkMuteFindingsOperationSettings = OperationCallSettings.newBuilder();
       createSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      getMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1069,18 +916,15 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       groupFindingsSettings = PagedCallSettings.newBuilder(GROUP_FINDINGS_PAGE_STR_FACT);
       listAssetsSettings = PagedCallSettings.newBuilder(LIST_ASSETS_PAGE_STR_FACT);
       listFindingsSettings = PagedCallSettings.newBuilder(LIST_FINDINGS_PAGE_STR_FACT);
-      listMuteConfigsSettings = PagedCallSettings.newBuilder(LIST_MUTE_CONFIGS_PAGE_STR_FACT);
       listNotificationConfigsSettings =
           PagedCallSettings.newBuilder(LIST_NOTIFICATION_CONFIGS_PAGE_STR_FACT);
       listSourcesSettings = PagedCallSettings.newBuilder(LIST_SOURCES_PAGE_STR_FACT);
       runAssetDiscoverySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runAssetDiscoveryOperationSettings = OperationCallSettings.newBuilder();
       setFindingStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      setMuteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1088,15 +932,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              bulkMuteFindingsSettings,
               createSourceSettings,
               createFindingSettings,
-              createMuteConfigSettings,
               createNotificationConfigSettings,
-              deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
               getIamPolicySettings,
-              getMuteConfigSettings,
               getNotificationConfigSettings,
               getOrganizationSettingsSettings,
               getSourceSettings,
@@ -1104,16 +944,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               groupFindingsSettings,
               listAssetsSettings,
               listFindingsSettings,
-              listMuteConfigsSettings,
               listNotificationConfigsSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
-              setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
               updateFindingSettings,
-              updateMuteConfigSettings,
               updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
@@ -1124,16 +961,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     protected Builder(SecurityCenterStubSettings settings) {
       super(settings);
 
-      bulkMuteFindingsSettings = settings.bulkMuteFindingsSettings.toBuilder();
-      bulkMuteFindingsOperationSettings = settings.bulkMuteFindingsOperationSettings.toBuilder();
       createSourceSettings = settings.createSourceSettings.toBuilder();
       createFindingSettings = settings.createFindingSettings.toBuilder();
-      createMuteConfigSettings = settings.createMuteConfigSettings.toBuilder();
       createNotificationConfigSettings = settings.createNotificationConfigSettings.toBuilder();
-      deleteMuteConfigSettings = settings.deleteMuteConfigSettings.toBuilder();
       deleteNotificationConfigSettings = settings.deleteNotificationConfigSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      getMuteConfigSettings = settings.getMuteConfigSettings.toBuilder();
       getNotificationConfigSettings = settings.getNotificationConfigSettings.toBuilder();
       getOrganizationSettingsSettings = settings.getOrganizationSettingsSettings.toBuilder();
       getSourceSettings = settings.getSourceSettings.toBuilder();
@@ -1141,17 +973,14 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       groupFindingsSettings = settings.groupFindingsSettings.toBuilder();
       listAssetsSettings = settings.listAssetsSettings.toBuilder();
       listFindingsSettings = settings.listFindingsSettings.toBuilder();
-      listMuteConfigsSettings = settings.listMuteConfigsSettings.toBuilder();
       listNotificationConfigsSettings = settings.listNotificationConfigsSettings.toBuilder();
       listSourcesSettings = settings.listSourcesSettings.toBuilder();
       runAssetDiscoverySettings = settings.runAssetDiscoverySettings.toBuilder();
       runAssetDiscoveryOperationSettings = settings.runAssetDiscoveryOperationSettings.toBuilder();
       setFindingStateSettings = settings.setFindingStateSettings.toBuilder();
-      setMuteSettings = settings.setMuteSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateFindingSettings = settings.updateFindingSettings.toBuilder();
-      updateMuteConfigSettings = settings.updateMuteConfigSettings.toBuilder();
       updateNotificationConfigSettings = settings.updateNotificationConfigSettings.toBuilder();
       updateOrganizationSettingsSettings = settings.updateOrganizationSettingsSettings.toBuilder();
       updateSourceSettings = settings.updateSourceSettings.toBuilder();
@@ -1159,15 +988,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              bulkMuteFindingsSettings,
               createSourceSettings,
               createFindingSettings,
-              createMuteConfigSettings,
               createNotificationConfigSettings,
-              deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
               getIamPolicySettings,
-              getMuteConfigSettings,
               getNotificationConfigSettings,
               getOrganizationSettingsSettings,
               getSourceSettings,
@@ -1175,16 +1000,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               groupFindingsSettings,
               listAssetsSettings,
               listFindingsSettings,
-              listMuteConfigsSettings,
               listNotificationConfigsSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
-              setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
               updateFindingSettings,
-              updateMuteConfigSettings,
               updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
@@ -1206,11 +1028,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
     private static Builder initDefaults(Builder builder) {
       builder
-          .bulkMuteFindingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
           .createSourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -1221,19 +1038,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
-          .createMuteConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
           .createNotificationConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .deleteMuteConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteNotificationConfigSettings()
@@ -1244,11 +1051,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .getIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getMuteConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getNotificationConfigSettings()
@@ -1286,11 +1088,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
-          .listMuteConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
           .listNotificationConfigsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -1311,11 +1108,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
-          .setMuteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
           .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -1329,11 +1121,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .updateFindingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .updateMuteConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .updateNotificationConfigSettings()
@@ -1354,30 +1141,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .updateSecurityMarksSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
-
-      builder
-          .bulkMuteFindingsOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<BulkMuteFindingsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(BulkMuteFindingsResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Empty.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
 
       builder
           .runAssetDiscoveryOperationSettings()
@@ -1422,20 +1185,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to bulkMuteFindings. */
-    public UnaryCallSettings.Builder<BulkMuteFindingsRequest, Operation>
-        bulkMuteFindingsSettings() {
-      return bulkMuteFindingsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to bulkMuteFindings. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
-        bulkMuteFindingsOperationSettings() {
-      return bulkMuteFindingsOperationSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createSource. */
     public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
       return createSourceSettings;
@@ -1446,21 +1195,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return createFindingSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createMuteConfig. */
-    public UnaryCallSettings.Builder<CreateMuteConfigRequest, MuteConfig>
-        createMuteConfigSettings() {
-      return createMuteConfigSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createNotificationConfig. */
     public UnaryCallSettings.Builder<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigSettings() {
       return createNotificationConfigSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteMuteConfig. */
-    public UnaryCallSettings.Builder<DeleteMuteConfigRequest, Empty> deleteMuteConfigSettings() {
-      return deleteMuteConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteNotificationConfig. */
@@ -1472,11 +1210,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getMuteConfig. */
-    public UnaryCallSettings.Builder<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings() {
-      return getMuteConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to getNotificationConfig. */
@@ -1523,13 +1256,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return listFindingsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listMuteConfigs. */
-    public PagedCallSettings.Builder<
-            ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>
-        listMuteConfigsSettings() {
-      return listMuteConfigsSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listNotificationConfigs. */
     public PagedCallSettings.Builder<
             ListNotificationConfigsRequest,
@@ -1565,11 +1291,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return setFindingStateSettings;
     }
 
-    /** Returns the builder for the settings used for calls to setMute. */
-    public UnaryCallSettings.Builder<SetMuteRequest, Finding> setMuteSettings() {
-      return setMuteSettings;
-    }
-
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
@@ -1584,12 +1305,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     /** Returns the builder for the settings used for calls to updateFinding. */
     public UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings() {
       return updateFindingSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateMuteConfig. */
-    public UnaryCallSettings.Builder<UpdateMuteConfigRequest, MuteConfig>
-        updateMuteConfigSettings() {
-      return updateMuteConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateNotificationConfig. */

@@ -15,9 +15,7 @@
  */
 
 /**
- * A client to Security Command Center API
- *
- * <p>The interfaces provided are listed below, along with usage samples.
+ * The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= SecurityCenterClient =======================
  *

@@ -20,7 +20,6 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
-import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
@@ -31,16 +30,11 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
-import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
-import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
-import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.Finding;
-import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
@@ -52,23 +46,18 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
-import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
-import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
-import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
-import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
-import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
@@ -96,16 +85,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcSecurityCenterStub extends SecurityCenterStub {
-  private static final MethodDescriptor<BulkMuteFindingsRequest, Operation>
-      bulkMuteFindingsMethodDescriptor =
-          MethodDescriptor.<BulkMuteFindingsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/BulkMuteFindings")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BulkMuteFindingsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<CreateSourceRequest, Source> createSourceMethodDescriptor =
       MethodDescriptor.<CreateSourceRequest, Source>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -124,16 +103,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<CreateMuteConfigRequest, MuteConfig>
-      createMuteConfigMethodDescriptor =
-          MethodDescriptor.<CreateMuteConfigRequest, MuteConfig>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/CreateMuteConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateMuteConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigMethodDescriptor =
           MethodDescriptor.<CreateNotificationConfigRequest, NotificationConfig>newBuilder()
@@ -143,16 +112,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteMuteConfigRequest, Empty>
-      deleteMuteConfigMethodDescriptor =
-          MethodDescriptor.<DeleteMuteConfigRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/DeleteMuteConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteMuteConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<DeleteNotificationConfigRequest, Empty>
@@ -173,16 +132,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
-
-  private static final MethodDescriptor<GetMuteConfigRequest, MuteConfig>
-      getMuteConfigMethodDescriptor =
-          MethodDescriptor.<GetMuteConfigRequest, MuteConfig>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetMuteConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetMuteConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
-              .build();
 
   private static final MethodDescriptor<GetNotificationConfigRequest, NotificationConfig>
       getNotificationConfigMethodDescriptor =
@@ -255,17 +204,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<ListMuteConfigsRequest, ListMuteConfigsResponse>
-      listMuteConfigsMethodDescriptor =
-          MethodDescriptor.<ListMuteConfigsRequest, ListMuteConfigsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/ListMuteConfigs")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListMuteConfigsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListMuteConfigsResponse.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<
           ListNotificationConfigsRequest, ListNotificationConfigsResponse>
       listNotificationConfigsMethodDescriptor =
@@ -310,14 +248,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<SetMuteRequest, Finding> setMuteMethodDescriptor =
-      MethodDescriptor.<SetMuteRequest, Finding>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/SetMute")
-          .setRequestMarshaller(ProtoUtils.marshaller(SetMuteRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
-          .build();
-
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -345,16 +275,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateMuteConfigRequest, MuteConfig>
-      updateMuteConfigMethodDescriptor =
-          MethodDescriptor.<UpdateMuteConfigRequest, MuteConfig>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/UpdateMuteConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateMuteConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<UpdateNotificationConfigRequest, NotificationConfig>
@@ -399,19 +319,13 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(ProtoUtils.marshaller(SecurityMarks.getDefaultInstance()))
               .build();
 
-  private final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable;
-  private final OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
-      bulkMuteFindingsOperationCallable;
   private final UnaryCallable<CreateSourceRequest, Source> createSourceCallable;
   private final UnaryCallable<CreateFindingRequest, Finding> createFindingCallable;
-  private final UnaryCallable<CreateMuteConfigRequest, MuteConfig> createMuteConfigCallable;
   private final UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigCallable;
-  private final UnaryCallable<DeleteMuteConfigRequest, Empty> deleteMuteConfigCallable;
   private final UnaryCallable<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable;
   private final UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
       getNotificationConfigCallable;
   private final UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
@@ -428,10 +342,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable;
   private final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
       listFindingsPagedCallable;
-  private final UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsResponse>
-      listMuteConfigsCallable;
-  private final UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsPagedResponse>
-      listMuteConfigsPagedCallable;
   private final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
       listNotificationConfigsCallable;
   private final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
@@ -443,12 +353,10 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable;
   private final UnaryCallable<SetFindingStateRequest, Finding> setFindingStateCallable;
-  private final UnaryCallable<SetMuteRequest, Finding> setMuteCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
   private final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable;
-  private final UnaryCallable<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigCallable;
   private final UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>
       updateNotificationConfigCallable;
   private final UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
@@ -501,16 +409,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsTransportSettings =
-        GrpcCallSettings.<BulkMuteFindingsRequest, Operation>newBuilder()
-            .setMethodDescriptor(bulkMuteFindingsMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
-                })
-            .build();
     GrpcCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         GrpcCallSettings.<CreateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(createSourceMethodDescriptor)
@@ -531,16 +429,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigTransportSettings =
-        GrpcCallSettings.<CreateMuteConfigRequest, MuteConfig>newBuilder()
-            .setMethodDescriptor(createMuteConfigMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
-                })
-            .build();
     GrpcCallSettings<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigTransportSettings =
             GrpcCallSettings.<CreateNotificationConfigRequest, NotificationConfig>newBuilder()
@@ -552,16 +440,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return params.build();
                     })
                 .build();
-    GrpcCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigTransportSettings =
-        GrpcCallSettings.<DeleteMuteConfigRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteMuteConfigMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
     GrpcCallSettings<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigTransportSettings =
             GrpcCallSettings.<DeleteNotificationConfigRequest, Empty>newBuilder()
@@ -580,16 +458,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigTransportSettings =
-        GrpcCallSettings.<GetMuteConfigRequest, MuteConfig>newBuilder()
-            .setMethodDescriptor(getMuteConfigMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
                   return params.build();
                 })
             .build();
@@ -665,17 +533,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<ListMuteConfigsRequest, ListMuteConfigsResponse>
-        listMuteConfigsTransportSettings =
-            GrpcCallSettings.<ListMuteConfigsRequest, ListMuteConfigsResponse>newBuilder()
-                .setMethodDescriptor(listMuteConfigsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
     GrpcCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
         listNotificationConfigsTransportSettings =
             GrpcCallSettings
@@ -718,16 +575,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<SetMuteRequest, Finding> setMuteTransportSettings =
-        GrpcCallSettings.<SetMuteRequest, Finding>newBuilder()
-            .setMethodDescriptor(setMuteMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -756,16 +603,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("finding.name", String.valueOf(request.getFinding().getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigTransportSettings =
-        GrpcCallSettings.<UpdateMuteConfigRequest, MuteConfig>newBuilder()
-            .setMethodDescriptor(updateMuteConfigMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("mute_config.name", String.valueOf(request.getMuteConfig().getName()));
                   return params.build();
                 })
             .build();
@@ -819,32 +656,17 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                     })
                 .build();
 
-    this.bulkMuteFindingsCallable =
-        callableFactory.createUnaryCallable(
-            bulkMuteFindingsTransportSettings, settings.bulkMuteFindingsSettings(), clientContext);
-    this.bulkMuteFindingsOperationCallable =
-        callableFactory.createOperationCallable(
-            bulkMuteFindingsTransportSettings,
-            settings.bulkMuteFindingsOperationSettings(),
-            clientContext,
-            operationsStub);
     this.createSourceCallable =
         callableFactory.createUnaryCallable(
             createSourceTransportSettings, settings.createSourceSettings(), clientContext);
     this.createFindingCallable =
         callableFactory.createUnaryCallable(
             createFindingTransportSettings, settings.createFindingSettings(), clientContext);
-    this.createMuteConfigCallable =
-        callableFactory.createUnaryCallable(
-            createMuteConfigTransportSettings, settings.createMuteConfigSettings(), clientContext);
     this.createNotificationConfigCallable =
         callableFactory.createUnaryCallable(
             createNotificationConfigTransportSettings,
             settings.createNotificationConfigSettings(),
             clientContext);
-    this.deleteMuteConfigCallable =
-        callableFactory.createUnaryCallable(
-            deleteMuteConfigTransportSettings, settings.deleteMuteConfigSettings(), clientContext);
     this.deleteNotificationConfigCallable =
         callableFactory.createUnaryCallable(
             deleteNotificationConfigTransportSettings,
@@ -853,9 +675,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
-    this.getMuteConfigCallable =
-        callableFactory.createUnaryCallable(
-            getMuteConfigTransportSettings, settings.getMuteConfigSettings(), clientContext);
     this.getNotificationConfigCallable =
         callableFactory.createUnaryCallable(
             getNotificationConfigTransportSettings,
@@ -893,12 +712,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.listFindingsPagedCallable =
         callableFactory.createPagedCallable(
             listFindingsTransportSettings, settings.listFindingsSettings(), clientContext);
-    this.listMuteConfigsCallable =
-        callableFactory.createUnaryCallable(
-            listMuteConfigsTransportSettings, settings.listMuteConfigsSettings(), clientContext);
-    this.listMuteConfigsPagedCallable =
-        callableFactory.createPagedCallable(
-            listMuteConfigsTransportSettings, settings.listMuteConfigsSettings(), clientContext);
     this.listNotificationConfigsCallable =
         callableFactory.createUnaryCallable(
             listNotificationConfigsTransportSettings,
@@ -929,9 +742,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.setFindingStateCallable =
         callableFactory.createUnaryCallable(
             setFindingStateTransportSettings, settings.setFindingStateSettings(), clientContext);
-    this.setMuteCallable =
-        callableFactory.createUnaryCallable(
-            setMuteTransportSettings, settings.setMuteSettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -943,9 +753,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.updateFindingCallable =
         callableFactory.createUnaryCallable(
             updateFindingTransportSettings, settings.updateFindingSettings(), clientContext);
-    this.updateMuteConfigCallable =
-        callableFactory.createUnaryCallable(
-            updateMuteConfigTransportSettings, settings.updateMuteConfigSettings(), clientContext);
     this.updateNotificationConfigCallable =
         callableFactory.createUnaryCallable(
             updateNotificationConfigTransportSettings,
@@ -974,17 +781,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
-  public UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable() {
-    return bulkMuteFindingsCallable;
-  }
-
-  @Override
-  public OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
-      bulkMuteFindingsOperationCallable() {
-    return bulkMuteFindingsOperationCallable;
-  }
-
-  @Override
   public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
     return createSourceCallable;
   }
@@ -995,19 +791,9 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
-  public UnaryCallable<CreateMuteConfigRequest, MuteConfig> createMuteConfigCallable() {
-    return createMuteConfigCallable;
-  }
-
-  @Override
   public UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigCallable() {
     return createNotificationConfigCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteMuteConfigRequest, Empty> deleteMuteConfigCallable() {
-    return deleteMuteConfigCallable;
   }
 
   @Override
@@ -1018,11 +804,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable() {
-    return getMuteConfigCallable;
   }
 
   @Override
@@ -1084,17 +865,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
-  public UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsResponse> listMuteConfigsCallable() {
-    return listMuteConfigsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsPagedResponse>
-      listMuteConfigsPagedCallable() {
-    return listMuteConfigsPagedCallable;
-  }
-
-  @Override
   public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
       listNotificationConfigsCallable() {
     return listNotificationConfigsCallable;
@@ -1133,11 +903,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
-  public UnaryCallable<SetMuteRequest, Finding> setMuteCallable() {
-    return setMuteCallable;
-  }
-
-  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
@@ -1151,11 +916,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   @Override
   public UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     return updateFindingCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigCallable() {
-    return updateMuteConfigCallable;
   }
 
   @Override

@@ -10,14 +10,8 @@
         "grpc": {
           "libraryClient": "SecurityCenterClient",
           "rpcs": {
-            "BulkMuteFindings": {
-              "methods": ["bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsOperationCallable", "bulkMuteFindingsCallable"]
-            },
             "CreateFinding": {
               "methods": ["createFinding", "createFinding", "createFinding", "createFindingCallable"]
-            },
-            "CreateMuteConfig": {
-              "methods": ["createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfigCallable"]
             },
             "CreateNotificationConfig": {
               "methods": ["createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfigCallable"]
@@ -25,17 +19,11 @@
             "CreateSource": {
               "methods": ["createSource", "createSource", "createSource", "createSourceCallable"]
             },
-            "DeleteMuteConfig": {
-              "methods": ["deleteMuteConfig", "deleteMuteConfig", "deleteMuteConfig", "deleteMuteConfigCallable"]
-            },
             "DeleteNotificationConfig": {
               "methods": ["deleteNotificationConfig", "deleteNotificationConfig", "deleteNotificationConfig", "deleteNotificationConfigCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
-            },
-            "GetMuteConfig": {
-              "methods": ["getMuteConfig", "getMuteConfig", "getMuteConfig", "getMuteConfigCallable"]
             },
             "GetNotificationConfig": {
               "methods": ["getNotificationConfig", "getNotificationConfig", "getNotificationConfig", "getNotificationConfigCallable"]
@@ -58,9 +46,6 @@
             "ListFindings": {
               "methods": ["listFindings", "listFindingsPagedCallable", "listFindingsCallable"]
             },
-            "ListMuteConfigs": {
-              "methods": ["listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigsPagedCallable", "listMuteConfigsCallable"]
-            },
             "ListNotificationConfigs": {
               "methods": ["listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigsPagedCallable", "listNotificationConfigsCallable"]
             },
@@ -76,17 +61,11 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
-            "SetMute": {
-              "methods": ["setMute", "setMute", "setMute", "setMuteCallable"]
-            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateFinding": {
               "methods": ["updateFinding", "updateFinding", "updateFindingCallable"]
-            },
-            "UpdateMuteConfig": {
-              "methods": ["updateMuteConfig", "updateMuteConfig", "updateMuteConfigCallable"]
             },
             "UpdateNotificationConfig": {
               "methods": ["updateNotificationConfig", "updateNotificationConfig", "updateNotificationConfig", "updateNotificationConfigCallable"]

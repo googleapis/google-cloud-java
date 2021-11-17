@@ -20,23 +20,17 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
-import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
-import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
-import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
-import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.Finding;
-import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
@@ -48,23 +42,18 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
-import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
-import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
-import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
-import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
-import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
@@ -92,15 +81,6 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
-      bulkMuteFindingsOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: bulkMuteFindingsOperationCallable()");
-  }
-
-  public UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable() {
-    throw new UnsupportedOperationException("Not implemented: bulkMuteFindingsCallable()");
-  }
-
   public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
     throw new UnsupportedOperationException("Not implemented: createSourceCallable()");
   }
@@ -109,17 +89,9 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createFindingCallable()");
   }
 
-  public UnaryCallable<CreateMuteConfigRequest, MuteConfig> createMuteConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: createMuteConfigCallable()");
-  }
-
   public UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: createNotificationConfigCallable()");
-  }
-
-  public UnaryCallable<DeleteMuteConfigRequest, Empty> deleteMuteConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteMuteConfigCallable()");
   }
 
   public UnaryCallable<DeleteNotificationConfigRequest, Empty> deleteNotificationConfigCallable() {
@@ -128,10 +100,6 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: getMuteConfigCallable()");
   }
 
   public UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
@@ -181,15 +149,6 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listFindingsCallable()");
   }
 
-  public UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsPagedResponse>
-      listMuteConfigsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listMuteConfigsPagedCallable()");
-  }
-
-  public UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsResponse> listMuteConfigsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listMuteConfigsCallable()");
-  }
-
   public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
       listNotificationConfigsPagedCallable() {
     throw new UnsupportedOperationException(
@@ -223,10 +182,6 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setFindingStateCallable()");
   }
 
-  public UnaryCallable<SetMuteRequest, Finding> setMuteCallable() {
-    throw new UnsupportedOperationException("Not implemented: setMuteCallable()");
-  }
-
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
@@ -238,10 +193,6 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     throw new UnsupportedOperationException("Not implemented: updateFindingCallable()");
-  }
-
-  public UnaryCallable<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateMuteConfigCallable()");
   }
 
   public UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>

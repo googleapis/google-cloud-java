@@ -53,7 +53,7 @@ public final class FindingOuterClass {
           + "2google/cloud/securitycenter/v1/vulnerab"
           + "ility.proto\032\034google/protobuf/struct.prot"
           + "o\032\037google/protobuf/timestamp.proto\032\034goog"
-          + "le/api/annotations.proto\"\335\013\n\007Finding\022\014\n\004"
+          + "le/api/annotations.proto\"\211\n\n\007Finding\022\014\n\004"
           + "name\030\001 \001(\t\022\016\n\006parent\030\002 \001(\t\022\025\n\rresource_n"
           + "ame\030\003 \001(\t\022<\n\005state\030\004 \001(\0162-.google.cloud."
           + "securitycenter.v1.Finding.State\022\020\n\010categ"
@@ -66,37 +66,32 @@ public final class FindingOuterClass {
           + "stamp\022/\n\013create_time\030\n \001(\0132\032.google.prot"
           + "obuf.Timestamp\022B\n\010severity\030\014 \001(\01620.googl"
           + "e.cloud.securitycenter.v1.Finding.Severi"
-          + "ty\022\026\n\016canonical_name\030\016 \001(\t\022:\n\004mute\030\017 \001(\016"
-          + "2,.google.cloud.securitycenter.v1.Findin"
-          + "g.Mute\022K\n\rfinding_class\030\021 \001(\01624.google.c"
-          + "loud.securitycenter.v1.Finding.FindingCl"
-          + "ass\022<\n\tindicator\030\022 \001(\0132).google.cloud.se"
-          + "curitycenter.v1.Indicator\022D\n\rvulnerabili"
-          + "ty\030\024 \001(\0132-.google.cloud.securitycenter.v"
-          + "1.Vulnerability\0229\n\020mute_update_time\030\025 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022\026\n\016mu"
-          + "te_initiator\030\034 \001(\t\032O\n\025SourcePropertiesEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google"
-          + ".protobuf.Value:\0028\001\"8\n\005State\022\025\n\021STATE_UN"
-          + "SPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\"Q\n"
-          + "\010Severity\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\014\n\010C"
-          + "RITICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006MEDIUM\020\003\022\007\n\003LOW\020\004"
-          + "\"C\n\004Mute\022\024\n\020MUTE_UNSPECIFIED\020\000\022\t\n\005MUTED\020"
-          + "\001\022\013\n\007UNMUTED\020\002\022\r\n\tUNDEFINED\020\004\"s\n\014Finding"
-          + "Class\022\035\n\031FINDING_CLASS_UNSPECIFIED\020\000\022\n\n\006"
-          + "THREAT\020\001\022\021\n\rVULNERABILITY\020\002\022\024\n\020MISCONFIG"
-          + "URATION\020\003\022\017\n\013OBSERVATION\020\004:\333\001\352A\327\001\n%secur"
-          + "itycenter.googleapis.com/Finding\022@organi"
-          + "zations/{organization}/sources/{source}/"
-          + "findings/{finding}\0224folders/{folder}/sou"
-          + "rces/{source}/findings/{finding}\0226projec"
-          + "ts/{project}/sources/{source}/findings/{"
-          + "finding}B\332\001\n\"com.google.cloud.securityce"
-          + "nter.v1P\001ZLgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/securitycenter/v1;securit"
-          + "ycenter\252\002\036Google.Cloud.SecurityCenter.V1"
-          + "\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goog"
-          + "le::Cloud::SecurityCenter::V1b\006proto3"
+          + "ty\022\026\n\016canonical_name\030\016 \001(\t\022K\n\rfinding_cl"
+          + "ass\030\021 \001(\01624.google.cloud.securitycenter."
+          + "v1.Finding.FindingClass\022<\n\tindicator\030\022 \001"
+          + "(\0132).google.cloud.securitycenter.v1.Indi"
+          + "cator\022D\n\rvulnerability\030\024 \001(\0132-.google.cl"
+          + "oud.securitycenter.v1.Vulnerability\032O\n\025S"
+          + "ourcePropertiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005val"
+          + "ue\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\"8\n\005"
+          + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001"
+          + "\022\014\n\010INACTIVE\020\002\"Q\n\010Severity\022\030\n\024SEVERITY_U"
+          + "NSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006"
+          + "MEDIUM\020\003\022\007\n\003LOW\020\004\"s\n\014FindingClass\022\035\n\031FIN"
+          + "DING_CLASS_UNSPECIFIED\020\000\022\n\n\006THREAT\020\001\022\021\n\r"
+          + "VULNERABILITY\020\002\022\024\n\020MISCONFIGURATION\020\003\022\017\n"
+          + "\013OBSERVATION\020\004:\333\001\352A\327\001\n%securitycenter.go"
+          + "ogleapis.com/Finding\022@organizations/{org"
+          + "anization}/sources/{source}/findings/{fi"
+          + "nding}\0224folders/{folder}/sources/{source"
+          + "}/findings/{finding}\0226projects/{project}"
+          + "/sources/{source}/findings/{finding}B\332\001\n"
+          + "\"com.google.cloud.securitycenter.v1P\001ZLg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/securitycenter/v1;securitycenter\252\002\036Go"
+          + "ogle.Cloud.SecurityCenter.V1\312\002\036Google\\Cl"
+          + "oud\\SecurityCenter\\V1\352\002!Google::Cloud::S"
+          + "ecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -129,12 +124,9 @@ public final class FindingOuterClass {
               "CreateTime",
               "Severity",
               "CanonicalName",
-              "Mute",
               "FindingClass",
               "Indicator",
               "Vulnerability",
-              "MuteUpdateTime",
-              "MuteInitiator",
             });
     internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor =
         internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(0);

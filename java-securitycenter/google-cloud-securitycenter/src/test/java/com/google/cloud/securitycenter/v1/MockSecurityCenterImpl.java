@@ -66,27 +66,6 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
-  public void bulkMuteFindings(
-      BulkMuteFindingsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext(((Operation) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method BulkMuteFindings, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Operation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void createSource(CreateSourceRequest request, StreamObserver<Source> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Source) {
@@ -128,27 +107,6 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
-  public void createMuteConfig(
-      CreateMuteConfigRequest request, StreamObserver<MuteConfig> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof MuteConfig) {
-      requests.add(request);
-      responseObserver.onNext(((MuteConfig) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateMuteConfig, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  MuteConfig.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void createNotificationConfig(
       CreateNotificationConfigRequest request,
       StreamObserver<NotificationConfig> responseObserver) {
@@ -166,27 +124,6 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
                   "Unrecognized response type %s for method CreateNotificationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationConfig.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void deleteMuteConfig(
-      DeleteMuteConfigRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteMuteConfig, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -228,27 +165,6 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void getMuteConfig(
-      GetMuteConfigRequest request, StreamObserver<MuteConfig> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof MuteConfig) {
-      requests.add(request);
-      responseObserver.onNext(((MuteConfig) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetMuteConfig, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  MuteConfig.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -401,27 +317,6 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
-  public void listMuteConfigs(
-      ListMuteConfigsRequest request, StreamObserver<ListMuteConfigsResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ListMuteConfigsResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ListMuteConfigsResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ListMuteConfigs, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ListMuteConfigsResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void listNotificationConfigs(
       ListNotificationConfigsRequest request,
       StreamObserver<ListNotificationConfigsResponse> responseObserver) {
@@ -507,26 +402,6 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
-  public void setMute(SetMuteRequest request, StreamObserver<Finding> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Finding) {
-      requests.add(request);
-      responseObserver.onNext(((Finding) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method SetMute, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Finding.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Policy) {
@@ -585,27 +460,6 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
                   "Unrecognized response type %s for method UpdateFinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Finding.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void updateMuteConfig(
-      UpdateMuteConfigRequest request, StreamObserver<MuteConfig> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof MuteConfig) {
-      requests.add(request);
-      responseObserver.onNext(((MuteConfig) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method UpdateMuteConfig, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  MuteConfig.class.getName(),
                   Exception.class.getName())));
     }
   }

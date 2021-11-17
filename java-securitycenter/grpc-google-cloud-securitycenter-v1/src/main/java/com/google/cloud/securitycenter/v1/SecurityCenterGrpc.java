@@ -27,7 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/securitycenter/v1/securitycenter_service.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class SecurityCenterGrpc {
 
   private SecurityCenterGrpc() {}
@@ -35,52 +34,6 @@ public final class SecurityCenterGrpc {
   public static final String SERVICE_NAME = "google.cloud.securitycenter.v1.SecurityCenter";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest,
-          com.google.longrunning.Operation>
-      getBulkMuteFindingsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BulkMuteFindings",
-      requestType = com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest,
-          com.google.longrunning.Operation>
-      getBulkMuteFindingsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest,
-            com.google.longrunning.Operation>
-        getBulkMuteFindingsMethod;
-    if ((getBulkMuteFindingsMethod = SecurityCenterGrpc.getBulkMuteFindingsMethod) == null) {
-      synchronized (SecurityCenterGrpc.class) {
-        if ((getBulkMuteFindingsMethod = SecurityCenterGrpc.getBulkMuteFindingsMethod) == null) {
-          SecurityCenterGrpc.getBulkMuteFindingsMethod =
-              getBulkMuteFindingsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BulkMuteFindings"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new SecurityCenterMethodDescriptorSupplier("BulkMuteFindings"))
-                      .build();
-        }
-      }
-    }
-    return getBulkMuteFindingsMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.CreateSourceRequest,
           com.google.cloud.securitycenter.v1.Source>
@@ -174,52 +127,6 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.CreateMuteConfigRequest,
-          com.google.cloud.securitycenter.v1.MuteConfig>
-      getCreateMuteConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateMuteConfig",
-      requestType = com.google.cloud.securitycenter.v1.CreateMuteConfigRequest.class,
-      responseType = com.google.cloud.securitycenter.v1.MuteConfig.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.CreateMuteConfigRequest,
-          com.google.cloud.securitycenter.v1.MuteConfig>
-      getCreateMuteConfigMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.securitycenter.v1.CreateMuteConfigRequest,
-            com.google.cloud.securitycenter.v1.MuteConfig>
-        getCreateMuteConfigMethod;
-    if ((getCreateMuteConfigMethod = SecurityCenterGrpc.getCreateMuteConfigMethod) == null) {
-      synchronized (SecurityCenterGrpc.class) {
-        if ((getCreateMuteConfigMethod = SecurityCenterGrpc.getCreateMuteConfigMethod) == null) {
-          SecurityCenterGrpc.getCreateMuteConfigMethod =
-              getCreateMuteConfigMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.securitycenter.v1.CreateMuteConfigRequest,
-                          com.google.cloud.securitycenter.v1.MuteConfig>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMuteConfig"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.CreateMuteConfigRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.MuteConfig.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new SecurityCenterMethodDescriptorSupplier("CreateMuteConfig"))
-                      .build();
-        }
-      }
-    }
-    return getCreateMuteConfigMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
           com.google.cloud.securitycenter.v1.NotificationConfig>
       getCreateNotificationConfigMethod;
@@ -268,49 +175,6 @@ public final class SecurityCenterGrpc {
       }
     }
     return getCreateNotificationConfigMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest, com.google.protobuf.Empty>
-      getDeleteMuteConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteMuteConfig",
-      requestType = com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest, com.google.protobuf.Empty>
-      getDeleteMuteConfigMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest, com.google.protobuf.Empty>
-        getDeleteMuteConfigMethod;
-    if ((getDeleteMuteConfigMethod = SecurityCenterGrpc.getDeleteMuteConfigMethod) == null) {
-      synchronized (SecurityCenterGrpc.class) {
-        if ((getDeleteMuteConfigMethod = SecurityCenterGrpc.getDeleteMuteConfigMethod) == null) {
-          SecurityCenterGrpc.getDeleteMuteConfigMethod =
-              getDeleteMuteConfigMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMuteConfig"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new SecurityCenterMethodDescriptorSupplier("DeleteMuteConfig"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteMuteConfigMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -400,52 +264,6 @@ public final class SecurityCenterGrpc {
       }
     }
     return getGetIamPolicyMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.GetMuteConfigRequest,
-          com.google.cloud.securitycenter.v1.MuteConfig>
-      getGetMuteConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetMuteConfig",
-      requestType = com.google.cloud.securitycenter.v1.GetMuteConfigRequest.class,
-      responseType = com.google.cloud.securitycenter.v1.MuteConfig.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.GetMuteConfigRequest,
-          com.google.cloud.securitycenter.v1.MuteConfig>
-      getGetMuteConfigMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.securitycenter.v1.GetMuteConfigRequest,
-            com.google.cloud.securitycenter.v1.MuteConfig>
-        getGetMuteConfigMethod;
-    if ((getGetMuteConfigMethod = SecurityCenterGrpc.getGetMuteConfigMethod) == null) {
-      synchronized (SecurityCenterGrpc.class) {
-        if ((getGetMuteConfigMethod = SecurityCenterGrpc.getGetMuteConfigMethod) == null) {
-          SecurityCenterGrpc.getGetMuteConfigMethod =
-              getGetMuteConfigMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.securitycenter.v1.GetMuteConfigRequest,
-                          com.google.cloud.securitycenter.v1.MuteConfig>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMuteConfig"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.GetMuteConfigRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.MuteConfig.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new SecurityCenterMethodDescriptorSupplier("GetMuteConfig"))
-                      .build();
-        }
-      }
-    }
-    return getGetMuteConfigMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -781,53 +599,6 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.ListMuteConfigsRequest,
-          com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>
-      getListMuteConfigsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListMuteConfigs",
-      requestType = com.google.cloud.securitycenter.v1.ListMuteConfigsRequest.class,
-      responseType = com.google.cloud.securitycenter.v1.ListMuteConfigsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.ListMuteConfigsRequest,
-          com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>
-      getListMuteConfigsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.securitycenter.v1.ListMuteConfigsRequest,
-            com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>
-        getListMuteConfigsMethod;
-    if ((getListMuteConfigsMethod = SecurityCenterGrpc.getListMuteConfigsMethod) == null) {
-      synchronized (SecurityCenterGrpc.class) {
-        if ((getListMuteConfigsMethod = SecurityCenterGrpc.getListMuteConfigsMethod) == null) {
-          SecurityCenterGrpc.getListMuteConfigsMethod =
-              getListMuteConfigsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.securitycenter.v1.ListMuteConfigsRequest,
-                          com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMuteConfigs"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.ListMuteConfigsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.ListMuteConfigsResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new SecurityCenterMethodDescriptorSupplier("ListMuteConfigs"))
-                      .build();
-        }
-      }
-    }
-    return getListMuteConfigsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
           com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
       getListNotificationConfigsMethod;
@@ -1017,51 +788,6 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.SetMuteRequest,
-          com.google.cloud.securitycenter.v1.Finding>
-      getSetMuteMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetMute",
-      requestType = com.google.cloud.securitycenter.v1.SetMuteRequest.class,
-      responseType = com.google.cloud.securitycenter.v1.Finding.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.SetMuteRequest,
-          com.google.cloud.securitycenter.v1.Finding>
-      getSetMuteMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.securitycenter.v1.SetMuteRequest,
-            com.google.cloud.securitycenter.v1.Finding>
-        getSetMuteMethod;
-    if ((getSetMuteMethod = SecurityCenterGrpc.getSetMuteMethod) == null) {
-      synchronized (SecurityCenterGrpc.class) {
-        if ((getSetMuteMethod = SecurityCenterGrpc.getSetMuteMethod) == null) {
-          SecurityCenterGrpc.getSetMuteMethod =
-              getSetMuteMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.securitycenter.v1.SetMuteRequest,
-                          com.google.cloud.securitycenter.v1.Finding>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetMute"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.SetMuteRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()))
-                      .setSchemaDescriptor(new SecurityCenterMethodDescriptorSupplier("SetMute"))
-                      .build();
-        }
-      }
-    }
-    return getSetMuteMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod;
 
@@ -1188,52 +914,6 @@ public final class SecurityCenterGrpc {
       }
     }
     return getUpdateFindingMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest,
-          com.google.cloud.securitycenter.v1.MuteConfig>
-      getUpdateMuteConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateMuteConfig",
-      requestType = com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest.class,
-      responseType = com.google.cloud.securitycenter.v1.MuteConfig.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest,
-          com.google.cloud.securitycenter.v1.MuteConfig>
-      getUpdateMuteConfigMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest,
-            com.google.cloud.securitycenter.v1.MuteConfig>
-        getUpdateMuteConfigMethod;
-    if ((getUpdateMuteConfigMethod = SecurityCenterGrpc.getUpdateMuteConfigMethod) == null) {
-      synchronized (SecurityCenterGrpc.class) {
-        if ((getUpdateMuteConfigMethod = SecurityCenterGrpc.getUpdateMuteConfigMethod) == null) {
-          SecurityCenterGrpc.getUpdateMuteConfigMethod =
-              getUpdateMuteConfigMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest,
-                          com.google.cloud.securitycenter.v1.MuteConfig>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMuteConfig"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.securitycenter.v1.MuteConfig.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new SecurityCenterMethodDescriptorSupplier("UpdateMuteConfig"))
-                      .build();
-        }
-      }
-    }
-    return getUpdateMuteConfigMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1488,22 +1168,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Kicks off an LRO to bulk mute findings for a parent based on a filter. The
-     * parent can be either an organization, folder or project. The findings
-     * matched by the filter will be muted after the LRO is done.
-     * </pre>
-     */
-    public void bulkMuteFindings(
-        com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getBulkMuteFindingsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -1533,21 +1197,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a mute config.
-     * </pre>
-     */
-    public void createMuteConfig(
-        com.google.cloud.securitycenter.v1.CreateMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateMuteConfigMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a notification config.
      * </pre>
      */
@@ -1557,20 +1206,6 @@ public final class SecurityCenterGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateNotificationConfigMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes an existing mute config.
-     * </pre>
-     */
-    public void deleteMuteConfig(
-        com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteMuteConfigMethod(), responseObserver);
     }
 
     /**
@@ -1599,21 +1234,6 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetIamPolicyMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a mute config.
-     * </pre>
-     */
-    public void getMuteConfig(
-        com.google.cloud.securitycenter.v1.GetMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetMuteConfigMethod(), responseObserver);
     }
 
     /**
@@ -1730,21 +1350,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Lists mute configs.
-     * </pre>
-     */
-    public void listMuteConfigs(
-        com.google.cloud.securitycenter.v1.ListMuteConfigsRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListMuteConfigsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists notification configs.
      * </pre>
      */
@@ -1808,19 +1413,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates the mute state of a finding.
-     * </pre>
-     */
-    public void setMute(
-        com.google.cloud.securitycenter.v1.SetMuteRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetMuteMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Sets the access control policy on the specified Source.
      * </pre>
      */
@@ -1859,21 +1451,6 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateFindingMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a mute config.
-     * </pre>
-     */
-    public void updateMuteConfig(
-        com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getUpdateMuteConfigMethod(), responseObserver);
     }
 
     /**
@@ -1940,12 +1517,6 @@ public final class SecurityCenterGrpc {
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getBulkMuteFindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BULK_MUTE_FINDINGS)))
-          .addMethod(
               getCreateSourceMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1958,25 +1529,12 @@ public final class SecurityCenterGrpc {
                       com.google.cloud.securitycenter.v1.CreateFindingRequest,
                       com.google.cloud.securitycenter.v1.Finding>(this, METHODID_CREATE_FINDING)))
           .addMethod(
-              getCreateMuteConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1.CreateMuteConfigRequest,
-                      com.google.cloud.securitycenter.v1.MuteConfig>(
-                      this, METHODID_CREATE_MUTE_CONFIG)))
-          .addMethod(
               getCreateNotificationConfigMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
                       com.google.cloud.securitycenter.v1.NotificationConfig>(
                       this, METHODID_CREATE_NOTIFICATION_CONFIG)))
-          .addMethod(
-              getDeleteMuteConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_MUTE_CONFIG)))
           .addMethod(
               getDeleteNotificationConfigMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1989,13 +1547,6 @@ public final class SecurityCenterGrpc {
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getGetMuteConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1.GetMuteConfigRequest,
-                      com.google.cloud.securitycenter.v1.MuteConfig>(
-                      this, METHODID_GET_MUTE_CONFIG)))
           .addMethod(
               getGetNotificationConfigMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2045,13 +1596,6 @@ public final class SecurityCenterGrpc {
                       com.google.cloud.securitycenter.v1.ListFindingsResponse>(
                       this, METHODID_LIST_FINDINGS)))
           .addMethod(
-              getListMuteConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1.ListMuteConfigsRequest,
-                      com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>(
-                      this, METHODID_LIST_MUTE_CONFIGS)))
-          .addMethod(
               getListNotificationConfigsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -2079,12 +1623,6 @@ public final class SecurityCenterGrpc {
                       com.google.cloud.securitycenter.v1.Finding>(
                       this, METHODID_SET_FINDING_STATE)))
           .addMethod(
-              getSetMuteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1.SetMuteRequest,
-                      com.google.cloud.securitycenter.v1.Finding>(this, METHODID_SET_MUTE)))
-          .addMethod(
               getSetIamPolicyMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -2103,13 +1641,6 @@ public final class SecurityCenterGrpc {
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1.UpdateFindingRequest,
                       com.google.cloud.securitycenter.v1.Finding>(this, METHODID_UPDATE_FINDING)))
-          .addMethod(
-              getUpdateMuteConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest,
-                      com.google.cloud.securitycenter.v1.MuteConfig>(
-                      this, METHODID_UPDATE_MUTE_CONFIG)))
           .addMethod(
               getUpdateNotificationConfigMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2163,24 +1694,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Kicks off an LRO to bulk mute findings for a parent based on a filter. The
-     * parent can be either an organization, folder or project. The findings
-     * matched by the filter will be muted after the LRO is done.
-     * </pre>
-     */
-    public void bulkMuteFindings(
-        com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getBulkMuteFindingsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -2214,23 +1727,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a mute config.
-     * </pre>
-     */
-    public void createMuteConfig(
-        com.google.cloud.securitycenter.v1.CreateMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateMuteConfigMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a notification config.
      * </pre>
      */
@@ -2240,22 +1736,6 @@ public final class SecurityCenterGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateNotificationConfigMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes an existing mute config.
-     * </pre>
-     */
-    public void deleteMuteConfig(
-        com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteMuteConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2288,23 +1768,6 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a mute config.
-     * </pre>
-     */
-    public void getMuteConfig(
-        com.google.cloud.securitycenter.v1.GetMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetMuteConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2435,23 +1898,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Lists mute configs.
-     * </pre>
-     */
-    public void listMuteConfigs(
-        com.google.cloud.securitycenter.v1.ListMuteConfigsRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListMuteConfigsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists notification configs.
      * </pre>
      */
@@ -2523,20 +1969,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates the mute state of a finding.
-     * </pre>
-     */
-    public void setMute(
-        com.google.cloud.securitycenter.v1.SetMuteRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSetMuteMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Sets the access control policy on the specified Source.
      * </pre>
      */
@@ -2579,23 +2011,6 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateFindingMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a mute config.
-     * </pre>
-     */
-    public void updateMuteConfig(
-        com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateMuteConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2692,21 +2107,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Kicks off an LRO to bulk mute findings for a parent based on a filter. The
-     * parent can be either an organization, folder or project. The findings
-     * matched by the filter will be muted after the LRO is done.
-     * </pre>
-     */
-    public com.google.longrunning.Operation bulkMuteFindings(
-        com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBulkMuteFindingsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -2734,19 +2134,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a mute config.
-     * </pre>
-     */
-    public com.google.cloud.securitycenter.v1.MuteConfig createMuteConfig(
-        com.google.cloud.securitycenter.v1.CreateMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateMuteConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a notification config.
      * </pre>
      */
@@ -2754,19 +2141,6 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateNotificationConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes an existing mute config.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteMuteConfig(
-        com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteMuteConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2792,19 +2166,6 @@ public final class SecurityCenterGrpc {
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a mute config.
-     * </pre>
-     */
-    public com.google.cloud.securitycenter.v1.MuteConfig getMuteConfig(
-        com.google.cloud.securitycenter.v1.GetMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetMuteConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2910,19 +2271,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Lists mute configs.
-     * </pre>
-     */
-    public com.google.cloud.securitycenter.v1.ListMuteConfigsResponse listMuteConfigs(
-        com.google.cloud.securitycenter.v1.ListMuteConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListMuteConfigsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists notification configs.
      * </pre>
      */
@@ -2980,19 +2328,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates the mute state of a finding.
-     * </pre>
-     */
-    public com.google.cloud.securitycenter.v1.Finding setMute(
-        com.google.cloud.securitycenter.v1.SetMuteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetMuteMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Sets the access control policy on the specified Source.
      * </pre>
      */
@@ -3026,19 +2361,6 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1.UpdateFindingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateFindingMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a mute config.
-     * </pre>
-     */
-    public com.google.cloud.securitycenter.v1.MuteConfig updateMuteConfig(
-        com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateMuteConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3118,21 +2440,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Kicks off an LRO to bulk mute findings for a parent based on a filter. The
-     * parent can be either an organization, folder or project. The findings
-     * matched by the filter will be muted after the LRO is done.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        bulkMuteFindings(com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getBulkMuteFindingsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -3162,20 +2469,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a mute config.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.securitycenter.v1.MuteConfig>
-        createMuteConfig(com.google.cloud.securitycenter.v1.CreateMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateMuteConfigMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a notification config.
      * </pre>
      */
@@ -3185,19 +2478,6 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateNotificationConfigMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes an existing mute config.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteMuteConfig(com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteMuteConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3225,20 +2505,6 @@ public final class SecurityCenterGrpc {
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a mute config.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.securitycenter.v1.MuteConfig>
-        getMuteConfig(com.google.cloud.securitycenter.v1.GetMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetMuteConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3353,20 +2619,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Lists mute configs.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>
-        listMuteConfigs(com.google.cloud.securitycenter.v1.ListMuteConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListMuteConfigsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists notification configs.
      * </pre>
      */
@@ -3427,20 +2679,6 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates the mute state of a finding.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.securitycenter.v1.Finding>
-        setMute(com.google.cloud.securitycenter.v1.SetMuteRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSetMuteMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Sets the access control policy on the specified Source.
      * </pre>
      */
@@ -3477,20 +2715,6 @@ public final class SecurityCenterGrpc {
         updateFinding(com.google.cloud.securitycenter.v1.UpdateFindingRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateFindingMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a mute config.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.securitycenter.v1.MuteConfig>
-        updateMuteConfig(com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateMuteConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3553,36 +2777,29 @@ public final class SecurityCenterGrpc {
     }
   }
 
-  private static final int METHODID_BULK_MUTE_FINDINGS = 0;
-  private static final int METHODID_CREATE_SOURCE = 1;
-  private static final int METHODID_CREATE_FINDING = 2;
-  private static final int METHODID_CREATE_MUTE_CONFIG = 3;
-  private static final int METHODID_CREATE_NOTIFICATION_CONFIG = 4;
-  private static final int METHODID_DELETE_MUTE_CONFIG = 5;
-  private static final int METHODID_DELETE_NOTIFICATION_CONFIG = 6;
-  private static final int METHODID_GET_IAM_POLICY = 7;
-  private static final int METHODID_GET_MUTE_CONFIG = 8;
-  private static final int METHODID_GET_NOTIFICATION_CONFIG = 9;
-  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 10;
-  private static final int METHODID_GET_SOURCE = 11;
-  private static final int METHODID_GROUP_ASSETS = 12;
-  private static final int METHODID_GROUP_FINDINGS = 13;
-  private static final int METHODID_LIST_ASSETS = 14;
-  private static final int METHODID_LIST_FINDINGS = 15;
-  private static final int METHODID_LIST_MUTE_CONFIGS = 16;
-  private static final int METHODID_LIST_NOTIFICATION_CONFIGS = 17;
-  private static final int METHODID_LIST_SOURCES = 18;
-  private static final int METHODID_RUN_ASSET_DISCOVERY = 19;
-  private static final int METHODID_SET_FINDING_STATE = 20;
-  private static final int METHODID_SET_MUTE = 21;
-  private static final int METHODID_SET_IAM_POLICY = 22;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 23;
-  private static final int METHODID_UPDATE_FINDING = 24;
-  private static final int METHODID_UPDATE_MUTE_CONFIG = 25;
-  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 26;
-  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 27;
-  private static final int METHODID_UPDATE_SOURCE = 28;
-  private static final int METHODID_UPDATE_SECURITY_MARKS = 29;
+  private static final int METHODID_CREATE_SOURCE = 0;
+  private static final int METHODID_CREATE_FINDING = 1;
+  private static final int METHODID_CREATE_NOTIFICATION_CONFIG = 2;
+  private static final int METHODID_DELETE_NOTIFICATION_CONFIG = 3;
+  private static final int METHODID_GET_IAM_POLICY = 4;
+  private static final int METHODID_GET_NOTIFICATION_CONFIG = 5;
+  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 6;
+  private static final int METHODID_GET_SOURCE = 7;
+  private static final int METHODID_GROUP_ASSETS = 8;
+  private static final int METHODID_GROUP_FINDINGS = 9;
+  private static final int METHODID_LIST_ASSETS = 10;
+  private static final int METHODID_LIST_FINDINGS = 11;
+  private static final int METHODID_LIST_NOTIFICATION_CONFIGS = 12;
+  private static final int METHODID_LIST_SOURCES = 13;
+  private static final int METHODID_RUN_ASSET_DISCOVERY = 14;
+  private static final int METHODID_SET_FINDING_STATE = 15;
+  private static final int METHODID_SET_IAM_POLICY = 16;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 17;
+  private static final int METHODID_UPDATE_FINDING = 18;
+  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 19;
+  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 20;
+  private static final int METHODID_UPDATE_SOURCE = 21;
+  private static final int METHODID_UPDATE_SECURITY_MARKS = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3601,11 +2818,6 @@ public final class SecurityCenterGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_BULK_MUTE_FINDINGS:
-          serviceImpl.bulkMuteFindings(
-              (com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
         case METHODID_CREATE_SOURCE:
           serviceImpl.createSource(
               (com.google.cloud.securitycenter.v1.CreateSourceRequest) request,
@@ -3618,22 +2830,11 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding>)
                   responseObserver);
           break;
-        case METHODID_CREATE_MUTE_CONFIG:
-          serviceImpl.createMuteConfig(
-              (com.google.cloud.securitycenter.v1.CreateMuteConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>)
-                  responseObserver);
-          break;
         case METHODID_CREATE_NOTIFICATION_CONFIG:
           serviceImpl.createNotificationConfig(
               (com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>)
                   responseObserver);
-          break;
-        case METHODID_DELETE_MUTE_CONFIG:
-          serviceImpl.deleteMuteConfig(
-              (com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_DELETE_NOTIFICATION_CONFIG:
           serviceImpl.deleteNotificationConfig(
@@ -3644,12 +2845,6 @@ public final class SecurityCenterGrpc {
           serviceImpl.getIamPolicy(
               (com.google.iam.v1.GetIamPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
-          break;
-        case METHODID_GET_MUTE_CONFIG:
-          serviceImpl.getMuteConfig(
-              (com.google.cloud.securitycenter.v1.GetMuteConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>)
-                  responseObserver);
           break;
         case METHODID_GET_NOTIFICATION_CONFIG:
           serviceImpl.getNotificationConfig(
@@ -3694,13 +2889,6 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListFindingsResponse>)
                   responseObserver);
           break;
-        case METHODID_LIST_MUTE_CONFIGS:
-          serviceImpl.listMuteConfigs(
-              (com.google.cloud.securitycenter.v1.ListMuteConfigsRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.securitycenter.v1.ListMuteConfigsResponse>)
-                  responseObserver);
-          break;
         case METHODID_LIST_NOTIFICATION_CONFIGS:
           serviceImpl.listNotificationConfigs(
               (com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest) request,
@@ -3725,12 +2913,6 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding>)
                   responseObserver);
           break;
-        case METHODID_SET_MUTE:
-          serviceImpl.setMute(
-              (com.google.cloud.securitycenter.v1.SetMuteRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding>)
-                  responseObserver);
-          break;
         case METHODID_SET_IAM_POLICY:
           serviceImpl.setIamPolicy(
               (com.google.iam.v1.SetIamPolicyRequest) request,
@@ -3746,12 +2928,6 @@ public final class SecurityCenterGrpc {
           serviceImpl.updateFinding(
               (com.google.cloud.securitycenter.v1.UpdateFindingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding>)
-                  responseObserver);
-          break;
-        case METHODID_UPDATE_MUTE_CONFIG:
-          serviceImpl.updateMuteConfig(
-              (com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.MuteConfig>)
                   responseObserver);
           break;
         case METHODID_UPDATE_NOTIFICATION_CONFIG:
@@ -3842,15 +3018,11 @@ public final class SecurityCenterGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SecurityCenterFileDescriptorSupplier())
-                      .addMethod(getBulkMuteFindingsMethod())
                       .addMethod(getCreateSourceMethod())
                       .addMethod(getCreateFindingMethod())
-                      .addMethod(getCreateMuteConfigMethod())
                       .addMethod(getCreateNotificationConfigMethod())
-                      .addMethod(getDeleteMuteConfigMethod())
                       .addMethod(getDeleteNotificationConfigMethod())
                       .addMethod(getGetIamPolicyMethod())
-                      .addMethod(getGetMuteConfigMethod())
                       .addMethod(getGetNotificationConfigMethod())
                       .addMethod(getGetOrganizationSettingsMethod())
                       .addMethod(getGetSourceMethod())
@@ -3858,16 +3030,13 @@ public final class SecurityCenterGrpc {
                       .addMethod(getGroupFindingsMethod())
                       .addMethod(getListAssetsMethod())
                       .addMethod(getListFindingsMethod())
-                      .addMethod(getListMuteConfigsMethod())
                       .addMethod(getListNotificationConfigsMethod())
                       .addMethod(getListSourcesMethod())
                       .addMethod(getRunAssetDiscoveryMethod())
                       .addMethod(getSetFindingStateMethod())
-                      .addMethod(getSetMuteMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
                       .addMethod(getUpdateFindingMethod())
-                      .addMethod(getUpdateMuteConfigMethod())
                       .addMethod(getUpdateNotificationConfigMethod())
                       .addMethod(getUpdateOrganizationSettingsMethod())
                       .addMethod(getUpdateSourceMethod())
