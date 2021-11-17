@@ -173,6 +173,143 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either
+   * an organization, folder or project. The findings matched by the filter will be muted after the
+   * LRO is done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName parent = FolderName.of("[FOLDER]");
+   *   BulkMuteFindingsResponse response = securityCenterClient.bulkMuteFindingsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, at which bulk action needs to be applied. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkMuteFindingsResponse, Empty> bulkMuteFindingsAsync(
+      ResourceName parent) {
+    BulkMuteFindingsRequest request =
+        BulkMuteFindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return bulkMuteFindingsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either
+   * an organization, folder or project. The findings matched by the filter will be muted after the
+   * LRO is done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = FolderName.of("[FOLDER]").toString();
+   *   BulkMuteFindingsResponse response = securityCenterClient.bulkMuteFindingsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, at which bulk action needs to be applied. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkMuteFindingsResponse, Empty> bulkMuteFindingsAsync(
+      String parent) {
+    BulkMuteFindingsRequest request =
+        BulkMuteFindingsRequest.newBuilder().setParent(parent).build();
+    return bulkMuteFindingsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either
+   * an organization, folder or project. The findings matched by the filter will be muted after the
+   * LRO is done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   BulkMuteFindingsRequest request =
+   *       BulkMuteFindingsRequest.newBuilder()
+   *           .setParent(FolderName.of("[FOLDER]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMuteAnnotation("muteAnnotation-2111042008")
+   *           .build();
+   *   BulkMuteFindingsResponse response = securityCenterClient.bulkMuteFindingsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkMuteFindingsResponse, Empty> bulkMuteFindingsAsync(
+      BulkMuteFindingsRequest request) {
+    return bulkMuteFindingsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either
+   * an organization, folder or project. The findings matched by the filter will be muted after the
+   * LRO is done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   BulkMuteFindingsRequest request =
+   *       BulkMuteFindingsRequest.newBuilder()
+   *           .setParent(FolderName.of("[FOLDER]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMuteAnnotation("muteAnnotation-2111042008")
+   *           .build();
+   *   OperationFuture<BulkMuteFindingsResponse, Empty> future =
+   *       securityCenterClient.bulkMuteFindingsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BulkMuteFindingsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
+      bulkMuteFindingsOperationCallable() {
+    return stub.bulkMuteFindingsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either
+   * an organization, folder or project. The findings matched by the filter will be muted after the
+   * LRO is done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   BulkMuteFindingsRequest request =
+   *       BulkMuteFindingsRequest.newBuilder()
+   *           .setParent(FolderName.of("[FOLDER]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMuteAnnotation("muteAnnotation-2111042008")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       securityCenterClient.bulkMuteFindingsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable() {
+    return stub.bulkMuteFindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a source.
    *
    * <p>Sample code:
@@ -394,6 +531,301 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(FolderName parent, MuteConfig muteConfig) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMuteConfig(muteConfig)
+            .build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(OrganizationName parent, MuteConfig muteConfig) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMuteConfig(muteConfig)
+            .build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(ProjectName parent, MuteConfig muteConfig) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMuteConfig(muteConfig)
+            .build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(String parent, MuteConfig muteConfig) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder().setParent(parent).setMuteConfig(muteConfig).build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   String muteConfigId = "muteConfigId1689669942";
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig, muteConfigId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
+   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(
+      FolderName parent, MuteConfig muteConfig, String muteConfigId) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMuteConfig(muteConfig)
+            .setMuteConfigId(muteConfigId)
+            .build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   String muteConfigId = "muteConfigId1689669942";
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig, muteConfigId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
+   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(
+      OrganizationName parent, MuteConfig muteConfig, String muteConfigId) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMuteConfig(muteConfig)
+            .setMuteConfigId(muteConfigId)
+            .build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   String muteConfigId = "muteConfigId1689669942";
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig, muteConfigId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
+   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(
+      ProjectName parent, MuteConfig muteConfig, String muteConfigId) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMuteConfig(muteConfig)
+            .setMuteConfigId(muteConfigId)
+            .build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   String muteConfigId = "muteConfigId1689669942";
+   *   MuteConfig response = securityCenterClient.createMuteConfig(parent, muteConfig, muteConfigId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new mute configs's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param muteConfig Required. The mute config being created.
+   * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
+   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(
+      String parent, MuteConfig muteConfig, String muteConfigId) {
+    CreateMuteConfigRequest request =
+        CreateMuteConfigRequest.newBuilder()
+            .setParent(parent)
+            .setMuteConfig(muteConfig)
+            .setMuteConfigId(muteConfigId)
+            .build();
+    return createMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   CreateMuteConfigRequest request =
+   *       CreateMuteConfigRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setMuteConfig(MuteConfig.newBuilder().build())
+   *           .setMuteConfigId("muteConfigId1689669942")
+   *           .build();
+   *   MuteConfig response = securityCenterClient.createMuteConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig createMuteConfig(CreateMuteConfigRequest request) {
+    return createMuteConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   CreateMuteConfigRequest request =
+   *       CreateMuteConfigRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setMuteConfig(MuteConfig.newBuilder().build())
+   *           .setMuteConfigId("muteConfigId1689669942")
+   *           .build();
+   *   ApiFuture<MuteConfig> future =
+   *       securityCenterClient.createMuteConfigCallable().futureCall(request);
+   *   // Do something.
+   *   MuteConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMuteConfigRequest, MuteConfig> createMuteConfigCallable() {
+    return stub.createMuteConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a notification config.
    *
    * <p>Sample code:
@@ -576,6 +1008,104 @@ public class SecurityCenterClient implements BackgroundResource {
   public final UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigCallable() {
     return stub.createNotificationConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   MuteConfigName name =
+   *       MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]");
+   *   securityCenterClient.deleteMuteConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mute config to delete. Its format is
+   *     organizations/{organization}/muteConfigs/{config_id},
+   *     folders/{folder}/muteConfigs/{config_id}, or projects/{project}/muteConfigs/{config_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMuteConfig(MuteConfigName name) {
+    DeleteMuteConfigRequest request =
+        DeleteMuteConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]").toString();
+   *   securityCenterClient.deleteMuteConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mute config to delete. Its format is
+   *     organizations/{organization}/muteConfigs/{config_id},
+   *     folders/{folder}/muteConfigs/{config_id}, or projects/{project}/muteConfigs/{config_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMuteConfig(String name) {
+    DeleteMuteConfigRequest request = DeleteMuteConfigRequest.newBuilder().setName(name).build();
+    deleteMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   DeleteMuteConfigRequest request =
+   *       DeleteMuteConfigRequest.newBuilder()
+   *           .setName(
+   *               MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   securityCenterClient.deleteMuteConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMuteConfig(DeleteMuteConfigRequest request) {
+    deleteMuteConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   DeleteMuteConfigRequest request =
+   *       DeleteMuteConfigRequest.newBuilder()
+   *           .setName(
+   *               MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future = securityCenterClient.deleteMuteConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteMuteConfigRequest, Empty> deleteMuteConfigCallable() {
+    return stub.deleteMuteConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -768,6 +1298,105 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   MuteConfigName name =
+   *       MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]");
+   *   MuteConfig response = securityCenterClient.getMuteConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mute config to retrieve. Its format is
+   *     organizations/{organization}/muteConfigs/{config_id},
+   *     folders/{folder}/muteConfigs/{config_id}, or projects/{project}/muteConfigs/{config_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig getMuteConfig(MuteConfigName name) {
+    GetMuteConfigRequest request =
+        GetMuteConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]").toString();
+   *   MuteConfig response = securityCenterClient.getMuteConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the mute config to retrieve. Its format is
+   *     organizations/{organization}/muteConfigs/{config_id},
+   *     folders/{folder}/muteConfigs/{config_id}, or projects/{project}/muteConfigs/{config_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig getMuteConfig(String name) {
+    GetMuteConfigRequest request = GetMuteConfigRequest.newBuilder().setName(name).build();
+    return getMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetMuteConfigRequest request =
+   *       GetMuteConfigRequest.newBuilder()
+   *           .setName(
+   *               MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   MuteConfig response = securityCenterClient.getMuteConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig getMuteConfig(GetMuteConfigRequest request) {
+    return getMuteConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetMuteConfigRequest request =
+   *       GetMuteConfigRequest.newBuilder()
+   *           .setName(
+   *               MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MuteConfig> future =
+   *       securityCenterClient.getMuteConfigCallable().futureCall(request);
+   *   // Do something.
+   *   MuteConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable() {
+    return stub.getMuteConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1064,7 +1693,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1095,7 +1724,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1127,7 +1756,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1382,7 +2011,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1415,7 +2044,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1447,7 +2076,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1589,6 +2218,201 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return stub.listFindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists mute configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (MuteConfig element : securityCenterClient.listMuteConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of mute configs. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMuteConfigsPagedResponse listMuteConfigs(FolderName parent) {
+    ListMuteConfigsRequest request =
+        ListMuteConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMuteConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists mute configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (MuteConfig element : securityCenterClient.listMuteConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of mute configs. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMuteConfigsPagedResponse listMuteConfigs(OrganizationName parent) {
+    ListMuteConfigsRequest request =
+        ListMuteConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMuteConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists mute configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (MuteConfig element : securityCenterClient.listMuteConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of mute configs. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMuteConfigsPagedResponse listMuteConfigs(ProjectName parent) {
+    ListMuteConfigsRequest request =
+        ListMuteConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMuteConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists mute configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   for (MuteConfig element : securityCenterClient.listMuteConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of mute configs. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMuteConfigsPagedResponse listMuteConfigs(String parent) {
+    ListMuteConfigsRequest request = ListMuteConfigsRequest.newBuilder().setParent(parent).build();
+    return listMuteConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists mute configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListMuteConfigsRequest request =
+   *       ListMuteConfigsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MuteConfig element : securityCenterClient.listMuteConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMuteConfigsPagedResponse listMuteConfigs(ListMuteConfigsRequest request) {
+    return listMuteConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists mute configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListMuteConfigsRequest request =
+   *       ListMuteConfigsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MuteConfig> future =
+   *       securityCenterClient.listMuteConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MuteConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsPagedResponse>
+      listMuteConfigsPagedCallable() {
+    return stub.listMuteConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists mute configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListMuteConfigsRequest request =
+   *       ListMuteConfigsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMuteConfigsResponse response =
+   *         securityCenterClient.listMuteConfigsCallable().call(request);
+   *     for (MuteConfig element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMuteConfigsRequest, ListMuteConfigsResponse>
+      listMuteConfigsCallable() {
+    return stub.listMuteConfigsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1827,7 +2651,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   for (Source element : securityCenterClient.listSources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1853,8 +2677,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(
-   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -1881,8 +2704,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(
-   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -1910,8 +2732,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(
-   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -2192,6 +3013,118 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<SetFindingStateRequest, Finding> setFindingStateCallable() {
     return stub.setFindingStateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the mute state of a finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FindingName name =
+   *       FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
+   *   Finding.Mute mute = Finding.Mute.forNumber(0);
+   *   Finding response = securityCenterClient.setMute(name, mute);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The relative resource name of the finding. See:
+   *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
+   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}",
+   *     "folders/{folder_id}/sources/{source_id}/finding/{finding_id}",
+   *     "projects/{project_id}/sources/{source_id}/finding/{finding_id}".
+   * @param mute Required. The desired state of the Mute.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding setMute(FindingName name, Finding.Mute mute) {
+    SetMuteRequest request =
+        SetMuteRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setMute(mute)
+            .build();
+    return setMute(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the mute state of a finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+   *           .toString();
+   *   Finding.Mute mute = Finding.Mute.forNumber(0);
+   *   Finding response = securityCenterClient.setMute(name, mute);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The relative resource name of the finding. See:
+   *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
+   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}",
+   *     "folders/{folder_id}/sources/{source_id}/finding/{finding_id}",
+   *     "projects/{project_id}/sources/{source_id}/finding/{finding_id}".
+   * @param mute Required. The desired state of the Mute.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding setMute(String name, Finding.Mute mute) {
+    SetMuteRequest request = SetMuteRequest.newBuilder().setName(name).setMute(mute).build();
+    return setMute(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the mute state of a finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SetMuteRequest request =
+   *       SetMuteRequest.newBuilder()
+   *           .setName(
+   *               FindingName.ofOrganizationSourceFindingName(
+   *                       "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+   *                   .toString())
+   *           .build();
+   *   Finding response = securityCenterClient.setMute(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding setMute(SetMuteRequest request) {
+    return setMuteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the mute state of a finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SetMuteRequest request =
+   *       SetMuteRequest.newBuilder()
+   *           .setName(
+   *               FindingName.ofOrganizationSourceFindingName(
+   *                       "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Finding> future = securityCenterClient.setMuteCallable().futureCall(request);
+   *   // Do something.
+   *   Finding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetMuteRequest, Finding> setMuteCallable() {
+    return stub.setMuteCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2483,6 +3416,82 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     return stub.updateFindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   MuteConfig muteConfig = MuteConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MuteConfig response = securityCenterClient.updateMuteConfig(muteConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param muteConfig Required. The mute config being updated.
+   * @param updateMask The list of fields to be updated. If empty all mutable fields will be
+   *     updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig updateMuteConfig(MuteConfig muteConfig, FieldMask updateMask) {
+    UpdateMuteConfigRequest request =
+        UpdateMuteConfigRequest.newBuilder()
+            .setMuteConfig(muteConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMuteConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateMuteConfigRequest request =
+   *       UpdateMuteConfigRequest.newBuilder()
+   *           .setMuteConfig(MuteConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   MuteConfig response = securityCenterClient.updateMuteConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MuteConfig updateMuteConfig(UpdateMuteConfigRequest request) {
+    return updateMuteConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a mute config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateMuteConfigRequest request =
+   *       UpdateMuteConfigRequest.newBuilder()
+   *           .setMuteConfig(MuteConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MuteConfig> future =
+   *       securityCenterClient.updateMuteConfigCallable().futureCall(request);
+   *   // Do something.
+   *   MuteConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigCallable() {
+    return stub.updateMuteConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3155,6 +4164,83 @@ public class SecurityCenterClient implements BackgroundResource {
     protected ListFindingsFixedSizeCollection createCollection(
         List<ListFindingsPage> pages, int collectionSize) {
       return new ListFindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMuteConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMuteConfigsRequest,
+          ListMuteConfigsResponse,
+          MuteConfig,
+          ListMuteConfigsPage,
+          ListMuteConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListMuteConfigsPagedResponse> createAsync(
+        PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
+        ApiFuture<ListMuteConfigsResponse> futureResponse) {
+      ApiFuture<ListMuteConfigsPage> futurePage =
+          ListMuteConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMuteConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMuteConfigsPagedResponse(ListMuteConfigsPage page) {
+      super(page, ListMuteConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMuteConfigsPage
+      extends AbstractPage<
+          ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig, ListMuteConfigsPage> {
+
+    private ListMuteConfigsPage(
+        PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
+        ListMuteConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMuteConfigsPage createEmptyPage() {
+      return new ListMuteConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListMuteConfigsPage createPage(
+        PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
+        ListMuteConfigsResponse response) {
+      return new ListMuteConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMuteConfigsPage> createPageAsync(
+        PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
+        ApiFuture<ListMuteConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMuteConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMuteConfigsRequest,
+          ListMuteConfigsResponse,
+          MuteConfig,
+          ListMuteConfigsPage,
+          ListMuteConfigsFixedSizeCollection> {
+
+    private ListMuteConfigsFixedSizeCollection(
+        List<ListMuteConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMuteConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListMuteConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMuteConfigsFixedSizeCollection createCollection(
+        List<ListMuteConfigsPage> pages, int collectionSize) {
+      return new ListMuteConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

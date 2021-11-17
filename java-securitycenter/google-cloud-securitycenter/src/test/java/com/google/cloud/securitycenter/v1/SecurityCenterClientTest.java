@@ -20,6 +20,7 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
@@ -100,6 +101,92 @@ public class SecurityCenterClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  public void bulkMuteFindingsTest() throws Exception {
+    BulkMuteFindingsResponse expectedResponse = BulkMuteFindingsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkMuteFindingsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSecurityCenter.addResponse(resultOperation);
+
+    ResourceName parent = FolderName.of("[FOLDER]");
+
+    BulkMuteFindingsResponse actualResponse = client.bulkMuteFindingsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkMuteFindingsRequest actualRequest = ((BulkMuteFindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkMuteFindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ResourceName parent = FolderName.of("[FOLDER]");
+      client.bulkMuteFindingsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bulkMuteFindingsTest2() throws Exception {
+    BulkMuteFindingsResponse expectedResponse = BulkMuteFindingsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkMuteFindingsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSecurityCenter.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    BulkMuteFindingsResponse actualResponse = client.bulkMuteFindingsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkMuteFindingsRequest actualRequest = ((BulkMuteFindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkMuteFindingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.bulkMuteFindingsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
   }
 
   @Test
@@ -209,6 +296,8 @@ public class SecurityCenterClientTest {
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
+            .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -267,6 +356,8 @@ public class SecurityCenterClientTest {
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
+            .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -300,6 +391,410 @@ public class SecurityCenterClientTest {
       String findingId = "findingId439150212";
       Finding finding = Finding.newBuilder().build();
       client.createFinding(parent, findingId, finding);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest2() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest3() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest4() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest5() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(muteConfigId, actualRequest.getMuteConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest5() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest6() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(muteConfigId, actualRequest.getMuteConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest6() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest7() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(muteConfigId, actualRequest.getMuteConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest7() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest8() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(muteConfigId, actualRequest.getMuteConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest8() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -499,6 +994,76 @@ public class SecurityCenterClientTest {
   }
 
   @Test
+  public void deleteMuteConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    MuteConfigName name =
+        MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]");
+
+    client.deleteMuteConfig(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMuteConfigRequest actualRequest = ((DeleteMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMuteConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      MuteConfigName name =
+          MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]");
+      client.deleteMuteConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMuteConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteMuteConfig(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMuteConfigRequest actualRequest = ((DeleteMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMuteConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteMuteConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteNotificationConfigTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -580,7 +1145,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+    ResourceName resource = FolderName.of("[FOLDER]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -602,7 +1167,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -644,6 +1209,100 @@ public class SecurityCenterClientTest {
     try {
       String resource = "resource-341064690";
       client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMuteConfigTest() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    MuteConfigName name =
+        MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]");
+
+    MuteConfig actualResponse = client.getMuteConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMuteConfigRequest actualRequest = ((GetMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMuteConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      MuteConfigName name =
+          MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]");
+      client.getMuteConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMuteConfigTest2() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    MuteConfig actualResponse = client.getMuteConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMuteConfigRequest actualRequest = ((GetMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMuteConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMuteConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -914,7 +1573,7 @@ public class SecurityCenterClientTest {
 
     GroupAssetsRequest request =
         GroupAssetsRequest.newBuilder()
-            .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+            .setParent(OrganizationName.of("[ORGANIZATION]").toString())
             .setFilter("filter-1274492040")
             .setGroupBy("groupBy293428022")
             .setCompareDuration(Duration.newBuilder().build())
@@ -955,7 +1614,7 @@ public class SecurityCenterClientTest {
     try {
       GroupAssetsRequest request =
           GroupAssetsRequest.newBuilder()
-              .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+              .setParent(OrganizationName.of("[ORGANIZATION]").toString())
               .setFilter("filter-1274492040")
               .setGroupBy("groupBy293428022")
               .setCompareDuration(Duration.newBuilder().build())
@@ -1077,7 +1736,7 @@ public class SecurityCenterClientTest {
 
     ListAssetsRequest request =
         ListAssetsRequest.newBuilder()
-            .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+            .setParent(OrganizationName.of("[ORGANIZATION]").toString())
             .setFilter("filter-1274492040")
             .setOrderBy("orderBy-1207110587")
             .setReadTime(Timestamp.newBuilder().build())
@@ -1121,7 +1780,7 @@ public class SecurityCenterClientTest {
     try {
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
-              .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
+              .setParent(OrganizationName.of("[ORGANIZATION]").toString())
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
               .setReadTime(Timestamp.newBuilder().build())
@@ -1205,6 +1864,182 @@ public class SecurityCenterClientTest {
               .setPageSize(883849137)
               .build();
       client.listFindings(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMuteConfigsRequest actualRequest = ((ListMuteConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest2() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMuteConfigsRequest actualRequest = ((ListMuteConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest3() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMuteConfigsRequest actualRequest = ((ListMuteConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest4() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMuteConfigsRequest actualRequest = ((ListMuteConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMuteConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1584,6 +2419,8 @@ public class SecurityCenterClientTest {
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
+            .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1644,6 +2481,8 @@ public class SecurityCenterClientTest {
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
+            .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1684,6 +2523,122 @@ public class SecurityCenterClientTest {
   }
 
   @Test
+  public void setMuteTest() throws Exception {
+    Finding expectedResponse =
+        Finding.newBuilder()
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
+            .setParent("parent-995424086")
+            .setResourceName("resourceName-384566343")
+            .setCategory("category50511102")
+            .setExternalUri("externalUri-1153085023")
+            .putAllSourceProperties(new HashMap<String, Value>())
+            .setSecurityMarks(SecurityMarks.newBuilder().build())
+            .setEventTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
+            .setIndicator(Indicator.newBuilder().build())
+            .setVulnerability(Vulnerability.newBuilder().build())
+            .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .setMuteInitiator("muteInitiator1395645462")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FindingName name =
+        FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
+    Finding.Mute mute = Finding.Mute.forNumber(0);
+
+    Finding actualResponse = client.setMute(name, mute);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetMuteRequest actualRequest = ((SetMuteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(mute, actualRequest.getMute());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setMuteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FindingName name =
+          FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
+      Finding.Mute mute = Finding.Mute.forNumber(0);
+      client.setMute(name, mute);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setMuteTest2() throws Exception {
+    Finding expectedResponse =
+        Finding.newBuilder()
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
+            .setParent("parent-995424086")
+            .setResourceName("resourceName-384566343")
+            .setCategory("category50511102")
+            .setExternalUri("externalUri-1153085023")
+            .putAllSourceProperties(new HashMap<String, Value>())
+            .setSecurityMarks(SecurityMarks.newBuilder().build())
+            .setEventTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
+            .setIndicator(Indicator.newBuilder().build())
+            .setVulnerability(Vulnerability.newBuilder().build())
+            .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .setMuteInitiator("muteInitiator1395645462")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    Finding.Mute mute = Finding.Mute.forNumber(0);
+
+    Finding actualResponse = client.setMute(name, mute);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetMuteRequest actualRequest = ((SetMuteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(mute, actualRequest.getMute());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setMuteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      Finding.Mute mute = Finding.Mute.forNumber(0);
+      client.setMute(name, mute);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
@@ -1693,7 +2648,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -1717,7 +2672,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1775,7 +2730,7 @@ public class SecurityCenterClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+    ResourceName resource = FolderName.of("[FOLDER]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1799,7 +2754,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+      ResourceName resource = FolderName.of("[FOLDER]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
@@ -1866,6 +2821,8 @@ public class SecurityCenterClientTest {
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
+            .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1893,6 +2850,55 @@ public class SecurityCenterClientTest {
     try {
       Finding finding = Finding.newBuilder().build();
       client.updateFinding(finding);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateMuteConfigTest() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MuteConfig actualResponse = client.updateMuteConfig(muteConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMuteConfigRequest actualRequest = ((UpdateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateMuteConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMuteConfig(muteConfig, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

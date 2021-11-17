@@ -51,7 +51,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     externalUri_ = "";
     severity_ = 0;
     canonicalName_ = "";
+    mute_ = 0;
     findingClass_ = 0;
+    muteInitiator_ = "";
   }
 
   @java.lang.Override
@@ -204,6 +206,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               canonicalName_ = s;
               break;
             }
+          case 120:
+            {
+              int rawValue = input.readEnum();
+
+              mute_ = rawValue;
+              break;
+            }
           case 136:
             {
               int rawValue = input.readEnum();
@@ -241,6 +250,28 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 vulnerability_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 170:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (muteUpdateTime_ != null) {
+                subBuilder = muteUpdateTime_.toBuilder();
+              }
+              muteUpdateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(muteUpdateTime_);
+                muteUpdateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 226:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              muteInitiator_ = s;
               break;
             }
           default:
@@ -726,6 +757,185 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Mute state a finding can be in.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.securitycenter.v1.Finding.Mute}
+   */
+  public enum Mute implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>MUTE_UNSPECIFIED = 0;</code>
+     */
+    MUTE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Finding has been muted.
+     * </pre>
+     *
+     * <code>MUTED = 1;</code>
+     */
+    MUTED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Finding has been unmuted.
+     * </pre>
+     *
+     * <code>UNMUTED = 2;</code>
+     */
+    UNMUTED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Finding has never been muted/unmuted.
+     * </pre>
+     *
+     * <code>UNDEFINED = 4;</code>
+     */
+    UNDEFINED(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>MUTE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MUTE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Finding has been muted.
+     * </pre>
+     *
+     * <code>MUTED = 1;</code>
+     */
+    public static final int MUTED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Finding has been unmuted.
+     * </pre>
+     *
+     * <code>UNMUTED = 2;</code>
+     */
+    public static final int UNMUTED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Finding has never been muted/unmuted.
+     * </pre>
+     *
+     * <code>UNDEFINED = 4;</code>
+     */
+    public static final int UNDEFINED_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Mute valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Mute forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MUTE_UNSPECIFIED;
+        case 1:
+          return MUTED;
+        case 2:
+          return UNMUTED;
+        case 4:
+          return UNDEFINED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Mute> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Mute> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Mute>() {
+          public Mute findValueByNumber(int number) {
+            return Mute.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.Finding.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Mute[] VALUES = values();
+
+    public static Mute valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Mute(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Finding.Mute)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * Represents what kind of Finding it is.
    * </pre>
    *
@@ -903,7 +1113,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.securitycenter.v1.Finding.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.securitycenter.v1.Finding.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final FindingClass[] VALUES = values();
@@ -1624,6 +1834,44 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MUTE_FIELD_NUMBER = 15;
+  private int mute_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the mute state of a finding (either unspecified, muted, unmuted
+   * or undefined).
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+   *
+   * @return The enum numeric value on the wire for mute.
+   */
+  @java.lang.Override
+  public int getMuteValue() {
+    return mute_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the mute state of a finding (either unspecified, muted, unmuted
+   * or undefined).
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+   *
+   * @return The mute.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Finding.Mute getMute() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.securitycenter.v1.Finding.Mute result =
+        com.google.cloud.securitycenter.v1.Finding.Mute.valueOf(mute_);
+    return result == null ? com.google.cloud.securitycenter.v1.Finding.Mute.UNRECOGNIZED : result;
+  }
+
   public static final int FINDING_CLASS_FIELD_NUMBER = 17;
   private int findingClass_;
   /**
@@ -1776,6 +2024,113 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return getVulnerability();
   }
 
+  public static final int MUTE_UPDATE_TIME_FIELD_NUMBER = 21;
+  private com.google.protobuf.Timestamp muteUpdateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time this finding was muted or unmuted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the muteUpdateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasMuteUpdateTime() {
+    return muteUpdateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time this finding was muted or unmuted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The muteUpdateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getMuteUpdateTime() {
+    return muteUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : muteUpdateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time this finding was muted or unmuted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getMuteUpdateTimeOrBuilder() {
+    return getMuteUpdateTime();
+  }
+
+  public static final int MUTE_INITIATOR_FIELD_NUMBER = 28;
+  private volatile java.lang.Object muteInitiator_;
+  /**
+   *
+   *
+   * <pre>
+   * First known as mute_annotation. Records additional information about the
+   * mute operation e.g. mute config that muted the finding, user who muted the
+   * finding, etc.
+   * </pre>
+   *
+   * <code>string mute_initiator = 28;</code>
+   *
+   * @return The muteInitiator.
+   */
+  @java.lang.Override
+  public java.lang.String getMuteInitiator() {
+    java.lang.Object ref = muteInitiator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      muteInitiator_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * First known as mute_annotation. Records additional information about the
+   * mute operation e.g. mute config that muted the finding, user who muted the
+   * finding, etc.
+   * </pre>
+   *
+   * <code>string mute_initiator = 28;</code>
+   *
+   * @return The bytes for muteInitiator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMuteInitiatorBytes() {
+    java.lang.Object ref = muteInitiator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      muteInitiator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1826,6 +2181,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, canonicalName_);
     }
+    if (mute_ != com.google.cloud.securitycenter.v1.Finding.Mute.MUTE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(15, mute_);
+    }
     if (findingClass_
         != com.google.cloud.securitycenter.v1.Finding.FindingClass.FINDING_CLASS_UNSPECIFIED
             .getNumber()) {
@@ -1836,6 +2194,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (vulnerability_ != null) {
       output.writeMessage(20, getVulnerability());
+    }
+    if (muteUpdateTime_ != null) {
+      output.writeMessage(21, getMuteUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, muteInitiator_);
     }
     unknownFields.writeTo(output);
   }
@@ -1890,6 +2254,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, canonicalName_);
     }
+    if (mute_ != com.google.cloud.securitycenter.v1.Finding.Mute.MUTE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, mute_);
+    }
     if (findingClass_
         != com.google.cloud.securitycenter.v1.Finding.FindingClass.FINDING_CLASS_UNSPECIFIED
             .getNumber()) {
@@ -1900,6 +2267,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (vulnerability_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getVulnerability());
+    }
+    if (muteUpdateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getMuteUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, muteInitiator_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1938,6 +2311,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (severity_ != other.severity_) return false;
     if (!getCanonicalName().equals(other.getCanonicalName())) return false;
+    if (mute_ != other.mute_) return false;
     if (findingClass_ != other.findingClass_) return false;
     if (hasIndicator() != other.hasIndicator()) return false;
     if (hasIndicator()) {
@@ -1947,6 +2321,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasVulnerability()) {
       if (!getVulnerability().equals(other.getVulnerability())) return false;
     }
+    if (hasMuteUpdateTime() != other.hasMuteUpdateTime()) return false;
+    if (hasMuteUpdateTime()) {
+      if (!getMuteUpdateTime().equals(other.getMuteUpdateTime())) return false;
+    }
+    if (!getMuteInitiator().equals(other.getMuteInitiator())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1990,6 +2369,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + severity_;
     hash = (37 * hash) + CANONICAL_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCanonicalName().hashCode();
+    hash = (37 * hash) + MUTE_FIELD_NUMBER;
+    hash = (53 * hash) + mute_;
     hash = (37 * hash) + FINDING_CLASS_FIELD_NUMBER;
     hash = (53 * hash) + findingClass_;
     if (hasIndicator()) {
@@ -2000,6 +2381,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + VULNERABILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVulnerability().hashCode();
     }
+    if (hasMuteUpdateTime()) {
+      hash = (37 * hash) + MUTE_UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getMuteUpdateTime().hashCode();
+    }
+    hash = (37 * hash) + MUTE_INITIATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getMuteInitiator().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2205,6 +2592,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
       canonicalName_ = "";
 
+      mute_ = 0;
+
       findingClass_ = 0;
 
       if (indicatorBuilder_ == null) {
@@ -2219,6 +2608,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         vulnerability_ = null;
         vulnerabilityBuilder_ = null;
       }
+      if (muteUpdateTimeBuilder_ == null) {
+        muteUpdateTime_ = null;
+      } else {
+        muteUpdateTime_ = null;
+        muteUpdateTimeBuilder_ = null;
+      }
+      muteInitiator_ = "";
+
       return this;
     }
 
@@ -2272,6 +2669,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       result.severity_ = severity_;
       result.canonicalName_ = canonicalName_;
+      result.mute_ = mute_;
       result.findingClass_ = findingClass_;
       if (indicatorBuilder_ == null) {
         result.indicator_ = indicator_;
@@ -2283,6 +2681,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.vulnerability_ = vulnerabilityBuilder_.build();
       }
+      if (muteUpdateTimeBuilder_ == null) {
+        result.muteUpdateTime_ = muteUpdateTime_;
+      } else {
+        result.muteUpdateTime_ = muteUpdateTimeBuilder_.build();
+      }
+      result.muteInitiator_ = muteInitiator_;
       onBuilt();
       return result;
     }
@@ -2372,6 +2776,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         canonicalName_ = other.canonicalName_;
         onChanged();
       }
+      if (other.mute_ != 0) {
+        setMuteValue(other.getMuteValue());
+      }
       if (other.findingClass_ != 0) {
         setFindingClassValue(other.getFindingClassValue());
       }
@@ -2380,6 +2787,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasVulnerability()) {
         mergeVulnerability(other.getVulnerability());
+      }
+      if (other.hasMuteUpdateTime()) {
+        mergeMuteUpdateTime(other.getMuteUpdateTime());
+      }
+      if (!other.getMuteInitiator().isEmpty()) {
+        muteInitiator_ = other.muteInitiator_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4159,6 +4573,102 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int mute_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the mute state of a finding (either unspecified, muted, unmuted
+     * or undefined).
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+     *
+     * @return The enum numeric value on the wire for mute.
+     */
+    @java.lang.Override
+    public int getMuteValue() {
+      return mute_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the mute state of a finding (either unspecified, muted, unmuted
+     * or undefined).
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+     *
+     * @param value The enum numeric value on the wire for mute to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMuteValue(int value) {
+
+      mute_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the mute state of a finding (either unspecified, muted, unmuted
+     * or undefined).
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+     *
+     * @return The mute.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Finding.Mute getMute() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.securitycenter.v1.Finding.Mute result =
+          com.google.cloud.securitycenter.v1.Finding.Mute.valueOf(mute_);
+      return result == null ? com.google.cloud.securitycenter.v1.Finding.Mute.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the mute state of a finding (either unspecified, muted, unmuted
+     * or undefined).
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+     *
+     * @param value The mute to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMute(com.google.cloud.securitycenter.v1.Finding.Mute value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      mute_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the mute state of a finding (either unspecified, muted, unmuted
+     * or undefined).
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMute() {
+
+      mute_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int findingClass_ = 0;
     /**
      *
@@ -4676,6 +5186,325 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         vulnerability_ = null;
       }
       return vulnerabilityBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp muteUpdateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        muteUpdateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the muteUpdateTime field is set.
+     */
+    public boolean hasMuteUpdateTime() {
+      return muteUpdateTimeBuilder_ != null || muteUpdateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The muteUpdateTime.
+     */
+    public com.google.protobuf.Timestamp getMuteUpdateTime() {
+      if (muteUpdateTimeBuilder_ == null) {
+        return muteUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : muteUpdateTime_;
+      } else {
+        return muteUpdateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMuteUpdateTime(com.google.protobuf.Timestamp value) {
+      if (muteUpdateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        muteUpdateTime_ = value;
+        onChanged();
+      } else {
+        muteUpdateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMuteUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (muteUpdateTimeBuilder_ == null) {
+        muteUpdateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        muteUpdateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMuteUpdateTime(com.google.protobuf.Timestamp value) {
+      if (muteUpdateTimeBuilder_ == null) {
+        if (muteUpdateTime_ != null) {
+          muteUpdateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(muteUpdateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          muteUpdateTime_ = value;
+        }
+        onChanged();
+      } else {
+        muteUpdateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMuteUpdateTime() {
+      if (muteUpdateTimeBuilder_ == null) {
+        muteUpdateTime_ = null;
+        onChanged();
+      } else {
+        muteUpdateTime_ = null;
+        muteUpdateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getMuteUpdateTimeBuilder() {
+
+      onChanged();
+      return getMuteUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getMuteUpdateTimeOrBuilder() {
+      if (muteUpdateTimeBuilder_ != null) {
+        return muteUpdateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return muteUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : muteUpdateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent time this finding was muted or unmuted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp mute_update_time = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getMuteUpdateTimeFieldBuilder() {
+      if (muteUpdateTimeBuilder_ == null) {
+        muteUpdateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getMuteUpdateTime(), getParentForChildren(), isClean());
+        muteUpdateTime_ = null;
+      }
+      return muteUpdateTimeBuilder_;
+    }
+
+    private java.lang.Object muteInitiator_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * First known as mute_annotation. Records additional information about the
+     * mute operation e.g. mute config that muted the finding, user who muted the
+     * finding, etc.
+     * </pre>
+     *
+     * <code>string mute_initiator = 28;</code>
+     *
+     * @return The muteInitiator.
+     */
+    public java.lang.String getMuteInitiator() {
+      java.lang.Object ref = muteInitiator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        muteInitiator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * First known as mute_annotation. Records additional information about the
+     * mute operation e.g. mute config that muted the finding, user who muted the
+     * finding, etc.
+     * </pre>
+     *
+     * <code>string mute_initiator = 28;</code>
+     *
+     * @return The bytes for muteInitiator.
+     */
+    public com.google.protobuf.ByteString getMuteInitiatorBytes() {
+      java.lang.Object ref = muteInitiator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        muteInitiator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * First known as mute_annotation. Records additional information about the
+     * mute operation e.g. mute config that muted the finding, user who muted the
+     * finding, etc.
+     * </pre>
+     *
+     * <code>string mute_initiator = 28;</code>
+     *
+     * @param value The muteInitiator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMuteInitiator(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      muteInitiator_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * First known as mute_annotation. Records additional information about the
+     * mute operation e.g. mute config that muted the finding, user who muted the
+     * finding, etc.
+     * </pre>
+     *
+     * <code>string mute_initiator = 28;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMuteInitiator() {
+
+      muteInitiator_ = getDefaultInstance().getMuteInitiator();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * First known as mute_annotation. Records additional information about the
+     * mute operation e.g. mute config that muted the finding, user who muted the
+     * finding, etc.
+     * </pre>
+     *
+     * <code>string mute_initiator = 28;</code>
+     *
+     * @param value The bytes for muteInitiator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMuteInitiatorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      muteInitiator_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

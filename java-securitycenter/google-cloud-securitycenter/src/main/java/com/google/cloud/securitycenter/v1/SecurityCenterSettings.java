@@ -20,6 +20,7 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
@@ -83,6 +84,17 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class SecurityCenterSettings extends ClientSettings<SecurityCenterSettings> {
 
+  /** Returns the object with the settings used for calls to bulkMuteFindings. */
+  public UnaryCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).bulkMuteFindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkMuteFindings. */
+  public OperationCallSettings<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
+      bulkMuteFindingsOperationSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).bulkMuteFindingsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createSource. */
   public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).createSourceSettings();
@@ -93,10 +105,20 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).createFindingSettings();
   }
 
+  /** Returns the object with the settings used for calls to createMuteConfig. */
+  public UnaryCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).createMuteConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to createNotificationConfig. */
   public UnaryCallSettings<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).createNotificationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMuteConfig. */
+  public UnaryCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).deleteMuteConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteNotificationConfig. */
@@ -108,6 +130,11 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMuteConfig. */
+  public UnaryCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getMuteConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to getNotificationConfig. */
@@ -151,6 +178,13 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).listFindingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to listMuteConfigs. */
+  public PagedCallSettings<
+          ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>
+      listMuteConfigsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).listMuteConfigsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listNotificationConfigs. */
   public PagedCallSettings<
           ListNotificationConfigsRequest,
@@ -182,6 +216,11 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).setFindingStateSettings();
   }
 
+  /** Returns the object with the settings used for calls to setMute. */
+  public UnaryCallSettings<SetMuteRequest, Finding> setMuteSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).setMuteSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).setIamPolicySettings();
@@ -196,6 +235,11 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   /** Returns the object with the settings used for calls to updateFinding. */
   public UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).updateFindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMuteConfig. */
+  public UnaryCallSettings<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).updateMuteConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to updateNotificationConfig. */
@@ -318,6 +362,18 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to bulkMuteFindings. */
+    public UnaryCallSettings.Builder<BulkMuteFindingsRequest, Operation>
+        bulkMuteFindingsSettings() {
+      return getStubSettingsBuilder().bulkMuteFindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkMuteFindings. */
+    public OperationCallSettings.Builder<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
+        bulkMuteFindingsOperationSettings() {
+      return getStubSettingsBuilder().bulkMuteFindingsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createSource. */
     public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
       return getStubSettingsBuilder().createSourceSettings();
@@ -328,10 +384,21 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().createFindingSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createMuteConfig. */
+    public UnaryCallSettings.Builder<CreateMuteConfigRequest, MuteConfig>
+        createMuteConfigSettings() {
+      return getStubSettingsBuilder().createMuteConfigSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createNotificationConfig. */
     public UnaryCallSettings.Builder<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigSettings() {
       return getStubSettingsBuilder().createNotificationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMuteConfig. */
+    public UnaryCallSettings.Builder<DeleteMuteConfigRequest, Empty> deleteMuteConfigSettings() {
+      return getStubSettingsBuilder().deleteMuteConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteNotificationConfig. */
@@ -343,6 +410,11 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMuteConfig. */
+    public UnaryCallSettings.Builder<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings() {
+      return getStubSettingsBuilder().getMuteConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to getNotificationConfig. */
@@ -389,6 +461,13 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().listFindingsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listMuteConfigs. */
+    public PagedCallSettings.Builder<
+            ListMuteConfigsRequest, ListMuteConfigsResponse, ListMuteConfigsPagedResponse>
+        listMuteConfigsSettings() {
+      return getStubSettingsBuilder().listMuteConfigsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listNotificationConfigs. */
     public PagedCallSettings.Builder<
             ListNotificationConfigsRequest,
@@ -422,6 +501,11 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().setFindingStateSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setMute. */
+    public UnaryCallSettings.Builder<SetMuteRequest, Finding> setMuteSettings() {
+      return getStubSettingsBuilder().setMuteSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return getStubSettingsBuilder().setIamPolicySettings();
@@ -436,6 +520,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     /** Returns the builder for the settings used for calls to updateFinding. */
     public UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings() {
       return getStubSettingsBuilder().updateFindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMuteConfig. */
+    public UnaryCallSettings.Builder<UpdateMuteConfigRequest, MuteConfig>
+        updateMuteConfigSettings() {
+      return getStubSettingsBuilder().updateMuteConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateNotificationConfig. */
