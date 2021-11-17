@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-config</artifactId>
-        <version>1.2.1</version>
+        <version>1.2.2</version>
     </parent>
 
     <name>Google Cloud Bigtable BOM</name>
