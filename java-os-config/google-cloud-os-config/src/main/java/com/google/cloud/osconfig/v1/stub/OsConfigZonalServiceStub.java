@@ -17,18 +17,39 @@
 package com.google.cloud.osconfig.v1.stub;
 
 import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListInventoriesPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentReportsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentRevisionsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest;
+import com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.GetInventoryRequest;
+import com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest;
+import com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.GetVulnerabilityReportRequest;
 import com.google.cloud.osconfig.v1.Inventory;
 import com.google.cloud.osconfig.v1.ListInventoriesRequest;
 import com.google.cloud.osconfig.v1.ListInventoriesResponse;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse;
 import com.google.cloud.osconfig.v1.ListVulnerabilityReportsRequest;
 import com.google.cloud.osconfig.v1.ListVulnerabilityReportsResponse;
+import com.google.cloud.osconfig.v1.OSPolicyAssignment;
+import com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata;
+import com.google.cloud.osconfig.v1.OSPolicyAssignmentReport;
+import com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.VulnerabilityReport;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -39,6 +60,95 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class OsConfigZonalServiceStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
+  public OperationCallable<
+          CreateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      createOSPolicyAssignmentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createOSPolicyAssignmentOperationCallable()");
+  }
+
+  public UnaryCallable<CreateOSPolicyAssignmentRequest, Operation>
+      createOSPolicyAssignmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOSPolicyAssignmentCallable()");
+  }
+
+  public OperationCallable<
+          UpdateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      updateOSPolicyAssignmentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateOSPolicyAssignmentOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateOSPolicyAssignmentRequest, Operation>
+      updateOSPolicyAssignmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOSPolicyAssignmentCallable()");
+  }
+
+  public UnaryCallable<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
+      getOSPolicyAssignmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getOSPolicyAssignmentCallable()");
+  }
+
+  public UnaryCallable<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsPagedResponse>
+      listOSPolicyAssignmentsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listOSPolicyAssignmentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
+      listOSPolicyAssignmentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOSPolicyAssignmentsCallable()");
+  }
+
+  public UnaryCallable<
+          ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsPagedResponse>
+      listOSPolicyAssignmentRevisionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listOSPolicyAssignmentRevisionsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
+      listOSPolicyAssignmentRevisionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listOSPolicyAssignmentRevisionsCallable()");
+  }
+
+  public OperationCallable<
+          DeleteOSPolicyAssignmentRequest, Empty, OSPolicyAssignmentOperationMetadata>
+      deleteOSPolicyAssignmentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteOSPolicyAssignmentOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteOSPolicyAssignmentRequest, Operation>
+      deleteOSPolicyAssignmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOSPolicyAssignmentCallable()");
+  }
+
+  public UnaryCallable<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getOSPolicyAssignmentReportCallable()");
+  }
+
+  public UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listOSPolicyAssignmentReportsPagedCallable()");
+  }
+
+  public UnaryCallable<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listOSPolicyAssignmentReportsCallable()");
+  }
 
   public UnaryCallable<GetInventoryRequest, Inventory> getInventoryCallable() {
     throw new UnsupportedOperationException("Not implemented: getInventoryCallable()");

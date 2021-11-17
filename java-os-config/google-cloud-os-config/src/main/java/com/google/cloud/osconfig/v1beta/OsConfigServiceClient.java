@@ -803,7 +803,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
-   *   String parent = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
    *   GuestPolicies.GuestPolicy response =
    *       osConfigServiceClient.createGuestPolicy(parent, guestPolicy);
@@ -835,7 +835,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.CreateGuestPolicyRequest request =
    *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
-   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setGuestPolicyId("guestPolicyId1234592741")
    *           .setGuestPolicy(GuestPolicies.GuestPolicy.newBuilder().build())
    *           .build();
@@ -861,7 +861,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.CreateGuestPolicyRequest request =
    *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
-   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setGuestPolicyId("guestPolicyId1234592741")
    *           .setGuestPolicy(GuestPolicies.GuestPolicy.newBuilder().build())
    *           .build();
@@ -1009,7 +1009,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
-   *   String parent = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (GuestPolicies.GuestPolicy element :
    *       osConfigServiceClient.listGuestPolicies(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1037,7 +1037,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.ListGuestPoliciesRequest request =
    *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
-   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1066,7 +1066,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.ListGuestPoliciesRequest request =
    *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
-   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1094,7 +1094,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.ListGuestPoliciesRequest request =
    *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
-   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

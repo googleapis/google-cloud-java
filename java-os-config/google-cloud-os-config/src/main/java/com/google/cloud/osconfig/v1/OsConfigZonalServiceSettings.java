@@ -17,6 +17,9 @@
 package com.google.cloud.osconfig.v1;
 
 import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListInventoriesPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentReportsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentRevisionsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -27,10 +30,13 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.osconfig.v1.stub.OsConfigZonalServiceStubSettings;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -50,16 +56,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getInventory to 30 seconds:
+ * <p>For example, to set the total timeout of getOSPolicyAssignment to 30 seconds:
  *
  * <pre>{@code
  * OsConfigZonalServiceSettings.Builder osConfigZonalServiceSettingsBuilder =
  *     OsConfigZonalServiceSettings.newBuilder();
  * osConfigZonalServiceSettingsBuilder
- *     .getInventorySettings()
+ *     .getOSPolicyAssignmentSettings()
  *     .setRetrySettings(
  *         osConfigZonalServiceSettingsBuilder
- *             .getInventorySettings()
+ *             .getOSPolicyAssignmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -70,6 +76,93 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class OsConfigZonalServiceSettings extends ClientSettings<OsConfigZonalServiceSettings> {
+
+  /** Returns the object with the settings used for calls to createOSPolicyAssignment. */
+  public UnaryCallSettings<CreateOSPolicyAssignmentRequest, Operation>
+      createOSPolicyAssignmentSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .createOSPolicyAssignmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOSPolicyAssignment. */
+  public OperationCallSettings<
+          CreateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      createOSPolicyAssignmentOperationSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .createOSPolicyAssignmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOSPolicyAssignment. */
+  public UnaryCallSettings<UpdateOSPolicyAssignmentRequest, Operation>
+      updateOSPolicyAssignmentSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .updateOSPolicyAssignmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOSPolicyAssignment. */
+  public OperationCallSettings<
+          UpdateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      updateOSPolicyAssignmentOperationSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .updateOSPolicyAssignmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getOSPolicyAssignment. */
+  public UnaryCallSettings<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
+      getOSPolicyAssignmentSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings()).getOSPolicyAssignmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listOSPolicyAssignments. */
+  public PagedCallSettings<
+          ListOSPolicyAssignmentsRequest,
+          ListOSPolicyAssignmentsResponse,
+          ListOSPolicyAssignmentsPagedResponse>
+      listOSPolicyAssignmentsSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings()).listOSPolicyAssignmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listOSPolicyAssignmentRevisions. */
+  public PagedCallSettings<
+          ListOSPolicyAssignmentRevisionsRequest,
+          ListOSPolicyAssignmentRevisionsResponse,
+          ListOSPolicyAssignmentRevisionsPagedResponse>
+      listOSPolicyAssignmentRevisionsSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .listOSPolicyAssignmentRevisionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOSPolicyAssignment. */
+  public UnaryCallSettings<DeleteOSPolicyAssignmentRequest, Operation>
+      deleteOSPolicyAssignmentSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .deleteOSPolicyAssignmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOSPolicyAssignment. */
+  public OperationCallSettings<
+          DeleteOSPolicyAssignmentRequest, Empty, OSPolicyAssignmentOperationMetadata>
+      deleteOSPolicyAssignmentOperationSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .deleteOSPolicyAssignmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getOSPolicyAssignmentReport. */
+  public UnaryCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .getOSPolicyAssignmentReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listOSPolicyAssignmentReports. */
+  public PagedCallSettings<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .listOSPolicyAssignmentReportsSettings();
+  }
 
   /** Returns the object with the settings used for calls to getInventory. */
   public UnaryCallSettings<GetInventoryRequest, Inventory> getInventorySettings() {
@@ -195,6 +288,88 @@ public class OsConfigZonalServiceSettings extends ClientSettings<OsConfigZonalSe
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to createOSPolicyAssignment. */
+    public UnaryCallSettings.Builder<CreateOSPolicyAssignmentRequest, Operation>
+        createOSPolicyAssignmentSettings() {
+      return getStubSettingsBuilder().createOSPolicyAssignmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOSPolicyAssignment. */
+    public OperationCallSettings.Builder<
+            CreateOSPolicyAssignmentRequest,
+            OSPolicyAssignment,
+            OSPolicyAssignmentOperationMetadata>
+        createOSPolicyAssignmentOperationSettings() {
+      return getStubSettingsBuilder().createOSPolicyAssignmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOSPolicyAssignment. */
+    public UnaryCallSettings.Builder<UpdateOSPolicyAssignmentRequest, Operation>
+        updateOSPolicyAssignmentSettings() {
+      return getStubSettingsBuilder().updateOSPolicyAssignmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOSPolicyAssignment. */
+    public OperationCallSettings.Builder<
+            UpdateOSPolicyAssignmentRequest,
+            OSPolicyAssignment,
+            OSPolicyAssignmentOperationMetadata>
+        updateOSPolicyAssignmentOperationSettings() {
+      return getStubSettingsBuilder().updateOSPolicyAssignmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getOSPolicyAssignment. */
+    public UnaryCallSettings.Builder<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
+        getOSPolicyAssignmentSettings() {
+      return getStubSettingsBuilder().getOSPolicyAssignmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listOSPolicyAssignments. */
+    public PagedCallSettings.Builder<
+            ListOSPolicyAssignmentsRequest,
+            ListOSPolicyAssignmentsResponse,
+            ListOSPolicyAssignmentsPagedResponse>
+        listOSPolicyAssignmentsSettings() {
+      return getStubSettingsBuilder().listOSPolicyAssignmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listOSPolicyAssignmentRevisions. */
+    public PagedCallSettings.Builder<
+            ListOSPolicyAssignmentRevisionsRequest,
+            ListOSPolicyAssignmentRevisionsResponse,
+            ListOSPolicyAssignmentRevisionsPagedResponse>
+        listOSPolicyAssignmentRevisionsSettings() {
+      return getStubSettingsBuilder().listOSPolicyAssignmentRevisionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOSPolicyAssignment. */
+    public UnaryCallSettings.Builder<DeleteOSPolicyAssignmentRequest, Operation>
+        deleteOSPolicyAssignmentSettings() {
+      return getStubSettingsBuilder().deleteOSPolicyAssignmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOSPolicyAssignment. */
+    public OperationCallSettings.Builder<
+            DeleteOSPolicyAssignmentRequest, Empty, OSPolicyAssignmentOperationMetadata>
+        deleteOSPolicyAssignmentOperationSettings() {
+      return getStubSettingsBuilder().deleteOSPolicyAssignmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getOSPolicyAssignmentReport. */
+    public UnaryCallSettings.Builder<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReportSettings() {
+      return getStubSettingsBuilder().getOSPolicyAssignmentReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listOSPolicyAssignmentReports. */
+    public PagedCallSettings.Builder<
+            ListOSPolicyAssignmentReportsRequest,
+            ListOSPolicyAssignmentReportsResponse,
+            ListOSPolicyAssignmentReportsPagedResponse>
+        listOSPolicyAssignmentReportsSettings() {
+      return getStubSettingsBuilder().listOSPolicyAssignmentReportsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getInventory. */

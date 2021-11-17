@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to OS Config API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= OsConfigServiceClient =======================
  *
@@ -55,8 +57,9 @@
  * <pre>{@code
  * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
  *     OsConfigZonalServiceClient.create()) {
- *   InventoryName name = InventoryName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
- *   Inventory response = osConfigZonalServiceClient.getInventory(name);
+ *   OSPolicyAssignmentName name =
+ *       OSPolicyAssignmentName.of("[PROJECT]", "[LOCATION]", "[OS_POLICY_ASSIGNMENT]");
+ *   OSPolicyAssignment response = osConfigZonalServiceClient.getOSPolicyAssignment(name);
  * }
  * }</pre>
  */

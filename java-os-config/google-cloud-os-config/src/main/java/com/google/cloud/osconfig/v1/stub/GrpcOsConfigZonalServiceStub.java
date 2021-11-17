@@ -17,6 +17,9 @@
 package com.google.cloud.osconfig.v1.stub;
 
 import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListInventoriesPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentReportsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentRevisionsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -24,17 +27,34 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest;
+import com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.GetInventoryRequest;
+import com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest;
+import com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.GetVulnerabilityReportRequest;
 import com.google.cloud.osconfig.v1.Inventory;
 import com.google.cloud.osconfig.v1.ListInventoriesRequest;
 import com.google.cloud.osconfig.v1.ListInventoriesResponse;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest;
+import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse;
 import com.google.cloud.osconfig.v1.ListVulnerabilityReportsRequest;
 import com.google.cloud.osconfig.v1.ListVulnerabilityReportsResponse;
+import com.google.cloud.osconfig.v1.OSPolicyAssignment;
+import com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata;
+import com.google.cloud.osconfig.v1.OSPolicyAssignmentReport;
+import com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.VulnerabilityReport;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -49,6 +69,110 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
+  private static final MethodDescriptor<CreateOSPolicyAssignmentRequest, Operation>
+      createOSPolicyAssignmentMethodDescriptor =
+          MethodDescriptor.<CreateOSPolicyAssignmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/CreateOSPolicyAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateOSPolicyAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateOSPolicyAssignmentRequest, Operation>
+      updateOSPolicyAssignmentMethodDescriptor =
+          MethodDescriptor.<UpdateOSPolicyAssignmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/UpdateOSPolicyAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateOSPolicyAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
+      getOSPolicyAssignmentMethodDescriptor =
+          MethodDescriptor.<GetOSPolicyAssignmentRequest, OSPolicyAssignment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/GetOSPolicyAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetOSPolicyAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(OSPolicyAssignment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
+      listOSPolicyAssignmentsMethodDescriptor =
+          MethodDescriptor
+              .<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/ListOSPolicyAssignments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListOSPolicyAssignmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOSPolicyAssignmentsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
+      listOSPolicyAssignmentRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/ListOSPolicyAssignmentRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListOSPolicyAssignmentRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListOSPolicyAssignmentRevisionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteOSPolicyAssignmentRequest, Operation>
+      deleteOSPolicyAssignmentMethodDescriptor =
+          MethodDescriptor.<DeleteOSPolicyAssignmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/DeleteOSPolicyAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteOSPolicyAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportMethodDescriptor =
+          MethodDescriptor
+              .<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/GetOSPolicyAssignmentReport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetOSPolicyAssignmentReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(OSPolicyAssignmentReport.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsMethodDescriptor =
+          MethodDescriptor
+              .<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1.OsConfigZonalService/ListOSPolicyAssignmentReports")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListOSPolicyAssignmentReportsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOSPolicyAssignmentReportsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetInventoryRequest, Inventory>
       getInventoryMethodDescriptor =
           MethodDescriptor.<GetInventoryRequest, Inventory>newBuilder()
@@ -95,6 +219,41 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   ProtoUtils.marshaller(ListVulnerabilityReportsResponse.getDefaultInstance()))
               .build();
 
+  private final UnaryCallable<CreateOSPolicyAssignmentRequest, Operation>
+      createOSPolicyAssignmentCallable;
+  private final OperationCallable<
+          CreateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      createOSPolicyAssignmentOperationCallable;
+  private final UnaryCallable<UpdateOSPolicyAssignmentRequest, Operation>
+      updateOSPolicyAssignmentCallable;
+  private final OperationCallable<
+          UpdateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      updateOSPolicyAssignmentOperationCallable;
+  private final UnaryCallable<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
+      getOSPolicyAssignmentCallable;
+  private final UnaryCallable<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
+      listOSPolicyAssignmentsCallable;
+  private final UnaryCallable<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsPagedResponse>
+      listOSPolicyAssignmentsPagedCallable;
+  private final UnaryCallable<
+          ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
+      listOSPolicyAssignmentRevisionsCallable;
+  private final UnaryCallable<
+          ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsPagedResponse>
+      listOSPolicyAssignmentRevisionsPagedCallable;
+  private final UnaryCallable<DeleteOSPolicyAssignmentRequest, Operation>
+      deleteOSPolicyAssignmentCallable;
+  private final OperationCallable<
+          DeleteOSPolicyAssignmentRequest, Empty, OSPolicyAssignmentOperationMetadata>
+      deleteOSPolicyAssignmentOperationCallable;
+  private final UnaryCallable<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportCallable;
+  private final UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsCallable;
+  private final UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsPagedCallable;
   private final UnaryCallable<GetInventoryRequest, Inventory> getInventoryCallable;
   private final UnaryCallable<ListInventoriesRequest, ListInventoriesResponse>
       listInventoriesCallable;
@@ -152,6 +311,103 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<CreateOSPolicyAssignmentRequest, Operation>
+        createOSPolicyAssignmentTransportSettings =
+            GrpcCallSettings.<CreateOSPolicyAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(createOSPolicyAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateOSPolicyAssignmentRequest, Operation>
+        updateOSPolicyAssignmentTransportSettings =
+            GrpcCallSettings.<UpdateOSPolicyAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateOSPolicyAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "os_policy_assignment.name",
+                          String.valueOf(request.getOsPolicyAssignment().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
+        getOSPolicyAssignmentTransportSettings =
+            GrpcCallSettings.<GetOSPolicyAssignmentRequest, OSPolicyAssignment>newBuilder()
+                .setMethodDescriptor(getOSPolicyAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
+        listOSPolicyAssignmentsTransportSettings =
+            GrpcCallSettings
+                .<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>newBuilder()
+                .setMethodDescriptor(listOSPolicyAssignmentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
+        listOSPolicyAssignmentRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listOSPolicyAssignmentRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteOSPolicyAssignmentRequest, Operation>
+        deleteOSPolicyAssignmentTransportSettings =
+            GrpcCallSettings.<DeleteOSPolicyAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteOSPolicyAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReportTransportSettings =
+            GrpcCallSettings
+                .<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>newBuilder()
+                .setMethodDescriptor(getOSPolicyAssignmentReportMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+        listOSPolicyAssignmentReportsTransportSettings =
+            GrpcCallSettings
+                .<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listOSPolicyAssignmentReportsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetInventoryRequest, Inventory> getInventoryTransportSettings =
         GrpcCallSettings.<GetInventoryRequest, Inventory>newBuilder()
             .setMethodDescriptor(getInventoryMethodDescriptor)
@@ -197,6 +453,79 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                     })
                 .build();
 
+    this.createOSPolicyAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            createOSPolicyAssignmentTransportSettings,
+            settings.createOSPolicyAssignmentSettings(),
+            clientContext);
+    this.createOSPolicyAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            createOSPolicyAssignmentTransportSettings,
+            settings.createOSPolicyAssignmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateOSPolicyAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            updateOSPolicyAssignmentTransportSettings,
+            settings.updateOSPolicyAssignmentSettings(),
+            clientContext);
+    this.updateOSPolicyAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            updateOSPolicyAssignmentTransportSettings,
+            settings.updateOSPolicyAssignmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getOSPolicyAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            getOSPolicyAssignmentTransportSettings,
+            settings.getOSPolicyAssignmentSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentsCallable =
+        callableFactory.createUnaryCallable(
+            listOSPolicyAssignmentsTransportSettings,
+            settings.listOSPolicyAssignmentsSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listOSPolicyAssignmentsTransportSettings,
+            settings.listOSPolicyAssignmentsSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listOSPolicyAssignmentRevisionsTransportSettings,
+            settings.listOSPolicyAssignmentRevisionsSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listOSPolicyAssignmentRevisionsTransportSettings,
+            settings.listOSPolicyAssignmentRevisionsSettings(),
+            clientContext);
+    this.deleteOSPolicyAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteOSPolicyAssignmentTransportSettings,
+            settings.deleteOSPolicyAssignmentSettings(),
+            clientContext);
+    this.deleteOSPolicyAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteOSPolicyAssignmentTransportSettings,
+            settings.deleteOSPolicyAssignmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getOSPolicyAssignmentReportCallable =
+        callableFactory.createUnaryCallable(
+            getOSPolicyAssignmentReportTransportSettings,
+            settings.getOSPolicyAssignmentReportSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentReportsCallable =
+        callableFactory.createUnaryCallable(
+            listOSPolicyAssignmentReportsTransportSettings,
+            settings.listOSPolicyAssignmentReportsSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentReportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listOSPolicyAssignmentReportsTransportSettings,
+            settings.listOSPolicyAssignmentReportsSettings(),
+            clientContext);
     this.getInventoryCallable =
         callableFactory.createUnaryCallable(
             getInventoryTransportSettings, settings.getInventorySettings(), clientContext);
@@ -228,6 +557,96 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CreateOSPolicyAssignmentRequest, Operation>
+      createOSPolicyAssignmentCallable() {
+    return createOSPolicyAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      createOSPolicyAssignmentOperationCallable() {
+    return createOSPolicyAssignmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateOSPolicyAssignmentRequest, Operation>
+      updateOSPolicyAssignmentCallable() {
+    return updateOSPolicyAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateOSPolicyAssignmentRequest, OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
+      updateOSPolicyAssignmentOperationCallable() {
+    return updateOSPolicyAssignmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
+      getOSPolicyAssignmentCallable() {
+    return getOSPolicyAssignmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
+      listOSPolicyAssignmentsCallable() {
+    return listOSPolicyAssignmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsPagedResponse>
+      listOSPolicyAssignmentsPagedCallable() {
+    return listOSPolicyAssignmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
+      listOSPolicyAssignmentRevisionsCallable() {
+    return listOSPolicyAssignmentRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsPagedResponse>
+      listOSPolicyAssignmentRevisionsPagedCallable() {
+    return listOSPolicyAssignmentRevisionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteOSPolicyAssignmentRequest, Operation>
+      deleteOSPolicyAssignmentCallable() {
+    return deleteOSPolicyAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeleteOSPolicyAssignmentRequest, Empty, OSPolicyAssignmentOperationMetadata>
+      deleteOSPolicyAssignmentOperationCallable() {
+    return deleteOSPolicyAssignmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportCallable() {
+    return getOSPolicyAssignmentReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsCallable() {
+    return listOSPolicyAssignmentReportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsPagedCallable() {
+    return listOSPolicyAssignmentReportsPagedCallable;
   }
 
   @Override

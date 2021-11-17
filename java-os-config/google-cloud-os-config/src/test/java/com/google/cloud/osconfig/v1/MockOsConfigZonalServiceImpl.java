@@ -18,6 +18,7 @@ package com.google.cloud.osconfig.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.osconfig.v1.OsConfigZonalServiceGrpc.OsConfigZonalServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -56,6 +57,178 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
   public void reset() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
+  }
+
+  @Override
+  public void createOSPolicyAssignment(
+      CreateOSPolicyAssignmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOSPolicyAssignment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateOSPolicyAssignment(
+      UpdateOSPolicyAssignmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateOSPolicyAssignment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getOSPolicyAssignment(
+      GetOSPolicyAssignmentRequest request, StreamObserver<OSPolicyAssignment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OSPolicyAssignment) {
+      requests.add(request);
+      responseObserver.onNext(((OSPolicyAssignment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOSPolicyAssignment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OSPolicyAssignment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOSPolicyAssignments(
+      ListOSPolicyAssignmentsRequest request,
+      StreamObserver<ListOSPolicyAssignmentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOSPolicyAssignmentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOSPolicyAssignmentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOSPolicyAssignments, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOSPolicyAssignmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOSPolicyAssignmentRevisions(
+      ListOSPolicyAssignmentRevisionsRequest request,
+      StreamObserver<ListOSPolicyAssignmentRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOSPolicyAssignmentRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOSPolicyAssignmentRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOSPolicyAssignmentRevisions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOSPolicyAssignmentRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteOSPolicyAssignment(
+      DeleteOSPolicyAssignmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteOSPolicyAssignment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getOSPolicyAssignmentReport(
+      GetOSPolicyAssignmentReportRequest request,
+      StreamObserver<OSPolicyAssignmentReport> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OSPolicyAssignmentReport) {
+      requests.add(request);
+      responseObserver.onNext(((OSPolicyAssignmentReport) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOSPolicyAssignmentReport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OSPolicyAssignmentReport.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOSPolicyAssignmentReports(
+      ListOSPolicyAssignmentReportsRequest request,
+      StreamObserver<ListOSPolicyAssignmentReportsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOSPolicyAssignmentReportsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOSPolicyAssignmentReportsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOSPolicyAssignmentReports, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOSPolicyAssignmentReportsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
   }
 
   @Override

@@ -29,6 +29,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/osconfig/v1/osconfig_zonal_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class OsConfigZonalServiceGrpc {
 
   private OsConfigZonalServiceGrpc() {}
@@ -36,6 +37,424 @@ public final class OsConfigZonalServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.osconfig.v1.OsConfigZonalService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest,
+          com.google.longrunning.Operation>
+      getCreateOSPolicyAssignmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateOSPolicyAssignment",
+      requestType = com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest,
+          com.google.longrunning.Operation>
+      getCreateOSPolicyAssignmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest,
+            com.google.longrunning.Operation>
+        getCreateOSPolicyAssignmentMethod;
+    if ((getCreateOSPolicyAssignmentMethod =
+            OsConfigZonalServiceGrpc.getCreateOSPolicyAssignmentMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getCreateOSPolicyAssignmentMethod =
+                OsConfigZonalServiceGrpc.getCreateOSPolicyAssignmentMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getCreateOSPolicyAssignmentMethod =
+              getCreateOSPolicyAssignmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateOSPolicyAssignment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "CreateOSPolicyAssignment"))
+                      .build();
+        }
+      }
+    }
+    return getCreateOSPolicyAssignmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest,
+          com.google.longrunning.Operation>
+      getUpdateOSPolicyAssignmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOSPolicyAssignment",
+      requestType = com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest,
+          com.google.longrunning.Operation>
+      getUpdateOSPolicyAssignmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest,
+            com.google.longrunning.Operation>
+        getUpdateOSPolicyAssignmentMethod;
+    if ((getUpdateOSPolicyAssignmentMethod =
+            OsConfigZonalServiceGrpc.getUpdateOSPolicyAssignmentMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getUpdateOSPolicyAssignmentMethod =
+                OsConfigZonalServiceGrpc.getUpdateOSPolicyAssignmentMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getUpdateOSPolicyAssignmentMethod =
+              getUpdateOSPolicyAssignmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateOSPolicyAssignment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "UpdateOSPolicyAssignment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateOSPolicyAssignmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest,
+          com.google.cloud.osconfig.v1.OSPolicyAssignment>
+      getGetOSPolicyAssignmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOSPolicyAssignment",
+      requestType = com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest.class,
+      responseType = com.google.cloud.osconfig.v1.OSPolicyAssignment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest,
+          com.google.cloud.osconfig.v1.OSPolicyAssignment>
+      getGetOSPolicyAssignmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest,
+            com.google.cloud.osconfig.v1.OSPolicyAssignment>
+        getGetOSPolicyAssignmentMethod;
+    if ((getGetOSPolicyAssignmentMethod = OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getGetOSPolicyAssignmentMethod =
+                OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentMethod =
+              getGetOSPolicyAssignmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest,
+                          com.google.cloud.osconfig.v1.OSPolicyAssignment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetOSPolicyAssignment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.OSPolicyAssignment.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier("GetOSPolicyAssignment"))
+                      .build();
+        }
+      }
+    }
+    return getGetOSPolicyAssignmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest,
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
+      getListOSPolicyAssignmentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOSPolicyAssignments",
+      requestType = com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest.class,
+      responseType = com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest,
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
+      getListOSPolicyAssignmentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest,
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
+        getListOSPolicyAssignmentsMethod;
+    if ((getListOSPolicyAssignmentsMethod =
+            OsConfigZonalServiceGrpc.getListOSPolicyAssignmentsMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getListOSPolicyAssignmentsMethod =
+                OsConfigZonalServiceGrpc.getListOSPolicyAssignmentsMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getListOSPolicyAssignmentsMethod =
+              getListOSPolicyAssignmentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest,
+                          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListOSPolicyAssignments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "ListOSPolicyAssignments"))
+                      .build();
+        }
+      }
+    }
+    return getListOSPolicyAssignmentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest,
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
+      getListOSPolicyAssignmentRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOSPolicyAssignmentRevisions",
+      requestType = com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest.class,
+      responseType = com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest,
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
+      getListOSPolicyAssignmentRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest,
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
+        getListOSPolicyAssignmentRevisionsMethod;
+    if ((getListOSPolicyAssignmentRevisionsMethod =
+            OsConfigZonalServiceGrpc.getListOSPolicyAssignmentRevisionsMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getListOSPolicyAssignmentRevisionsMethod =
+                OsConfigZonalServiceGrpc.getListOSPolicyAssignmentRevisionsMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getListOSPolicyAssignmentRevisionsMethod =
+              getListOSPolicyAssignmentRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest,
+                          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListOSPolicyAssignmentRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "ListOSPolicyAssignmentRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListOSPolicyAssignmentRevisionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest,
+          com.google.longrunning.Operation>
+      getDeleteOSPolicyAssignmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteOSPolicyAssignment",
+      requestType = com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest,
+          com.google.longrunning.Operation>
+      getDeleteOSPolicyAssignmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest,
+            com.google.longrunning.Operation>
+        getDeleteOSPolicyAssignmentMethod;
+    if ((getDeleteOSPolicyAssignmentMethod =
+            OsConfigZonalServiceGrpc.getDeleteOSPolicyAssignmentMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getDeleteOSPolicyAssignmentMethod =
+                OsConfigZonalServiceGrpc.getDeleteOSPolicyAssignmentMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getDeleteOSPolicyAssignmentMethod =
+              getDeleteOSPolicyAssignmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteOSPolicyAssignment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "DeleteOSPolicyAssignment"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteOSPolicyAssignmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest,
+          com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
+      getGetOSPolicyAssignmentReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOSPolicyAssignmentReport",
+      requestType = com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest.class,
+      responseType = com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest,
+          com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
+      getGetOSPolicyAssignmentReportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest,
+            com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
+        getGetOSPolicyAssignmentReportMethod;
+    if ((getGetOSPolicyAssignmentReportMethod =
+            OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentReportMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getGetOSPolicyAssignmentReportMethod =
+                OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentReportMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentReportMethod =
+              getGetOSPolicyAssignmentReportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest,
+                          com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetOSPolicyAssignmentReport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.OSPolicyAssignmentReport
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "GetOSPolicyAssignmentReport"))
+                      .build();
+        }
+      }
+    }
+    return getGetOSPolicyAssignmentReportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest,
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
+      getListOSPolicyAssignmentReportsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOSPolicyAssignmentReports",
+      requestType = com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest.class,
+      responseType = com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest,
+          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
+      getListOSPolicyAssignmentReportsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest,
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
+        getListOSPolicyAssignmentReportsMethod;
+    if ((getListOSPolicyAssignmentReportsMethod =
+            OsConfigZonalServiceGrpc.getListOSPolicyAssignmentReportsMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getListOSPolicyAssignmentReportsMethod =
+                OsConfigZonalServiceGrpc.getListOSPolicyAssignmentReportsMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getListOSPolicyAssignmentReportsMethod =
+              getListOSPolicyAssignmentReportsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest,
+                          com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListOSPolicyAssignmentReports"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "ListOSPolicyAssignmentReports"))
+                      .build();
+        }
+      }
+    }
+    return getListOSPolicyAssignmentReportsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.osconfig.v1.GetInventoryRequest, com.google.cloud.osconfig.v1.Inventory>
       getGetInventoryMethod;
@@ -289,6 +708,148 @@ public final class OsConfigZonalServiceGrpc {
      *
      *
      * <pre>
+     * Create an OS policy assignment.
+     * This method also creates the first revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public void createOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateOSPolicyAssignmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public void updateOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateOSPolicyAssignmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an existing OS policy assignment.
+     * This method always returns the latest revision. In order to retrieve a
+     * previous revision of the assignment, also provide the revision ID in the
+     * `name` parameter.
+     * </pre>
+     */
+    public void getOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetOSPolicyAssignmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignments under the parent resource.
+     * For each OS policy assignment, the latest revision is returned.
+     * </pre>
+     */
+    public void listOSPolicyAssignments(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOSPolicyAssignmentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignment revisions for a given OS policy assignment.
+     * </pre>
+     */
+    public void listOSPolicyAssignmentRevisions(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOSPolicyAssignmentRevisionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * If the LRO completes and is not cancelled, all revisions associated with
+     * the OS policy assignment are deleted.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public void deleteOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteOSPolicyAssignmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public void getOSPolicyAssignmentReport(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetOSPolicyAssignmentReportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public void listOSPolicyAssignmentReports(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOSPolicyAssignmentReportsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get inventory data for the specified VM instance. If the VM has no
      * associated inventory, the message `NOT_FOUND` is returned.
      * </pre>
@@ -350,6 +911,59 @@ public final class OsConfigZonalServiceGrpc {
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
+              getCreateOSPolicyAssignmentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest,
+                      com.google.longrunning.Operation>(this, METHODID_CREATE_OSPOLICY_ASSIGNMENT)))
+          .addMethod(
+              getUpdateOSPolicyAssignmentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_OSPOLICY_ASSIGNMENT)))
+          .addMethod(
+              getGetOSPolicyAssignmentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest,
+                      com.google.cloud.osconfig.v1.OSPolicyAssignment>(
+                      this, METHODID_GET_OSPOLICY_ASSIGNMENT)))
+          .addMethod(
+              getListOSPolicyAssignmentsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest,
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>(
+                      this, METHODID_LIST_OSPOLICY_ASSIGNMENTS)))
+          .addMethod(
+              getListOSPolicyAssignmentRevisionsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest,
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>(
+                      this, METHODID_LIST_OSPOLICY_ASSIGNMENT_REVISIONS)))
+          .addMethod(
+              getDeleteOSPolicyAssignmentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_OSPOLICY_ASSIGNMENT)))
+          .addMethod(
+              getGetOSPolicyAssignmentReportMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest,
+                      com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>(
+                      this, METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT)))
+          .addMethod(
+              getListOSPolicyAssignmentReportsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest,
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>(
+                      this, METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS)))
+          .addMethod(
               getGetInventoryMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -399,6 +1013,164 @@ public final class OsConfigZonalServiceGrpc {
     protected OsConfigZonalServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new OsConfigZonalServiceStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an OS policy assignment.
+     * This method also creates the first revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public void createOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateOSPolicyAssignmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public void updateOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateOSPolicyAssignmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an existing OS policy assignment.
+     * This method always returns the latest revision. In order to retrieve a
+     * previous revision of the assignment, also provide the revision ID in the
+     * `name` parameter.
+     * </pre>
+     */
+    public void getOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOSPolicyAssignmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignments under the parent resource.
+     * For each OS policy assignment, the latest revision is returned.
+     * </pre>
+     */
+    public void listOSPolicyAssignments(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignment revisions for a given OS policy assignment.
+     * </pre>
+     */
+    public void listOSPolicyAssignmentRevisions(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * If the LRO completes and is not cancelled, all revisions associated with
+     * the OS policy assignment are deleted.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public void deleteOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteOSPolicyAssignmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public void getOSPolicyAssignmentReport(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOSPolicyAssignmentReportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public void listOSPolicyAssignmentReports(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentReportsMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -497,6 +1269,135 @@ public final class OsConfigZonalServiceGrpc {
      *
      *
      * <pre>
+     * Create an OS policy assignment.
+     * This method also creates the first revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an existing OS policy assignment.
+     * This method always returns the latest revision. In order to retrieve a
+     * previous revision of the assignment, also provide the revision ID in the
+     * `name` parameter.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.OSPolicyAssignment getOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignments under the parent resource.
+     * For each OS policy assignment, the latest revision is returned.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse listOSPolicyAssignments(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSPolicyAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignment revisions for a given OS policy assignment.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse
+        listOSPolicyAssignmentRevisions(
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSPolicyAssignmentRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * If the LRO completes and is not cancelled, all revisions associated with
+     * the OS policy assignment are deleted.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.OSPolicyAssignmentReport getOSPolicyAssignmentReport(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOSPolicyAssignmentReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse
+        listOSPolicyAssignmentReports(
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSPolicyAssignmentReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get inventory data for the specified VM instance. If the VM has no
      * associated inventory, the message `NOT_FOUND` is returned.
      * </pre>
@@ -574,6 +1475,147 @@ public final class OsConfigZonalServiceGrpc {
      *
      *
      * <pre>
+     * Create an OS policy assignment.
+     * This method also creates the first revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createOSPolicyAssignment(
+            com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateOSPolicyAssignmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateOSPolicyAssignment(
+            com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateOSPolicyAssignmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an existing OS policy assignment.
+     * This method always returns the latest revision. In order to retrieve a
+     * previous revision of the assignment, also provide the revision ID in the
+     * `name` parameter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1.OSPolicyAssignment>
+        getOSPolicyAssignment(com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOSPolicyAssignmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignments under the parent resource.
+     * For each OS policy assignment, the latest revision is returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
+        listOSPolicyAssignments(
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignment revisions for a given OS policy assignment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
+        listOSPolicyAssignmentRevisions(
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentRevisionsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * If the LRO completes and is not cancelled, all revisions associated with
+     * the OS policy assignment are deleted.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteOSPolicyAssignment(
+            com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteOSPolicyAssignmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReport(
+            com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOSPolicyAssignmentReportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
+        listOSPolicyAssignmentReports(
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentReportsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get inventory data for the specified VM instance. If the VM has no
      * associated inventory, the message `NOT_FOUND` is returned.
      * </pre>
@@ -630,10 +1672,18 @@ public final class OsConfigZonalServiceGrpc {
     }
   }
 
-  private static final int METHODID_GET_INVENTORY = 0;
-  private static final int METHODID_LIST_INVENTORIES = 1;
-  private static final int METHODID_GET_VULNERABILITY_REPORT = 2;
-  private static final int METHODID_LIST_VULNERABILITY_REPORTS = 3;
+  private static final int METHODID_CREATE_OSPOLICY_ASSIGNMENT = 0;
+  private static final int METHODID_UPDATE_OSPOLICY_ASSIGNMENT = 1;
+  private static final int METHODID_GET_OSPOLICY_ASSIGNMENT = 2;
+  private static final int METHODID_LIST_OSPOLICY_ASSIGNMENTS = 3;
+  private static final int METHODID_LIST_OSPOLICY_ASSIGNMENT_REVISIONS = 4;
+  private static final int METHODID_DELETE_OSPOLICY_ASSIGNMENT = 5;
+  private static final int METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT = 6;
+  private static final int METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS = 7;
+  private static final int METHODID_GET_INVENTORY = 8;
+  private static final int METHODID_LIST_INVENTORIES = 9;
+  private static final int METHODID_GET_VULNERABILITY_REPORT = 10;
+  private static final int METHODID_LIST_VULNERABILITY_REPORTS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -652,6 +1702,54 @@ public final class OsConfigZonalServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CREATE_OSPOLICY_ASSIGNMENT:
+          serviceImpl.createOSPolicyAssignment(
+              (com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_OSPOLICY_ASSIGNMENT:
+          serviceImpl.updateOSPolicyAssignment(
+              (com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_OSPOLICY_ASSIGNMENT:
+          serviceImpl.getOSPolicyAssignment(
+              (com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignment>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_OSPOLICY_ASSIGNMENTS:
+          serviceImpl.listOSPolicyAssignments(
+              (com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_OSPOLICY_ASSIGNMENT_REVISIONS:
+          serviceImpl.listOSPolicyAssignmentRevisions(
+              (com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_OSPOLICY_ASSIGNMENT:
+          serviceImpl.deleteOSPolicyAssignment(
+              (com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT:
+          serviceImpl.getOSPolicyAssignmentReport(
+              (com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS:
+          serviceImpl.listOSPolicyAssignmentReports(
+              (com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_INVENTORY:
           serviceImpl.getInventory(
               (com.google.cloud.osconfig.v1.GetInventoryRequest) request,
@@ -741,6 +1839,14 @@ public final class OsConfigZonalServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new OsConfigZonalServiceFileDescriptorSupplier())
+                      .addMethod(getCreateOSPolicyAssignmentMethod())
+                      .addMethod(getUpdateOSPolicyAssignmentMethod())
+                      .addMethod(getGetOSPolicyAssignmentMethod())
+                      .addMethod(getListOSPolicyAssignmentsMethod())
+                      .addMethod(getListOSPolicyAssignmentRevisionsMethod())
+                      .addMethod(getDeleteOSPolicyAssignmentMethod())
+                      .addMethod(getGetOSPolicyAssignmentReportMethod())
+                      .addMethod(getListOSPolicyAssignmentReportsMethod())
                       .addMethod(getGetInventoryMethod())
                       .addMethod(getListInventoriesMethod())
                       .addMethod(getGetVulnerabilityReportMethod())
