@@ -28,7 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datacatalog/v1beta1/policytagmanagerserialization.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class PolicyTagManagerSerializationGrpc {
 
   private PolicyTagManagerSerializationGrpc() {}

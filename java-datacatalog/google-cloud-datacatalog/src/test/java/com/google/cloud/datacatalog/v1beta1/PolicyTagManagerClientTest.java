@@ -852,8 +852,7 @@ public class PolicyTagManagerClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(
-                EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -880,8 +879,7 @@ public class PolicyTagManagerClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -903,8 +901,7 @@ public class PolicyTagManagerClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(
-                EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setPolicy(Policy.newBuilder().build())
             .build();
 
@@ -931,8 +928,7 @@ public class PolicyTagManagerClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
               .setPolicy(Policy.newBuilder().build())
               .build();
       client.setIamPolicy(request);
@@ -950,8 +946,7 @@ public class PolicyTagManagerClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(
-                EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -978,8 +973,7 @@ public class PolicyTagManagerClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);
