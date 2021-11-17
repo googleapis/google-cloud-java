@@ -572,4 +572,86 @@ public class VersionsClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void compareVersionsTest() throws Exception {
+    CompareVersionsResponse expectedResponse =
+        CompareVersionsResponse.newBuilder()
+            .setBaseVersionContentJson("baseVersionContentJson-856795718")
+            .setTargetVersionContentJson("targetVersionContentJson813797498")
+            .setCompareTime(Timestamp.newBuilder().build())
+            .build();
+    mockVersions.addResponse(expectedResponse);
+
+    VersionName baseVersion =
+        VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+
+    CompareVersionsResponse actualResponse = client.compareVersions(baseVersion);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVersions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CompareVersionsRequest actualRequest = ((CompareVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(baseVersion.toString(), actualRequest.getBaseVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void compareVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVersions.addException(exception);
+
+    try {
+      VersionName baseVersion =
+          VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+      client.compareVersions(baseVersion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void compareVersionsTest2() throws Exception {
+    CompareVersionsResponse expectedResponse =
+        CompareVersionsResponse.newBuilder()
+            .setBaseVersionContentJson("baseVersionContentJson-856795718")
+            .setTargetVersionContentJson("targetVersionContentJson813797498")
+            .setCompareTime(Timestamp.newBuilder().build())
+            .build();
+    mockVersions.addResponse(expectedResponse);
+
+    String baseVersion = "baseVersion-1641901881";
+
+    CompareVersionsResponse actualResponse = client.compareVersions(baseVersion);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVersions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CompareVersionsRequest actualRequest = ((CompareVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(baseVersion, actualRequest.getBaseVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void compareVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVersions.addException(exception);
+
+    try {
+      String baseVersion = "baseVersion-1641901881";
+      client.compareVersions(baseVersion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

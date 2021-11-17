@@ -391,6 +391,9 @@
         "grpc": {
           "libraryClient": "VersionsClient",
           "rpcs": {
+            "CompareVersions": {
+              "methods": ["compareVersions", "compareVersions", "compareVersions", "compareVersionsCallable"]
+            },
             "CreateVersion": {
               "methods": ["createVersionAsync", "createVersionAsync", "createVersionAsync", "createVersionOperationCallable", "createVersionCallable"]
             },

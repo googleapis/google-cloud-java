@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
+ * The response message for
+ * [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListVersionsResponse}
@@ -432,7 +433,8 @@ public final class ListVersionsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
+   * The response message for
+   * [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListVersionsResponse}

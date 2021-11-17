@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The response message for [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3.Webhooks.ListWebhooks].
+ * The response message for
+ * [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3.Webhooks.ListWebhooks].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListWebhooksResponse}
@@ -427,7 +428,8 @@ public final class ListWebhooksResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3.Webhooks.ListWebhooks].
+   * The response message for
+   * [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3.Webhooks.ListWebhooks].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListWebhooksResponse}

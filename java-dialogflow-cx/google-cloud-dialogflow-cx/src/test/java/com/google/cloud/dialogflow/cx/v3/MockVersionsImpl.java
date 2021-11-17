@@ -182,4 +182,25 @@ public class MockVersionsImpl extends VersionsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void compareVersions(
+      CompareVersionsRequest request, StreamObserver<CompareVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CompareVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CompareVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CompareVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CompareVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

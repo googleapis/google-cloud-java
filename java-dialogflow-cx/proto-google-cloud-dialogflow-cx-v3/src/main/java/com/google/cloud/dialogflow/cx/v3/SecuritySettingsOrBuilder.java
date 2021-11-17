@@ -149,6 +149,10 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
    * template to define inspect base settings.
+   * The `DLP Inspect Templates Reader` role is needed on the Dialogflow
+   * service identity service account (has the form
+   * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
+   * for your agent's project.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
@@ -169,6 +173,10 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
    * template to define inspect base settings.
+   * The `DLP Inspect Templates Reader` role is needed on the Dialogflow
+   * service identity service account (has the form
+   * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
+   * for your agent's project.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
@@ -190,6 +198,10 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
    * template to define de-identification configuration for the content.
+   * The `DLP De-identify Templates Reader` role is needed on the Dialogflow
+   * service identity service account (has the form
+   * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
+   * for your agent's project.
    * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -210,6 +222,10 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
    * template to define de-identification configuration for the content.
+   * The `DLP De-identify Templates Reader` role is needed on the Dialogflow
+   * service identity service account (has the form
+   * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
+   * for your agent's project.
    * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -232,7 +248,7 @@ public interface SecuritySettingsOrBuilder
    * Retains data in interaction logging for the specified number of days.
    * This does not apply to Cloud logging, which is owned by the user - not
    * Dialogflow.
-   * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
+   * User must set a value lower than Dialogflow's default 365d TTL. Setting a
    * value higher than that has no effect.
    * A missing value or setting to 0 also means we use Dialogflow's default
    * TTL.
@@ -252,7 +268,7 @@ public interface SecuritySettingsOrBuilder
    * Retains data in interaction logging for the specified number of days.
    * This does not apply to Cloud logging, which is owned by the user - not
    * Dialogflow.
-   * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
+   * User must set a value lower than Dialogflow's default 365d TTL. Setting a
    * value higher than that has no effect.
    * A missing value or setting to 0 also means we use Dialogflow's default
    * TTL.

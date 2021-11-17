@@ -179,8 +179,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions
-   *     for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(FlowName parent) {
@@ -207,8 +207,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions
-   *     for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(String parent) {
@@ -318,8 +318,7 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(VersionName name) {
@@ -343,8 +342,7 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(String name) {
@@ -425,8 +423,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
-   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -464,8 +462,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
-   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -663,8 +661,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to
-   *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(VersionName name) {
@@ -688,8 +686,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to
-   *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(String name) {
@@ -770,8 +768,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to
-   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     draft flow. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> loadVersionAsync(VersionName name) {
@@ -804,8 +802,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to
-   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     draft flow. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> loadVersionAsync(String name) {
@@ -915,6 +913,119 @@ public class VersionsClient implements BackgroundResource {
    */
   public final UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable() {
     return stub.loadVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   VersionName baseVersion =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+   *   CompareVersionsResponse response = versionsClient.compareVersions(baseVersion);
+   * }
+   * }</pre>
+   *
+   * @param baseVersion Required. Name of the base flow version to compare with the target version.
+   *     Use version ID `0` to indicate the draft version of the specified flow.
+   *     <p>Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompareVersionsResponse compareVersions(VersionName baseVersion) {
+    CompareVersionsRequest request =
+        CompareVersionsRequest.newBuilder()
+            .setBaseVersion(baseVersion == null ? null : baseVersion.toString())
+            .build();
+    return compareVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   String baseVersion =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]").toString();
+   *   CompareVersionsResponse response = versionsClient.compareVersions(baseVersion);
+   * }
+   * }</pre>
+   *
+   * @param baseVersion Required. Name of the base flow version to compare with the target version.
+   *     Use version ID `0` to indicate the draft version of the specified flow.
+   *     <p>Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompareVersionsResponse compareVersions(String baseVersion) {
+    CompareVersionsRequest request =
+        CompareVersionsRequest.newBuilder().setBaseVersion(baseVersion).build();
+    return compareVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   CompareVersionsRequest request =
+   *       CompareVersionsRequest.newBuilder()
+   *           .setBaseVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setTargetVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   CompareVersionsResponse response = versionsClient.compareVersions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompareVersionsResponse compareVersions(CompareVersionsRequest request) {
+    return compareVersionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Compares the specified base version with target version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   CompareVersionsRequest request =
+   *       CompareVersionsRequest.newBuilder()
+   *           .setBaseVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setTargetVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<CompareVersionsResponse> future =
+   *       versionsClient.compareVersionsCallable().futureCall(request);
+   *   // Do something.
+   *   CompareVersionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CompareVersionsRequest, CompareVersionsResponse>
+      compareVersionsCallable() {
+    return stub.compareVersionsCallable();
   }
 
   @Override

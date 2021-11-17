@@ -298,6 +298,52 @@ public final class VersionsGrpc {
     return getLoadVersionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest,
+          com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>
+      getCompareVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CompareVersions",
+      requestType = com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest,
+          com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>
+      getCompareVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest,
+            com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>
+        getCompareVersionsMethod;
+    if ((getCompareVersionsMethod = VersionsGrpc.getCompareVersionsMethod) == null) {
+      synchronized (VersionsGrpc.class) {
+        if ((getCompareVersionsMethod = VersionsGrpc.getCompareVersionsMethod) == null) {
+          VersionsGrpc.getCompareVersionsMethod =
+              getCompareVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest,
+                          com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CompareVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new VersionsMethodDescriptorSupplier("CompareVersions"))
+                      .build();
+        }
+      }
+    }
+    return getCompareVersionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VersionsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VersionsStub> factory =
@@ -351,7 +397,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public void listVersions(
@@ -379,11 +426,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */
@@ -443,6 +492,21 @@ public final class VersionsGrpc {
           getLoadVersionMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Compares the specified base version with target version.
+     * </pre>
+     */
+    public void compareVersions(
+        com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCompareVersionsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -483,6 +547,13 @@ public final class VersionsGrpc {
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.LoadVersionRequest,
                       com.google.longrunning.Operation>(this, METHODID_LOAD_VERSION)))
+          .addMethod(
+              getCompareVersionsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest,
+                      com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>(
+                      this, METHODID_COMPARE_VERSIONS)))
           .build();
     }
   }
@@ -508,7 +579,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public void listVersions(
@@ -539,11 +611,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */
@@ -610,6 +684,23 @@ public final class VersionsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Compares the specified base version with target version.
+     * </pre>
+     */
+    public void compareVersions(
+        com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCompareVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -634,7 +725,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListVersionsResponse listVersions(
@@ -660,11 +752,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */
@@ -719,6 +813,19 @@ public final class VersionsGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoadVersionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Compares the specified base version with target version.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse compareVersions(
+        com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompareVersionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -743,7 +850,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -771,11 +879,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */
@@ -831,6 +941,20 @@ public final class VersionsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoadVersionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Compares the specified base version with target version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>
+        compareVersions(com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCompareVersionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_VERSIONS = 0;
@@ -839,6 +963,7 @@ public final class VersionsGrpc {
   private static final int METHODID_UPDATE_VERSION = 3;
   private static final int METHODID_DELETE_VERSION = 4;
   private static final int METHODID_LOAD_VERSION = 5;
+  private static final int METHODID_COMPARE_VERSIONS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -889,6 +1014,13 @@ public final class VersionsGrpc {
           serviceImpl.loadVersion(
               (com.google.cloud.dialogflow.cx.v3.LoadVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_COMPARE_VERSIONS:
+          serviceImpl.compareVersions(
+              (com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -958,6 +1090,7 @@ public final class VersionsGrpc {
                       .addMethod(getUpdateVersionMethod())
                       .addMethod(getDeleteVersionMethod())
                       .addMethod(getLoadVersionMethod())
+                      .addMethod(getCompareVersionsMethod())
                       .build();
         }
       }

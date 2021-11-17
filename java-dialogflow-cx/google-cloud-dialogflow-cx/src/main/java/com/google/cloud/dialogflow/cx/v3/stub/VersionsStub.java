@@ -21,6 +21,8 @@ import static com.google.cloud.dialogflow.cx.v3.VersionsClient.ListVersionsPaged
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata;
 import com.google.cloud.dialogflow.cx.v3.CreateVersionRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteVersionRequest;
@@ -84,6 +86,10 @@ public abstract class VersionsStub implements BackgroundResource {
 
   public UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: loadVersionCallable()");
+  }
+
+  public UnaryCallable<CompareVersionsRequest, CompareVersionsResponse> compareVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: compareVersionsCallable()");
   }
 
   @Override

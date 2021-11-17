@@ -44,6 +44,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3.CompareVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3.CompareVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata;
 import com.google.cloud.dialogflow.cx.v3.CreateVersionRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteVersionRequest;
@@ -117,6 +119,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
   private final UnaryCallSettings<LoadVersionRequest, Operation> loadVersionSettings;
   private final OperationCallSettings<LoadVersionRequest, Empty, Struct>
       loadVersionOperationSettings;
+  private final UnaryCallSettings<CompareVersionsRequest, CompareVersionsResponse>
+      compareVersionsSettings;
 
   private static final PagedListDescriptor<ListVersionsRequest, ListVersionsResponse, Version>
       LIST_VERSIONS_PAGE_STR_DESC =
@@ -213,6 +217,12 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     return loadVersionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to compareVersions. */
+  public UnaryCallSettings<CompareVersionsRequest, CompareVersionsResponse>
+      compareVersionsSettings() {
+    return compareVersionsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VersionsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -296,6 +306,7 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     deleteVersionSettings = settingsBuilder.deleteVersionSettings().build();
     loadVersionSettings = settingsBuilder.loadVersionSettings().build();
     loadVersionOperationSettings = settingsBuilder.loadVersionOperationSettings().build();
+    compareVersionsSettings = settingsBuilder.compareVersionsSettings().build();
   }
 
   /** Builder for VersionsStubSettings. */
@@ -314,6 +325,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     private final UnaryCallSettings.Builder<LoadVersionRequest, Operation> loadVersionSettings;
     private final OperationCallSettings.Builder<LoadVersionRequest, Empty, Struct>
         loadVersionOperationSettings;
+    private final UnaryCallSettings.Builder<CompareVersionsRequest, CompareVersionsResponse>
+        compareVersionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -360,6 +373,7 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
       deleteVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       loadVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       loadVersionOperationSettings = OperationCallSettings.newBuilder();
+      compareVersionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -368,7 +382,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               createVersionSettings,
               updateVersionSettings,
               deleteVersionSettings,
-              loadVersionSettings);
+              loadVersionSettings,
+              compareVersionsSettings);
       initDefaults(this);
     }
 
@@ -383,6 +398,7 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
       deleteVersionSettings = settings.deleteVersionSettings.toBuilder();
       loadVersionSettings = settings.loadVersionSettings.toBuilder();
       loadVersionOperationSettings = settings.loadVersionOperationSettings.toBuilder();
+      compareVersionsSettings = settings.compareVersionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -391,7 +407,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               createVersionSettings,
               updateVersionSettings,
               deleteVersionSettings,
-              loadVersionSettings);
+              loadVersionSettings,
+              compareVersionsSettings);
     }
 
     private static Builder createDefault() {
@@ -435,6 +452,11 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
 
       builder
           .loadVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .compareVersionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -551,6 +573,12 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     public OperationCallSettings.Builder<LoadVersionRequest, Empty, Struct>
         loadVersionOperationSettings() {
       return loadVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to compareVersions. */
+    public UnaryCallSettings.Builder<CompareVersionsRequest, CompareVersionsResponse>
+        compareVersionsSettings() {
+      return compareVersionsSettings;
     }
 
     @Override
