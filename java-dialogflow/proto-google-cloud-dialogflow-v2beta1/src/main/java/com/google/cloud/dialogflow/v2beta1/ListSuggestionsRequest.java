@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
+ * The request message for
+ * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListSuggestionsRequest}
@@ -506,7 +507,8 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
+   * The request message for
+   * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListSuggestionsRequest}

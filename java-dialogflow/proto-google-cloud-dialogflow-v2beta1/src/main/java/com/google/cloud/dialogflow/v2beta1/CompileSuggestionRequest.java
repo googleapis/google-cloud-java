@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+ * The request message for
+ * [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompileSuggestionRequest}
@@ -435,7 +436,8 @@ public final class CompileSuggestionRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+   * The request message for
+   * [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompileSuggestionRequest}

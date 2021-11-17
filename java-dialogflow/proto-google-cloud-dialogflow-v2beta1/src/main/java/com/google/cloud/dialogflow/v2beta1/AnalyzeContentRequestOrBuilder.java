@@ -212,6 +212,42 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
+   *
+   * @return Whether the assistQueryParams field is set.
+   */
+  boolean hasAssistQueryParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
+   *
+   * @return The assistQueryParams.
+   */
+  com.google.cloud.dialogflow.v2beta1.AssistQueryParameters getAssistQueryParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.AssistQueryParametersOrBuilder
+      getAssistQueryParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The send time of the message from end user or human agent's
    * perspective. It is used for identifying the same message under one
    * participant.

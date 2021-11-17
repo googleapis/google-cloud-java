@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
+ * Service for managing
+ * [Participants][google.cloud.dialogflow.v2beta1.Participant].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -549,7 +550,8 @@ public final class ParticipantsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
+   * Service for managing
+   * [Participants][google.cloud.dialogflow.v2beta1.Participant].
    * </pre>
    */
   public abstract static class ParticipantsImplBase implements io.grpc.BindableService {
@@ -639,9 +641,12 @@ public final class ParticipantsGrpc {
      * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     public void suggestArticles(
@@ -690,9 +695,9 @@ public final class ParticipantsGrpc {
      * <pre>
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
-     * See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * details.
-     * Removal Date: 2020-09-01.
+     * See
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more details. Removal Date: 2020-09-01.
      * Retrieves suggestions for live agents.
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
@@ -721,12 +726,19 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
-     * Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
+     * Deprecated. use
+     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
+     * and
+     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
+     * instead.
      * Gets suggestions for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     @java.lang.Deprecated
@@ -819,7 +831,8 @@ public final class ParticipantsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
+   * Service for managing
+   * [Participants][google.cloud.dialogflow.v2beta1.Participant].
    * </pre>
    */
   public static final class ParticipantsStub
@@ -928,9 +941,12 @@ public final class ParticipantsGrpc {
      * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     public void suggestArticles(
@@ -985,9 +1001,9 @@ public final class ParticipantsGrpc {
      * <pre>
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
-     * See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * details.
-     * Removal Date: 2020-09-01.
+     * See
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more details. Removal Date: 2020-09-01.
      * Retrieves suggestions for live agents.
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
@@ -1018,12 +1034,19 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
-     * Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
+     * Deprecated. use
+     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
+     * and
+     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
+     * instead.
      * Gets suggestions for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     @java.lang.Deprecated
@@ -1042,7 +1065,8 @@ public final class ParticipantsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
+   * Service for managing
+   * [Participants][google.cloud.dialogflow.v2beta1.Participant].
    * </pre>
    */
   public static final class ParticipantsBlockingStub
@@ -1132,9 +1156,12 @@ public final class ParticipantsGrpc {
      * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse suggestArticles(
@@ -1177,9 +1204,9 @@ public final class ParticipantsGrpc {
      * <pre>
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
-     * See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * details.
-     * Removal Date: 2020-09-01.
+     * See
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more details. Removal Date: 2020-09-01.
      * Retrieves suggestions for live agents.
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
@@ -1206,12 +1233,19 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
-     * Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
+     * Deprecated. use
+     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
+     * and
+     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
+     * instead.
      * Gets suggestions for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     @java.lang.Deprecated
@@ -1226,7 +1260,8 @@ public final class ParticipantsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
+   * Service for managing
+   * [Participants][google.cloud.dialogflow.v2beta1.Participant].
    * </pre>
    */
   public static final class ParticipantsFutureStub
@@ -1321,9 +1356,12 @@ public final class ParticipantsGrpc {
      * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1370,9 +1408,9 @@ public final class ParticipantsGrpc {
      * <pre>
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
-     * See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * details.
-     * Removal Date: 2020-09-01.
+     * See
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more details. Removal Date: 2020-09-01.
      * Retrieves suggestions for live agents.
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
@@ -1400,12 +1438,19 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
-     * Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
+     * Deprecated. use
+     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
+     * and
+     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
+     * instead.
      * Gets suggestions for a participant based on specific historical
      * messages.
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      * </pre>
      */
     @java.lang.Deprecated

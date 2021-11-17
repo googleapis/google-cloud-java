@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
+ * The request message for
+ * [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateParticipantRequest}
@@ -416,7 +417,8 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
+   * The request message for
+   * [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateParticipantRequest}

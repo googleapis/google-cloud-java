@@ -105,4 +105,46 @@ public interface SuggestFaqAnswersRequestOrBuilder
    * @return The contextSize.
    */
   int getContextSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the assistQueryParams field is set.
+   */
+  boolean hasAssistQueryParams();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The assistQueryParams.
+   */
+  com.google.cloud.dialogflow.v2beta1.AssistQueryParameters getAssistQueryParams();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.AssistQueryParametersOrBuilder
+      getAssistQueryParamsOrBuilder();
 }
