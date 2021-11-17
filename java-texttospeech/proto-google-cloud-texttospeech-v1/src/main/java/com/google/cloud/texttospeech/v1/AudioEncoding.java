@@ -73,6 +73,28 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OGG_OPUS = 3;</code>
    */
   OGG_OPUS(3),
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * Audio content returned as MULAW also contains a WAV header.
+   * </pre>
+   *
+   * <code>MULAW = 5;</code>
+   */
+  MULAW(5),
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/A-law.
+   * Audio content returned as ALAW also contains a WAV header.
+   * </pre>
+   *
+   * <code>ALAW = 6;</code>
+   */
+  ALAW(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -120,6 +142,28 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OGG_OPUS = 3;</code>
    */
   public static final int OGG_OPUS_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * Audio content returned as MULAW also contains a WAV header.
+   * </pre>
+   *
+   * <code>MULAW = 5;</code>
+   */
+  public static final int MULAW_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/A-law.
+   * Audio content returned as ALAW also contains a WAV header.
+   * </pre>
+   *
+   * <code>ALAW = 6;</code>
+   */
+  public static final int ALAW_VALUE = 6;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -153,6 +197,10 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
         return MP3;
       case 3:
         return OGG_OPUS;
+      case 5:
+        return MULAW;
+      case 6:
+        return ALAW;
       default:
         return null;
     }

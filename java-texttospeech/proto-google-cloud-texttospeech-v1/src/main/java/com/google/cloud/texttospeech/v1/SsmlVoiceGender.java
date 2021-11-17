@@ -67,7 +67,7 @@ public enum SsmlVoiceGender implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * A gender-neutral voice.
+   * A gender-neutral voice. This voice is not yet supported.
    * </pre>
    *
    * <code>NEUTRAL = 3;</code>
@@ -114,7 +114,7 @@ public enum SsmlVoiceGender implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * A gender-neutral voice.
+   * A gender-neutral voice. This voice is not yet supported.
    * </pre>
    *
    * <code>NEUTRAL = 3;</code>
