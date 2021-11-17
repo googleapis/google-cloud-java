@@ -21,6 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/networksecurity/v1beta1/network_security.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class NetworkSecurityGrpc {
 
   private NetworkSecurityGrpc() {}
