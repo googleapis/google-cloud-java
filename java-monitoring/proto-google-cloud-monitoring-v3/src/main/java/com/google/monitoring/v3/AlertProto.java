@@ -91,7 +91,7 @@ public final class AlertProto {
           + "monitoring/v3/mutation_record.proto\032\036goo"
           + "gle/protobuf/duration.proto\032\036google/prot"
           + "obuf/wrappers.proto\032\027google/rpc/status.p"
-          + "roto\"\264\027\n\013AlertPolicy\022\014\n\004name\030\001 \001(\t\022\024\n\014di"
+          + "roto\"\343\027\n\013AlertPolicy\022\014\n\004name\030\001 \001(\t\022\024\n\014di"
           + "splay_name\030\002 \001(\t\022F\n\rdocumentation\030\r \001(\0132"
           + "/.google.monitoring.v3.AlertPolicy.Docum"
           + "entation\022F\n\013user_labels\030\020 \003(\01321.google.m"
@@ -152,26 +152,27 @@ public final class AlertProto {
           + "}/alertPolicies/{alert_policy}/condition"
           + "s/{condition}\022Dfolders/{folder}/alertPol"
           + "icies/{alert_policy}/conditions/{conditi"
-          + "on}\022\001*B\013\n\tcondition\032\273\001\n\rAlertStrategy\022f\n"
+          + "on}\022\001*B\013\n\tcondition\032\352\001\n\rAlertStrategy\022f\n"
           + "\027notification_rate_limit\030\001 \001(\0132E.google."
           + "monitoring.v3.AlertPolicy.AlertStrategy."
-          + "NotificationRateLimit\032B\n\025NotificationRat"
-          + "eLimit\022)\n\006period\030\001 \001(\0132\031.google.protobuf"
-          + ".Duration\0321\n\017UserLabelsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\025ConditionCombine"
-          + "rType\022\027\n\023COMBINE_UNSPECIFIED\020\000\022\007\n\003AND\020\001\022"
-          + "\006\n\002OR\020\002\022\036\n\032AND_WITH_MATCHING_RESOURCE\020\003:"
-          + "\311\001\352A\305\001\n%monitoring.googleapis.com/AlertP"
-          + "olicy\022/projects/{project}/alertPolicies/"
-          + "{alert_policy}\0229organizations/{organizat"
-          + "ion}/alertPolicies/{alert_policy}\022-folde"
-          + "rs/{folder}/alertPolicies/{alert_policy}"
-          + "\022\001*B\302\001\n\030com.google.monitoring.v3B\nAlertP"
-          + "rotoP\001Z>google.golang.org/genproto/googl"
-          + "eapis/monitoring/v3;monitoring\252\002\032Google."
-          + "Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Monit"
-          + "oring\\V3\352\002\035Google::Cloud::Monitoring::V3"
-          + "b\006proto3"
+          + "NotificationRateLimit\022-\n\nauto_close\030\003 \001("
+          + "\0132\031.google.protobuf.Duration\032B\n\025Notifica"
+          + "tionRateLimit\022)\n\006period\030\001 \001(\0132\031.google.p"
+          + "rotobuf.Duration\0321\n\017UserLabelsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\025Condition"
+          + "CombinerType\022\027\n\023COMBINE_UNSPECIFIED\020\000\022\007\n"
+          + "\003AND\020\001\022\006\n\002OR\020\002\022\036\n\032AND_WITH_MATCHING_RESO"
+          + "URCE\020\003:\311\001\352A\305\001\n%monitoring.googleapis.com"
+          + "/AlertPolicy\022/projects/{project}/alertPo"
+          + "licies/{alert_policy}\0229organizations/{or"
+          + "ganization}/alertPolicies/{alert_policy}"
+          + "\022-folders/{folder}/alertPolicies/{alert_"
+          + "policy}\022\001*B\302\001\n\030com.google.monitoring.v3B"
+          + "\nAlertProtoP\001Z>google.golang.org/genprot"
+          + "o/googleapis/monitoring/v3;monitoring\252\002\032"
+          + "Google.Cloud.Monitoring.V3\312\002\032Google\\Clou"
+          + "d\\Monitoring\\V3\352\002\035Google::Cloud::Monitor"
+          + "ing::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -299,7 +300,7 @@ public final class AlertProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor,
             new java.lang.String[] {
-              "NotificationRateLimit",
+              "NotificationRateLimit", "AutoClose",
             });
     internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_descriptor =
         internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor
