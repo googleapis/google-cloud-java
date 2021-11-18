@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-datacatalog/compare/v1.5.9...v1.6.0) (2021-11-17)
+
+
+### Features
+
+* Added BigQueryDateShardedSpec.latest_shard_resource field feat: Added SearchCatalogResult.display_name field feat: Added SearchCatalogResult.description field ([#683](https://www.github.com/googleapis/java-datacatalog/issues/683)) ([fdac6a0](https://www.github.com/googleapis/java-datacatalog/commit/fdac6a0a4b89c83fbc031a088b8e6cf426115563))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-datacatalog/issues/1266)) ([#678](https://www.github.com/googleapis/java-datacatalog/issues/678)) ([6d64ad2](https://www.github.com/googleapis/java-datacatalog/commit/6d64ad2c0b4728a18a5649601607417f50de9f8c))
+
+
+### Documentation
+
+* Improved formatting ([#688](https://www.github.com/googleapis/java-datacatalog/issues/688)) ([00c212f](https://www.github.com/googleapis/java-datacatalog/commit/00c212f957042dfab9a355f9b2817833ed6b6667))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#690](https://www.github.com/googleapis/java-datacatalog/issues/690)) ([9248cee](https://www.github.com/googleapis/java-datacatalog/commit/9248cee1c88639bea1bf66dc422e2dc300e209f3))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#676](https://www.github.com/googleapis/java-datacatalog/issues/676)) ([65e1cdc](https://www.github.com/googleapis/java-datacatalog/commit/65e1cdc07603f98803b6f6c6ce419f4878136712))
+
 ### [1.5.9](https://www.github.com/googleapis/java-datacatalog/compare/v1.5.8...v1.5.9) (2021-10-19)
 
 
