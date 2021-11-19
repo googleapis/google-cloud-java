@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.6.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.6.2...v2.6.3) (2021-11-19)
+
+
+### Dependencies
+
+* update arrow.version to v6.0.1 ([#1417](https://www.github.com/googleapis/java-bigquerystorage/issues/1417)) ([e545cd2](https://www.github.com/googleapis/java-bigquerystorage/commit/e545cd242b5fb12a469a1e3cf389403d889e49cc))
+
 ### [2.6.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.6.1...v2.6.2) (2021-11-17)
 
 
