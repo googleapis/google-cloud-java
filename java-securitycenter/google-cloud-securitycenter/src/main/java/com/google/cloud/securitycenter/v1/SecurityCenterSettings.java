@@ -232,6 +232,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateExternalSystem. */
+  public UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
+      updateExternalSystemSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).updateExternalSystemSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateFinding. */
   public UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).updateFindingSettings();
@@ -515,6 +521,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExternalSystem. */
+    public UnaryCallSettings.Builder<UpdateExternalSystemRequest, ExternalSystem>
+        updateExternalSystemSettings() {
+      return getStubSettingsBuilder().updateExternalSystemSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateFinding. */

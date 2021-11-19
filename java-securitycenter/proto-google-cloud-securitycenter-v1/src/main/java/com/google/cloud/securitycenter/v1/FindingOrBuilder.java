@@ -654,6 +654,78 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getExternalSystemsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsExternalSystems(java.lang.String key);
+  /** Use {@link #getExternalSystemsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+      getExternalSystems();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+      getExternalSystemsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrDefault(
+      java.lang.String key, com.google.cloud.securitycenter.v1.ExternalSystem defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * First known as mute_annotation. Records additional information about the
    * mute operation e.g. mute config that muted the finding, user who muted the
    * finding, etc.

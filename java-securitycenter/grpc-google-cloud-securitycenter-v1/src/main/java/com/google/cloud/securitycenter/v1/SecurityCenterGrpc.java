@@ -1145,6 +1145,56 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest,
+          com.google.cloud.securitycenter.v1.ExternalSystem>
+      getUpdateExternalSystemMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateExternalSystem",
+      requestType = com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.ExternalSystem.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest,
+          com.google.cloud.securitycenter.v1.ExternalSystem>
+      getUpdateExternalSystemMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest,
+            com.google.cloud.securitycenter.v1.ExternalSystem>
+        getUpdateExternalSystemMethod;
+    if ((getUpdateExternalSystemMethod = SecurityCenterGrpc.getUpdateExternalSystemMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getUpdateExternalSystemMethod = SecurityCenterGrpc.getUpdateExternalSystemMethod)
+            == null) {
+          SecurityCenterGrpc.getUpdateExternalSystemMethod =
+              getUpdateExternalSystemMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest,
+                          com.google.cloud.securitycenter.v1.ExternalSystem>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateExternalSystem"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.ExternalSystem
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("UpdateExternalSystem"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateExternalSystemMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.UpdateFindingRequest,
           com.google.cloud.securitycenter.v1.Finding>
       getUpdateFindingMethod;
@@ -1850,6 +1900,21 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates external system. This is for a given finding.
+     * </pre>
+     */
+    public void updateExternalSystem(
+        com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ExternalSystem>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateExternalSystemMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates or updates a finding. The corresponding source must exist for a
      * finding creation to succeed.
      * </pre>
@@ -2097,6 +2162,13 @@ public final class SecurityCenterGrpc {
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
+          .addMethod(
+              getUpdateExternalSystemMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest,
+                      com.google.cloud.securitycenter.v1.ExternalSystem>(
+                      this, METHODID_UPDATE_EXTERNAL_SYSTEM)))
           .addMethod(
               getUpdateFindingMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2570,6 +2642,23 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates external system. This is for a given finding.
+     * </pre>
+     */
+    public void updateExternalSystem(
+        com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ExternalSystem>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateExternalSystemMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates or updates a finding. The corresponding source must exist for a
      * finding creation to succeed.
      * </pre>
@@ -3012,6 +3101,19 @@ public final class SecurityCenterGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates external system. This is for a given finding.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.ExternalSystem updateExternalSystem(
+        com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExternalSystemMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3468,6 +3570,21 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates external system. This is for a given finding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.ExternalSystem>
+        updateExternalSystem(
+            com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateExternalSystemMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates or updates a finding. The corresponding source must exist for a
      * finding creation to succeed.
      * </pre>
@@ -3577,12 +3694,13 @@ public final class SecurityCenterGrpc {
   private static final int METHODID_SET_MUTE = 21;
   private static final int METHODID_SET_IAM_POLICY = 22;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 23;
-  private static final int METHODID_UPDATE_FINDING = 24;
-  private static final int METHODID_UPDATE_MUTE_CONFIG = 25;
-  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 26;
-  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 27;
-  private static final int METHODID_UPDATE_SOURCE = 28;
-  private static final int METHODID_UPDATE_SECURITY_MARKS = 29;
+  private static final int METHODID_UPDATE_EXTERNAL_SYSTEM = 24;
+  private static final int METHODID_UPDATE_FINDING = 25;
+  private static final int METHODID_UPDATE_MUTE_CONFIG = 26;
+  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 27;
+  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 28;
+  private static final int METHODID_UPDATE_SOURCE = 29;
+  private static final int METHODID_UPDATE_SECURITY_MARKS = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3742,6 +3860,12 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
                   responseObserver);
           break;
+        case METHODID_UPDATE_EXTERNAL_SYSTEM:
+          serviceImpl.updateExternalSystem(
+              (com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ExternalSystem>)
+                  responseObserver);
+          break;
         case METHODID_UPDATE_FINDING:
           serviceImpl.updateFinding(
               (com.google.cloud.securitycenter.v1.UpdateFindingRequest) request,
@@ -3866,6 +3990,7 @@ public final class SecurityCenterGrpc {
                       .addMethod(getSetMuteMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getUpdateExternalSystemMethod())
                       .addMethod(getUpdateFindingMethod())
                       .addMethod(getUpdateMuteConfigMethod())
                       .addMethod(getUpdateNotificationConfigMethod())

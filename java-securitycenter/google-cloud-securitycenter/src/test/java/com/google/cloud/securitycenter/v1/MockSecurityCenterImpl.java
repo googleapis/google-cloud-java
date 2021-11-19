@@ -569,6 +569,27 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void updateExternalSystem(
+      UpdateExternalSystemRequest request, StreamObserver<ExternalSystem> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExternalSystem) {
+      requests.add(request);
+      responseObserver.onNext(((ExternalSystem) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExternalSystem, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExternalSystem.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateFinding(
       UpdateFindingRequest request, StreamObserver<Finding> responseObserver) {
     Object response = responses.poll();

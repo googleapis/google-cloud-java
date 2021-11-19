@@ -297,6 +297,7 @@ public class SecurityCenterClientTest {
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -357,6 +358,7 @@ public class SecurityCenterClientTest {
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2420,6 +2422,7 @@ public class SecurityCenterClientTest {
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2482,6 +2485,7 @@ public class SecurityCenterClientTest {
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2542,6 +2546,7 @@ public class SecurityCenterClientTest {
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2601,6 +2606,7 @@ public class SecurityCenterClientTest {
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2803,6 +2809,52 @@ public class SecurityCenterClientTest {
   }
 
   @Test
+  public void updateExternalSystemTest() throws Exception {
+    ExternalSystem expectedResponse =
+        ExternalSystem.newBuilder()
+            .setName("name3373707")
+            .addAllAssignees(new ArrayList<String>())
+            .setExternalUid("externalUid-1153085307")
+            .setStatus("status-892481550")
+            .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ExternalSystem externalSystem = ExternalSystem.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ExternalSystem actualResponse = client.updateExternalSystem(externalSystem, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateExternalSystemRequest actualRequest =
+        ((UpdateExternalSystemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(externalSystem, actualRequest.getExternalSystem());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateExternalSystemExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ExternalSystem externalSystem = ExternalSystem.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateExternalSystem(externalSystem, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateFindingTest() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
@@ -2822,6 +2874,7 @@ public class SecurityCenterClientTest {
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
+            .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);

@@ -82,6 +82,9 @@
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
+            "UpdateExternalSystem": {
+              "methods": ["updateExternalSystem", "updateExternalSystem", "updateExternalSystemCallable"]
+            },
             "UpdateFinding": {
               "methods": ["updateFinding", "updateFinding", "updateFindingCallable"]
             },

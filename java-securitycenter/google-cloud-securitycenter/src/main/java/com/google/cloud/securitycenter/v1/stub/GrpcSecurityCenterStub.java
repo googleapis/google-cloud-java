@@ -39,6 +39,7 @@ import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
@@ -67,6 +68,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
+import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
@@ -337,6 +339,17 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateExternalSystemRequest, ExternalSystem>
+      updateExternalSystemMethodDescriptor =
+          MethodDescriptor.<UpdateExternalSystemRequest, ExternalSystem>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateExternalSystem")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateExternalSystemRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExternalSystem.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateFindingRequest, Finding>
       updateFindingMethodDescriptor =
           MethodDescriptor.<UpdateFindingRequest, Finding>newBuilder()
@@ -447,6 +460,8 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<UpdateExternalSystemRequest, ExternalSystem>
+      updateExternalSystemCallable;
   private final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable;
   private final UnaryCallable<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigCallable;
   private final UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>
@@ -749,6 +764,19 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<UpdateExternalSystemRequest, ExternalSystem>
+        updateExternalSystemTransportSettings =
+            GrpcCallSettings.<UpdateExternalSystemRequest, ExternalSystem>newBuilder()
+                .setMethodDescriptor(updateExternalSystemMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "external_system.name",
+                          String.valueOf(request.getExternalSystem().getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<UpdateFindingRequest, Finding> updateFindingTransportSettings =
         GrpcCallSettings.<UpdateFindingRequest, Finding>newBuilder()
             .setMethodDescriptor(updateFindingMethodDescriptor)
@@ -939,6 +967,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.updateExternalSystemCallable =
+        callableFactory.createUnaryCallable(
+            updateExternalSystemTransportSettings,
+            settings.updateExternalSystemSettings(),
             clientContext);
     this.updateFindingCallable =
         callableFactory.createUnaryCallable(
@@ -1146,6 +1179,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateExternalSystemRequest, ExternalSystem> updateExternalSystemCallable() {
+    return updateExternalSystemCallable;
   }
 
   @Override

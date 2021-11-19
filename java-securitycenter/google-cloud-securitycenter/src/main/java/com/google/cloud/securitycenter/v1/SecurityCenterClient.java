@@ -3346,6 +3346,85 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates external system. This is for a given finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ExternalSystem externalSystem = ExternalSystem.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ExternalSystem response =
+   *       securityCenterClient.updateExternalSystem(externalSystem, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param externalSystem Required. The external system resource to update.
+   * @param updateMask The FieldMask to use when updating the external system resource.
+   *     <p>If empty all mutable fields will be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalSystem updateExternalSystem(
+      ExternalSystem externalSystem, FieldMask updateMask) {
+    UpdateExternalSystemRequest request =
+        UpdateExternalSystemRequest.newBuilder()
+            .setExternalSystem(externalSystem)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateExternalSystem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates external system. This is for a given finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateExternalSystemRequest request =
+   *       UpdateExternalSystemRequest.newBuilder()
+   *           .setExternalSystem(ExternalSystem.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ExternalSystem response = securityCenterClient.updateExternalSystem(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalSystem updateExternalSystem(UpdateExternalSystemRequest request) {
+    return updateExternalSystemCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates external system. This is for a given finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateExternalSystemRequest request =
+   *       UpdateExternalSystemRequest.newBuilder()
+   *           .setExternalSystem(ExternalSystem.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ExternalSystem> future =
+   *       securityCenterClient.updateExternalSystemCallable().futureCall(request);
+   *   // Do something.
+   *   ExternalSystem response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateExternalSystemRequest, ExternalSystem>
+      updateExternalSystemCallable() {
+    return stub.updateExternalSystemCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates or updates a finding. The corresponding source must exist for a finding creation to
    * succeed.
    *
