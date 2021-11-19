@@ -24,6 +24,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.examples.storage.objects.BatchSetObjectMetadata;
 import com.google.cloud.examples.storage.objects.ChangeObjectCSEKtoKMS;
 import com.google.cloud.examples.storage.objects.ChangeObjectStorageClass;
 import com.google.cloud.examples.storage.objects.ComposeObject;
@@ -270,6 +271,20 @@ public class ITBlobSnippets {
     SetObjectMetadata.setObjectMetadata(PROJECT_ID, BUCKET, BLOB);
     Map<String, String> metadata = storage.get(BUCKET, BLOB).getMetadata();
     assertEquals("value", metadata.get("keyToAddOrUpdate"));
+  }
+
+  @Test
+  public void testBatchSetObjectMetadata() {
+    storage.create(BlobInfo.newBuilder(BUCKET, "b/1.txt").build());
+    storage.create(BlobInfo.newBuilder(BUCKET, "b/2.txt").build());
+
+    BatchSetObjectMetadata.batchSetObjectMetadata(PROJECT_ID, BUCKET, "b/");
+
+    Map<String, String> firstBlobMetadata = storage.get(BUCKET, "b/1.txt").getMetadata();
+    Map<String, String> secondBlobMetadata = storage.get(BUCKET, "b/2.txt").getMetadata();
+
+    assertEquals("value", firstBlobMetadata.get("keyToAddOrUpdate"));
+    assertEquals("value", secondBlobMetadata.get("keyToAddOrUpdate"));
   }
 
   @Test
