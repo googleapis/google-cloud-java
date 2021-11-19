@@ -192,9 +192,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result
-     * should be exported to. If this dataset does not exist, the export call
-     * returns an INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result should be
+     * exported to. If this dataset does not exist, the export call returns an
+     * INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -206,9 +206,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result
-     * should be exported to. If this dataset does not exist, the export call
-     * returns an INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result should be
+     * exported to. If this dataset does not exist, the export call returns an
+     * INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -417,9 +417,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result
-     * should be exported to. If this dataset does not exist, the export call
-     * returns an INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result should be
+     * exported to. If this dataset does not exist, the export call returns an
+     * INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -442,9 +442,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result
-     * should be exported to. If this dataset does not exist, the export call
-     * returns an INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result should be
+     * exported to. If this dataset does not exist, the export call returns an
+     * INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1042,9 +1042,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result
-       * should be exported to. If this dataset does not exist, the export call
-       * returns an INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result should be
+       * exported to. If this dataset does not exist, the export call returns an
+       * INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1066,9 +1066,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result
-       * should be exported to. If this dataset does not exist, the export call
-       * returns an INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result should be
+       * exported to. If this dataset does not exist, the export call returns an
+       * INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1090,9 +1090,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result
-       * should be exported to. If this dataset does not exist, the export call
-       * returns an INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result should be
+       * exported to. If this dataset does not exist, the export call returns an
+       * INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1113,9 +1113,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result
-       * should be exported to. If this dataset does not exist, the export call
-       * returns an INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result should be
+       * exported to. If this dataset does not exist, the export call returns an
+       * INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1132,9 +1132,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result
-       * should be exported to. If this dataset does not exist, the export call
-       * returns an INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result should be
+       * exported to. If this dataset does not exist, the export call returns an
+       * INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -100,8 +100,8 @@ public interface CreateConversationRequestOrBuilder
    * A unique ID for the new conversation. This ID will become the final
    * component of the conversation's resource name. If no ID is specified, a
    * server-generated ID will be used.
-   * This value should be 4-32 characters and must match the regular
-   * expression /^[a-z0-9-]{4,32}$/. Valid characters are /[a-z][0-9]-/
+   * This value should be 4-64 characters and must match the regular
+   * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * </pre>
    *
    * <code>string conversation_id = 3;</code>
@@ -116,8 +116,8 @@ public interface CreateConversationRequestOrBuilder
    * A unique ID for the new conversation. This ID will become the final
    * component of the conversation's resource name. If no ID is specified, a
    * server-generated ID will be used.
-   * This value should be 4-32 characters and must match the regular
-   * expression /^[a-z0-9-]{4,32}$/. Valid characters are /[a-z][0-9]-/
+   * This value should be 4-64 characters and must match the regular
+   * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * </pre>
    *
    * <code>string conversation_id = 3;</code>

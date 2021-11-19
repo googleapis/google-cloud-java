@@ -192,8 +192,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param conversationId A unique ID for the new conversation. This ID will become the final
    *     component of the conversation's resource name. If no ID is specified, a server-generated ID
    *     will be used.
-   *     <p>This value should be 4-32 characters and must match the regular expression
-   *     /^[a-z0-9-]{4,32}$/. Valid characters are /[a-z][0-9]-/
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation createConversation(
@@ -229,8 +229,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param conversationId A unique ID for the new conversation. This ID will become the final
    *     component of the conversation's resource name. If no ID is specified, a server-generated ID
    *     will be used.
-   *     <p>This value should be 4-32 characters and must match the regular expression
-   *     /^[a-z0-9-]{4,32}$/. Valid characters are /[a-z][0-9]-/
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation createConversation(

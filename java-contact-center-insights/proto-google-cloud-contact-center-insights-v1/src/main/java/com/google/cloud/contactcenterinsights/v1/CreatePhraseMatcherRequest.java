@@ -134,10 +134,10 @@ public final class CreatePhraseMatcherRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The parent resource of the phrase matcher. Required. The location
-   * to create a phrase matcher for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-   * Number&gt;/locations/&lt;Location ID&gt;`
+   * Required. The parent resource of the phrase matcher. Required. The location to create
+   * a phrase matcher for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+   * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>
@@ -162,10 +162,10 @@ public final class CreatePhraseMatcherRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The parent resource of the phrase matcher. Required. The location
-   * to create a phrase matcher for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-   * Number&gt;/locations/&lt;Location ID&gt;`
+   * Required. The parent resource of the phrase matcher. Required. The location to create
+   * a phrase matcher for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+   * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>
@@ -602,10 +602,10 @@ public final class CreatePhraseMatcherRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
+     * Required. The parent resource of the phrase matcher. Required. The location to create
+     * a phrase matcher for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+     * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
      * </pre>
      *
      * <code>
@@ -629,10 +629,10 @@ public final class CreatePhraseMatcherRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
+     * Required. The parent resource of the phrase matcher. Required. The location to create
+     * a phrase matcher for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+     * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
      * </pre>
      *
      * <code>
@@ -656,10 +656,10 @@ public final class CreatePhraseMatcherRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
+     * Required. The parent resource of the phrase matcher. Required. The location to create
+     * a phrase matcher for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+     * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
      * </pre>
      *
      * <code>
@@ -682,10 +682,10 @@ public final class CreatePhraseMatcherRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
+     * Required. The parent resource of the phrase matcher. Required. The location to create
+     * a phrase matcher for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+     * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
      * </pre>
      *
      * <code>
@@ -704,10 +704,10 @@ public final class CreatePhraseMatcherRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
+     * Required. The parent resource of the phrase matcher. Required. The location to create
+     * a phrase matcher for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+     * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
      * </pre>
      *
      * <code>

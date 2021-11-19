@@ -233,6 +233,21 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return The runtimeIntegrationAnalysisPercentage.
      */
     double getRuntimeIntegrationAnalysisPercentage();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to disable issue model inference during analysis.
+     * By default issue modeling will be included in analysis if there is an
+     * active issue model for the project.
+     * </pre>
+     *
+     * <code>bool disable_issue_modeling = 3;</code>
+     *
+     * @return The disableIssueModeling.
+     */
+    boolean getDisableIssueModeling();
   }
   /**
    *
@@ -289,6 +304,11 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
                 runtimeIntegrationAnalysisPercentage_ = input.readDouble();
                 break;
               }
+            case 24:
+              {
+                disableIssueModeling_ = input.readBool();
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -342,6 +362,26 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return runtimeIntegrationAnalysisPercentage_;
     }
 
+    public static final int DISABLE_ISSUE_MODELING_FIELD_NUMBER = 3;
+    private boolean disableIssueModeling_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to disable issue model inference during analysis.
+     * By default issue modeling will be included in analysis if there is an
+     * active issue model for the project.
+     * </pre>
+     *
+     * <code>bool disable_issue_modeling = 3;</code>
+     *
+     * @return The disableIssueModeling.
+     */
+    @java.lang.Override
+    public boolean getDisableIssueModeling() {
+      return disableIssueModeling_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -359,6 +399,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (runtimeIntegrationAnalysisPercentage_ != 0D) {
         output.writeDouble(1, runtimeIntegrationAnalysisPercentage_);
       }
+      if (disableIssueModeling_ != false) {
+        output.writeBool(3, disableIssueModeling_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -372,6 +415,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeDoubleSize(
                 1, runtimeIntegrationAnalysisPercentage_);
+      }
+      if (disableIssueModeling_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, disableIssueModeling_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -392,6 +438,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToLongBits(getRuntimeIntegrationAnalysisPercentage())
           != java.lang.Double.doubleToLongBits(other.getRuntimeIntegrationAnalysisPercentage()))
         return false;
+      if (getDisableIssueModeling() != other.getDisableIssueModeling()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -408,6 +455,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getRuntimeIntegrationAnalysisPercentage()));
+      hash = (37 * hash) + DISABLE_ISSUE_MODELING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableIssueModeling());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -560,6 +609,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         runtimeIntegrationAnalysisPercentage_ = 0D;
 
+        disableIssueModeling_ = false;
+
         return this;
       }
 
@@ -590,6 +641,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig result =
             new com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig(this);
         result.runtimeIntegrationAnalysisPercentage_ = runtimeIntegrationAnalysisPercentage_;
+        result.disableIssueModeling_ = disableIssueModeling_;
         onBuilt();
         return result;
       }
@@ -647,6 +699,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (other.getRuntimeIntegrationAnalysisPercentage() != 0D) {
           setRuntimeIntegrationAnalysisPercentage(other.getRuntimeIntegrationAnalysisPercentage());
+        }
+        if (other.getDisableIssueModeling() != false) {
+          setDisableIssueModeling(other.getDisableIssueModeling());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -730,6 +785,64 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       public Builder clearRuntimeIntegrationAnalysisPercentage() {
 
         runtimeIntegrationAnalysisPercentage_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private boolean disableIssueModeling_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable issue model inference during analysis.
+       * By default issue modeling will be included in analysis if there is an
+       * active issue model for the project.
+       * </pre>
+       *
+       * <code>bool disable_issue_modeling = 3;</code>
+       *
+       * @return The disableIssueModeling.
+       */
+      @java.lang.Override
+      public boolean getDisableIssueModeling() {
+        return disableIssueModeling_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable issue model inference during analysis.
+       * By default issue modeling will be included in analysis if there is an
+       * active issue model for the project.
+       * </pre>
+       *
+       * <code>bool disable_issue_modeling = 3;</code>
+       *
+       * @param value The disableIssueModeling to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableIssueModeling(boolean value) {
+
+        disableIssueModeling_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable issue model inference during analysis.
+       * By default issue modeling will be included in analysis if there is an
+       * active issue model for the project.
+       * </pre>
+       *
+       * <code>bool disable_issue_modeling = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableIssueModeling() {
+
+        disableIssueModeling_ = false;
         onChanged();
         return this;
       }
