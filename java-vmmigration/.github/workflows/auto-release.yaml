@@ -1,0 +1,88 @@
+on:
+  pull_request:
+name: auto-release
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'release-please')
+    steps:
+    - uses: actions/github-script@v3
+      with:
+        github-token: ${{secrets.YOSHI_APPROVER_TOKEN}}
+        debug: true
+        script: |
+          // only approve PRs from release-please[bot]
+          if (context.payload.pull_request.user.login !== "release-please[bot]") {
+            return;
+          }
+
+          // only approve PRs like "chore: release <release version>"
+          if ( !context.payload.pull_request.title.startsWith("chore: release") ) {
+            return;
+          }
+
+          // only approve PRs with pom.xml and versions.txt changes
+          const filesPromise = github.pulls.listFiles.endpoint({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.payload.pull_request.number,
+          });
+          const changed_files = await github.paginate(filesPromise)
+
+          if ( changed_files.length < 1 ) {
+            console.log( "Not proceeding since PR is empty!" )
+            return;
+          }
+
+          if ( !changed_files.some(v => v.filename.includes("pom")) || !changed_files.some(v => v.filename.includes("versions.txt")) ) {
+            console.log( "PR file changes do not have pom.xml or versions.txt -- something is wrong. PTAL!" )
+            return;
+          }
+
+          // trigger auto-release when
+          // 1) it is a SNAPSHOT release (auto-generated post regular release)
+          // 2) there are dependency updates only
+          // 3) there are no open dependency update PRs in this repo (to avoid multiple releases)
+          if (
+            context.payload.pull_request.body.includes("Fix") ||
+            context.payload.pull_request.body.includes("Build") ||
+            context.payload.pull_request.body.includes("Documentation") ||
+            context.payload.pull_request.body.includes("BREAKING CHANGES") ||
+            context.payload.pull_request.body.includes("Features")
+          ) {
+            console.log( "Not auto-releasing since it is not a dependency-update-only release." );
+            return;
+          }
+
+          const promise = github.pulls.list.endpoint({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'open'
+          });
+          const open_pulls = await github.paginate(promise)
+
+          if ( open_pulls.length > 1 && !context.payload.pull_request.title.includes("SNAPSHOT") ) {
+            for ( const pull of open_pulls ) {
+              if ( pull.title.startsWith("deps: update dependency") ) {
+                console.log( "Not auto-releasing yet since there are dependency update PRs open in this repo." );
+                return;
+              }
+            }
+          }
+
+          // approve release PR
+          await github.pulls.createReview({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Rubber stamped release!',
+            pull_number: context.payload.pull_request.number,
+            event: 'APPROVE'
+          });
+
+          // attach kokoro:force-run and automerge labels
+          await github.issues.addLabels({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.payload.pull_request.number,
+            labels: ['kokoro:force-run', 'automerge']
+          });
