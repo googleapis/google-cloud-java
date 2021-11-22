@@ -53,12 +53,12 @@ mvn -Penable-integration-tests clean verify
 
 ## Code Samples
 
-Code Samples must be bundled in separate Maven modules, and guarded by a
-Maven profile with the name `enable-samples`.
+All code samples must be in compliance with the [java sample formatting guide][3].
+Code Samples must be bundled in separate Maven modules.
 
 The samples must be separate from the primary project for a few reasons:
-1. Primary projects have a minimum Java version of Java 7 whereas samples have
-   a minimum Java version of Java 8. Due to this we need the ability to
+1. Primary projects have a minimum Java version of Java 8 whereas samples can have
+   Java version of Java 11. Due to this we need the ability to
    selectively exclude samples from a build run.
 2. Many code samples depend on external GCP services and need
    credentials to access the service.
@@ -68,38 +68,15 @@ The samples must be separate from the primary project for a few reasons:
 ### Building
 
 ```bash
-mvn -Penable-samples clean verify
+mvn clean verify
 ```
 
 Some samples require access to GCP services and require a service account:
 
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service/account.json
-mvn -Penable-samples clean verify
+mvn clean verify
 ```
-
-### Profile Config
-
-1. To add samples in a profile to your Maven project, add the following to your
-`pom.xml`
-
-    ```xml
-    <project>
-      [...]
-      <profiles>
-        <profile>
-          <id>enable-samples</id>
-          <modules>
-            <module>sample</module>
-          </modules>
-        </profile>
-      </profiles>
-      [...]
-    </project>
-    ```
-
-2. [Activate](#profile-activation) the profile.
-3. Define your samples in a normal Maven project in the `samples/` directory.
 
 ### Code Formatting
 
@@ -110,30 +87,6 @@ To run formatting on your project, you can run:
 mvn com.coveo:fmt-maven-plugin:format
 ```
 
-### Profile Activation
-
-To include code samples when building and testing the project, enable the 
-`enable-samples` Maven profile.
-
-#### Command line
-
-To activate the Maven profile on the command line add `-Penable-samples` to your
-Maven command.
-
-#### Maven `settings.xml`
-
-To activate the Maven profile in your `~/.m2/settings.xml` add an entry of
-`enable-samples` following the instructions in [Active Profiles][2].
-
-This method has the benefit of applying to all projects you build (and is
-respected by IntelliJ IDEA) and is recommended if you are going to be
-contributing samples to several projects.
-
-#### IntelliJ IDEA
-
-To activate the Maven Profile inside IntelliJ IDEA, follow the instructions in
-[Activate Maven profiles][3] to activate `enable-samples`.
-
 [1]: https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account
 [2]: https://maven.apache.org/settings.html#Active_Profiles
-[3]: https://www.jetbrains.com/help/idea/work-with-maven-profiles.html#activate_maven_profiles
+[3]: https://github.com/GoogleCloudPlatform/java-docs-samples/blob/main/SAMPLE_FORMAT.md
