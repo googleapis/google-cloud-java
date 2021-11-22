@@ -119,7 +119,8 @@ public class ITPaginationTest extends BaseTest {
         presented = true;
       }
     }
-    Assert.assertTrue(presented);
+    Assert.assertTrue(
+        String.format("Zone %s was not found in zones list.", DEFAULT_ZONE), presented);
   }
 
   @Test
