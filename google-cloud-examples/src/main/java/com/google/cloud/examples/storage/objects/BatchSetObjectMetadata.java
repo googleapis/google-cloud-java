@@ -20,7 +20,7 @@ public class BatchSetObjectMetadata {
 
     // The directory prefix. All objects in the bucket with this prefix will have their metadata
     // updated
-    // String objectName = "your-object-name";
+    // String directoryPrefix = "yourDirectory/";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Map<String, String> newMetadata = new HashMap<>();
