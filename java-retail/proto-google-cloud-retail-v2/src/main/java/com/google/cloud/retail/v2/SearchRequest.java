@@ -850,6 +850,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -857,6 +858,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -896,6 +898,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -903,6 +906,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1526,6 +1530,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -1533,6 +1538,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1583,6 +1589,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -1590,6 +1597,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2667,6 +2675,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2674,6 +2683,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2723,6 +2733,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2730,6 +2741,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2779,6 +2791,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2786,6 +2799,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2834,6 +2848,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2841,6 +2856,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2885,6 +2901,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2892,6 +2909,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10464,7 +10482,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -10535,7 +10556,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -10606,7 +10630,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -10678,7 +10705,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -14016,7 +14046,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14087,7 +14120,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14158,7 +14194,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14230,7 +14269,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14302,7 +14344,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14381,7 +14426,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14459,7 +14507,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14534,7 +14585,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -14608,7 +14662,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
