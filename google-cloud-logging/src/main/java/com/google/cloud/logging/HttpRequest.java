@@ -36,6 +36,7 @@ import org.threeten.bp.Duration;
 public final class HttpRequest implements Serializable {
 
   private static final long serialVersionUID = -274998005454709817L;
+  public static final HttpRequest EMPTY = newBuilder().build();
 
   private final RequestMethod requestMethod;
   private final String requestUrl;

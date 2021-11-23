@@ -92,6 +92,7 @@ public class HttpRequestTest {
     assertFalse(httpRequest.cacheHit());
     assertFalse(httpRequest.cacheValidatedWithOriginServer());
     assertNull(httpRequest.getCacheFillBytes());
+    assertEquals(httpRequest, HttpRequest.EMPTY);
   }
 
   @Test

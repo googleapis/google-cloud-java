@@ -200,6 +200,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   private static class LogNamePageFetcher extends BasePageFetcher<String> {
+    private static final long serialVersionUID = 5308841362690185583L;
 
     LogNamePageFetcher(
         LoggingOptions serviceOptions, String cursor, Map<Option.OptionType, ?> requestOptions) {
@@ -244,6 +245,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   private static class ExclusionPageFetcher extends BasePageFetcher<Exclusion> {
+    private static final long serialVersionUID = -1414118808031778916L;
 
     ExclusionPageFetcher(
         LoggingOptions serviceOptions, String cursor, Map<Option.OptionType, ?> requestOptions) {

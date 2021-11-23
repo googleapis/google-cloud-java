@@ -40,6 +40,7 @@ class LoggingConfig {
   private static final String SYNCHRONICITY_TAG = "synchronicity";
   private static final String RESOURCE_TYPE_TAG = "resourceType";
   private static final String ENHANCERS_TAG = "enhancers";
+  private static final String USE_INHERITED_CONTEXT = "useInheritedContext";
 
   public LoggingConfig(String className) {
     this.className = className;
@@ -100,6 +101,18 @@ class LoggingConfig {
     return Collections.emptyList();
   }
 
+  /**
+   * Returns boolean value of the property {@code
+   * com.google.cloud.logging.context.ContextHandler.useInheritedContext}. If no value is defined or
+   * the property does not represent a valid boolean value returns {@code false}.
+   *
+   * @return {@code true} or {@code false}
+   */
+  boolean getUseInheritedContext() {
+    String flag = getProperty(USE_INHERITED_CONTEXT, "FALSE");
+    return Boolean.parseBoolean(flag);
+  }
+
   private String getProperty(String name, String defaultValue) {
     return firstNonNull(getProperty(name), defaultValue);
   }
@@ -121,7 +134,7 @@ class LoggingConfig {
     String stringFilter = getProperty(name);
     try {
       if (stringFilter != null) {
-        Class clz = ClassLoader.getSystemClassLoader().loadClass(stringFilter);
+        Class<?> clz = ClassLoader.getSystemClassLoader().loadClass(stringFilter);
         return (Filter) clz.getDeclaredConstructor().newInstance();
       }
     } catch (Exception ex) {
@@ -134,7 +147,7 @@ class LoggingConfig {
     String stringFilter = getProperty(name);
     try {
       if (stringFilter != null) {
-        Class clz = ClassLoader.getSystemClassLoader().loadClass(stringFilter);
+        Class<?> clz = ClassLoader.getSystemClassLoader().loadClass(stringFilter);
         return (Formatter) clz.getDeclaredConstructor().newInstance();
       }
     } catch (Exception ex) {
