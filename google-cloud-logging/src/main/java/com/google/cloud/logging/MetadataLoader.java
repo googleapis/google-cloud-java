@@ -137,10 +137,10 @@ public final class MetadataLoader {
    * K8S_POD_NAMESPACE_PATH} when available or read from a user defined environment variable
    * "NAMESPACE_NAME"
    *
-   * @return Namespace name or empty string if the name could not be discovered
+   * @return Namespace string or null if the name could not be discovered
    */
   private String getNamespaceName() {
-    String value = "";
+    String value = null;
     try {
       value =
           new String(
@@ -151,9 +151,6 @@ public final class MetadataLoader {
       // if SA token is not shared the info about namespace is unavailable
       // allow users to define the namespace name explicitly
       value = getter.getEnv("NAMESPACE_NAME");
-      if (value == null) {
-        value = "";
-      }
     }
     return value;
   }
@@ -178,7 +175,10 @@ public final class MetadataLoader {
    */
   private String getRegion() {
     String loc = getter.getAttribute("instance/region");
-    return loc.substring(loc.lastIndexOf('/') + 1);
+    if (loc != null) {
+      return loc.substring(loc.lastIndexOf('/') + 1);
+    }
+    return null;
   }
 
   private String getRevisionName() {
@@ -199,6 +199,9 @@ public final class MetadataLoader {
    */
   private String getZone() {
     String loc = getter.getAttribute("instance/zone");
-    return loc.substring(loc.lastIndexOf('/') + 1);
+    if (loc != null) {
+      return loc.substring(loc.lastIndexOf('/') + 1);
+    }
+    return null;
   }
 }
