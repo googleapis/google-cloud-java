@@ -535,7 +535,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
-   *   String parent = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Tensorboard element : tensorboardServiceClient.listTensorboards(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -562,7 +562,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   ListTensorboardsRequest request =
    *       ListTensorboardsRequest.newBuilder()
-   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -592,7 +592,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   ListTensorboardsRequest request =
    *       ListTensorboardsRequest.newBuilder()
-   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -623,7 +623,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   ListTensorboardsRequest request =
    *       ListTensorboardsRequest.newBuilder()
-   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1136,9 +1136,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
-   *   String parent =
-   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
-   *           .toString();
+   *   String parent = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString();
    *   for (TensorboardExperiment element :
    *       tensorboardServiceClient.listTensorboardExperiments(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1166,10 +1164,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   ListTensorboardExperimentsRequest request =
    *       ListTensorboardExperimentsRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
-   *                   .toString())
+   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1201,10 +1196,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   ListTensorboardExperimentsRequest request =
    *       ListTensorboardExperimentsRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
-   *                   .toString())
+   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1236,10 +1228,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   ListTensorboardExperimentsRequest request =
    *       ListTensorboardExperimentsRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
-   *                   .toString())
+   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1889,7 +1878,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   String parent =
-   *       TensorboardRunName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
+   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
    *           .toString();
    *   for (TensorboardRun element :
    *       tensorboardServiceClient.listTensorboardRuns(parent).iterateAll()) {
@@ -1920,8 +1909,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *   ListTensorboardRunsRequest request =
    *       ListTensorboardRunsRequest.newBuilder()
    *           .setParent(
-   *               TensorboardRunName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -1955,8 +1944,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *   ListTensorboardRunsRequest request =
    *       ListTensorboardRunsRequest.newBuilder()
    *           .setParent(
-   *               TensorboardRunName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -1989,8 +1978,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *   ListTensorboardRunsRequest request =
    *       ListTensorboardRunsRequest.newBuilder()
    *           .setParent(
-   *               TensorboardRunName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -2675,13 +2664,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   String parent =
-   *       TensorboardTimeSeriesName.of(
-   *               "[PROJECT]",
-   *               "[LOCATION]",
-   *               "[TENSORBOARD]",
-   *               "[EXPERIMENT]",
-   *               "[RUN]",
-   *               "[TIME_SERIES]")
+   *       TensorboardRunName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
    *           .toString();
    *   for (TensorboardTimeSeries element :
    *       tensorboardServiceClient.listTensorboardTimeSeries(parent).iterateAll()) {
@@ -2712,13 +2695,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *   ListTensorboardTimeSeriesRequest request =
    *       ListTensorboardTimeSeriesRequest.newBuilder()
    *           .setParent(
-   *               TensorboardTimeSeriesName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[TENSORBOARD]",
-   *                       "[EXPERIMENT]",
-   *                       "[RUN]",
-   *                       "[TIME_SERIES]")
+   *               TensorboardRunName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -2752,13 +2730,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *   ListTensorboardTimeSeriesRequest request =
    *       ListTensorboardTimeSeriesRequest.newBuilder()
    *           .setParent(
-   *               TensorboardTimeSeriesName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[TENSORBOARD]",
-   *                       "[EXPERIMENT]",
-   *                       "[RUN]",
-   *                       "[TIME_SERIES]")
+   *               TensorboardRunName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -2792,13 +2765,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *   ListTensorboardTimeSeriesRequest request =
    *       ListTensorboardTimeSeriesRequest.newBuilder()
    *           .setParent(
-   *               TensorboardTimeSeriesName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[TENSORBOARD]",
-   *                       "[EXPERIMENT]",
-   *                       "[RUN]",
-   *                       "[TIME_SERIES]")
+   *               TensorboardRunName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)

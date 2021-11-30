@@ -205,7 +205,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
-   *   String parent = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Featurestore featurestore = Featurestore.newBuilder().build();
    *   Featurestore response =
    *       featurestoreServiceClient.createFeaturestoreAsync(parent, featurestore).get();
@@ -237,8 +237,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   CreateFeaturestoreRequest request =
    *       CreateFeaturestoreRequest.newBuilder()
-   *           .setParent(
-   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFeaturestore(Featurestore.newBuilder().build())
    *           .setFeaturestoreId("featurestoreId-1315851738")
    *           .build();
@@ -264,8 +263,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   CreateFeaturestoreRequest request =
    *       CreateFeaturestoreRequest.newBuilder()
-   *           .setParent(
-   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFeaturestore(Featurestore.newBuilder().build())
    *           .setFeaturestoreId("featurestoreId-1315851738")
    *           .build();
@@ -292,8 +290,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   CreateFeaturestoreRequest request =
    *       CreateFeaturestoreRequest.newBuilder()
-   *           .setParent(
-   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFeaturestore(Featurestore.newBuilder().build())
    *           .setFeaturestoreId("featurestoreId-1315851738")
    *           .build();
@@ -433,7 +430,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
-   *   String parent = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Featurestore element :
    *       featurestoreServiceClient.listFeaturestores(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -461,8 +458,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   ListFeaturestoresRequest request =
    *       ListFeaturestoresRequest.newBuilder()
-   *           .setParent(
-   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -493,8 +489,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   ListFeaturestoresRequest request =
    *       ListFeaturestoresRequest.newBuilder()
-   *           .setParent(
-   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -525,8 +520,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   ListFeaturestoresRequest request =
    *       ListFeaturestoresRequest.newBuilder()
-   *           .setParent(
-   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1125,9 +1119,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
-   *   String parent =
-   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *           .toString();
+   *   String parent = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString();
    *   for (EntityType element : featurestoreServiceClient.listEntityTypes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1154,8 +1146,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   ListEntityTypesRequest request =
    *       ListEntityTypesRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1186,8 +1177,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   ListEntityTypesRequest request =
    *       ListEntityTypesRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1219,8 +1209,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   ListEntityTypesRequest request =
    *       ListEntityTypesRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1958,7 +1947,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   String parent =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
    *           .toString();
    *   for (Feature element : featurestoreServiceClient.listFeatures(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1986,8 +1975,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
    *           .setParent(
-   *               FeatureName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -2020,8 +2008,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
    *           .setParent(
-   *               FeatureName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
@@ -2055,8 +2042,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
    *           .setParent(
-   *               FeatureName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)

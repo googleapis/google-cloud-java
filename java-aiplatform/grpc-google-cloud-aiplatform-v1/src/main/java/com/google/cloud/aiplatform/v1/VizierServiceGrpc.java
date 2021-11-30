@@ -30,6 +30,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1/vizier_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class VizierServiceGrpc {
 
   private VizierServiceGrpc() {}

@@ -954,7 +954,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
-   *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]").toString();
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   for (Artifact element : metadataServiceClient.listArtifacts(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -981,8 +981,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListArtifactsRequest request =
    *       ListArtifactsRequest.newBuilder()
    *           .setParent(
-   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1011,8 +1010,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListArtifactsRequest request =
    *       ListArtifactsRequest.newBuilder()
    *           .setParent(
-   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1042,8 +1040,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListArtifactsRequest request =
    *       ListArtifactsRequest.newBuilder()
    *           .setParent(
-   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1310,7 +1307,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
-   *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]").toString();
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   PurgeArtifactsResponse response = metadataServiceClient.purgeArtifactsAsync(parent).get();
    * }
    * }</pre>
@@ -1336,8 +1333,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeArtifactsRequest request =
    *       PurgeArtifactsRequest.newBuilder()
    *           .setParent(
-   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -1364,8 +1360,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeArtifactsRequest request =
    *       PurgeArtifactsRequest.newBuilder()
    *           .setParent(
-   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -1393,8 +1388,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeArtifactsRequest request =
    *       PurgeArtifactsRequest.newBuilder()
    *           .setParent(
-   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -1666,7 +1660,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
-   *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   for (Context element : metadataServiceClient.listContexts(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1693,8 +1687,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
    *           .setParent(
-   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1723,8 +1716,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
    *           .setParent(
-   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1754,8 +1746,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
    *           .setParent(
-   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2022,7 +2013,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
-   *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   PurgeContextsResponse response = metadataServiceClient.purgeContextsAsync(parent).get();
    * }
    * }</pre>
@@ -2048,8 +2039,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeContextsRequest request =
    *       PurgeContextsRequest.newBuilder()
    *           .setParent(
-   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -2076,8 +2066,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeContextsRequest request =
    *       PurgeContextsRequest.newBuilder()
    *           .setParent(
-   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -2104,8 +2093,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeContextsRequest request =
    *       PurgeContextsRequest.newBuilder()
    *           .setParent(
-   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -2762,7 +2750,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
-   *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   for (Execution element : metadataServiceClient.listExecutions(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2789,8 +2777,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
    *           .setParent(
-   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2819,8 +2806,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
    *           .setParent(
-   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2850,8 +2836,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
    *           .setParent(
-   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -3122,7 +3107,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
-   *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   PurgeExecutionsResponse response = metadataServiceClient.purgeExecutionsAsync(parent).get();
    * }
    * }</pre>
@@ -3148,8 +3133,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeExecutionsRequest request =
    *       PurgeExecutionsRequest.newBuilder()
    *           .setParent(
-   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -3176,8 +3160,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeExecutionsRequest request =
    *       PurgeExecutionsRequest.newBuilder()
    *           .setParent(
-   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -3205,8 +3188,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   PurgeExecutionsRequest request =
    *       PurgeExecutionsRequest.newBuilder()
    *           .setParent(
-   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -3725,8 +3707,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
-   *       MetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[METADATA_SCHEMA]")
-   *           .toString();
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   for (MetadataSchema element :
    *       metadataServiceClient.listMetadataSchemas(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -3755,9 +3736,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListMetadataSchemasRequest request =
    *       ListMetadataSchemasRequest.newBuilder()
    *           .setParent(
-   *               MetadataSchemaName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[METADATA_SCHEMA]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -3788,9 +3767,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListMetadataSchemasRequest request =
    *       ListMetadataSchemasRequest.newBuilder()
    *           .setParent(
-   *               MetadataSchemaName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[METADATA_SCHEMA]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -3820,9 +3797,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   ListMetadataSchemasRequest request =
    *       ListMetadataSchemasRequest.newBuilder()
    *           .setParent(
-   *               MetadataSchemaName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[METADATA_SCHEMA]")
-   *                   .toString())
+   *               MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
