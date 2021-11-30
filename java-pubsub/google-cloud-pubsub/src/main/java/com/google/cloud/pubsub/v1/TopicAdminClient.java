@@ -27,8 +27,6 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -47,7 +45,6 @@ import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.ProjectName;
-import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -666,7 +663,7 @@ public class TopicAdminClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
-   *   ApiFuture<ListTopicsPagedResponse> future = topicAdminClient.listTopicsPagedCallable().futureCall(request);
+   *   ApiFuture<Topic> future = topicAdminClient.listTopicsPagedCallable().futureCall(request);
    *   // Do something.
    *   for (Topic element : future.get().iterateAll()) {
    *     // doThingsWith(element);
@@ -694,7 +691,7 @@ public class TopicAdminClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTopicsResponse response = topicAdminClient.listTopicsCallable().call(request);
-   *     for (Topic element : response.getTopicsList()) {
+   *     for (Topic element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -834,7 +831,7 @@ public class TopicAdminClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
-   *   ApiFuture<ListTopicSubscriptionsPagedResponse> future =
+   *   ApiFuture<String> future =
    *       topicAdminClient.listTopicSubscriptionsPagedCallable().futureCall(request);
    *   // Do something.
    *   for (String element : future.get().iterateAll()) {
@@ -865,7 +862,7 @@ public class TopicAdminClient implements BackgroundResource {
    *   while (true) {
    *     ListTopicSubscriptionsResponse response =
    *         topicAdminClient.listTopicSubscriptionsCallable().call(request);
-   *     for (String element : response.getSubscriptionsList()) {
+   *     for (String element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -989,7 +986,7 @@ public class TopicAdminClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
-   *   ApiFuture<ListTopicSnapshotsPagedResponse> future =
+   *   ApiFuture<String> future =
    *       topicAdminClient.listTopicSnapshotsPagedCallable().futureCall(request);
    *   // Do something.
    *   for (String element : future.get().iterateAll()) {
@@ -1023,7 +1020,7 @@ public class TopicAdminClient implements BackgroundResource {
    *   while (true) {
    *     ListTopicSnapshotsResponse response =
    *         topicAdminClient.listTopicSnapshotsCallable().call(request);
-   *     for (String element : response.getSnapshotsList()) {
+   *     for (String element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1183,7 +1180,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   DetachSubscriptionRequest request =
    *       DetachSubscriptionRequest.newBuilder()
-   *           .setSubscription(ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
+   *           .setSubscription(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
    *           .build();
    *   DetachSubscriptionResponse response = topicAdminClient.detachSubscription(request);
    * }
@@ -1208,7 +1205,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   DetachSubscriptionRequest request =
    *       DetachSubscriptionRequest.newBuilder()
-   *           .setSubscription(ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
+   *           .setSubscription(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
    *           .build();
    *   ApiFuture<DetachSubscriptionResponse> future =
    *       topicAdminClient.detachSubscriptionCallable().futureCall(request);
@@ -1600,17 +1597,6 @@ public class TopicAdminClient implements BackgroundResource {
     private ListTopicSubscriptionsPagedResponse(ListTopicSubscriptionsPage page) {
       super(page, ListTopicSubscriptionsFixedSizeCollection.createEmptyCollection());
     }
-
-    public Iterable<ProjectSubscriptionName> iterateAllAsProjectSubscriptionName() {
-      return Iterables.transform(
-          iterateAll(),
-          new Function<String, ProjectSubscriptionName>() {
-            @Override
-            public ProjectSubscriptionName apply(String arg0) {
-              return ProjectSubscriptionName.parse(arg0);
-            }
-          });
-    }
   }
 
   public static class ListTopicSubscriptionsPage
@@ -1643,28 +1629,6 @@ public class TopicAdminClient implements BackgroundResource {
         ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-    public Iterable<ProjectSubscriptionName> iterateAllAsProjectSubscriptionName() {
-      return Iterables.transform(
-          iterateAll(),
-          new Function<String, ProjectSubscriptionName>() {
-            @Override
-            public ProjectSubscriptionName apply(String arg0) {
-              return ProjectSubscriptionName.parse(arg0);
-            }
-          });
-    }
-
-    public Iterable<ProjectSubscriptionName> getValuesAsProjectSubscriptionName() {
-      return Iterables.transform(
-          getValues(),
-          new Function<String, ProjectSubscriptionName>() {
-            @Override
-            public ProjectSubscriptionName apply(String arg0) {
-              return ProjectSubscriptionName.parse(arg0);
-            }
-          });
-    }
   }
 
   public static class ListTopicSubscriptionsFixedSizeCollection
@@ -1688,17 +1652,6 @@ public class TopicAdminClient implements BackgroundResource {
     protected ListTopicSubscriptionsFixedSizeCollection createCollection(
         List<ListTopicSubscriptionsPage> pages, int collectionSize) {
       return new ListTopicSubscriptionsFixedSizeCollection(pages, collectionSize);
-    }
-
-    public Iterable<ProjectSubscriptionName> getValuesAsProjectSubscriptionName() {
-      return Iterables.transform(
-          getValues(),
-          new Function<String, ProjectSubscriptionName>() {
-            @Override
-            public ProjectSubscriptionName apply(String arg0) {
-              return ProjectSubscriptionName.parse(arg0);
-            }
-          });
     }
   }
 

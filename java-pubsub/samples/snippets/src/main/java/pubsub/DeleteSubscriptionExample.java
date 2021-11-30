@@ -20,7 +20,7 @@ package pubsub;
 
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
-import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.SubscriptionName;
 import java.io.IOException;
 
 public class DeleteSubscriptionExample {
@@ -36,8 +36,7 @@ public class DeleteSubscriptionExample {
   public static void deleteSubscriptionExample(String projectId, String subscriptionId)
       throws IOException {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      ProjectSubscriptionName subscriptionName =
-          ProjectSubscriptionName.of(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       try {
         subscriptionAdminClient.deleteSubscription(subscriptionName);
         System.out.println("Deleted subscription.");

@@ -52,11 +52,11 @@ import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.MessageStoragePolicy;
 import com.google.pubsub.v1.ProjectName;
-import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SchemaSettings;
+import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.UpdateTopicRequest;
@@ -764,7 +764,7 @@ public class TopicAdminClientTest {
 
     DetachSubscriptionRequest request =
         DetachSubscriptionRequest.newBuilder()
-            .setSubscription(ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
+            .setSubscription(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .build();
 
     DetachSubscriptionResponse actualResponse = client.detachSubscription(request);
@@ -789,7 +789,7 @@ public class TopicAdminClientTest {
     try {
       DetachSubscriptionRequest request =
           DetachSubscriptionRequest.newBuilder()
-              .setSubscription(ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
+              .setSubscription(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
               .build();
       client.detachSubscription(request);
       Assert.fail("No exception raised");

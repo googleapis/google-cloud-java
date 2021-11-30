@@ -22,8 +22,8 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
-import com.google.pubsub.v1.ProjectSubscriptionName;
-import com.google.pubsub.v1.ProjectTopicName;
+import com.google.pubsub.v1.SubscriptionName;
+import com.google.pubsub.v1.TopicName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
@@ -46,13 +46,13 @@ public class AdminIT {
   private static final String orderedSubscriptionId = "iam-ordered-subscription-" + _suffix;
   private static final String pushEndpoint = "https://my-test-project.appspot.com/push";
 
-  private static final ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
-  private static final ProjectSubscriptionName pullSubscriptionName =
-      ProjectSubscriptionName.of(projectId, pullSubscriptionId);
-  private static final ProjectSubscriptionName pushSubscriptionName =
-      ProjectSubscriptionName.of(projectId, pushSubscriptionId);
-  private static final ProjectSubscriptionName orderedSubscriptionName =
-      ProjectSubscriptionName.of(projectId, orderedSubscriptionId);
+  private static final TopicName topicName = TopicName.of(projectId, topicId);
+  private static final SubscriptionName pullSubscriptionName =
+      SubscriptionName.of(projectId, pullSubscriptionId);
+  private static final SubscriptionName pushSubscriptionName =
+      SubscriptionName.of(projectId, pushSubscriptionId);
+  private static final SubscriptionName orderedSubscriptionName =
+      SubscriptionName.of(projectId, orderedSubscriptionId);
 
   private static void requireEnvVar(String varName) {
     assertNotNull(

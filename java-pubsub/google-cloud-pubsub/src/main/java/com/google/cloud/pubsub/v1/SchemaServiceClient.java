@@ -473,7 +473,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
-   *   ApiFuture<ListSchemasPagedResponse> future = schemaServiceClient.listSchemasPagedCallable().futureCall(request);
+   *   ApiFuture<Schema> future = schemaServiceClient.listSchemasPagedCallable().futureCall(request);
    *   // Do something.
    *   for (Schema element : future.get().iterateAll()) {
    *     // doThingsWith(element);
@@ -503,7 +503,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSchemasResponse response = schemaServiceClient.listSchemasCallable().call(request);
-   *     for (Schema element : response.getSchemasList()) {
+   *     for (Schema element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

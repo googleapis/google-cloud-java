@@ -19,9 +19,9 @@ package pubsub;
 // [START pubsub_create_pull_subscription]
 
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
-import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 import java.io.IOException;
 
@@ -39,8 +39,7 @@ public class CreatePullSubscriptionExample {
       String projectId, String subscriptionId, String topicId) throws IOException {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       TopicName topicName = TopicName.of(projectId, topicId);
-      ProjectSubscriptionName subscriptionName =
-          ProjectSubscriptionName.of(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       // Create a pull subscription with default acknowledgement deadline of 10 seconds.
       // Messages not successfully acknowledged within 10 seconds will get resent by the server.
       Subscription subscription =

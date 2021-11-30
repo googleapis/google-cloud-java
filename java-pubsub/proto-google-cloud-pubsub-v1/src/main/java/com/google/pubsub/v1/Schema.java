@@ -435,13 +435,13 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (type_ != com.google.pubsub.v1.Schema.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, type_);
     }
-    if (!getDefinitionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definition_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, definition_);
     }
     unknownFields.writeTo(output);
@@ -453,13 +453,13 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (type_ != com.google.pubsub.v1.Schema.Type.TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
     }
-    if (!getDefinitionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definition_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, definition_);
     }
     size += unknownFields.getSerializedSize();

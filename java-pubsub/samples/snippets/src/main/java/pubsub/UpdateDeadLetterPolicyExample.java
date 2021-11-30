@@ -21,8 +21,8 @@ package pubsub;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.protobuf.FieldMask;
 import com.google.pubsub.v1.DeadLetterPolicy;
-import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import java.io.IOException;
@@ -48,8 +48,7 @@ public class UpdateDeadLetterPolicyExample {
       throws IOException {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
 
-      ProjectSubscriptionName subscriptionName =
-          ProjectSubscriptionName.of(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
 
       System.out.println(
           "Before: " + subscriptionAdminClient.getSubscription(subscriptionName).getAllFields());

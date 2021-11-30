@@ -180,7 +180,7 @@ public final class DeleteSnapshotRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSnapshotBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(snapshot_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, snapshot_);
     }
     unknownFields.writeTo(output);
@@ -192,7 +192,7 @@ public final class DeleteSnapshotRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getSnapshotBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(snapshot_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, snapshot_);
     }
     size += unknownFields.getSerializedSize();

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/pubsub/v1/SubscriptionAdminClient</className>
+    <method>*</method>
+    <to>*</to>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/pubsub/v1/TopicAdminClient$ListTopicSubscriptions*</className>
+    <method>java.lang.Iterable *AsProjectSubscriptionName()</method>
+  </difference>
+</differences>

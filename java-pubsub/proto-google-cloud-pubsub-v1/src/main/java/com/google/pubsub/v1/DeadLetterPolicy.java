@@ -222,7 +222,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDeadLetterTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deadLetterTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deadLetterTopic_);
     }
     if (maxDeliveryAttempts_ != 0) {
@@ -237,7 +237,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getDeadLetterTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deadLetterTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deadLetterTopic_);
     }
     if (maxDeliveryAttempts_ != 0) {
