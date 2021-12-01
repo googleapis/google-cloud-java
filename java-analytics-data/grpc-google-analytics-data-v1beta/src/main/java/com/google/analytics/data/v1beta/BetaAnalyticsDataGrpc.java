@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/analytics/data/v1beta/analytics_data_api.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class BetaAnalyticsDataGrpc {
 
   private BetaAnalyticsDataGrpc() {}

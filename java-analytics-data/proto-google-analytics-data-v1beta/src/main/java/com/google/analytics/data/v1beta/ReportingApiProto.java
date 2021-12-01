@@ -128,6 +128,14 @@ public final class ReportingApiProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1beta_ResponseMetaData_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_ActiveMetricRestriction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_ActiveMetricRestriction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1beta_DimensionHeader_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1beta_DimensionHeader_fieldAccessorTable;
@@ -289,71 +297,93 @@ public final class ReportingApiProto {
           + "end_offset\030\003 \001(\005\"N\n\013Granularity\022\033\n\027GRANU"
           + "LARITY_UNSPECIFIED\020\000\022\t\n\005DAILY\020\001\022\n\n\006WEEKL"
           + "Y\020\002\022\013\n\007MONTHLY\020\003\"*\n\024CohortReportSettings"
-          + "\022\022\n\naccumulate\030\001 \001(\010\"4\n\020ResponseMetaData"
-          + "\022 \n\030data_loss_from_other_row\030\003 \001(\010\"\037\n\017Di"
-          + "mensionHeader\022\014\n\004name\030\001 \001(\t\"T\n\014MetricHea"
-          + "der\022\014\n\004name\030\001 \001(\t\0226\n\004type\030\002 \001(\0162(.google"
-          + ".analytics.data.v1beta.MetricType\"u\n\013Piv"
-          + "otHeader\022S\n\027pivot_dimension_headers\030\001 \003("
-          + "\01322.google.analytics.data.v1beta.PivotDi"
-          + "mensionHeader\022\021\n\trow_count\030\002 \001(\005\"^\n\024Pivo"
-          + "tDimensionHeader\022F\n\020dimension_values\030\001 \003"
-          + "(\0132,.google.analytics.data.v1beta.Dimens"
-          + "ionValue\"\217\001\n\003Row\022F\n\020dimension_values\030\001 \003"
-          + "(\0132,.google.analytics.data.v1beta.Dimens"
-          + "ionValue\022@\n\rmetric_values\030\002 \003(\0132).google"
-          + ".analytics.data.v1beta.MetricValue\".\n\016Di"
-          + "mensionValue\022\017\n\005value\030\001 \001(\tH\000B\013\n\tone_val"
-          + "ue\"+\n\013MetricValue\022\017\n\005value\030\004 \001(\tH\000B\013\n\ton"
-          + "e_value\"J\n\014NumericValue\022\025\n\013int64_value\030\001"
-          + " \001(\003H\000\022\026\n\014double_value\030\002 \001(\001H\000B\013\n\tone_va"
-          + "lue\"\223\003\n\rPropertyQuota\022A\n\016tokens_per_day\030"
-          + "\001 \001(\0132).google.analytics.data.v1beta.Quo"
-          + "taStatus\022B\n\017tokens_per_hour\030\002 \001(\0132).goog"
-          + "le.analytics.data.v1beta.QuotaStatus\022F\n\023"
-          + "concurrent_requests\030\003 \001(\0132).google.analy"
-          + "tics.data.v1beta.QuotaStatus\022U\n\"server_e"
-          + "rrors_per_project_per_hour\030\004 \001(\0132).googl"
-          + "e.analytics.data.v1beta.QuotaStatus\022\\\n)p"
-          + "otentially_thresholded_requests_per_hour"
-          + "\030\005 \001(\0132).google.analytics.data.v1beta.Qu"
-          + "otaStatus\"2\n\013QuotaStatus\022\020\n\010consumed\030\001 \001"
-          + "(\005\022\021\n\tremaining\030\002 \001(\005\"\226\001\n\021DimensionMetad"
-          + "ata\022\020\n\010api_name\030\001 \001(\t\022\017\n\007ui_name\030\002 \001(\t\022\023"
-          + "\n\013description\030\003 \001(\t\022\034\n\024deprecated_api_na"
-          + "mes\030\004 \003(\t\022\031\n\021custom_definition\030\005 \001(\010\022\020\n\010"
-          + "category\030\007 \001(\t\"\337\001\n\016MetricMetadata\022\020\n\010api"
-          + "_name\030\001 \001(\t\022\017\n\007ui_name\030\002 \001(\t\022\023\n\013descript"
-          + "ion\030\003 \001(\t\022\034\n\024deprecated_api_names\030\004 \003(\t\022"
-          + "6\n\004type\030\005 \001(\0162(.google.analytics.data.v1"
-          + "beta.MetricType\022\022\n\nexpression\030\006 \001(\t\022\031\n\021c"
-          + "ustom_definition\030\007 \001(\010\022\020\n\010category\030\n \001(\t"
-          + "\"\334\001\n\026DimensionCompatibility\022P\n\022dimension"
-          + "_metadata\030\001 \001(\0132/.google.analytics.data."
-          + "v1beta.DimensionMetadataH\000\210\001\001\022G\n\rcompati"
-          + "bility\030\002 \001(\0162+.google.analytics.data.v1b"
-          + "eta.CompatibilityH\001\210\001\001B\025\n\023_dimension_met"
-          + "adataB\020\n\016_compatibility\"\320\001\n\023MetricCompat"
-          + "ibility\022J\n\017metric_metadata\030\001 \001(\0132,.googl"
-          + "e.analytics.data.v1beta.MetricMetadataH\000"
-          + "\210\001\001\022G\n\rcompatibility\030\002 \001(\0162+.google.anal"
-          + "ytics.data.v1beta.CompatibilityH\001\210\001\001B\022\n\020"
-          + "_metric_metadataB\020\n\016_compatibility*g\n\021Me"
-          + "tricAggregation\022\"\n\036METRIC_AGGREGATION_UN"
-          + "SPECIFIED\020\000\022\t\n\005TOTAL\020\001\022\013\n\007MINIMUM\020\005\022\013\n\007M"
-          + "AXIMUM\020\006\022\t\n\005COUNT\020\004*\201\002\n\nMetricType\022\033\n\027ME"
-          + "TRIC_TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_INTEGER\020"
-          + "\001\022\016\n\nTYPE_FLOAT\020\002\022\020\n\014TYPE_SECONDS\020\004\022\025\n\021T"
-          + "YPE_MILLISECONDS\020\005\022\020\n\014TYPE_MINUTES\020\006\022\016\n\n"
-          + "TYPE_HOURS\020\007\022\021\n\rTYPE_STANDARD\020\010\022\021\n\rTYPE_"
-          + "CURRENCY\020\t\022\r\n\tTYPE_FEET\020\n\022\016\n\nTYPE_MILES\020"
-          + "\013\022\017\n\013TYPE_METERS\020\014\022\023\n\017TYPE_KILOMETERS\020\r*"
-          + "P\n\rCompatibility\022\035\n\031COMPATIBILITY_UNSPEC"
-          + "IFIED\020\000\022\016\n\nCOMPATIBLE\020\001\022\020\n\014INCOMPATIBLE\020"
-          + "\002By\n com.google.analytics.data.v1betaB\021R"
-          + "eportingApiProtoP\001Z@google.golang.org/ge"
-          + "nproto/googleapis/analytics/data/v1beta;"
-          + "datab\006proto3"
+          + "\022\022\n\naccumulate\030\001 \001(\010\"\210\005\n\020ResponseMetaDat"
+          + "a\022 \n\030data_loss_from_other_row\030\003 \001(\010\022r\n\033s"
+          + "chema_restriction_response\030\004 \001(\0132H.googl"
+          + "e.analytics.data.v1beta.ResponseMetaData"
+          + ".SchemaRestrictionResponseH\000\210\001\001\022\032\n\rcurre"
+          + "ncy_code\030\005 \001(\tH\001\210\001\001\022\026\n\ttime_zone\030\006 \001(\tH\002"
+          + "\210\001\001\022\031\n\014empty_reason\030\007 \001(\tH\003\210\001\001\032\275\002\n\031Schem"
+          + "aRestrictionResponse\022\204\001\n\032active_metric_r"
+          + "estrictions\030\001 \003(\0132`.google.analytics.dat"
+          + "a.v1beta.ResponseMetaData.SchemaRestrict"
+          + "ionResponse.ActiveMetricRestriction\032\230\001\n\027"
+          + "ActiveMetricRestriction\022\030\n\013metric_name\030\001"
+          + " \001(\tH\000\210\001\001\022S\n\027restricted_metric_types\030\002 \003"
+          + "(\01622.google.analytics.data.v1beta.Restri"
+          + "ctedMetricTypeB\016\n\014_metric_nameB\036\n\034_schem"
+          + "a_restriction_responseB\020\n\016_currency_code"
+          + "B\014\n\n_time_zoneB\017\n\r_empty_reason\"\037\n\017Dimen"
+          + "sionHeader\022\014\n\004name\030\001 \001(\t\"T\n\014MetricHeader"
+          + "\022\014\n\004name\030\001 \001(\t\0226\n\004type\030\002 \001(\0162(.google.an"
+          + "alytics.data.v1beta.MetricType\"u\n\013PivotH"
+          + "eader\022S\n\027pivot_dimension_headers\030\001 \003(\01322"
+          + ".google.analytics.data.v1beta.PivotDimen"
+          + "sionHeader\022\021\n\trow_count\030\002 \001(\005\"^\n\024PivotDi"
+          + "mensionHeader\022F\n\020dimension_values\030\001 \003(\0132"
+          + ",.google.analytics.data.v1beta.Dimension"
+          + "Value\"\217\001\n\003Row\022F\n\020dimension_values\030\001 \003(\0132"
+          + ",.google.analytics.data.v1beta.Dimension"
+          + "Value\022@\n\rmetric_values\030\002 \003(\0132).google.an"
+          + "alytics.data.v1beta.MetricValue\".\n\016Dimen"
+          + "sionValue\022\017\n\005value\030\001 \001(\tH\000B\013\n\tone_value\""
+          + "+\n\013MetricValue\022\017\n\005value\030\004 \001(\tH\000B\013\n\tone_v"
+          + "alue\"J\n\014NumericValue\022\025\n\013int64_value\030\001 \001("
+          + "\003H\000\022\026\n\014double_value\030\002 \001(\001H\000B\013\n\tone_value"
+          + "\"\223\003\n\rPropertyQuota\022A\n\016tokens_per_day\030\001 \001"
+          + "(\0132).google.analytics.data.v1beta.QuotaS"
+          + "tatus\022B\n\017tokens_per_hour\030\002 \001(\0132).google."
+          + "analytics.data.v1beta.QuotaStatus\022F\n\023con"
+          + "current_requests\030\003 \001(\0132).google.analytic"
+          + "s.data.v1beta.QuotaStatus\022U\n\"server_erro"
+          + "rs_per_project_per_hour\030\004 \001(\0132).google.a"
+          + "nalytics.data.v1beta.QuotaStatus\022\\\n)pote"
+          + "ntially_thresholded_requests_per_hour\030\005 "
+          + "\001(\0132).google.analytics.data.v1beta.Quota"
+          + "Status\"2\n\013QuotaStatus\022\020\n\010consumed\030\001 \001(\005\022"
+          + "\021\n\tremaining\030\002 \001(\005\"\226\001\n\021DimensionMetadata"
+          + "\022\020\n\010api_name\030\001 \001(\t\022\017\n\007ui_name\030\002 \001(\t\022\023\n\013d"
+          + "escription\030\003 \001(\t\022\034\n\024deprecated_api_names"
+          + "\030\004 \003(\t\022\031\n\021custom_definition\030\005 \001(\010\022\020\n\010cat"
+          + "egory\030\007 \001(\t\"\222\003\n\016MetricMetadata\022\020\n\010api_na"
+          + "me\030\001 \001(\t\022\017\n\007ui_name\030\002 \001(\t\022\023\n\013description"
+          + "\030\003 \001(\t\022\034\n\024deprecated_api_names\030\004 \003(\t\0226\n\004"
+          + "type\030\005 \001(\0162(.google.analytics.data.v1bet"
+          + "a.MetricType\022\022\n\nexpression\030\006 \001(\t\022\031\n\021cust"
+          + "om_definition\030\007 \001(\010\022S\n\017blocked_reasons\030\010"
+          + " \003(\0162:.google.analytics.data.v1beta.Metr"
+          + "icMetadata.BlockedReason\022\020\n\010category\030\n \001"
+          + "(\t\"\\\n\rBlockedReason\022\036\n\032BLOCKED_REASON_UN"
+          + "SPECIFIED\020\000\022\026\n\022NO_REVENUE_METRICS\020\001\022\023\n\017N"
+          + "O_COST_METRICS\020\002\"\334\001\n\026DimensionCompatibil"
+          + "ity\022P\n\022dimension_metadata\030\001 \001(\0132/.google"
+          + ".analytics.data.v1beta.DimensionMetadata"
+          + "H\000\210\001\001\022G\n\rcompatibility\030\002 \001(\0162+.google.an"
+          + "alytics.data.v1beta.CompatibilityH\001\210\001\001B\025"
+          + "\n\023_dimension_metadataB\020\n\016_compatibility\""
+          + "\320\001\n\023MetricCompatibility\022J\n\017metric_metada"
+          + "ta\030\001 \001(\0132,.google.analytics.data.v1beta."
+          + "MetricMetadataH\000\210\001\001\022G\n\rcompatibility\030\002 \001"
+          + "(\0162+.google.analytics.data.v1beta.Compat"
+          + "ibilityH\001\210\001\001B\022\n\020_metric_metadataB\020\n\016_com"
+          + "patibility*g\n\021MetricAggregation\022\"\n\036METRI"
+          + "C_AGGREGATION_UNSPECIFIED\020\000\022\t\n\005TOTAL\020\001\022\013"
+          + "\n\007MINIMUM\020\005\022\013\n\007MAXIMUM\020\006\022\t\n\005COUNT\020\004*\201\002\n\n"
+          + "MetricType\022\033\n\027METRIC_TYPE_UNSPECIFIED\020\000\022"
+          + "\020\n\014TYPE_INTEGER\020\001\022\016\n\nTYPE_FLOAT\020\002\022\020\n\014TYP"
+          + "E_SECONDS\020\004\022\025\n\021TYPE_MILLISECONDS\020\005\022\020\n\014TY"
+          + "PE_MINUTES\020\006\022\016\n\nTYPE_HOURS\020\007\022\021\n\rTYPE_STA"
+          + "NDARD\020\010\022\021\n\rTYPE_CURRENCY\020\t\022\r\n\tTYPE_FEET\020"
+          + "\n\022\016\n\nTYPE_MILES\020\013\022\017\n\013TYPE_METERS\020\014\022\023\n\017TY"
+          + "PE_KILOMETERS\020\r*_\n\024RestrictedMetricType\022"
+          + "&\n\"RESTRICTED_METRIC_TYPE_UNSPECIFIED\020\000\022"
+          + "\r\n\tCOST_DATA\020\001\022\020\n\014REVENUE_DATA\020\002*P\n\rComp"
+          + "atibility\022\035\n\031COMPATIBILITY_UNSPECIFIED\020\000"
+          + "\022\016\n\nCOMPATIBLE\020\001\022\020\n\014INCOMPATIBLE\020\002By\n co"
+          + "m.google.analytics.data.v1betaB\021Reportin"
+          + "gApiProtoP\001Z@google.golang.org/genproto/"
+          + "googleapis/analytics/data/v1beta;datab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -568,6 +598,34 @@ public final class ReportingApiProto {
             internal_static_google_analytics_data_v1beta_ResponseMetaData_descriptor,
             new java.lang.String[] {
               "DataLossFromOtherRow",
+              "SchemaRestrictionResponse",
+              "CurrencyCode",
+              "TimeZone",
+              "EmptyReason",
+              "SchemaRestrictionResponse",
+              "CurrencyCode",
+              "TimeZone",
+              "EmptyReason",
+            });
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_descriptor =
+        internal_static_google_analytics_data_v1beta_ResponseMetaData_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_descriptor,
+            new java.lang.String[] {
+              "ActiveMetricRestrictions",
+            });
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_ActiveMetricRestriction_descriptor =
+        internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_ActiveMetricRestriction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_ActiveMetricRestriction_descriptor,
+            new java.lang.String[] {
+              "MetricName", "RestrictedMetricTypes", "MetricName",
             });
     internal_static_google_analytics_data_v1beta_DimensionHeader_descriptor =
         getDescriptor().getMessageTypes().get(15);
@@ -679,6 +737,7 @@ public final class ReportingApiProto {
               "Type",
               "Expression",
               "CustomDefinition",
+              "BlockedReasons",
               "Category",
             });
     internal_static_google_analytics_data_v1beta_DimensionCompatibility_descriptor =

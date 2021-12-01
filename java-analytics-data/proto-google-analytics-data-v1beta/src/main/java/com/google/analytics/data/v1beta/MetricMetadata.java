@@ -44,6 +44,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     type_ = 0;
     expression_ = "";
+    blockedReasons_ = java.util.Collections.emptyList();
     category_ = "";
   }
 
@@ -127,6 +128,31 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
               customDefinition_ = input.readBool();
               break;
             }
+          case 64:
+            {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                blockedReasons_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              blockedReasons_.add(rawValue);
+              break;
+            }
+          case 66:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  blockedReasons_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                blockedReasons_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -151,6 +177,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         deprecatedApiNames_ = deprecatedApiNames_.getUnmodifiableView();
       }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        blockedReasons_ = java.util.Collections.unmodifiableList(blockedReasons_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -169,6 +198,167 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.analytics.data.v1beta.MetricMetadata.class,
             com.google.analytics.data.v1beta.MetricMetadata.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Justifications for why this metric is blocked.
+   * </pre>
+   *
+   * Protobuf enum {@code google.analytics.data.v1beta.MetricMetadata.BlockedReason}
+   */
+  public enum BlockedReason implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Will never be specified in API response.
+     * </pre>
+     *
+     * <code>BLOCKED_REASON_UNSPECIFIED = 0;</code>
+     */
+    BLOCKED_REASON_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * If present, your access is blocked to revenue related metrics for this
+     * property, and this metric is revenue related.
+     * </pre>
+     *
+     * <code>NO_REVENUE_METRICS = 1;</code>
+     */
+    NO_REVENUE_METRICS(1),
+    /**
+     *
+     *
+     * <pre>
+     * If present, your access is blocked to cost related metrics for this
+     * property, and this metric is cost related.
+     * </pre>
+     *
+     * <code>NO_COST_METRICS = 2;</code>
+     */
+    NO_COST_METRICS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Will never be specified in API response.
+     * </pre>
+     *
+     * <code>BLOCKED_REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int BLOCKED_REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * If present, your access is blocked to revenue related metrics for this
+     * property, and this metric is revenue related.
+     * </pre>
+     *
+     * <code>NO_REVENUE_METRICS = 1;</code>
+     */
+    public static final int NO_REVENUE_METRICS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * If present, your access is blocked to cost related metrics for this
+     * property, and this metric is cost related.
+     * </pre>
+     *
+     * <code>NO_COST_METRICS = 2;</code>
+     */
+    public static final int NO_COST_METRICS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BlockedReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BlockedReason forNumber(int value) {
+      switch (value) {
+        case 0:
+          return BLOCKED_REASON_UNSPECIFIED;
+        case 1:
+          return NO_REVENUE_METRICS;
+        case 2:
+          return NO_COST_METRICS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BlockedReason> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BlockedReason> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<BlockedReason>() {
+          public BlockedReason findValueByNumber(int number) {
+            return BlockedReason.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.analytics.data.v1beta.MetricMetadata.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final BlockedReason[] VALUES = values();
+
+    public static BlockedReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BlockedReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.analytics.data.v1beta.MetricMetadata.BlockedReason)
   }
 
   public static final int API_NAME_FIELD_NUMBER = 1;
@@ -502,6 +692,142 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     return customDefinition_;
   }
 
+  public static final int BLOCKED_REASONS_FIELD_NUMBER = 8;
+  private java.util.List<java.lang.Integer> blockedReasons_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>
+      blockedReasons_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>() {
+            public com.google.analytics.data.v1beta.MetricMetadata.BlockedReason convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.analytics.data.v1beta.MetricMetadata.BlockedReason result =
+                  com.google.analytics.data.v1beta.MetricMetadata.BlockedReason.valueOf(from);
+              return result == null
+                  ? com.google.analytics.data.v1beta.MetricMetadata.BlockedReason.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @return A list containing the blockedReasons.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>
+      getBlockedReasonsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>(
+        blockedReasons_, blockedReasons_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @return The count of blockedReasons.
+   */
+  @java.lang.Override
+  public int getBlockedReasonsCount() {
+    return blockedReasons_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockedReasons at the given index.
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.MetricMetadata.BlockedReason getBlockedReasons(
+      int index) {
+    return blockedReasons_converter_.convert(blockedReasons_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for blockedReasons.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getBlockedReasonsValueList() {
+    return blockedReasons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of blockedReasons at the given index.
+   */
+  @java.lang.Override
+  public int getBlockedReasonsValue(int index) {
+    return blockedReasons_.get(index);
+  }
+
+  private int blockedReasonsMemoizedSerializedSize;
+
   public static final int CATEGORY_FIELD_NUMBER = 10;
   private volatile java.lang.Object category_;
   /**
@@ -567,6 +893,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiName_);
     }
@@ -587,6 +914,13 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     if (customDefinition_ != false) {
       output.writeBool(7, customDefinition_);
+    }
+    if (getBlockedReasonsList().size() > 0) {
+      output.writeUInt32NoTag(66);
+      output.writeUInt32NoTag(blockedReasonsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < blockedReasons_.size(); i++) {
+      output.writeEnumNoTag(blockedReasons_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, category_);
@@ -626,6 +960,19 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (customDefinition_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, customDefinition_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < blockedReasons_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(blockedReasons_.get(i));
+      }
+      size += dataSize;
+      if (!getBlockedReasonsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      blockedReasonsMemoizedSerializedSize = dataSize;
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, category_);
     }
@@ -652,6 +999,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (type_ != other.type_) return false;
     if (!getExpression().equals(other.getExpression())) return false;
     if (getCustomDefinition() != other.getCustomDefinition()) return false;
+    if (!blockedReasons_.equals(other.blockedReasons_)) return false;
     if (!getCategory().equals(other.getCategory())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -680,6 +1028,10 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getExpression().hashCode();
     hash = (37 * hash) + CUSTOM_DEFINITION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCustomDefinition());
+    if (getBlockedReasonsCount() > 0) {
+      hash = (37 * hash) + BLOCKED_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + blockedReasons_.hashCode();
+    }
     hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
     hash = (53 * hash) + getCategory().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -841,6 +1193,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
 
       customDefinition_ = false;
 
+      blockedReasons_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
       category_ = "";
 
       return this;
@@ -882,6 +1236,11 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       result.type_ = type_;
       result.expression_ = expression_;
       result.customDefinition_ = customDefinition_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        blockedReasons_ = java.util.Collections.unmodifiableList(blockedReasons_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.blockedReasons_ = blockedReasons_;
       result.category_ = category_;
       onBuilt();
       return result;
@@ -964,6 +1323,16 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getCustomDefinition() != false) {
         setCustomDefinition(other.getCustomDefinition());
+      }
+      if (!other.blockedReasons_.isEmpty()) {
+        if (blockedReasons_.isEmpty()) {
+          blockedReasons_ = other.blockedReasons_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureBlockedReasonsIsMutable();
+          blockedReasons_.addAll(other.blockedReasons_);
+        }
+        onChanged();
       }
       if (!other.getCategory().isEmpty()) {
         category_ = other.category_;
@@ -1778,6 +2147,328 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCustomDefinition() {
 
       customDefinition_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> blockedReasons_ = java.util.Collections.emptyList();
+
+    private void ensureBlockedReasonsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        blockedReasons_ = new java.util.ArrayList<java.lang.Integer>(blockedReasons_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @return A list containing the blockedReasons.
+     */
+    public java.util.List<com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>
+        getBlockedReasonsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>(
+          blockedReasons_, blockedReasons_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @return The count of blockedReasons.
+     */
+    public int getBlockedReasonsCount() {
+      return blockedReasons_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The blockedReasons at the given index.
+     */
+    public com.google.analytics.data.v1beta.MetricMetadata.BlockedReason getBlockedReasons(
+        int index) {
+      return blockedReasons_converter_.convert(blockedReasons_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The blockedReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlockedReasons(
+        int index, com.google.analytics.data.v1beta.MetricMetadata.BlockedReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockedReasonsIsMutable();
+      blockedReasons_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param value The blockedReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addBlockedReasons(
+        com.google.analytics.data.v1beta.MetricMetadata.BlockedReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockedReasonsIsMutable();
+      blockedReasons_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param values The blockedReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllBlockedReasons(
+        java.lang.Iterable<? extends com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>
+            values) {
+      ensureBlockedReasonsIsMutable();
+      for (com.google.analytics.data.v1beta.MetricMetadata.BlockedReason value : values) {
+        blockedReasons_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBlockedReasons() {
+      blockedReasons_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for blockedReasons.
+     */
+    public java.util.List<java.lang.Integer> getBlockedReasonsValueList() {
+      return java.util.Collections.unmodifiableList(blockedReasons_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of blockedReasons at the given index.
+     */
+    public int getBlockedReasonsValue(int index) {
+      return blockedReasons_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of blockedReasons at the given index.
+     * @return This builder for chaining.
+     */
+    public Builder setBlockedReasonsValue(int index, int value) {
+      ensureBlockedReasonsIsMutable();
+      blockedReasons_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for blockedReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addBlockedReasonsValue(int value) {
+      ensureBlockedReasonsIsMutable();
+      blockedReasons_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If reasons are specified, your access is blocked to this metric for this
+     * property. API requests from you to this property for this metric will
+     * succeed; however, the report will contain only zeros for this metric. API
+     * requests with metric filters on blocked metrics will fail. If reasons are
+     * empty, you have access to this metric.
+     * To learn more, see [Access and data-restriction
+     * management](https://support.google.com/analytics/answer/10851388).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for blockedReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllBlockedReasonsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureBlockedReasonsIsMutable();
+      for (int value : values) {
+        blockedReasons_.add(value);
+      }
       onChanged();
       return this;
     }

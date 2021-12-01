@@ -236,6 +236,105 @@ public interface MetricMetadataOrBuilder
    *
    *
    * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @return A list containing the blockedReasons.
+   */
+  java.util.List<com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>
+      getBlockedReasonsList();
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @return The count of blockedReasons.
+   */
+  int getBlockedReasonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockedReasons at the given index.
+   */
+  com.google.analytics.data.v1beta.MetricMetadata.BlockedReason getBlockedReasons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for blockedReasons.
+   */
+  java.util.List<java.lang.Integer> getBlockedReasonsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * If reasons are specified, your access is blocked to this metric for this
+   * property. API requests from you to this property for this metric will
+   * succeed; however, the report will contain only zeros for this metric. API
+   * requests with metric filters on blocked metrics will fail. If reasons are
+   * empty, you have access to this metric.
+   * To learn more, see [Access and data-restriction
+   * management](https://support.google.com/analytics/answer/10851388).
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of blockedReasons at the given index.
+   */
+  int getBlockedReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The display name of the category that this metrics belongs to. Similar
    * dimensions and metrics are categorized together.
    * </pre>

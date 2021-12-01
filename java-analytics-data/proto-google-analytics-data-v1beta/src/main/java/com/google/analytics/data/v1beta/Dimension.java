@@ -144,7 +144,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
    * would like within the allowed character set. For example if a
    * `dimensionExpression` concatenates `country` and `city`, you could call
    * that dimension `countryAndCity`. Dimension names that you choose must match
-   * the regular expression "^[a-zA-Z0-9_]$".
+   * the regular expression `^[a-zA-Z0-9_]$`.
    * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
    * `dimensionExpression`, and `pivots`.
    * </pre>
@@ -176,7 +176,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
    * would like within the allowed character set. For example if a
    * `dimensionExpression` concatenates `country` and `city`, you could call
    * that dimension `countryAndCity`. Dimension names that you choose must match
-   * the regular expression "^[a-zA-Z0-9_]$".
+   * the regular expression `^[a-zA-Z0-9_]$`.
    * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
    * `dimensionExpression`, and `pivots`.
    * </pre>
@@ -609,7 +609,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
-     * the regular expression "^[a-zA-Z0-9_]$".
+     * the regular expression `^[a-zA-Z0-9_]$`.
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -640,7 +640,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
-     * the regular expression "^[a-zA-Z0-9_]$".
+     * the regular expression `^[a-zA-Z0-9_]$`.
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -671,7 +671,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
-     * the regular expression "^[a-zA-Z0-9_]$".
+     * the regular expression `^[a-zA-Z0-9_]$`.
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -701,7 +701,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
-     * the regular expression "^[a-zA-Z0-9_]$".
+     * the regular expression `^[a-zA-Z0-9_]$`.
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -727,7 +727,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
-     * the regular expression "^[a-zA-Z0-9_]$".
+     * the regular expression `^[a-zA-Z0-9_]$`.
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>

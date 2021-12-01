@@ -22,44 +22,43 @@ package com.google.analytics.data.v1beta;
  *
  *
  * <pre>
- * The compatibility types for a single dimension or metric.
+ * Categories of data that you may be restricted from viewing on certain GA4
+ * properties.
  * </pre>
  *
- * Protobuf enum {@code google.analytics.data.v1beta.Compatibility}
+ * Protobuf enum {@code google.analytics.data.v1beta.RestrictedMetricType}
  */
-public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
+public enum RestrictedMetricType implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
    *
    * <pre>
-   * Unspecified compatibility.
+   * Unspecified type.
    * </pre>
    *
-   * <code>COMPATIBILITY_UNSPECIFIED = 0;</code>
+   * <code>RESTRICTED_METRIC_TYPE_UNSPECIFIED = 0;</code>
    */
-  COMPATIBILITY_UNSPECIFIED(0),
+  RESTRICTED_METRIC_TYPE_UNSPECIFIED(0),
   /**
    *
    *
    * <pre>
-   * The dimension or metric is compatible. This dimension or metric can be
-   * successfully added to a report.
+   * Cost metrics such as `adCost`.
    * </pre>
    *
-   * <code>COMPATIBLE = 1;</code>
+   * <code>COST_DATA = 1;</code>
    */
-  COMPATIBLE(1),
+  COST_DATA(1),
   /**
    *
    *
    * <pre>
-   * The dimension or metric is incompatible. This dimension or metric cannot be
-   * successfully added to a report.
+   * Revenue metrics such as `purchaseRevenue`.
    * </pre>
    *
-   * <code>INCOMPATIBLE = 2;</code>
+   * <code>REVENUE_DATA = 2;</code>
    */
-  INCOMPATIBLE(2),
+  REVENUE_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -67,34 +66,32 @@ public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified compatibility.
+   * Unspecified type.
    * </pre>
    *
-   * <code>COMPATIBILITY_UNSPECIFIED = 0;</code>
+   * <code>RESTRICTED_METRIC_TYPE_UNSPECIFIED = 0;</code>
    */
-  public static final int COMPATIBILITY_UNSPECIFIED_VALUE = 0;
+  public static final int RESTRICTED_METRIC_TYPE_UNSPECIFIED_VALUE = 0;
   /**
    *
    *
    * <pre>
-   * The dimension or metric is compatible. This dimension or metric can be
-   * successfully added to a report.
+   * Cost metrics such as `adCost`.
    * </pre>
    *
-   * <code>COMPATIBLE = 1;</code>
+   * <code>COST_DATA = 1;</code>
    */
-  public static final int COMPATIBLE_VALUE = 1;
+  public static final int COST_DATA_VALUE = 1;
   /**
    *
    *
    * <pre>
-   * The dimension or metric is incompatible. This dimension or metric cannot be
-   * successfully added to a report.
+   * Revenue metrics such as `purchaseRevenue`.
    * </pre>
    *
-   * <code>INCOMPATIBLE = 2;</code>
+   * <code>REVENUE_DATA = 2;</code>
    */
-  public static final int INCOMPATIBLE_VALUE = 2;
+  public static final int REVENUE_DATA_VALUE = 2;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -110,7 +107,7 @@ public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static Compatibility valueOf(int value) {
+  public static RestrictedMetricType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -118,29 +115,31 @@ public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static Compatibility forNumber(int value) {
+  public static RestrictedMetricType forNumber(int value) {
     switch (value) {
       case 0:
-        return COMPATIBILITY_UNSPECIFIED;
+        return RESTRICTED_METRIC_TYPE_UNSPECIFIED;
       case 1:
-        return COMPATIBLE;
+        return COST_DATA;
       case 2:
-        return INCOMPATIBLE;
+        return REVENUE_DATA;
       default:
         return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<Compatibility> internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<RestrictedMetricType>
+      internalGetValueMap() {
     return internalValueMap;
   }
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<Compatibility> internalValueMap =
-      new com.google.protobuf.Internal.EnumLiteMap<Compatibility>() {
-        public Compatibility findValueByNumber(int number) {
-          return Compatibility.forNumber(number);
-        }
-      };
+  private static final com.google.protobuf.Internal.EnumLiteMap<RestrictedMetricType>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RestrictedMetricType>() {
+            public RestrictedMetricType findValueByNumber(int number) {
+              return RestrictedMetricType.forNumber(number);
+            }
+          };
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     if (this == UNRECOGNIZED) {
@@ -155,12 +154,13 @@ public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.analytics.data.v1beta.ReportingApiProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.analytics.data.v1beta.ReportingApiProto.getDescriptor().getEnumTypes().get(2);
   }
 
-  private static final Compatibility[] VALUES = values();
+  private static final RestrictedMetricType[] VALUES = values();
 
-  public static Compatibility valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static RestrictedMetricType valueOf(
+      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
@@ -172,9 +172,9 @@ public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
 
   private final int value;
 
-  private Compatibility(int value) {
+  private RestrictedMetricType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:google.analytics.data.v1beta.Compatibility)
+  // @@protoc_insertion_point(enum_scope:google.analytics.data.v1beta.RestrictedMetricType)
 }
