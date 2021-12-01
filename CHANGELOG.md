@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.5.0](https://www.github.com/googleapis/java-logging/compare/v3.4.0...v3.5.0) (2021-11-24)
+
+
+### Features
+
+* Enable auto-label bot to mark stale pull requests ([#758](https://www.github.com/googleapis/java-logging/issues/758)) ([23f7fa5](https://www.github.com/googleapis/java-logging/commit/23f7fa559add710b96bad90002fcebef8ac0e5c9))
+* implement context handler to store HTTP request and tracing information ([#752](https://www.github.com/googleapis/java-logging/issues/752)) ([86223ff](https://www.github.com/googleapis/java-logging/commit/86223ff36f9c4b147f322ba646607727b92fbe7b))
+
+
+### Bug Fixes
+
+* handle null pointer when parsing metadata attributes ([#759](https://www.github.com/googleapis/java-logging/issues/759)) ([e8cf6f9](https://www.github.com/googleapis/java-logging/commit/e8cf6f91b56529d28cc002cedb0976ce952e0e0e))
+* modify list log entries example documentation ([#740](https://www.github.com/googleapis/java-logging/issues/740)) ([790fb1a](https://www.github.com/googleapis/java-logging/commit/790fb1a342d63704298d16a576f6cce15bfd4398))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#743](https://www.github.com/googleapis/java-logging/issues/743)) ([c003417](https://www.github.com/googleapis/java-logging/commit/c003417aade41e025082f47f2185e66707bffcff))
+
 ## [3.4.0](https://www.github.com/googleapis/java-logging/compare/v3.3.0...v3.4.0) (2021-11-06)
 
 
