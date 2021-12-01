@@ -27,7 +27,7 @@ import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -54,7 +54,7 @@ public class PublishWithOrderingKeys {
             .build();
 
     try {
-      Map<String, String> messages = new HashMap<String, String>();
+      Map<String, String> messages = new LinkedHashMap<String, String>();
       messages.put("message1", "key1");
       messages.put("message2", "key2");
       messages.put("message3", "key1");
