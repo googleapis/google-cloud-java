@@ -208,6 +208,19 @@
  * }
  * }</pre>
  *
+ * <p>======================= TensorboardServiceClient =======================
+ *
+ * <p>Service Description: TensorboardService
+ *
+ * <p>Sample for TensorboardServiceClient:
+ *
+ * <pre>{@code
+ * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+ *   TensorboardName name = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+ *   Tensorboard response = tensorboardServiceClient.getTensorboard(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= VizierServiceClient =======================
  *
  * <p>Service Description: Vertex Vizier API.

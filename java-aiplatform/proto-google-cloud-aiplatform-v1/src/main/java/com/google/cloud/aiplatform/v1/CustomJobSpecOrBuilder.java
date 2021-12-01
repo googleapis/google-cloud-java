@@ -288,6 +288,41 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>
+   * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tensorboard.
+   */
+  java.lang.String getTensorboard();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>
+   * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tensorboard.
+   */
+  com.google.protobuf.ByteString getTensorboardBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Whether you want Vertex AI to enable [interactive shell
    * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * to training containers.
