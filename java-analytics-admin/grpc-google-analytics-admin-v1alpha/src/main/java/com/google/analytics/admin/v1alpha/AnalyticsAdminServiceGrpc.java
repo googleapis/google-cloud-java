@@ -27,6 +27,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/analytics/admin/v1alpha/analytics_admin.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AnalyticsAdminServiceGrpc {
 
   private AnalyticsAdminServiceGrpc() {}

@@ -1278,7 +1278,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchGetUserLinksRequest request =
    *       BatchGetUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .addAllNames(new ArrayList<String>())
    *           .build();
    *   BatchGetUserLinksResponse response = analyticsAdminServiceClient.batchGetUserLinks(request);
@@ -1303,7 +1303,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchGetUserLinksRequest request =
    *       BatchGetUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .addAllNames(new ArrayList<String>())
    *           .build();
    *   ApiFuture<BatchGetUserLinksResponse> future =
@@ -1381,7 +1381,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
+   *   String parent = AccountName.of("[ACCOUNT]").toString();
    *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1407,7 +1407,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListUserLinksRequest request =
    *       ListUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1435,7 +1435,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListUserLinksRequest request =
    *       ListUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1464,7 +1464,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListUserLinksRequest request =
    *       ListUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1505,7 +1505,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   AuditUserLinksRequest request =
    *       AuditUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1540,7 +1540,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   AuditUserLinksRequest request =
    *       AuditUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1575,7 +1575,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   AuditUserLinksRequest request =
    *       AuditUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1677,7 +1677,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
+   *   String parent = AccountName.of("[ACCOUNT]").toString();
    *   UserLink userLink = UserLink.newBuilder().build();
    *   UserLink response = analyticsAdminServiceClient.createUserLink(parent, userLink);
    * }
@@ -1708,7 +1708,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateUserLinkRequest request =
    *       CreateUserLinkRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setNotifyNewUser(true)
    *           .setUserLink(UserLink.newBuilder().build())
    *           .build();
@@ -1738,7 +1738,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateUserLinkRequest request =
    *       CreateUserLinkRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setNotifyNewUser(true)
    *           .setUserLink(UserLink.newBuilder().build())
    *           .build();
@@ -1767,7 +1767,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchCreateUserLinksRequest request =
    *       BatchCreateUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setNotifyNewUsers(true)
    *           .addAllRequests(new ArrayList<CreateUserLinkRequest>())
    *           .build();
@@ -1798,7 +1798,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchCreateUserLinksRequest request =
    *       BatchCreateUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .setNotifyNewUsers(true)
    *           .addAllRequests(new ArrayList<CreateUserLinkRequest>())
    *           .build();
@@ -1892,7 +1892,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchUpdateUserLinksRequest request =
    *       BatchUpdateUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
    *           .build();
    *   BatchUpdateUserLinksResponse response =
@@ -1919,7 +1919,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchUpdateUserLinksRequest request =
    *       BatchUpdateUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
    *           .build();
    *   ApiFuture<BatchUpdateUserLinksResponse> future =
@@ -2038,7 +2038,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchDeleteUserLinksRequest request =
    *       BatchDeleteUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
    *           .build();
    *   analyticsAdminServiceClient.batchDeleteUserLinks(request);
@@ -2063,7 +2063,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchDeleteUserLinksRequest request =
    *       BatchDeleteUserLinksRequest.newBuilder()
-   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
    *           .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -2397,7 +2397,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   WebDataStream webDataStream = WebDataStream.newBuilder().build();
    *   WebDataStream response =
    *       analyticsAdminServiceClient.createWebDataStream(parent, webDataStream);
@@ -2430,7 +2430,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   CreateWebDataStreamRequest request =
    *       CreateWebDataStreamRequest.newBuilder()
    *           .setWebDataStream(WebDataStream.newBuilder().build())
-   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .build();
    *   WebDataStream response = analyticsAdminServiceClient.createWebDataStream(request);
    * }
@@ -2455,7 +2455,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   CreateWebDataStreamRequest request =
    *       CreateWebDataStreamRequest.newBuilder()
    *           .setWebDataStream(WebDataStream.newBuilder().build())
-   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .build();
    *   ApiFuture<WebDataStream> future =
    *       analyticsAdminServiceClient.createWebDataStreamCallable().futureCall(request);
@@ -2513,7 +2513,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (WebDataStream element :
    *       analyticsAdminServiceClient.listWebDataStreams(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -2545,7 +2545,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListWebDataStreamsRequest request =
    *       ListWebDataStreamsRequest.newBuilder()
-   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -2578,7 +2578,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListWebDataStreamsRequest request =
    *       ListWebDataStreamsRequest.newBuilder()
-   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -2610,7 +2610,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListWebDataStreamsRequest request =
    *       ListWebDataStreamsRequest.newBuilder()
-   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -2965,7 +2965,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (IosAppDataStream element :
    *       analyticsAdminServiceClient.listIosAppDataStreams(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -2997,7 +2997,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListIosAppDataStreamsRequest request =
    *       ListIosAppDataStreamsRequest.newBuilder()
-   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3030,7 +3030,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListIosAppDataStreamsRequest request =
    *       ListIosAppDataStreamsRequest.newBuilder()
-   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3062,7 +3062,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListIosAppDataStreamsRequest request =
    *       ListIosAppDataStreamsRequest.newBuilder()
-   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3429,8 +3429,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (AndroidAppDataStream element :
    *       analyticsAdminServiceClient.listAndroidAppDataStreams(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -3462,8 +3461,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAndroidAppDataStreamsRequest request =
    *       ListAndroidAppDataStreamsRequest.newBuilder()
-   *           .setParent(
-   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3496,8 +3494,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAndroidAppDataStreamsRequest request =
    *       ListAndroidAppDataStreamsRequest.newBuilder()
-   *           .setParent(
-   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3530,8 +3527,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAndroidAppDataStreamsRequest request =
    *       ListAndroidAppDataStreamsRequest.newBuilder()
-   *           .setParent(
-   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3804,7 +3800,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
    *   FirebaseLink response = analyticsAdminServiceClient.createFirebaseLink(parent, firebaseLink);
    * }
@@ -3836,7 +3832,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateFirebaseLinkRequest request =
    *       CreateFirebaseLinkRequest.newBuilder()
-   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setFirebaseLink(FirebaseLink.newBuilder().build())
    *           .build();
    *   FirebaseLink response = analyticsAdminServiceClient.createFirebaseLink(request);
@@ -3863,7 +3859,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateFirebaseLinkRequest request =
    *       CreateFirebaseLinkRequest.newBuilder()
-   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setFirebaseLink(FirebaseLink.newBuilder().build())
    *           .build();
    *   ApiFuture<FirebaseLink> future =
@@ -4012,7 +4008,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (FirebaseLink element :
    *       analyticsAdminServiceClient.listFirebaseLinks(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -4040,7 +4036,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListFirebaseLinksRequest request =
    *       ListFirebaseLinksRequest.newBuilder()
-   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -4069,7 +4065,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListFirebaseLinksRequest request =
    *       ListFirebaseLinksRequest.newBuilder()
-   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -4098,7 +4094,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListFirebaseLinksRequest request =
    *       ListFirebaseLinksRequest.newBuilder()
-   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -4260,7 +4256,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
    *   GoogleAdsLink response =
    *       analyticsAdminServiceClient.createGoogleAdsLink(parent, googleAdsLink);
@@ -4291,7 +4287,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateGoogleAdsLinkRequest request =
    *       CreateGoogleAdsLinkRequest.newBuilder()
-   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setGoogleAdsLink(GoogleAdsLink.newBuilder().build())
    *           .build();
    *   GoogleAdsLink response = analyticsAdminServiceClient.createGoogleAdsLink(request);
@@ -4316,7 +4312,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateGoogleAdsLinkRequest request =
    *       CreateGoogleAdsLinkRequest.newBuilder()
-   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setGoogleAdsLink(GoogleAdsLink.newBuilder().build())
    *           .build();
    *   ApiFuture<GoogleAdsLink> future =
@@ -4547,7 +4543,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (GoogleAdsLink element :
    *       analyticsAdminServiceClient.listGoogleAdsLinks(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -4575,7 +4571,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListGoogleAdsLinksRequest request =
    *       ListGoogleAdsLinksRequest.newBuilder()
-   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -4605,7 +4601,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListGoogleAdsLinksRequest request =
    *       ListGoogleAdsLinksRequest.newBuilder()
-   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -4634,7 +4630,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListGoogleAdsLinksRequest request =
    *       ListGoogleAdsLinksRequest.newBuilder()
-   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -4917,10 +4913,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       MeasurementProtocolSecretName.of(
-   *               "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
-   *           .toString();
+   *   String parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
    *   for (MeasurementProtocolSecret element :
    *       analyticsAdminServiceClient.listMeasurementProtocolSecrets(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -4951,10 +4944,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListMeasurementProtocolSecretsRequest request =
    *       ListMeasurementProtocolSecretsRequest.newBuilder()
-   *           .setParent(
-   *               MeasurementProtocolSecretName.of(
-   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
-   *                   .toString())
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -4984,10 +4974,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListMeasurementProtocolSecretsRequest request =
    *       ListMeasurementProtocolSecretsRequest.newBuilder()
-   *           .setParent(
-   *               MeasurementProtocolSecretName.of(
-   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
-   *                   .toString())
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -5019,10 +5006,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListMeasurementProtocolSecretsRequest request =
    *       ListMeasurementProtocolSecretsRequest.newBuilder()
-   *           .setParent(
-   *               MeasurementProtocolSecretName.of(
-   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
-   *                   .toString())
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -5091,10 +5075,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       MeasurementProtocolSecretName.of(
-   *               "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
-   *           .toString();
+   *   String parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
    *   MeasurementProtocolSecret measurementProtocolSecret =
    *       MeasurementProtocolSecret.newBuilder().build();
    *   MeasurementProtocolSecret response =
@@ -5130,10 +5111,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateMeasurementProtocolSecretRequest request =
    *       CreateMeasurementProtocolSecretRequest.newBuilder()
-   *           .setParent(
-   *               MeasurementProtocolSecretName.of(
-   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
-   *                   .toString())
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
    *           .setMeasurementProtocolSecret(MeasurementProtocolSecret.newBuilder().build())
    *           .build();
    *   MeasurementProtocolSecret response =
@@ -5160,10 +5138,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateMeasurementProtocolSecretRequest request =
    *       CreateMeasurementProtocolSecretRequest.newBuilder()
-   *           .setParent(
-   *               MeasurementProtocolSecretName.of(
-   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
-   *                   .toString())
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
    *           .setMeasurementProtocolSecret(MeasurementProtocolSecret.newBuilder().build())
    *           .build();
    *   ApiFuture<MeasurementProtocolSecret> future =
@@ -5720,7 +5695,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
    *   ConversionEvent response =
    *       analyticsAdminServiceClient.createConversionEvent(parent, conversionEvent);
@@ -5754,7 +5729,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   CreateConversionEventRequest request =
    *       CreateConversionEventRequest.newBuilder()
    *           .setConversionEvent(ConversionEvent.newBuilder().build())
-   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .build();
    *   ConversionEvent response = analyticsAdminServiceClient.createConversionEvent(request);
    * }
@@ -5779,7 +5754,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   CreateConversionEventRequest request =
    *       CreateConversionEventRequest.newBuilder()
    *           .setConversionEvent(ConversionEvent.newBuilder().build())
-   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .build();
    *   ApiFuture<ConversionEvent> future =
    *       analyticsAdminServiceClient.createConversionEventCallable().futureCall(request);
@@ -6035,7 +6010,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (ConversionEvent element :
    *       analyticsAdminServiceClient.listConversionEvents(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -6065,7 +6040,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListConversionEventsRequest request =
    *       ListConversionEventsRequest.newBuilder()
-   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -6097,7 +6072,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListConversionEventsRequest request =
    *       ListConversionEventsRequest.newBuilder()
-   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -6128,7 +6103,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListConversionEventsRequest request =
    *       ListConversionEventsRequest.newBuilder()
-   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -6306,9 +6281,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
-   *           .toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (DisplayVideo360AdvertiserLink element :
    *       analyticsAdminServiceClient.listDisplayVideo360AdvertiserLinks(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -6337,10 +6310,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinksRequest request =
    *       ListDisplayVideo360AdvertiserLinksRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -6370,10 +6340,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinksRequest request =
    *       ListDisplayVideo360AdvertiserLinksRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -6406,10 +6373,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinksRequest request =
    *       ListDisplayVideo360AdvertiserLinksRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -6482,9 +6446,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
-   *           .toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
    *       DisplayVideo360AdvertiserLink.newBuilder().build();
    *   DisplayVideo360AdvertiserLink response =
@@ -6521,10 +6483,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkRequest request =
    *       CreateDisplayVideo360AdvertiserLinkRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
    *           .build();
    *   DisplayVideo360AdvertiserLink response =
@@ -6554,10 +6513,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkRequest request =
    *       CreateDisplayVideo360AdvertiserLinkRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
    *           .build();
    *   ApiFuture<DisplayVideo360AdvertiserLink> future =
@@ -6935,10 +6891,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       DisplayVideo360AdvertiserLinkProposalName.of(
-   *               "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
-   *           .toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (DisplayVideo360AdvertiserLinkProposal element :
    *       analyticsAdminServiceClient
    *           .listDisplayVideo360AdvertiserLinkProposals(parent)
@@ -6969,10 +6922,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
    *       ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkProposalName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -7005,10 +6955,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
    *       ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkProposalName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -7041,10 +6988,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
    *       ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkProposalName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -7116,10 +7060,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       DisplayVideo360AdvertiserLinkProposalName.of(
-   *               "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
-   *           .toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
    *       DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
    *   DisplayVideo360AdvertiserLinkProposal response =
@@ -7154,10 +7095,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkProposalRequest request =
    *       CreateDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkProposalName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setDisplayVideo360AdvertiserLinkProposal(
    *               DisplayVideo360AdvertiserLinkProposal.newBuilder().build())
    *           .build();
@@ -7185,10 +7123,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkProposalRequest request =
    *       CreateDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
-   *           .setParent(
-   *               DisplayVideo360AdvertiserLinkProposalName.of(
-   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
-   *                   .toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setDisplayVideo360AdvertiserLinkProposal(
    *               DisplayVideo360AdvertiserLinkProposal.newBuilder().build())
    *           .build();
@@ -7492,7 +7427,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = CustomDimensionName.of("[PROPERTY]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   CustomDimension customDimension = CustomDimension.newBuilder().build();
    *   CustomDimension response =
    *       analyticsAdminServiceClient.createCustomDimension(parent, customDimension);
@@ -7524,7 +7459,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomDimensionRequest request =
    *       CreateCustomDimensionRequest.newBuilder()
-   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setCustomDimension(CustomDimension.newBuilder().build())
    *           .build();
    *   CustomDimension response = analyticsAdminServiceClient.createCustomDimension(request);
@@ -7549,7 +7484,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomDimensionRequest request =
    *       CreateCustomDimensionRequest.newBuilder()
-   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setCustomDimension(CustomDimension.newBuilder().build())
    *           .build();
    *   ApiFuture<CustomDimension> future =
@@ -7684,7 +7619,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = CustomDimensionName.of("[PROPERTY]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (CustomDimension element :
    *       analyticsAdminServiceClient.listCustomDimensions(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -7712,7 +7647,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomDimensionsRequest request =
    *       ListCustomDimensionsRequest.newBuilder()
-   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -7742,7 +7677,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomDimensionsRequest request =
    *       ListCustomDimensionsRequest.newBuilder()
-   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -7771,7 +7706,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomDimensionsRequest request =
    *       ListCustomDimensionsRequest.newBuilder()
-   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -8031,7 +7966,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = CustomMetricName.of("[PROPERTY]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   CustomMetric customMetric = CustomMetric.newBuilder().build();
    *   CustomMetric response = analyticsAdminServiceClient.createCustomMetric(parent, customMetric);
    * }
@@ -8061,7 +7996,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomMetricRequest request =
    *       CreateCustomMetricRequest.newBuilder()
-   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setCustomMetric(CustomMetric.newBuilder().build())
    *           .build();
    *   CustomMetric response = analyticsAdminServiceClient.createCustomMetric(request);
@@ -8086,7 +8021,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomMetricRequest request =
    *       CreateCustomMetricRequest.newBuilder()
-   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setCustomMetric(CustomMetric.newBuilder().build())
    *           .build();
    *   ApiFuture<CustomMetric> future =
@@ -8218,7 +8153,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = CustomMetricName.of("[PROPERTY]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (CustomMetric element :
    *       analyticsAdminServiceClient.listCustomMetrics(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -8246,7 +8181,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomMetricsRequest request =
    *       ListCustomMetricsRequest.newBuilder()
-   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -8275,7 +8210,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomMetricsRequest request =
    *       ListCustomMetricsRequest.newBuilder()
-   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -8304,7 +8239,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomMetricsRequest request =
    *       ListCustomMetricsRequest.newBuilder()
-   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

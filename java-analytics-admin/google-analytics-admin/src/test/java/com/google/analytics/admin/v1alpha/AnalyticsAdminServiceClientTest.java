@@ -896,7 +896,7 @@ public class AnalyticsAdminServiceClientTest {
 
     BatchGetUserLinksRequest request =
         BatchGetUserLinksRequest.newBuilder()
-            .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+            .setParent(AccountName.of("[ACCOUNT]").toString())
             .addAllNames(new ArrayList<String>())
             .build();
 
@@ -923,7 +923,7 @@ public class AnalyticsAdminServiceClientTest {
     try {
       BatchGetUserLinksRequest request =
           BatchGetUserLinksRequest.newBuilder()
-              .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+              .setParent(AccountName.of("[ACCOUNT]").toString())
               .addAllNames(new ArrayList<String>())
               .build();
       client.batchGetUserLinks(request);
@@ -1077,7 +1077,7 @@ public class AnalyticsAdminServiceClientTest {
 
     AuditUserLinksRequest request =
         AuditUserLinksRequest.newBuilder()
-            .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+            .setParent(AccountName.of("[ACCOUNT]").toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .build();
@@ -1110,7 +1110,7 @@ public class AnalyticsAdminServiceClientTest {
     try {
       AuditUserLinksRequest request =
           AuditUserLinksRequest.newBuilder()
-              .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+              .setParent(AccountName.of("[ACCOUNT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();
@@ -1260,7 +1260,7 @@ public class AnalyticsAdminServiceClientTest {
 
     BatchCreateUserLinksRequest request =
         BatchCreateUserLinksRequest.newBuilder()
-            .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+            .setParent(AccountName.of("[ACCOUNT]").toString())
             .setNotifyNewUsers(true)
             .addAllRequests(new ArrayList<CreateUserLinkRequest>())
             .build();
@@ -1290,7 +1290,7 @@ public class AnalyticsAdminServiceClientTest {
     try {
       BatchCreateUserLinksRequest request =
           BatchCreateUserLinksRequest.newBuilder()
-              .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+              .setParent(AccountName.of("[ACCOUNT]").toString())
               .setNotifyNewUsers(true)
               .addAllRequests(new ArrayList<CreateUserLinkRequest>())
               .build();
@@ -1351,7 +1351,7 @@ public class AnalyticsAdminServiceClientTest {
 
     BatchUpdateUserLinksRequest request =
         BatchUpdateUserLinksRequest.newBuilder()
-            .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+            .setParent(AccountName.of("[ACCOUNT]").toString())
             .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
             .build();
 
@@ -1379,7 +1379,7 @@ public class AnalyticsAdminServiceClientTest {
     try {
       BatchUpdateUserLinksRequest request =
           BatchUpdateUserLinksRequest.newBuilder()
-              .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+              .setParent(AccountName.of("[ACCOUNT]").toString())
               .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
               .build();
       client.batchUpdateUserLinks(request);
@@ -1464,7 +1464,7 @@ public class AnalyticsAdminServiceClientTest {
 
     BatchDeleteUserLinksRequest request =
         BatchDeleteUserLinksRequest.newBuilder()
-            .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+            .setParent(AccountName.of("[ACCOUNT]").toString())
             .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
             .build();
 
@@ -1491,7 +1491,7 @@ public class AnalyticsAdminServiceClientTest {
     try {
       BatchDeleteUserLinksRequest request =
           BatchDeleteUserLinksRequest.newBuilder()
-              .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+              .setParent(AccountName.of("[ACCOUNT]").toString())
               .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
               .build();
       client.batchDeleteUserLinks(request);
