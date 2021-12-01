@@ -37,5 +37,5 @@ public abstract class BigtableTracer extends BaseApiTracer {
    * the response from server-timing header. If server-timing header is missing, increment the
    * missing header count.
    */
-  public abstract void recordGfeMetadata(@Nullable Long latency);
+  public abstract void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable);
 }

@@ -16,6 +16,8 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcResponseMetadata;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -51,27 +53,42 @@ public class HeaderTracerUnaryCallable<RequestT, ResponseT>
 
   @Override
   public ApiFuture futureCall(RequestT request, ApiCallContext context) {
-    if (RpcViews.isGfeMetricsRegistered()) {
+    // tracer should always be an instance of BigtableTracer
+    if (RpcViews.isGfeMetricsRegistered() && context.getTracer() instanceof BigtableTracer) {
       final GrpcResponseMetadata responseMetadata = new GrpcResponseMetadata();
       final ApiCallContext contextWithResponseMetadata = responseMetadata.addHandlers(context);
+      HeaderTracerUnaryCallback callback =
+          new HeaderTracerUnaryCallback((BigtableTracer) context.getTracer(), responseMetadata);
       ApiFuture<ResponseT> future = innerCallable.futureCall(request, contextWithResponseMetadata);
-      future.addListener(
-          new Runnable() {
-            @Override
-            public void run() {
-              // this should always be true
-              if (contextWithResponseMetadata.getTracer() instanceof BigtableTracer) {
-                BigtableTracer tracer = (BigtableTracer) contextWithResponseMetadata.getTracer();
-                Metadata metadata = responseMetadata.getMetadata();
-                Long latency = Util.getGfeLatency(metadata);
-                tracer.recordGfeMetadata(latency);
-              }
-            }
-          },
-          MoreExecutors.directExecutor());
+      ApiFutures.addCallback(future, callback, MoreExecutors.directExecutor());
       return future;
     } else {
       return innerCallable.futureCall(request, context);
+    }
+  }
+
+  class HeaderTracerUnaryCallback<ResponseT> implements ApiFutureCallback<ResponseT> {
+
+    private final BigtableTracer tracer;
+    private final GrpcResponseMetadata responseMetadata;
+
+    HeaderTracerUnaryCallback(BigtableTracer tracer, GrpcResponseMetadata responseMetadata) {
+      this.tracer = tracer;
+      this.responseMetadata = responseMetadata;
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+      Metadata metadata = responseMetadata.getMetadata();
+      Long latency = Util.getGfeLatency(metadata);
+      tracer.recordGfeMetadata(latency, throwable);
+    }
+
+    @Override
+    public void onSuccess(ResponseT response) {
+      Metadata metadata = responseMetadata.getMetadata();
+      Long latency = Util.getGfeLatency(metadata);
+      tracer.recordGfeMetadata(latency, null);
     }
   }
 }

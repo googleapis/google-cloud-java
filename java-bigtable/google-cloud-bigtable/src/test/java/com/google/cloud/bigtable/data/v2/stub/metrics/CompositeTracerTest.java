@@ -23,6 +23,8 @@ import static org.mockito.Mockito.when;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracer.Scope;
 import com.google.common.collect.ImmutableList;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -222,8 +224,9 @@ public class CompositeTracerTest {
 
   @Test
   public void testRecordGfeLatency() {
-    compositeTracer.recordGfeMetadata(20L);
-    verify(child3, times(1)).recordGfeMetadata(20L);
-    verify(child4, times(1)).recordGfeMetadata(20L);
+    Throwable t = new StatusRuntimeException(Status.UNAVAILABLE);
+    compositeTracer.recordGfeMetadata(20L, t);
+    verify(child3, times(1)).recordGfeMetadata(20L, t);
+    verify(child4, times(1)).recordGfeMetadata(20L, t);
   }
 }

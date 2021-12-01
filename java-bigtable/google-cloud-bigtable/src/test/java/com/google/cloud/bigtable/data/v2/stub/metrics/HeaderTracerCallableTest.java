@@ -168,7 +168,8 @@ public class HeaderTracerCallableTest {
             localStats,
             RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
             ImmutableMap.<TagKey, TagValue>of(
-                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows")),
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows"),
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -186,7 +187,9 @@ public class HeaderTracerCallableTest {
         StatsTestUtils.getAggregationValueAsLong(
             localStats,
             RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
-            ImmutableMap.of(RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRow")),
+            ImmutableMap.of(
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRow"),
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -208,7 +211,8 @@ public class HeaderTracerCallableTest {
             localStats,
             RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
             ImmutableMap.of(
-                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRows")),
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRows"),
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -226,7 +230,8 @@ public class HeaderTracerCallableTest {
             localStats,
             RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
             ImmutableMap.of(
-                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.SampleRowKeys")),
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.SampleRowKeys"),
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -246,7 +251,8 @@ public class HeaderTracerCallableTest {
             localStats,
             RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
             ImmutableMap.of(
-                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.CheckAndMutateRow")),
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.CheckAndMutateRow"),
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -266,7 +272,8 @@ public class HeaderTracerCallableTest {
             localStats,
             RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
             ImmutableMap.of(
-                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadModifyWriteRow")),
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadModifyWriteRow"),
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -285,7 +292,11 @@ public class HeaderTracerCallableTest {
         StatsTestUtils.getAggregationValueAsLong(
             localStats,
             RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW,
-            ImmutableMap.of(RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRow")),
+            ImmutableMap.of(
+                RpcMeasureConstants.BIGTABLE_OP,
+                TagValue.create("Bigtable.MutateRow"),
+                RpcMeasureConstants.BIGTABLE_STATUS,
+                TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -294,7 +305,8 @@ public class HeaderTracerCallableTest {
             localStats,
             RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW,
             ImmutableMap.<TagKey, TagValue>of(
-                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows")),
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows"),
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -321,7 +333,11 @@ public class HeaderTracerCallableTest {
         StatsTestUtils.getAggregationValueAsLong(
             localStats,
             RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW,
-            ImmutableMap.of(RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRow")),
+            ImmutableMap.of(
+                RpcMeasureConstants.BIGTABLE_OP,
+                TagValue.create("Bigtable.MutateRow"),
+                RpcMeasureConstants.BIGTABLE_STATUS,
+                TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -330,7 +346,10 @@ public class HeaderTracerCallableTest {
             localStats,
             RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW,
             ImmutableMap.<TagKey, TagValue>of(
-                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows")),
+                RpcMeasureConstants.BIGTABLE_OP,
+                TagValue.create("Bigtable.ReadRows"),
+                RpcMeasureConstants.BIGTABLE_STATUS,
+                TagValue.create("OK")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);
@@ -353,7 +372,11 @@ public class HeaderTracerCallableTest {
         StatsTestUtils.getAggregationValueAsLong(
             localStats,
             RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW,
-            ImmutableMap.of(RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows")),
+            ImmutableMap.of(
+                RpcMeasureConstants.BIGTABLE_OP,
+                TagValue.create("Bigtable.ReadRows"),
+                RpcMeasureConstants.BIGTABLE_STATUS,
+                TagValue.create("UNAVAILABLE")),
             PROJECT_ID,
             INSTANCE_ID,
             APP_PROFILE_ID);

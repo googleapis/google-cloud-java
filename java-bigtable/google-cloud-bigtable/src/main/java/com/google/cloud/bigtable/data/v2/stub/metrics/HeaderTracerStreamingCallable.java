@@ -96,7 +96,7 @@ public class HeaderTracerStreamingCallable<RequestT, ResponseT>
       // so it's not checking trailing metadata here.
       Metadata metadata = responseMetadata.getMetadata();
       Long latency = Util.getGfeLatency(metadata);
-      tracer.recordGfeMetadata(latency);
+      tracer.recordGfeMetadata(latency, t);
       outerObserver.onError(t);
     }
 
@@ -104,7 +104,7 @@ public class HeaderTracerStreamingCallable<RequestT, ResponseT>
     public void onComplete() {
       Metadata metadata = responseMetadata.getMetadata();
       Long latency = Util.getGfeLatency(metadata);
-      tracer.recordGfeMetadata(latency);
+      tracer.recordGfeMetadata(latency, null);
       outerObserver.onComplete();
     }
   }

@@ -211,7 +211,7 @@ class MetricsTracer extends BigtableTracer {
   }
 
   @Override
-  public void recordGfeMetadata(@Nullable Long latency) {
+  public void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable) {
     MeasureMap measures = stats.newMeasureMap();
     if (latency != null) {
       measures
@@ -220,7 +220,10 @@ class MetricsTracer extends BigtableTracer {
     } else {
       measures.put(RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT, 1L);
     }
-    measures.record(newTagCtxBuilder().build());
+    measures.record(
+        newTagCtxBuilder()
+            .putLocal(RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(throwable))
+            .build());
   }
 
   private TagContextBuilder newTagCtxBuilder() {

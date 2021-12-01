@@ -173,9 +173,9 @@ class CompositeTracer extends BigtableTracer {
   }
 
   @Override
-  public void recordGfeMetadata(@Nullable Long latency) {
+  public void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable) {
     for (BigtableTracer tracer : bigtableTracers) {
-      tracer.recordGfeMetadata(latency);
+      tracer.recordGfeMetadata(latency, throwable);
     }
   }
 }

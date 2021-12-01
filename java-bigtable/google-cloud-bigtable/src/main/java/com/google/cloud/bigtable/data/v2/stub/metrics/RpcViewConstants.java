@@ -136,7 +136,11 @@ class RpcViewConstants {
           BIGTABLE_GFE_LATENCY,
           AGGREGATION_WITH_MILLIS_HISTOGRAM,
           ImmutableList.of(
-              BIGTABLE_INSTANCE_ID, BIGTABLE_PROJECT_ID, BIGTABLE_APP_PROFILE_ID, BIGTABLE_OP));
+              BIGTABLE_INSTANCE_ID,
+              BIGTABLE_PROJECT_ID,
+              BIGTABLE_APP_PROFILE_ID,
+              BIGTABLE_OP,
+              BIGTABLE_STATUS));
 
   static final View BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW =
       View.create(
@@ -145,5 +149,9 @@ class RpcViewConstants {
           BIGTABLE_GFE_HEADER_MISSING_COUNT,
           SUM,
           ImmutableList.of(
-              BIGTABLE_INSTANCE_ID, BIGTABLE_PROJECT_ID, BIGTABLE_APP_PROFILE_ID, BIGTABLE_OP));
+              BIGTABLE_INSTANCE_ID,
+              BIGTABLE_PROJECT_ID,
+              BIGTABLE_APP_PROFILE_ID,
+              BIGTABLE_OP,
+              BIGTABLE_STATUS));
 }
