@@ -2900,6 +2900,14 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(destinationTable));
     Job queryJob = bigquery.getJob(remoteJob.getJobId());
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+    if (statistics.getBiEngineStats() != null) {
+      assertEquals(statistics.getBiEngineStats().getBiEngineMode(), "DISABLED");
+      assertEquals(
+          statistics.getBiEngineStats().getBiEngineReasons().get(0).getCode(), "OTHER_REASON");
+      assertEquals(
+          statistics.getBiEngineStats().getBiEngineReasons().get(0).getMessage(),
+          "Query output to destination table is not supported.");
+    }
     assertNotNull(statistics.getQueryPlan());
   }
 

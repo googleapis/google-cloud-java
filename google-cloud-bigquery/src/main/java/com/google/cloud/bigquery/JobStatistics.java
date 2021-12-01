@@ -321,6 +321,7 @@ public abstract class JobStatistics implements Serializable {
 
     private static final long serialVersionUID = 7539354109226732353L;
 
+    private final BiEngineStats biEngineStats;
     private final Integer billingTier;
     private final Boolean cacheHit;
     private final String ddlOperationPerformed;
@@ -402,6 +403,7 @@ public abstract class JobStatistics implements Serializable {
 
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
 
+      private BiEngineStats biEngineStats;
       private Integer billingTier;
       private Boolean cacheHit;
       private String ddlOperationPerformed;
@@ -425,6 +427,10 @@ public abstract class JobStatistics implements Serializable {
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
         if (statisticsPb.getQuery() != null) {
+          if (statisticsPb.getQuery().getBiEngineStatistics() != null) {
+            this.biEngineStats =
+                BiEngineStats.fromPb(statisticsPb.getQuery().getBiEngineStatistics());
+          }
           this.billingTier = statisticsPb.getQuery().getBillingTier();
           this.cacheHit = statisticsPb.getQuery().getCacheHit();
           this.ddlOperationPerformed = statisticsPb.getQuery().getDdlOperationPerformed();
@@ -466,6 +472,11 @@ public abstract class JobStatistics implements Serializable {
             this.dmlStats = DmlStats.fromPb(statisticsPb.getQuery().getDmlStats());
           }
         }
+      }
+
+      Builder setBiEngineStats(BiEngineStats biEngineStats) {
+        this.biEngineStats = biEngineStats;
+        return self();
       }
 
       Builder setBillingTier(Integer billingTier) {
@@ -566,6 +577,7 @@ public abstract class JobStatistics implements Serializable {
 
     private QueryStatistics(Builder builder) {
       super(builder);
+      this.biEngineStats = builder.biEngineStats;
       this.billingTier = builder.billingTier;
       this.cacheHit = builder.cacheHit;
       this.ddlOperationPerformed = builder.ddlOperationPerformed;
@@ -583,6 +595,11 @@ public abstract class JobStatistics implements Serializable {
       this.queryPlan = builder.queryPlan;
       this.timeline = builder.timeline;
       this.schema = builder.schema;
+    }
+
+    /** Returns query statistics specific to the use of BI Engine. */
+    public BiEngineStats getBiEngineStats() {
+      return biEngineStats;
     }
 
     /** Returns the billing tier for the job. */
@@ -701,6 +718,7 @@ public abstract class JobStatistics implements Serializable {
     @Override
     ToStringHelper toStringHelper() {
       return super.toStringHelper()
+          .add("biEngineStats", biEngineStats)
           .add("billingTier", billingTier)
           .add("cacheHit", cacheHit)
           .add("totalBytesBilled", totalBytesBilled)
@@ -722,6 +740,7 @@ public abstract class JobStatistics implements Serializable {
     public final int hashCode() {
       return Objects.hash(
           baseHashCode(),
+          biEngineStats,
           billingTier,
           cacheHit,
           totalBytesBilled,
@@ -733,6 +752,9 @@ public abstract class JobStatistics implements Serializable {
     @Override
     com.google.api.services.bigquery.model.JobStatistics toPb() {
       JobStatistics2 queryStatisticsPb = new JobStatistics2();
+      if (biEngineStats != null) {
+        queryStatisticsPb.setBiEngineStatistics(biEngineStats.toPb());
+      }
       queryStatisticsPb.setBillingTier(billingTier);
       queryStatisticsPb.setCacheHit(cacheHit);
       queryStatisticsPb.setDdlOperationPerformed(ddlOperationPerformed);

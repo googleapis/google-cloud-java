@@ -36,6 +36,16 @@ import org.junit.Test;
 
 public class JobStatisticsTest {
 
+  private static final BiEngineReason BI_ENGINE_REASON =
+      BiEngineReason.newBuilder()
+          .setMessage("Detected unsupported join type")
+          .setCode("UNSUPPORTED_SQL_TEXT")
+          .build();
+  private static final BiEngineStats BI_ENGINE_STATS =
+      BiEngineStats.newBuilder()
+          .setBiEngineReasons(ImmutableList.of(BI_ENGINE_REASON))
+          .setBiEngineMode("DISABLED")
+          .build();
   private static final Integer BILLING_TIER = 42;
   private static final Boolean CACHE_HIT = true;
   private static final String DDL_OPERATION_PERFORMED = "SKIP";
@@ -154,6 +164,7 @@ public class JobStatisticsTest {
           .setCreationTimestamp(CREATION_TIME)
           .setEndTime(END_TIME)
           .setStartTime(START_TIME)
+          .setBiEngineStats(BI_ENGINE_STATS)
           .setBillingTier(BILLING_TIER)
           .setCacheHit(CACHE_HIT)
           .setDDLOperationPerformed(DDL_OPERATION_PERFORMED)
@@ -246,6 +257,7 @@ public class JobStatisticsTest {
     assertEquals(CREATION_TIME, QUERY_STATISTICS.getCreationTime());
     assertEquals(START_TIME, QUERY_STATISTICS.getStartTime());
     assertEquals(END_TIME, QUERY_STATISTICS.getEndTime());
+    assertEquals(BI_ENGINE_STATS, QUERY_STATISTICS.getBiEngineStats());
     assertEquals(BILLING_TIER, QUERY_STATISTICS.getBillingTier());
     assertEquals(CACHE_HIT, QUERY_STATISTICS.getCacheHit());
     assertEquals(DDL_OPERATION_PERFORMED, QUERY_STATISTICS.getDdlOperationPerformed());
