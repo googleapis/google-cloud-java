@@ -28,6 +28,19 @@ public class GetModelEvaluationVideoObjectTrackingSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
+    // To obtain evaluationId run the code block below after setting modelServiceSettings.
+    //
+    // try (ModelServiceClient modelServiceClient = ModelServiceClient.create(modelServiceSettings))
+    // {
+    //   String location = "us-central1";
+    //   ModelName modelFullId = ModelName.of(project, location, modelId);
+    //   ListModelEvaluationsRequest modelEvaluationsrequest =
+    //   ListModelEvaluationsRequest.newBuilder().setParent(modelFullId.toString()).build();
+    //   for (ModelEvaluation modelEvaluation :
+    //     modelServiceClient.listModelEvaluations(modelEvaluationsrequest).iterateAll()) {
+    //       System.out.format("Model Evaluation Name: %s%n", modelEvaluation.getName());
+    //   }
+    // }
     String project = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";
     String evaluationId = "YOUR_EVALUATION_ID";
