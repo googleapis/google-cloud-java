@@ -5551,8 +5551,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If want to analyze the Explainable AI feature attribute scores or not.
-     * If set to true, Vertex AI will log the feature attributions from
+     * If want to analyze the Vertex Explainable AI feature attribute scores or
+     * not. If set to true, Vertex AI will log the feature attributions from
      * explain response and do the skew/drift detection for them.
      * </pre>
      *
@@ -5611,8 +5611,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The config for integrated with Explainable AI. Only applicable if the Model
-   * has explanation_spec populated.
+   * The config for integrating with Vertex Explainable AI. Only applicable if
+   * the Model has explanation_spec populated.
    * </pre>
    *
    * Protobuf type {@code
@@ -7412,8 +7412,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If want to analyze the Explainable AI feature attribute scores or not.
-     * If set to true, Vertex AI will log the feature attributions from
+     * If want to analyze the Vertex Explainable AI feature attribute scores or
+     * not. If set to true, Vertex AI will log the feature attributions from
      * explain response and do the skew/drift detection for them.
      * </pre>
      *
@@ -7689,8 +7689,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI. Only applicable if the Model
-     * has explanation_spec populated.
+     * The config for integrating with Vertex Explainable AI. Only applicable if
+     * the Model has explanation_spec populated.
      * </pre>
      *
      * Protobuf type {@code
@@ -7887,8 +7887,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        *
        *
        * <pre>
-       * If want to analyze the Explainable AI feature attribute scores or not.
-       * If set to true, Vertex AI will log the feature attributions from
+       * If want to analyze the Vertex Explainable AI feature attribute scores or
+       * not. If set to true, Vertex AI will log the feature attributions from
        * explain response and do the skew/drift detection for them.
        * </pre>
        *
@@ -7904,8 +7904,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        *
        *
        * <pre>
-       * If want to analyze the Explainable AI feature attribute scores or not.
-       * If set to true, Vertex AI will log the feature attributions from
+       * If want to analyze the Vertex Explainable AI feature attribute scores or
+       * not. If set to true, Vertex AI will log the feature attributions from
        * explain response and do the skew/drift detection for them.
        * </pre>
        *
@@ -7924,8 +7924,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        *
        *
        * <pre>
-       * If want to analyze the Explainable AI feature attribute scores or not.
-       * If set to true, Vertex AI will log the feature attributions from
+       * If want to analyze the Vertex Explainable AI feature attribute scores or
+       * not. If set to true, Vertex AI will log the feature attributions from
        * explain response and do the skew/drift detection for them.
        * </pre>
        *
@@ -8421,7 +8421,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>
@@ -8438,7 +8438,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>
@@ -8459,7 +8459,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>
@@ -9617,7 +9617,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9633,7 +9633,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9657,7 +9657,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9683,7 +9683,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9706,7 +9706,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9737,7 +9737,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9759,7 +9759,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9777,7 +9777,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>
@@ -9800,7 +9800,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>

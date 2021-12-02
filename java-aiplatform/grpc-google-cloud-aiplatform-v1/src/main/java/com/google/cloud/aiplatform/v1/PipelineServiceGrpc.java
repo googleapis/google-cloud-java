@@ -23,7 +23,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * A service for creating and managing Vertex AI's pipelines. This includes both
  * `TrainingPipeline` resources (used for AutoML and custom training) and
- * `PipelineJob` resources (used for Vertex Pipelines).
+ * `PipelineJob` resources (used for Vertex AI Pipelines).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -552,7 +552,7 @@ public final class PipelineServiceGrpc {
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both
    * `TrainingPipeline` resources (used for AutoML and custom training) and
-   * `PipelineJob` resources (used for Vertex Pipelines).
+   * `PipelineJob` resources (used for Vertex AI Pipelines).
    * </pre>
    */
   public abstract static class PipelineServiceImplBase implements io.grpc.BindableService {
@@ -798,7 +798,7 @@ public final class PipelineServiceGrpc {
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both
    * `TrainingPipeline` resources (used for AutoML and custom training) and
-   * `PipelineJob` resources (used for Vertex Pipelines).
+   * `PipelineJob` resources (used for Vertex AI Pipelines).
    * </pre>
    */
   public static final class PipelineServiceStub
@@ -1002,7 +1002,7 @@ public final class PipelineServiceGrpc {
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both
    * `TrainingPipeline` resources (used for AutoML and custom training) and
-   * `PipelineJob` resources (used for Vertex Pipelines).
+   * `PipelineJob` resources (used for Vertex AI Pipelines).
    * </pre>
    */
   public static final class PipelineServiceBlockingStub
@@ -1173,7 +1173,7 @@ public final class PipelineServiceGrpc {
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both
    * `TrainingPipeline` resources (used for AutoML and custom training) and
-   * `PipelineJob` resources (used for Vertex Pipelines).
+   * `PipelineJob` resources (used for Vertex AI Pipelines).
    * </pre>
    */
   public static final class PipelineServiceFutureStub

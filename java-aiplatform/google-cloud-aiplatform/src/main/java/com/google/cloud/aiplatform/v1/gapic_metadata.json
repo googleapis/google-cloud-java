@@ -50,7 +50,7 @@
           "libraryClient": "EndpointServiceClient",
           "rpcs": {
             "CreateEndpoint": {
-              "methods": ["createEndpointAsync", "createEndpointAsync", "createEndpointAsync", "createEndpointOperationCallable", "createEndpointCallable"]
+              "methods": ["createEndpointAsync", "createEndpointAsync", "createEndpointAsync", "createEndpointAsync", "createEndpointAsync", "createEndpointOperationCallable", "createEndpointCallable"]
             },
             "DeleteEndpoint": {
               "methods": ["deleteEndpointAsync", "deleteEndpointAsync", "deleteEndpointAsync", "deleteEndpointOperationCallable", "deleteEndpointCallable"]
@@ -101,13 +101,13 @@
               "methods": ["batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesOperationCallable", "batchReadFeatureValuesCallable"]
             },
             "CreateEntityType": {
-              "methods": ["createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeOperationCallable", "createEntityTypeCallable"]
+              "methods": ["createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeOperationCallable", "createEntityTypeCallable"]
             },
             "CreateFeature": {
-              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
+              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
             },
             "CreateFeaturestore": {
-              "methods": ["createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreOperationCallable", "createFeaturestoreCallable"]
+              "methods": ["createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreOperationCallable", "createFeaturestoreCallable"]
             },
             "DeleteEntityType": {
               "methods": ["deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeOperationCallable", "deleteEntityTypeCallable"]
@@ -177,6 +177,9 @@
             },
             "ListIndexEndpoints": {
               "methods": ["listIndexEndpoints", "listIndexEndpoints", "listIndexEndpoints", "listIndexEndpointsPagedCallable", "listIndexEndpointsCallable"]
+            },
+            "MutateDeployedIndex": {
+              "methods": ["mutateDeployedIndexAsync", "mutateDeployedIndexAsync", "mutateDeployedIndexAsync", "mutateDeployedIndexOperationCallable", "mutateDeployedIndexCallable"]
             },
             "UndeployIndex": {
               "methods": ["undeployIndexAsync", "undeployIndexAsync", "undeployIndexAsync", "undeployIndexOperationCallable", "undeployIndexCallable"]

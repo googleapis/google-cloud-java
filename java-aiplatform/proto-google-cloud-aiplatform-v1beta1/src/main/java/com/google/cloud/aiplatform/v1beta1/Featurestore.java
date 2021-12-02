@@ -22,7 +22,9 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Featurestore configuration information on how the Featurestore is configured.
+ * Vertex AI Feature Store provides a centralized repository for organizing,
+ * storing, and serving ML features. The Featurestore is a top-level container
+ * for your features and their values.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.Featurestore}
@@ -1708,7 +1710,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Featurestore configuration information on how the Featurestore is configured.
+   * Vertex AI Feature Store provides a centralized repository for organizing,
+   * storing, and serving ML features. The Featurestore is a top-level container
+   * for your features and their values.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.Featurestore}

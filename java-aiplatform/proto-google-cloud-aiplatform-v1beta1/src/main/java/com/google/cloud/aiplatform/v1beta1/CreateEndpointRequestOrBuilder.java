@@ -94,4 +94,41 @@ public interface CreateEndpointRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.EndpointOrBuilder getEndpointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The ID to use for endpoint, which will become the final
+   * component of the endpoint resource name.
+   * If not provided, Vertex AI will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   * When using HTTP/JSON, this field is populated based on a query string
+   * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+   * that are not included in either the URI or the body.
+   * </pre>
+   *
+   * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The endpointId.
+   */
+  java.lang.String getEndpointId();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The ID to use for endpoint, which will become the final
+   * component of the endpoint resource name.
+   * If not provided, Vertex AI will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   * When using HTTP/JSON, this field is populated based on a query string
+   * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+   * that are not included in either the URI or the body.
+   * </pre>
+   *
+   * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for endpointId.
+   */
+  com.google.protobuf.ByteString getEndpointIdBytes();
 }

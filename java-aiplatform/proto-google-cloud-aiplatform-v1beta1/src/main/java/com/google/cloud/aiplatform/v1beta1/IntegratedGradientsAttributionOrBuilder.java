@@ -85,4 +85,51 @@ public interface IntegratedGradientsAttributionOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.SmoothGradConfig smooth_grad_config = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.SmoothGradConfigOrBuilder getSmoothGradConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config for IG with blur baseline.
+   * When enabled, a linear path from the maximally blurred image to the input
+   * image is created. Using a blurred baseline instead of zero (black image) is
+   * motivated by the BlurIG approach explained here:
+   * https://arxiv.org/abs/2004.03383
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BlurBaselineConfig blur_baseline_config = 3;</code>
+   *
+   * @return Whether the blurBaselineConfig field is set.
+   */
+  boolean hasBlurBaselineConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for IG with blur baseline.
+   * When enabled, a linear path from the maximally blurred image to the input
+   * image is created. Using a blurred baseline instead of zero (black image) is
+   * motivated by the BlurIG approach explained here:
+   * https://arxiv.org/abs/2004.03383
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BlurBaselineConfig blur_baseline_config = 3;</code>
+   *
+   * @return The blurBaselineConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig getBlurBaselineConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for IG with blur baseline.
+   * When enabled, a linear path from the maximally blurred image to the input
+   * image is created. Using a blurred baseline instead of zero (black image) is
+   * motivated by the BlurIG approach explained here:
+   * https://arxiv.org/abs/2004.03383
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BlurBaselineConfig blur_baseline_config = 3;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.BlurBaselineConfigOrBuilder getBlurBaselineConfigOrBuilder();
 }

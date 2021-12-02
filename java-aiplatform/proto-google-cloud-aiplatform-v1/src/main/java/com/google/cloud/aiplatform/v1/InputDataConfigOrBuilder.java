@@ -173,6 +173,44 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
+   * Supported only for tabular Datasets.
+   * Split based on the distribution of the specified column.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StratifiedSplit stratified_split = 12;</code>
+   *
+   * @return Whether the stratifiedSplit field is set.
+   */
+  boolean hasStratifiedSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Supported only for tabular Datasets.
+   * Split based on the distribution of the specified column.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StratifiedSplit stratified_split = 12;</code>
+   *
+   * @return The stratifiedSplit.
+   */
+  com.google.cloud.aiplatform.v1.StratifiedSplit getStratifiedSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Supported only for tabular Datasets.
+   * Split based on the distribution of the specified column.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StratifiedSplit stratified_split = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1.StratifiedSplitOrBuilder getStratifiedSplitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Cloud Storage location where the training data is to be
    * written to. In the given directory a new directory is created with
    * name:

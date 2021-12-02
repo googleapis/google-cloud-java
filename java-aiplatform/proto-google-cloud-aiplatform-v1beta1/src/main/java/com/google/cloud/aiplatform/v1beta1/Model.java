@@ -2448,7 +2448,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>
@@ -2473,7 +2474,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>
@@ -5819,7 +5821,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>
@@ -5843,7 +5846,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>
@@ -5867,7 +5871,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>
@@ -5890,7 +5895,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>
@@ -5909,7 +5915,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>

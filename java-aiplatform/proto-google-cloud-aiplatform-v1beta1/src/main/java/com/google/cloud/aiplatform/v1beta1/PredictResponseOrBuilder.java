@@ -123,8 +123,8 @@ public interface PredictResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the Model this DeployedModel, that served this prediction, was
-   * created from.
+   * Output only. The resource name of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
    * </pre>
    *
    * <code>
@@ -138,8 +138,8 @@ public interface PredictResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the Model this DeployedModel, that served this prediction, was
-   * created from.
+   * Output only. The resource name of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
    * </pre>
    *
    * <code>
@@ -154,8 +154,8 @@ public interface PredictResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
-   * that served this prediction, was created from.
+   * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model which is deployed as
+   * the DeployedModel that this prediction hits.
    * </pre>
    *
    * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -167,8 +167,8 @@ public interface PredictResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
-   * that served this prediction, was created from.
+   * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model which is deployed as
+   * the DeployedModel that this prediction hits.
    * </pre>
    *
    * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

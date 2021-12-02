@@ -93,6 +93,23 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 26:
+            {
+              com.google.cloud.aiplatform.v1.BlurBaselineConfig.Builder subBuilder = null;
+              if (blurBaselineConfig_ != null) {
+                subBuilder = blurBaselineConfig_.toBuilder();
+              }
+              blurBaselineConfig_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.BlurBaselineConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(blurBaselineConfig_);
+                blurBaselineConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -208,6 +225,67 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     return getSmoothGradConfig();
   }
 
+  public static final int BLUR_BASELINE_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1.BlurBaselineConfig blurBaselineConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Config for XRAI with blur baseline.
+   * When enabled, a linear path from the maximally blurred image to the input
+   * image is created. Using a blurred baseline instead of zero (black image) is
+   * motivated by the BlurIG approach explained here:
+   * https://arxiv.org/abs/2004.03383
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+   *
+   * @return Whether the blurBaselineConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlurBaselineConfig() {
+    return blurBaselineConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for XRAI with blur baseline.
+   * When enabled, a linear path from the maximally blurred image to the input
+   * image is created. Using a blurred baseline instead of zero (black image) is
+   * motivated by the BlurIG approach explained here:
+   * https://arxiv.org/abs/2004.03383
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+   *
+   * @return The blurBaselineConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.BlurBaselineConfig getBlurBaselineConfig() {
+    return blurBaselineConfig_ == null
+        ? com.google.cloud.aiplatform.v1.BlurBaselineConfig.getDefaultInstance()
+        : blurBaselineConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for XRAI with blur baseline.
+   * When enabled, a linear path from the maximally blurred image to the input
+   * image is created. Using a blurred baseline instead of zero (black image) is
+   * motivated by the BlurIG approach explained here:
+   * https://arxiv.org/abs/2004.03383
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.BlurBaselineConfigOrBuilder
+      getBlurBaselineConfigOrBuilder() {
+    return getBlurBaselineConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -228,6 +306,9 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     if (smoothGradConfig_ != null) {
       output.writeMessage(2, getSmoothGradConfig());
     }
+    if (blurBaselineConfig_ != null) {
+      output.writeMessage(3, getBlurBaselineConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -242,6 +323,9 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     }
     if (smoothGradConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSmoothGradConfig());
+    }
+    if (blurBaselineConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBlurBaselineConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -264,6 +348,10 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     if (hasSmoothGradConfig()) {
       if (!getSmoothGradConfig().equals(other.getSmoothGradConfig())) return false;
     }
+    if (hasBlurBaselineConfig() != other.hasBlurBaselineConfig()) return false;
+    if (hasBlurBaselineConfig()) {
+      if (!getBlurBaselineConfig().equals(other.getBlurBaselineConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,6 +368,10 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     if (hasSmoothGradConfig()) {
       hash = (37 * hash) + SMOOTH_GRAD_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSmoothGradConfig().hashCode();
+    }
+    if (hasBlurBaselineConfig()) {
+      hash = (37 * hash) + BLUR_BASELINE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBlurBaselineConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -438,6 +530,12 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
         smoothGradConfig_ = null;
         smoothGradConfigBuilder_ = null;
       }
+      if (blurBaselineConfigBuilder_ == null) {
+        blurBaselineConfig_ = null;
+      } else {
+        blurBaselineConfig_ = null;
+        blurBaselineConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -470,6 +568,11 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
         result.smoothGradConfig_ = smoothGradConfig_;
       } else {
         result.smoothGradConfig_ = smoothGradConfigBuilder_.build();
+      }
+      if (blurBaselineConfigBuilder_ == null) {
+        result.blurBaselineConfig_ = blurBaselineConfig_;
+      } else {
+        result.blurBaselineConfig_ = blurBaselineConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -525,6 +628,9 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasSmoothGradConfig()) {
         mergeSmoothGradConfig(other.getSmoothGradConfig());
+      }
+      if (other.hasBlurBaselineConfig()) {
+        mergeBlurBaselineConfig(other.getBlurBaselineConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -836,6 +942,231 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
         smoothGradConfig_ = null;
       }
       return smoothGradConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.BlurBaselineConfig blurBaselineConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.BlurBaselineConfig,
+            com.google.cloud.aiplatform.v1.BlurBaselineConfig.Builder,
+            com.google.cloud.aiplatform.v1.BlurBaselineConfigOrBuilder>
+        blurBaselineConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     *
+     * @return Whether the blurBaselineConfig field is set.
+     */
+    public boolean hasBlurBaselineConfig() {
+      return blurBaselineConfigBuilder_ != null || blurBaselineConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     *
+     * @return The blurBaselineConfig.
+     */
+    public com.google.cloud.aiplatform.v1.BlurBaselineConfig getBlurBaselineConfig() {
+      if (blurBaselineConfigBuilder_ == null) {
+        return blurBaselineConfig_ == null
+            ? com.google.cloud.aiplatform.v1.BlurBaselineConfig.getDefaultInstance()
+            : blurBaselineConfig_;
+      } else {
+        return blurBaselineConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    public Builder setBlurBaselineConfig(com.google.cloud.aiplatform.v1.BlurBaselineConfig value) {
+      if (blurBaselineConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        blurBaselineConfig_ = value;
+        onChanged();
+      } else {
+        blurBaselineConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    public Builder setBlurBaselineConfig(
+        com.google.cloud.aiplatform.v1.BlurBaselineConfig.Builder builderForValue) {
+      if (blurBaselineConfigBuilder_ == null) {
+        blurBaselineConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        blurBaselineConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    public Builder mergeBlurBaselineConfig(
+        com.google.cloud.aiplatform.v1.BlurBaselineConfig value) {
+      if (blurBaselineConfigBuilder_ == null) {
+        if (blurBaselineConfig_ != null) {
+          blurBaselineConfig_ =
+              com.google.cloud.aiplatform.v1.BlurBaselineConfig.newBuilder(blurBaselineConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          blurBaselineConfig_ = value;
+        }
+        onChanged();
+      } else {
+        blurBaselineConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    public Builder clearBlurBaselineConfig() {
+      if (blurBaselineConfigBuilder_ == null) {
+        blurBaselineConfig_ = null;
+        onChanged();
+      } else {
+        blurBaselineConfig_ = null;
+        blurBaselineConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1.BlurBaselineConfig.Builder
+        getBlurBaselineConfigBuilder() {
+
+      onChanged();
+      return getBlurBaselineConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1.BlurBaselineConfigOrBuilder
+        getBlurBaselineConfigOrBuilder() {
+      if (blurBaselineConfigBuilder_ != null) {
+        return blurBaselineConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return blurBaselineConfig_ == null
+            ? com.google.cloud.aiplatform.v1.BlurBaselineConfig.getDefaultInstance()
+            : blurBaselineConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for XRAI with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.BlurBaselineConfig,
+            com.google.cloud.aiplatform.v1.BlurBaselineConfig.Builder,
+            com.google.cloud.aiplatform.v1.BlurBaselineConfigOrBuilder>
+        getBlurBaselineConfigFieldBuilder() {
+      if (blurBaselineConfigBuilder_ == null) {
+        blurBaselineConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.BlurBaselineConfig,
+                com.google.cloud.aiplatform.v1.BlurBaselineConfig.Builder,
+                com.google.cloud.aiplatform.v1.BlurBaselineConfigOrBuilder>(
+                getBlurBaselineConfig(), getParentForChildren(), isClean());
+        blurBaselineConfig_ = null;
+      }
+      return blurBaselineConfigBuilder_;
     }
 
     @java.lang.Override

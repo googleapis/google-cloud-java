@@ -77,15 +77,14 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Model that produces the predictions via this job,
+   * The name of the Model resoure that produces the predictions via this job,
    * must share the same ancestor Location.
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
+   * Exactly one of model and unmanaged_container_model must be set.
    * </pre>
    *
-   * <code>
-   * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The model.
    */
@@ -94,19 +93,63 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Model that produces the predictions via this job,
+   * The name of the Model resoure that produces the predictions via this job,
    * must share the same ancestor Location.
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
+   * Exactly one of model and unmanaged_container_model must be set.
    * </pre>
    *
-   * <code>
-   * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains model information necessary to perform batch prediction without
+   * requiring uploading to model registry.
+   * Exactly one of model and unmanaged_container_model must be set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.UnmanagedContainerModel unmanaged_container_model = 28;
+   * </code>
+   *
+   * @return Whether the unmanagedContainerModel field is set.
+   */
+  boolean hasUnmanagedContainerModel();
+  /**
+   *
+   *
+   * <pre>
+   * Contains model information necessary to perform batch prediction without
+   * requiring uploading to model registry.
+   * Exactly one of model and unmanaged_container_model must be set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.UnmanagedContainerModel unmanaged_container_model = 28;
+   * </code>
+   *
+   * @return The unmanagedContainerModel.
+   */
+  com.google.cloud.aiplatform.v1beta1.UnmanagedContainerModel getUnmanagedContainerModel();
+  /**
+   *
+   *
+   * <pre>
+   * Contains model information necessary to perform batch prediction without
+   * requiring uploading to model registry.
+   * Exactly one of model and unmanaged_container_model must be set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.UnmanagedContainerModel unmanaged_container_model = 28;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.UnmanagedContainerModelOrBuilder
+      getUnmanagedContainerModelOrBuilder();
 
   /**
    *

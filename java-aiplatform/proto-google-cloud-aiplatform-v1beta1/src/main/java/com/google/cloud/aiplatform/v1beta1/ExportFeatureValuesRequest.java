@@ -151,6 +151,30 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
                       extensionRegistry));
               break;
             }
+          case 58:
+            {
+              com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder
+                  subBuilder = null;
+              if (modeCase_ == 7) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+                            mode_)
+                        .toBuilder();
+              }
+              mode_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+                        mode_);
+                mode_ = subBuilder.buildPartial();
+              }
+              modeCase_ = 7;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -233,12 +257,54 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
      */
     com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    boolean hasStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return The startTime.
+     */
+    com.google.protobuf.Timestamp getStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
   }
   /**
    *
    *
    * <pre>
-   * Describes exporting Feature values as of the snapshot timestamp.
+   * Describes exporting the latest Feature values of all entities of the
+   * EntityType between [start_time, snapshot_time].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport}
@@ -295,6 +361,21 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(snapshotTime_);
                   snapshotTime_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (startTime_ != null) {
+                  subBuilder = startTime_.toBuilder();
+                }
+                startTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(startTime_);
+                  startTime_ = subBuilder.buildPartial();
                 }
 
                 break;
@@ -388,6 +469,58 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       return getSnapshotTime();
     }
 
+    public static final int START_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp startTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTime() {
+      return startTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getStartTime() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      return getStartTime();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -405,6 +538,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       if (snapshotTime_ != null) {
         output.writeMessage(1, getSnapshotTime());
       }
+      if (startTime_ != null) {
+        output.writeMessage(2, getStartTime());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -416,6 +552,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       size = 0;
       if (snapshotTime_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSnapshotTime());
+      }
+      if (startTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStartTime());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -439,6 +578,10 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       if (hasSnapshotTime()) {
         if (!getSnapshotTime().equals(other.getSnapshotTime())) return false;
       }
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime().equals(other.getStartTime())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -453,6 +596,10 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       if (hasSnapshotTime()) {
         hash = (37 * hash) + SNAPSHOT_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getSnapshotTime().hashCode();
+      }
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -566,7 +713,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Describes exporting Feature values as of the snapshot timestamp.
+     * Describes exporting the latest Feature values of all entities of the
+     * EntityType between [start_time, snapshot_time].
      * </pre>
      *
      * Protobuf type {@code
@@ -617,6 +765,12 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           snapshotTime_ = null;
           snapshotTimeBuilder_ = null;
         }
+        if (startTimeBuilder_ == null) {
+          startTime_ = null;
+        } else {
+          startTime_ = null;
+          startTimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -652,6 +806,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           result.snapshotTime_ = snapshotTime_;
         } else {
           result.snapshotTime_ = snapshotTimeBuilder_.build();
+        }
+        if (startTimeBuilder_ == null) {
+          result.startTime_ = startTime_;
+        } else {
+          result.startTime_ = startTimeBuilder_.build();
         }
         onBuilt();
         return result;
@@ -713,6 +872,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
                 .getDefaultInstance()) return this;
         if (other.hasSnapshotTime()) {
           mergeSnapshotTime(other.getSnapshotTime());
+        }
+        if (other.hasStartTime()) {
+          mergeStartTime(other.getStartTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -949,6 +1111,209 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         return snapshotTimeBuilder_;
       }
 
+      private com.google.protobuf.Timestamp startTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          startTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      public boolean hasStartTime() {
+        return startTimeBuilder_ != null || startTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return The startTime.
+       */
+      public com.google.protobuf.Timestamp getStartTime() {
+        if (startTimeBuilder_ == null) {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        } else {
+          return startTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startTime_ = value;
+          onChanged();
+        } else {
+          startTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (startTimeBuilder_ == null) {
+          startTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          startTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (startTime_ != null) {
+            startTime_ =
+                com.google.protobuf.Timestamp.newBuilder(startTime_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            startTime_ = value;
+          }
+          onChanged();
+        } else {
+          startTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder clearStartTime() {
+        if (startTimeBuilder_ == null) {
+          startTime_ = null;
+          onChanged();
+        } else {
+          startTime_ = null;
+          startTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+
+        onChanged();
+        return getStartTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        if (startTimeBuilder_ != null) {
+          return startTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getStartTimeFieldBuilder() {
+        if (startTimeBuilder_ == null) {
+          startTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getStartTime(), getParentForChildren(), isClean());
+          startTime_ = null;
+        }
+        return startTimeBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1006,6 +1371,1152 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     }
   }
 
+  public interface FullExportOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    boolean hasStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return The startTime.
+     */
+    com.google.protobuf.Timestamp getStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports Feature values as of this timestamp. If not set,
+     * retrieve values as of now. Timestamp, if present, must not have higher
+     * than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 1;</code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    boolean hasEndTime();
+    /**
+     *
+     *
+     * <pre>
+     * Exports Feature values as of this timestamp. If not set,
+     * retrieve values as of now. Timestamp, if present, must not have higher
+     * than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 1;</code>
+     *
+     * @return The endTime.
+     */
+    com.google.protobuf.Timestamp getEndTime();
+    /**
+     *
+     *
+     * <pre>
+     * Exports Feature values as of this timestamp. If not set,
+     * retrieve values as of now. Timestamp, if present, must not have higher
+     * than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes exporting all historical Feature values of all entities of the
+   * EntityType between [start_time, end_time].
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport}
+   */
+  public static final class FullExport extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+      FullExportOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FullExport.newBuilder() to construct.
+    private FullExport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FullExport() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FullExport();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private FullExport(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (endTime_ != null) {
+                  subBuilder = endTime_.toBuilder();
+                }
+                endTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(endTime_);
+                  endTime_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (startTime_ != null) {
+                  subBuilder = startTime_.toBuilder();
+                }
+                startTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(startTime_);
+                  startTime_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ExportFeatureValuesRequest_FullExport_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ExportFeatureValuesRequest_FullExport_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.class,
+              com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder
+                  .class);
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp startTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTime() {
+      return startTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getStartTime() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      return getStartTime();
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp endTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Exports Feature values as of this timestamp. If not set,
+     * retrieve values as of now. Timestamp, if present, must not have higher
+     * than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 1;</code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTime() {
+      return endTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports Feature values as of this timestamp. If not set,
+     * retrieve values as of now. Timestamp, if present, must not have higher
+     * than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 1;</code>
+     *
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getEndTime() {
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports Feature values as of this timestamp. If not set,
+     * retrieve values as of now. Timestamp, if present, must not have higher
+     * than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      return getEndTime();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (endTime_ != null) {
+        output.writeMessage(1, getEndTime());
+      }
+      if (startTime_ != null) {
+        output.writeMessage(2, getStartTime());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (endTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEndTime());
+      }
+      if (startTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStartTime());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport other =
+          (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) obj;
+
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime().equals(other.getStartTime())) return false;
+      }
+      if (hasEndTime() != other.hasEndTime()) return false;
+      if (hasEndTime()) {
+        if (!getEndTime().equals(other.getEndTime())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
+      }
+      if (hasEndTime()) {
+        hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getEndTime().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes exporting all historical Feature values of all entities of the
+     * EntityType between [start_time, end_time].
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExportOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ExportFeatureValuesRequest_FullExport_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ExportFeatureValuesRequest_FullExport_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.class,
+                com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (startTimeBuilder_ == null) {
+          startTime_ = null;
+        } else {
+          startTime_ = null;
+          startTimeBuilder_ = null;
+        }
+        if (endTimeBuilder_ == null) {
+          endTime_ = null;
+        } else {
+          endTime_ = null;
+          endTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ExportFeatureValuesRequest_FullExport_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport build() {
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport result =
+            new com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport(this);
+        if (startTimeBuilder_ == null) {
+          result.startTime_ = startTime_;
+        } else {
+          result.startTime_ = startTimeBuilder_.build();
+        }
+        if (endTimeBuilder_ == null) {
+          result.endTime_ = endTime_;
+        } else {
+          result.endTime_ = endTimeBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+                .getDefaultInstance()) return this;
+        if (other.hasStartTime()) {
+          mergeStartTime(other.getStartTime());
+        }
+        if (other.hasEndTime()) {
+          mergeEndTime(other.getEndTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp startTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          startTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      public boolean hasStartTime() {
+        return startTimeBuilder_ != null || startTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return The startTime.
+       */
+      public com.google.protobuf.Timestamp getStartTime() {
+        if (startTimeBuilder_ == null) {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        } else {
+          return startTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startTime_ = value;
+          onChanged();
+        } else {
+          startTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (startTimeBuilder_ == null) {
+          startTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          startTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (startTime_ != null) {
+            startTime_ =
+                com.google.protobuf.Timestamp.newBuilder(startTime_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            startTime_ = value;
+          }
+          onChanged();
+        } else {
+          startTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public Builder clearStartTime() {
+        if (startTimeBuilder_ == null) {
+          startTime_ = null;
+          onChanged();
+        } else {
+          startTime_ = null;
+          startTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+
+        onChanged();
+        return getStartTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        if (startTimeBuilder_ != null) {
+          return startTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Excludes Feature values with feature generation timestamp before this
+       * timestamp. If not set, retrieve oldest values kept in Feature Store.
+       * Timestamp, if present, must not have higher than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getStartTimeFieldBuilder() {
+        if (startTimeBuilder_ == null) {
+          startTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getStartTime(), getParentForChildren(), isClean());
+          startTime_ = null;
+        }
+        return startTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp endTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          endTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       *
+       * @return Whether the endTime field is set.
+       */
+      public boolean hasEndTime() {
+        return endTimeBuilder_ != null || endTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       *
+       * @return The endTime.
+       */
+      public com.google.protobuf.Timestamp getEndTime() {
+        if (endTimeBuilder_ == null) {
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        } else {
+          return endTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       */
+      public Builder setEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endTime_ = value;
+          onChanged();
+        } else {
+          endTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       */
+      public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (endTimeBuilder_ == null) {
+          endTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          endTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       */
+      public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (endTime_ != null) {
+            endTime_ =
+                com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+          } else {
+            endTime_ = value;
+          }
+          onChanged();
+        } else {
+          endTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       */
+      public Builder clearEndTime() {
+        if (endTimeBuilder_ == null) {
+          endTime_ = null;
+          onChanged();
+        } else {
+          endTime_ = null;
+          endTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+
+        onChanged();
+        return getEndTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+        if (endTimeBuilder_ != null) {
+          return endTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Exports Feature values as of this timestamp. If not set,
+       * retrieve values as of now. Timestamp, if present, must not have higher
+       * than millisecond precision.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getEndTimeFieldBuilder() {
+        if (endTimeBuilder_ == null) {
+          endTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getEndTime(), getParentForChildren(), isClean());
+          endTime_ = null;
+        }
+        return endTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+    private static final com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FullExport> PARSER =
+        new com.google.protobuf.AbstractParser<FullExport>() {
+          @java.lang.Override
+          public FullExport parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new FullExport(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<FullExport> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FullExport> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int modeCase_ = 0;
   private java.lang.Object mode_;
 
@@ -1014,6 +2525,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SNAPSHOT_EXPORT(3),
+    FULL_EXPORT(7),
     MODE_NOT_SET(0);
     private final int value;
 
@@ -1034,6 +2546,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       switch (value) {
         case 3:
           return SNAPSHOT_EXPORT;
+        case 7:
+          return FULL_EXPORT;
         case 0:
           return MODE_NOT_SET;
         default:
@@ -1055,8 +2569,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Exports Feature values of all entities of the EntityType as of a snapshot
-   * time.
+   * Exports the latest Feature values of all entities of the EntityType
+   * within a time range.
    * </pre>
    *
    * <code>
@@ -1073,8 +2587,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Exports Feature values of all entities of the EntityType as of a snapshot
-   * time.
+   * Exports the latest Feature values of all entities of the EntityType
+   * within a time range.
    * </pre>
    *
    * <code>
@@ -1096,8 +2610,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Exports Feature values of all entities of the EntityType as of a snapshot
-   * time.
+   * Exports the latest Feature values of all entities of the EntityType
+   * within a time range.
    * </pre>
    *
    * <code>
@@ -1111,6 +2625,66 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       return (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport) mode_;
     }
     return com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport
+        .getDefaultInstance();
+  }
+
+  public static final int FULL_EXPORT_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Exports all historical values of all entities of the EntityType within a
+   * time range
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+   * </code>
+   *
+   * @return Whether the fullExport field is set.
+   */
+  @java.lang.Override
+  public boolean hasFullExport() {
+    return modeCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Exports all historical values of all entities of the EntityType within a
+   * time range
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+   * </code>
+   *
+   * @return The fullExport.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport getFullExport() {
+    if (modeCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) mode_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Exports all historical values of all entities of the EntityType within a
+   * time range
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExportOrBuilder
+      getFullExportOrBuilder() {
+    if (modeCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) mode_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
         .getDefaultInstance();
   }
 
@@ -1383,6 +2957,10 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     for (int i = 0; i < settings_.size(); i++) {
       output.writeMessage(6, settings_.get(i));
     }
+    if (modeCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) mode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1410,6 +2988,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     }
     for (int i = 0; i < settings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, settings_.get(i));
+    }
+    if (modeCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) mode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1441,6 +3024,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     switch (modeCase_) {
       case 3:
         if (!getSnapshotExport().equals(other.getSnapshotExport())) return false;
+        break;
+      case 7:
+        if (!getFullExport().equals(other.getFullExport())) return false;
         break;
       case 0:
       default:
@@ -1474,6 +3060,10 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       case 3:
         hash = (37 * hash) + SNAPSHOT_EXPORT_FIELD_NUMBER;
         hash = (53 * hash) + getSnapshotExport().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + FULL_EXPORT_FIELD_NUMBER;
+        hash = (53 * hash) + getFullExport().hashCode();
         break;
       case 0:
       default:
@@ -1684,6 +3274,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           result.mode_ = snapshotExportBuilder_.build();
         }
       }
+      if (modeCase_ == 7) {
+        if (fullExportBuilder_ == null) {
+          result.mode_ = mode_;
+        } else {
+          result.mode_ = fullExportBuilder_.build();
+        }
+      }
       result.entityType_ = entityType_;
       if (destinationBuilder_ == null) {
         result.destination_ = destination_;
@@ -1799,6 +3396,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             mergeSnapshotExport(other.getSnapshotExport());
             break;
           }
+        case FULL_EXPORT:
+          {
+            mergeFullExport(other.getFullExport());
+            break;
+          }
         case MODE_NOT_SET:
           {
             break;
@@ -1860,8 +3462,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -1878,8 +3480,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -1910,8 +3512,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -1936,8 +3538,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -1960,8 +3562,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -2000,8 +3602,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -2028,8 +3630,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -2044,8 +3646,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -2070,8 +3672,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      * </pre>
      *
      * <code>
@@ -2106,6 +3708,247 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       ;
       return snapshotExportBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport,
+            com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExportOrBuilder>
+        fullExportBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     *
+     * @return Whether the fullExport field is set.
+     */
+    @java.lang.Override
+    public boolean hasFullExport() {
+      return modeCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     *
+     * @return The fullExport.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+        getFullExport() {
+      if (fullExportBuilder_ == null) {
+        if (modeCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) mode_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+            .getDefaultInstance();
+      } else {
+        if (modeCase_ == 7) {
+          return fullExportBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     */
+    public Builder setFullExport(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport value) {
+      if (fullExportBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mode_ = value;
+        onChanged();
+      } else {
+        fullExportBuilder_.setMessage(value);
+      }
+      modeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     */
+    public Builder setFullExport(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder
+            builderForValue) {
+      if (fullExportBuilder_ == null) {
+        mode_ = builderForValue.build();
+        onChanged();
+      } else {
+        fullExportBuilder_.setMessage(builderForValue.build());
+      }
+      modeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     */
+    public Builder mergeFullExport(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport value) {
+      if (fullExportBuilder_ == null) {
+        if (modeCase_ == 7
+            && mode_
+                != com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+                    .getDefaultInstance()) {
+          mode_ =
+              com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport)
+                          mode_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          mode_ = value;
+        }
+        onChanged();
+      } else {
+        if (modeCase_ == 7) {
+          fullExportBuilder_.mergeFrom(value);
+        }
+        fullExportBuilder_.setMessage(value);
+      }
+      modeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     */
+    public Builder clearFullExport() {
+      if (fullExportBuilder_ == null) {
+        if (modeCase_ == 7) {
+          modeCase_ = 0;
+          mode_ = null;
+          onChanged();
+        }
+      } else {
+        if (modeCase_ == 7) {
+          modeCase_ = 0;
+          mode_ = null;
+        }
+        fullExportBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder
+        getFullExportBuilder() {
+      return getFullExportFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExportOrBuilder
+        getFullExportOrBuilder() {
+      if ((modeCase_ == 7) && (fullExportBuilder_ != null)) {
+        return fullExportBuilder_.getMessageOrBuilder();
+      } else {
+        if (modeCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) mode_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport,
+            com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExportOrBuilder>
+        getFullExportFieldBuilder() {
+      if (fullExportBuilder_ == null) {
+        if (!(modeCase_ == 7)) {
+          mode_ =
+              com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport
+                  .getDefaultInstance();
+        }
+        fullExportBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport,
+                com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport.Builder,
+                com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExportOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport) mode_,
+                getParentForChildren(),
+                isClean());
+        mode_ = null;
+      }
+      modeCase_ = 7;
+      onChanged();
+      ;
+      return fullExportBuilder_;
     }
 
     private java.lang.Object entityType_ = "";

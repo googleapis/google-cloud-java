@@ -1814,9 +1814,10 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * If true, the scheduled monitoring pipeline status logs are sent to
-   * Google Cloud Logging. Please note the logs incur cost, which are subject to
-   * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+   * If true, the scheduled monitoring pipeline logs are sent to
+   * Google Cloud Logging, including pipeline status and anomalies detected.
+   * Please note the logs incur cost, which are subject to [Cloud Logging
+   * pricing](https://cloud.google.com/logging#pricing).
    * </pre>
    *
    * <code>bool enable_monitoring_pipeline_logs = 22;</code>
@@ -6822,9 +6823,10 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If true, the scheduled monitoring pipeline status logs are sent to
-     * Google Cloud Logging. Please note the logs incur cost, which are subject to
-     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * If true, the scheduled monitoring pipeline logs are sent to
+     * Google Cloud Logging, including pipeline status and anomalies detected.
+     * Please note the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging#pricing).
      * </pre>
      *
      * <code>bool enable_monitoring_pipeline_logs = 22;</code>
@@ -6839,9 +6841,10 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If true, the scheduled monitoring pipeline status logs are sent to
-     * Google Cloud Logging. Please note the logs incur cost, which are subject to
-     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * If true, the scheduled monitoring pipeline logs are sent to
+     * Google Cloud Logging, including pipeline status and anomalies detected.
+     * Please note the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging#pricing).
      * </pre>
      *
      * <code>bool enable_monitoring_pipeline_logs = 22;</code>
@@ -6859,9 +6862,10 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If true, the scheduled monitoring pipeline status logs are sent to
-     * Google Cloud Logging. Please note the logs incur cost, which are subject to
-     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * If true, the scheduled monitoring pipeline logs are sent to
+     * Google Cloud Logging, including pipeline status and anomalies detected.
+     * Please note the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging#pricing).
      * </pre>
      *
      * <code>bool enable_monitoring_pipeline_logs = 22;</code>

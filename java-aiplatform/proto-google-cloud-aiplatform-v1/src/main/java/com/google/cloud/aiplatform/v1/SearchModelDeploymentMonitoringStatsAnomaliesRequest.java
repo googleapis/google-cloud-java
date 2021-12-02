@@ -1042,7 +1042,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
    *
    * <pre>
    * Required. The DeployedModel ID of the
-   * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
    * </pre>
    *
    * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1066,7 +1066,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
    *
    * <pre>
    * Required. The DeployedModel ID of the
-   * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
    * </pre>
    *
    * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2061,7 +2061,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      *
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2084,7 +2084,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      *
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2107,7 +2107,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      *
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2129,7 +2129,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      *
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2147,7 +2147,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      *
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

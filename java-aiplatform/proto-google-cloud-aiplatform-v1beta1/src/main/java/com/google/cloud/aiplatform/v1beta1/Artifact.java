@@ -260,7 +260,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A state used by systems like Vertex Pipelines to indicate that the
+     * A state used by systems like Vertex AI Pipelines to indicate that the
      * underlying data item represented by this Artifact is being created.
      * </pre>
      *
@@ -295,7 +295,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A state used by systems like Vertex Pipelines to indicate that the
+     * A state used by systems like Vertex AI Pipelines to indicate that the
      * underlying data item represented by this Artifact is being created.
      * </pre>
      *
@@ -823,7 +823,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The state of this Artifact. This is a property of the Artifact, and does
    * not imply or capture any ongoing process. This property is managed by
-   * clients (such as Vertex Pipelines), and the system does not prescribe
+   * clients (such as Vertex AI Pipelines), and the system does not prescribe
    * or check the validity of state transitions.
    * </pre>
    *
@@ -841,7 +841,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The state of this Artifact. This is a property of the Artifact, and does
    * not imply or capture any ongoing process. This property is managed by
-   * clients (such as Vertex Pipelines), and the system does not prescribe
+   * clients (such as Vertex AI Pipelines), and the system does not prescribe
    * or check the validity of state transitions.
    * </pre>
    *
@@ -2664,7 +2664,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines), and the system does not prescribe
+     * clients (such as Vertex AI Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      * </pre>
      *
@@ -2682,7 +2682,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines), and the system does not prescribe
+     * clients (such as Vertex AI Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      * </pre>
      *
@@ -2703,7 +2703,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines), and the system does not prescribe
+     * clients (such as Vertex AI Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      * </pre>
      *
@@ -2726,7 +2726,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines), and the system does not prescribe
+     * clients (such as Vertex AI Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      * </pre>
      *
@@ -2750,7 +2750,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines), and the system does not prescribe
+     * clients (such as Vertex AI Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      * </pre>
      *

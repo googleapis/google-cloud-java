@@ -72,6 +72,10 @@ public final class ExplanationProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureNoiseSigma_NoiseSigmaForFeature_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BlurBaselineConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BlurBaselineConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_Similarity_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Similarity_fieldAccessorTable;
@@ -135,45 +139,50 @@ public final class ExplanationProto {
           + "milarityH\000\022\r\n\005top_k\030\004 \001(\005\0222\n\016output_indi"
           + "ces\030\005 \001(\0132\032.google.protobuf.ListValueB\010\n"
           + "\006method\"4\n\031SampledShapleyAttribution\022\027\n\n"
-          + "path_count\030\001 \001(\005B\003\340A\002\"\210\001\n\036IntegratedGrad"
+          + "path_count\030\001 \001(\005B\003\340A\002\"\333\001\n\036IntegratedGrad"
           + "ientsAttribution\022\027\n\nstep_count\030\001 \001(\005B\003\340A"
           + "\002\022M\n\022smooth_grad_config\030\002 \001(\01321.google.c"
           + "loud.aiplatform.v1beta1.SmoothGradConfig"
-          + "\"y\n\017XraiAttribution\022\027\n\nstep_count\030\001 \001(\005B"
-          + "\003\340A\002\022M\n\022smooth_grad_config\030\002 \001(\01321.googl"
-          + "e.cloud.aiplatform.v1beta1.SmoothGradCon"
-          + "fig\"\256\001\n\020SmoothGradConfig\022\025\n\013noise_sigma\030"
-          + "\001 \001(\002H\000\022Q\n\023feature_noise_sigma\030\002 \001(\01322.g"
-          + "oogle.cloud.aiplatform.v1beta1.FeatureNo"
-          + "iseSigmaH\000\022\032\n\022noisy_sample_count\030\003 \001(\005B\024"
-          + "\n\022GradientNoiseSigma\"\246\001\n\021FeatureNoiseSig"
-          + "ma\022\\\n\013noise_sigma\030\001 \003(\0132G.google.cloud.a"
-          + "iplatform.v1beta1.FeatureNoiseSigma.Nois"
-          + "eSigmaForFeature\0323\n\024NoiseSigmaForFeature"
-          + "\022\014\n\004name\030\001 \001(\t\022\r\n\005sigma\030\002 \001(\002\"\214\001\n\nSimila"
-          + "rity\022>\n\ngcs_source\030\001 \001(\0132*.google.cloud."
-          + "aiplatform.v1beta1.GcsSource\022>\n\036nearest_"
-          + "neighbor_search_config\030\002 \001(\0132\026.google.pr"
-          + "otobuf.Value\"\265\001\n\027ExplanationSpecOverride"
-          + "\022J\n\nparameters\030\001 \001(\01326.google.cloud.aipl"
-          + "atform.v1beta1.ExplanationParameters\022N\n\010"
-          + "metadata\030\002 \001(\0132<.google.cloud.aiplatform"
-          + ".v1beta1.ExplanationMetadataOverride\"\312\002\n"
-          + "\033ExplanationMetadataOverride\022]\n\006inputs\030\001"
-          + " \003(\0132H.google.cloud.aiplatform.v1beta1.E"
-          + "xplanationMetadataOverride.InputsEntryB\003"
-          + "\340A\002\032H\n\025InputMetadataOverride\022/\n\017input_ba"
-          + "selines\030\001 \003(\0132\026.google.protobuf.Value\032\201\001"
-          + "\n\013InputsEntry\022\013\n\003key\030\001 \001(\t\022a\n\005value\030\002 \001("
-          + "\0132R.google.cloud.aiplatform.v1beta1.Expl"
-          + "anationMetadataOverride.InputMetadataOve"
-          + "rride:\0028\001B\355\001\n#com.google.cloud.aiplatfor"
-          + "m.v1beta1B\020ExplanationProtoP\001ZIgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1beta1;aiplatform\252\002\037Google.Cloud."
-          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
-          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
-          + "::V1beta1b\006proto3"
+          + "\022Q\n\024blur_baseline_config\030\003 \001(\01323.google."
+          + "cloud.aiplatform.v1beta1.BlurBaselineCon"
+          + "fig\"\314\001\n\017XraiAttribution\022\027\n\nstep_count\030\001 "
+          + "\001(\005B\003\340A\002\022M\n\022smooth_grad_config\030\002 \001(\01321.g"
+          + "oogle.cloud.aiplatform.v1beta1.SmoothGra"
+          + "dConfig\022Q\n\024blur_baseline_config\030\003 \001(\01323."
+          + "google.cloud.aiplatform.v1beta1.BlurBase"
+          + "lineConfig\"\256\001\n\020SmoothGradConfig\022\025\n\013noise"
+          + "_sigma\030\001 \001(\002H\000\022Q\n\023feature_noise_sigma\030\002 "
+          + "\001(\01322.google.cloud.aiplatform.v1beta1.Fe"
+          + "atureNoiseSigmaH\000\022\032\n\022noisy_sample_count\030"
+          + "\003 \001(\005B\024\n\022GradientNoiseSigma\"\246\001\n\021FeatureN"
+          + "oiseSigma\022\\\n\013noise_sigma\030\001 \003(\0132G.google."
+          + "cloud.aiplatform.v1beta1.FeatureNoiseSig"
+          + "ma.NoiseSigmaForFeature\0323\n\024NoiseSigmaFor"
+          + "Feature\022\014\n\004name\030\001 \001(\t\022\r\n\005sigma\030\002 \001(\002\",\n\022"
+          + "BlurBaselineConfig\022\026\n\016max_blur_sigma\030\001 \001"
+          + "(\002\"\214\001\n\nSimilarity\022>\n\ngcs_source\030\001 \001(\0132*."
+          + "google.cloud.aiplatform.v1beta1.GcsSourc"
+          + "e\022>\n\036nearest_neighbor_search_config\030\002 \001("
+          + "\0132\026.google.protobuf.Value\"\265\001\n\027Explanatio"
+          + "nSpecOverride\022J\n\nparameters\030\001 \001(\01326.goog"
+          + "le.cloud.aiplatform.v1beta1.ExplanationP"
+          + "arameters\022N\n\010metadata\030\002 \001(\0132<.google.clo"
+          + "ud.aiplatform.v1beta1.ExplanationMetadat"
+          + "aOverride\"\312\002\n\033ExplanationMetadataOverrid"
+          + "e\022]\n\006inputs\030\001 \003(\0132H.google.cloud.aiplatf"
+          + "orm.v1beta1.ExplanationMetadataOverride."
+          + "InputsEntryB\003\340A\002\032H\n\025InputMetadataOverrid"
+          + "e\022/\n\017input_baselines\030\001 \003(\0132\026.google.prot"
+          + "obuf.Value\032\201\001\n\013InputsEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "a\n\005value\030\002 \001(\0132R.google.cloud.aiplatform"
+          + ".v1beta1.ExplanationMetadataOverride.Inp"
+          + "utMetadataOverride:\0028\001B\355\001\n#com.google.cl"
+          + "oud.aiplatform.v1beta1B\020ExplanationProto"
+          + "P\001ZIgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/aiplatform/v1beta1;aiplatform\252\002\037"
+          + "Google.Cloud.AIPlatform.V1Beta1\312\002\037Google"
+          + "\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clou"
+          + "d::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -251,7 +260,7 @@ public final class ExplanationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_IntegratedGradientsAttribution_descriptor,
             new java.lang.String[] {
-              "StepCount", "SmoothGradConfig",
+              "StepCount", "SmoothGradConfig", "BlurBaselineConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_XraiAttribution_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -259,7 +268,7 @@ public final class ExplanationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_XraiAttribution_descriptor,
             new java.lang.String[] {
-              "StepCount", "SmoothGradConfig",
+              "StepCount", "SmoothGradConfig", "BlurBaselineConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_SmoothGradConfig_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -287,8 +296,16 @@ public final class ExplanationProto {
             new java.lang.String[] {
               "Name", "Sigma",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_Similarity_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_BlurBaselineConfig_descriptor =
         getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_aiplatform_v1beta1_BlurBaselineConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BlurBaselineConfig_descriptor,
+            new java.lang.String[] {
+              "MaxBlurSigma",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Similarity_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1beta1_Similarity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Similarity_descriptor,
@@ -296,7 +313,7 @@ public final class ExplanationProto {
               "GcsSource", "NearestNeighborSearchConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_descriptor,
@@ -304,7 +321,7 @@ public final class ExplanationProto {
               "Parameters", "Metadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor,

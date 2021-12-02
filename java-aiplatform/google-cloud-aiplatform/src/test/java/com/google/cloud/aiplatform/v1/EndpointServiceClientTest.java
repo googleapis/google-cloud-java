@@ -103,6 +103,7 @@ public class EndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -166,6 +167,7 @@ public class EndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -215,6 +217,140 @@ public class EndpointServiceClientTest {
   }
 
   @Test
+  public void createEndpointTest3() throws Exception {
+    Endpoint expectedResponse =
+        Endpoint.newBuilder()
+            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDeployedModels(new ArrayList<DeployedModel>())
+            .putAllTrafficSplit(new HashMap<String, Integer>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEndpointService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Endpoint endpoint = Endpoint.newBuilder().build();
+    String endpointId = "endpointId-1837754992";
+
+    Endpoint actualResponse = client.createEndpointAsync(parent, endpoint, endpointId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEndpointRequest actualRequest = ((CreateEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(endpoint, actualRequest.getEndpoint());
+    Assert.assertEquals(endpointId, actualRequest.getEndpointId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEndpointExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Endpoint endpoint = Endpoint.newBuilder().build();
+      String endpointId = "endpointId-1837754992";
+      client.createEndpointAsync(parent, endpoint, endpointId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createEndpointTest4() throws Exception {
+    Endpoint expectedResponse =
+        Endpoint.newBuilder()
+            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDeployedModels(new ArrayList<DeployedModel>())
+            .putAllTrafficSplit(new HashMap<String, Integer>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEndpointService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Endpoint endpoint = Endpoint.newBuilder().build();
+    String endpointId = "endpointId-1837754992";
+
+    Endpoint actualResponse = client.createEndpointAsync(parent, endpoint, endpointId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEndpointRequest actualRequest = ((CreateEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(endpoint, actualRequest.getEndpoint());
+    Assert.assertEquals(endpointId, actualRequest.getEndpointId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEndpointExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Endpoint endpoint = Endpoint.newBuilder().build();
+      String endpointId = "endpointId-1837754992";
+      client.createEndpointAsync(parent, endpoint, endpointId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getEndpointTest() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
@@ -229,6 +365,7 @@ public class EndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -281,6 +418,7 @@ public class EndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -421,6 +559,7 @@ public class EndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")

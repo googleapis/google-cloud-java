@@ -312,7 +312,7 @@ public interface StudySpecOrBuilder
    *
    * <pre>
    * The observation noise level of the study.
-   * Currently only supported by the Vizier service. Not supported by
+   * Currently only supported by the Vertex AI Vizier service. Not supported by
    * HyperparamterTuningJob or TrainingPipeline.
    * </pre>
    *
@@ -326,7 +326,7 @@ public interface StudySpecOrBuilder
    *
    * <pre>
    * The observation noise level of the study.
-   * Currently only supported by the Vizier service. Not supported by
+   * Currently only supported by the Vertex AI Vizier service. Not supported by
    * HyperparamterTuningJob or TrainingPipeline.
    * </pre>
    *

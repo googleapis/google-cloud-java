@@ -354,20 +354,21 @@ public interface IndexEndpointOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The full name of the Google Compute Engine
+   * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
    * network name.
    * </pre>
    *
-   * <code>
-   * string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The network.
    */
@@ -376,22 +377,40 @@ public interface IndexEndpointOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The full name of the Google Compute Engine
+   * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
    * network name.
    * </pre>
    *
-   * <code>
-   * string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, expose the IndexEndpoint via private service connect.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+   * can be set.
+   * </pre>
+   *
+   * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enablePrivateServiceConnect.
+   */
+  boolean getEnablePrivateServiceConnect();
 }

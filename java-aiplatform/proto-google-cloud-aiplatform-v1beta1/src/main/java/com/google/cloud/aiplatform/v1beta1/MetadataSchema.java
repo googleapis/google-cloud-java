@@ -399,7 +399,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The version of the MetadataSchema. The version's format must match
    * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-   * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+   * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
    * </pre>
    *
    * <code>string schema_version = 2;</code>
@@ -424,7 +424,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The version of the MetadataSchema. The version's format must match
    * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-   * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+   * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
    * </pre>
    *
    * <code>string schema_version = 2;</code>
@@ -1171,7 +1171,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      * </pre>
      *
      * <code>string schema_version = 2;</code>
@@ -1195,7 +1195,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      * </pre>
      *
      * <code>string schema_version = 2;</code>
@@ -1219,7 +1219,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      * </pre>
      *
      * <code>string schema_version = 2;</code>
@@ -1242,7 +1242,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      * </pre>
      *
      * <code>string schema_version = 2;</code>
@@ -1261,7 +1261,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      * </pre>
      *
      * <code>string schema_version = 2;</code>

@@ -37,6 +37,9 @@ import com.google.cloud.aiplatform.v1beta1.GetIndexEndpointRequest;
 import com.google.cloud.aiplatform.v1beta1.IndexEndpoint;
 import com.google.cloud.aiplatform.v1beta1.ListIndexEndpointsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListIndexEndpointsResponse;
+import com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexRequest;
+import com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexResponse;
 import com.google.cloud.aiplatform.v1beta1.UndeployIndexOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UndeployIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployIndexResponse;
@@ -135,6 +138,17 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<MutateDeployedIndexRequest, Operation>
+      mutateDeployedIndexMethodDescriptor =
+          MethodDescriptor.<MutateDeployedIndexRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.IndexEndpointService/MutateDeployedIndex")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MutateDeployedIndexRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateIndexEndpointRequest, Operation> createIndexEndpointCallable;
   private final OperationCallable<
           CreateIndexEndpointRequest, IndexEndpoint, CreateIndexEndpointOperationMetadata>
@@ -157,6 +171,12 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
   private final OperationCallable<
           UndeployIndexRequest, UndeployIndexResponse, UndeployIndexOperationMetadata>
       undeployIndexOperationCallable;
+  private final UnaryCallable<MutateDeployedIndexRequest, Operation> mutateDeployedIndexCallable;
+  private final OperationCallable<
+          MutateDeployedIndexRequest,
+          MutateDeployedIndexResponse,
+          MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -276,6 +296,16 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<MutateDeployedIndexRequest, Operation> mutateDeployedIndexTransportSettings =
+        GrpcCallSettings.<MutateDeployedIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(mutateDeployedIndexMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("index_endpoint", String.valueOf(request.getIndexEndpoint()));
+                  return params.build();
+                })
+            .build();
 
     this.createIndexEndpointCallable =
         callableFactory.createUnaryCallable(
@@ -333,6 +363,17 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
         callableFactory.createOperationCallable(
             undeployIndexTransportSettings,
             settings.undeployIndexOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.mutateDeployedIndexCallable =
+        callableFactory.createUnaryCallable(
+            mutateDeployedIndexTransportSettings,
+            settings.mutateDeployedIndexSettings(),
+            clientContext);
+    this.mutateDeployedIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            mutateDeployedIndexTransportSettings,
+            settings.mutateDeployedIndexOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -410,6 +451,20 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
           UndeployIndexRequest, UndeployIndexResponse, UndeployIndexOperationMetadata>
       undeployIndexOperationCallable() {
     return undeployIndexOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MutateDeployedIndexRequest, Operation> mutateDeployedIndexCallable() {
+    return mutateDeployedIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          MutateDeployedIndexRequest,
+          MutateDeployedIndexResponse,
+          MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexOperationCallable() {
+    return mutateDeployedIndexOperationCallable;
   }
 
   @Override

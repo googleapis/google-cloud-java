@@ -22,6 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
+ * LINT.IfChange
  * A message representing a Study.
  * </pre>
  *
@@ -859,6 +860,7 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * LINT.IfChange
    * A message representing a Study.
    * </pre>
    *

@@ -161,7 +161,7 @@
  *
  * <p>Service Description: A service for creating and managing Vertex AI's pipelines. This includes
  * both `TrainingPipeline` resources (used for AutoML and custom training) and `PipelineJob`
- * resources (used for Vertex Pipelines).
+ * resources (used for Vertex AI Pipelines).
  *
  * <p>Sample for PipelineServiceClient:
  *
@@ -223,10 +223,10 @@
  *
  * <p>======================= VizierServiceClient =======================
  *
- * <p>Service Description: Vertex Vizier API.
+ * <p>Service Description: Vertex AI Vizier API.
  *
- * <p>Vizier service is a GCP service to solve blackbox optimization problems, such as tuning
- * machine learning hyperparameters and searching over deep learning architectures.
+ * <p>Vertex AI Vizier is a service to solve blackbox optimization problems, such as tuning machine
+ * learning hyperparameters and searching over deep learning architectures.
  *
  * <p>Sample for VizierServiceClient:
  *

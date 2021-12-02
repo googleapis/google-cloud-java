@@ -42,31 +42,27 @@ public final class LineageSubgraphProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/aiplatform/v1beta1/lineag"
           + "e_subgraph.proto\022\037google.cloud.aiplatfor"
-          + "m.v1beta1\032\031google/api/resource.proto\032.go"
-          + "ogle/cloud/aiplatform/v1beta1/artifact.p"
-          + "roto\032+google/cloud/aiplatform/v1beta1/ev"
-          + "ent.proto\032/google/cloud/aiplatform/v1bet"
-          + "a1/execution.proto\032\034google/api/annotatio"
-          + "ns.proto\"\232\002\n\017LineageSubgraph\022e\n\tartifact"
-          + "s\030\001 \003(\0132).google.cloud.aiplatform.v1beta"
-          + "1.ArtifactB\'\372A$\n\"aiplatform.googleapis.c"
-          + "om/Artifact\022h\n\nexecutions\030\002 \003(\0132*.google"
-          + ".cloud.aiplatform.v1beta1.ExecutionB(\372A%"
-          + "\n#aiplatform.googleapis.com/Execution\0226\n"
-          + "\006events\030\003 \003(\0132&.google.cloud.aiplatform."
-          + "v1beta1.EventB\361\001\n#com.google.cloud.aipla"
-          + "tform.v1beta1B\024LineageSubgraphProtoP\001ZIg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1beta1;aiplatform\252\002\037Googl"
-          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
-          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
-          + "Platform::V1beta1b\006proto3"
+          + "m.v1beta1\032.google/cloud/aiplatform/v1bet"
+          + "a1/artifact.proto\032+google/cloud/aiplatfo"
+          + "rm/v1beta1/event.proto\032/google/cloud/aip"
+          + "latform/v1beta1/execution.proto\032\034google/"
+          + "api/annotations.proto\"\307\001\n\017LineageSubgrap"
+          + "h\022<\n\tartifacts\030\001 \003(\0132).google.cloud.aipl"
+          + "atform.v1beta1.Artifact\022>\n\nexecutions\030\002 "
+          + "\003(\0132*.google.cloud.aiplatform.v1beta1.Ex"
+          + "ecution\0226\n\006events\030\003 \003(\0132&.google.cloud.a"
+          + "iplatform.v1beta1.EventB\361\001\n#com.google.c"
+          + "loud.aiplatform.v1beta1B\024LineageSubgraph"
+          + "ProtoP\001ZIgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/aiplatform/v1beta1;aiplatfo"
+          + "rm\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
+          + ":Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ArtifactProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EventProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ExecutionProto.getDescriptor(),
@@ -80,12 +76,6 @@ public final class LineageSubgraphProto {
             new java.lang.String[] {
               "Artifacts", "Executions", "Events",
             });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.ResourceProto.resourceReference);
-    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
-        descriptor, registry);
-    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ArtifactProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EventProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ExecutionProto.getDescriptor();

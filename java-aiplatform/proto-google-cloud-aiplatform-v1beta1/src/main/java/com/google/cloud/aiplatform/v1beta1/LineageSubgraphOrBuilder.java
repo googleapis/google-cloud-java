@@ -30,9 +30,7 @@ public interface LineageSubgraphOrBuilder
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Artifact> getArtifactsList();
   /**
@@ -42,9 +40,7 @@ public interface LineageSubgraphOrBuilder
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Artifact getArtifacts(int index);
   /**
@@ -54,9 +50,7 @@ public interface LineageSubgraphOrBuilder
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1;</code>
    */
   int getArtifactsCount();
   /**
@@ -66,9 +60,7 @@ public interface LineageSubgraphOrBuilder
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ArtifactOrBuilder>
       getArtifactsOrBuilderList();
@@ -79,9 +71,7 @@ public interface LineageSubgraphOrBuilder
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Artifact artifacts = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ArtifactOrBuilder getArtifactsOrBuilder(int index);
 
@@ -92,9 +82,7 @@ public interface LineageSubgraphOrBuilder
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Execution> getExecutionsList();
   /**
@@ -104,9 +92,7 @@ public interface LineageSubgraphOrBuilder
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Execution getExecutions(int index);
   /**
@@ -116,9 +102,7 @@ public interface LineageSubgraphOrBuilder
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2;</code>
    */
   int getExecutionsCount();
   /**
@@ -128,9 +112,7 @@ public interface LineageSubgraphOrBuilder
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExecutionOrBuilder>
       getExecutionsOrBuilderList();
@@ -141,9 +123,7 @@ public interface LineageSubgraphOrBuilder
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Execution executions = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ExecutionOrBuilder getExecutionsOrBuilder(int index);
 

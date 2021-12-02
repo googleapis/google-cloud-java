@@ -480,6 +480,9 @@ public interface EndpointOrBuilder
    * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * `projects/{project}/global/networks/{network}`.
    * Where `{project}` is a project number, as in `12345`, and `{network}` is
@@ -500,6 +503,9 @@ public interface EndpointOrBuilder
    * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * `projects/{project}/global/networks/{network}`.
    * Where `{project}` is a project number, as in `12345`, and `{network}` is
@@ -511,6 +517,22 @@ public interface EndpointOrBuilder
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, expose the Endpoint via private service connect.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+   * can be set.
+   * </pre>
+   *
+   * <code>bool enable_private_service_connect = 17;</code>
+   *
+   * @return The enablePrivateServiceConnect.
+   */
+  boolean getEnablePrivateServiceConnect();
 
   /**
    *

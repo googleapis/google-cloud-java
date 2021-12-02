@@ -100,6 +100,7 @@ public class IndexEndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -157,6 +158,7 @@ public class IndexEndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -214,6 +216,7 @@ public class IndexEndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -260,6 +263,7 @@ public class IndexEndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -394,6 +398,7 @@ public class IndexEndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -704,6 +709,108 @@ public class IndexEndpointServiceClientTest {
       String indexEndpoint = "indexEndpoint-1743275897";
       String deployedIndexId = "deployedIndexId-1101212953";
       client.undeployIndexAsync(indexEndpoint, deployedIndexId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void mutateDeployedIndexTest() throws Exception {
+    MutateDeployedIndexResponse expectedResponse =
+        MutateDeployedIndexResponse.newBuilder()
+            .setDeployedIndex(DeployedIndex.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("mutateDeployedIndexTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIndexEndpointService.addResponse(resultOperation);
+
+    IndexEndpointName indexEndpoint =
+        IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]");
+    DeployedIndex deployedIndex = DeployedIndex.newBuilder().build();
+
+    MutateDeployedIndexResponse actualResponse =
+        client.mutateDeployedIndexAsync(indexEndpoint, deployedIndex).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIndexEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MutateDeployedIndexRequest actualRequest = ((MutateDeployedIndexRequest) actualRequests.get(0));
+
+    Assert.assertEquals(indexEndpoint.toString(), actualRequest.getIndexEndpoint());
+    Assert.assertEquals(deployedIndex, actualRequest.getDeployedIndex());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mutateDeployedIndexExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIndexEndpointService.addException(exception);
+
+    try {
+      IndexEndpointName indexEndpoint =
+          IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]");
+      DeployedIndex deployedIndex = DeployedIndex.newBuilder().build();
+      client.mutateDeployedIndexAsync(indexEndpoint, deployedIndex).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void mutateDeployedIndexTest2() throws Exception {
+    MutateDeployedIndexResponse expectedResponse =
+        MutateDeployedIndexResponse.newBuilder()
+            .setDeployedIndex(DeployedIndex.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("mutateDeployedIndexTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIndexEndpointService.addResponse(resultOperation);
+
+    String indexEndpoint = "indexEndpoint-1743275897";
+    DeployedIndex deployedIndex = DeployedIndex.newBuilder().build();
+
+    MutateDeployedIndexResponse actualResponse =
+        client.mutateDeployedIndexAsync(indexEndpoint, deployedIndex).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIndexEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MutateDeployedIndexRequest actualRequest = ((MutateDeployedIndexRequest) actualRequests.get(0));
+
+    Assert.assertEquals(indexEndpoint, actualRequest.getIndexEndpoint());
+    Assert.assertEquals(deployedIndex, actualRequest.getDeployedIndex());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mutateDeployedIndexExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIndexEndpointService.addException(exception);
+
+    try {
+      String indexEndpoint = "indexEndpoint-1743275897";
+      DeployedIndex deployedIndex = DeployedIndex.newBuilder().build();
+      client.mutateDeployedIndexAsync(indexEndpoint, deployedIndex).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

@@ -284,7 +284,20 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction with arbitrary http payload.
+   * Perform an online prediction with an arbitrary HTTP payload.
+   *
+   * <p>The response includes the following HTTP headers:
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   *       that served this prediction.
+   * </ul>
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
+   *       [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] that served this
+   *       prediction.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -323,7 +336,20 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction with arbitrary http payload.
+   * Perform an online prediction with an arbitrary HTTP payload.
+   *
+   * <p>The response includes the following HTTP headers:
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   *       that served this prediction.
+   * </ul>
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
+   *       [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] that served this
+   *       prediction.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -359,7 +385,20 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction with arbitrary http payload.
+   * Perform an online prediction with an arbitrary HTTP payload.
+   *
+   * <p>The response includes the following HTTP headers:
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   *       that served this prediction.
+   * </ul>
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
+   *       [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] that served this
+   *       prediction.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -383,7 +422,20 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction with arbitrary http payload.
+   * Perform an online prediction with an arbitrary HTTP payload.
+   *
+   * <p>The response includes the following HTTP headers:
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   *       that served this prediction.
+   * </ul>
+   *
+   * <ul>
+   *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
+   *       [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] that served this
+   *       prediction.
+   * </ul>
    *
    * <p>Sample code:
    *

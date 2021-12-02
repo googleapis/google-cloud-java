@@ -32,6 +32,9 @@ import com.google.cloud.aiplatform.v1.GetIndexEndpointRequest;
 import com.google.cloud.aiplatform.v1.IndexEndpoint;
 import com.google.cloud.aiplatform.v1.ListIndexEndpointsRequest;
 import com.google.cloud.aiplatform.v1.ListIndexEndpointsResponse;
+import com.google.cloud.aiplatform.v1.MutateDeployedIndexOperationMetadata;
+import com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest;
+import com.google.cloud.aiplatform.v1.MutateDeployedIndexResponse;
 import com.google.cloud.aiplatform.v1.UndeployIndexOperationMetadata;
 import com.google.cloud.aiplatform.v1.UndeployIndexRequest;
 import com.google.cloud.aiplatform.v1.UndeployIndexResponse;
@@ -110,6 +113,19 @@ public abstract class IndexEndpointServiceStub implements BackgroundResource {
 
   public UnaryCallable<UndeployIndexRequest, Operation> undeployIndexCallable() {
     throw new UnsupportedOperationException("Not implemented: undeployIndexCallable()");
+  }
+
+  public OperationCallable<
+          MutateDeployedIndexRequest,
+          MutateDeployedIndexResponse,
+          MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: mutateDeployedIndexOperationCallable()");
+  }
+
+  public UnaryCallable<MutateDeployedIndexRequest, Operation> mutateDeployedIndexCallable() {
+    throw new UnsupportedOperationException("Not implemented: mutateDeployedIndexCallable()");
   }
 
   @Override

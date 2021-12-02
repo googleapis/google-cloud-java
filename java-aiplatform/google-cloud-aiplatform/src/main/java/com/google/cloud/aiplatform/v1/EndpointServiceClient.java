@@ -230,10 +230,89 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Endpoint endpoint = Endpoint.newBuilder().build();
+   *   String endpointId = "endpointId-1837754992";
+   *   Endpoint response =
+   *       endpointServiceClient.createEndpointAsync(parent, endpoint, endpointId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the Endpoint in. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param endpoint Required. The Endpoint to create.
+   * @param endpointId Immutable. The ID to use for endpoint, which will become the final component
+   *     of the endpoint resource name. If not provided, Vertex AI will generate a value for this
+   *     ID.
+   *     <p>This value should be 1-10 characters, and valid characters are /[0-9]/. When using
+   *     HTTP/JSON, this field is populated based on a query string argument, such as
+   *     `?endpoint_id=12345`. This is the fallback for fields that are not included in either the
+   *     URI or the body.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Endpoint, CreateEndpointOperationMetadata> createEndpointAsync(
+      LocationName parent, Endpoint endpoint, String endpointId) {
+    CreateEndpointRequest request =
+        CreateEndpointRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setEndpoint(endpoint)
+            .setEndpointId(endpointId)
+            .build();
+    return createEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Endpoint endpoint = Endpoint.newBuilder().build();
+   *   String endpointId = "endpointId-1837754992";
+   *   Endpoint response =
+   *       endpointServiceClient.createEndpointAsync(parent, endpoint, endpointId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the Endpoint in. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param endpoint Required. The Endpoint to create.
+   * @param endpointId Immutable. The ID to use for endpoint, which will become the final component
+   *     of the endpoint resource name. If not provided, Vertex AI will generate a value for this
+   *     ID.
+   *     <p>This value should be 1-10 characters, and valid characters are /[0-9]/. When using
+   *     HTTP/JSON, this field is populated based on a query string argument, such as
+   *     `?endpoint_id=12345`. This is the fallback for fields that are not included in either the
+   *     URI or the body.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Endpoint, CreateEndpointOperationMetadata> createEndpointAsync(
+      String parent, Endpoint endpoint, String endpointId) {
+    CreateEndpointRequest request =
+        CreateEndpointRequest.newBuilder()
+            .setParent(parent)
+            .setEndpoint(endpoint)
+            .setEndpointId(endpointId)
+            .build();
+    return createEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   CreateEndpointRequest request =
    *       CreateEndpointRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .setEndpointId("endpointId-1837754992")
    *           .build();
    *   Endpoint response = endpointServiceClient.createEndpointAsync(request).get();
    * }
@@ -259,6 +338,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *       CreateEndpointRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .setEndpointId("endpointId-1837754992")
    *           .build();
    *   OperationFuture<Endpoint, CreateEndpointOperationMetadata> future =
    *       endpointServiceClient.createEndpointOperationCallable().futureCall(request);
@@ -284,6 +364,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *       CreateEndpointRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .setEndpointId("endpointId-1837754992")
    *           .build();
    *   ApiFuture<Operation> future =
    *       endpointServiceClient.createEndpointCallable().futureCall(request);

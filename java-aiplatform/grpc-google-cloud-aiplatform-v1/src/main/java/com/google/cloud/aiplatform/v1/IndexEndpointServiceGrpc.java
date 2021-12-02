@@ -364,6 +364,55 @@ public final class IndexEndpointServiceGrpc {
     return getUndeployIndexMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest,
+          com.google.longrunning.Operation>
+      getMutateDeployedIndexMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MutateDeployedIndex",
+      requestType = com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest,
+          com.google.longrunning.Operation>
+      getMutateDeployedIndexMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest,
+            com.google.longrunning.Operation>
+        getMutateDeployedIndexMethod;
+    if ((getMutateDeployedIndexMethod = IndexEndpointServiceGrpc.getMutateDeployedIndexMethod)
+        == null) {
+      synchronized (IndexEndpointServiceGrpc.class) {
+        if ((getMutateDeployedIndexMethod = IndexEndpointServiceGrpc.getMutateDeployedIndexMethod)
+            == null) {
+          IndexEndpointServiceGrpc.getMutateDeployedIndexMethod =
+              getMutateDeployedIndexMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "MutateDeployedIndex"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IndexEndpointServiceMethodDescriptorSupplier("MutateDeployedIndex"))
+                      .build();
+        }
+      }
+    }
+    return getMutateDeployedIndexMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static IndexEndpointServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<IndexEndpointServiceStub> factory =
@@ -518,6 +567,20 @@ public final class IndexEndpointServiceGrpc {
           getUndeployIndexMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing DeployedIndex under an IndexEndpoint.
+     * </pre>
+     */
+    public void mutateDeployedIndex(
+        com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMutateDeployedIndexMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -566,6 +629,12 @@ public final class IndexEndpointServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.UndeployIndexRequest,
                       com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_INDEX)))
+          .addMethod(
+              getMutateDeployedIndexMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest,
+                      com.google.longrunning.Operation>(this, METHODID_MUTATE_DEPLOYED_INDEX)))
           .build();
     }
   }
@@ -706,6 +775,22 @@ public final class IndexEndpointServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing DeployedIndex under an IndexEndpoint.
+     * </pre>
+     */
+    public void mutateDeployedIndex(
+        com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMutateDeployedIndexMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -820,6 +905,19 @@ public final class IndexEndpointServiceGrpc {
         com.google.cloud.aiplatform.v1.UndeployIndexRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUndeployIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing DeployedIndex under an IndexEndpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation mutateDeployedIndex(
+        com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMutateDeployedIndexMethod(), getCallOptions(), request);
     }
   }
 
@@ -939,6 +1037,19 @@ public final class IndexEndpointServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUndeployIndexMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing DeployedIndex under an IndexEndpoint.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        mutateDeployedIndex(com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMutateDeployedIndexMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INDEX_ENDPOINT = 0;
@@ -948,6 +1059,7 @@ public final class IndexEndpointServiceGrpc {
   private static final int METHODID_DELETE_INDEX_ENDPOINT = 4;
   private static final int METHODID_DEPLOY_INDEX = 5;
   private static final int METHODID_UNDEPLOY_INDEX = 6;
+  private static final int METHODID_MUTATE_DEPLOYED_INDEX = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1003,6 +1115,11 @@ public final class IndexEndpointServiceGrpc {
         case METHODID_UNDEPLOY_INDEX:
           serviceImpl.undeployIndex(
               (com.google.cloud.aiplatform.v1.UndeployIndexRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_MUTATE_DEPLOYED_INDEX:
+          serviceImpl.mutateDeployedIndex(
+              (com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1076,6 +1193,7 @@ public final class IndexEndpointServiceGrpc {
                       .addMethod(getDeleteIndexEndpointMethod())
                       .addMethod(getDeployIndexMethod())
                       .addMethod(getUndeployIndexMethod())
+                      .addMethod(getMutateDeployedIndexMethod())
                       .build();
         }
       }

@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Details of operations that perform import feature values.
+ * Details of operations that perform import Feature values.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata}
@@ -143,7 +143,7 @@ public final class ImportFeatureValuesOperationMetadata
    *
    *
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -158,7 +158,7 @@ public final class ImportFeatureValuesOperationMetadata
    *
    *
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -175,7 +175,7 @@ public final class ImportFeatureValuesOperationMetadata
    *
    *
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -210,7 +210,7 @@ public final class ImportFeatureValuesOperationMetadata
    *
    *
    * <pre>
-   * Number of feature values that have been imported by the operation.
+   * Number of Feature values that have been imported by the operation.
    * </pre>
    *
    * <code>int64 imported_feature_value_count = 3;</code>
@@ -442,7 +442,7 @@ public final class ImportFeatureValuesOperationMetadata
    *
    *
    * <pre>
-   * Details of operations that perform import feature values.
+   * Details of operations that perform import Feature values.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata}
@@ -642,7 +642,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -656,7 +656,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -676,7 +676,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -699,7 +699,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -719,7 +719,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -747,7 +747,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -767,7 +767,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -782,7 +782,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -801,7 +801,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -880,7 +880,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      * </pre>
      *
      * <code>int64 imported_feature_value_count = 3;</code>
@@ -895,7 +895,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      * </pre>
      *
      * <code>int64 imported_feature_value_count = 3;</code>
@@ -913,7 +913,7 @@ public final class ImportFeatureValuesOperationMetadata
      *
      *
      * <pre>
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      * </pre>
      *
      * <code>int64 imported_feature_value_count = 3;</code>

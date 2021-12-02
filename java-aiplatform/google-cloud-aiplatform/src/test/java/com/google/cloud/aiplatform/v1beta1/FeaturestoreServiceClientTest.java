@@ -201,6 +201,124 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
+  public void createFeaturestoreTest3() throws Exception {
+    Featurestore expectedResponse =
+        Featurestore.newBuilder()
+            .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeaturestoreTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Featurestore featurestore = Featurestore.newBuilder().build();
+    String featurestoreId = "featurestoreId-1315851738";
+
+    Featurestore actualResponse =
+        client.createFeaturestoreAsync(parent, featurestore, featurestoreId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeaturestoreRequest actualRequest = ((CreateFeaturestoreRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(featurestore, actualRequest.getFeaturestore());
+    Assert.assertEquals(featurestoreId, actualRequest.getFeaturestoreId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeaturestoreExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Featurestore featurestore = Featurestore.newBuilder().build();
+      String featurestoreId = "featurestoreId-1315851738";
+      client.createFeaturestoreAsync(parent, featurestore, featurestoreId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeaturestoreTest4() throws Exception {
+    Featurestore expectedResponse =
+        Featurestore.newBuilder()
+            .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeaturestoreTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Featurestore featurestore = Featurestore.newBuilder().build();
+    String featurestoreId = "featurestoreId-1315851738";
+
+    Featurestore actualResponse =
+        client.createFeaturestoreAsync(parent, featurestore, featurestoreId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeaturestoreRequest actualRequest = ((CreateFeaturestoreRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(featurestore, actualRequest.getFeaturestore());
+    Assert.assertEquals(featurestoreId, actualRequest.getFeaturestoreId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeaturestoreExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Featurestore featurestore = Featurestore.newBuilder().build();
+      String featurestoreId = "featurestoreId-1315851738";
+      client.createFeaturestoreAsync(parent, featurestore, featurestoreId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getFeaturestoreTest() throws Exception {
     Featurestore expectedResponse =
         Featurestore.newBuilder()
@@ -711,6 +829,128 @@ public class FeaturestoreServiceClientTest {
       String parent = "parent-995424086";
       EntityType entityType = EntityType.newBuilder().build();
       client.createEntityTypeAsync(parent, entityType).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createEntityTypeTest3() throws Exception {
+    EntityType expectedResponse =
+        EntityType.newBuilder()
+            .setName(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEntityTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    FeaturestoreName parent = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
+    EntityType entityType = EntityType.newBuilder().build();
+    String entityTypeId = "entityTypeId767740856";
+
+    EntityType actualResponse =
+        client.createEntityTypeAsync(parent, entityType, entityTypeId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntityTypeRequest actualRequest = ((CreateEntityTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(entityType, actualRequest.getEntityType());
+    Assert.assertEquals(entityTypeId, actualRequest.getEntityTypeId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntityTypeExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      FeaturestoreName parent = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
+      EntityType entityType = EntityType.newBuilder().build();
+      String entityTypeId = "entityTypeId767740856";
+      client.createEntityTypeAsync(parent, entityType, entityTypeId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createEntityTypeTest4() throws Exception {
+    EntityType expectedResponse =
+        EntityType.newBuilder()
+            .setName(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEntityTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    EntityType entityType = EntityType.newBuilder().build();
+    String entityTypeId = "entityTypeId767740856";
+
+    EntityType actualResponse =
+        client.createEntityTypeAsync(parent, entityType, entityTypeId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntityTypeRequest actualRequest = ((CreateEntityTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(entityType, actualRequest.getEntityType());
+    Assert.assertEquals(entityTypeId, actualRequest.getEntityTypeId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntityTypeExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      EntityType entityType = EntityType.newBuilder().build();
+      String entityTypeId = "entityTypeId767740856";
+      client.createEntityTypeAsync(parent, entityType, entityTypeId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1240,6 +1480,132 @@ public class FeaturestoreServiceClientTest {
       String parent = "parent-995424086";
       Feature feature = Feature.newBuilder().build();
       client.createFeatureAsync(parent, feature).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeatureTest3() throws Exception {
+    Feature expectedResponse =
+        Feature.newBuilder()
+            .setName(
+                FeatureName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeatureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    EntityTypeName parent =
+        EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+    Feature feature = Feature.newBuilder().build();
+    String featureId = "featureId-420503887";
+
+    Feature actualResponse = client.createFeatureAsync(parent, feature, featureId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureRequest actualRequest = ((CreateFeatureRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(feature, actualRequest.getFeature());
+    Assert.assertEquals(featureId, actualRequest.getFeatureId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      EntityTypeName parent =
+          EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+      Feature feature = Feature.newBuilder().build();
+      String featureId = "featureId-420503887";
+      client.createFeatureAsync(parent, feature, featureId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeatureTest4() throws Exception {
+    Feature expectedResponse =
+        Feature.newBuilder()
+            .setName(
+                FeatureName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeatureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Feature feature = Feature.newBuilder().build();
+    String featureId = "featureId-420503887";
+
+    Feature actualResponse = client.createFeatureAsync(parent, feature, featureId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureRequest actualRequest = ((CreateFeatureRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(feature, actualRequest.getFeature());
+    Assert.assertEquals(featureId, actualRequest.getFeatureId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Feature feature = Feature.newBuilder().build();
+      String featureId = "featureId-420503887";
+      client.createFeatureAsync(parent, feature, featureId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

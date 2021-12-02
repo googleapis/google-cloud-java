@@ -65,5 +65,22 @@ public interface ModelMonitoringAlertConfigOrBuilder
   com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfigOrBuilder
       getEmailAlertConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+   * payload encoded from proto
+   * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+   * This can be further sinked to Pub/Sub or any other services supported
+   * by Cloud Logging.
+   * </pre>
+   *
+   * <code>bool enable_logging = 2;</code>
+   *
+   * @return The enableLogging.
+   */
+  boolean getEnableLogging();
+
   public com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.AlertCase getAlertCase();
 }

@@ -599,7 +599,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model.
    *
-   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
+   * <p>A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   * resource has a [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the
+   * model in its [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] field.
    *
    * <p>Sample code:
    *
@@ -624,7 +626,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model.
    *
-   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
+   * <p>A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   * resource has a [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the
+   * model in its [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] field.
    *
    * <p>Sample code:
    *
@@ -648,7 +652,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model.
    *
-   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
+   * <p>A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   * resource has a [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the
+   * model in its [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] field.
    *
    * <p>Sample code:
    *
@@ -674,7 +680,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model.
    *
-   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
+   * <p>A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   * resource has a [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the
+   * model in its [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] field.
    *
    * <p>Sample code:
    *
@@ -700,7 +708,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model.
    *
-   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
+   * <p>A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint]
+   * resource has a [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the
+   * model in its [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] field.
    *
    * <p>Sample code:
    *
@@ -722,7 +732,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
+   * Exports a trained, exportable Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *
@@ -753,7 +763,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
+   * Exports a trained, exportable Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *
@@ -781,7 +791,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
+   * Exports a trained, exportable Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *
@@ -808,7 +818,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
+   * Exports a trained, exportable Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *
@@ -836,7 +846,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
+   * Exports a trained, exportable Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *

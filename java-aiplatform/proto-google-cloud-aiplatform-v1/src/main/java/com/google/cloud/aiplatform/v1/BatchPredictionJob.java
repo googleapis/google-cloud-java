@@ -375,6 +375,23 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 226:
+            {
+              com.google.cloud.aiplatform.v1.UnmanagedContainerModel.Builder subBuilder = null;
+              if (unmanagedContainerModel_ != null) {
+                subBuilder = unmanagedContainerModel_.toBuilder();
+              }
+              unmanagedContainerModel_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.UnmanagedContainerModel.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unmanagedContainerModel_);
+                unmanagedContainerModel_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -5374,15 +5391,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the Model that produces the predictions via this job,
+   * The name of the Model resoure that produces the predictions via this job,
    * must share the same ancestor Location.
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
+   * Exactly one of model and unmanaged_container_model must be set.
    * </pre>
    *
-   * <code>
-   * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The model.
    */
@@ -5402,15 +5418,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the Model that produces the predictions via this job,
+   * The name of the Model resoure that produces the predictions via this job,
    * must share the same ancestor Location.
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
+   * Exactly one of model and unmanaged_container_model must be set.
    * </pre>
    *
-   * <code>
-   * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for model.
    */
@@ -5425,6 +5440,64 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int UNMANAGED_CONTAINER_MODEL_FIELD_NUMBER = 28;
+  private com.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanagedContainerModel_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains model information necessary to perform batch prediction without
+   * requiring uploading to model registry.
+   * Exactly one of model and unmanaged_container_model must be set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+   * </code>
+   *
+   * @return Whether the unmanagedContainerModel field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnmanagedContainerModel() {
+    return unmanagedContainerModel_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains model information necessary to perform batch prediction without
+   * requiring uploading to model registry.
+   * Exactly one of model and unmanaged_container_model must be set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+   * </code>
+   *
+   * @return The unmanagedContainerModel.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.UnmanagedContainerModel getUnmanagedContainerModel() {
+    return unmanagedContainerModel_ == null
+        ? com.google.cloud.aiplatform.v1.UnmanagedContainerModel.getDefaultInstance()
+        : unmanagedContainerModel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains model information necessary to perform batch prediction without
+   * requiring uploading to model registry.
+   * Exactly one of model and unmanaged_container_model must be set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.UnmanagedContainerModelOrBuilder
+      getUnmanagedContainerModelOrBuilder() {
+    return getUnmanagedContainerModel();
   }
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 4;
@@ -6649,6 +6722,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (explanationSpec_ != null) {
       output.writeMessage(25, getExplanationSpec());
     }
+    if (unmanagedContainerModel_ != null) {
+      output.writeMessage(28, getUnmanagedContainerModel());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -6733,6 +6809,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (explanationSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getExplanationSpec());
     }
+    if (unmanagedContainerModel_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, getUnmanagedContainerModel());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6752,6 +6833,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getModel().equals(other.getModel())) return false;
+    if (hasUnmanagedContainerModel() != other.hasUnmanagedContainerModel()) return false;
+    if (hasUnmanagedContainerModel()) {
+      if (!getUnmanagedContainerModel().equals(other.getUnmanagedContainerModel())) return false;
+    }
     if (hasInputConfig() != other.hasInputConfig()) return false;
     if (hasInputConfig()) {
       if (!getInputConfig().equals(other.getInputConfig())) return false;
@@ -6834,6 +6919,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    if (hasUnmanagedContainerModel()) {
+      hash = (37 * hash) + UNMANAGED_CONTAINER_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getUnmanagedContainerModel().hashCode();
+    }
     if (hasInputConfig()) {
       hash = (37 * hash) + INPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInputConfig().hashCode();
@@ -7082,6 +7171,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
       model_ = "";
 
+      if (unmanagedContainerModelBuilder_ == null) {
+        unmanagedContainerModel_ = null;
+      } else {
+        unmanagedContainerModel_ = null;
+        unmanagedContainerModelBuilder_ = null;
+      }
       if (inputConfigBuilder_ == null) {
         inputConfig_ = null;
       } else {
@@ -7214,6 +7309,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.model_ = model_;
+      if (unmanagedContainerModelBuilder_ == null) {
+        result.unmanagedContainerModel_ = unmanagedContainerModel_;
+      } else {
+        result.unmanagedContainerModel_ = unmanagedContainerModelBuilder_.build();
+      }
       if (inputConfigBuilder_ == null) {
         result.inputConfig_ = inputConfig_;
       } else {
@@ -7363,6 +7463,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
         onChanged();
+      }
+      if (other.hasUnmanagedContainerModel()) {
+        mergeUnmanagedContainerModel(other.getUnmanagedContainerModel());
       }
       if (other.hasInputConfig()) {
         mergeInputConfig(other.getInputConfig());
@@ -7692,15 +7795,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      * </pre>
      *
-     * <code>
-     * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The model.
      */
@@ -7719,15 +7821,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      * </pre>
      *
-     * <code>
-     * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for model.
      */
@@ -7746,15 +7847,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      * </pre>
      *
-     * <code>
-     * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The model to set.
      * @return This builder for chaining.
@@ -7772,15 +7872,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      * </pre>
      *
-     * <code>
-     * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -7794,15 +7893,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      * </pre>
      *
-     * <code>
-     * string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for model to set.
      * @return This builder for chaining.
@@ -7816,6 +7914,224 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       model_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanagedContainerModel_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.UnmanagedContainerModel,
+            com.google.cloud.aiplatform.v1.UnmanagedContainerModel.Builder,
+            com.google.cloud.aiplatform.v1.UnmanagedContainerModelOrBuilder>
+        unmanagedContainerModelBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     *
+     * @return Whether the unmanagedContainerModel field is set.
+     */
+    public boolean hasUnmanagedContainerModel() {
+      return unmanagedContainerModelBuilder_ != null || unmanagedContainerModel_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     *
+     * @return The unmanagedContainerModel.
+     */
+    public com.google.cloud.aiplatform.v1.UnmanagedContainerModel getUnmanagedContainerModel() {
+      if (unmanagedContainerModelBuilder_ == null) {
+        return unmanagedContainerModel_ == null
+            ? com.google.cloud.aiplatform.v1.UnmanagedContainerModel.getDefaultInstance()
+            : unmanagedContainerModel_;
+      } else {
+        return unmanagedContainerModelBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     */
+    public Builder setUnmanagedContainerModel(
+        com.google.cloud.aiplatform.v1.UnmanagedContainerModel value) {
+      if (unmanagedContainerModelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        unmanagedContainerModel_ = value;
+        onChanged();
+      } else {
+        unmanagedContainerModelBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     */
+    public Builder setUnmanagedContainerModel(
+        com.google.cloud.aiplatform.v1.UnmanagedContainerModel.Builder builderForValue) {
+      if (unmanagedContainerModelBuilder_ == null) {
+        unmanagedContainerModel_ = builderForValue.build();
+        onChanged();
+      } else {
+        unmanagedContainerModelBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     */
+    public Builder mergeUnmanagedContainerModel(
+        com.google.cloud.aiplatform.v1.UnmanagedContainerModel value) {
+      if (unmanagedContainerModelBuilder_ == null) {
+        if (unmanagedContainerModel_ != null) {
+          unmanagedContainerModel_ =
+              com.google.cloud.aiplatform.v1.UnmanagedContainerModel.newBuilder(
+                      unmanagedContainerModel_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          unmanagedContainerModel_ = value;
+        }
+        onChanged();
+      } else {
+        unmanagedContainerModelBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     */
+    public Builder clearUnmanagedContainerModel() {
+      if (unmanagedContainerModelBuilder_ == null) {
+        unmanagedContainerModel_ = null;
+        onChanged();
+      } else {
+        unmanagedContainerModel_ = null;
+        unmanagedContainerModelBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.UnmanagedContainerModel.Builder
+        getUnmanagedContainerModelBuilder() {
+
+      onChanged();
+      return getUnmanagedContainerModelFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.UnmanagedContainerModelOrBuilder
+        getUnmanagedContainerModelOrBuilder() {
+      if (unmanagedContainerModelBuilder_ != null) {
+        return unmanagedContainerModelBuilder_.getMessageOrBuilder();
+      } else {
+        return unmanagedContainerModel_ == null
+            ? com.google.cloud.aiplatform.v1.UnmanagedContainerModel.getDefaultInstance()
+            : unmanagedContainerModel_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.UnmanagedContainerModel,
+            com.google.cloud.aiplatform.v1.UnmanagedContainerModel.Builder,
+            com.google.cloud.aiplatform.v1.UnmanagedContainerModelOrBuilder>
+        getUnmanagedContainerModelFieldBuilder() {
+      if (unmanagedContainerModelBuilder_ == null) {
+        unmanagedContainerModelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.UnmanagedContainerModel,
+                com.google.cloud.aiplatform.v1.UnmanagedContainerModel.Builder,
+                com.google.cloud.aiplatform.v1.UnmanagedContainerModelOrBuilder>(
+                getUnmanagedContainerModel(), getParentForChildren(), isClean());
+        unmanagedContainerModel_ = null;
+      }
+      return unmanagedContainerModelBuilder_;
     }
 
     private com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig inputConfig_;

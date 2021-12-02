@@ -55,6 +55,10 @@ public final class TrainingPipelineProto {
       internal_static_google_cloud_aiplatform_v1_TimestampSplit_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_TimestampSplit_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_StratifiedSplit_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_StratifiedSplit_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -102,7 +106,7 @@ public final class TrainingPipelineProto {
           + "alue\030\002 \001(\t:\0028\001:~\352A{\n*aiplatform.googleap"
           + "is.com/TrainingPipeline\022Mprojects/{proje"
           + "ct}/locations/{location}/trainingPipelin"
-          + "es/{training_pipeline}\"\253\004\n\017InputDataConf"
+          + "es/{training_pipeline}\"\364\004\n\017InputDataConf"
           + "ig\022C\n\016fraction_split\030\002 \001(\0132).google.clou"
           + "d.aiplatform.v1.FractionSplitH\000\022?\n\014filte"
           + "r_split\030\003 \001(\0132\'.google.cloud.aiplatform."
@@ -110,27 +114,32 @@ public final class TrainingPipelineProto {
           + "(\0132+.google.cloud.aiplatform.v1.Predefin"
           + "edSplitH\000\022E\n\017timestamp_split\030\005 \001(\0132*.goo"
           + "gle.cloud.aiplatform.v1.TimestampSplitH\000"
-          + "\022E\n\017gcs_destination\030\010 \001(\0132*.google.cloud"
-          + ".aiplatform.v1.GcsDestinationH\001\022O\n\024bigqu"
-          + "ery_destination\030\n \001(\0132/.google.cloud.aip"
-          + "latform.v1.BigQueryDestinationH\001\022\027\n\ndata"
-          + "set_id\030\001 \001(\tB\003\340A\002\022\032\n\022annotations_filter\030"
-          + "\006 \001(\t\022\035\n\025annotation_schema_uri\030\t \001(\tB\007\n\005"
-          + "splitB\r\n\013destination\"^\n\rFractionSplit\022\031\n"
-          + "\021training_fraction\030\001 \001(\001\022\033\n\023validation_f"
-          + "raction\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\"e\n\013"
-          + "FilterSplit\022\034\n\017training_filter\030\001 \001(\tB\003\340A"
-          + "\002\022\036\n\021validation_filter\030\002 \001(\tB\003\340A\002\022\030\n\013tes"
-          + "t_filter\030\003 \001(\tB\003\340A\002\"#\n\017PredefinedSplit\022\020"
-          + "\n\003key\030\001 \001(\tB\003\340A\002\"q\n\016TimestampSplit\022\031\n\021tr"
-          + "aining_fraction\030\001 \001(\001\022\033\n\023validation_frac"
-          + "tion\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key"
-          + "\030\004 \001(\tB\003\340A\002B\331\001\n\036com.google.cloud.aiplatf"
-          + "orm.v1B\025TrainingPipelineProtoP\001ZDgoogle."
-          + "golang.org/genproto/googleapis/cloud/aip"
-          + "latform/v1;aiplatform\252\002\032Google.Cloud.AIP"
-          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
-          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "\022G\n\020stratified_split\030\014 \001(\0132+.google.clou"
+          + "d.aiplatform.v1.StratifiedSplitH\000\022E\n\017gcs"
+          + "_destination\030\010 \001(\0132*.google.cloud.aiplat"
+          + "form.v1.GcsDestinationH\001\022O\n\024bigquery_des"
+          + "tination\030\n \001(\0132/.google.cloud.aiplatform"
+          + ".v1.BigQueryDestinationH\001\022\027\n\ndataset_id\030"
+          + "\001 \001(\tB\003\340A\002\022\032\n\022annotations_filter\030\006 \001(\t\022\035"
+          + "\n\025annotation_schema_uri\030\t \001(\tB\007\n\005splitB\r"
+          + "\n\013destination\"^\n\rFractionSplit\022\031\n\021traini"
+          + "ng_fraction\030\001 \001(\001\022\033\n\023validation_fraction"
+          + "\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\"e\n\013FilterS"
+          + "plit\022\034\n\017training_filter\030\001 \001(\tB\003\340A\002\022\036\n\021va"
+          + "lidation_filter\030\002 \001(\tB\003\340A\002\022\030\n\013test_filte"
+          + "r\030\003 \001(\tB\003\340A\002\"#\n\017PredefinedSplit\022\020\n\003key\030\001"
+          + " \001(\tB\003\340A\002\"q\n\016TimestampSplit\022\031\n\021training_"
+          + "fraction\030\001 \001(\001\022\033\n\023validation_fraction\030\002 "
+          + "\001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key\030\004 \001(\tB"
+          + "\003\340A\002\"r\n\017StratifiedSplit\022\031\n\021training_frac"
+          + "tion\030\001 \001(\001\022\033\n\023validation_fraction\030\002 \001(\001\022"
+          + "\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key\030\004 \001(\tB\003\340A\002"
+          + "B\331\001\n\036com.google.cloud.aiplatform.v1B\025Tra"
+          + "iningPipelineProtoP\001ZDgoogle.golang.org/"
+          + "genproto/googleapis/cloud/aiplatform/v1;"
+          + "aiplatform\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -191,6 +200,7 @@ public final class TrainingPipelineProto {
               "FilterSplit",
               "PredefinedSplit",
               "TimestampSplit",
+              "StratifiedSplit",
               "GcsDestination",
               "BigqueryDestination",
               "DatasetId",
@@ -228,6 +238,14 @@ public final class TrainingPipelineProto {
     internal_static_google_cloud_aiplatform_v1_TimestampSplit_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_TimestampSplit_descriptor,
+            new java.lang.String[] {
+              "TrainingFraction", "ValidationFraction", "TestFraction", "Key",
+            });
+    internal_static_google_cloud_aiplatform_v1_StratifiedSplit_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1_StratifiedSplit_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_StratifiedSplit_descriptor,
             new java.lang.String[] {
               "TrainingFraction", "ValidationFraction", "TestFraction", "Key",
             });

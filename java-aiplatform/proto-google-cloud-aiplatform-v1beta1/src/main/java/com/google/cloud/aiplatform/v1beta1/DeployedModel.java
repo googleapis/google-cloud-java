@@ -397,10 +397,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The ID of the DeployedModel.
+   * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+   * will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The id.
    */
@@ -420,10 +422,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The ID of the DeployedModel.
+   * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+   * will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for id.
    */
@@ -1848,10 +1852,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The id.
      */
@@ -1870,10 +1876,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for id.
      */
@@ -1892,10 +1900,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -1913,10 +1923,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -1930,10 +1942,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.

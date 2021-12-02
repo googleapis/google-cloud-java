@@ -168,23 +168,24 @@ public final class ModelMonitoringProto {
           + "tionBaseline.PredictionFormat\"N\n\020Predict"
           + "ionFormat\022!\n\035PREDICTION_FORMAT_UNSPECIFI"
           + "ED\020\000\022\t\n\005JSONL\020\002\022\014\n\010BIGQUERY\020\003B\r\n\013destina"
-          + "tion\"\272\001\n\032ModelMonitoringAlertConfig\022j\n\022e"
+          + "tion\"\322\001\n\032ModelMonitoringAlertConfig\022j\n\022e"
           + "mail_alert_config\030\001 \001(\0132L.google.cloud.a"
           + "iplatform.v1beta1.ModelMonitoringAlertCo"
-          + "nfig.EmailAlertConfigH\000\032\'\n\020EmailAlertCon"
-          + "fig\022\023\n\013user_emails\030\001 \003(\tB\007\n\005alert\"/\n\017Thr"
-          + "esholdConfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthresho"
-          + "ld\"\241\001\n\020SamplingStrategy\022b\n\024random_sample"
-          + "_config\030\001 \001(\0132D.google.cloud.aiplatform."
-          + "v1beta1.SamplingStrategy.RandomSampleCon"
-          + "fig\032)\n\022RandomSampleConfig\022\023\n\013sample_rate"
-          + "\030\001 \001(\001B\361\001\n#com.google.cloud.aiplatform.v"
-          + "1beta1B\024ModelMonitoringProtoP\001ZIgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/aipl"
-          + "atform/v1beta1;aiplatform\252\002\037Google.Cloud"
-          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
-          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatfor"
-          + "m::V1beta1b\006proto3"
+          + "nfig.EmailAlertConfigH\000\022\026\n\016enable_loggin"
+          + "g\030\002 \001(\010\032\'\n\020EmailAlertConfig\022\023\n\013user_emai"
+          + "ls\030\001 \003(\tB\007\n\005alert\"/\n\017ThresholdConfig\022\017\n\005"
+          + "value\030\001 \001(\001H\000B\013\n\tthreshold\"\241\001\n\020SamplingS"
+          + "trategy\022b\n\024random_sample_config\030\001 \001(\0132D."
+          + "google.cloud.aiplatform.v1beta1.Sampling"
+          + "Strategy.RandomSampleConfig\032)\n\022RandomSam"
+          + "pleConfig\022\023\n\013sample_rate\030\001 \001(\001B\361\001\n#com.g"
+          + "oogle.cloud.aiplatform.v1beta1B\024ModelMon"
+          + "itoringProtoP\001ZIgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/aiplatform/v1beta1;a"
+          + "iplatform\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -307,7 +308,7 @@ public final class ModelMonitoringProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_descriptor,
             new java.lang.String[] {
-              "EmailAlertConfig", "Alert",
+              "EmailAlertConfig", "EnableLogging", "Alert",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_EmailAlertConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_descriptor

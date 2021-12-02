@@ -300,7 +300,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>
@@ -314,7 +315,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>

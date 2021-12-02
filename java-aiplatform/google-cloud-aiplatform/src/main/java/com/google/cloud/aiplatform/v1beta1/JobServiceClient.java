@@ -2754,7 +2754,7 @@ public class JobServiceClient implements BackgroundResource {
    *     Format:
    *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
    * @param deployedModelId Required. The DeployedModel ID of the
-   *     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   *     [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse
@@ -2798,7 +2798,7 @@ public class JobServiceClient implements BackgroundResource {
    *     Format:
    *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
    * @param deployedModelId Required. The DeployedModel ID of the
-   *     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   *     [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse

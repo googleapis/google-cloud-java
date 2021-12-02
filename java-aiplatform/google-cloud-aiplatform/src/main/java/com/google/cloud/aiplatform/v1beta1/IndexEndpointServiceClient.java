@@ -1075,6 +1075,158 @@ public class IndexEndpointServiceClient implements BackgroundResource {
     return stub.undeployIndexCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an existing DeployedIndex under an IndexEndpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IndexEndpointServiceClient indexEndpointServiceClient =
+   *     IndexEndpointServiceClient.create()) {
+   *   IndexEndpointName indexEndpoint =
+   *       IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]");
+   *   DeployedIndex deployedIndex = DeployedIndex.newBuilder().build();
+   *   MutateDeployedIndexResponse response =
+   *       indexEndpointServiceClient.mutateDeployedIndexAsync(indexEndpoint, deployedIndex).get();
+   * }
+   * }</pre>
+   *
+   * @param indexEndpoint Required. The name of the IndexEndpoint resource into which to deploy an
+   *     Index. Format: `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+   * @param deployedIndex Required. The DeployedIndex to be updated within the IndexEndpoint.
+   *     Currently, the updatable fields are [DeployedIndex][automatic_resources] and
+   *     [DeployedIndex][dedicated_resources]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MutateDeployedIndexResponse, MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexAsync(IndexEndpointName indexEndpoint, DeployedIndex deployedIndex) {
+    MutateDeployedIndexRequest request =
+        MutateDeployedIndexRequest.newBuilder()
+            .setIndexEndpoint(indexEndpoint == null ? null : indexEndpoint.toString())
+            .setDeployedIndex(deployedIndex)
+            .build();
+    return mutateDeployedIndexAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an existing DeployedIndex under an IndexEndpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IndexEndpointServiceClient indexEndpointServiceClient =
+   *     IndexEndpointServiceClient.create()) {
+   *   String indexEndpoint =
+   *       IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]").toString();
+   *   DeployedIndex deployedIndex = DeployedIndex.newBuilder().build();
+   *   MutateDeployedIndexResponse response =
+   *       indexEndpointServiceClient.mutateDeployedIndexAsync(indexEndpoint, deployedIndex).get();
+   * }
+   * }</pre>
+   *
+   * @param indexEndpoint Required. The name of the IndexEndpoint resource into which to deploy an
+   *     Index. Format: `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+   * @param deployedIndex Required. The DeployedIndex to be updated within the IndexEndpoint.
+   *     Currently, the updatable fields are [DeployedIndex][automatic_resources] and
+   *     [DeployedIndex][dedicated_resources]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MutateDeployedIndexResponse, MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexAsync(String indexEndpoint, DeployedIndex deployedIndex) {
+    MutateDeployedIndexRequest request =
+        MutateDeployedIndexRequest.newBuilder()
+            .setIndexEndpoint(indexEndpoint)
+            .setDeployedIndex(deployedIndex)
+            .build();
+    return mutateDeployedIndexAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an existing DeployedIndex under an IndexEndpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IndexEndpointServiceClient indexEndpointServiceClient =
+   *     IndexEndpointServiceClient.create()) {
+   *   MutateDeployedIndexRequest request =
+   *       MutateDeployedIndexRequest.newBuilder()
+   *           .setIndexEndpoint(
+   *               IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]").toString())
+   *           .setDeployedIndex(DeployedIndex.newBuilder().build())
+   *           .build();
+   *   MutateDeployedIndexResponse response =
+   *       indexEndpointServiceClient.mutateDeployedIndexAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MutateDeployedIndexResponse, MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexAsync(MutateDeployedIndexRequest request) {
+    return mutateDeployedIndexOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an existing DeployedIndex under an IndexEndpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IndexEndpointServiceClient indexEndpointServiceClient =
+   *     IndexEndpointServiceClient.create()) {
+   *   MutateDeployedIndexRequest request =
+   *       MutateDeployedIndexRequest.newBuilder()
+   *           .setIndexEndpoint(
+   *               IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]").toString())
+   *           .setDeployedIndex(DeployedIndex.newBuilder().build())
+   *           .build();
+   *   OperationFuture<MutateDeployedIndexResponse, MutateDeployedIndexOperationMetadata> future =
+   *       indexEndpointServiceClient.mutateDeployedIndexOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MutateDeployedIndexResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          MutateDeployedIndexRequest,
+          MutateDeployedIndexResponse,
+          MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexOperationCallable() {
+    return stub.mutateDeployedIndexOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an existing DeployedIndex under an IndexEndpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IndexEndpointServiceClient indexEndpointServiceClient =
+   *     IndexEndpointServiceClient.create()) {
+   *   MutateDeployedIndexRequest request =
+   *       MutateDeployedIndexRequest.newBuilder()
+   *           .setIndexEndpoint(
+   *               IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]").toString())
+   *           .setDeployedIndex(DeployedIndex.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       indexEndpointServiceClient.mutateDeployedIndexCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MutateDeployedIndexRequest, Operation> mutateDeployedIndexCallable() {
+    return stub.mutateDeployedIndexCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

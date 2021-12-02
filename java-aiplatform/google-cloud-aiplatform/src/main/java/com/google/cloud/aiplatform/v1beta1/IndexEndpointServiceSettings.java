@@ -141,6 +141,21 @@ public class IndexEndpointServiceSettings extends ClientSettings<IndexEndpointSe
     return ((IndexEndpointServiceStubSettings) getStubSettings()).undeployIndexOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to mutateDeployedIndex. */
+  public UnaryCallSettings<MutateDeployedIndexRequest, Operation> mutateDeployedIndexSettings() {
+    return ((IndexEndpointServiceStubSettings) getStubSettings()).mutateDeployedIndexSettings();
+  }
+
+  /** Returns the object with the settings used for calls to mutateDeployedIndex. */
+  public OperationCallSettings<
+          MutateDeployedIndexRequest,
+          MutateDeployedIndexResponse,
+          MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexOperationSettings() {
+    return ((IndexEndpointServiceStubSettings) getStubSettings())
+        .mutateDeployedIndexOperationSettings();
+  }
+
   public static final IndexEndpointServiceSettings create(IndexEndpointServiceStubSettings stub)
       throws IOException {
     return new IndexEndpointServiceSettings.Builder(stub.toBuilder()).build();
@@ -305,6 +320,21 @@ public class IndexEndpointServiceSettings extends ClientSettings<IndexEndpointSe
             UndeployIndexRequest, UndeployIndexResponse, UndeployIndexOperationMetadata>
         undeployIndexOperationSettings() {
       return getStubSettingsBuilder().undeployIndexOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedIndex. */
+    public UnaryCallSettings.Builder<MutateDeployedIndexRequest, Operation>
+        mutateDeployedIndexSettings() {
+      return getStubSettingsBuilder().mutateDeployedIndexSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedIndex. */
+    public OperationCallSettings.Builder<
+            MutateDeployedIndexRequest,
+            MutateDeployedIndexResponse,
+            MutateDeployedIndexOperationMetadata>
+        mutateDeployedIndexOperationSettings() {
+      return getStubSettingsBuilder().mutateDeployedIndexOperationSettings();
     }
 
     @Override

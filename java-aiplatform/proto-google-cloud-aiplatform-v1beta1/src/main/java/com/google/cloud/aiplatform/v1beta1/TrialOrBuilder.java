@@ -359,9 +359,9 @@ public interface TrialOrBuilder
    * <pre>
    * Output only. The identifier of the client that originally requested this Trial.
    * Each client is identified by a unique client_id. When a client
-   * asks for a suggestion, Vizier will assign it a Trial. The client should
-   * evaluate the Trial, complete it, and report back to Vizier.
-   * If suggestion is asked again by same client_id before the Trial is
+   * asks for a suggestion, Vertex AI Vizier will assign it a Trial. The client
+   * should evaluate the Trial, complete it, and report back to Vertex AI
+   * Vizier. If suggestion is asked again by same client_id before the Trial is
    * completed, the same Trial will be returned. Multiple clients with
    * different client_ids can ask for suggestions simultaneously, each of them
    * will get their own Trial.
@@ -378,9 +378,9 @@ public interface TrialOrBuilder
    * <pre>
    * Output only. The identifier of the client that originally requested this Trial.
    * Each client is identified by a unique client_id. When a client
-   * asks for a suggestion, Vizier will assign it a Trial. The client should
-   * evaluate the Trial, complete it, and report back to Vizier.
-   * If suggestion is asked again by same client_id before the Trial is
+   * asks for a suggestion, Vertex AI Vizier will assign it a Trial. The client
+   * should evaluate the Trial, complete it, and report back to Vertex AI
+   * Vizier. If suggestion is asked again by same client_id before the Trial is
    * completed, the same Trial will be returned. Multiple clients with
    * different client_ids can ask for suggestions simultaneously, each of them
    * will get their own Trial.

@@ -162,7 +162,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    *
    *
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>
@@ -176,7 +176,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    *
    *
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>
@@ -191,7 +191,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    *
    *
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>

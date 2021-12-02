@@ -79,6 +79,18 @@ public final class IndexEndpointServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_UndeployIndexOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_UndeployIndexOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -139,60 +151,79 @@ public final class IndexEndpointServiceProto {
           + "esponse\"u\n\036UndeployIndexOperationMetadat"
           + "a\022S\n\020generic_metadata\030\001 \001(\01329.google.clo"
           + "ud.aiplatform.v1beta1.GenericOperationMe"
-          + "tadata2\304\016\n\024IndexEndpointService\022\223\002\n\023Crea"
-          + "teIndexEndpoint\022;.google.cloud.aiplatfor"
-          + "m.v1beta1.CreateIndexEndpointRequest\032\035.g"
-          + "oogle.longrunning.Operation\"\237\001\202\323\344\223\002I\"7/v"
-          + "1beta1/{parent=projects/*/locations/*}/i"
-          + "ndexEndpoints:\016index_endpoint\332A\025parent,i"
-          + "ndex_endpoint\312A5\n\rIndexEndpoint\022$CreateI"
-          + "ndexEndpointOperationMetadata\022\304\001\n\020GetInd"
-          + "exEndpoint\0228.google.cloud.aiplatform.v1b"
-          + "eta1.GetIndexEndpointRequest\032..google.cl"
-          + "oud.aiplatform.v1beta1.IndexEndpoint\"F\202\323"
-          + "\344\223\0029\0227/v1beta1/{name=projects/*/location"
-          + "s/*/indexEndpoints/*}\332A\004name\022\327\001\n\022ListInd"
-          + "exEndpoints\022:.google.cloud.aiplatform.v1"
-          + "beta1.ListIndexEndpointsRequest\032;.google"
-          + ".cloud.aiplatform.v1beta1.ListIndexEndpo"
-          + "intsResponse\"H\202\323\344\223\0029\0227/v1beta1/{parent=p"
-          + "rojects/*/locations/*}/indexEndpoints\332A\006"
-          + "parent\022\377\001\n\023UpdateIndexEndpoint\022;.google."
-          + "cloud.aiplatform.v1beta1.UpdateIndexEndp"
-          + "ointRequest\032..google.cloud.aiplatform.v1"
-          + "beta1.IndexEndpoint\"{\202\323\344\223\002X2F/v1beta1/{i"
-          + "ndex_endpoint.name=projects/*/locations/"
-          + "*/indexEndpoints/*}:\016index_endpoint\332A\032in"
-          + "dex_endpoint,update_mask\022\354\001\n\023DeleteIndex"
-          + "Endpoint\022;.google.cloud.aiplatform.v1bet"
-          + "a1.DeleteIndexEndpointRequest\032\035.google.l"
-          + "ongrunning.Operation\"y\202\323\344\223\0029*7/v1beta1/{"
-          + "name=projects/*/locations/*/indexEndpoin"
-          + "ts/*}\332A\004name\312A0\n\025google.protobuf.Empty\022\027"
-          + "DeleteOperationMetadata\022\222\002\n\013DeployIndex\022"
-          + "3.google.cloud.aiplatform.v1beta1.Deploy"
-          + "IndexRequest\032\035.google.longrunning.Operat"
-          + "ion\"\256\001\202\323\344\223\002R\"M/v1beta1/{index_endpoint=p"
-          + "rojects/*/locations/*/indexEndpoints/*}:"
-          + "deployIndex:\001*\332A\035index_endpoint,deployed"
-          + "_index\312A3\n\023DeployIndexResponse\022\034DeployIn"
-          + "dexOperationMetadata\022\237\002\n\rUndeployIndex\0225"
-          + ".google.cloud.aiplatform.v1beta1.Undeplo"
-          + "yIndexRequest\032\035.google.longrunning.Opera"
-          + "tion\"\267\001\202\323\344\223\002T\"O/v1beta1/{index_endpoint="
-          + "projects/*/locations/*/indexEndpoints/*}"
-          + ":undeployIndex:\001*\332A index_endpoint,deplo"
-          + "yed_index_id\312A7\n\025UndeployIndexResponse\022\036"
-          + "UndeployIndexOperationMetadata\032M\312A\031aipla"
-          + "tform.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\366\001\n#com.go"
-          + "ogle.cloud.aiplatform.v1beta1B\031IndexEndp"
-          + "ointServiceProtoP\001ZIgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/aiplatform/v1bet"
-          + "a1;aiplatform\252\002\037Google.Cloud.AIPlatform."
-          + "V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta"
-          + "1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006"
-          + "proto3"
+          + "tadata\"\262\001\n\032MutateDeployedIndexRequest\022G\n"
+          + "\016index_endpoint\030\001 \001(\tB/\340A\002\372A)\n\'aiplatfor"
+          + "m.googleapis.com/IndexEndpoint\022K\n\016deploy"
+          + "ed_index\030\002 \001(\0132..google.cloud.aiplatform"
+          + ".v1beta1.DeployedIndexB\003\340A\002\"e\n\033MutateDep"
+          + "loyedIndexResponse\022F\n\016deployed_index\030\001 \001"
+          + "(\0132..google.cloud.aiplatform.v1beta1.Dep"
+          + "loyedIndex\"\226\001\n$MutateDeployedIndexOperat"
+          + "ionMetadata\022S\n\020generic_metadata\030\001 \001(\01329."
+          + "google.cloud.aiplatform.v1beta1.GenericO"
+          + "perationMetadata\022\031\n\021deployed_index_id\030\002 "
+          + "\001(\t2\216\021\n\024IndexEndpointService\022\223\002\n\023CreateI"
+          + "ndexEndpoint\022;.google.cloud.aiplatform.v"
+          + "1beta1.CreateIndexEndpointRequest\032\035.goog"
+          + "le.longrunning.Operation\"\237\001\202\323\344\223\002I\"7/v1be"
+          + "ta1/{parent=projects/*/locations/*}/inde"
+          + "xEndpoints:\016index_endpoint\332A\025parent,inde"
+          + "x_endpoint\312A5\n\rIndexEndpoint\022$CreateInde"
+          + "xEndpointOperationMetadata\022\304\001\n\020GetIndexE"
+          + "ndpoint\0228.google.cloud.aiplatform.v1beta"
+          + "1.GetIndexEndpointRequest\032..google.cloud"
+          + ".aiplatform.v1beta1.IndexEndpoint\"F\202\323\344\223\002"
+          + "9\0227/v1beta1/{name=projects/*/locations/*"
+          + "/indexEndpoints/*}\332A\004name\022\327\001\n\022ListIndexE"
+          + "ndpoints\022:.google.cloud.aiplatform.v1bet"
+          + "a1.ListIndexEndpointsRequest\032;.google.cl"
+          + "oud.aiplatform.v1beta1.ListIndexEndpoint"
+          + "sResponse\"H\202\323\344\223\0029\0227/v1beta1/{parent=proj"
+          + "ects/*/locations/*}/indexEndpoints\332A\006par"
+          + "ent\022\377\001\n\023UpdateIndexEndpoint\022;.google.clo"
+          + "ud.aiplatform.v1beta1.UpdateIndexEndpoin"
+          + "tRequest\032..google.cloud.aiplatform.v1bet"
+          + "a1.IndexEndpoint\"{\202\323\344\223\002X2F/v1beta1/{inde"
+          + "x_endpoint.name=projects/*/locations/*/i"
+          + "ndexEndpoints/*}:\016index_endpoint\332A\032index"
+          + "_endpoint,update_mask\022\354\001\n\023DeleteIndexEnd"
+          + "point\022;.google.cloud.aiplatform.v1beta1."
+          + "DeleteIndexEndpointRequest\032\035.google.long"
+          + "running.Operation\"y\202\323\344\223\0029*7/v1beta1/{nam"
+          + "e=projects/*/locations/*/indexEndpoints/"
+          + "*}\332A\004name\312A0\n\025google.protobuf.Empty\022\027Del"
+          + "eteOperationMetadata\022\222\002\n\013DeployIndex\0223.g"
+          + "oogle.cloud.aiplatform.v1beta1.DeployInd"
+          + "exRequest\032\035.google.longrunning.Operation"
+          + "\"\256\001\202\323\344\223\002R\"M/v1beta1/{index_endpoint=proj"
+          + "ects/*/locations/*/indexEndpoints/*}:dep"
+          + "loyIndex:\001*\332A\035index_endpoint,deployed_in"
+          + "dex\312A3\n\023DeployIndexResponse\022\034DeployIndex"
+          + "OperationMetadata\022\237\002\n\rUndeployIndex\0225.go"
+          + "ogle.cloud.aiplatform.v1beta1.UndeployIn"
+          + "dexRequest\032\035.google.longrunning.Operatio"
+          + "n\"\267\001\202\323\344\223\002T\"O/v1beta1/{index_endpoint=pro"
+          + "jects/*/locations/*/indexEndpoints/*}:un"
+          + "deployIndex:\001*\332A index_endpoint,deployed"
+          + "_index_id\312A7\n\025UndeployIndexResponse\022\036Und"
+          + "eployIndexOperationMetadata\022\307\002\n\023MutateDe"
+          + "ployedIndex\022;.google.cloud.aiplatform.v1"
+          + "beta1.MutateDeployedIndexRequest\032\035.googl"
+          + "e.longrunning.Operation\"\323\001\202\323\344\223\002g\"U/v1bet"
+          + "a1/{index_endpoint=projects/*/locations/"
+          + "*/indexEndpoints/*}:mutateDeployedIndex:"
+          + "\016deployed_index\332A\035index_endpoint,deploye"
+          + "d_index\312AC\n\033MutateDeployedIndexResponse\022"
+          + "$MutateDeployedIndexOperationMetadata\032M\312"
+          + "A\031aiplatform.googleapis.com\322A.https://ww"
+          + "w.googleapis.com/auth/cloud-platformB\366\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\031In"
+          + "dexEndpointServiceProtoP\001ZIgoogle.golang"
+          + ".org/genproto/googleapis/cloud/aiplatfor"
+          + "m/v1beta1;aiplatform\252\002\037Google.Cloud.AIPl"
+          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
+          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -308,6 +339,30 @@ public final class IndexEndpointServiceProto {
             internal_static_google_cloud_aiplatform_v1beta1_UndeployIndexOperationMetadata_descriptor,
             new java.lang.String[] {
               "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexRequest_descriptor,
+            new java.lang.String[] {
+              "IndexEndpoint", "DeployedIndex",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexResponse_descriptor,
+            new java.lang.String[] {
+              "DeployedIndex",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata", "DeployedIndexId",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

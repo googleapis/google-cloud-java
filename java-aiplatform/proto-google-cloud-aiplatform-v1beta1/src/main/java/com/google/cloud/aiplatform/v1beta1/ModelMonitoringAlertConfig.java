@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Next ID: 2
+ * Next ID: 3
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig}
@@ -93,6 +93,11 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
                 alert_ = subBuilder.buildPartial();
               }
               alertCase_ = 1;
+              break;
+            }
+          case 16:
+            {
+              enableLogging_ = input.readBool();
               break;
             }
           default:
@@ -1049,6 +1054,28 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         .getDefaultInstance();
   }
 
+  public static final int ENABLE_LOGGING_FIELD_NUMBER = 2;
+  private boolean enableLogging_;
+  /**
+   *
+   *
+   * <pre>
+   * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+   * payload encoded from proto
+   * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+   * This can be further sinked to Pub/Sub or any other services supported
+   * by Cloud Logging.
+   * </pre>
+   *
+   * <code>bool enable_logging = 2;</code>
+   *
+   * @return The enableLogging.
+   */
+  @java.lang.Override
+  public boolean getEnableLogging() {
+    return enableLogging_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1068,6 +1095,9 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
           1,
           (com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.EmailAlertConfig) alert_);
     }
+    if (enableLogging_ != false) {
+      output.writeBool(2, enableLogging_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1083,6 +1113,9 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
               1,
               (com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.EmailAlertConfig)
                   alert_);
+    }
+    if (enableLogging_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableLogging_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1100,6 +1133,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig other =
         (com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig) obj;
 
+    if (getEnableLogging() != other.getEnableLogging()) return false;
     if (!getAlertCase().equals(other.getAlertCase())) return false;
     switch (alertCase_) {
       case 1:
@@ -1119,6 +1153,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ENABLE_LOGGING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLogging());
     switch (alertCase_) {
       case 1:
         hash = (37 * hash) + EMAIL_ALERT_CONFIG_FIELD_NUMBER;
@@ -1232,7 +1268,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Next ID: 2
+   * Next ID: 3
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig}
@@ -1273,6 +1309,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      enableLogging_ = false;
+
       alertCase_ = 0;
       alert_ = null;
       return this;
@@ -1310,6 +1348,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
           result.alert_ = emailAlertConfigBuilder_.build();
         }
       }
+      result.enableLogging_ = enableLogging_;
       result.alertCase_ = alertCase_;
       onBuilt();
       return result;
@@ -1362,6 +1401,9 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       if (other
           == com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.getDefaultInstance())
         return this;
+      if (other.getEnableLogging() != false) {
+        setEnableLogging(other.getEnableLogging());
+      }
       switch (other.getAlertCase()) {
         case EMAIL_ALERT_CONFIG:
           {
@@ -1666,6 +1708,70 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       onChanged();
       ;
       return emailAlertConfigBuilder_;
+    }
+
+    private boolean enableLogging_;
+    /**
+     *
+     *
+     * <pre>
+     * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+     * payload encoded from proto
+     * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+     * This can be further sinked to Pub/Sub or any other services supported
+     * by Cloud Logging.
+     * </pre>
+     *
+     * <code>bool enable_logging = 2;</code>
+     *
+     * @return The enableLogging.
+     */
+    @java.lang.Override
+    public boolean getEnableLogging() {
+      return enableLogging_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+     * payload encoded from proto
+     * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+     * This can be further sinked to Pub/Sub or any other services supported
+     * by Cloud Logging.
+     * </pre>
+     *
+     * <code>bool enable_logging = 2;</code>
+     *
+     * @param value The enableLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableLogging(boolean value) {
+
+      enableLogging_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+     * payload encoded from proto
+     * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+     * This can be further sinked to Pub/Sub or any other services supported
+     * by Cloud Logging.
+     * </pre>
+     *
+     * <code>bool enable_logging = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableLogging() {
+
+      enableLogging_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

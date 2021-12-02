@@ -235,6 +235,85 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Featurestore featurestore = Featurestore.newBuilder().build();
+   *   String featurestoreId = "featurestoreId-1315851738";
+   *   Featurestore response =
+   *       featurestoreServiceClient
+   *           .createFeaturestoreAsync(parent, featurestore, featurestoreId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create Featurestores. Format:
+   *     `projects/{project}/locations/{location}'`
+   * @param featurestore Required. The Featurestore to create.
+   * @param featurestoreId Required. The ID to use for this Featurestore, which will become the
+   *     final component of the Featurestore's resource name.
+   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within the project and location.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Featurestore, CreateFeaturestoreOperationMetadata>
+      createFeaturestoreAsync(
+          LocationName parent, Featurestore featurestore, String featurestoreId) {
+    CreateFeaturestoreRequest request =
+        CreateFeaturestoreRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFeaturestore(featurestore)
+            .setFeaturestoreId(featurestoreId)
+            .build();
+    return createFeaturestoreAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Featurestore in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Featurestore featurestore = Featurestore.newBuilder().build();
+   *   String featurestoreId = "featurestoreId-1315851738";
+   *   Featurestore response =
+   *       featurestoreServiceClient
+   *           .createFeaturestoreAsync(parent, featurestore, featurestoreId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create Featurestores. Format:
+   *     `projects/{project}/locations/{location}'`
+   * @param featurestore Required. The Featurestore to create.
+   * @param featurestoreId Required. The ID to use for this Featurestore, which will become the
+   *     final component of the Featurestore's resource name.
+   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within the project and location.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Featurestore, CreateFeaturestoreOperationMetadata>
+      createFeaturestoreAsync(String parent, Featurestore featurestore, String featurestoreId) {
+    CreateFeaturestoreRequest request =
+        CreateFeaturestoreRequest.newBuilder()
+            .setParent(parent)
+            .setFeaturestore(featurestore)
+            .setFeaturestoreId(featurestoreId)
+            .build();
+    return createFeaturestoreAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Featurestore in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   CreateFeaturestoreRequest request =
    *       CreateFeaturestoreRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
@@ -913,6 +992,80 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeaturestoreName parent = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
+   *   EntityType entityType = EntityType.newBuilder().build();
+   *   String entityTypeId = "entityTypeId767740856";
+   *   EntityType response =
+   *       featurestoreServiceClient.createEntityTypeAsync(parent, entityType, entityTypeId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Featurestore to create EntityTypes. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}`
+   * @param entityType The EntityType to create.
+   * @param entityTypeId Required. The ID to use for the EntityType, which will become the final
+   *     component of the EntityType's resource name.
+   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within a featurestore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EntityType, CreateEntityTypeOperationMetadata> createEntityTypeAsync(
+      FeaturestoreName parent, EntityType entityType, String entityTypeId) {
+    CreateEntityTypeRequest request =
+        CreateEntityTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setEntityType(entityType)
+            .setEntityTypeId(entityTypeId)
+            .build();
+    return createEntityTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new EntityType in a given Featurestore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   String parent = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString();
+   *   EntityType entityType = EntityType.newBuilder().build();
+   *   String entityTypeId = "entityTypeId767740856";
+   *   EntityType response =
+   *       featurestoreServiceClient.createEntityTypeAsync(parent, entityType, entityTypeId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Featurestore to create EntityTypes. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}`
+   * @param entityType The EntityType to create.
+   * @param entityTypeId Required. The ID to use for the EntityType, which will become the final
+   *     component of the EntityType's resource name.
+   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within a featurestore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EntityType, CreateEntityTypeOperationMetadata> createEntityTypeAsync(
+      String parent, EntityType entityType, String entityTypeId) {
+    CreateEntityTypeRequest request =
+        CreateEntityTypeRequest.newBuilder()
+            .setParent(parent)
+            .setEntityType(entityType)
+            .setEntityTypeId(entityTypeId)
+            .build();
+    return createEntityTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new EntityType in a given Featurestore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   CreateEntityTypeRequest request =
    *       CreateEntityTypeRequest.newBuilder()
    *           .setParent(
@@ -1572,6 +1725,83 @@ public class FeaturestoreServiceClient implements BackgroundResource {
       String parent, Feature feature) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder().setParent(parent).setFeature(feature).build();
+    return createFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Feature in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   EntityTypeName parent =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+   *   Feature feature = Feature.newBuilder().build();
+   *   String featureId = "featureId-420503887";
+   *   Feature response =
+   *       featurestoreServiceClient.createFeatureAsync(parent, feature, featureId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param feature Required. The Feature to create.
+   * @param featureId Required. The ID to use for the Feature, which will become the final component
+   *     of the Feature's resource name.
+   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within an EntityType.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
+      EntityTypeName parent, Feature feature, String featureId) {
+    CreateFeatureRequest request =
+        CreateFeatureRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFeature(feature)
+            .setFeatureId(featureId)
+            .build();
+    return createFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Feature in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   String parent =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   Feature feature = Feature.newBuilder().build();
+   *   String featureId = "featureId-420503887";
+   *   Feature response =
+   *       featurestoreServiceClient.createFeatureAsync(parent, feature, featureId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param feature Required. The Feature to create.
+   * @param featureId Required. The ID to use for the Feature, which will become the final component
+   *     of the Feature's resource name.
+   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within an EntityType.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
+      String parent, Feature feature, String featureId) {
+    CreateFeatureRequest request =
+        CreateFeatureRequest.newBuilder()
+            .setParent(parent)
+            .setFeature(feature)
+            .setFeatureId(featureId)
+            .build();
     return createFeatureAsync(request);
   }
 
