@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.3.0...v2.4.0) (2021-12-02)
+
+
+### Features
+
+* Adds support for `google.protobuf.Value` pipeline parameters in the `parameter_values` field ([#708](https://www.github.com/googleapis/java-aiplatform/issues/708)) ([a2237b6](https://www.github.com/googleapis/java-aiplatform/commit/a2237b631bc953f1cdf9c4ed75da862a477eecc9))
+* Adds support for `google.protobuf.Value` pipeline parameters in the `parameter_values` field ([#709](https://www.github.com/googleapis/java-aiplatform/issues/709)) ([a21302c](https://www.github.com/googleapis/java-aiplatform/commit/a21302c3a8fb0ed2a3a827ae21546426e180ca66))
+* tensorboard v1 protos release ([#723](https://www.github.com/googleapis/java-aiplatform/issues/723)) ([d35a846](https://www.github.com/googleapis/java-aiplatform/commit/d35a84686fd5b7769d410b9371e235d42d81c01b))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-aiplatform/issues/1266)) ([#705](https://www.github.com/googleapis/java-aiplatform/issues/705)) ([74283f7](https://www.github.com/googleapis/java-aiplatform/commit/74283f7ff14eedb4217091d7425fbd6b4ad62b02))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.9.0 ([#703](https://www.github.com/googleapis/java-aiplatform/issues/703)) ([783da35](https://www.github.com/googleapis/java-aiplatform/commit/783da35f2bfca77b071ed94d06df2983620495f4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#721](https://www.github.com/googleapis/java-aiplatform/issues/721)) ([b0d79cd](https://www.github.com/googleapis/java-aiplatform/commit/b0d79cdc391dbbb72850d3acd1cbcef2ab3a9d67))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.0 ([#710](https://www.github.com/googleapis/java-aiplatform/issues/710)) ([e3adb9d](https://www.github.com/googleapis/java-aiplatform/commit/e3adb9dd5c961136d4c503489cccdadd0b5b87e9))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.1 ([#722](https://www.github.com/googleapis/java-aiplatform/issues/722)) ([db19ef3](https://www.github.com/googleapis/java-aiplatform/commit/db19ef30c163327edaa146d44baa15fdaa0d081e))
+* update dependency com.google.code.gson:gson to v2.8.9 ([#707](https://www.github.com/googleapis/java-aiplatform/issues/707)) ([16db0be](https://www.github.com/googleapis/java-aiplatform/commit/16db0be51865407f521e460c812743adbf78e41b))
+
+
+### Documentation
+
+* Added evalId comment to samples ([#727](https://www.github.com/googleapis/java-aiplatform/issues/727)) ([8826252](https://www.github.com/googleapis/java-aiplatform/commit/8826252d3f116a70bac4f342e318c78f0c3f73c1))
+
 ## [2.3.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.2.4...v2.3.0) (2021-10-21)
 
 
