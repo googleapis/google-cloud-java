@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
@@ -34,11 +35,15 @@ public class ExportToStorageBetaTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String AUDIO_STORAGE_URI =
       "gs://cloud-samples-data/speech/commercial_mono.wav";
-  private static final String PREFIX = "EXPORT_TEST_OUTPUTS";
+  private static final String BUCKET_PREFIX = "EXPORT_TRANSCRIPT_OUTPUT";
+  private static final String UNIQUE_ID =
+      UUID.randomUUID().toString().replace("-", "").substring(0, 8);
+  private static String BUCKET_NAME = String.format("speech-%s", UNIQUE_ID);
   private static final String OUTPUT_STORAGE_URI =
-      String.format("gs://%s/%s/%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
+      String.format("gs://%s/%s/", BUCKET_NAME, BUCKET_PREFIX);
   private static final String ENCODING = "LINEAR16";
   private static final String LANGUAGE_CODE = "en-US";
+  private static Storage storage = StorageOptions.getDefaultInstance().getService();
 
   private static final int SAMPLE_RATE_HERTZ = 8000;
 
@@ -46,13 +51,16 @@ public class ExportToStorageBetaTest {
   private PrintStream originalPrintStream;
   private PrintStream out;
 
+  private static void createBucket() {
+    storage.create(BucketInfo.of(BUCKET_NAME));
+  }
+
   private static void cleanUpBucket() {
-    Storage storage = StorageOptions.getDefaultInstance().getService();
     Page<Blob> blobs =
         storage.list(
             PROJECT_ID,
             Storage.BlobListOption.currentDirectory(),
-            Storage.BlobListOption.prefix(PREFIX));
+            Storage.BlobListOption.prefix(BUCKET_PREFIX));
 
     deleteDirectory(storage, blobs);
   }
@@ -73,6 +81,7 @@ public class ExportToStorageBetaTest {
 
   @Before
   public void setUp() {
+    createBucket();
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
@@ -89,7 +98,13 @@ public class ExportToStorageBetaTest {
   @Test
   public void testExportToStorageBeta() throws Exception {
     ExportToStorageBeta.exportToStorage(
-        AUDIO_STORAGE_URI, OUTPUT_STORAGE_URI, ENCODING, SAMPLE_RATE_HERTZ, LANGUAGE_CODE);
+        AUDIO_STORAGE_URI,
+        OUTPUT_STORAGE_URI,
+        ENCODING,
+        SAMPLE_RATE_HERTZ,
+        LANGUAGE_CODE,
+        BUCKET_NAME,
+        BUCKET_PREFIX);
     String got = bout.toString();
     assertThat(got).contains("Transcription:");
   }

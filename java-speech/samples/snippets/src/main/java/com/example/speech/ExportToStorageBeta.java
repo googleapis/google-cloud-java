@@ -27,19 +27,34 @@ import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
+import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
+import org.json.JSONObject;
 
 public class ExportToStorageBeta {
 
   public static void main(String[] args) throws Exception {
     String inputUri = "gs://YOUR_BUCKET_ID/path/to/your/audio_file.wav";
     String outputStorageUri = "gs://YOUR_BUCKET_ID/output_dir_prefix/";
+    String objectName = "YOUR_OBJECT_NAME";
+    String bucketName = "YOUR_BUCKET_ID";
     String encoding = "LINEAR16"; // encoding of the audio
     int sampleRateHertz = 8000;
     String languageCode = "en-US"; // language code BCP-47_LANGUAGE_CODE_OF_AUDIO
-    exportToStorage(inputUri, outputStorageUri, encoding, sampleRateHertz, languageCode);
+    exportToStorage(
+        inputUri,
+        outputStorageUri,
+        encoding,
+        sampleRateHertz,
+        languageCode,
+        bucketName,
+        objectName);
   }
 
   // Exports the recognized output to specified GCS destination.
@@ -48,7 +63,9 @@ public class ExportToStorageBeta {
       String outputStorageUri,
       String encoding,
       int sampleRateHertz,
-      String languageCode)
+      String languageCode,
+      String bucketName,
+      String objectName)
       throws IOException, ExecutionException, InterruptedException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -57,6 +74,9 @@ public class ExportToStorageBeta {
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(inputUri).build();
 
       AudioEncoding audioEncoding = AudioEncoding.valueOf(encoding);
+
+      // Instantiates a client
+      Storage storage = StorageOptions.getDefaultInstance().getService();
 
       // Pass in the URI of the Cloud Storage bucket to hold the transcription
       TranscriptOutputConfig outputConfig =
@@ -80,12 +100,39 @@ public class ExportToStorageBeta {
           speechClient.longRunningRecognizeAsync(request);
 
       System.out.println("Waiting for operation to complete...");
-      LongRunningRecognizeResponse response = future.get();
+      future.get();
+
+      // Get blob given bucket and object name
+      Blob blob = storage.get(BlobId.of(bucketName, objectName));
+
+      // Extract byte contents from blob
+      byte[] bytes = blob.getContent();
+
+      // Get decoded representation
+      String decoded = new String(bytes, "UTF-8");
+
+      // Create json object
+      JSONObject jsonObject = new JSONObject(decoded);
+
+      // Get json string
+      String json = jsonObject.toString();
+
+      // Specefy the proto type message
+      LongRunningRecognizeResponse.Builder builder = LongRunningRecognizeResponse.newBuilder();
+
+      // Construct a parser
+      JsonFormat.Parser parser = JsonFormat.parser().ignoringUnknownFields();
+
+      // Parses from JSON into a protobuf message.
+      parser.merge(json, builder);
+
+      // Get the converted values
+      LongRunningRecognizeResponse storageResponse = builder.build();
 
       System.out.println("Results saved to specified output Cloud Storage bucket.");
 
       String output =
-          response.getResultsList().stream()
+          storageResponse.getResultsList().stream()
               .map(result -> String.valueOf(result.getAlternatives(0).getTranscript()))
               .collect(Collectors.joining("\n"));
       System.out.printf("Transcription: %s", output);
