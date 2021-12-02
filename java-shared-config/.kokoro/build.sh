@@ -91,7 +91,6 @@ samples)
 
         pushd ${SAMPLES_DIR}
         mvn -B \
-          -Penable-samples \
           -ntp \
           -DtrimStackTrace=false \
           -Dclirr.skip=true \
