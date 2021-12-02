@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.3.2](https://www.github.com/googleapis/java-core/compare/v2.3.1...v2.3.2) (2021-12-02)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.1.1 ([#632](https://www.github.com/googleapis/java-core/issues/632)) ([b9bb47a](https://www.github.com/googleapis/java-core/commit/b9bb47a0b0a6b132c516361d23750a92a32e53be))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.7.0 ([#638](https://www.github.com/googleapis/java-core/issues/638)) ([74862a8](https://www.github.com/googleapis/java-core/commit/74862a8864eb7bffe6659d1e2a261dd5b934d6ff))
+
 ### [2.3.1](https://www.github.com/googleapis/java-core/compare/v2.3.0...v2.3.1) (2021-11-15)
 
 
