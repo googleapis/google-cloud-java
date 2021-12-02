@@ -813,7 +813,7 @@
             <groupId>org.graalvm.buildtools</groupId>
             <artifactId>native-maven-plugin</artifactId>
             <!-- Using older version; upgrade to latest once issues are resolved. See #336. -->
-            <version>0.9.5</version>
+            <version>0.9.8</version>
             <executions>
               <execution>
                 <id>test-native</id>
