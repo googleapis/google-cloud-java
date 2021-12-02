@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/googleapis/java-bigquery/compare/v2.4.1...v2.5.0) (2021-12-01)
+
+
+### Features
+
+* add support for BI Engine Statistics ([#1723](https://www.github.com/googleapis/java-bigquery/issues/1723)) ([13cc6e6](https://www.github.com/googleapis/java-bigquery/commit/13cc6e608fd501067f7c5dcd2f5b9a03c078b065))
+
 ### [2.4.1](https://www.github.com/googleapis/java-bigquery/compare/v2.4.0...v2.4.1) (2021-11-16)
 
 
