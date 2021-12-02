@@ -2,3 +2,4 @@
 # module:released-version:current-version
 
 proto-google-iam-v1:1.1.7:1.1.8-SNAPSHOT
+grpc-google-iam-v1:1.1.7:1.1.8-SNAPSHOT
