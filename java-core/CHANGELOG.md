@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.3](https://www.github.com/googleapis/java-core/compare/v2.3.2...v2.3.3) (2021-12-02)
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v2.7.1 ([#640](https://www.github.com/googleapis/java-core/issues/640)) ([18e033b](https://www.github.com/googleapis/java-core/commit/18e033bdafe536a42ada9f93b0a2b502caea0bcf))
+
 ### [2.3.2](https://www.github.com/googleapis/java-core/compare/v2.3.1...v2.3.2) (2021-12-02)
 
 
