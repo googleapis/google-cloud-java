@@ -30,4 +30,8 @@
     <className>com/google/cloud/translate/v3beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <className>com/google/cloud/location/*</className>
+    <differenceType>8001</differenceType>
+  </difference>
 </differences>

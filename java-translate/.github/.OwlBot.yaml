@@ -23,8 +23,10 @@ deep-remove-regex:
 
 
 deep-copy-regex:
-- source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-translate-$1/src"
+- source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/java/com/google/cloud/translate"
+  dest: "/owl-bot-staging/$1/proto-google-cloud-translate-$1/src/main/java/com/google/cloud/translate"
+- source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/proto/google/cloud/translate"
+  dest: "/owl-bot-staging/$1/proto-google-cloud-translate-$1/src/main/proto/google/cloud/translate"
 - source: "/google/cloud/translate/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/$1/grpc-google-cloud-translate-$1/src"
 - source: "/google/cloud/translate/(v.*)/.*-java/gapic-google-.*/src"
