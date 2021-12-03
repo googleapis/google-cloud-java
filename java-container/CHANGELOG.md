@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-container/compare/v2.2.1...v2.3.0) (2021-12-03)
+
+
+### Features
+
+* next release from main branch is 2.3.0 ([#600](https://www.github.com/googleapis/java-container/issues/600)) ([69c33f2](https://www.github.com/googleapis/java-container/commit/69c33f24f41047cc9facedb71a1b234f6d991784))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-container/issues/1266)) ([#598](https://www.github.com/googleapis/java-container/issues/598)) ([443bc83](https://www.github.com/googleapis/java-container/commit/443bc835f9097c4ac26b2298b19af62b786c6407))
+
+
+### Documentation
+
+* fix docstring formatting ([#614](https://www.github.com/googleapis/java-container/issues/614)) ([8167464](https://www.github.com/googleapis/java-container/commit/8167464923adc9528adbdfe9d75e71c9dfb08d3b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#612](https://www.github.com/googleapis/java-container/issues/612)) ([b661db2](https://www.github.com/googleapis/java-container/commit/b661db287834dabe3c311429e29c8dce2989bbcf))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#627](https://www.github.com/googleapis/java-container/issues/627)) ([912f2cc](https://www.github.com/googleapis/java-container/commit/912f2ccc27338fc998217bf5f26011e40d290d38))
+
 ### [2.2.1](https://www.github.com/googleapis/java-container/compare/v2.2.0...v2.2.1) (2021-10-19)
 
 
