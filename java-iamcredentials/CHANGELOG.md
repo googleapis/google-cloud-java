@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.0.7](https://www.github.com/googleapis/java-iamcredentials/compare/v2.0.6...v2.0.7) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-iamcredentials/issues/1266)) ([#572](https://www.github.com/googleapis/java-iamcredentials/issues/572)) ([b89e95f](https://www.github.com/googleapis/java-iamcredentials/commit/b89e95fcdc308e8af809ea809da7935bbc70fbea))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#582](https://www.github.com/googleapis/java-iamcredentials/issues/582)) ([09dc7e4](https://www.github.com/googleapis/java-iamcredentials/commit/09dc7e4ce869563c3a7c45e1de7ce25ad6fa6937))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#587](https://www.github.com/googleapis/java-iamcredentials/issues/587)) ([d1beee8](https://www.github.com/googleapis/java-iamcredentials/commit/d1beee8530d37fe6bf79d3d581030e793aa7d1a7))
+
 ### [2.0.6](https://www.github.com/googleapis/java-iamcredentials/compare/v2.0.5...v2.0.6) (2021-10-20)
 
 
