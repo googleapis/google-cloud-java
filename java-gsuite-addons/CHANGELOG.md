@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-gsuite-addons/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-gsuite-addons/issues/1266)) ([#130](https://www.github.com/googleapis/java-gsuite-addons/issues/130)) ([dfb63fa](https://www.github.com/googleapis/java-gsuite-addons/commit/dfb63fa7a1b202b19276b839670c922561d08420))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#142](https://www.github.com/googleapis/java-gsuite-addons/issues/142)) ([21d921b](https://www.github.com/googleapis/java-gsuite-addons/commit/21d921b64455099175e3945fb132cf7f84a9f778))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#147](https://www.github.com/googleapis/java-gsuite-addons/issues/147)) ([5beb8fe](https://www.github.com/googleapis/java-gsuite-addons/commit/5beb8fed596d7b112809a506d8f67f43705bf794))
+
 ### [2.1.3](https://www.github.com/googleapis/java-gsuite-addons/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
