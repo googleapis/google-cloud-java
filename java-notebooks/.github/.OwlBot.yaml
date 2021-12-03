@@ -24,9 +24,20 @@ deep-preserve-regex:
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
-- source: "/google/cloud/notebooks/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-notebooks-$1/src"
-- source: "/google/cloud/notebooks/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-notebooks-$1/src"
+- source: "/google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/"
+  dest: "/owl-bot-staging/v1/proto-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
+
+- source: "/google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/proto/google/cloud/notebooks/v1/"
+  dest: "/owl-bot-staging/v1/proto-google-cloud-notebooks-v1/src/main/proto/google/cloud/notebooks/v1/"
+
+- source: "/google/cloud/notebooks/v1beta1/.*-java/proto-google-cloud-notebooks-v1beta1-java/src"
+  dest: "/owl-bot-staging/v1beta1/proto-google-cloud-notebooks-v1beta1/src"
+
+- source: "/google/cloud/notebooks/v1/.*-java/grpc-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/"
+  dest: "/owl-bot-staging/v1/grpc-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
+
+- source: "/google/cloud/notebooks/v1beta1/.*-java/grpc-google-cloud-notebooks-v1beta1-java/src"
+  dest: "/owl-bot-staging/v1beta1/grpc-google-cloud-notebooks-v1beta1/src"
+
 - source: "/google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-notebooks/src"
