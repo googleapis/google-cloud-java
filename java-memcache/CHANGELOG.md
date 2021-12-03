@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-memcache/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-memcache/issues/1266)) ([#529](https://www.github.com/googleapis/java-memcache/issues/529)) ([feeed9a](https://www.github.com/googleapis/java-memcache/commit/feeed9a39bb2a2e112e425d6f0a4da1299dad395))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#539](https://www.github.com/googleapis/java-memcache/issues/539)) ([a837184](https://www.github.com/googleapis/java-memcache/commit/a837184421aba67c6b0145a5d734bf4950d1fbb0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#545](https://www.github.com/googleapis/java-memcache/issues/545)) ([892d097](https://www.github.com/googleapis/java-memcache/commit/892d09790b005ab209f5f7ef2dbec709759c398a))
+
 ### [2.1.3](https://www.github.com/googleapis/java-memcache/compare/v2.1.2...v2.1.3) (2021-10-20)
 
 
