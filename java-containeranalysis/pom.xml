@@ -127,12 +127,12 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-containeranalysis-v1</module>
-    <module>proto-google-cloud-containeranalysis-v1beta1</module>
+    <module>google-cloud-containeranalysis</module>
     <module>grpc-google-cloud-containeranalysis-v1beta1</module>
     <module>grpc-google-cloud-containeranalysis-v1</module>
-    <module>google-cloud-containeranalysis</module>
-  <module>google-cloud-containeranalysis-bom</module>
+    <module>proto-google-cloud-containeranalysis-v1</module>
+    <module>proto-google-cloud-containeranalysis-v1beta1</module>
+    <module>google-cloud-containeranalysis-bom</module>
   </modules>
 
   <reporting>
