@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-kms/compare/v2.2.2...v2.3.0) (2021-12-03)
+
+
+### Features
+
+* add support for Raw PKCS[#1](https://www.github.com/googleapis/java-kms/issues/1) signing keys ([#651](https://www.github.com/googleapis/java-kms/issues/651)) ([1c7a18d](https://www.github.com/googleapis/java-kms/commit/1c7a18db7dbb6e25a27384ed693bfa16280fd4d7))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-kms/issues/1266)) ([#660](https://www.github.com/googleapis/java-kms/issues/660)) ([f00a561](https://www.github.com/googleapis/java-kms/commit/f00a56116847f0a53418b2bd4c43e9d579ec4a22))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#670](https://www.github.com/googleapis/java-kms/issues/670)) ([59fc2ff](https://www.github.com/googleapis/java-kms/commit/59fc2ff7b0c200b4dc0f2379afeade659b0c7e41))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#676](https://www.github.com/googleapis/java-kms/issues/676)) ([1441f95](https://www.github.com/googleapis/java-kms/commit/1441f95a6b707f6844b7e2f17e3770c50111a53b))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.0 ([#657](https://www.github.com/googleapis/java-kms/issues/657)) ([85185a5](https://www.github.com/googleapis/java-kms/commit/85185a52318b317d17bf1bedbfdf002ecd6a85e2))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#668](https://www.github.com/googleapis/java-kms/issues/668)) ([adb72b0](https://www.github.com/googleapis/java-kms/commit/adb72b00423e9718c64081f33bba435d24d9c694))
+
 ### [2.2.2](https://www.github.com/googleapis/java-kms/compare/v2.2.1...v2.2.2) (2021-10-20)
 
 
