@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v2.1.3...v2.2.0) (2021-12-03)
+
+
+### Features
+
+* Added support for auto-close configurations ([#510](https://www.github.com/googleapis/java-monitoring-dashboards/issues/510)) ([01e67c9](https://www.github.com/googleapis/java-monitoring-dashboards/commit/01e67c9b2e53e4a0a1d7ca363d252c6e6385fa54))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-monitoring-dashboards/issues/1266)) ([#499](https://www.github.com/googleapis/java-monitoring-dashboards/issues/499)) ([cc53f4a](https://www.github.com/googleapis/java-monitoring-dashboards/commit/cc53f4a2b908305e5c680144de67e56d87a9a319))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#509](https://www.github.com/googleapis/java-monitoring-dashboards/issues/509)) ([92771b5](https://www.github.com/googleapis/java-monitoring-dashboards/commit/92771b5d45dfa69f1528b4663c48fa4ed09f0037))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#515](https://www.github.com/googleapis/java-monitoring-dashboards/issues/515)) ([8cc069c](https://www.github.com/googleapis/java-monitoring-dashboards/commit/8cc069c2f0c1c245a1c629fd6d2cf7182aaa5441))
+
 ### [2.1.3](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
