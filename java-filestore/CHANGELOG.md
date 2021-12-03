@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-filestore/compare/v1.1.3...v1.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **filestore:** add missing operation_metadata.proto import ([20d3623](https://www.github.com/googleapis/java-filestore/commit/20d3623d36ad9f919ce2d4a727b50fc9692adfa0))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-filestore/issues/1266)) ([#88](https://www.github.com/googleapis/java-filestore/issues/88)) ([f472776](https://www.github.com/googleapis/java-filestore/commit/f4727761c0c658ccaea52699c5b605a2ad940dfa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#96](https://www.github.com/googleapis/java-filestore/issues/96)) ([8063c00](https://www.github.com/googleapis/java-filestore/commit/8063c00c5e3b2f85fd3b9dd68680b1be784e4826))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#102](https://www.github.com/googleapis/java-filestore/issues/102)) ([a125ea5](https://www.github.com/googleapis/java-filestore/commit/a125ea5f426c374063658febc31718cbafcfb8c8))
+
 ### [1.1.3](https://www.github.com/googleapis/java-filestore/compare/v1.1.2...v1.1.3) (2021-10-19)
 
 
