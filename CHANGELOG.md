@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.6.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.6.3...v2.6.4) (2021-12-03)
+
+
+### Reverts
+
+* "chore(deps): update dependency com.google.cloud.samples:shared-configuration to v1.0.24" ([#1431](https://www.github.com/googleapis/java-bigquerystorage/issues/1431)) ([b4fab5f](https://www.github.com/googleapis/java-bigquerystorage/commit/b4fab5f00b8d6a58b9768d32f16fb3a013265690))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.5.0 ([#1427](https://www.github.com/googleapis/java-bigquerystorage/issues/1427)) ([bc69fee](https://www.github.com/googleapis/java-bigquerystorage/commit/bc69fee6cfa1ef152ed1a6da61fb4728f1639aa8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#1429](https://www.github.com/googleapis/java-bigquerystorage/issues/1429)) ([543c63e](https://www.github.com/googleapis/java-bigquerystorage/commit/543c63e6c00da9a177994b4292ae5cda2ceeab65))
+
 ### [2.6.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.6.2...v2.6.3) (2021-11-19)
 
 
