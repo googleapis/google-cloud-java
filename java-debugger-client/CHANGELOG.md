@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-debugger-client/compare/v1.1.3...v1.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-debugger-client/issues/1266)) ([#92](https://www.github.com/googleapis/java-debugger-client/issues/92)) ([94d7604](https://www.github.com/googleapis/java-debugger-client/commit/94d76042c50290d7079175734c61d0a5f731bd3e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#103](https://www.github.com/googleapis/java-debugger-client/issues/103)) ([4379f2e](https://www.github.com/googleapis/java-debugger-client/commit/4379f2e059944132b06b61d8491a5e7395a12fad))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#108](https://www.github.com/googleapis/java-debugger-client/issues/108)) ([67c0678](https://www.github.com/googleapis/java-debugger-client/commit/67c06789204ebfe0987273ef9671401e89d7e69d))
+
 ### [1.1.3](https://www.github.com/googleapis/java-debugger-client/compare/v1.1.2...v1.1.3) (2021-10-19)
 
 
