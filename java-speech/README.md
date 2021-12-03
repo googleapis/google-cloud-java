@@ -28,6 +28,11 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 
 <dependencies>
   <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20210307</version>
+  </dependency>
+  <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-speech</artifactId>
   </dependency>
