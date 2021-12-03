@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.5.2](https://www.github.com/googleapis/java-aiplatform/compare/v2.5.1...v2.5.2) (2021-12-03)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.11.0 ([#740](https://www.github.com/googleapis/java-aiplatform/issues/740)) ([55647b1](https://www.github.com/googleapis/java-aiplatform/commit/55647b19870ce186a5c4d71fda5493d1ae9b2e94))
+
 ### [2.5.1](https://www.github.com/googleapis/java-aiplatform/compare/v2.5.0...v2.5.1) (2021-12-03)
 
 
