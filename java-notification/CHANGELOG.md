@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.122.14](https://www.github.com/googleapis/java-notification/compare/v0.122.13...v0.122.14) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-notification/issues/1266)) ([#458](https://www.github.com/googleapis/java-notification/issues/458)) ([d6ecfdf](https://www.github.com/googleapis/java-notification/commit/d6ecfdfdd542cd5c61a3236e3236072fa63ce327))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-storage to v1-rev20211018-1.32.1 ([#457](https://www.github.com/googleapis/java-notification/issues/457)) ([e9739a6](https://www.github.com/googleapis/java-notification/commit/e9739a6e72b3320eac1bd3760ac26a4c55adf60d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#467](https://www.github.com/googleapis/java-notification/issues/467)) ([e9d0842](https://www.github.com/googleapis/java-notification/commit/e9d08423020c2e05aa335c018ff89be2291b76d7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#473](https://www.github.com/googleapis/java-notification/issues/473)) ([69c5ad0](https://www.github.com/googleapis/java-notification/commit/69c5ad0e9f401fef8357a06aeb2889ec3f59e540))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.0 ([#461](https://www.github.com/googleapis/java-notification/issues/461)) ([c6a0d8e](https://www.github.com/googleapis/java-notification/commit/c6a0d8eb9e17d004834532b63a989c89cdab4158))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.1 ([#468](https://www.github.com/googleapis/java-notification/issues/468)) ([47bd003](https://www.github.com/googleapis/java-notification/commit/47bd0032dc36904639ed42851b340dd6c572a4a4))
+
 ### [0.122.13](https://www.github.com/googleapis/java-notification/compare/v0.122.12...v0.122.13) (2021-10-21)
 
 
