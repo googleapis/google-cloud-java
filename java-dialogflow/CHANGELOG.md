@@ -1,5 +1,33 @@
 # Changelog
 
+## [4.3.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.2.0...v4.3.0) (2021-12-03)
+
+
+### Features
+
+* added support to configure security settings, language code and time zone on conversation profile ([#762](https://www.github.com/googleapis/java-dialogflow/issues/762)) ([4fd51c9](https://www.github.com/googleapis/java-dialogflow/commit/4fd51c9b299f87ebd04b4458ffa3f2fdf0207b87))
+* support document metadata filter in article suggestion ([#773](https://www.github.com/googleapis/java-dialogflow/issues/773)) ([24afa13](https://www.github.com/googleapis/java-dialogflow/commit/24afa13ab67a966c4f08b9646d170e400ef99d6d))
+* support document metadata filter in article suggestion and smart reply model in human agent assistant ([#769](https://www.github.com/googleapis/java-dialogflow/issues/769)) ([65ef11a](https://www.github.com/googleapis/java-dialogflow/commit/65ef11aca77aa7b45c41bfdb73d2fc44f0e719f5))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dialogflow/issues/1266)) ([#757](https://www.github.com/googleapis/java-dialogflow/issues/757)) ([a11a229](https://www.github.com/googleapis/java-dialogflow/commit/a11a2295df88bc5b39968a5822dbf1ba1e50d3d1))
+
+
+### Documentation
+
+* clarified meaning of the legacy editions docs: clarified semantic of the streaming APIs ([#759](https://www.github.com/googleapis/java-dialogflow/issues/759)) ([9d53e67](https://www.github.com/googleapis/java-dialogflow/commit/9d53e678ee0bba3fd0d672adb673a3fa2c5697d1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.0 ([#770](https://www.github.com/googleapis/java-dialogflow/issues/770)) ([36c82d6](https://www.github.com/googleapis/java-dialogflow/commit/36c82d6c42b355bdc48eac4225816bf5478836d7))
+* update dependency com.google.cloud:google-cloud-core to v2.3.1 ([#772](https://www.github.com/googleapis/java-dialogflow/issues/772)) ([ce40a00](https://www.github.com/googleapis/java-dialogflow/commit/ce40a00da0c11569e804180d8f1d60f49baf6687))
+* update dependency com.google.cloud:google-cloud-core to v2.3.2 ([#780](https://www.github.com/googleapis/java-dialogflow/issues/780)) ([846be00](https://www.github.com/googleapis/java-dialogflow/commit/846be008594fd36a405ebbde3d21ec5518ab628d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#771](https://www.github.com/googleapis/java-dialogflow/issues/771)) ([f98bfa6](https://www.github.com/googleapis/java-dialogflow/commit/f98bfa6b58f69fcd7dbded5d34b022c01b9dde72))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#781](https://www.github.com/googleapis/java-dialogflow/issues/781)) ([a37f209](https://www.github.com/googleapis/java-dialogflow/commit/a37f209745dcd2e5c65f7c82ef13443e7eba485c))
+
 ## [4.2.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.1.7...v4.2.0) (2021-10-21)
 
 
