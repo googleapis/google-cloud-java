@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-essential-contacts/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-essential-contacts/issues/1266)) ([#126](https://www.github.com/googleapis/java-essential-contacts/issues/126)) ([90c98e8](https://www.github.com/googleapis/java-essential-contacts/commit/90c98e8a815b86b67fdb424fc309d3c6361439f8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#135](https://www.github.com/googleapis/java-essential-contacts/issues/135)) ([f712af1](https://www.github.com/googleapis/java-essential-contacts/commit/f712af165959df74b70806ef42eff5200453e06d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#140](https://www.github.com/googleapis/java-essential-contacts/issues/140)) ([63eb6e5](https://www.github.com/googleapis/java-essential-contacts/commit/63eb6e546d7c3498070a5ad89b0061321a2b98ff))
+
 ### [2.1.3](https://www.github.com/googleapis/java-essential-contacts/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
