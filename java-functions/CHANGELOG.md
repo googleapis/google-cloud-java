@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-functions/compare/v2.2.1...v2.3.0) (2021-12-03)
+
+
+### Features
+
+* Secret Manager integration fields 'secret_environment_variables' and 'secret_volumes' added feat: CMEK integration fields 'kms_key_name' and 'docker_repository' added ([#328](https://www.github.com/googleapis/java-functions/issues/328)) ([ea30e8c](https://www.github.com/googleapis/java-functions/commit/ea30e8c7625145df60773dbae78923159e9997b9))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-functions/issues/1266)) ([#325](https://www.github.com/googleapis/java-functions/issues/325)) ([e2d5c7c](https://www.github.com/googleapis/java-functions/commit/e2d5c7c808a48437565b6c5532bc9ba8eb78c34c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#335](https://www.github.com/googleapis/java-functions/issues/335)) ([415a191](https://www.github.com/googleapis/java-functions/commit/415a191fdc043f0fccd5d2035b7e9895c24e9e50))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#340](https://www.github.com/googleapis/java-functions/issues/340)) ([f60645f](https://www.github.com/googleapis/java-functions/commit/f60645f6d68fe401fbc7d90d74baf714458a2445))
+
 ### [2.2.1](https://www.github.com/googleapis/java-functions/compare/v2.2.0...v2.2.1) (2021-10-19)
 
 
