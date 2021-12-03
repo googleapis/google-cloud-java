@@ -21,6 +21,7 @@ import static com.google.cloud.security.privateca.v1.CertificateAuthorityService
 import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListCertificateRevocationListsPagedResponse;
 import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListCertificateTemplatesPagedResponse;
 import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListCertificatesPagedResponse;
+import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -48,6 +49,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1.CaPool;
 import com.google.cloud.security.privateca.v1.Certificate;
@@ -94,6 +99,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -239,6 +249,14 @@ public class CertificateAuthorityServiceStubSettings
   private final OperationCallSettings<
           UpdateCertificateTemplateRequest, CertificateTemplate, OperationMetadata>
       updateCertificateTemplateOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListCertificatesRequest, ListCertificatesResponse, Certificate>
@@ -461,6 +479,42 @@ public class CertificateAuthorityServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListCertificatesRequest, ListCertificatesResponse, ListCertificatesPagedResponse>
       LIST_CERTIFICATES_PAGE_STR_FACT =
@@ -582,6 +636,23 @@ public class CertificateAuthorityServiceStubSettings
                       PageContext.create(
                           callable, LIST_CERTIFICATE_TEMPLATES_PAGE_STR_DESC, request, context);
               return ListCertificateTemplatesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -855,6 +926,33 @@ public class CertificateAuthorityServiceStubSettings
     return updateCertificateTemplateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CertificateAuthorityServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -997,6 +1095,11 @@ public class CertificateAuthorityServiceStubSettings
     updateCertificateTemplateSettings = settingsBuilder.updateCertificateTemplateSettings().build();
     updateCertificateTemplateOperationSettings =
         settingsBuilder.updateCertificateTemplateOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for CertificateAuthorityServiceStubSettings. */
@@ -1109,6 +1212,14 @@ public class CertificateAuthorityServiceStubSettings
     private final OperationCallSettings.Builder<
             UpdateCertificateTemplateRequest, CertificateTemplate, OperationMetadata>
         updateCertificateTemplateOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1197,6 +1308,11 @@ public class CertificateAuthorityServiceStubSettings
           PagedCallSettings.newBuilder(LIST_CERTIFICATE_TEMPLATES_PAGE_STR_FACT);
       updateCertificateTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCertificateTemplateOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1228,7 +1344,12 @@ public class CertificateAuthorityServiceStubSettings
               deleteCertificateTemplateSettings,
               getCertificateTemplateSettings,
               listCertificateTemplatesSettings,
-              updateCertificateTemplateSettings);
+              updateCertificateTemplateSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -1296,6 +1417,11 @@ public class CertificateAuthorityServiceStubSettings
       updateCertificateTemplateSettings = settings.updateCertificateTemplateSettings.toBuilder();
       updateCertificateTemplateOperationSettings =
           settings.updateCertificateTemplateOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1327,7 +1453,12 @@ public class CertificateAuthorityServiceStubSettings
               deleteCertificateTemplateSettings,
               getCertificateTemplateSettings,
               listCertificateTemplatesSettings,
-              updateCertificateTemplateSettings);
+              updateCertificateTemplateSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -1486,6 +1617,31 @@ public class CertificateAuthorityServiceStubSettings
 
       builder
           .updateCertificateTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2156,6 +2312,34 @@ public class CertificateAuthorityServiceStubSettings
             UpdateCertificateTemplateRequest, CertificateTemplate, OperationMetadata>
         updateCertificateTemplateOperationSettings() {
       return updateCertificateTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -61,6 +61,12 @@
             "GetCertificateTemplate": {
               "methods": ["getCertificateTemplate", "getCertificateTemplate", "getCertificateTemplate", "getCertificateTemplateCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListCaPools": {
               "methods": ["listCaPools", "listCaPools", "listCaPools", "listCaPoolsPagedCallable", "listCaPoolsCallable"]
             },
@@ -76,8 +82,17 @@
             "ListCertificates": {
               "methods": ["listCertificates", "listCertificates", "listCertificates", "listCertificatesPagedCallable", "listCertificatesCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "RevokeCertificate": {
               "methods": ["revokeCertificate", "revokeCertificate", "revokeCertificate", "revokeCertificateCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UndeleteCertificateAuthority": {
               "methods": ["undeleteCertificateAuthorityAsync", "undeleteCertificateAuthorityAsync", "undeleteCertificateAuthorityAsync", "undeleteCertificateAuthorityOperationCallable", "undeleteCertificateAuthorityCallable"]

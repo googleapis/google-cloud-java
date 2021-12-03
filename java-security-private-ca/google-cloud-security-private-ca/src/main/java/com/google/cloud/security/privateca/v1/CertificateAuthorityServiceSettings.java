@@ -21,6 +21,7 @@ import static com.google.cloud.security.privateca.v1.CertificateAuthorityService
 import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListCertificateRevocationListsPagedResponse;
 import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListCertificateTemplatesPagedResponse;
 import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListCertificatesPagedResponse;
+import static com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -34,7 +35,16 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.security.privateca.v1.stub.CertificateAuthorityServiceStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -381,6 +391,34 @@ public class CertificateAuthorityServiceSettings
       updateCertificateTemplateOperationSettings() {
     return ((CertificateAuthorityServiceStubSettings) getStubSettings())
         .updateCertificateTemplateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((CertificateAuthorityServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((CertificateAuthorityServiceStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((CertificateAuthorityServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((CertificateAuthorityServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
+        .testIamPermissionsSettings();
   }
 
   public static final CertificateAuthorityServiceSettings create(
@@ -754,6 +792,34 @@ public class CertificateAuthorityServiceSettings
             UpdateCertificateTemplateRequest, CertificateTemplate, OperationMetadata>
         updateCertificateTemplateOperationSettings() {
       return getStubSettingsBuilder().updateCertificateTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override
