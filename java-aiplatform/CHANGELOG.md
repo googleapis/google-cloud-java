@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.4.0...v2.5.0) (2021-12-02)
+
+
+### Features
+
+* add enable_private_service_connect field to Endpoint feat: add id field to DeployedModel feat: add service_attachment field to PrivateEndpoints feat: add endpoint_id to CreateEndpointRequest and method signature to CreateEndpoint feat: add method... ([#728](https://www.github.com/googleapis/java-aiplatform/issues/728)) ([bf5dc50](https://www.github.com/googleapis/java-aiplatform/commit/bf5dc50407f1a38bd89e888cb7c5944736d4cb05))
+* add enable_private_service_connect field to Endpoint feat: add id field to DeployedModel feat: add service_attachment field to PrivateEndpoints feat: add endpoint_id to CreateEndpointRequest and method signature to CreateEndpoint feat: add method... ([#729](https://www.github.com/googleapis/java-aiplatform/issues/729)) ([2b79994](https://www.github.com/googleapis/java-aiplatform/commit/2b79994249bb572aa72336acdbc38f6f16aa86b4))
+
 ## [2.4.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.3.0...v2.4.0) (2021-12-02)
 
 
