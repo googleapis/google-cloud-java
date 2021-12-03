@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.2.0](https://www.github.com/googleapis/java-monitoring/compare/v3.1.0...v3.2.0) (2021-12-03)
+
+
+### Features
+
+* Added support for auto-close configurations ([#730](https://www.github.com/googleapis/java-monitoring/issues/730)) ([a723983](https://www.github.com/googleapis/java-monitoring/commit/a723983722eaee3ac7a0b71bb526115420e1fea9))
+* next release from main branch is 3.2.0 ([#709](https://www.github.com/googleapis/java-monitoring/issues/709)) ([6eab6bb](https://www.github.com/googleapis/java-monitoring/commit/6eab6bb259da744343cd71ce39357c7010de6003))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#714](https://www.github.com/googleapis/java-monitoring/issues/714)) ([895efc9](https://www.github.com/googleapis/java-monitoring/commit/895efc913241d39fe54684a27fdaba06e0afe6e9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#729](https://www.github.com/googleapis/java-monitoring/issues/729)) ([22456cd](https://www.github.com/googleapis/java-monitoring/commit/22456cd76a6abe7ec6dfac92714ef042383af3b6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#736](https://www.github.com/googleapis/java-monitoring/issues/736)) ([bc15ad8](https://www.github.com/googleapis/java-monitoring/commit/bc15ad8033b1bb80facc705de4a8cf1da98ed96c))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#708](https://www.github.com/googleapis/java-monitoring/issues/708)) ([d9798fd](https://www.github.com/googleapis/java-monitoring/commit/d9798fdcc11ea563fed40c2fc3af189ccd498fbc))
+* update dependency commons-cli:commons-cli to v1.5.0 ([#716](https://www.github.com/googleapis/java-monitoring/issues/716)) ([563c35e](https://www.github.com/googleapis/java-monitoring/commit/563c35ecd5e27b1feef3aae302c64008e33be1c5))
+
 ## [3.1.0](https://www.github.com/googleapis/java-monitoring/compare/v3.0.8...v3.1.0) (2021-10-19)
 
 
