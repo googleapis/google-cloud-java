@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-language/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-language/issues/1266)) ([#742](https://www.github.com/googleapis/java-language/issues/742)) ([48defbf](https://www.github.com/googleapis/java-language/commit/48defbf121efb9a8075cd64051bc7c93f21de8de))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#752](https://www.github.com/googleapis/java-language/issues/752)) ([3b5753c](https://www.github.com/googleapis/java-language/commit/3b5753c76dad7ee1199a304bfd76e118b31ec2a8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#760](https://www.github.com/googleapis/java-language/issues/760)) ([14a9f32](https://www.github.com/googleapis/java-language/commit/14a9f326e88cdc599366aef1a53eee49ba55d1b9))
+
 ### [2.1.3](https://www.github.com/googleapis/java-language/compare/v2.1.2...v2.1.3) (2021-10-20)
 
 
