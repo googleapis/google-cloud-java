@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.0.3](https://www.github.com/googleapis/java-dns/compare/v2.0.2...v2.0.3) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dns/issues/1266)) ([#547](https://www.github.com/googleapis/java-dns/issues/547)) ([1ceebe7](https://www.github.com/googleapis/java-dns/commit/1ceebe709a520e202cf26b0a90aa8a8a146a439a))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20211103-1.32.1 ([#556](https://www.github.com/googleapis/java-dns/issues/556)) ([2eba767](https://www.github.com/googleapis/java-dns/commit/2eba767c2e710270876df9cca294d7ad36f9835c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#557](https://www.github.com/googleapis/java-dns/issues/557)) ([49f5532](https://www.github.com/googleapis/java-dns/commit/49f553293205f04187960f8cccef76e030bb4177))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#562](https://www.github.com/googleapis/java-dns/issues/562)) ([59c19b2](https://www.github.com/googleapis/java-dns/commit/59c19b2b84b54542c2a15101dad231736f28cbe9))
+* update dependency com.google.errorprone:error_prone_annotations to v2.10.0 ([#551](https://www.github.com/googleapis/java-dns/issues/551)) ([5a18c46](https://www.github.com/googleapis/java-dns/commit/5a18c467a1e4e293a38e70ba964c70b7c810b22d))
+
 ### [2.0.2](https://www.github.com/googleapis/java-dns/compare/v2.0.1...v2.0.2) (2021-10-20)
 
 
