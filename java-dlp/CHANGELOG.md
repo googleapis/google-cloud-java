@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.1.0](https://www.github.com/googleapis/java-dlp/compare/v3.0.11...v3.1.0) (2021-12-03)
+
+
+### Features
+
+* added deidentify replacement dictionaries ([#722](https://www.github.com/googleapis/java-dlp/issues/722)) ([7d4f8cb](https://www.github.com/googleapis/java-dlp/commit/7d4f8cbfbcec9c382af09a0b07fc9a4b074593bc))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dlp/issues/1266)) ([#707](https://www.github.com/googleapis/java-dlp/issues/707)) ([52e6796](https://www.github.com/googleapis/java-dlp/commit/52e679630b817ebb796245f776e30e470bf02c41))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#717](https://www.github.com/googleapis/java-dlp/issues/717)) ([332c9d2](https://www.github.com/googleapis/java-dlp/commit/332c9d24f2bcd2080bd867b4dd9bfa793018710c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#723](https://www.github.com/googleapis/java-dlp/issues/723)) ([6b9b590](https://www.github.com/googleapis/java-dlp/commit/6b9b590df73a87b68b7b3e2d1f9e755235d6154d))
+
 ### [3.0.11](https://www.github.com/googleapis/java-dlp/compare/v3.0.10...v3.0.11) (2021-10-20)
 
 
