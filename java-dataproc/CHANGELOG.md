@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-dataproc/compare/v2.2.2...v2.3.0) (2021-12-03)
+
+
+### Features
+
+* Add support for dataproc BatchController service ([#719](https://www.github.com/googleapis/java-dataproc/issues/719)) ([4556a3f](https://www.github.com/googleapis/java-dataproc/commit/4556a3fc0de8e432c0abd12b5ee0d6b013448b36))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dataproc/issues/1266)) ([#727](https://www.github.com/googleapis/java-dataproc/issues/727)) ([9d9c9cf](https://www.github.com/googleapis/java-dataproc/commit/9d9c9cf8c70f845fc8f189644df1d64464d44492))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#737](https://www.github.com/googleapis/java-dataproc/issues/737)) ([e0ea4e9](https://www.github.com/googleapis/java-dataproc/commit/e0ea4e9ef10df26733ddba5a0eb084e32ee043e3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#743](https://www.github.com/googleapis/java-dataproc/issues/743)) ([8efd821](https://www.github.com/googleapis/java-dataproc/commit/8efd821b00f1b64d35e78ccdf8f2ea72277575cf))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.0 ([#729](https://www.github.com/googleapis/java-dataproc/issues/729)) ([dc2a3b4](https://www.github.com/googleapis/java-dataproc/commit/dc2a3b40bd2aa8a22483b6698c994940ebead9b1))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.1 ([#738](https://www.github.com/googleapis/java-dataproc/issues/738)) ([9449a98](https://www.github.com/googleapis/java-dataproc/commit/9449a98d0293c0a3f426e2391068195d05e9df32))
+
 ### [2.2.2](https://www.github.com/googleapis/java-dataproc/compare/v2.2.1...v2.2.2) (2021-10-20)
 
 
