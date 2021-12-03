@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-network-management/compare/v1.1.3...v1.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-network-management/issues/1266)) ([#79](https://www.github.com/googleapis/java-network-management/issues/79)) ([369d655](https://www.github.com/googleapis/java-network-management/commit/369d655e06f104a6fa08867e2e5a61b4e0ecd00b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#88](https://www.github.com/googleapis/java-network-management/issues/88)) ([4372d19](https://www.github.com/googleapis/java-network-management/commit/4372d19607a3b062dd1032127dcee2c9f9cbc2d8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#94](https://www.github.com/googleapis/java-network-management/issues/94)) ([213ccec](https://www.github.com/googleapis/java-network-management/commit/213ccec43904143388f9fd2e08db6790e75b3be4))
+
 ### [1.1.3](https://www.github.com/googleapis/java-network-management/compare/v1.1.2...v1.1.3) (2021-10-19)
 
 
