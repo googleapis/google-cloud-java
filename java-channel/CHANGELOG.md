@@ -1,5 +1,29 @@
 # Changelog
 
+## [3.3.0](https://www.github.com/googleapis/java-channel/compare/v3.2.2...v3.3.0) (2021-12-03)
+
+
+### Features
+
+* add resource type to ChannelPartnerLink ([#210](https://www.github.com/googleapis/java-channel/issues/210)) ([53df617](https://www.github.com/googleapis/java-channel/commit/53df61797b4dc40856386cad01c48bc862490f02))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-channel/issues/1266)) ([#207](https://www.github.com/googleapis/java-channel/issues/207)) ([a2f1c39](https://www.github.com/googleapis/java-channel/commit/a2f1c39275d4ee05ec458e8f07c6a705382f2b43))
+
+
+### Documentation
+
+* clarified usage of entitlement parameters ([#211](https://www.github.com/googleapis/java-channel/issues/211)) ([c6a9bdc](https://www.github.com/googleapis/java-channel/commit/c6a9bdca76cbd485c5a5e58394f7dbdc38dfcda7))
+* Small clarification ([#220](https://www.github.com/googleapis/java-channel/issues/220)) ([7a420ec](https://www.github.com/googleapis/java-channel/commit/7a420ec345e520f676dff2c0e5ad052d804c3ed5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#219](https://www.github.com/googleapis/java-channel/issues/219)) ([3d7dc32](https://www.github.com/googleapis/java-channel/commit/3d7dc3222b941861e07cff80e1445260e7c763ea))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#225](https://www.github.com/googleapis/java-channel/issues/225)) ([8e15822](https://www.github.com/googleapis/java-channel/commit/8e15822a33244a9d83ef0ac96e30a8c82e46833a))
+
 ### [3.2.2](https://www.github.com/googleapis/java-channel/compare/v3.2.1...v3.2.2) (2021-10-19)
 
 
