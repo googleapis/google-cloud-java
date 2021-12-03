@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-dms/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dms/issues/1266)) ([#132](https://www.github.com/googleapis/java-dms/issues/132)) ([f131648](https://www.github.com/googleapis/java-dms/commit/f131648baca434e2f9f35b267919f70c5be6d78a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#141](https://www.github.com/googleapis/java-dms/issues/141)) ([18d3170](https://www.github.com/googleapis/java-dms/commit/18d3170f0087f87fdbb26fa63ba33c93ae5d70bb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#146](https://www.github.com/googleapis/java-dms/issues/146)) ([4fc4674](https://www.github.com/googleapis/java-dms/commit/4fc4674fad1f2f228d2001802927db84d163402a))
+
 ### [2.1.3](https://www.github.com/googleapis/java-dms/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
