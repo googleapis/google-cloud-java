@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-dataproc-metastore/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dataproc-metastore/issues/1266)) ([#149](https://www.github.com/googleapis/java-dataproc-metastore/issues/149)) ([4075ae9](https://www.github.com/googleapis/java-dataproc-metastore/commit/4075ae9fc9511bd7bfdc5a531cb0ce5816b3ed27))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#158](https://www.github.com/googleapis/java-dataproc-metastore/issues/158)) ([df81ed1](https://www.github.com/googleapis/java-dataproc-metastore/commit/df81ed12c5c843b001c0d479f864df78d083760f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#164](https://www.github.com/googleapis/java-dataproc-metastore/issues/164)) ([5359a13](https://www.github.com/googleapis/java-dataproc-metastore/commit/5359a136cd4fc6d3392411936628443059a6fb91))
+
 ### [2.1.3](https://www.github.com/googleapis/java-dataproc-metastore/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
