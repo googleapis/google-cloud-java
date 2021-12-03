@@ -27,8 +27,8 @@ package com.google.privacy.dlp.v2;
  * but requires more configuration. This message is provided as a convenience to
  * the user for simple bucketing strategies.
  * The transformed value will be a hyphenated string of
- * {lower_bound}-{upper_bound}, i.e if lower_bound = 10 and upper_bound = 20
- * all values that are within this bucket will be replaced with "10-20".
+ * {lower_bound}-{upper_bound}. For example, if lower_bound = 10 and upper_bound
+ * = 20, all values that are within this bucket will be replaced with "10-20".
  * This can be used on data of type: double, long.
  * If the bound Value type differs from the type of data
  * being transformed, we will first attempt converting the type of the data to
@@ -479,8 +479,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * but requires more configuration. This message is provided as a convenience to
    * the user for simple bucketing strategies.
    * The transformed value will be a hyphenated string of
-   * {lower_bound}-{upper_bound}, i.e if lower_bound = 10 and upper_bound = 20
-   * all values that are within this bucket will be replaced with "10-20".
+   * {lower_bound}-{upper_bound}. For example, if lower_bound = 10 and upper_bound
+   * = 20, all values that are within this bucket will be replaced with "10-20".
    * This can be used on data of type: double, long.
    * If the bound Value type differs from the type of data
    * being transformed, we will first attempt converting the type of the data to

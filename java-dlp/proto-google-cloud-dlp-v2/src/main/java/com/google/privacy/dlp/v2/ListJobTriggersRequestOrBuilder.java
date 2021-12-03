@@ -173,7 +173,7 @@ public interface ListJobTriggersRequestOrBuilder
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
-   * * Supported fields/values for inspect jobs:
+   * * Supported fields/values for inspect triggers:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
    *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -203,7 +203,7 @@ public interface ListJobTriggersRequestOrBuilder
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
-   * * Supported fields/values for inspect jobs:
+   * * Supported fields/values for inspect triggers:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
    *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -223,6 +223,31 @@ public interface ListJobTriggersRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+   *
+   * @return The type.
+   */
+  com.google.privacy.dlp.v2.DlpJobType getType();
 
   /**
    *

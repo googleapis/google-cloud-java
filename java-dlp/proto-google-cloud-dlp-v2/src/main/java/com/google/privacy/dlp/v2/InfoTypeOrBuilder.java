@@ -55,4 +55,29 @@ public interface InfoTypeOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional version name for this InfoType.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   *
+   * @return The version.
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional version name for this InfoType.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   *
+   * @return The bytes for version.
+   */
+  com.google.protobuf.ByteString getVersionBytes();
 }

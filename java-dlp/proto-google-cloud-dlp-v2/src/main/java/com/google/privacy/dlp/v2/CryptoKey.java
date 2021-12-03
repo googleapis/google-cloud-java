@@ -23,10 +23,11 @@ package com.google.privacy.dlp.v2;
  *
  * <pre>
  * This is a data encryption key (DEK) (as opposed to
- * a key encryption key (KEK) stored by KMS).
- * When using KMS to wrap/unwrap DEKs, be sure to set an appropriate
- * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
- * unwrap the data crypto key.
+ * a key encryption key (KEK) stored by Cloud Key Management Service
+ * (Cloud KMS).
+ * When using Cloud KMS to wrap or unwrap a DEK, be sure to set an appropriate
+ * IAM policy on the KEK to ensure an attacker cannot
+ * unwrap the DEK.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoKey}
@@ -311,7 +312,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -326,7 +327,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -344,7 +345,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -564,10 +565,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is a data encryption key (DEK) (as opposed to
-   * a key encryption key (KEK) stored by KMS).
-   * When using KMS to wrap/unwrap DEKs, be sure to set an appropriate
-   * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
-   * unwrap the data crypto key.
+   * a key encryption key (KEK) stored by Cloud Key Management Service
+   * (Cloud KMS).
+   * When using Cloud KMS to wrap or unwrap a DEK, be sure to set an appropriate
+   * IAM policy on the KEK to ensure an attacker cannot
+   * unwrap the DEK.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoKey}
@@ -1198,7 +1200,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1213,7 +1215,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1238,7 +1240,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1260,7 +1262,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1280,7 +1282,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1311,7 +1313,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1336,7 +1338,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1348,7 +1350,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1368,7 +1370,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>

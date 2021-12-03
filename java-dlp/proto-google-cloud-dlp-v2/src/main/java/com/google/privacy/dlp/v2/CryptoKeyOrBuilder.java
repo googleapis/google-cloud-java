@@ -97,7 +97,7 @@ public interface CryptoKeyOrBuilder
    *
    *
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -109,7 +109,7 @@ public interface CryptoKeyOrBuilder
    *
    *
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -121,7 +121,7 @@ public interface CryptoKeyOrBuilder
    *
    *
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>

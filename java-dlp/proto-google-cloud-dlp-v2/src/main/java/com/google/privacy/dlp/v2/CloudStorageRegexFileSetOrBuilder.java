@@ -131,6 +131,7 @@ public interface CloudStorageRegexFileSetOrBuilder
    *
    *
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
@@ -148,6 +149,7 @@ public interface CloudStorageRegexFileSetOrBuilder
    *
    *
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
@@ -165,6 +167,7 @@ public interface CloudStorageRegexFileSetOrBuilder
    *
    *
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
@@ -183,6 +186,7 @@ public interface CloudStorageRegexFileSetOrBuilder
    *
    *
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.

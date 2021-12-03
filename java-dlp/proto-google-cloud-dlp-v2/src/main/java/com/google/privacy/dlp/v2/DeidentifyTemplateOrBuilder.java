@@ -184,7 +184,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * ///////////// // The core content of the template  // ///////////////
+   * The core content of the template.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -196,7 +196,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * ///////////// // The core content of the template  // ///////////////
+   * The core content of the template.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -208,7 +208,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * ///////////// // The core content of the template  // ///////////////
+   * The core content of the template.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>

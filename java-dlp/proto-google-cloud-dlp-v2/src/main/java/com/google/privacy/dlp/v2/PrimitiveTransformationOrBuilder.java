@@ -27,7 +27,7 @@ public interface PrimitiveTransformationOrBuilder
    *
    *
    * <pre>
-   * Replace
+   * Replace with a specified value.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -39,7 +39,7 @@ public interface PrimitiveTransformationOrBuilder
    *
    *
    * <pre>
-   * Replace
+   * Replace with a specified value.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -51,7 +51,7 @@ public interface PrimitiveTransformationOrBuilder
    *
    *
    * <pre>
-   * Replace
+   * Replace with a specified value.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -417,6 +417,41 @@ public interface PrimitiveTransformationOrBuilder
    */
   com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder
       getCryptoDeterministicConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Replace with a value randomly drawn (with replacement) from a dictionary.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+   *
+   * @return Whether the replaceDictionaryConfig field is set.
+   */
+  boolean hasReplaceDictionaryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Replace with a value randomly drawn (with replacement) from a dictionary.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+   *
+   * @return The replaceDictionaryConfig.
+   */
+  com.google.privacy.dlp.v2.ReplaceDictionaryConfig getReplaceDictionaryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Replace with a value randomly drawn (with replacement) from a dictionary.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+   */
+  com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder getReplaceDictionaryConfigOrBuilder();
 
   public com.google.privacy.dlp.v2.PrimitiveTransformation.TransformationCase
       getTransformationCase();

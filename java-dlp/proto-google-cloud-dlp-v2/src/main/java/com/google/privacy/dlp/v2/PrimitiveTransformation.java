@@ -268,6 +268,26 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
               transformationCase_ = 12;
               break;
             }
+          case 106:
+            {
+              com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder subBuilder = null;
+              if (transformationCase_ == 13) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_)
+                        .toBuilder();
+              }
+              transformation_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.ReplaceDictionaryConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_);
+                transformation_ = subBuilder.buildPartial();
+              }
+              transformationCase_ = 13;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -320,6 +340,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     CRYPTO_HASH_CONFIG(9),
     DATE_SHIFT_CONFIG(11),
     CRYPTO_DETERMINISTIC_CONFIG(12),
+    REPLACE_DICTIONARY_CONFIG(13),
     TRANSFORMATION_NOT_SET(0);
     private final int value;
 
@@ -360,6 +381,8 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
           return DATE_SHIFT_CONFIG;
         case 12:
           return CRYPTO_DETERMINISTIC_CONFIG;
+        case 13:
+          return REPLACE_DICTIONARY_CONFIG;
         case 0:
           return TRANSFORMATION_NOT_SET;
         default:
@@ -381,7 +404,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Replace
+   * Replace with a specified value.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -396,7 +419,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Replace
+   * Replace with a specified value.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -414,7 +437,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Replace
+   * Replace with a specified value.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -947,6 +970,58 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
   }
 
+  public static final int REPLACE_DICTIONARY_CONFIG_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Replace with a value randomly drawn (with replacement) from a dictionary.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+   *
+   * @return Whether the replaceDictionaryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasReplaceDictionaryConfig() {
+    return transformationCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Replace with a value randomly drawn (with replacement) from a dictionary.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+   *
+   * @return The replaceDictionaryConfig.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ReplaceDictionaryConfig getReplaceDictionaryConfig() {
+    if (transformationCase_ == 13) {
+      return (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_;
+    }
+    return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Replace with a value randomly drawn (with replacement) from a dictionary.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder
+      getReplaceDictionaryConfigOrBuilder() {
+    if (transformationCase_ == 13) {
+      return (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_;
+    }
+    return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -994,6 +1069,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     if (transformationCase_ == 12) {
       output.writeMessage(
           12, (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_);
+    }
+    if (transformationCase_ == 13) {
+      output.writeMessage(13, (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_);
     }
     unknownFields.writeTo(output);
   }
@@ -1059,6 +1137,11 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_);
     }
+    if (transformationCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1113,6 +1196,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       case 12:
         if (!getCryptoDeterministicConfig().equals(other.getCryptoDeterministicConfig()))
           return false;
+        break;
+      case 13:
+        if (!getReplaceDictionaryConfig().equals(other.getReplaceDictionaryConfig())) return false;
         break;
       case 0:
       default:
@@ -1172,6 +1258,10 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       case 12:
         hash = (37 * hash) + CRYPTO_DETERMINISTIC_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getCryptoDeterministicConfig().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + REPLACE_DICTIONARY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getReplaceDictionaryConfig().hashCode();
         break;
       case 0:
       default:
@@ -1427,6 +1517,13 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
           result.transformation_ = cryptoDeterministicConfigBuilder_.build();
         }
       }
+      if (transformationCase_ == 13) {
+        if (replaceDictionaryConfigBuilder_ == null) {
+          result.transformation_ = transformation_;
+        } else {
+          result.transformation_ = replaceDictionaryConfigBuilder_.build();
+        }
+      }
       result.transformationCase_ = transformationCase_;
       onBuilt();
       return result;
@@ -1534,6 +1631,11 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             mergeCryptoDeterministicConfig(other.getCryptoDeterministicConfig());
             break;
           }
+        case REPLACE_DICTIONARY_CONFIG:
+          {
+            mergeReplaceDictionaryConfig(other.getReplaceDictionaryConfig());
+            break;
+          }
         case TRANSFORMATION_NOT_SET:
           {
             break;
@@ -1592,7 +1694,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1607,7 +1709,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1632,7 +1734,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1654,7 +1756,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1674,7 +1776,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1706,7 +1808,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1731,7 +1833,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1743,7 +1845,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -1763,7 +1865,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Replace
+     * Replace with a specified value.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
@@ -3932,6 +4034,220 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       onChanged();
       ;
       return cryptoDeterministicConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ReplaceDictionaryConfig,
+            com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder,
+            com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder>
+        replaceDictionaryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     *
+     * @return Whether the replaceDictionaryConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasReplaceDictionaryConfig() {
+      return transformationCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     *
+     * @return The replaceDictionaryConfig.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ReplaceDictionaryConfig getReplaceDictionaryConfig() {
+      if (replaceDictionaryConfigBuilder_ == null) {
+        if (transformationCase_ == 13) {
+          return (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_;
+        }
+        return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
+      } else {
+        if (transformationCase_ == 13) {
+          return replaceDictionaryConfigBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     */
+    public Builder setReplaceDictionaryConfig(
+        com.google.privacy.dlp.v2.ReplaceDictionaryConfig value) {
+      if (replaceDictionaryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transformation_ = value;
+        onChanged();
+      } else {
+        replaceDictionaryConfigBuilder_.setMessage(value);
+      }
+      transformationCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     */
+    public Builder setReplaceDictionaryConfig(
+        com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder builderForValue) {
+      if (replaceDictionaryConfigBuilder_ == null) {
+        transformation_ = builderForValue.build();
+        onChanged();
+      } else {
+        replaceDictionaryConfigBuilder_.setMessage(builderForValue.build());
+      }
+      transformationCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     */
+    public Builder mergeReplaceDictionaryConfig(
+        com.google.privacy.dlp.v2.ReplaceDictionaryConfig value) {
+      if (replaceDictionaryConfigBuilder_ == null) {
+        if (transformationCase_ == 13
+            && transformation_
+                != com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance()) {
+          transformation_ =
+              com.google.privacy.dlp.v2.ReplaceDictionaryConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transformation_ = value;
+        }
+        onChanged();
+      } else {
+        if (transformationCase_ == 13) {
+          replaceDictionaryConfigBuilder_.mergeFrom(value);
+        }
+        replaceDictionaryConfigBuilder_.setMessage(value);
+      }
+      transformationCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     */
+    public Builder clearReplaceDictionaryConfig() {
+      if (replaceDictionaryConfigBuilder_ == null) {
+        if (transformationCase_ == 13) {
+          transformationCase_ = 0;
+          transformation_ = null;
+          onChanged();
+        }
+      } else {
+        if (transformationCase_ == 13) {
+          transformationCase_ = 0;
+          transformation_ = null;
+        }
+        replaceDictionaryConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     */
+    public com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder
+        getReplaceDictionaryConfigBuilder() {
+      return getReplaceDictionaryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder
+        getReplaceDictionaryConfigOrBuilder() {
+      if ((transformationCase_ == 13) && (replaceDictionaryConfigBuilder_ != null)) {
+        return replaceDictionaryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (transformationCase_ == 13) {
+          return (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_;
+        }
+        return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replace with a value randomly drawn (with replacement) from a dictionary.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceDictionaryConfig replace_dictionary_config = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ReplaceDictionaryConfig,
+            com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder,
+            com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder>
+        getReplaceDictionaryConfigFieldBuilder() {
+      if (replaceDictionaryConfigBuilder_ == null) {
+        if (!(transformationCase_ == 13)) {
+          transformation_ = com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
+        }
+        replaceDictionaryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.ReplaceDictionaryConfig,
+                com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder,
+                com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder>(
+                (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_,
+                getParentForChildren(),
+                isClean());
+        transformation_ = null;
+      }
+      transformationCase_ = 13;
+      onChanged();
+      ;
+      return replaceDictionaryConfigBuilder_;
     }
 
     @java.lang.Override

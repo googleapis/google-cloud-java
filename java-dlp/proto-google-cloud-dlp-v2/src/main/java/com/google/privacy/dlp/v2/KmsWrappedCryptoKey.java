@@ -23,10 +23,14 @@ package com.google.privacy.dlp.v2;
  *
  * <pre>
  * Include to use an existing data crypto key wrapped by KMS.
- * The wrapped key must be a 128/192/256 bit key.
+ * The wrapped key must be a 128-, 192-, or 256-bit key.
  * Authorization requires the following IAM permissions when sending a request
- * to perform a crypto transformation using a kms-wrapped crypto key:
+ * to perform a crypto transformation using a KMS-wrapped crypto key:
  * dlp.kms.encrypt
+ * For more information, see [Creating a wrapped key]
+ * (https://cloud.google.com/dlp/docs/create-wrapped-key).
+ * Note: When you use Cloud KMS for cryptographic operations,
+ * [charges apply](https://cloud.google.com/kms/pricing).
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.KmsWrappedCryptoKey}
@@ -361,10 +365,14 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Include to use an existing data crypto key wrapped by KMS.
-   * The wrapped key must be a 128/192/256 bit key.
+   * The wrapped key must be a 128-, 192-, or 256-bit key.
    * Authorization requires the following IAM permissions when sending a request
-   * to perform a crypto transformation using a kms-wrapped crypto key:
+   * to perform a crypto transformation using a KMS-wrapped crypto key:
    * dlp.kms.encrypt
+   * For more information, see [Creating a wrapped key]
+   * (https://cloud.google.com/dlp/docs/create-wrapped-key).
+   * Note: When you use Cloud KMS for cryptographic operations,
+   * [charges apply](https://cloud.google.com/kms/pricing).
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.KmsWrappedCryptoKey}

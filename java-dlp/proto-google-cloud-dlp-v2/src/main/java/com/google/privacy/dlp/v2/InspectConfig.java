@@ -322,7 +322,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration to control the number of findings returned.
+   * Configuration to control the number of findings returned. Cannot be set if
+   * de-identification is requested.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}
@@ -1673,7 +1674,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration to control the number of findings returned.
+     * Configuration to control the number of findings returned. Cannot be set if
+     * de-identification is requested.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}

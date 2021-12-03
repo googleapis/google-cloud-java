@@ -232,4 +232,56 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
   com.google.privacy.dlp.v2.FieldIdOrBuilder getExcludedFieldsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.FieldId> getIncludedFieldsList();
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  com.google.privacy.dlp.v2.FieldId getIncludedFields(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  int getIncludedFieldsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
+      getIncludedFieldsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  com.google.privacy.dlp.v2.FieldIdOrBuilder getIncludedFieldsOrBuilder(int index);
 }

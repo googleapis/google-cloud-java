@@ -2733,9 +2733,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
+   * asynchronously. To review the findings monitor the jobs within the trigger.
    *
    * <p>Sample code:
    *
@@ -2761,9 +2759,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
+   * asynchronously. To review the findings monitor the jobs within the trigger.
    *
    * <p>Sample code:
    *
@@ -2787,9 +2783,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
+   * asynchronously. To review the findings monitor the jobs within the trigger.
    *
    * <p>Sample code:
    *
@@ -2816,9 +2810,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
+   * asynchronously. To review the findings monitor the jobs within the trigger.
    *
    * <p>Sample code:
    *
@@ -3051,6 +3043,7 @@ public class DlpServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
    *           .setFilter("filter-1274492040")
+   *           .setType(DlpJobType.forNumber(0))
    *           .setLocationId("locationId1541836720")
    *           .build();
    *   for (JobTrigger element : dlpServiceClient.listJobTriggers(request).iterateAll()) {
@@ -3081,6 +3074,7 @@ public class DlpServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
    *           .setFilter("filter-1274492040")
+   *           .setType(DlpJobType.forNumber(0))
    *           .setLocationId("locationId1541836720")
    *           .build();
    *   ApiFuture<JobTrigger> future =
@@ -3112,6 +3106,7 @@ public class DlpServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setOrderBy("orderBy-1207110587")
    *           .setFilter("filter-1274492040")
+   *           .setType(DlpJobType.forNumber(0))
    *           .setLocationId("locationId1541836720")
    *           .build();
    *   while (true) {
@@ -3309,7 +3304,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
-   * @param inspectJob Set to control what and how to inspect.
+   * @param inspectJob An inspection job scans a storage repository for InfoTypes.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(LocationName parent, InspectJobConfig inspectJob) {
@@ -3351,7 +3346,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
-   * @param riskJob Set to choose what metric to calculate.
+   * @param riskJob A risk analysis job calculates re-identification risk metrics for a BigQuery
+   *     table.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(LocationName parent, RiskAnalysisJobConfig riskJob) {
@@ -3393,7 +3389,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
-   * @param inspectJob Set to control what and how to inspect.
+   * @param inspectJob An inspection job scans a storage repository for InfoTypes.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(ProjectName parent, InspectJobConfig inspectJob) {
@@ -3435,7 +3431,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
-   * @param riskJob Set to choose what metric to calculate.
+   * @param riskJob A risk analysis job calculates re-identification risk metrics for a BigQuery
+   *     table.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(ProjectName parent, RiskAnalysisJobConfig riskJob) {
@@ -3477,7 +3474,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
-   * @param inspectJob Set to control what and how to inspect.
+   * @param inspectJob An inspection job scans a storage repository for InfoTypes.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(String parent, InspectJobConfig inspectJob) {
@@ -3516,7 +3513,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
-   * @param riskJob Set to choose what metric to calculate.
+   * @param riskJob A risk analysis job calculates re-identification risk metrics for a BigQuery
+   *     table.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(String parent, RiskAnalysisJobConfig riskJob) {
@@ -4976,10 +4974,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
+   * Inspect hybrid content and store findings to a job. To review the findings, inspect the job.
+   * Inspection will occur asynchronously.
    *
    * <p>Sample code:
    *
@@ -5004,10 +5000,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
+   * Inspect hybrid content and store findings to a job. To review the findings, inspect the job.
+   * Inspection will occur asynchronously.
    *
    * <p>Sample code:
    *
@@ -5030,10 +5024,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
+   * Inspect hybrid content and store findings to a job. To review the findings, inspect the job.
+   * Inspection will occur asynchronously.
    *
    * <p>Sample code:
    *
@@ -5057,10 +5049,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
+   * Inspect hybrid content and store findings to a job. To review the findings, inspect the job.
+   * Inspection will occur asynchronously.
    *
    * <p>Sample code:
    *
@@ -5086,9 +5076,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
-   * actions that have not yet run. Early access feature is in a pre-release state and might change
-   * or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
+   * actions that have not yet run.
    *
    * <p>Sample code:
    *
@@ -5112,9 +5100,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
-   * actions that have not yet run. Early access feature is in a pre-release state and might change
-   * or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
+   * actions that have not yet run.
    *
    * <p>Sample code:
    *

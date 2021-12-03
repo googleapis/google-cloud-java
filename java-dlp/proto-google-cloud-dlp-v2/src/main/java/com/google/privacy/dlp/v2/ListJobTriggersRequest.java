@@ -42,6 +42,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     pageToken_ = "";
     orderBy_ = "";
     filter_ = "";
+    type_ = 0;
     locationId_ = "";
   }
 
@@ -105,6 +106,13 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
               java.lang.String s = input.readStringRequireUtf8();
 
               filter_ = s;
+              break;
+            }
+          case 48:
+            {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
           case 58:
@@ -377,7 +385,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
-   * * Supported fields/values for inspect jobs:
+   * * Supported fields/values for inspect triggers:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
    *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -418,7 +426,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
-   * * Supported fields/values for inspect jobs:
+   * * Supported fields/values for inspect triggers:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
    *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -448,6 +456,42 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 6;
+  private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DlpJobType getType() {
+    @SuppressWarnings("deprecation")
+    com.google.privacy.dlp.v2.DlpJobType result =
+        com.google.privacy.dlp.v2.DlpJobType.valueOf(type_);
+    return result == null ? com.google.privacy.dlp.v2.DlpJobType.UNRECOGNIZED : result;
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 7;
@@ -528,6 +572,9 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
+    if (type_ != com.google.privacy.dlp.v2.DlpJobType.DLP_JOB_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, type_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, locationId_);
     }
@@ -555,6 +602,9 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
+    if (type_ != com.google.privacy.dlp.v2.DlpJobType.DLP_JOB_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, type_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, locationId_);
     }
@@ -579,6 +629,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     if (getPageSize() != other.getPageSize()) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (type_ != other.type_) return false;
     if (!getLocationId().equals(other.getLocationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -601,6 +652,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getOrderBy().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (37 * hash) + LOCATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getLocationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -758,6 +811,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
 
       filter_ = "";
 
+      type_ = 0;
+
       locationId_ = "";
 
       return this;
@@ -792,6 +847,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
       result.pageSize_ = pageSize_;
       result.orderBy_ = orderBy_;
       result.filter_ = filter_;
+      result.type_ = type_;
       result.locationId_ = locationId_;
       onBuilt();
       return result;
@@ -861,6 +917,9 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
         onChanged();
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
@@ -1406,7 +1465,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values for inspect jobs:
+     * * Supported fields/values for inspect triggers:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -1446,7 +1505,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values for inspect jobs:
+     * * Supported fields/values for inspect triggers:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -1486,7 +1545,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values for inspect jobs:
+     * * Supported fields/values for inspect triggers:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -1525,7 +1584,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values for inspect jobs:
+     * * Supported fields/values for inspect triggers:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -1560,7 +1619,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values for inspect jobs:
+     * * Supported fields/values for inspect triggers:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -1587,6 +1646,97 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
 
       filter_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DlpJobType getType() {
+      @SuppressWarnings("deprecation")
+      com.google.privacy.dlp.v2.DlpJobType result =
+          com.google.privacy.dlp.v2.DlpJobType.valueOf(type_);
+      return result == null ? com.google.privacy.dlp.v2.DlpJobType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.privacy.dlp.v2.DlpJobType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DlpJobType type = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+
+      type_ = 0;
       onChanged();
       return this;
     }

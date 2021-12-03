@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Schedule for triggeredJobs.
+ * Schedule for inspect job triggers.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.Schedule}
@@ -403,7 +403,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Schedule for triggeredJobs.
+   * Schedule for inspect job triggers.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Schedule}

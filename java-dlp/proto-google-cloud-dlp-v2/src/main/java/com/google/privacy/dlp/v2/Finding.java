@@ -44,6 +44,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     resourceName_ = "";
     triggerName_ = "";
     jobName_ = "";
+    findingId_ = "";
   }
 
   @java.lang.Override
@@ -205,6 +206,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              findingId_ = s;
               break;
             }
           default:
@@ -918,6 +926,55 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FINDING_ID_FIELD_NUMBER = 15;
+  private volatile java.lang.Object findingId_;
+  /**
+   *
+   *
+   * <pre>
+   * The unique finding id.
+   * </pre>
+   *
+   * <code>string finding_id = 15;</code>
+   *
+   * @return The findingId.
+   */
+  @java.lang.Override
+  public java.lang.String getFindingId() {
+    java.lang.Object ref = findingId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      findingId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unique finding id.
+   * </pre>
+   *
+   * <code>string finding_id = 15;</code>
+   *
+   * @return The bytes for findingId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFindingIdBytes() {
+    java.lang.Object ref = findingId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      findingId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -966,6 +1023,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(findingId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, findingId_);
     }
     unknownFields.writeTo(output);
   }
@@ -1019,6 +1079,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(findingId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, findingId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1061,6 +1124,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!getJobCreateTime().equals(other.getJobCreateTime())) return false;
     }
     if (!getJobName().equals(other.getJobName())) return false;
+    if (!getFindingId().equals(other.getFindingId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1108,6 +1172,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + JOB_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getJobName().hashCode();
+    hash = (37 * hash) + FINDING_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getFindingId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1315,6 +1381,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       jobName_ = "";
 
+      findingId_ = "";
+
       return this;
     }
 
@@ -1375,6 +1443,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.jobCreateTime_ = jobCreateTimeBuilder_.build();
       }
       result.jobName_ = jobName_;
+      result.findingId_ = findingId_;
       onBuilt();
       return result;
     }
@@ -1461,6 +1530,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getJobName().isEmpty()) {
         jobName_ = other.jobName_;
+        onChanged();
+      }
+      if (!other.getFindingId().isEmpty()) {
+        findingId_ = other.findingId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3304,6 +3377,112 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       jobName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object findingId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique finding id.
+     * </pre>
+     *
+     * <code>string finding_id = 15;</code>
+     *
+     * @return The findingId.
+     */
+    public java.lang.String getFindingId() {
+      java.lang.Object ref = findingId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        findingId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique finding id.
+     * </pre>
+     *
+     * <code>string finding_id = 15;</code>
+     *
+     * @return The bytes for findingId.
+     */
+    public com.google.protobuf.ByteString getFindingIdBytes() {
+      java.lang.Object ref = findingId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        findingId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique finding id.
+     * </pre>
+     *
+     * <code>string finding_id = 15;</code>
+     *
+     * @param value The findingId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFindingId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      findingId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique finding id.
+     * </pre>
+     *
+     * <code>string finding_id = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFindingId() {
+
+      findingId_ = getDefaultInstance().getFindingId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique finding id.
+     * </pre>
+     *
+     * <code>string finding_id = 15;</code>
+     *
+     * @param value The bytes for findingId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFindingIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      findingId_ = value;
       onChanged();
       return this;
     }

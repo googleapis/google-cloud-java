@@ -78,7 +78,7 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Set to control what and how to inspect.
+   * An inspection job scans a storage repository for InfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -90,7 +90,7 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Set to control what and how to inspect.
+   * An inspection job scans a storage repository for InfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -102,7 +102,7 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Set to control what and how to inspect.
+   * An inspection job scans a storage repository for InfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -113,7 +113,8 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Set to choose what metric to calculate.
+   * A risk analysis job calculates re-identification risk metrics for a
+   * BigQuery table.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -125,7 +126,8 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Set to choose what metric to calculate.
+   * A risk analysis job calculates re-identification risk metrics for a
+   * BigQuery table.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -137,7 +139,8 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Set to choose what metric to calculate.
+   * A risk analysis job calculates re-identification risk metrics for a
+   * BigQuery table.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>

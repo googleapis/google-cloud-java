@@ -41,6 +41,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     identifyingFields_ = java.util.Collections.emptyList();
     sampleMethod_ = 0;
     excludedFields_ = java.util.Collections.emptyList();
+    includedFields_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -126,6 +127,16 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
               rowsLimitPercent_ = input.readInt32();
               break;
             }
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                includedFields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              includedFields_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +156,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         excludedFields_ = java.util.Collections.unmodifiableList(excludedFields_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        includedFields_ = java.util.Collections.unmodifiableList(includedFields_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -593,6 +607,75 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     return excludedFields_.get(index);
   }
 
+  public static final int INCLUDED_FIELDS_FIELD_NUMBER = 7;
+  private java.util.List<com.google.privacy.dlp.v2.FieldId> includedFields_;
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.privacy.dlp.v2.FieldId> getIncludedFieldsList() {
+    return includedFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
+      getIncludedFieldsOrBuilderList() {
+    return includedFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  @java.lang.Override
+  public int getIncludedFieldsCount() {
+    return includedFields_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.FieldId getIncludedFields(int index) {
+    return includedFields_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Limit scanning only to these fields.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.FieldIdOrBuilder getIncludedFieldsOrBuilder(int index) {
+    return includedFields_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -627,6 +710,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     if (rowsLimitPercent_ != 0) {
       output.writeInt32(6, rowsLimitPercent_);
     }
+    for (int i = 0; i < includedFields_.size(); i++) {
+      output.writeMessage(7, includedFields_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -657,6 +743,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     if (rowsLimitPercent_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, rowsLimitPercent_);
     }
+    for (int i = 0; i < includedFields_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, includedFields_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -682,6 +771,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     if (getRowsLimitPercent() != other.getRowsLimitPercent()) return false;
     if (sampleMethod_ != other.sampleMethod_) return false;
     if (!getExcludedFieldsList().equals(other.getExcludedFieldsList())) return false;
+    if (!getIncludedFieldsList().equals(other.getIncludedFieldsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -710,6 +800,10 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     if (getExcludedFieldsCount() > 0) {
       hash = (37 * hash) + EXCLUDED_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getExcludedFieldsList().hashCode();
+    }
+    if (getIncludedFieldsCount() > 0) {
+      hash = (37 * hash) + INCLUDED_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludedFieldsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -853,6 +947,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getIdentifyingFieldsFieldBuilder();
         getExcludedFieldsFieldBuilder();
+        getIncludedFieldsFieldBuilder();
       }
     }
 
@@ -882,6 +977,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         excludedFieldsBuilder_.clear();
+      }
+      if (includedFieldsBuilder_ == null) {
+        includedFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        includedFieldsBuilder_.clear();
       }
       return this;
     }
@@ -936,6 +1037,15 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         result.excludedFields_ = excludedFields_;
       } else {
         result.excludedFields_ = excludedFieldsBuilder_.build();
+      }
+      if (includedFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          includedFields_ = java.util.Collections.unmodifiableList(includedFields_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.includedFields_ = includedFields_;
+      } else {
+        result.includedFields_ = includedFieldsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1049,6 +1159,33 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
                     : null;
           } else {
             excludedFieldsBuilder_.addAllMessages(other.excludedFields_);
+          }
+        }
+      }
+      if (includedFieldsBuilder_ == null) {
+        if (!other.includedFields_.isEmpty()) {
+          if (includedFields_.isEmpty()) {
+            includedFields_ = other.includedFields_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureIncludedFieldsIsMutable();
+            includedFields_.addAll(other.includedFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.includedFields_.isEmpty()) {
+          if (includedFieldsBuilder_.isEmpty()) {
+            includedFieldsBuilder_.dispose();
+            includedFieldsBuilder_ = null;
+            includedFields_ = other.includedFields_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            includedFieldsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getIncludedFieldsFieldBuilder()
+                    : null;
+          } else {
+            includedFieldsBuilder_.addAllMessages(other.includedFields_);
           }
         }
       }
@@ -2251,6 +2388,359 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         excludedFields_ = null;
       }
       return excludedFieldsBuilder_;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.FieldId> includedFields_ =
+        java.util.Collections.emptyList();
+
+    private void ensureIncludedFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        includedFields_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>(includedFields_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
+        includedFieldsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.FieldId> getIncludedFieldsList() {
+      if (includedFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(includedFields_);
+      } else {
+        return includedFieldsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public int getIncludedFieldsCount() {
+      if (includedFieldsBuilder_ == null) {
+        return includedFields_.size();
+      } else {
+        return includedFieldsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId getIncludedFields(int index) {
+      if (includedFieldsBuilder_ == null) {
+        return includedFields_.get(index);
+      } else {
+        return includedFieldsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder setIncludedFields(int index, com.google.privacy.dlp.v2.FieldId value) {
+      if (includedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncludedFieldsIsMutable();
+        includedFields_.set(index, value);
+        onChanged();
+      } else {
+        includedFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder setIncludedFields(
+        int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      if (includedFieldsBuilder_ == null) {
+        ensureIncludedFieldsIsMutable();
+        includedFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        includedFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder addIncludedFields(com.google.privacy.dlp.v2.FieldId value) {
+      if (includedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncludedFieldsIsMutable();
+        includedFields_.add(value);
+        onChanged();
+      } else {
+        includedFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder addIncludedFields(int index, com.google.privacy.dlp.v2.FieldId value) {
+      if (includedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncludedFieldsIsMutable();
+        includedFields_.add(index, value);
+        onChanged();
+      } else {
+        includedFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder addIncludedFields(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      if (includedFieldsBuilder_ == null) {
+        ensureIncludedFieldsIsMutable();
+        includedFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        includedFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder addIncludedFields(
+        int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      if (includedFieldsBuilder_ == null) {
+        ensureIncludedFieldsIsMutable();
+        includedFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        includedFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder addAllIncludedFields(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
+      if (includedFieldsBuilder_ == null) {
+        ensureIncludedFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedFields_);
+        onChanged();
+      } else {
+        includedFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder clearIncludedFields() {
+      if (includedFieldsBuilder_ == null) {
+        includedFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        includedFieldsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public Builder removeIncludedFields(int index) {
+      if (includedFieldsBuilder_ == null) {
+        ensureIncludedFieldsIsMutable();
+        includedFields_.remove(index);
+        onChanged();
+      } else {
+        includedFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId.Builder getIncludedFieldsBuilder(int index) {
+      return getIncludedFieldsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldIdOrBuilder getIncludedFieldsOrBuilder(int index) {
+      if (includedFieldsBuilder_ == null) {
+        return includedFields_.get(index);
+      } else {
+        return includedFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
+        getIncludedFieldsOrBuilderList() {
+      if (includedFieldsBuilder_ != null) {
+        return includedFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(includedFields_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId.Builder addIncludedFieldsBuilder() {
+      return getIncludedFieldsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId.Builder addIncludedFieldsBuilder(int index) {
+      return getIncludedFieldsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Limit scanning only to these fields.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder>
+        getIncludedFieldsBuilderList() {
+      return getIncludedFieldsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
+        getIncludedFieldsFieldBuilder() {
+      if (includedFieldsBuilder_ == null) {
+        includedFieldsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                includedFields_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        includedFields_ = null;
+      }
+      return includedFieldsBuilder_;
     }
 
     @java.lang.Override

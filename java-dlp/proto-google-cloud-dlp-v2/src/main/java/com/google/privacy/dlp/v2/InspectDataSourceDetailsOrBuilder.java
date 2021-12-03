@@ -66,7 +66,7 @@ public interface InspectDataSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * A summary of the outcome of this inspect job.
+   * A summary of the outcome of this inspection job.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -78,7 +78,7 @@ public interface InspectDataSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * A summary of the outcome of this inspect job.
+   * A summary of the outcome of this inspection job.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -90,7 +90,7 @@ public interface InspectDataSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * A summary of the outcome of this inspect job.
+   * A summary of the outcome of this inspection job.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
