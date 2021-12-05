@@ -132,50 +132,16 @@ public class ContextTest {
 
   @Test
   public void testParsingW3CTraceParent() {
-    final String TRACEPARENT_NO_TRACE = "00--SPAN_ID-FLAGS";
-    final String TRACEPARENT_TRACE_ONLY = "00-" + TEST_TRACE_ID + "--SPAN_ID-FLAGS";
-    final String TRACEPARENT_TRACE_FULL = "00-" + TEST_TRACE_ID + "-" + TEST_SPAN_ID + "-FLAGS";
+    final String W3C_TEST_TRACE_ID = "12345678901234567890123456789012";
+    final String W3C_TEST_SPAN_ID = "1234567890123456";
+    final String W3C_TRACE_CONTEXT = "00-" + W3C_TEST_TRACE_ID + "-" + W3C_TEST_SPAN_ID + "-00";
 
     Context.Builder builder = Context.newBuilder();
 
     builder.loadW3CTraceParentContext(null);
     assertTraceAndSpan(builder.build(), null, null);
-    builder.loadW3CTraceParentContext(TRACEPARENT_NO_TRACE);
-    assertTraceAndSpan(builder.build(), null, null);
-    builder.loadW3CTraceParentContext(TRACEPARENT_TRACE_ONLY);
-    assertTraceAndSpan(builder.build(), TEST_TRACE_ID, null);
-    builder.loadW3CTraceParentContext(TRACEPARENT_TRACE_FULL);
-    assertTraceAndSpan(builder.build(), TEST_TRACE_ID, TEST_SPAN_ID);
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testEmptyW3CTraceParent() {
-    Context.Builder builder = Context.newBuilder();
-    builder.loadW3CTraceParentContext("");
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testInvalidFormatW3CTraceParent() {
-    Context.Builder builder = Context.newBuilder();
-    builder.loadW3CTraceParentContext("TRACE_ID/SPAN_ID;o=TRACE_TRUE");
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testInvalidFormatW3CTraceParent1Dash() {
-    Context.Builder builder = Context.newBuilder();
-    builder.loadW3CTraceParentContext("00-TRACE_ID");
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testInvalidFormatW3CTraceParentWithoutFlag() {
-    Context.Builder builder = Context.newBuilder();
-    builder.loadW3CTraceParentContext("00-TRACE_ID-SPAN_ID-");
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testInvalidVersionW3CTraceParent() {
-    Context.Builder builder = Context.newBuilder();
-    builder.loadW3CTraceParentContext("01-TRACE_ID-SPAN_ID-FLAGS");
+    builder.loadW3CTraceParentContext(W3C_TRACE_CONTEXT);
+    assertTraceAndSpan(builder.build(), W3C_TEST_TRACE_ID, W3C_TEST_SPAN_ID);
   }
 
   private void assertTraceAndSpan(Context context, String expectedTraceId, String expectedSpanId) {

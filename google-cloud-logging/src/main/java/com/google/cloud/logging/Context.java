@@ -18,11 +18,17 @@ package com.google.cloud.logging;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Strings;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /** Class to hold context attributes including information about {@see HttpRequest} and tracing. */
 public class Context {
+  // validate W3C trace context value on load according to the existing version format.
+  // see https://www.w3.org/TR/trace-context/#traceparent-header-field-values for details.
+  private static final Pattern W3C_TRACE_CONTEXT_FORMAT =
+      Pattern.compile(
+          "^00-(?!00000000000000000000000000000000)[0-9a-f]{32}-(?!0000000000000000)[0-9a-f]{16}-[0-9a-f]{2}$");
   private final HttpRequest request;
   private final String traceId;
   private final String spanId;
@@ -142,26 +148,15 @@ public class Context {
      */
     public Builder loadW3CTraceParentContext(String traceParent) throws IllegalArgumentException {
       if (traceParent != null) {
-        String[] fields = traceParent.split("-");
-        if (fields.length > 3) {
-          String versionFormat = fields[0];
-          if (!versionFormat.equals("00")) {
-            throw new IllegalArgumentException("Not supporting versionFormat other than \"00\"");
-          }
-        } else {
+        Matcher validator = W3C_TRACE_CONTEXT_FORMAT.matcher(traceParent.toLowerCase());
+        if (!validator.matches()) {
           throw new IllegalArgumentException(
-              "Invalid format of the header value. Expected \"00-traceid-spanid-arguments\"");
+              "Invalid format of the header value. The value does not match W3C Trace Context version \"00\"");
         }
-        String traceId = fields[1];
-        if (!traceId.isEmpty()) {
-          setTraceId(traceId);
-        }
-        if (!Strings.isNullOrEmpty(traceId)) {
-          String spanId = fields[2];
-          if (!spanId.isEmpty()) {
-            setSpanId(spanId);
-          }
-        }
+        String[] fields = traceParent.split("-");
+        setTraceId(fields[1]);
+        setSpanId(fields[2]);
+        // fields[3] contains flag(s)
       }
       return this;
     }
