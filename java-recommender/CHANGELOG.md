@@ -1,5 +1,23 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-recommender/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-recommender/issues/1266)) ([#660](https://www.github.com/googleapis/java-recommender/issues/660)) ([fbf1be6](https://www.github.com/googleapis/java-recommender/commit/fbf1be62b6c636c2bfb118b868ca1e3454890a6d))
+
+
+### Documentation
+
+* fix docstring formatting ([#663](https://www.github.com/googleapis/java-recommender/issues/663)) ([f0f13e3](https://www.github.com/googleapis/java-recommender/commit/f0f13e3d215e53d1df2a8b9aacf7cf43649048ce))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#671](https://www.github.com/googleapis/java-recommender/issues/671)) ([96d11d5](https://www.github.com/googleapis/java-recommender/commit/96d11d5977e8c398dff69eef767844c5d8d3b955))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#679](https://www.github.com/googleapis/java-recommender/issues/679)) ([5afed8c](https://www.github.com/googleapis/java-recommender/commit/5afed8c10509b9a29d01e5dec522faf17ca9e9a9))
+
 ### [2.1.3](https://www.github.com/googleapis/java-recommender/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
