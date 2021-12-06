@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.8.3](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.8.2...v0.8.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-recommendations-ai/issues/1299)) ([#445](https://www.github.com/googleapis/java-recommendations-ai/issues/445)) ([87d03b1](https://www.github.com/googleapis/java-recommendations-ai/commit/87d03b1c1bfbf56c1be49fdd4b20b5364b626ff2))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-recommendations-ai/issues/1266)) ([#429](https://www.github.com/googleapis/java-recommendations-ai/issues/429)) ([f666b65](https://www.github.com/googleapis/java-recommendations-ai/commit/f666b6508240dd56c504e2f331d7739a9ecbf4e7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#439](https://www.github.com/googleapis/java-recommendations-ai/issues/439)) ([68a2ab2](https://www.github.com/googleapis/java-recommendations-ai/commit/68a2ab21e3b4477dfc4774f98510b55bddc0f428))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#444](https://www.github.com/googleapis/java-recommendations-ai/issues/444)) ([9215a87](https://www.github.com/googleapis/java-recommendations-ai/commit/9215a87afbcf353f20e288dc4dbb011806bd1f33))
+
 ### [0.8.2](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.8.1...v0.8.2) (2021-10-20)
 
 
