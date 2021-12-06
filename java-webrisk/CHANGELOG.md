@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.0.7](https://www.github.com/googleapis/java-webrisk/compare/v2.0.6...v2.0.7) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-webrisk/issues/1299)) ([#579](https://www.github.com/googleapis/java-webrisk/issues/579)) ([2aa442d](https://www.github.com/googleapis/java-webrisk/commit/2aa442d52fc403132bb02b9126cda072a4d9c59a))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-webrisk/issues/1266)) ([#562](https://www.github.com/googleapis/java-webrisk/issues/562)) ([a7b204b](https://www.github.com/googleapis/java-webrisk/commit/a7b204b7394e6f844995c2cd6cdf197131857a3e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#572](https://www.github.com/googleapis/java-webrisk/issues/572)) ([a15b305](https://www.github.com/googleapis/java-webrisk/commit/a15b305162600da8bf792f544ad53701987db868))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#578](https://www.github.com/googleapis/java-webrisk/issues/578)) ([f1da6a9](https://www.github.com/googleapis/java-webrisk/commit/f1da6a962ed73e9ca73e5fe39fc6090949bebf75))
+
 ### [2.0.6](https://www.github.com/googleapis/java-webrisk/compare/v2.0.5...v2.0.6) (2021-10-20)
 
 
