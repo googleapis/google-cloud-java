@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-securitycenter/compare/v2.2.0...v2.3.0) (2021-12-06)
+
+
+### Features
+
+* Added a new API method UpdateExternalSystem, which enables updating a finding w/ external system metadata. External systems are a child resource under finding, and are housed on the finding itself, and can also be filtered on in Notifications, th... ([#705](https://www.github.com/googleapis/java-securitycenter/issues/705)) ([73ee05e](https://www.github.com/googleapis/java-securitycenter/commit/73ee05ef049b42cf05d8ab9ccd2f7cd9cb3d49e3))
+* Added mute related APIs, proto messages and fields ([#702](https://www.github.com/googleapis/java-securitycenter/issues/702)) ([5b88a33](https://www.github.com/googleapis/java-securitycenter/commit/5b88a33193d2eaba1e1b03bba42271211f61b2de))
+* Added resource type and display_name field to the FindingResult, and supported them in the filter for ListFindings and GroupFindings. Also added display_name to the resource which is surfaced in NotificationMessage ([#693](https://www.github.com/googleapis/java-securitycenter/issues/693)) ([bf8f477](https://www.github.com/googleapis/java-securitycenter/commit/bf8f4774bb18da8568d1dacefa09900a54007e62))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-securitycenter/issues/1299)) ([#711](https://www.github.com/googleapis/java-securitycenter/issues/711)) ([88d9aa6](https://www.github.com/googleapis/java-securitycenter/commit/88d9aa6ea93f0c0802c3adb6a479c727c6680b6d))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-securitycenter/issues/1266)) ([#688](https://www.github.com/googleapis/java-securitycenter/issues/688)) ([ae4bc65](https://www.github.com/googleapis/java-securitycenter/commit/ae4bc65147b692b6237eb9683e698258857374bb))
+
+
+### Documentation
+
+* fix docstring formatting ([#698](https://www.github.com/googleapis/java-securitycenter/issues/698)) ([ccf2673](https://www.github.com/googleapis/java-securitycenter/commit/ccf2673592aab31731db307c20b4779809a1547a))
+* fix docstring formatting ([#704](https://www.github.com/googleapis/java-securitycenter/issues/704)) ([9508222](https://www.github.com/googleapis/java-securitycenter/commit/950822299d7adcaf123992d0a668a37c901b96a2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#701](https://www.github.com/googleapis/java-securitycenter/issues/701)) ([3f862c6](https://www.github.com/googleapis/java-securitycenter/commit/3f862c6263b382d5012909a6979715a2dac4ea7d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#710](https://www.github.com/googleapis/java-securitycenter/issues/710)) ([6a02612](https://www.github.com/googleapis/java-securitycenter/commit/6a02612320a2e888cc317be08eb55a0a6a0fdea7))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.0 ([#686](https://www.github.com/googleapis/java-securitycenter/issues/686)) ([dfa655f](https://www.github.com/googleapis/java-securitycenter/commit/dfa655fb3cf91d81f7175cf32e0fe7ac7f425e74))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#699](https://www.github.com/googleapis/java-securitycenter/issues/699)) ([5c9f5f0](https://www.github.com/googleapis/java-securitycenter/commit/5c9f5f0f7aa9e7e6112f102caa65671604db4efa))
+
 ## [2.2.0](https://www.github.com/googleapis/java-securitycenter/compare/v2.1.7...v2.2.0) (2021-10-20)
 
 
