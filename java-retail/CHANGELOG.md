@@ -1,5 +1,25 @@
 # Changelog
 
+### [2.0.6](https://www.github.com/googleapis/java-retail/compare/v2.0.5...v2.0.6) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-retail/issues/1266)) ([#233](https://www.github.com/googleapis/java-retail/issues/233)) ([c1f98d1](https://www.github.com/googleapis/java-retail/commit/c1f98d13edcd946b607e73a1328cbe2b9b827ecc))
+
+
+### Documentation
+
+* fix docstring formatting ([#234](https://www.github.com/googleapis/java-retail/issues/234)) ([510d7b6](https://www.github.com/googleapis/java-retail/commit/510d7b6bb87811fac75ad4c18c620672fdd1b9b7))
+* Keep the API doc up-to-date ([#226](https://www.github.com/googleapis/java-retail/issues/226)) ([49dbdde](https://www.github.com/googleapis/java-retail/commit/49dbddea8144fad949b6d2a21f391057e68e3bc0))
+* Keep the API doc up-to-date feat: update grpc service config settings to reflect correct API deadlines ([#246](https://www.github.com/googleapis/java-retail/issues/246)) ([328e806](https://www.github.com/googleapis/java-retail/commit/328e80629af57988001dab68aacd896f1fbc2804))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#243](https://www.github.com/googleapis/java-retail/issues/243)) ([dd2e912](https://www.github.com/googleapis/java-retail/commit/dd2e9122a32c389e0a19480691c968523932c333))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#249](https://www.github.com/googleapis/java-retail/issues/249)) ([b0b527a](https://www.github.com/googleapis/java-retail/commit/b0b527afed836af846dcef83d374d9be3ac62ca9))
+
 ### [2.0.5](https://www.github.com/googleapis/java-retail/compare/v2.0.4...v2.0.5) (2021-10-20)
 
 
