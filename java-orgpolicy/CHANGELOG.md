@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.0.7](https://www.github.com/googleapis/java-orgpolicy/compare/v2.0.6...v2.0.7) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-orgpolicy/issues/1266)) ([#276](https://www.github.com/googleapis/java-orgpolicy/issues/276)) ([e04e9ed](https://www.github.com/googleapis/java-orgpolicy/commit/e04e9edbfd336b7131a64da08f52234f3a77bd60))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#284](https://www.github.com/googleapis/java-orgpolicy/issues/284)) ([314c1dc](https://www.github.com/googleapis/java-orgpolicy/commit/314c1dcfaba8e8e3379a865a3ba681a63b0c651e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#288](https://www.github.com/googleapis/java-orgpolicy/issues/288)) ([f422188](https://www.github.com/googleapis/java-orgpolicy/commit/f422188a10c3e84737d5812f90267d117f41d006))
+
 ### [2.0.6](https://www.github.com/googleapis/java-orgpolicy/compare/v2.0.5...v2.0.6) (2021-10-19)
 
 
