@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-trace/compare/v2.0.6...v2.1.0) (2021-12-06)
+
+
+### Features
+
+* next release from main branch is 2.1.0 ([#657](https://www.github.com/googleapis/java-trace/issues/657)) ([c91ffe4](https://www.github.com/googleapis/java-trace/commit/c91ffe451e2b8b226d526f2e3a8417ce6dd62dd2))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-trace/issues/1299)) ([#680](https://www.github.com/googleapis/java-trace/issues/680)) ([60b76f4](https://www.github.com/googleapis/java-trace/commit/60b76f400a06d00c37e12a4de2f793e7bc31d95e))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-trace/issues/1266)) ([#662](https://www.github.com/googleapis/java-trace/issues/662)) ([02f9c53](https://www.github.com/googleapis/java-trace/commit/02f9c53165235ff8aee4a479e2318e71c0733a27))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#674](https://www.github.com/googleapis/java-trace/issues/674)) ([2c69a2a](https://www.github.com/googleapis/java-trace/commit/2c69a2ac734020e76dae300fe79da80791102b84))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#679](https://www.github.com/googleapis/java-trace/issues/679)) ([1149afa](https://www.github.com/googleapis/java-trace/commit/1149afa75a90127a675f3e1b7d236a0caafb9565))
+
 ### [2.0.6](https://www.github.com/googleapis/java-trace/compare/v2.0.5...v2.0.6) (2021-10-19)
 
 
