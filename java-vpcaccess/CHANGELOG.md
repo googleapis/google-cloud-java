@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-vpcaccess/compare/v2.1.3...v2.1.4) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-vpcaccess/issues/1299)) ([#118](https://www.github.com/googleapis/java-vpcaccess/issues/118)) ([399686f](https://www.github.com/googleapis/java-vpcaccess/commit/399686f8682a6458ac6e7c864db9b5447e476975))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-vpcaccess/issues/1266)) ([#104](https://www.github.com/googleapis/java-vpcaccess/issues/104)) ([44f9107](https://www.github.com/googleapis/java-vpcaccess/commit/44f9107a72fac211368aed0dd583ebeda8d99326))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#113](https://www.github.com/googleapis/java-vpcaccess/issues/113)) ([1adb4f9](https://www.github.com/googleapis/java-vpcaccess/commit/1adb4f99a51ad01e903a48bdc6096f86fad2cf2b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#117](https://www.github.com/googleapis/java-vpcaccess/issues/117)) ([5ab860e](https://www.github.com/googleapis/java-vpcaccess/commit/5ab860e9ca7a95dc8786d4641d089b9c97f22a68))
+
 ### [2.1.3](https://www.github.com/googleapis/java-vpcaccess/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
