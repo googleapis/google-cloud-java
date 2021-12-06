@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-workflows/compare/v2.1.3...v2.1.4) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-workflows/issues/1299)) ([#383](https://www.github.com/googleapis/java-workflows/issues/383)) ([e612767](https://www.github.com/googleapis/java-workflows/commit/e612767a7e52094293963097cb0b74345634f947))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-workflows/issues/1266)) ([#367](https://www.github.com/googleapis/java-workflows/issues/367)) ([b144e95](https://www.github.com/googleapis/java-workflows/commit/b144e95a151e31bc57f51096aebe6eb06d281b5d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#376](https://www.github.com/googleapis/java-workflows/issues/376)) ([273fe9a](https://www.github.com/googleapis/java-workflows/commit/273fe9ae3b8190554320e916b7efd74d55d8123f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#382](https://www.github.com/googleapis/java-workflows/issues/382)) ([f1260d1](https://www.github.com/googleapis/java-workflows/commit/f1260d1295703e54886ee6ecc0de3bb8db08a780))
+
 ### [2.1.3](https://www.github.com/googleapis/java-workflows/compare/v2.1.2...v2.1.3) (2021-10-20)
 
 
