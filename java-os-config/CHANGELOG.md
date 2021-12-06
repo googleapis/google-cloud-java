@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-os-config/compare/v2.2.2...v2.3.0) (2021-12-03)
+
+
+### Features
+
+* OSConfig: add OS policy assignment rpcs ([#391](https://www.github.com/googleapis/java-os-config/issues/391)) ([9d89d23](https://www.github.com/googleapis/java-os-config/commit/9d89d230f232dea605e9d86395abace90f8e2b1d))
+* Update OSConfig API ([#399](https://www.github.com/googleapis/java-os-config/issues/399)) ([1b4b542](https://www.github.com/googleapis/java-os-config/commit/1b4b54232ea638131a04134f921e85b160262f8b))
+* Update osconfig v1 and v1alpha RecurringSchedule.Frequency with DAILY frequency ([#383](https://www.github.com/googleapis/java-os-config/issues/383)) ([817cd53](https://www.github.com/googleapis/java-os-config/commit/817cd530797ac8d676454f5d08e40fdfaf8cbfbf))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-os-config/issues/1266)) ([#390](https://www.github.com/googleapis/java-os-config/issues/390)) ([ec96ce1](https://www.github.com/googleapis/java-os-config/commit/ec96ce1270661a1724ce43cb78d75280d26017f9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#400](https://www.github.com/googleapis/java-os-config/issues/400)) ([510e040](https://www.github.com/googleapis/java-os-config/commit/510e0402d9198affdaa5ccc09407cd0b5bcfde2b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#405](https://www.github.com/googleapis/java-os-config/issues/405)) ([696d5e1](https://www.github.com/googleapis/java-os-config/commit/696d5e164ddd7f6825c7cb67981096be8fa52bb5))
+
 ### [2.2.2](https://www.github.com/googleapis/java-os-config/compare/v2.2.1...v2.2.2) (2021-10-19)
 
 
