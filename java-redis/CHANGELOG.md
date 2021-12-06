@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-redis/compare/v2.0.6...v2.1.0) (2021-12-03)
+
+
+### Features
+
+* [Cloud Memorystore for Redis] Support Multiple Read Replicas when creating Instance ([#547](https://www.github.com/googleapis/java-redis/issues/547)) ([0b0fbf5](https://www.github.com/googleapis/java-redis/commit/0b0fbf5374bc38d13405df6a35c40148d0f464d2))
+* next release from main branch is 2.1.0 ([#541](https://www.github.com/googleapis/java-redis/issues/541)) ([6292cd5](https://www.github.com/googleapis/java-redis/commit/6292cd5b83e77c94fba56b10ebcc82f08f9eced0))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-redis/issues/1266)) ([#538](https://www.github.com/googleapis/java-redis/issues/538)) ([9e6cbf1](https://www.github.com/googleapis/java-redis/commit/9e6cbf158402072c88ec4758fd8c47b0f00406bc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#554](https://www.github.com/googleapis/java-redis/issues/554)) ([3065db4](https://www.github.com/googleapis/java-redis/commit/3065db41a17dbef04580c6e37e6adfc3e454117e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#562](https://www.github.com/googleapis/java-redis/issues/562)) ([162fdda](https://www.github.com/googleapis/java-redis/commit/162fdda75fbf4dce4f2f2c6f5a402d24dd808126))
+
 ### [2.0.6](https://www.github.com/googleapis/java-redis/compare/v2.0.5...v2.0.6) (2021-10-20)
 
 
