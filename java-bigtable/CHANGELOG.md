@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/googleapis/java-bigtable/compare/v2.3.0...v2.3.1) (2021-12-03)
+
+
+### Bug Fixes
+
+* add placeholder class for bigtable-stats ([#1075](https://www.github.com/googleapis/java-bigtable/issues/1075)) ([9d9f575](https://www.github.com/googleapis/java-bigtable/commit/9d9f57556216becfeb302bfaf5a4f35a9b73b611))
+* add status label to gfe metrics ([#1077](https://www.github.com/googleapis/java-bigtable/issues/1077)) ([777549e](https://www.github.com/googleapis/java-bigtable/commit/777549e6ac64a03c9bd67d6b5a5cf4819ba8656f))
+* make placeholder class public ([#1085](https://www.github.com/googleapis/java-bigtable/issues/1085)) ([879377a](https://www.github.com/googleapis/java-bigtable/commit/879377a03b86aa9a1f1035245c290ec78501b2cd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#1087](https://www.github.com/googleapis/java-bigtable/issues/1087)) ([f290ce7](https://www.github.com/googleapis/java-bigtable/commit/f290ce74f6b803b8c5786e8b4c69b9efa6995c59))
+
 ## [2.3.0](https://www.github.com/googleapis/java-bigtable/compare/v2.2.0...v2.3.0) (2021-11-16)
 
 
