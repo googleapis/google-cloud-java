@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.5.3](https://www.github.com/googleapis/java-gkehub/compare/v0.5.2...v0.5.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-gkehub/issues/1299)) ([#159](https://www.github.com/googleapis/java-gkehub/issues/159)) ([ffa9bc2](https://www.github.com/googleapis/java-gkehub/commit/ffa9bc2011582611417603e9a73774061f0b36c9))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-gkehub/issues/1266)) ([#143](https://www.github.com/googleapis/java-gkehub/issues/143)) ([8d5ff8a](https://www.github.com/googleapis/java-gkehub/commit/8d5ff8a1496b6d5c19dce009f4c19597675db52f))
+* remove location proto ([b7e6196](https://www.github.com/googleapis/java-gkehub/commit/b7e619699e1e55a51daef7f0d5d1a752eaa8235e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#152](https://www.github.com/googleapis/java-gkehub/issues/152)) ([52f5781](https://www.github.com/googleapis/java-gkehub/commit/52f5781336e5aae1a67ccf9251624ad9776643e4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#158](https://www.github.com/googleapis/java-gkehub/issues/158)) ([b7e6196](https://www.github.com/googleapis/java-gkehub/commit/b7e619699e1e55a51daef7f0d5d1a752eaa8235e))
+
 ### [0.5.2](https://www.github.com/googleapis/java-gkehub/compare/v0.5.1...v0.5.2) (2021-10-19)
 
 
