@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-tpu/compare/v2.1.3...v2.2.0) (2021-12-06)
+
+
+### Features
+
+* TPU v2alpha1 public protos ([#99](https://www.github.com/googleapis/java-tpu/issues/99)) ([cf1039a](https://www.github.com/googleapis/java-tpu/commit/cf1039ae489de3bd78c58492dff2690f5573d6fc))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-tpu/issues/1299)) ([#122](https://www.github.com/googleapis/java-tpu/issues/122)) ([cedaf0f](https://www.github.com/googleapis/java-tpu/commit/cedaf0ff593d7c700402f50e8f68307a1b6152f3))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-tpu/issues/1266)) ([#107](https://www.github.com/googleapis/java-tpu/issues/107)) ([047a016](https://www.github.com/googleapis/java-tpu/commit/047a016c8403f9be552bdccf6d3b6038c60d2deb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#116](https://www.github.com/googleapis/java-tpu/issues/116)) ([8fae1fc](https://www.github.com/googleapis/java-tpu/commit/8fae1fca8d9651086e54d8e3febb16588b69364c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#121](https://www.github.com/googleapis/java-tpu/issues/121)) ([f562102](https://www.github.com/googleapis/java-tpu/commit/f562102e71c1043e66ae6e53c584c21926ce1d5a))
+
 ### [2.1.3](https://www.github.com/googleapis/java-tpu/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
