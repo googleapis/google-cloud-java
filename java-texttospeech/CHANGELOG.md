@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-texttospeech/compare/v2.0.6...v2.1.0) (2021-12-06)
+
+
+### Features
+
+* update v1 proto ([#598](https://www.github.com/googleapis/java-texttospeech/issues/598)) ([0a22350](https://www.github.com/googleapis/java-texttospeech/commit/0a22350957b72fd6945050a5f5e6b66ad8c9e8b9))
+* update v1beta1 proto ([#594](https://www.github.com/googleapis/java-texttospeech/issues/594)) ([e00e27a](https://www.github.com/googleapis/java-texttospeech/commit/e00e27ab0d6c8b62ec776aa7e125e0b67e483800))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-texttospeech/issues/1299)) ([#607](https://www.github.com/googleapis/java-texttospeech/issues/607)) ([7e4e3ee](https://www.github.com/googleapis/java-texttospeech/commit/7e4e3ee48d8727d848031ea4697048205ba35046))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-texttospeech/issues/1266)) ([#585](https://www.github.com/googleapis/java-texttospeech/issues/585)) ([afacd18](https://www.github.com/googleapis/java-texttospeech/commit/afacd180e4db4133308c3079d16c85d8403024b3))
+
+
+### Documentation
+
+* fix docstring formatting ([#597](https://www.github.com/googleapis/java-texttospeech/issues/597)) ([4c445df](https://www.github.com/googleapis/java-texttospeech/commit/4c445df0d562fdf3a0882e88f4f79fbf7de02343))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#596](https://www.github.com/googleapis/java-texttospeech/issues/596)) ([24bdc49](https://www.github.com/googleapis/java-texttospeech/commit/24bdc491f283880b8cf6a435a4e66fb554d57d5f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#606](https://www.github.com/googleapis/java-texttospeech/issues/606)) ([e3773ce](https://www.github.com/googleapis/java-texttospeech/commit/e3773cedc57414326e7a9248067aa95b24f79330))
+
 ### [2.0.6](https://www.github.com/googleapis/java-texttospeech/compare/v2.0.5...v2.0.6) (2021-10-19)
 
 
