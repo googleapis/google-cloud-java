@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/googleapis/java-deploy/compare/v0.1.2...v0.1.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* updated release instead of 0.1.2 ([#41](https://www.github.com/googleapis/java-deploy/issues/41)) ([0218c8a](https://www.github.com/googleapis/java-deploy/commit/0218c8a95b97ae48e7c03030ffce73ed4703583a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#34](https://www.github.com/googleapis/java-deploy/issues/34)) (d11213b) ([0218c8a](https://www.github.com/googleapis/java-deploy/commit/0218c8a95b97ae48e7c03030ffce73ed4703583a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#37](https://www.github.com/googleapis/java-deploy/issues/37)) ([0218c8a](https://www.github.com/googleapis/java-deploy/commit/0218c8a95b97ae48e7c03030ffce73ed4703583a))
+
 ### [0.1.2](https://www.github.com/googleapis/java-deploy/compare/v0.1.1...v0.1.2) (2021-12-03)
 
 
