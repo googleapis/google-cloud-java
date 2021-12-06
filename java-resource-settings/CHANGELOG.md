@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-resource-settings/compare/v1.1.3...v1.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-resource-settings/issues/1266)) ([#84](https://www.github.com/googleapis/java-resource-settings/issues/84)) ([cb2e26a](https://www.github.com/googleapis/java-resource-settings/commit/cb2e26a79b482e5917feffb69bc108dd1fccec64))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#93](https://www.github.com/googleapis/java-resource-settings/issues/93)) ([2e58d63](https://www.github.com/googleapis/java-resource-settings/commit/2e58d63acce06b3945bf07c6f51da35274a7621c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#98](https://www.github.com/googleapis/java-resource-settings/issues/98)) ([81121c0](https://www.github.com/googleapis/java-resource-settings/commit/81121c0a4fb75a55874eccaa341955585f7ce317))
+
 ### [1.1.3](https://www.github.com/googleapis/java-resource-settings/compare/v1.1.2...v1.1.3) (2021-10-21)
 
 
