@@ -1,5 +1,25 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-security-private-ca/compare/v2.2.0...v2.2.1) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-security-private-ca/issues/1299)) ([#323](https://www.github.com/googleapis/java-security-private-ca/issues/323)) ([d4898ae](https://www.github.com/googleapis/java-security-private-ca/commit/d4898ae5bdb1e8f5f45b374c934d74e5747e0986))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-security-private-ca/issues/1266)) ([#303](https://www.github.com/googleapis/java-security-private-ca/issues/303)) ([c9ea1fa](https://www.github.com/googleapis/java-security-private-ca/commit/c9ea1fafeef93caaea41e2a3d22578d9533158ce))
+* **privateca:** include mixin protos as input for mixin rpcs ([#315](https://www.github.com/googleapis/java-security-private-ca/issues/315)) ([842d5ef](https://www.github.com/googleapis/java-security-private-ca/commit/842d5ef95de31ea26a26dd576c4dd4d65fa9feec))
+
+
+### Documentation
+
+* fix docstring formatting ([#305](https://www.github.com/googleapis/java-security-private-ca/issues/305)) ([24720c8](https://www.github.com/googleapis/java-security-private-ca/commit/24720c8d23aa890ac5d78509836743d9fdc8a210))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#314](https://www.github.com/googleapis/java-security-private-ca/issues/314)) ([2b7ff21](https://www.github.com/googleapis/java-security-private-ca/commit/2b7ff21ecfb8828cce08e6df450142e3f0751795))
+* update dependency org.bouncycastle:bcpkix-jdk15on to v1.70 ([#320](https://www.github.com/googleapis/java-security-private-ca/issues/320)) ([8c4aeb6](https://www.github.com/googleapis/java-security-private-ca/commit/8c4aeb6e756c111285c6623c450117e360f1029f))
+
 ## [2.2.0](https://www.github.com/googleapis/java-security-private-ca/compare/v2.1.2...v2.2.0) (2021-10-19)
 
 
