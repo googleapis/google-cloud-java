@@ -1,5 +1,25 @@
 # Changelog
 
+### [0.4.2](https://www.github.com/googleapis/java-video-transcoder/compare/v0.4.1...v0.4.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-video-transcoder/issues/1299)) ([#269](https://www.github.com/googleapis/java-video-transcoder/issues/269)) ([f5ab0d7](https://www.github.com/googleapis/java-video-transcoder/commit/f5ab0d7433140a0aab2b1ca3d4006a2fd673c7b5))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-video-transcoder/issues/1266)) ([#255](https://www.github.com/googleapis/java-video-transcoder/issues/255)) ([1e74e68](https://www.github.com/googleapis/java-video-transcoder/commit/1e74e6898106ce96910c90e2ce0a48d3b5b07008))
+
+
+### Documentation
+
+* clarify that project number is used as the canonical project identifier for job and job template names ([#247](https://www.github.com/googleapis/java-video-transcoder/issues/247)) ([27b43b5](https://www.github.com/googleapis/java-video-transcoder/commit/27b43b50f83eed71c568e572b03374db53b9a0d0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#253](https://www.github.com/googleapis/java-video-transcoder/issues/253)) ([651582c](https://www.github.com/googleapis/java-video-transcoder/commit/651582cce07f167e39557fdbd825ceed8b05a38c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#263](https://www.github.com/googleapis/java-video-transcoder/issues/263)) ([216ac11](https://www.github.com/googleapis/java-video-transcoder/commit/216ac110642cca13ce10876533ab1b1bae7561eb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#268](https://www.github.com/googleapis/java-video-transcoder/issues/268)) ([af5d51f](https://www.github.com/googleapis/java-video-transcoder/commit/af5d51f6b01f2f465fae2d1f3ef730bbb9424749))
+
 ### [0.4.1](https://www.github.com/googleapis/java-video-transcoder/compare/v0.4.0...v0.4.1) (2021-09-27)
 
 
