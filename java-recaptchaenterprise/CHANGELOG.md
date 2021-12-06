@@ -1,5 +1,26 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.3.0...v2.3.1) (2021-12-03)
+
+
+### Documentation
+
+* **samples:** added annotate assessment sample and refactored tests. ([#635](https://www.github.com/googleapis/java-recaptchaenterprise/issues/635)) ([436ae3e](https://www.github.com/googleapis/java-recaptchaenterprise/commit/436ae3ef9d5866654504c7d5bfbf6464197ceee6))
+* **samples:** updated comments in create assessment ([#641](https://www.github.com/googleapis/java-recaptchaenterprise/issues/641)) ([c0c9453](https://www.github.com/googleapis/java-recaptchaenterprise/commit/c0c9453b971aef2c9f9e75dea5d1d057819942aa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#639](https://www.github.com/googleapis/java-recaptchaenterprise/issues/639)) ([30d4ba3](https://www.github.com/googleapis/java-recaptchaenterprise/commit/30d4ba34fca40a99f0c34e62b25fc5f2e475e129))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#658](https://www.github.com/googleapis/java-recaptchaenterprise/issues/658)) ([3f6bc29](https://www.github.com/googleapis/java-recaptchaenterprise/commit/3f6bc29ace2144482aa018f252c2b43721d99d6c))
+* update dependency net.bytebuddy:byte-buddy to v1.12.1 ([#632](https://www.github.com/googleapis/java-recaptchaenterprise/issues/632)) ([dc4f340](https://www.github.com/googleapis/java-recaptchaenterprise/commit/dc4f340bb5cda8e585b65eb1135b459a9e4f9b0d))
+* update dependency net.bytebuddy:byte-buddy to v1.12.2 ([#648](https://www.github.com/googleapis/java-recaptchaenterprise/issues/648)) ([0a89c68](https://www.github.com/googleapis/java-recaptchaenterprise/commit/0a89c684f453f21a55eb4f1f4a57bbc630b8f5b5))
+* update dependency org.seleniumhq.selenium:selenium-chrome-driver to v4.1.0 ([#649](https://www.github.com/googleapis/java-recaptchaenterprise/issues/649)) ([110f276](https://www.github.com/googleapis/java-recaptchaenterprise/commit/110f2762f1559a2107d84eab4a5d2402931de531))
+* update dependency org.seleniumhq.selenium:selenium-java to v4.1.0 ([#650](https://www.github.com/googleapis/java-recaptchaenterprise/issues/650)) ([4f39ada](https://www.github.com/googleapis/java-recaptchaenterprise/commit/4f39adaebead06eb2126db324d1d52b1f8bfe485))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.6.0 ([#644](https://www.github.com/googleapis/java-recaptchaenterprise/issues/644)) ([0682013](https://www.github.com/googleapis/java-recaptchaenterprise/commit/0682013c211eb7e4f5f995f3efd0952fdf61c136))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.6.0 ([#645](https://www.github.com/googleapis/java-recaptchaenterprise/issues/645)) ([cd939fe](https://www.github.com/googleapis/java-recaptchaenterprise/commit/cd939fee210764d2703c133a390cc6ed7cd792b3))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.6.0 ([#646](https://www.github.com/googleapis/java-recaptchaenterprise/issues/646)) ([6b03b68](https://www.github.com/googleapis/java-recaptchaenterprise/commit/6b03b68662cd26603f20cc315a1b0f8f01ac8180))
+
 ## [2.3.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.2.3...v2.3.0) (2021-11-08)
 
 
