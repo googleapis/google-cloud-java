@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/googleapis/java-dataflow/compare/v0.3.1...v0.3.2) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dataflow/issues/1266)) ([#81](https://www.github.com/googleapis/java-dataflow/issues/81)) ([bedcb53](https://www.github.com/googleapis/java-dataflow/commit/bedcb5359314fdae1fc658c588b83b710fd55335))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#90](https://www.github.com/googleapis/java-dataflow/issues/90)) ([65f32b8](https://www.github.com/googleapis/java-dataflow/commit/65f32b8c58f7a4e2d25a0a388160ce91d1a1ba44))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#95](https://www.github.com/googleapis/java-dataflow/issues/95)) ([090cd71](https://www.github.com/googleapis/java-dataflow/commit/090cd712878d63eea11952f92e0b3237ce7b1084))
+
 ### [0.3.1](https://www.github.com/googleapis/java-dataflow/compare/v0.3.0...v0.3.1) (2021-10-19)
 
 
