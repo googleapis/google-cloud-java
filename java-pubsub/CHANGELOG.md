@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.115.0](https://www.github.com/googleapis/java-pubsub/compare/v1.114.7...v1.115.0) (2021-12-05)
+
+
+### Features
+
+* creating java backport ([#895](https://www.github.com/googleapis/java-pubsub/issues/895)) ([51b01e2](https://www.github.com/googleapis/java-pubsub/commit/51b01e254a4be87a8a779fbc5da697c70920d82f))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-pubsub/issues/1266)) ([#888](https://www.github.com/googleapis/java-pubsub/issues/888)) ([ed3ae2f](https://www.github.com/googleapis/java-pubsub/commit/ed3ae2fb0a0c72073f6bae5dc4111424740fd883))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.0 ([#913](https://www.github.com/googleapis/java-pubsub/issues/913)) ([adfd456](https://www.github.com/googleapis/java-pubsub/commit/adfd4562a8041d71af65cd98cf1d17b881e35dd3))
+* update dependency com.google.cloud:google-cloud-core to v2.3.1 ([#927](https://www.github.com/googleapis/java-pubsub/issues/927)) ([9fcc996](https://www.github.com/googleapis/java-pubsub/commit/9fcc9965284f6a57dc79f31eb96a2e430cef72e4))
+* update dependency com.google.cloud:google-cloud-core to v2.3.2 ([#941](https://www.github.com/googleapis/java-pubsub/issues/941)) ([41f881b](https://www.github.com/googleapis/java-pubsub/commit/41f881b2d075f9ee730f5eaf24885146d9fadccf))
+* update dependency com.google.cloud:google-cloud-core to v2.3.3 ([#943](https://www.github.com/googleapis/java-pubsub/issues/943)) ([df3a5fe](https://www.github.com/googleapis/java-pubsub/commit/df3a5fecd4d87ae79cba312109242146b84f9e55))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#919](https://www.github.com/googleapis/java-pubsub/issues/919)) ([4adf335](https://www.github.com/googleapis/java-pubsub/commit/4adf335b78ce6b13af22c3c3a64c4ea1a24f05cd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#942](https://www.github.com/googleapis/java-pubsub/issues/942)) ([44cdcf5](https://www.github.com/googleapis/java-pubsub/commit/44cdcf5d3f1815654b9b255c1096e290a7db9030))
+* update dependency com.google.errorprone:error_prone_annotations to v2.10.0 ([#901](https://www.github.com/googleapis/java-pubsub/issues/901)) ([8733144](https://www.github.com/googleapis/java-pubsub/commit/8733144854aaebfec0cd5f03ab14d820c6d22c0e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#885](https://www.github.com/googleapis/java-pubsub/issues/885)) ([d0a02a9](https://www.github.com/googleapis/java-pubsub/commit/d0a02a9f320b254a3e4ef60bfff47a6bb3a2427f))
+* update dependency org.apache.avro:avro to v1.11.0 ([#894](https://www.github.com/googleapis/java-pubsub/issues/894)) ([b7ba1a8](https://www.github.com/googleapis/java-pubsub/commit/b7ba1a871c4c26f50d87b41c2627b6e6aef63b3c))
+* update gson to 2.8.9 ([ec97e93](https://www.github.com/googleapis/java-pubsub/commit/ec97e93ae53666d5c5cad71821f12cefa4fbaf2e))
+
 ### [1.114.7](https://www.github.com/googleapis/java-pubsub/compare/v1.114.6...v1.114.7) (2021-10-19)
 
 
