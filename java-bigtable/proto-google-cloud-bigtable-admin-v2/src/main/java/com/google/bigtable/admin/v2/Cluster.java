@@ -125,6 +125,24 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 58:
+            {
+              com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder subBuilder = null;
+              if (configCase_ == 7) {
+                subBuilder =
+                    ((com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_).toBuilder();
+              }
+              config_ =
+                  input.readMessage(
+                      com.google.bigtable.admin.v2.Cluster.ClusterConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_);
+                config_ = subBuilder.buildPartial();
+              }
+              configCase_ = 7;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -372,6 +390,1959 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Cluster.State)
+  }
+
+  public interface ClusterAutoscalingConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling limits for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the autoscalingLimits field is set.
+     */
+    boolean hasAutoscalingLimits();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling limits for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The autoscalingLimits.
+     */
+    com.google.bigtable.admin.v2.AutoscalingLimits getAutoscalingLimits();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling limits for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder getAutoscalingLimitsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling targets for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the autoscalingTargets field is set.
+     */
+    boolean hasAutoscalingTargets();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling targets for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The autoscalingTargets.
+     */
+    com.google.bigtable.admin.v2.AutoscalingTargets getAutoscalingTargets();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling targets for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder getAutoscalingTargetsOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Autoscaling config for a cluster.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig}
+   */
+  public static final class ClusterAutoscalingConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)
+      ClusterAutoscalingConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ClusterAutoscalingConfig.newBuilder() to construct.
+    private ClusterAutoscalingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ClusterAutoscalingConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClusterAutoscalingConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ClusterAutoscalingConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.bigtable.admin.v2.AutoscalingLimits.Builder subBuilder = null;
+                if (autoscalingLimits_ != null) {
+                  subBuilder = autoscalingLimits_.toBuilder();
+                }
+                autoscalingLimits_ =
+                    input.readMessage(
+                        com.google.bigtable.admin.v2.AutoscalingLimits.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(autoscalingLimits_);
+                  autoscalingLimits_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                com.google.bigtable.admin.v2.AutoscalingTargets.Builder subBuilder = null;
+                if (autoscalingTargets_ != null) {
+                  subBuilder = autoscalingTargets_.toBuilder();
+                }
+                autoscalingTargets_ =
+                    input.readMessage(
+                        com.google.bigtable.admin.v2.AutoscalingTargets.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(autoscalingTargets_);
+                  autoscalingTargets_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_Cluster_ClusterAutoscalingConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_Cluster_ClusterAutoscalingConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.class,
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder.class);
+    }
+
+    public static final int AUTOSCALING_LIMITS_FIELD_NUMBER = 1;
+    private com.google.bigtable.admin.v2.AutoscalingLimits autoscalingLimits_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling limits for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the autoscalingLimits field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoscalingLimits() {
+      return autoscalingLimits_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling limits for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The autoscalingLimits.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AutoscalingLimits getAutoscalingLimits() {
+      return autoscalingLimits_ == null
+          ? com.google.bigtable.admin.v2.AutoscalingLimits.getDefaultInstance()
+          : autoscalingLimits_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling limits for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder getAutoscalingLimitsOrBuilder() {
+      return getAutoscalingLimits();
+    }
+
+    public static final int AUTOSCALING_TARGETS_FIELD_NUMBER = 2;
+    private com.google.bigtable.admin.v2.AutoscalingTargets autoscalingTargets_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling targets for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the autoscalingTargets field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoscalingTargets() {
+      return autoscalingTargets_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling targets for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The autoscalingTargets.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AutoscalingTargets getAutoscalingTargets() {
+      return autoscalingTargets_ == null
+          ? com.google.bigtable.admin.v2.AutoscalingTargets.getDefaultInstance()
+          : autoscalingTargets_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Autoscaling targets for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder
+        getAutoscalingTargetsOrBuilder() {
+      return getAutoscalingTargets();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (autoscalingLimits_ != null) {
+        output.writeMessage(1, getAutoscalingLimits());
+      }
+      if (autoscalingTargets_ != null) {
+        output.writeMessage(2, getAutoscalingTargets());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (autoscalingLimits_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAutoscalingLimits());
+      }
+      if (autoscalingTargets_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAutoscalingTargets());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig other =
+          (com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig) obj;
+
+      if (hasAutoscalingLimits() != other.hasAutoscalingLimits()) return false;
+      if (hasAutoscalingLimits()) {
+        if (!getAutoscalingLimits().equals(other.getAutoscalingLimits())) return false;
+      }
+      if (hasAutoscalingTargets() != other.hasAutoscalingTargets()) return false;
+      if (hasAutoscalingTargets()) {
+        if (!getAutoscalingTargets().equals(other.getAutoscalingTargets())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAutoscalingLimits()) {
+        hash = (37 * hash) + AUTOSCALING_LIMITS_FIELD_NUMBER;
+        hash = (53 * hash) + getAutoscalingLimits().hashCode();
+      }
+      if (hasAutoscalingTargets()) {
+        hash = (37 * hash) + AUTOSCALING_TARGETS_FIELD_NUMBER;
+        hash = (53 * hash) + getAutoscalingTargets().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling config for a cluster.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)
+        com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_ClusterAutoscalingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_ClusterAutoscalingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.class,
+                com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (autoscalingLimitsBuilder_ == null) {
+          autoscalingLimits_ = null;
+        } else {
+          autoscalingLimits_ = null;
+          autoscalingLimitsBuilder_ = null;
+        }
+        if (autoscalingTargetsBuilder_ == null) {
+          autoscalingTargets_ = null;
+        } else {
+          autoscalingTargets_ = null;
+          autoscalingTargetsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_ClusterAutoscalingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+          getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig build() {
+        com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig buildPartial() {
+        com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig result =
+            new com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig(this);
+        if (autoscalingLimitsBuilder_ == null) {
+          result.autoscalingLimits_ = autoscalingLimits_;
+        } else {
+          result.autoscalingLimits_ = autoscalingLimitsBuilder_.build();
+        }
+        if (autoscalingTargetsBuilder_ == null) {
+          result.autoscalingTargets_ = autoscalingTargets_;
+        } else {
+          result.autoscalingTargets_ = autoscalingTargetsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig) {
+          return mergeFrom((com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig other) {
+        if (other
+            == com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.getDefaultInstance())
+          return this;
+        if (other.hasAutoscalingLimits()) {
+          mergeAutoscalingLimits(other.getAutoscalingLimits());
+        }
+        if (other.hasAutoscalingTargets()) {
+          mergeAutoscalingTargets(other.getAutoscalingTargets());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.bigtable.admin.v2.AutoscalingLimits autoscalingLimits_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.AutoscalingLimits,
+              com.google.bigtable.admin.v2.AutoscalingLimits.Builder,
+              com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder>
+          autoscalingLimitsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the autoscalingLimits field is set.
+       */
+      public boolean hasAutoscalingLimits() {
+        return autoscalingLimitsBuilder_ != null || autoscalingLimits_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The autoscalingLimits.
+       */
+      public com.google.bigtable.admin.v2.AutoscalingLimits getAutoscalingLimits() {
+        if (autoscalingLimitsBuilder_ == null) {
+          return autoscalingLimits_ == null
+              ? com.google.bigtable.admin.v2.AutoscalingLimits.getDefaultInstance()
+              : autoscalingLimits_;
+        } else {
+          return autoscalingLimitsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAutoscalingLimits(com.google.bigtable.admin.v2.AutoscalingLimits value) {
+        if (autoscalingLimitsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          autoscalingLimits_ = value;
+          onChanged();
+        } else {
+          autoscalingLimitsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAutoscalingLimits(
+          com.google.bigtable.admin.v2.AutoscalingLimits.Builder builderForValue) {
+        if (autoscalingLimitsBuilder_ == null) {
+          autoscalingLimits_ = builderForValue.build();
+          onChanged();
+        } else {
+          autoscalingLimitsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeAutoscalingLimits(com.google.bigtable.admin.v2.AutoscalingLimits value) {
+        if (autoscalingLimitsBuilder_ == null) {
+          if (autoscalingLimits_ != null) {
+            autoscalingLimits_ =
+                com.google.bigtable.admin.v2.AutoscalingLimits.newBuilder(autoscalingLimits_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            autoscalingLimits_ = value;
+          }
+          onChanged();
+        } else {
+          autoscalingLimitsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearAutoscalingLimits() {
+        if (autoscalingLimitsBuilder_ == null) {
+          autoscalingLimits_ = null;
+          onChanged();
+        } else {
+          autoscalingLimits_ = null;
+          autoscalingLimitsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.AutoscalingLimits.Builder getAutoscalingLimitsBuilder() {
+
+        onChanged();
+        return getAutoscalingLimitsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder
+          getAutoscalingLimitsOrBuilder() {
+        if (autoscalingLimitsBuilder_ != null) {
+          return autoscalingLimitsBuilder_.getMessageOrBuilder();
+        } else {
+          return autoscalingLimits_ == null
+              ? com.google.bigtable.admin.v2.AutoscalingLimits.getDefaultInstance()
+              : autoscalingLimits_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling limits for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingLimits autoscaling_limits = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.AutoscalingLimits,
+              com.google.bigtable.admin.v2.AutoscalingLimits.Builder,
+              com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder>
+          getAutoscalingLimitsFieldBuilder() {
+        if (autoscalingLimitsBuilder_ == null) {
+          autoscalingLimitsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.AutoscalingLimits,
+                  com.google.bigtable.admin.v2.AutoscalingLimits.Builder,
+                  com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder>(
+                  getAutoscalingLimits(), getParentForChildren(), isClean());
+          autoscalingLimits_ = null;
+        }
+        return autoscalingLimitsBuilder_;
+      }
+
+      private com.google.bigtable.admin.v2.AutoscalingTargets autoscalingTargets_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.AutoscalingTargets,
+              com.google.bigtable.admin.v2.AutoscalingTargets.Builder,
+              com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder>
+          autoscalingTargetsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the autoscalingTargets field is set.
+       */
+      public boolean hasAutoscalingTargets() {
+        return autoscalingTargetsBuilder_ != null || autoscalingTargets_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The autoscalingTargets.
+       */
+      public com.google.bigtable.admin.v2.AutoscalingTargets getAutoscalingTargets() {
+        if (autoscalingTargetsBuilder_ == null) {
+          return autoscalingTargets_ == null
+              ? com.google.bigtable.admin.v2.AutoscalingTargets.getDefaultInstance()
+              : autoscalingTargets_;
+        } else {
+          return autoscalingTargetsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAutoscalingTargets(com.google.bigtable.admin.v2.AutoscalingTargets value) {
+        if (autoscalingTargetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          autoscalingTargets_ = value;
+          onChanged();
+        } else {
+          autoscalingTargetsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAutoscalingTargets(
+          com.google.bigtable.admin.v2.AutoscalingTargets.Builder builderForValue) {
+        if (autoscalingTargetsBuilder_ == null) {
+          autoscalingTargets_ = builderForValue.build();
+          onChanged();
+        } else {
+          autoscalingTargetsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeAutoscalingTargets(
+          com.google.bigtable.admin.v2.AutoscalingTargets value) {
+        if (autoscalingTargetsBuilder_ == null) {
+          if (autoscalingTargets_ != null) {
+            autoscalingTargets_ =
+                com.google.bigtable.admin.v2.AutoscalingTargets.newBuilder(autoscalingTargets_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            autoscalingTargets_ = value;
+          }
+          onChanged();
+        } else {
+          autoscalingTargetsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearAutoscalingTargets() {
+        if (autoscalingTargetsBuilder_ == null) {
+          autoscalingTargets_ = null;
+          onChanged();
+        } else {
+          autoscalingTargets_ = null;
+          autoscalingTargetsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.AutoscalingTargets.Builder
+          getAutoscalingTargetsBuilder() {
+
+        onChanged();
+        return getAutoscalingTargetsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder
+          getAutoscalingTargetsOrBuilder() {
+        if (autoscalingTargetsBuilder_ != null) {
+          return autoscalingTargetsBuilder_.getMessageOrBuilder();
+        } else {
+          return autoscalingTargets_ == null
+              ? com.google.bigtable.admin.v2.AutoscalingTargets.getDefaultInstance()
+              : autoscalingTargets_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Autoscaling targets for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AutoscalingTargets autoscaling_targets = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.AutoscalingTargets,
+              com.google.bigtable.admin.v2.AutoscalingTargets.Builder,
+              com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder>
+          getAutoscalingTargetsFieldBuilder() {
+        if (autoscalingTargetsBuilder_ == null) {
+          autoscalingTargetsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.AutoscalingTargets,
+                  com.google.bigtable.admin.v2.AutoscalingTargets.Builder,
+                  com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder>(
+                  getAutoscalingTargets(), getParentForChildren(), isClean());
+          autoscalingTargets_ = null;
+        }
+        return autoscalingTargetsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)
+    private static final com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig();
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClusterAutoscalingConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ClusterAutoscalingConfig>() {
+          @java.lang.Override
+          public ClusterAutoscalingConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ClusterAutoscalingConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ClusterAutoscalingConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClusterAutoscalingConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ClusterConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Cluster.ClusterConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+     * </code>
+     *
+     * @return Whether the clusterAutoscalingConfig field is set.
+     */
+    boolean hasClusterAutoscalingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+     * </code>
+     *
+     * @return The clusterAutoscalingConfig.
+     */
+    com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig getClusterAutoscalingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+     * </code>
+     */
+    com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder
+        getClusterAutoscalingConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a cluster.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Cluster.ClusterConfig}
+   */
+  public static final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Cluster.ClusterConfig)
+      ClusterConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ClusterConfig.newBuilder() to construct.
+    private ClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ClusterConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClusterConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ClusterConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder subBuilder =
+                    null;
+                if (clusterAutoscalingConfig_ != null) {
+                  subBuilder = clusterAutoscalingConfig_.toBuilder();
+                }
+                clusterAutoscalingConfig_ =
+                    input.readMessage(
+                        com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(clusterAutoscalingConfig_);
+                  clusterAutoscalingConfig_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_Cluster_ClusterConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_Cluster_ClusterConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Cluster.ClusterConfig.class,
+              com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder.class);
+    }
+
+    public static final int CLUSTER_AUTOSCALING_CONFIG_FIELD_NUMBER = 1;
+    private com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig clusterAutoscalingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+     * </code>
+     *
+     * @return Whether the clusterAutoscalingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasClusterAutoscalingConfig() {
+      return clusterAutoscalingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+     * </code>
+     *
+     * @return The clusterAutoscalingConfig.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+        getClusterAutoscalingConfig() {
+      return clusterAutoscalingConfig_ == null
+          ? com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.getDefaultInstance()
+          : clusterAutoscalingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder
+        getClusterAutoscalingConfigOrBuilder() {
+      return getClusterAutoscalingConfig();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (clusterAutoscalingConfig_ != null) {
+        output.writeMessage(1, getClusterAutoscalingConfig());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (clusterAutoscalingConfig_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, getClusterAutoscalingConfig());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Cluster.ClusterConfig)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Cluster.ClusterConfig other =
+          (com.google.bigtable.admin.v2.Cluster.ClusterConfig) obj;
+
+      if (hasClusterAutoscalingConfig() != other.hasClusterAutoscalingConfig()) return false;
+      if (hasClusterAutoscalingConfig()) {
+        if (!getClusterAutoscalingConfig().equals(other.getClusterAutoscalingConfig()))
+          return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasClusterAutoscalingConfig()) {
+        hash = (37 * hash) + CLUSTER_AUTOSCALING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getClusterAutoscalingConfig().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Cluster.ClusterConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a cluster.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Cluster.ClusterConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Cluster.ClusterConfig)
+        com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_ClusterConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_ClusterConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Cluster.ClusterConfig.class,
+                com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Cluster.ClusterConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          clusterAutoscalingConfig_ = null;
+        } else {
+          clusterAutoscalingConfig_ = null;
+          clusterAutoscalingConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_ClusterConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.ClusterConfig getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.ClusterConfig build() {
+        com.google.bigtable.admin.v2.Cluster.ClusterConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.ClusterConfig buildPartial() {
+        com.google.bigtable.admin.v2.Cluster.ClusterConfig result =
+            new com.google.bigtable.admin.v2.Cluster.ClusterConfig(this);
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          result.clusterAutoscalingConfig_ = clusterAutoscalingConfig_;
+        } else {
+          result.clusterAutoscalingConfig_ = clusterAutoscalingConfigBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Cluster.ClusterConfig) {
+          return mergeFrom((com.google.bigtable.admin.v2.Cluster.ClusterConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Cluster.ClusterConfig other) {
+        if (other == com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance())
+          return this;
+        if (other.hasClusterAutoscalingConfig()) {
+          mergeClusterAutoscalingConfig(other.getClusterAutoscalingConfig());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.bigtable.admin.v2.Cluster.ClusterConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.bigtable.admin.v2.Cluster.ClusterConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+          clusterAutoscalingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig,
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder,
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder>
+          clusterAutoscalingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       *
+       * @return Whether the clusterAutoscalingConfig field is set.
+       */
+      public boolean hasClusterAutoscalingConfig() {
+        return clusterAutoscalingConfigBuilder_ != null || clusterAutoscalingConfig_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       *
+       * @return The clusterAutoscalingConfig.
+       */
+      public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+          getClusterAutoscalingConfig() {
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          return clusterAutoscalingConfig_ == null
+              ? com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.getDefaultInstance()
+              : clusterAutoscalingConfig_;
+        } else {
+          return clusterAutoscalingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       */
+      public Builder setClusterAutoscalingConfig(
+          com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig value) {
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clusterAutoscalingConfig_ = value;
+          onChanged();
+        } else {
+          clusterAutoscalingConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       */
+      public Builder setClusterAutoscalingConfig(
+          com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder builderForValue) {
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          clusterAutoscalingConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          clusterAutoscalingConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       */
+      public Builder mergeClusterAutoscalingConfig(
+          com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig value) {
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          if (clusterAutoscalingConfig_ != null) {
+            clusterAutoscalingConfig_ =
+                com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.newBuilder(
+                        clusterAutoscalingConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            clusterAutoscalingConfig_ = value;
+          }
+          onChanged();
+        } else {
+          clusterAutoscalingConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       */
+      public Builder clearClusterAutoscalingConfig() {
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          clusterAutoscalingConfig_ = null;
+          onChanged();
+        } else {
+          clusterAutoscalingConfig_ = null;
+          clusterAutoscalingConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder
+          getClusterAutoscalingConfigBuilder() {
+
+        onChanged();
+        return getClusterAutoscalingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder
+          getClusterAutoscalingConfigOrBuilder() {
+        if (clusterAutoscalingConfigBuilder_ != null) {
+          return clusterAutoscalingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return clusterAutoscalingConfig_ == null
+              ? com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.getDefaultInstance()
+              : clusterAutoscalingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Autoscaling configuration for this cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig cluster_autoscaling_config = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig,
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder,
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder>
+          getClusterAutoscalingConfigFieldBuilder() {
+        if (clusterAutoscalingConfigBuilder_ == null) {
+          clusterAutoscalingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig,
+                  com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder,
+                  com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder>(
+                  getClusterAutoscalingConfig(), getParentForChildren(), isClean());
+          clusterAutoscalingConfig_ = null;
+        }
+        return clusterAutoscalingConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Cluster.ClusterConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Cluster.ClusterConfig)
+    private static final com.google.bigtable.admin.v2.Cluster.ClusterConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Cluster.ClusterConfig();
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.ClusterConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClusterConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ClusterConfig>() {
+          @java.lang.Override
+          public ClusterConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ClusterConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ClusterConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClusterConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Cluster.ClusterConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public interface EncryptionConfigOrBuilder
@@ -1092,6 +3063,50 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  private int configCase_ = 0;
+  private java.lang.Object config_;
+
+  public enum ConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CLUSTER_CONFIG(7),
+    CONFIG_NOT_SET(0);
+    private final int value;
+
+    private ConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ConfigCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return CLUSTER_CONFIG;
+        case 0:
+          return CONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ConfigCase getConfigCase() {
+    return ConfigCase.forNumber(configCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1246,17 +3261,68 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The number of nodes allocated to this cluster. More nodes enable
-   * higher throughput and more consistent performance.
+   * The number of nodes allocated to this cluster. More nodes enable higher
+   * throughput and more consistent performance.
    * </pre>
    *
-   * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int32 serve_nodes = 4;</code>
    *
    * @return The serveNodes.
    */
   @java.lang.Override
   public int getServeNodes() {
     return serveNodes_;
+  }
+
+  public static final int CLUSTER_CONFIG_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for this cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+   *
+   * @return Whether the clusterConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasClusterConfig() {
+    return configCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for this cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+   *
+   * @return The clusterConfig.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Cluster.ClusterConfig getClusterConfig() {
+    if (configCase_ == 7) {
+      return (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_;
+    }
+    return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for this cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder getClusterConfigOrBuilder() {
+    if (configCase_ == 7) {
+      return (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_;
+    }
+    return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
   }
 
   public static final int DEFAULT_STORAGE_TYPE_FIELD_NUMBER = 5;
@@ -1387,6 +3453,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (encryptionConfig_ != null) {
       output.writeMessage(6, getEncryptionConfig());
     }
+    if (configCase_ == 7) {
+      output.writeMessage(7, (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1415,6 +3484,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (encryptionConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEncryptionConfig());
     }
+    if (configCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1438,6 +3512,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
     if (hasEncryptionConfig()) {
       if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
+    }
+    if (!getConfigCase().equals(other.getConfigCase())) return false;
+    switch (configCase_) {
+      case 7:
+        if (!getClusterConfig().equals(other.getClusterConfig())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1463,6 +3545,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionConfig()) {
       hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionConfig().hashCode();
+    }
+    switch (configCase_) {
+      case 7:
+        hash = (37 * hash) + CLUSTER_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getClusterConfig().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1626,6 +3716,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         encryptionConfig_ = null;
         encryptionConfigBuilder_ = null;
       }
+      configCase_ = 0;
+      config_ = null;
       return this;
     }
 
@@ -1656,12 +3748,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       result.location_ = location_;
       result.state_ = state_;
       result.serveNodes_ = serveNodes_;
+      if (configCase_ == 7) {
+        if (clusterConfigBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = clusterConfigBuilder_.build();
+        }
+      }
       result.defaultStorageType_ = defaultStorageType_;
       if (encryptionConfigBuilder_ == null) {
         result.encryptionConfig_ = encryptionConfig_;
       } else {
         result.encryptionConfig_ = encryptionConfigBuilder_.build();
       }
+      result.configCase_ = configCase_;
       onBuilt();
       return result;
     }
@@ -1731,6 +3831,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEncryptionConfig()) {
         mergeEncryptionConfig(other.getEncryptionConfig());
       }
+      switch (other.getConfigCase()) {
+        case CLUSTER_CONFIG:
+          {
+            mergeClusterConfig(other.getClusterConfig());
+            break;
+          }
+        case CONFIG_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1757,6 +3868,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int configCase_ = 0;
+    private java.lang.Object config_;
+
+    public ConfigCase getConfigCase() {
+      return ConfigCase.forNumber(configCase_);
+    }
+
+    public Builder clearConfig() {
+      configCase_ = 0;
+      config_ = null;
+      onChanged();
       return this;
     }
 
@@ -2103,11 +4228,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes allocated to this cluster. More nodes enable
-     * higher throughput and more consistent performance.
+     * The number of nodes allocated to this cluster. More nodes enable higher
+     * throughput and more consistent performance.
      * </pre>
      *
-     * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int32 serve_nodes = 4;</code>
      *
      * @return The serveNodes.
      */
@@ -2119,11 +4244,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes allocated to this cluster. More nodes enable
-     * higher throughput and more consistent performance.
+     * The number of nodes allocated to this cluster. More nodes enable higher
+     * throughput and more consistent performance.
      * </pre>
      *
-     * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int32 serve_nodes = 4;</code>
      *
      * @param value The serveNodes to set.
      * @return This builder for chaining.
@@ -2138,11 +4263,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes allocated to this cluster. More nodes enable
-     * higher throughput and more consistent performance.
+     * The number of nodes allocated to this cluster. More nodes enable higher
+     * throughput and more consistent performance.
      * </pre>
      *
-     * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int32 serve_nodes = 4;</code>
      *
      * @return This builder for chaining.
      */
@@ -2151,6 +4276,215 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       serveNodes_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Cluster.ClusterConfig,
+            com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder,
+            com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder>
+        clusterConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     *
+     * @return Whether the clusterConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasClusterConfig() {
+      return configCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     *
+     * @return The clusterConfig.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Cluster.ClusterConfig getClusterConfig() {
+      if (clusterConfigBuilder_ == null) {
+        if (configCase_ == 7) {
+          return (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_;
+        }
+        return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
+      } else {
+        if (configCase_ == 7) {
+          return clusterConfigBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     */
+    public Builder setClusterConfig(com.google.bigtable.admin.v2.Cluster.ClusterConfig value) {
+      if (clusterConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+        onChanged();
+      } else {
+        clusterConfigBuilder_.setMessage(value);
+      }
+      configCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     */
+    public Builder setClusterConfig(
+        com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder builderForValue) {
+      if (clusterConfigBuilder_ == null) {
+        config_ = builderForValue.build();
+        onChanged();
+      } else {
+        clusterConfigBuilder_.setMessage(builderForValue.build());
+      }
+      configCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     */
+    public Builder mergeClusterConfig(com.google.bigtable.admin.v2.Cluster.ClusterConfig value) {
+      if (clusterConfigBuilder_ == null) {
+        if (configCase_ == 7
+            && config_ != com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance()) {
+          config_ =
+              com.google.bigtable.admin.v2.Cluster.ClusterConfig.newBuilder(
+                      (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          config_ = value;
+        }
+        onChanged();
+      } else {
+        if (configCase_ == 7) {
+          clusterConfigBuilder_.mergeFrom(value);
+        }
+        clusterConfigBuilder_.setMessage(value);
+      }
+      configCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     */
+    public Builder clearClusterConfig() {
+      if (clusterConfigBuilder_ == null) {
+        if (configCase_ == 7) {
+          configCase_ = 0;
+          config_ = null;
+          onChanged();
+        }
+      } else {
+        if (configCase_ == 7) {
+          configCase_ = 0;
+          config_ = null;
+        }
+        clusterConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     */
+    public com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder getClusterConfigBuilder() {
+      return getClusterConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder getClusterConfigOrBuilder() {
+      if ((configCase_ == 7) && (clusterConfigBuilder_ != null)) {
+        return clusterConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (configCase_ == 7) {
+          return (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_;
+        }
+        return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for this cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Cluster.ClusterConfig,
+            com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder,
+            com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder>
+        getClusterConfigFieldBuilder() {
+      if (clusterConfigBuilder_ == null) {
+        if (!(configCase_ == 7)) {
+          config_ = com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
+        }
+        clusterConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Cluster.ClusterConfig,
+                com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder,
+                com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder>(
+                (com.google.bigtable.admin.v2.Cluster.ClusterConfig) config_,
+                getParentForChildren(),
+                isClean());
+        config_ = null;
+      }
+      configCase_ = 7;
+      onChanged();
+      ;
+      return clusterConfigBuilder_;
     }
 
     private int defaultStorageType_ = 0;

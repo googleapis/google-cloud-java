@@ -92,6 +92,14 @@ public final class BigtableInstanceAdminProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_UpdateClusterMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_PartialUpdateClusterMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_PartialUpdateClusterMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_PartialUpdateClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_PartialUpdateClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_CreateAppProfileRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_CreateAppProfileRequest_fieldAccessorTable;
@@ -195,132 +203,147 @@ public final class BigtableInstanceAdminProto {
           + "uest\030\001 \001(\0132!.google.bigtable.admin.v2.Cl"
           + "uster\0220\n\014request_time\030\002 \001(\0132\032.google.pro"
           + "tobuf.Timestamp\022/\n\013finish_time\030\003 \001(\0132\032.g"
-          + "oogle.protobuf.Timestamp\"\316\001\n\027CreateAppPr"
-          + "ofileRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%bi"
-          + "gtableadmin.googleapis.com/Instance\022\033\n\016a"
-          + "pp_profile_id\030\002 \001(\tB\003\340A\002\022>\n\013app_profile\030"
-          + "\003 \001(\0132$.google.bigtable.admin.v2.AppProf"
-          + "ileB\003\340A\002\022\027\n\017ignore_warnings\030\004 \001(\010\"U\n\024Get"
-          + "AppProfileRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n"
-          + "\'bigtableadmin.googleapis.com/AppProfile"
-          + "\"~\n\026ListAppProfilesRequest\022=\n\006parent\030\001 \001"
-          + "(\tB-\340A\002\372A\'\n%bigtableadmin.googleapis.com"
-          + "/Instance\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_tok"
-          + "en\030\002 \001(\t\"\210\001\n\027ListAppProfilesResponse\022:\n\014"
-          + "app_profiles\030\001 \003(\0132$.google.bigtable.adm"
-          + "in.v2.AppProfile\022\027\n\017next_page_token\030\002 \001("
-          + "\t\022\030\n\020failed_locations\030\003 \003(\t\"\250\001\n\027UpdateAp"
-          + "pProfileRequest\022>\n\013app_profile\030\001 \001(\0132$.g"
-          + "oogle.bigtable.admin.v2.AppProfileB\003\340A\002\022"
-          + "4\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
-          + "ieldMaskB\003\340A\002\022\027\n\017ignore_warnings\030\003 \001(\010\"v"
-          + "\n\027DeleteAppProfileRequest\022=\n\004name\030\001 \001(\tB"
-          + "/\340A\002\372A)\n\'bigtableadmin.googleapis.com/Ap"
-          + "pProfile\022\034\n\017ignore_warnings\030\002 \001(\010B\003\340A\002\"\032"
-          + "\n\030UpdateAppProfileMetadata2\222\036\n\025BigtableI"
-          + "nstanceAdmin\022\332\001\n\016CreateInstance\022/.google"
-          + ".bigtable.admin.v2.CreateInstanceRequest"
-          + "\032\035.google.longrunning.Operation\"x\202\323\344\223\002&\""
-          + "!/v2/{parent=projects/*}/instances:\001*\332A$"
-          + "parent,instance_id,instance,clusters\312A\"\n"
-          + "\010Instance\022\026CreateInstanceMetadata\022\221\001\n\013Ge"
-          + "tInstance\022,.google.bigtable.admin.v2.Get"
-          + "InstanceRequest\032\".google.bigtable.admin."
-          + "v2.Instance\"0\202\323\344\223\002#\022!/v2/{name=projects/"
-          + "*/instances/*}\332A\004name\022\244\001\n\rListInstances\022"
-          + "..google.bigtable.admin.v2.ListInstances"
-          + "Request\032/.google.bigtable.admin.v2.ListI"
-          + "nstancesResponse\"2\202\323\344\223\002#\022!/v2/{parent=pr"
-          + "ojects/*}/instances\332A\006parent\022\206\001\n\016UpdateI"
-          + "nstance\022\".google.bigtable.admin.v2.Insta"
-          + "nce\032\".google.bigtable.admin.v2.Instance\""
-          + ",\202\323\344\223\002&\032!/v2/{name=projects/*/instances/"
-          + "*}:\001*\022\350\001\n\025PartialUpdateInstance\0226.google"
-          + ".bigtable.admin.v2.PartialUpdateInstance"
-          + "Request\032\035.google.longrunning.Operation\"x"
-          + "\202\323\344\223\00262*/v2/{instance.name=projects/*/in"
-          + "stances/*}:\010instance\332A\024instance,update_m"
-          + "ask\312A\"\n\010Instance\022\026UpdateInstanceMetadata"
-          + "\022\213\001\n\016DeleteInstance\022/.google.bigtable.ad"
-          + "min.v2.DeleteInstanceRequest\032\026.google.pr"
-          + "otobuf.Empty\"0\202\323\344\223\002#*!/v2/{name=projects"
-          + "/*/instances/*}\332A\004name\022\334\001\n\rCreateCluster"
-          + "\022..google.bigtable.admin.v2.CreateCluste"
-          + "rRequest\032\035.google.longrunning.Operation\""
-          + "|\202\323\344\223\0027\",/v2/{parent=projects/*/instance"
-          + "s/*}/clusters:\007cluster\332A\031parent,cluster_"
-          + "id,cluster\312A \n\007Cluster\022\025CreateClusterMet"
-          + "adata\022\231\001\n\nGetCluster\022+.google.bigtable.a"
-          + "dmin.v2.GetClusterRequest\032!.google.bigta"
-          + "ble.admin.v2.Cluster\";\202\323\344\223\002.\022,/v2/{name="
-          + "projects/*/instances/*/clusters/*}\332A\004nam"
-          + "e\022\254\001\n\014ListClusters\022-.google.bigtable.adm"
-          + "in.v2.ListClustersRequest\032..google.bigta"
-          + "ble.admin.v2.ListClustersResponse\"=\202\323\344\223\002"
-          + ".\022,/v2/{parent=projects/*/instances/*}/c"
-          + "lusters\332A\006parent\022\255\001\n\rUpdateCluster\022!.goo"
-          + "gle.bigtable.admin.v2.Cluster\032\035.google.l"
-          + "ongrunning.Operation\"Z\202\323\344\223\0021\032,/v2/{name="
-          + "projects/*/instances/*/clusters/*}:\001*\312A "
-          + "\n\007Cluster\022\025UpdateClusterMetadata\022\224\001\n\rDel"
-          + "eteCluster\022..google.bigtable.admin.v2.De"
-          + "leteClusterRequest\032\026.google.protobuf.Emp"
-          + "ty\";\202\323\344\223\002.*,/v2/{name=projects/*/instanc"
-          + "es/*/clusters/*}\332A\004name\022\325\001\n\020CreateAppPro"
-          + "file\0221.google.bigtable.admin.v2.CreateAp"
-          + "pProfileRequest\032$.google.bigtable.admin."
-          + "v2.AppProfile\"h\202\323\344\223\002>\"//v2/{parent=proje"
-          + "cts/*/instances/*}/appProfiles:\013app_prof"
-          + "ile\332A!parent,app_profile_id,app_profile\022"
-          + "\245\001\n\rGetAppProfile\022..google.bigtable.admi"
-          + "n.v2.GetAppProfileRequest\032$.google.bigta"
-          + "ble.admin.v2.AppProfile\">\202\323\344\223\0021\022//v2/{na"
-          + "me=projects/*/instances/*/appProfiles/*}"
-          + "\332A\004name\022\270\001\n\017ListAppProfiles\0220.google.big"
-          + "table.admin.v2.ListAppProfilesRequest\0321."
-          + "google.bigtable.admin.v2.ListAppProfiles"
-          + "Response\"@\202\323\344\223\0021\022//v2/{parent=projects/*"
-          + "/instances/*}/appProfiles\332A\006parent\022\372\001\n\020U"
-          + "pdateAppProfile\0221.google.bigtable.admin."
-          + "v2.UpdateAppProfileRequest\032\035.google.long"
-          + "running.Operation\"\223\001\202\323\344\223\002J2;/v2/{app_pro"
-          + "file.name=projects/*/instances/*/appProf"
-          + "iles/*}:\013app_profile\332A\027app_profile,updat"
-          + "e_mask\312A&\n\nAppProfile\022\030UpdateAppProfileM"
-          + "etadata\022\235\001\n\020DeleteAppProfile\0221.google.bi"
-          + "gtable.admin.v2.DeleteAppProfileRequest\032"
-          + "\026.google.protobuf.Empty\">\202\323\344\223\0021*//v2/{na"
-          + "me=projects/*/instances/*/appProfiles/*}"
-          + "\332A\004name\022\223\001\n\014GetIamPolicy\022\".google.iam.v1"
-          + ".GetIamPolicyRequest\032\025.google.iam.v1.Pol"
-          + "icy\"H\202\323\344\223\0027\"2/v2/{resource=projects/*/in"
-          + "stances/*}:getIamPolicy:\001*\332A\010resource\022\232\001"
-          + "\n\014SetIamPolicy\022\".google.iam.v1.SetIamPol"
-          + "icyRequest\032\025.google.iam.v1.Policy\"O\202\323\344\223\002"
-          + "7\"2/v2/{resource=projects/*/instances/*}"
-          + ":setIamPolicy:\001*\332A\017resource,policy\022\305\001\n\022T"
-          + "estIamPermissions\022(.google.iam.v1.TestIa"
-          + "mPermissionsRequest\032).google.iam.v1.Test"
-          + "IamPermissionsResponse\"Z\202\323\344\223\002=\"8/v2/{res"
-          + "ource=projects/*/instances/*}:testIamPer"
-          + "missions:\001*\332A\024resource,permissions\032\232\003\312A\034"
-          + "bigtableadmin.googleapis.com\322A\367\002https://"
-          + "www.googleapis.com/auth/bigtable.admin,h"
-          + "ttps://www.googleapis.com/auth/bigtable."
-          + "admin.cluster,https://www.googleapis.com"
-          + "/auth/bigtable.admin.instance,https://ww"
-          + "w.googleapis.com/auth/cloud-bigtable.adm"
-          + "in,https://www.googleapis.com/auth/cloud"
-          + "-bigtable.admin.cluster,https://www.goog"
-          + "leapis.com/auth/cloud-platform,https://w"
-          + "ww.googleapis.com/auth/cloud-platform.re"
-          + "ad-onlyB\342\001\n\034com.google.bigtable.admin.v2"
-          + "B\032BigtableInstanceAdminProtoP\001Z=google.g"
-          + "olang.org/genproto/googleapis/bigtable/a"
-          + "dmin/v2;admin\252\002\036Google.Cloud.Bigtable.Ad"
-          + "min.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352"
-          + "\002\"Google::Cloud::Bigtable::Admin::V2b\006pr"
-          + "oto3"
+          + "oogle.protobuf.Timestamp\"\322\001\n\034PartialUpda"
+          + "teClusterMetadata\0220\n\014request_time\030\001 \001(\0132"
+          + "\032.google.protobuf.Timestamp\022/\n\013finish_ti"
+          + "me\030\002 \001(\0132\032.google.protobuf.Timestamp\022O\n\020"
+          + "original_request\030\003 \001(\01325.google.bigtable"
+          + ".admin.v2.PartialUpdateClusterRequest\"\214\001"
+          + "\n\033PartialUpdateClusterRequest\0227\n\007cluster"
+          + "\030\001 \001(\0132!.google.bigtable.admin.v2.Cluste"
+          + "rB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.pro"
+          + "tobuf.FieldMaskB\003\340A\002\"\316\001\n\027CreateAppProfil"
+          + "eRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%bigtab"
+          + "leadmin.googleapis.com/Instance\022\033\n\016app_p"
+          + "rofile_id\030\002 \001(\tB\003\340A\002\022>\n\013app_profile\030\003 \001("
+          + "\0132$.google.bigtable.admin.v2.AppProfileB"
+          + "\003\340A\002\022\027\n\017ignore_warnings\030\004 \001(\010\"U\n\024GetAppP"
+          + "rofileRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'big"
+          + "tableadmin.googleapis.com/AppProfile\"~\n\026"
+          + "ListAppProfilesRequest\022=\n\006parent\030\001 \001(\tB-"
+          + "\340A\002\372A\'\n%bigtableadmin.googleapis.com/Ins"
+          + "tance\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\002"
+          + " \001(\t\"\210\001\n\027ListAppProfilesResponse\022:\n\014app_"
+          + "profiles\030\001 \003(\0132$.google.bigtable.admin.v"
+          + "2.AppProfile\022\027\n\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\020failed_locations\030\003 \003(\t\"\250\001\n\027UpdateAppPro"
+          + "fileRequest\022>\n\013app_profile\030\001 \001(\0132$.googl"
+          + "e.bigtable.admin.v2.AppProfileB\003\340A\002\0224\n\013u"
+          + "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
+          + "MaskB\003\340A\002\022\027\n\017ignore_warnings\030\003 \001(\010\"v\n\027De"
+          + "leteAppProfileRequest\022=\n\004name\030\001 \001(\tB/\340A\002"
+          + "\372A)\n\'bigtableadmin.googleapis.com/AppPro"
+          + "file\022\034\n\017ignore_warnings\030\002 \001(\010B\003\340A\002\"\032\n\030Up"
+          + "dateAppProfileMetadata2\211 \n\025BigtableInsta"
+          + "nceAdmin\022\332\001\n\016CreateInstance\022/.google.big"
+          + "table.admin.v2.CreateInstanceRequest\032\035.g"
+          + "oogle.longrunning.Operation\"x\202\323\344\223\002&\"!/v2"
+          + "/{parent=projects/*}/instances:\001*\332A$pare"
+          + "nt,instance_id,instance,clusters\312A\"\n\010Ins"
+          + "tance\022\026CreateInstanceMetadata\022\221\001\n\013GetIns"
+          + "tance\022,.google.bigtable.admin.v2.GetInst"
+          + "anceRequest\032\".google.bigtable.admin.v2.I"
+          + "nstance\"0\202\323\344\223\002#\022!/v2/{name=projects/*/in"
+          + "stances/*}\332A\004name\022\244\001\n\rListInstances\022..go"
+          + "ogle.bigtable.admin.v2.ListInstancesRequ"
+          + "est\032/.google.bigtable.admin.v2.ListInsta"
+          + "ncesResponse\"2\202\323\344\223\002#\022!/v2/{parent=projec"
+          + "ts/*}/instances\332A\006parent\022\206\001\n\016UpdateInsta"
+          + "nce\022\".google.bigtable.admin.v2.Instance\032"
+          + "\".google.bigtable.admin.v2.Instance\",\202\323\344"
+          + "\223\002&\032!/v2/{name=projects/*/instances/*}:\001"
+          + "*\022\350\001\n\025PartialUpdateInstance\0226.google.big"
+          + "table.admin.v2.PartialUpdateInstanceRequ"
+          + "est\032\035.google.longrunning.Operation\"x\202\323\344\223"
+          + "\00262*/v2/{instance.name=projects/*/instan"
+          + "ces/*}:\010instance\332A\024instance,update_mask\312"
+          + "A\"\n\010Instance\022\026UpdateInstanceMetadata\022\213\001\n"
+          + "\016DeleteInstance\022/.google.bigtable.admin."
+          + "v2.DeleteInstanceRequest\032\026.google.protob"
+          + "uf.Empty\"0\202\323\344\223\002#*!/v2/{name=projects/*/i"
+          + "nstances/*}\332A\004name\022\334\001\n\rCreateCluster\022..g"
+          + "oogle.bigtable.admin.v2.CreateClusterReq"
+          + "uest\032\035.google.longrunning.Operation\"|\202\323\344"
+          + "\223\0027\",/v2/{parent=projects/*/instances/*}"
+          + "/clusters:\007cluster\332A\031parent,cluster_id,c"
+          + "luster\312A \n\007Cluster\022\025CreateClusterMetadat"
+          + "a\022\231\001\n\nGetCluster\022+.google.bigtable.admin"
+          + ".v2.GetClusterRequest\032!.google.bigtable."
+          + "admin.v2.Cluster\";\202\323\344\223\002.\022,/v2/{name=proj"
+          + "ects/*/instances/*/clusters/*}\332A\004name\022\254\001"
+          + "\n\014ListClusters\022-.google.bigtable.admin.v"
+          + "2.ListClustersRequest\032..google.bigtable."
+          + "admin.v2.ListClustersResponse\"=\202\323\344\223\002.\022,/"
+          + "v2/{parent=projects/*/instances/*}/clust"
+          + "ers\332A\006parent\022\255\001\n\rUpdateCluster\022!.google."
+          + "bigtable.admin.v2.Cluster\032\035.google.longr"
+          + "unning.Operation\"Z\202\323\344\223\0021\032,/v2/{name=proj"
+          + "ects/*/instances/*/clusters/*}:\001*\312A \n\007Cl"
+          + "uster\022\025UpdateClusterMetadata\022\364\001\n\024Partial"
+          + "UpdateCluster\0225.google.bigtable.admin.v2"
+          + ".PartialUpdateClusterRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\205\001\202\323\344\223\002?24/v2/{clust"
+          + "er.name=projects/*/instances/*/clusters/"
+          + "*}:\007cluster\332A\023cluster,update_mask\312A\'\n\007Cl"
+          + "uster\022\034PartialUpdateClusterMetadata\022\224\001\n\r"
+          + "DeleteCluster\022..google.bigtable.admin.v2"
+          + ".DeleteClusterRequest\032\026.google.protobuf."
+          + "Empty\";\202\323\344\223\002.*,/v2/{name=projects/*/inst"
+          + "ances/*/clusters/*}\332A\004name\022\325\001\n\020CreateApp"
+          + "Profile\0221.google.bigtable.admin.v2.Creat"
+          + "eAppProfileRequest\032$.google.bigtable.adm"
+          + "in.v2.AppProfile\"h\202\323\344\223\002>\"//v2/{parent=pr"
+          + "ojects/*/instances/*}/appProfiles:\013app_p"
+          + "rofile\332A!parent,app_profile_id,app_profi"
+          + "le\022\245\001\n\rGetAppProfile\022..google.bigtable.a"
+          + "dmin.v2.GetAppProfileRequest\032$.google.bi"
+          + "gtable.admin.v2.AppProfile\">\202\323\344\223\0021\022//v2/"
+          + "{name=projects/*/instances/*/appProfiles"
+          + "/*}\332A\004name\022\270\001\n\017ListAppProfiles\0220.google."
+          + "bigtable.admin.v2.ListAppProfilesRequest"
+          + "\0321.google.bigtable.admin.v2.ListAppProfi"
+          + "lesResponse\"@\202\323\344\223\0021\022//v2/{parent=project"
+          + "s/*/instances/*}/appProfiles\332A\006parent\022\372\001"
+          + "\n\020UpdateAppProfile\0221.google.bigtable.adm"
+          + "in.v2.UpdateAppProfileRequest\032\035.google.l"
+          + "ongrunning.Operation\"\223\001\202\323\344\223\002J2;/v2/{app_"
+          + "profile.name=projects/*/instances/*/appP"
+          + "rofiles/*}:\013app_profile\332A\027app_profile,up"
+          + "date_mask\312A&\n\nAppProfile\022\030UpdateAppProfi"
+          + "leMetadata\022\235\001\n\020DeleteAppProfile\0221.google"
+          + ".bigtable.admin.v2.DeleteAppProfileReque"
+          + "st\032\026.google.protobuf.Empty\">\202\323\344\223\0021*//v2/"
+          + "{name=projects/*/instances/*/appProfiles"
+          + "/*}\332A\004name\022\223\001\n\014GetIamPolicy\022\".google.iam"
+          + ".v1.GetIamPolicyRequest\032\025.google.iam.v1."
+          + "Policy\"H\202\323\344\223\0027\"2/v2/{resource=projects/*"
+          + "/instances/*}:getIamPolicy:\001*\332A\010resource"
+          + "\022\232\001\n\014SetIamPolicy\022\".google.iam.v1.SetIam"
+          + "PolicyRequest\032\025.google.iam.v1.Policy\"O\202\323"
+          + "\344\223\0027\"2/v2/{resource=projects/*/instances"
+          + "/*}:setIamPolicy:\001*\332A\017resource,policy\022\305\001"
+          + "\n\022TestIamPermissions\022(.google.iam.v1.Tes"
+          + "tIamPermissionsRequest\032).google.iam.v1.T"
+          + "estIamPermissionsResponse\"Z\202\323\344\223\002=\"8/v2/{"
+          + "resource=projects/*/instances/*}:testIam"
+          + "Permissions:\001*\332A\024resource,permissions\032\232\003"
+          + "\312A\034bigtableadmin.googleapis.com\322A\367\002https"
+          + "://www.googleapis.com/auth/bigtable.admi"
+          + "n,https://www.googleapis.com/auth/bigtab"
+          + "le.admin.cluster,https://www.googleapis."
+          + "com/auth/bigtable.admin.instance,https:/"
+          + "/www.googleapis.com/auth/cloud-bigtable."
+          + "admin,https://www.googleapis.com/auth/cl"
+          + "oud-bigtable.admin.cluster,https://www.g"
+          + "oogleapis.com/auth/cloud-platform,https:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + ".read-onlyB\342\001\n\034com.google.bigtable.admin"
+          + ".v2B\032BigtableInstanceAdminProtoP\001Z=googl"
+          + "e.golang.org/genproto/googleapis/bigtabl"
+          + "e/admin/v2;admin\252\002\036Google.Cloud.Bigtable"
+          + ".Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\"
+          + "V2\352\002\"Google::Cloud::Bigtable::Admin::V2b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -468,8 +491,24 @@ public final class BigtableInstanceAdminProto {
             new java.lang.String[] {
               "OriginalRequest", "RequestTime", "FinishTime",
             });
-    internal_static_google_bigtable_admin_v2_CreateAppProfileRequest_descriptor =
+    internal_static_google_bigtable_admin_v2_PartialUpdateClusterMetadata_descriptor =
         getDescriptor().getMessageTypes().get(15);
+    internal_static_google_bigtable_admin_v2_PartialUpdateClusterMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_PartialUpdateClusterMetadata_descriptor,
+            new java.lang.String[] {
+              "RequestTime", "FinishTime", "OriginalRequest",
+            });
+    internal_static_google_bigtable_admin_v2_PartialUpdateClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_bigtable_admin_v2_PartialUpdateClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_PartialUpdateClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Cluster", "UpdateMask",
+            });
+    internal_static_google_bigtable_admin_v2_CreateAppProfileRequest_descriptor =
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_bigtable_admin_v2_CreateAppProfileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_CreateAppProfileRequest_descriptor,
@@ -477,7 +516,7 @@ public final class BigtableInstanceAdminProto {
               "Parent", "AppProfileId", "AppProfile", "IgnoreWarnings",
             });
     internal_static_google_bigtable_admin_v2_GetAppProfileRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_bigtable_admin_v2_GetAppProfileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_GetAppProfileRequest_descriptor,
@@ -485,7 +524,7 @@ public final class BigtableInstanceAdminProto {
               "Name",
             });
     internal_static_google_bigtable_admin_v2_ListAppProfilesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_bigtable_admin_v2_ListAppProfilesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_ListAppProfilesRequest_descriptor,
@@ -493,7 +532,7 @@ public final class BigtableInstanceAdminProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_descriptor,
@@ -501,7 +540,7 @@ public final class BigtableInstanceAdminProto {
               "AppProfiles", "NextPageToken", "FailedLocations",
             });
     internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor,
@@ -509,7 +548,7 @@ public final class BigtableInstanceAdminProto {
               "AppProfile", "UpdateMask", "IgnoreWarnings",
             });
     internal_static_google_bigtable_admin_v2_DeleteAppProfileRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_bigtable_admin_v2_DeleteAppProfileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_DeleteAppProfileRequest_descriptor,
@@ -517,7 +556,7 @@ public final class BigtableInstanceAdminProto {
               "Name", "IgnoreWarnings",
             });
     internal_static_google_bigtable_admin_v2_UpdateAppProfileMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_bigtable_admin_v2_UpdateAppProfileMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_UpdateAppProfileMetadata_descriptor,

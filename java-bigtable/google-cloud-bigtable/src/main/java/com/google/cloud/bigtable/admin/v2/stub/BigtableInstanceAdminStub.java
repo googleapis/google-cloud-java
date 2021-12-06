@@ -42,6 +42,8 @@ import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
@@ -126,6 +128,16 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
 
   public UnaryCallable<Cluster, Operation> updateClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
+  }
+
+  public OperationCallable<PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+      partialUpdateClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: partialUpdateClusterOperationCallable()");
+  }
+
+  public UnaryCallable<PartialUpdateClusterRequest, Operation> partialUpdateClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: partialUpdateClusterCallable()");
   }
 
   public UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable() {

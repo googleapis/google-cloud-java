@@ -51,6 +51,8 @@ import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
@@ -145,6 +147,18 @@ public class BaseBigtableInstanceAdminSettings
   public OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).updateClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to partialUpdateCluster. */
+  public UnaryCallSettings<PartialUpdateClusterRequest, Operation> partialUpdateClusterSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).partialUpdateClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to partialUpdateCluster. */
+  public OperationCallSettings<PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+      partialUpdateClusterOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .partialUpdateClusterOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteCluster. */
@@ -371,6 +385,19 @@ public class BaseBigtableInstanceAdminSettings
     public OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
         updateClusterOperationSettings() {
       return getStubSettingsBuilder().updateClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to partialUpdateCluster. */
+    public UnaryCallSettings.Builder<PartialUpdateClusterRequest, Operation>
+        partialUpdateClusterSettings() {
+      return getStubSettingsBuilder().partialUpdateClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to partialUpdateCluster. */
+    public OperationCallSettings.Builder<
+            PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+        partialUpdateClusterOperationSettings() {
+      return getStubSettingsBuilder().partialUpdateClusterOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */

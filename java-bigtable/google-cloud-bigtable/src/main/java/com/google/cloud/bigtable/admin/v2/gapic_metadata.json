@@ -49,6 +49,9 @@
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesCallable"]
             },
+            "PartialUpdateCluster": {
+              "methods": ["partialUpdateClusterAsync", "partialUpdateClusterAsync", "partialUpdateClusterOperationCallable", "partialUpdateClusterCallable"]
+            },
             "PartialUpdateInstance": {
               "methods": ["partialUpdateInstanceAsync", "partialUpdateInstanceAsync", "partialUpdateInstanceOperationCallable", "partialUpdateInstanceCallable"]
             },

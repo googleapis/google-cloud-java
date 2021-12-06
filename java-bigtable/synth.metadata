@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "bbcb0456b8764d2769197b613bde68411ed333ec"
+        "sha": "08207a890af522b24085d96f111bbe2b4c0da62a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "2921f9fb3bfbd16f6b2da0104373e2b47a80a65e",
-        "internalRef": "408420890"
+        "sha": "0fd6a324383fdd1220c9a937b2eef37f53764664",
+        "internalRef": "410080804"
       }
     },
     {
@@ -138,6 +138,10 @@
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AppProfile.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AppProfileName.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AppProfileOrBuilder.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AutoscalingLimits.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AutoscalingLimitsOrBuilder.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AutoscalingTargets.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AutoscalingTargetsOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/Backup.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BackupInfo.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BackupInfoOrBuilder.java",
@@ -244,6 +248,10 @@
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/OperationProgressOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/OptimizeRestoredTableMetadata.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/OptimizeRestoredTableMetadataOrBuilder.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateClusterMetadata.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateClusterMetadataOrBuilder.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateClusterRequest.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateClusterRequestOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateInstanceRequest.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateInstanceRequestOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ProjectName.java",

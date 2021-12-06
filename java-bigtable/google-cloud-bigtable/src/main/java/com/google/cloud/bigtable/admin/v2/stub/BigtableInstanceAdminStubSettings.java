@@ -64,6 +64,8 @@ import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
@@ -154,6 +156,11 @@ public class BigtableInstanceAdminStubSettings
   private final UnaryCallSettings<Cluster, Operation> updateClusterSettings;
   private final OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationSettings;
+  private final UnaryCallSettings<PartialUpdateClusterRequest, Operation>
+      partialUpdateClusterSettings;
+  private final OperationCallSettings<
+          PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+      partialUpdateClusterOperationSettings;
   private final UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings;
   private final UnaryCallSettings<CreateAppProfileRequest, AppProfile> createAppProfileSettings;
   private final UnaryCallSettings<GetAppProfileRequest, AppProfile> getAppProfileSettings;
@@ -298,6 +305,17 @@ public class BigtableInstanceAdminStubSettings
   public OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationSettings() {
     return updateClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to partialUpdateCluster. */
+  public UnaryCallSettings<PartialUpdateClusterRequest, Operation> partialUpdateClusterSettings() {
+    return partialUpdateClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to partialUpdateCluster. */
+  public OperationCallSettings<PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+      partialUpdateClusterOperationSettings() {
+    return partialUpdateClusterOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteCluster. */
@@ -445,6 +463,9 @@ public class BigtableInstanceAdminStubSettings
     listClustersSettings = settingsBuilder.listClustersSettings().build();
     updateClusterSettings = settingsBuilder.updateClusterSettings().build();
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
+    partialUpdateClusterSettings = settingsBuilder.partialUpdateClusterSettings().build();
+    partialUpdateClusterOperationSettings =
+        settingsBuilder.partialUpdateClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     createAppProfileSettings = settingsBuilder.createAppProfileSettings().build();
     getAppProfileSettings = settingsBuilder.getAppProfileSettings().build();
@@ -486,6 +507,11 @@ public class BigtableInstanceAdminStubSettings
     private final UnaryCallSettings.Builder<Cluster, Operation> updateClusterSettings;
     private final OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
         updateClusterOperationSettings;
+    private final UnaryCallSettings.Builder<PartialUpdateClusterRequest, Operation>
+        partialUpdateClusterSettings;
+    private final OperationCallSettings.Builder<
+            PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+        partialUpdateClusterOperationSettings;
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings;
     private final UnaryCallSettings.Builder<CreateAppProfileRequest, AppProfile>
         createAppProfileSettings;
@@ -578,6 +604,8 @@ public class BigtableInstanceAdminStubSettings
       listClustersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateClusterOperationSettings = OperationCallSettings.newBuilder();
+      partialUpdateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      partialUpdateClusterOperationSettings = OperationCallSettings.newBuilder();
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -601,6 +629,7 @@ public class BigtableInstanceAdminStubSettings
               getClusterSettings,
               listClustersSettings,
               updateClusterSettings,
+              partialUpdateClusterSettings,
               deleteClusterSettings,
               createAppProfileSettings,
               getAppProfileSettings,
@@ -631,6 +660,9 @@ public class BigtableInstanceAdminStubSettings
       listClustersSettings = settings.listClustersSettings.toBuilder();
       updateClusterSettings = settings.updateClusterSettings.toBuilder();
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
+      partialUpdateClusterSettings = settings.partialUpdateClusterSettings.toBuilder();
+      partialUpdateClusterOperationSettings =
+          settings.partialUpdateClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       createAppProfileSettings = settings.createAppProfileSettings.toBuilder();
       getAppProfileSettings = settings.getAppProfileSettings.toBuilder();
@@ -654,6 +686,7 @@ public class BigtableInstanceAdminStubSettings
               getClusterSettings,
               listClustersSettings,
               updateClusterSettings,
+              partialUpdateClusterSettings,
               deleteClusterSettings,
               createAppProfileSettings,
               getAppProfileSettings,
@@ -726,6 +759,11 @@ public class BigtableInstanceAdminStubSettings
 
       builder
           .updateClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .partialUpdateClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
@@ -870,6 +908,31 @@ public class BigtableInstanceAdminStubSettings
                       .build()));
 
       builder
+          .partialUpdateClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PartialUpdateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  PartialUpdateClusterMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .updateAppProfileOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -995,6 +1058,21 @@ public class BigtableInstanceAdminStubSettings
     public OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to partialUpdateCluster. */
+    public UnaryCallSettings.Builder<PartialUpdateClusterRequest, Operation>
+        partialUpdateClusterSettings() {
+      return partialUpdateClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to partialUpdateCluster. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+        partialUpdateClusterOperationSettings() {
+      return partialUpdateClusterOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */

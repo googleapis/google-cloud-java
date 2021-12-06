@@ -42,24 +42,25 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n%google/bigtable/admin/v2/common.proto\022"
           + "\030google.bigtable.admin.v2\032\037google/protob"
-          + "uf/timestamp.proto\"\213\001\n\021OperationProgress"
-          + "\022\030\n\020progress_percent\030\001 \001(\005\022.\n\nstart_time"
-          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\022,\n\010en"
-          + "d_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
-          + "*=\n\013StorageType\022\034\n\030STORAGE_TYPE_UNSPECIF"
-          + "IED\020\000\022\007\n\003SSD\020\001\022\007\n\003HDD\020\002B\323\001\n\034com.google.b"
-          + "igtable.admin.v2B\013CommonProtoP\001Z=google."
-          + "golang.org/genproto/googleapis/bigtable/"
-          + "admin/v2;admin\252\002\036Google.Cloud.Bigtable.A"
-          + "dmin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2"
-          + "\352\002\"Google::Cloud::Bigtable::Admin::V2b\006p"
-          + "roto3"
+          + "uf/timestamp.proto\032\034google/api/annotatio"
+          + "ns.proto\"\213\001\n\021OperationProgress\022\030\n\020progre"
+          + "ss_percent\030\001 \001(\005\022.\n\nstart_time\030\002 \001(\0132\032.g"
+          + "oogle.protobuf.Timestamp\022,\n\010end_time\030\003 \001"
+          + "(\0132\032.google.protobuf.Timestamp*=\n\013Storag"
+          + "eType\022\034\n\030STORAGE_TYPE_UNSPECIFIED\020\000\022\007\n\003S"
+          + "SD\020\001\022\007\n\003HDD\020\002B\323\001\n\034com.google.bigtable.ad"
+          + "min.v2B\013CommonProtoP\001Z=google.golang.org"
+          + "/genproto/googleapis/bigtable/admin/v2;a"
+          + "dmin\252\002\036Google.Cloud.Bigtable.Admin.V2\312\002\036"
+          + "Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google:"
+          + ":Cloud::Bigtable::Admin::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_bigtable_admin_v2_OperationProgress_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -70,6 +71,7 @@ public final class CommonProto {
               "ProgressPercent", "StartTime", "EndTime",
             });
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

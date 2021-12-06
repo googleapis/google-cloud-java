@@ -52,6 +52,8 @@ import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
@@ -149,6 +151,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Create an instance within a project.
    *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -192,6 +199,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create an instance within a project.
+   *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
    *
    * <p>Sample code:
    *
@@ -237,6 +249,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Create an instance within a project.
    *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -265,6 +282,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Create an instance within a project.
    *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -292,6 +314,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create an instance within a project.
+   *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
    *
    * <p>Sample code:
    *
@@ -780,6 +807,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Creates a cluster within an instance.
    *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -816,6 +848,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a cluster within an instance.
+   *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
    *
    * <p>Sample code:
    *
@@ -854,6 +891,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Creates a cluster within an instance.
    *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -881,6 +923,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Creates a cluster within an instance.
    *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -907,6 +954,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a cluster within an instance.
+   *
+   * <p>Note that exactly one of Cluster.serve_nodes and
+   * Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to
+   * non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is
+   * non-empty, then autoscaling is enabled.
    *
    * <p>Sample code:
    *
@@ -1132,6 +1184,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Updates a cluster within an instance.
    *
+   * <p>Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config.
+   * In order to update it, you must use PartialUpdateCluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1159,6 +1214,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a cluster within an instance.
+   *
+   * <p>Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config.
+   * In order to update it, you must use PartialUpdateCluster.
    *
    * <p>Sample code:
    *
@@ -1189,6 +1247,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   /**
    * Updates a cluster within an instance.
    *
+   * <p>Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config.
+   * In order to update it, you must use PartialUpdateCluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1211,6 +1272,157 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<Cluster, Operation> updateClusterCallable() {
     return stub.updateClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Partially updates a cluster within a project. This method is the preferred way to update a
+   * Cluster.
+   *
+   * <p>To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When
+   * autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to
+   * it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and
+   * cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the
+   * update_mask.
+   *
+   * <p>To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set
+   * a serve_node count via the update_mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Cluster response =
+   *       baseBigtableInstanceAdminClient.partialUpdateClusterAsync(cluster, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param cluster Required. The Cluster which contains the partial updates to be applied, subject
+   *     to the update_mask.
+   * @param updateMask Required. The subset of Cluster fields which should be replaced.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, PartialUpdateClusterMetadata> partialUpdateClusterAsync(
+      Cluster cluster, FieldMask updateMask) {
+    PartialUpdateClusterRequest request =
+        PartialUpdateClusterRequest.newBuilder()
+            .setCluster(cluster)
+            .setUpdateMask(updateMask)
+            .build();
+    return partialUpdateClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Partially updates a cluster within a project. This method is the preferred way to update a
+   * Cluster.
+   *
+   * <p>To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When
+   * autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to
+   * it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and
+   * cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the
+   * update_mask.
+   *
+   * <p>To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set
+   * a serve_node count via the update_mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   PartialUpdateClusterRequest request =
+   *       PartialUpdateClusterRequest.newBuilder()
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Cluster response = baseBigtableInstanceAdminClient.partialUpdateClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, PartialUpdateClusterMetadata> partialUpdateClusterAsync(
+      PartialUpdateClusterRequest request) {
+    return partialUpdateClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Partially updates a cluster within a project. This method is the preferred way to update a
+   * Cluster.
+   *
+   * <p>To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When
+   * autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to
+   * it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and
+   * cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the
+   * update_mask.
+   *
+   * <p>To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set
+   * a serve_node count via the update_mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   PartialUpdateClusterRequest request =
+   *       PartialUpdateClusterRequest.newBuilder()
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Cluster, PartialUpdateClusterMetadata> future =
+   *       baseBigtableInstanceAdminClient
+   *           .partialUpdateClusterOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+      partialUpdateClusterOperationCallable() {
+    return stub.partialUpdateClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Partially updates a cluster within a project. This method is the preferred way to update a
+   * Cluster.
+   *
+   * <p>To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When
+   * autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to
+   * it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and
+   * cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the
+   * update_mask.
+   *
+   * <p>To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set
+   * a serve_node count via the update_mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   PartialUpdateClusterRequest request =
+   *       PartialUpdateClusterRequest.newBuilder()
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableInstanceAdminClient.partialUpdateClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PartialUpdateClusterRequest, Operation>
+      partialUpdateClusterCallable() {
+    return stub.partialUpdateClusterCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

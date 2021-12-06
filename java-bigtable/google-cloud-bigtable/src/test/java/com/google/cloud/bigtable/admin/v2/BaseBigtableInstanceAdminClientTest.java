@@ -49,6 +49,7 @@ import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.LocationName;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.StorageType;
@@ -896,6 +897,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertEquals(request.getState(), actualRequest.getState());
     Assert.assertEquals(request.getServeNodes(), actualRequest.getServeNodes());
+    Assert.assertEquals(request.getClusterConfig(), actualRequest.getClusterConfig());
     Assert.assertEquals(request.getDefaultStorageType(), actualRequest.getDefaultStorageType());
     Assert.assertEquals(request.getEncryptionConfig(), actualRequest.getEncryptionConfig());
     Assert.assertTrue(
@@ -919,6 +921,60 @@ public class BaseBigtableInstanceAdminClientTest {
               .setEncryptionConfig(Cluster.EncryptionConfig.newBuilder().build())
               .build();
       client.updateClusterAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void partialUpdateClusterTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setServeNodes(-1288838783)
+            .setDefaultStorageType(StorageType.forNumber(0))
+            .setEncryptionConfig(Cluster.EncryptionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("partialUpdateClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    Cluster cluster = Cluster.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Cluster actualResponse = client.partialUpdateClusterAsync(cluster, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PartialUpdateClusterRequest actualRequest =
+        ((PartialUpdateClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(cluster, actualRequest.getCluster());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void partialUpdateClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      Cluster cluster = Cluster.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.partialUpdateClusterAsync(cluster, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

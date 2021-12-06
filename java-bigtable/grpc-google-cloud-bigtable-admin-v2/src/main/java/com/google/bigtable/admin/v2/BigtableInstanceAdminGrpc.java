@@ -478,6 +478,56 @@ public final class BigtableInstanceAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.PartialUpdateClusterRequest,
+          com.google.longrunning.Operation>
+      getPartialUpdateClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PartialUpdateCluster",
+      requestType = com.google.bigtable.admin.v2.PartialUpdateClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.PartialUpdateClusterRequest,
+          com.google.longrunning.Operation>
+      getPartialUpdateClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.PartialUpdateClusterRequest,
+            com.google.longrunning.Operation>
+        getPartialUpdateClusterMethod;
+    if ((getPartialUpdateClusterMethod = BigtableInstanceAdminGrpc.getPartialUpdateClusterMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getPartialUpdateClusterMethod =
+                BigtableInstanceAdminGrpc.getPartialUpdateClusterMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getPartialUpdateClusterMethod =
+              getPartialUpdateClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.PartialUpdateClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "PartialUpdateCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.PartialUpdateClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("PartialUpdateCluster"))
+                      .build();
+        }
+      }
+    }
+    return getPartialUpdateClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.bigtable.admin.v2.DeleteClusterRequest, com.google.protobuf.Empty>
       getDeleteClusterMethod;
 
@@ -929,6 +979,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Create an instance within a project.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public void createInstance(
@@ -1017,6 +1072,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Creates a cluster within an instance.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public void createCluster(
@@ -1059,6 +1119,9 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Updates a cluster within an instance.
+     * Note that UpdateCluster does not support updating
+     * cluster_config.cluster_autoscaling_config. In order to update it, you
+     * must use PartialUpdateCluster.
      * </pre>
      */
     public void updateCluster(
@@ -1066,6 +1129,29 @@ public final class BigtableInstanceAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partially updates a cluster within a project. This method is the preferred
+     * way to update a Cluster.
+     * To enable and update autoscaling, set
+     * cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+     * serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+     * are ignored. Note that an update cannot simultaneously set serve_nodes to
+     * non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+     * also specify both in the update_mask.
+     * To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+     * and explicitly set a serve_node count via the update_mask.
+     * </pre>
+     */
+    public void partialUpdateCluster(
+        com.google.bigtable.admin.v2.PartialUpdateClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPartialUpdateClusterMethod(), responseObserver);
     }
 
     /**
@@ -1264,6 +1350,12 @@ public final class BigtableInstanceAdminGrpc {
                       com.google.bigtable.admin.v2.Cluster, com.google.longrunning.Operation>(
                       this, METHODID_UPDATE_CLUSTER)))
           .addMethod(
+              getPartialUpdateClusterMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.PartialUpdateClusterRequest,
+                      com.google.longrunning.Operation>(this, METHODID_PARTIAL_UPDATE_CLUSTER)))
+          .addMethod(
               getDeleteClusterMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1349,6 +1441,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Create an instance within a project.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public void createInstance(
@@ -1449,6 +1546,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Creates a cluster within an instance.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public void createCluster(
@@ -1496,6 +1598,9 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Updates a cluster within an instance.
+     * Note that UpdateCluster does not support updating
+     * cluster_config.cluster_autoscaling_config. In order to update it, you
+     * must use PartialUpdateCluster.
      * </pre>
      */
     public void updateCluster(
@@ -1503,6 +1608,31 @@ public final class BigtableInstanceAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partially updates a cluster within a project. This method is the preferred
+     * way to update a Cluster.
+     * To enable and update autoscaling, set
+     * cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+     * serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+     * are ignored. Note that an update cannot simultaneously set serve_nodes to
+     * non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+     * also specify both in the update_mask.
+     * To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+     * and explicitly set a serve_node count via the update_mask.
+     * </pre>
+     */
+    public void partialUpdateCluster(
+        com.google.bigtable.admin.v2.PartialUpdateClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPartialUpdateClusterMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1683,6 +1813,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Create an instance within a project.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
@@ -1764,6 +1899,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Creates a cluster within an instance.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
@@ -1803,12 +1943,37 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Updates a cluster within an instance.
+     * Note that UpdateCluster does not support updating
+     * cluster_config.cluster_autoscaling_config. In order to update it, you
+     * must use PartialUpdateCluster.
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
         com.google.bigtable.admin.v2.Cluster request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partially updates a cluster within a project. This method is the preferred
+     * way to update a Cluster.
+     * To enable and update autoscaling, set
+     * cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+     * serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+     * are ignored. Note that an update cannot simultaneously set serve_nodes to
+     * non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+     * also specify both in the update_mask.
+     * To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+     * and explicitly set a serve_node count via the update_mask.
+     * </pre>
+     */
+    public com.google.longrunning.Operation partialUpdateCluster(
+        com.google.bigtable.admin.v2.PartialUpdateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPartialUpdateClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1956,6 +2121,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Create an instance within a project.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2038,6 +2208,11 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Creates a cluster within an instance.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2078,12 +2253,37 @@ public final class BigtableInstanceAdminGrpc {
      *
      * <pre>
      * Updates a cluster within an instance.
+     * Note that UpdateCluster does not support updating
+     * cluster_config.cluster_autoscaling_config. In order to update it, you
+     * must use PartialUpdateCluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateCluster(com.google.bigtable.admin.v2.Cluster request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partially updates a cluster within a project. This method is the preferred
+     * way to update a Cluster.
+     * To enable and update autoscaling, set
+     * cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+     * serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+     * are ignored. Note that an update cannot simultaneously set serve_nodes to
+     * non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+     * also specify both in the update_mask.
+     * To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+     * and explicitly set a serve_node count via the update_mask.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        partialUpdateCluster(com.google.bigtable.admin.v2.PartialUpdateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPartialUpdateClusterMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2220,15 +2420,16 @@ public final class BigtableInstanceAdminGrpc {
   private static final int METHODID_GET_CLUSTER = 7;
   private static final int METHODID_LIST_CLUSTERS = 8;
   private static final int METHODID_UPDATE_CLUSTER = 9;
-  private static final int METHODID_DELETE_CLUSTER = 10;
-  private static final int METHODID_CREATE_APP_PROFILE = 11;
-  private static final int METHODID_GET_APP_PROFILE = 12;
-  private static final int METHODID_LIST_APP_PROFILES = 13;
-  private static final int METHODID_UPDATE_APP_PROFILE = 14;
-  private static final int METHODID_DELETE_APP_PROFILE = 15;
-  private static final int METHODID_GET_IAM_POLICY = 16;
-  private static final int METHODID_SET_IAM_POLICY = 17;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 18;
+  private static final int METHODID_PARTIAL_UPDATE_CLUSTER = 10;
+  private static final int METHODID_DELETE_CLUSTER = 11;
+  private static final int METHODID_CREATE_APP_PROFILE = 12;
+  private static final int METHODID_GET_APP_PROFILE = 13;
+  private static final int METHODID_LIST_APP_PROFILES = 14;
+  private static final int METHODID_UPDATE_APP_PROFILE = 15;
+  private static final int METHODID_DELETE_APP_PROFILE = 16;
+  private static final int METHODID_GET_IAM_POLICY = 17;
+  private static final int METHODID_SET_IAM_POLICY = 18;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2299,6 +2500,11 @@ public final class BigtableInstanceAdminGrpc {
         case METHODID_UPDATE_CLUSTER:
           serviceImpl.updateCluster(
               (com.google.bigtable.admin.v2.Cluster) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PARTIAL_UPDATE_CLUSTER:
+          serviceImpl.partialUpdateCluster(
+              (com.google.bigtable.admin.v2.PartialUpdateClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_CLUSTER:
@@ -2424,6 +2630,7 @@ public final class BigtableInstanceAdminGrpc {
                       .addMethod(getGetClusterMethod())
                       .addMethod(getListClustersMethod())
                       .addMethod(getUpdateClusterMethod())
+                      .addMethod(getPartialUpdateClusterMethod())
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getCreateAppProfileMethod())
                       .addMethod(getGetAppProfileMethod())

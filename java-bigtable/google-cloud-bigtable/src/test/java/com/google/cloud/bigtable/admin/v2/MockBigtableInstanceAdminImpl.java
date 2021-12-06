@@ -36,6 +36,7 @@ import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -285,6 +286,27 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void partialUpdateCluster(
+      PartialUpdateClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PartialUpdateCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

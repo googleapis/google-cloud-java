@@ -116,15 +116,50 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The number of nodes allocated to this cluster. More nodes enable
-   * higher throughput and more consistent performance.
+   * The number of nodes allocated to this cluster. More nodes enable higher
+   * throughput and more consistent performance.
    * </pre>
    *
-   * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int32 serve_nodes = 4;</code>
    *
    * @return The serveNodes.
    */
   int getServeNodes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for this cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+   *
+   * @return Whether the clusterConfig field is set.
+   */
+  boolean hasClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for this cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+   *
+   * @return The clusterConfig.
+   */
+  com.google.bigtable.admin.v2.Cluster.ClusterConfig getClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for this cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Cluster.ClusterConfig cluster_config = 7;</code>
+   */
+  com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder getClusterConfigOrBuilder();
 
   /**
    *
@@ -195,4 +230,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
+
+  public com.google.bigtable.admin.v2.Cluster.ConfigCase getConfigCase();
 }
