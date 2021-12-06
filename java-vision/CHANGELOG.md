@@ -1,5 +1,28 @@
 # Changelog
 
+### [2.0.15](https://www.github.com/googleapis/java-vision/compare/v2.0.14...v2.0.15) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-vision/issues/1299)) ([#759](https://www.github.com/googleapis/java-vision/issues/759)) ([ab18d6d](https://www.github.com/googleapis/java-vision/commit/ab18d6d06e52bce15d3a97a3c486461b95985009))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-vision/issues/1266)) ([#731](https://www.github.com/googleapis/java-vision/issues/731)) ([68a2989](https://www.github.com/googleapis/java-vision/commit/68a29899ce123e54bfa88171a7f9d8526190492c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.0 ([#744](https://www.github.com/googleapis/java-vision/issues/744)) ([55f4984](https://www.github.com/googleapis/java-vision/commit/55f498485a6962785b0b46f2a099aa12dbef16a3))
+* update dependency com.google.cloud:google-cloud-core to v2.3.1 ([#746](https://www.github.com/googleapis/java-vision/issues/746)) ([fadf4f7](https://www.github.com/googleapis/java-vision/commit/fadf4f7c1a4ff9befdf59290bce6310ac002b23b))
+* update dependency com.google.cloud:google-cloud-core to v2.3.2 ([#756](https://www.github.com/googleapis/java-vision/issues/756)) ([4437d19](https://www.github.com/googleapis/java-vision/commit/4437d1987edef1149efba19146c9828a4ac297ca))
+* update dependency com.google.cloud:google-cloud-core to v2.3.3 ([#758](https://www.github.com/googleapis/java-vision/issues/758)) ([9e7cbec](https://www.github.com/googleapis/java-vision/commit/9e7cbeceabecc17d66dea110501ea163b24dbc88))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#745](https://www.github.com/googleapis/java-vision/issues/745)) ([f56539f](https://www.github.com/googleapis/java-vision/commit/f56539f53e7a24a3b50d0634394010b6b9ea5256))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#757](https://www.github.com/googleapis/java-vision/issues/757)) ([05ebc83](https://www.github.com/googleapis/java-vision/commit/05ebc83ef19240c55e9ed1bddce753e48120e4ed))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.0 ([#735](https://www.github.com/googleapis/java-vision/issues/735)) ([2475605](https://www.github.com/googleapis/java-vision/commit/24756055cc8577bec78cd0de96240ab4f5cefc66))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.1 ([#747](https://www.github.com/googleapis/java-vision/issues/747)) ([93b862c](https://www.github.com/googleapis/java-vision/commit/93b862cfc511a51d8194f8086d701c284cfc1903))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.6.1 ([#751](https://www.github.com/googleapis/java-vision/issues/751)) ([12873ab](https://www.github.com/googleapis/java-vision/commit/12873aba676b55ef70edf2870d8ae0a893278c9b))
+* update spring.version to v2.5.6 ([#729](https://www.github.com/googleapis/java-vision/issues/729)) ([ab74eab](https://www.github.com/googleapis/java-vision/commit/ab74eab67b51794b9f599e7814af32503e3f8363))
+* update spring.version to v2.6.0 ([#749](https://www.github.com/googleapis/java-vision/issues/749)) ([9bfdf6a](https://www.github.com/googleapis/java-vision/commit/9bfdf6a445e92e08d4a36344de0241038d0c2a66))
+
 ### [2.0.14](https://www.github.com/googleapis/java-vision/compare/v2.0.13...v2.0.14) (2021-10-20)
 
 
