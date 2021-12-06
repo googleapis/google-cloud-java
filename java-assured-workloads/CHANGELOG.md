@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.7.2](https://www.github.com/googleapis/java-assured-workloads/compare/v0.7.1...v0.7.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-assured-workloads/issues/1299)) ([#364](https://www.github.com/googleapis/java-assured-workloads/issues/364)) ([eeb8c10](https://www.github.com/googleapis/java-assured-workloads/commit/eeb8c1046c6ffd46fb53012421b865d1c31456c3))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-assured-workloads/issues/1266)) ([#348](https://www.github.com/googleapis/java-assured-workloads/issues/348)) ([e76620e](https://www.github.com/googleapis/java-assured-workloads/commit/e76620ed19fae9393d8ded3aeaf9e9f57cd31703))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#358](https://www.github.com/googleapis/java-assured-workloads/issues/358)) ([aa3b0a1](https://www.github.com/googleapis/java-assured-workloads/commit/aa3b0a1131b9d585904a1bb2657fba9a1a13b719))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#363](https://www.github.com/googleapis/java-assured-workloads/issues/363)) ([d206024](https://www.github.com/googleapis/java-assured-workloads/commit/d2060248e688db405076f37cba611333ba704c05))
+
 ### [0.7.1](https://www.github.com/googleapis/java-assured-workloads/compare/v0.7.0...v0.7.1) (2021-10-19)
 
 
