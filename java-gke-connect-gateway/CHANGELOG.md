@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/googleapis/java-gke-connect-gateway/compare/v0.3.1...v0.3.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-gke-connect-gateway/issues/1299)) ([#100](https://www.github.com/googleapis/java-gke-connect-gateway/issues/100)) ([faeb7f3](https://www.github.com/googleapis/java-gke-connect-gateway/commit/faeb7f3bec6a9f28277e8a67845f0fbb95f92cb6))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-gke-connect-gateway/issues/1266)) ([#86](https://www.github.com/googleapis/java-gke-connect-gateway/issues/86)) ([8c69e63](https://www.github.com/googleapis/java-gke-connect-gateway/commit/8c69e632faa50cf8be1477f8c11389746132b2c9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#95](https://www.github.com/googleapis/java-gke-connect-gateway/issues/95)) ([7bc6ff3](https://www.github.com/googleapis/java-gke-connect-gateway/commit/7bc6ff35d02cc26416d430db73ec275606c25ec5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#99](https://www.github.com/googleapis/java-gke-connect-gateway/issues/99)) ([1e7e176](https://www.github.com/googleapis/java-gke-connect-gateway/commit/1e7e1769ff3c12454b64fefd294af80fd0c0a4b2))
+
 ### [0.3.1](https://www.github.com/googleapis/java-gke-connect-gateway/compare/v0.3.0...v0.3.1) (2021-10-19)
 
 
