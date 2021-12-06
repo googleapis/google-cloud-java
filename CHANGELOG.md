@@ -1,5 +1,23 @@
 # Changelog
 
+### [0.122.4](https://www.github.com/googleapis/java-logging-logback/compare/v0.122.3...v0.122.4) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-logging-logback/issues/1299)) ([#606](https://www.github.com/googleapis/java-logging-logback/issues/606)) ([bed601e](https://www.github.com/googleapis/java-logging-logback/commit/bed601e4c7d79cd2ea3d4b4af465b1dcdb269aaf))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-logging-logback/issues/1266)) ([#584](https://www.github.com/googleapis/java-logging-logback/issues/584)) ([12437b7](https://www.github.com/googleapis/java-logging-logback/commit/12437b7b6a34339dac648163f91a34732ffa06c3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v3.4.0 ([#590](https://www.github.com/googleapis/java-logging-logback/issues/590)) ([f01ab41](https://www.github.com/googleapis/java-logging-logback/commit/f01ab41dd716e4e95b08f93bfb68991506ae4064))
+* update dependency com.google.cloud:google-cloud-logging to v3.5.0 ([#602](https://www.github.com/googleapis/java-logging-logback/issues/602)) ([c50b22b](https://www.github.com/googleapis/java-logging-logback/commit/c50b22bb49100f81fd29e41bdf0411b7c8d158b1))
+* update dependency com.google.cloud:google-cloud-logging to v3.5.1 ([#605](https://www.github.com/googleapis/java-logging-logback/issues/605)) ([0539880](https://www.github.com/googleapis/java-logging-logback/commit/053988021f17d198e7169bf385ca7afeac11bf21))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#596](https://www.github.com/googleapis/java-logging-logback/issues/596)) ([d96e7c7](https://www.github.com/googleapis/java-logging-logback/commit/d96e7c729dd3beed697f131c50cc51fa09cce4f6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#604](https://www.github.com/googleapis/java-logging-logback/issues/604)) ([528a520](https://www.github.com/googleapis/java-logging-logback/commit/528a52090fd0c77e571ecca7959572e867e313b6))
+* update logback.version to v1.2.7 ([#595](https://www.github.com/googleapis/java-logging-logback/issues/595)) ([b3b7e9d](https://www.github.com/googleapis/java-logging-logback/commit/b3b7e9de2c18fdbed09905c86b9d6e5113ba1f0b))
+
 ### [0.122.3](https://www.github.com/googleapis/java-logging-logback/compare/v0.122.2...v0.122.3) (2021-10-21)
 
 
