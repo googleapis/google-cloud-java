@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-servicedirectory/compare/v2.2.0...v2.2.1) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-servicedirectory/issues/1299)) ([#575](https://www.github.com/googleapis/java-servicedirectory/issues/575)) ([ea92ace](https://www.github.com/googleapis/java-servicedirectory/commit/ea92aceb87915e93686ba850aba05c93d36269d4))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-servicedirectory/issues/1266)) ([#557](https://www.github.com/googleapis/java-servicedirectory/issues/557)) ([11a1410](https://www.github.com/googleapis/java-servicedirectory/commit/11a14108eba784c18dea7cb0fe57a8f1a4353a65))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#568](https://www.github.com/googleapis/java-servicedirectory/issues/568)) ([cadeed2](https://www.github.com/googleapis/java-servicedirectory/commit/cadeed2bd9aa8810c87d5144673a4deb71dfbda3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#574](https://www.github.com/googleapis/java-servicedirectory/issues/574)) ([1ca3808](https://www.github.com/googleapis/java-servicedirectory/commit/1ca3808b70f562f432f90f304418aa5d63f98622))
+
 ## [2.2.0](https://www.github.com/googleapis/java-servicedirectory/compare/v2.1.2...v2.2.0) (2021-10-20)
 
 
