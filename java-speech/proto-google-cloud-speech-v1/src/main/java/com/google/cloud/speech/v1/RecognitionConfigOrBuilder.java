@@ -149,6 +149,101 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return A list containing the alternativeLanguageCodes.
+   */
+  java.util.List<java.lang.String> getAlternativeLanguageCodesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return The count of alternativeLanguageCodes.
+   */
+  int getAlternativeLanguageCodesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The alternativeLanguageCodes at the given index.
+   */
+  java.lang.String getAlternativeLanguageCodes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the alternativeLanguageCodes at the given index.
+   */
+  com.google.protobuf.ByteString getAlternativeLanguageCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
    * within each `SpeechRecognitionResult`.
@@ -178,6 +273,53 @@ public interface RecognitionConfigOrBuilder
    * @return The profanityFilter.
    */
   boolean getProfanityFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+   * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return Whether the adaptation field is set.
+   */
+  boolean hasAdaptation();
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+   * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return The adaptation.
+   */
+  com.google.cloud.speech.v1.SpeechAdaptation getAdaptation();
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+   * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+   */
+  com.google.cloud.speech.v1.SpeechAdaptationOrBuilder getAdaptationOrBuilder();
 
   /**
    *
@@ -271,6 +413,21 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * If `true`, the top result includes a list of words and the
+   * confidence for those words. If `false`, no word-level confidence
+   * information is returned. The default is `false`.
+   * </pre>
+   *
+   * <code>bool enable_word_confidence = 15;</code>
+   *
+   * @return The enableWordConfidence.
+   */
+  boolean getEnableWordConfidence();
+
+  /**
+   *
+   *
+   * <pre>
    * If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
@@ -282,6 +439,106 @@ public interface RecognitionConfigOrBuilder
    * @return The enableAutomaticPunctuation.
    */
   boolean getEnableAutomaticPunctuation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   *
+   * @return Whether the enableSpokenPunctuation field is set.
+   */
+  boolean hasEnableSpokenPunctuation();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   *
+   * @return The enableSpokenPunctuation.
+   */
+  com.google.protobuf.BoolValue getEnableSpokenPunctuation();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnableSpokenPunctuationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   *
+   * @return Whether the enableSpokenEmojis field is set.
+   */
+  boolean hasEnableSpokenEmojis();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   *
+   * @return The enableSpokenEmojis.
+   */
+  com.google.protobuf.BoolValue getEnableSpokenEmojis();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnableSpokenEmojisOrBuilder();
 
   /**
    *

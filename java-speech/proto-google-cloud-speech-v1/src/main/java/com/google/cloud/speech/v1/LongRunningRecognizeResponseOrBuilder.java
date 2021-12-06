@@ -114,4 +114,74 @@ public interface LongRunningRecognizeResponseOrBuilder
    * <code>.google.protobuf.Duration total_billed_time = 3;</code>
    */
   com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Original output config if present in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
+   *
+   * @return Whether the outputConfig field is set.
+   */
+  boolean hasOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Original output config if present in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
+   *
+   * @return The outputConfig.
+   */
+  com.google.cloud.speech.v1.TranscriptOutputConfig getOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Original output config if present in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
+   */
+  com.google.cloud.speech.v1.TranscriptOutputConfigOrBuilder getOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If the transcript output fails this field contains the relevant error.
+   * </pre>
+   *
+   * <code>.google.rpc.Status output_error = 7;</code>
+   *
+   * @return Whether the outputError field is set.
+   */
+  boolean hasOutputError();
+  /**
+   *
+   *
+   * <pre>
+   * If the transcript output fails this field contains the relevant error.
+   * </pre>
+   *
+   * <code>.google.rpc.Status output_error = 7;</code>
+   *
+   * @return The outputError.
+   */
+  com.google.rpc.Status getOutputError();
+  /**
+   *
+   *
+   * <pre>
+   * If the transcript output fails this field contains the relevant error.
+   * </pre>
+   *
+   * <code>.google.rpc.Status output_error = 7;</code>
+   */
+  com.google.rpc.StatusOrBuilder getOutputErrorOrBuilder();
 }

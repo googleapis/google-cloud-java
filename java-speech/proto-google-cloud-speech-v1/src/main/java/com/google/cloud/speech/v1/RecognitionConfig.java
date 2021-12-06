@@ -41,6 +41,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   private RecognitionConfig() {
     encoding_ = 0;
     languageCode_ = "";
+    alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     speechContexts_ = java.util.Collections.emptyList();
     model_ = "";
   }
@@ -106,10 +107,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 speechContexts_ =
                     new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               speechContexts_.add(
                   input.readMessage(
@@ -164,6 +165,21 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
               useEnhanced_ = input.readBool();
               break;
             }
+          case 120:
+            {
+              enableWordConfidence_ = input.readBool();
+              break;
+            }
+          case 146:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                alternativeLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              alternativeLanguageCodes_.add(s);
+              break;
+            }
           case 154:
             {
               com.google.cloud.speech.v1.SpeakerDiarizationConfig.Builder subBuilder = null;
@@ -177,6 +193,52 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
               if (subBuilder != null) {
                 subBuilder.mergeFrom(diarizationConfig_);
                 diarizationConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 162:
+            {
+              com.google.cloud.speech.v1.SpeechAdaptation.Builder subBuilder = null;
+              if (adaptation_ != null) {
+                subBuilder = adaptation_.toBuilder();
+              }
+              adaptation_ =
+                  input.readMessage(
+                      com.google.cloud.speech.v1.SpeechAdaptation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(adaptation_);
+                adaptation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 178:
+            {
+              com.google.protobuf.BoolValue.Builder subBuilder = null;
+              if (enableSpokenPunctuation_ != null) {
+                subBuilder = enableSpokenPunctuation_.toBuilder();
+              }
+              enableSpokenPunctuation_ =
+                  input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(enableSpokenPunctuation_);
+                enableSpokenPunctuation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 186:
+            {
+              com.google.protobuf.BoolValue.Builder subBuilder = null;
+              if (enableSpokenEmojis_ != null) {
+                subBuilder = enableSpokenEmojis_.toBuilder();
+              }
+              enableSpokenEmojis_ =
+                  input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(enableSpokenEmojis_);
+                enableSpokenEmojis_ = subBuilder.buildPartial();
               }
 
               break;
@@ -195,8 +257,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -230,7 +295,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
    * recognition can be reduced if lossy codecs are used to capture or transmit
    * audio, particularly if background noise is present. Lossy codecs include
-   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`.
+   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`,
+   * and `WEBM_OPUS`.
    * The `FLAC` and `WAV` audio file formats include a header that describes the
    * included audio content. You can request recognition for `WAV` files that
    * contain either `LINEAR16` or `MULAW` encoded audio.
@@ -345,6 +411,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>SPEEX_WITH_HEADER_BYTE = 7;</code>
      */
     SPEEX_WITH_HEADER_BYTE(7),
+    /**
+     *
+     *
+     * <pre>
+     * Opus encoded audio frames in WebM container
+     * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
+     * one of 8000, 12000, 16000, 24000, or 48000.
+     * </pre>
+     *
+     * <code>WEBM_OPUS = 9;</code>
+     */
+    WEBM_OPUS(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -447,6 +525,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>SPEEX_WITH_HEADER_BYTE = 7;</code>
      */
     public static final int SPEEX_WITH_HEADER_BYTE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Opus encoded audio frames in WebM container
+     * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
+     * one of 8000, 12000, 16000, 24000, or 48000.
+     * </pre>
+     *
+     * <code>WEBM_OPUS = 9;</code>
+     */
+    public static final int WEBM_OPUS_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -488,6 +578,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           return OGG_OPUS;
         case 7:
           return SPEEX_WITH_HEADER_BYTE;
+        case 9:
+          return WEBM_OPUS;
         default:
           return null;
       }
@@ -715,6 +807,111 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int ALTERNATIVE_LANGUAGE_CODES_FIELD_NUMBER = 18;
+  private com.google.protobuf.LazyStringList alternativeLanguageCodes_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return A list containing the alternativeLanguageCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getAlternativeLanguageCodesList() {
+    return alternativeLanguageCodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return The count of alternativeLanguageCodes.
+   */
+  public int getAlternativeLanguageCodesCount() {
+    return alternativeLanguageCodes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The alternativeLanguageCodes at the given index.
+   */
+  public java.lang.String getAlternativeLanguageCodes(int index) {
+    return alternativeLanguageCodes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the alternativeLanguageCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getAlternativeLanguageCodesBytes(int index) {
+    return alternativeLanguageCodes_.getByteString(index);
+  }
+
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 4;
   private int maxAlternatives_;
   /**
@@ -757,6 +954,66 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean getProfanityFilter() {
     return profanityFilter_;
+  }
+
+  public static final int ADAPTATION_FIELD_NUMBER = 20;
+  private com.google.cloud.speech.v1.SpeechAdaptation adaptation_;
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+   * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return Whether the adaptation field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdaptation() {
+    return adaptation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+   * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return The adaptation.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1.SpeechAdaptation getAdaptation() {
+    return adaptation_ == null
+        ? com.google.cloud.speech.v1.SpeechAdaptation.getDefaultInstance()
+        : adaptation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+   * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1.SpeechAdaptationOrBuilder getAdaptationOrBuilder() {
+    return getAdaptation();
   }
 
   public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 6;
@@ -869,6 +1126,26 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     return enableWordTimeOffsets_;
   }
 
+  public static final int ENABLE_WORD_CONFIDENCE_FIELD_NUMBER = 15;
+  private boolean enableWordConfidence_;
+  /**
+   *
+   *
+   * <pre>
+   * If `true`, the top result includes a list of words and the
+   * confidence for those words. If `false`, no word-level confidence
+   * information is returned. The default is `false`.
+   * </pre>
+   *
+   * <code>bool enable_word_confidence = 15;</code>
+   *
+   * @return The enableWordConfidence.
+   */
+  @java.lang.Override
+  public boolean getEnableWordConfidence() {
+    return enableWordConfidence_;
+  }
+
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 11;
   private boolean enableAutomaticPunctuation_;
   /**
@@ -888,6 +1165,132 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean getEnableAutomaticPunctuation() {
     return enableAutomaticPunctuation_;
+  }
+
+  public static final int ENABLE_SPOKEN_PUNCTUATION_FIELD_NUMBER = 22;
+  private com.google.protobuf.BoolValue enableSpokenPunctuation_;
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   *
+   * @return Whether the enableSpokenPunctuation field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableSpokenPunctuation() {
+    return enableSpokenPunctuation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   *
+   * @return The enableSpokenPunctuation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnableSpokenPunctuation() {
+    return enableSpokenPunctuation_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : enableSpokenPunctuation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnableSpokenPunctuationOrBuilder() {
+    return getEnableSpokenPunctuation();
+  }
+
+  public static final int ENABLE_SPOKEN_EMOJIS_FIELD_NUMBER = 23;
+  private com.google.protobuf.BoolValue enableSpokenEmojis_;
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   *
+   * @return Whether the enableSpokenEmojis field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableSpokenEmojis() {
+    return enableSpokenEmojis_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   *
+   * @return The enableSpokenEmojis.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnableSpokenEmojis() {
+    return enableSpokenEmojis_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : enableSpokenEmojis_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnableSpokenEmojisOrBuilder() {
+    return getEnableSpokenEmojis();
   }
 
   public static final int DIARIZATION_CONFIG_FIELD_NUMBER = 19;
@@ -1198,8 +1601,24 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (useEnhanced_ != false) {
       output.writeBool(14, useEnhanced_);
     }
+    if (enableWordConfidence_ != false) {
+      output.writeBool(15, enableWordConfidence_);
+    }
+    for (int i = 0; i < alternativeLanguageCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 18, alternativeLanguageCodes_.getRaw(i));
+    }
     if (diarizationConfig_ != null) {
       output.writeMessage(19, getDiarizationConfig());
+    }
+    if (adaptation_ != null) {
+      output.writeMessage(20, getAdaptation());
+    }
+    if (enableSpokenPunctuation_ != null) {
+      output.writeMessage(22, getEnableSpokenPunctuation());
+    }
+    if (enableSpokenEmojis_ != null) {
+      output.writeMessage(23, getEnableSpokenEmojis());
     }
     unknownFields.writeTo(output);
   }
@@ -1254,8 +1673,30 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (useEnhanced_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, useEnhanced_);
     }
+    if (enableWordConfidence_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, enableWordConfidence_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < alternativeLanguageCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(alternativeLanguageCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAlternativeLanguageCodesList().size();
+    }
     if (diarizationConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getDiarizationConfig());
+    }
+    if (adaptation_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getAdaptation());
+    }
+    if (enableSpokenPunctuation_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, getEnableSpokenPunctuation());
+    }
+    if (enableSpokenEmojis_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getEnableSpokenEmojis());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1279,11 +1720,26 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (getEnableSeparateRecognitionPerChannel() != other.getEnableSeparateRecognitionPerChannel())
       return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getAlternativeLanguageCodesList().equals(other.getAlternativeLanguageCodesList()))
+      return false;
     if (getMaxAlternatives() != other.getMaxAlternatives()) return false;
     if (getProfanityFilter() != other.getProfanityFilter()) return false;
+    if (hasAdaptation() != other.hasAdaptation()) return false;
+    if (hasAdaptation()) {
+      if (!getAdaptation().equals(other.getAdaptation())) return false;
+    }
     if (!getSpeechContextsList().equals(other.getSpeechContextsList())) return false;
     if (getEnableWordTimeOffsets() != other.getEnableWordTimeOffsets()) return false;
+    if (getEnableWordConfidence() != other.getEnableWordConfidence()) return false;
     if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
+    if (hasEnableSpokenPunctuation() != other.hasEnableSpokenPunctuation()) return false;
+    if (hasEnableSpokenPunctuation()) {
+      if (!getEnableSpokenPunctuation().equals(other.getEnableSpokenPunctuation())) return false;
+    }
+    if (hasEnableSpokenEmojis() != other.hasEnableSpokenEmojis()) return false;
+    if (hasEnableSpokenEmojis()) {
+      if (!getEnableSpokenEmojis().equals(other.getEnableSpokenEmojis())) return false;
+    }
     if (hasDiarizationConfig() != other.hasDiarizationConfig()) return false;
     if (hasDiarizationConfig()) {
       if (!getDiarizationConfig().equals(other.getDiarizationConfig())) return false;
@@ -1317,18 +1773,36 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             + com.google.protobuf.Internal.hashBoolean(getEnableSeparateRecognitionPerChannel());
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    if (getAlternativeLanguageCodesCount() > 0) {
+      hash = (37 * hash) + ALTERNATIVE_LANGUAGE_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getAlternativeLanguageCodesList().hashCode();
+    }
     hash = (37 * hash) + MAX_ALTERNATIVES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxAlternatives();
     hash = (37 * hash) + PROFANITY_FILTER_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProfanityFilter());
+    if (hasAdaptation()) {
+      hash = (37 * hash) + ADAPTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAdaptation().hashCode();
+    }
     if (getSpeechContextsCount() > 0) {
       hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechContextsList().hashCode();
     }
     hash = (37 * hash) + ENABLE_WORD_TIME_OFFSETS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWordTimeOffsets());
+    hash = (37 * hash) + ENABLE_WORD_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWordConfidence());
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
+    if (hasEnableSpokenPunctuation()) {
+      hash = (37 * hash) + ENABLE_SPOKEN_PUNCTUATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableSpokenPunctuation().hashCode();
+    }
+    if (hasEnableSpokenEmojis()) {
+      hash = (37 * hash) + ENABLE_SPOKEN_EMOJIS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableSpokenEmojis().hashCode();
+    }
     if (hasDiarizationConfig()) {
       hash = (37 * hash) + DIARIZATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDiarizationConfig().hashCode();
@@ -1499,20 +1973,42 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
       languageCode_ = "";
 
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       maxAlternatives_ = 0;
 
       profanityFilter_ = false;
 
+      if (adaptationBuilder_ == null) {
+        adaptation_ = null;
+      } else {
+        adaptation_ = null;
+        adaptationBuilder_ = null;
+      }
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         speechContextsBuilder_.clear();
       }
       enableWordTimeOffsets_ = false;
 
+      enableWordConfidence_ = false;
+
       enableAutomaticPunctuation_ = false;
 
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuation_ = null;
+      } else {
+        enableSpokenPunctuation_ = null;
+        enableSpokenPunctuationBuilder_ = null;
+      }
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojis_ = null;
+      } else {
+        enableSpokenEmojis_ = null;
+        enableSpokenEmojisBuilder_ = null;
+      }
       if (diarizationConfigBuilder_ == null) {
         diarizationConfig_ = null;
       } else {
@@ -1562,19 +2058,40 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       result.audioChannelCount_ = audioChannelCount_;
       result.enableSeparateRecognitionPerChannel_ = enableSeparateRecognitionPerChannel_;
       result.languageCode_ = languageCode_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
+      if (adaptationBuilder_ == null) {
+        result.adaptation_ = adaptation_;
+      } else {
+        result.adaptation_ = adaptationBuilder_.build();
+      }
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.speechContexts_ = speechContexts_;
       } else {
         result.speechContexts_ = speechContextsBuilder_.build();
       }
       result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
+      result.enableWordConfidence_ = enableWordConfidence_;
       result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      if (enableSpokenPunctuationBuilder_ == null) {
+        result.enableSpokenPunctuation_ = enableSpokenPunctuation_;
+      } else {
+        result.enableSpokenPunctuation_ = enableSpokenPunctuationBuilder_.build();
+      }
+      if (enableSpokenEmojisBuilder_ == null) {
+        result.enableSpokenEmojis_ = enableSpokenEmojis_;
+      } else {
+        result.enableSpokenEmojis_ = enableSpokenEmojisBuilder_.build();
+      }
       if (diarizationConfigBuilder_ == null) {
         result.diarizationConfig_ = diarizationConfig_;
       } else {
@@ -1652,17 +2169,30 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         languageCode_ = other.languageCode_;
         onChanged();
       }
+      if (!other.alternativeLanguageCodes_.isEmpty()) {
+        if (alternativeLanguageCodes_.isEmpty()) {
+          alternativeLanguageCodes_ = other.alternativeLanguageCodes_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureAlternativeLanguageCodesIsMutable();
+          alternativeLanguageCodes_.addAll(other.alternativeLanguageCodes_);
+        }
+        onChanged();
+      }
       if (other.getMaxAlternatives() != 0) {
         setMaxAlternatives(other.getMaxAlternatives());
       }
       if (other.getProfanityFilter() != false) {
         setProfanityFilter(other.getProfanityFilter());
       }
+      if (other.hasAdaptation()) {
+        mergeAdaptation(other.getAdaptation());
+      }
       if (speechContextsBuilder_ == null) {
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -1675,7 +2205,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             speechContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechContextsFieldBuilder()
@@ -1688,8 +2218,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (other.getEnableWordTimeOffsets() != false) {
         setEnableWordTimeOffsets(other.getEnableWordTimeOffsets());
       }
+      if (other.getEnableWordConfidence() != false) {
+        setEnableWordConfidence(other.getEnableWordConfidence());
+      }
       if (other.getEnableAutomaticPunctuation() != false) {
         setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
+      }
+      if (other.hasEnableSpokenPunctuation()) {
+        mergeEnableSpokenPunctuation(other.getEnableSpokenPunctuation());
+      }
+      if (other.hasEnableSpokenEmojis()) {
+        mergeEnableSpokenEmojis(other.getEnableSpokenEmojis());
       }
       if (other.hasDiarizationConfig()) {
         mergeDiarizationConfig(other.getDiarizationConfig());
@@ -2182,6 +2721,274 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.protobuf.LazyStringList alternativeLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureAlternativeLanguageCodesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        alternativeLanguageCodes_ =
+            new com.google.protobuf.LazyStringArrayList(alternativeLanguageCodes_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @return A list containing the alternativeLanguageCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getAlternativeLanguageCodesList() {
+      return alternativeLanguageCodes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @return The count of alternativeLanguageCodes.
+     */
+    public int getAlternativeLanguageCodesCount() {
+      return alternativeLanguageCodes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The alternativeLanguageCodes at the given index.
+     */
+    public java.lang.String getAlternativeLanguageCodes(int index) {
+      return alternativeLanguageCodes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the alternativeLanguageCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getAlternativeLanguageCodesBytes(int index) {
+      return alternativeLanguageCodes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The alternativeLanguageCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAlternativeLanguageCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAlternativeLanguageCodesIsMutable();
+      alternativeLanguageCodes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param value The alternativeLanguageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAlternativeLanguageCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAlternativeLanguageCodesIsMutable();
+      alternativeLanguageCodes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param values The alternativeLanguageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAlternativeLanguageCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureAlternativeLanguageCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, alternativeLanguageCodes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAlternativeLanguageCodes() {
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param value The bytes of the alternativeLanguageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAlternativeLanguageCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAlternativeLanguageCodesIsMutable();
+      alternativeLanguageCodes_.add(value);
+      onChanged();
+      return this;
+    }
+
     private int maxAlternatives_;
     /**
      *
@@ -2310,14 +3117,236 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.cloud.speech.v1.SpeechAdaptation adaptation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1.SpeechAdaptation,
+            com.google.cloud.speech.v1.SpeechAdaptation.Builder,
+            com.google.cloud.speech.v1.SpeechAdaptationOrBuilder>
+        adaptationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     *
+     * @return Whether the adaptation field is set.
+     */
+    public boolean hasAdaptation() {
+      return adaptationBuilder_ != null || adaptation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     *
+     * @return The adaptation.
+     */
+    public com.google.cloud.speech.v1.SpeechAdaptation getAdaptation() {
+      if (adaptationBuilder_ == null) {
+        return adaptation_ == null
+            ? com.google.cloud.speech.v1.SpeechAdaptation.getDefaultInstance()
+            : adaptation_;
+      } else {
+        return adaptationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder setAdaptation(com.google.cloud.speech.v1.SpeechAdaptation value) {
+      if (adaptationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        adaptation_ = value;
+        onChanged();
+      } else {
+        adaptationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder setAdaptation(
+        com.google.cloud.speech.v1.SpeechAdaptation.Builder builderForValue) {
+      if (adaptationBuilder_ == null) {
+        adaptation_ = builderForValue.build();
+        onChanged();
+      } else {
+        adaptationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder mergeAdaptation(com.google.cloud.speech.v1.SpeechAdaptation value) {
+      if (adaptationBuilder_ == null) {
+        if (adaptation_ != null) {
+          adaptation_ =
+              com.google.cloud.speech.v1.SpeechAdaptation.newBuilder(adaptation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          adaptation_ = value;
+        }
+        onChanged();
+      } else {
+        adaptationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder clearAdaptation() {
+      if (adaptationBuilder_ == null) {
+        adaptation_ = null;
+        onChanged();
+      } else {
+        adaptation_ = null;
+        adaptationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public com.google.cloud.speech.v1.SpeechAdaptation.Builder getAdaptationBuilder() {
+
+      onChanged();
+      return getAdaptationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public com.google.cloud.speech.v1.SpeechAdaptationOrBuilder getAdaptationOrBuilder() {
+      if (adaptationBuilder_ != null) {
+        return adaptationBuilder_.getMessageOrBuilder();
+      } else {
+        return adaptation_ == null
+            ? com.google.cloud.speech.v1.SpeechAdaptation.getDefaultInstance()
+            : adaptation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
+     * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1.SpeechAdaptation,
+            com.google.cloud.speech.v1.SpeechAdaptation.Builder,
+            com.google.cloud.speech.v1.SpeechAdaptationOrBuilder>
+        getAdaptationFieldBuilder() {
+      if (adaptationBuilder_ == null) {
+        adaptationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1.SpeechAdaptation,
+                com.google.cloud.speech.v1.SpeechAdaptation.Builder,
+                com.google.cloud.speech.v1.SpeechAdaptationOrBuilder>(
+                getAdaptation(), getParentForChildren(), isClean());
+        adaptation_ = null;
+      }
+      return adaptationBuilder_;
+    }
+
     private java.util.List<com.google.cloud.speech.v1.SpeechContext> speechContexts_ =
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>(speechContexts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2577,7 +3606,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -2728,7 +3757,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.speech.v1.SpeechContext.Builder,
                 com.google.cloud.speech.v1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -2797,6 +3826,64 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private boolean enableWordConfidence_;
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, the top result includes a list of words and the
+     * confidence for those words. If `false`, no word-level confidence
+     * information is returned. The default is `false`.
+     * </pre>
+     *
+     * <code>bool enable_word_confidence = 15;</code>
+     *
+     * @return The enableWordConfidence.
+     */
+    @java.lang.Override
+    public boolean getEnableWordConfidence() {
+      return enableWordConfidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, the top result includes a list of words and the
+     * confidence for those words. If `false`, no word-level confidence
+     * information is returned. The default is `false`.
+     * </pre>
+     *
+     * <code>bool enable_word_confidence = 15;</code>
+     *
+     * @param value The enableWordConfidence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableWordConfidence(boolean value) {
+
+      enableWordConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, the top result includes a list of words and the
+     * confidence for those words. If `false`, no word-level confidence
+     * information is returned. The default is `false`.
+     * </pre>
+     *
+     * <code>bool enable_word_confidence = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableWordConfidence() {
+
+      enableWordConfidence_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean enableAutomaticPunctuation_;
     /**
      *
@@ -2856,6 +3943,467 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.BoolValue enableSpokenPunctuation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
+        enableSpokenPunctuationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     *
+     * @return Whether the enableSpokenPunctuation field is set.
+     */
+    public boolean hasEnableSpokenPunctuation() {
+      return enableSpokenPunctuationBuilder_ != null || enableSpokenPunctuation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     *
+     * @return The enableSpokenPunctuation.
+     */
+    public com.google.protobuf.BoolValue getEnableSpokenPunctuation() {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        return enableSpokenPunctuation_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : enableSpokenPunctuation_;
+      } else {
+        return enableSpokenPunctuationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder setEnableSpokenPunctuation(com.google.protobuf.BoolValue value) {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableSpokenPunctuation_ = value;
+        onChanged();
+      } else {
+        enableSpokenPunctuationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder setEnableSpokenPunctuation(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuation_ = builderForValue.build();
+        onChanged();
+      } else {
+        enableSpokenPunctuationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder mergeEnableSpokenPunctuation(com.google.protobuf.BoolValue value) {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        if (enableSpokenPunctuation_ != null) {
+          enableSpokenPunctuation_ =
+              com.google.protobuf.BoolValue.newBuilder(enableSpokenPunctuation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          enableSpokenPunctuation_ = value;
+        }
+        onChanged();
+      } else {
+        enableSpokenPunctuationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder clearEnableSpokenPunctuation() {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuation_ = null;
+        onChanged();
+      } else {
+        enableSpokenPunctuation_ = null;
+        enableSpokenPunctuationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnableSpokenPunctuationBuilder() {
+
+      onChanged();
+      return getEnableSpokenPunctuationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnableSpokenPunctuationOrBuilder() {
+      if (enableSpokenPunctuationBuilder_ != null) {
+        return enableSpokenPunctuationBuilder_.getMessageOrBuilder();
+      } else {
+        return enableSpokenPunctuation_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : enableSpokenPunctuation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
+        getEnableSpokenPunctuationFieldBuilder() {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>(
+                getEnableSpokenPunctuation(), getParentForChildren(), isClean());
+        enableSpokenPunctuation_ = null;
+      }
+      return enableSpokenPunctuationBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue enableSpokenEmojis_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
+        enableSpokenEmojisBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     *
+     * @return Whether the enableSpokenEmojis field is set.
+     */
+    public boolean hasEnableSpokenEmojis() {
+      return enableSpokenEmojisBuilder_ != null || enableSpokenEmojis_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     *
+     * @return The enableSpokenEmojis.
+     */
+    public com.google.protobuf.BoolValue getEnableSpokenEmojis() {
+      if (enableSpokenEmojisBuilder_ == null) {
+        return enableSpokenEmojis_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : enableSpokenEmojis_;
+      } else {
+        return enableSpokenEmojisBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder setEnableSpokenEmojis(com.google.protobuf.BoolValue value) {
+      if (enableSpokenEmojisBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableSpokenEmojis_ = value;
+        onChanged();
+      } else {
+        enableSpokenEmojisBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder setEnableSpokenEmojis(com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojis_ = builderForValue.build();
+        onChanged();
+      } else {
+        enableSpokenEmojisBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder mergeEnableSpokenEmojis(com.google.protobuf.BoolValue value) {
+      if (enableSpokenEmojisBuilder_ == null) {
+        if (enableSpokenEmojis_ != null) {
+          enableSpokenEmojis_ =
+              com.google.protobuf.BoolValue.newBuilder(enableSpokenEmojis_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          enableSpokenEmojis_ = value;
+        }
+        onChanged();
+      } else {
+        enableSpokenEmojisBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder clearEnableSpokenEmojis() {
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojis_ = null;
+        onChanged();
+      } else {
+        enableSpokenEmojis_ = null;
+        enableSpokenEmojisBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnableSpokenEmojisBuilder() {
+
+      onChanged();
+      return getEnableSpokenEmojisFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnableSpokenEmojisOrBuilder() {
+      if (enableSpokenEmojisBuilder_ != null) {
+        return enableSpokenEmojisBuilder_.getMessageOrBuilder();
+      } else {
+        return enableSpokenEmojis_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : enableSpokenEmojis_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
+        getEnableSpokenEmojisFieldBuilder() {
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojisBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>(
+                getEnableSpokenEmojis(), getParentForChildren(), isClean());
+        enableSpokenEmojis_ = null;
+      }
+      return enableSpokenEmojisBuilder_;
     }
 
     private com.google.cloud.speech.v1.SpeakerDiarizationConfig diarizationConfig_;

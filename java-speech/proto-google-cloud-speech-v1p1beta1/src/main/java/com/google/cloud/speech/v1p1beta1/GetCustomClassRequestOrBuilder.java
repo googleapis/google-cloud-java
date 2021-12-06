@@ -27,9 +27,8 @@ public interface GetCustomClassRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the custom class to retrieve.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+   * Required. The name of the custom class to retrieve. Format:
+   * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface GetCustomClassRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the custom class to retrieve.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+   * Required. The name of the custom class to retrieve. Format:
+   * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *
    * <code>

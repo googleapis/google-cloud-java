@@ -133,6 +133,8 @@ public class SpeechClientTest {
         LongRunningRecognizeResponse.newBuilder()
             .addAllResults(new ArrayList<SpeechRecognitionResult>())
             .setTotalBilledTime(Duration.newBuilder().build())
+            .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
+            .setOutputError(Status.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -324,7 +324,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
    * recognition can be reduced if lossy codecs are used to capture or transmit
    * audio, particularly if background noise is present. Lossy codecs include
-   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`.
+   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`,
+   * and `WEBM_OPUS`.
    * The `FLAC` and `WAV` audio file formats include a header that describes the
    * included audio content. You can request recognition for `WAV` files that
    * contain either `LINEAR16` or `MULAW` encoded audio.
@@ -457,9 +458,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Opus encoded audio frames in WebM container
-     * ([OggOpus](https://wiki.xiph.org/OggOpus)). This is a Beta features and
-     * only available in v1p1beta1. `sample_rate_hertz` must be one of 8000,
-     * 12000, 16000, 24000, or 48000.
+     * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
+     * one of 8000, 12000, 16000, 24000, or 48000.
      * </pre>
      *
      * <code>WEBM_OPUS = 9;</code>
@@ -585,9 +585,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Opus encoded audio frames in WebM container
-     * ([OggOpus](https://wiki.xiph.org/OggOpus)). This is a Beta features and
-     * only available in v1p1beta1. `sample_rate_hertz` must be one of 8000,
-     * 12000, 16000, 24000, or 48000.
+     * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
+     * one of 8000, 12000, 16000, 24000, or 48000.
      * </pre>
      *
      * <code>WEBM_OPUS = 9;</code>
@@ -1023,10 +1022,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Speech adaptation configuration improves the accuracy of speech
-   * recognition. When speech adaptation is set it supersedes the
-   * `speech_contexts` field. For more information, see the [speech
+   * recognition. For more information, see the [speech
    * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -1042,10 +1041,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Speech adaptation configuration improves the accuracy of speech
-   * recognition. When speech adaptation is set it supersedes the
-   * `speech_contexts` field. For more information, see the [speech
+   * recognition. For more information, see the [speech
    * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -1063,10 +1062,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Speech adaptation configuration improves the accuracy of speech
-   * recognition. When speech adaptation is set it supersedes the
-   * `speech_contexts` field. For more information, see the [speech
+   * recognition. For more information, see the [speech
    * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3356,10 +3355,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3374,10 +3373,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3398,10 +3397,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3424,10 +3423,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3448,10 +3447,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3478,10 +3477,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3502,10 +3501,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3520,10 +3519,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -3542,10 +3541,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>

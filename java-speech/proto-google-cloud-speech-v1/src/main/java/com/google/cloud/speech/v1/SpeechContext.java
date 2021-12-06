@@ -82,6 +82,11 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
               phrases_.add(s);
               break;
             }
+          case 37:
+            {
+              boost_ = input.readFloat();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -220,6 +225,31 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     return phrases_.getByteString(index);
   }
 
+  public static final int BOOST_FIELD_NUMBER = 4;
+  private float boost_;
+  /**
+   *
+   *
+   * <pre>
+   * Hint Boost. Positive value will increase the probability that a specific
+   * phrase will be recognized over other similar sounding phrases. The higher
+   * the boost, the higher the chance of false positive recognition as well.
+   * Negative boost values would correspond to anti-biasing. Anti-biasing is not
+   * enabled, so negative boost will simply be ignored. Though `boost` can
+   * accept a wide range of positive values, most use cases are best served with
+   * values between 0 and 20. We recommend using a binary search approach to
+   * finding the optimal value for your use case.
+   * </pre>
+   *
+   * <code>float boost = 4;</code>
+   *
+   * @return The boost.
+   */
+  @java.lang.Override
+  public float getBoost() {
+    return boost_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -236,6 +266,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < phrases_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phrases_.getRaw(i));
+    }
+    if (boost_ != 0F) {
+      output.writeFloat(4, boost_);
     }
     unknownFields.writeTo(output);
   }
@@ -254,6 +287,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getPhrasesList().size();
     }
+    if (boost_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, boost_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -270,6 +306,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.speech.v1.SpeechContext other = (com.google.cloud.speech.v1.SpeechContext) obj;
 
     if (!getPhrasesList().equals(other.getPhrasesList())) return false;
+    if (java.lang.Float.floatToIntBits(getBoost())
+        != java.lang.Float.floatToIntBits(other.getBoost())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -285,6 +323,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PHRASES_FIELD_NUMBER;
       hash = (53 * hash) + getPhrasesList().hashCode();
     }
+    hash = (37 * hash) + BOOST_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getBoost());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,6 +473,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       phrases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      boost_ = 0F;
+
       return this;
     }
 
@@ -466,6 +508,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.phrases_ = phrases_;
+      result.boost_ = boost_;
       onBuilt();
       return result;
     }
@@ -524,6 +567,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
           phrases_.addAll(other.phrases_);
         }
         onChanged();
+      }
+      if (other.getBoost() != 0F) {
+        setBoost(other.getBoost());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -810,6 +856,79 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePhrasesIsMutable();
       phrases_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private float boost_;
+    /**
+     *
+     *
+     * <pre>
+     * Hint Boost. Positive value will increase the probability that a specific
+     * phrase will be recognized over other similar sounding phrases. The higher
+     * the boost, the higher the chance of false positive recognition as well.
+     * Negative boost values would correspond to anti-biasing. Anti-biasing is not
+     * enabled, so negative boost will simply be ignored. Though `boost` can
+     * accept a wide range of positive values, most use cases are best served with
+     * values between 0 and 20. We recommend using a binary search approach to
+     * finding the optimal value for your use case.
+     * </pre>
+     *
+     * <code>float boost = 4;</code>
+     *
+     * @return The boost.
+     */
+    @java.lang.Override
+    public float getBoost() {
+      return boost_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hint Boost. Positive value will increase the probability that a specific
+     * phrase will be recognized over other similar sounding phrases. The higher
+     * the boost, the higher the chance of false positive recognition as well.
+     * Negative boost values would correspond to anti-biasing. Anti-biasing is not
+     * enabled, so negative boost will simply be ignored. Though `boost` can
+     * accept a wide range of positive values, most use cases are best served with
+     * values between 0 and 20. We recommend using a binary search approach to
+     * finding the optimal value for your use case.
+     * </pre>
+     *
+     * <code>float boost = 4;</code>
+     *
+     * @param value The boost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoost(float value) {
+
+      boost_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hint Boost. Positive value will increase the probability that a specific
+     * phrase will be recognized over other similar sounding phrases. The higher
+     * the boost, the higher the chance of false positive recognition as well.
+     * Negative boost values would correspond to anti-biasing. Anti-biasing is not
+     * enabled, so negative boost will simply be ignored. Though `boost` can
+     * accept a wide range of positive values, most use cases are best served with
+     * values between 0 and 20. We recommend using a binary search approach to
+     * finding the optimal value for your use case.
+     * </pre>
+     *
+     * <code>float boost = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBoost() {
+
+      boost_ = 0F;
       onChanged();
       return this;
     }

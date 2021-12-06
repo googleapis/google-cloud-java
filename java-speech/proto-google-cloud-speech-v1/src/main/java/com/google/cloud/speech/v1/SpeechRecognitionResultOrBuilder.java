@@ -105,4 +105,71 @@ public interface SpeechRecognitionResultOrBuilder
    * @return The channelTag.
    */
   int getChannelTag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   *
+   * @return Whether the resultEndTime field is set.
+   */
+  boolean hasResultEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   *
+   * @return The resultEndTime.
+   */
+  com.google.protobuf.Duration getResultEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+   * of the language in this result. This language code was detected to have
+   * the most likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+   * of the language in this result. This language code was detected to have
+   * the most likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

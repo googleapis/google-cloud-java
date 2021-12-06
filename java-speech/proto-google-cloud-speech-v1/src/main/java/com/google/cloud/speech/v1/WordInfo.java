@@ -107,6 +107,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
               word_ = s;
               break;
             }
+          case 37:
+            {
+              confidence_ = input.readFloat();
+              break;
+            }
           case 40:
             {
               speakerTag_ = input.readInt32();
@@ -317,6 +322,30 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CONFIDENCE_FIELD_NUMBER = 4;
+  private float confidence_;
+  /**
+   *
+   *
+   * <pre>
+   * The confidence estimate between 0.0 and 1.0. A higher number
+   * indicates an estimated greater likelihood that the recognized words are
+   * correct. This field is set only for the top alternative of a non-streaming
+   * result or, of a streaming result where `is_final=true`.
+   * This field is not guaranteed to be accurate and users should not rely on it
+   * to be always provided.
+   * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+   * </pre>
+   *
+   * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
+   */
+  @java.lang.Override
+  public float getConfidence() {
+    return confidence_;
+  }
+
   public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
   private int speakerTag_;
   /**
@@ -362,6 +391,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, word_);
     }
+    if (confidence_ != 0F) {
+      output.writeFloat(4, confidence_);
+    }
     if (speakerTag_ != 0) {
       output.writeInt32(5, speakerTag_);
     }
@@ -382,6 +414,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
+    }
+    if (confidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
     if (speakerTag_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, speakerTag_);
@@ -410,6 +445,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (!getWord().equals(other.getWord())) return false;
+    if (java.lang.Float.floatToIntBits(getConfidence())
+        != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
     if (getSpeakerTag() != other.getSpeakerTag()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -432,6 +469,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + WORD_FIELD_NUMBER;
     hash = (53 * hash) + getWord().hashCode();
+    hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
     hash = (37 * hash) + SPEAKER_TAG_FIELD_NUMBER;
     hash = (53 * hash) + getSpeakerTag();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -592,6 +631,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       word_ = "";
 
+      confidence_ = 0F;
+
       speakerTag_ = 0;
 
       return this;
@@ -631,6 +672,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         result.endTime_ = endTimeBuilder_.build();
       }
       result.word_ = word_;
+      result.confidence_ = confidence_;
       result.speakerTag_ = speakerTag_;
       onBuilt();
       return result;
@@ -690,6 +732,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.getWord().isEmpty()) {
         word_ = other.word_;
         onChanged();
+      }
+      if (other.getConfidence() != 0F) {
+        setConfidence(other.getConfidence());
       }
       if (other.getSpeakerTag() != 0) {
         setSpeakerTag(other.getSpeakerTag());
@@ -1273,6 +1318,76 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       word_ = value;
+      onChanged();
+      return this;
+    }
+
+    private float confidence_;
+    /**
+     *
+     *
+     * <pre>
+     * The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     *
+     * @return The confidence.
+     */
+    @java.lang.Override
+    public float getConfidence() {
+      return confidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfidence(float value) {
+
+      confidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConfidence() {
+
+      confidence_ = 0F;
       onChanged();
       return this;
     }

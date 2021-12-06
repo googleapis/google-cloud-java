@@ -27,9 +27,8 @@ public interface DeletePhraseSetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the phrase set to delete.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+   * Required. The name of the phrase set to delete. Format:
+   * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface DeletePhraseSetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the phrase set to delete.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+   * Required. The name of the phrase set to delete. Format:
+   * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    * </pre>
    *
    * <code>
