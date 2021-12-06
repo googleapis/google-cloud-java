@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/googleapis/java-storage-transfer/compare/v0.2.1...v0.2.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-storage-transfer/issues/1299)) ([#70](https://www.github.com/googleapis/java-storage-transfer/issues/70)) ([9ed12fc](https://www.github.com/googleapis/java-storage-transfer/commit/9ed12fcc27f37d9c9059a8702445f7bcef96b4e0))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-storage-transfer/issues/1266)) ([#55](https://www.github.com/googleapis/java-storage-transfer/issues/55)) ([b92e033](https://www.github.com/googleapis/java-storage-transfer/commit/b92e0331f931d39cf0a98aab4aea0c28cfd3ee0d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#64](https://www.github.com/googleapis/java-storage-transfer/issues/64)) ([60f0e4d](https://www.github.com/googleapis/java-storage-transfer/commit/60f0e4db1dd64601056440fad77c1895356563cb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#69](https://www.github.com/googleapis/java-storage-transfer/issues/69)) ([a4dac11](https://www.github.com/googleapis/java-storage-transfer/commit/a4dac1180319dab387ab48d4d47880e3a380a004))
+
 ### [0.2.1](https://www.github.com/googleapis/java-storage-transfer/compare/v0.2.0...v0.2.1) (2021-10-19)
 
 
