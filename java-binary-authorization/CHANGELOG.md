@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-binary-authorization/compare/v0.3.3...v0.4.0) (2021-12-06)
+
+
+### Features
+
+* add new admission rule types to Policy feat: update SignatureAlgorithm enum to match algorithm names in KMS feat: add SystemPolicyV1Beta1 service ([#112](https://www.github.com/googleapis/java-binary-authorization/issues/112)) ([fceee93](https://www.github.com/googleapis/java-binary-authorization/commit/fceee93149a3576c32cbca171882910f05fd7e2d))
+* binaryauthorization v1 public protos ([#90](https://www.github.com/googleapis/java-binary-authorization/issues/90)) ([f5315fc](https://www.github.com/googleapis/java-binary-authorization/commit/f5315fcb4761ac78e0b66945a8ee3b6d6f5e85eb))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-binary-authorization/issues/1299)) ([#126](https://www.github.com/googleapis/java-binary-authorization/issues/126)) ([1fd688a](https://www.github.com/googleapis/java-binary-authorization/commit/1fd688a59ed534255191e4b8ab2753a4750e2e8c))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-binary-authorization/issues/1266)) ([#107](https://www.github.com/googleapis/java-binary-authorization/issues/107)) ([47a899b](https://www.github.com/googleapis/java-binary-authorization/commit/47a899b73033fd800d7671bd6d9d7e5575831ab8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#118](https://www.github.com/googleapis/java-binary-authorization/issues/118)) ([6f13f2a](https://www.github.com/googleapis/java-binary-authorization/commit/6f13f2ac75045e07ce127a6423f69e9224b1721e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#124](https://www.github.com/googleapis/java-binary-authorization/issues/124)) ([c75a6ac](https://www.github.com/googleapis/java-binary-authorization/commit/c75a6ac8ac2393d630046e69a3626ce64301dac9))
+* update dependency io.grafeas:grafeas to v2.1.0 ([#108](https://www.github.com/googleapis/java-binary-authorization/issues/108)) ([1853da6](https://www.github.com/googleapis/java-binary-authorization/commit/1853da6f67619f4f74db0948e82685f2147d18ae))
+* update dependency io.grafeas:grafeas to v2.1.1 ([#109](https://www.github.com/googleapis/java-binary-authorization/issues/109)) ([1ebd94b](https://www.github.com/googleapis/java-binary-authorization/commit/1ebd94b6cbf7518f806db8fd8c846507173a4c8b))
+* update dependency io.grafeas:grafeas to v2.1.2 ([#119](https://www.github.com/googleapis/java-binary-authorization/issues/119)) ([f38a45b](https://www.github.com/googleapis/java-binary-authorization/commit/f38a45bac205d85251c9c968d39dd0d4a10c0e57))
+* update dependency io.grafeas:grafeas to v2.1.3 ([#125](https://www.github.com/googleapis/java-binary-authorization/issues/125)) ([1bc6eb9](https://www.github.com/googleapis/java-binary-authorization/commit/1bc6eb94978eae34a5e1a28a1d9067fad47596de))
+
 ### [0.3.3](https://www.github.com/googleapis/java-binary-authorization/compare/v0.3.2...v0.3.3) (2021-10-19)
 
 
