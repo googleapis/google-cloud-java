@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-tasks/compare/v2.0.6...v2.1.0) (2021-12-03)
+
+
+### Features
+
+* next release from main branch is 2.1.0 ([#553](https://www.github.com/googleapis/java-tasks/issues/553)) ([9fe2ec6](https://www.github.com/googleapis/java-tasks/commit/9fe2ec66bd2c65650de39d7b8cb9134999267613))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-tasks/issues/1266)) ([#550](https://www.github.com/googleapis/java-tasks/issues/550)) ([85ed3f4](https://www.github.com/googleapis/java-tasks/commit/85ed3f40ad4a883aab1df4b25e15ffa8e42f19d6))
+
+
+### Documentation
+
+* fix docstring formatting ([#566](https://www.github.com/googleapis/java-tasks/issues/566)) ([22496d5](https://www.github.com/googleapis/java-tasks/commit/22496d59c0d8460ae83dc996d009c5b9154a9eed))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#564](https://www.github.com/googleapis/java-tasks/issues/564)) ([6c6c9c1](https://www.github.com/googleapis/java-tasks/commit/6c6c9c10cc73f487f8704b2f1f2e310b3602c65a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#571](https://www.github.com/googleapis/java-tasks/issues/571)) ([ea06790](https://www.github.com/googleapis/java-tasks/commit/ea06790596e0d2e379ee77d7816a7e02282072e7))
+
 ### [2.0.6](https://www.github.com/googleapis/java-tasks/compare/v2.0.5...v2.0.6) (2021-10-20)
 
 
