@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-service-management/compare/v2.1.3...v2.1.4) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-service-management/issues/1299)) ([#168](https://www.github.com/googleapis/java-service-management/issues/168)) ([f5d3532](https://www.github.com/googleapis/java-service-management/commit/f5d35327093a05e12ba52be4f89b90e24e6d41d0))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-service-management/issues/1266)) ([#153](https://www.github.com/googleapis/java-service-management/issues/153)) ([791ae4f](https://www.github.com/googleapis/java-service-management/commit/791ae4f6f569afcc41e646c4b1443011c8b79529))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#162](https://www.github.com/googleapis/java-service-management/issues/162)) ([ad08f58](https://www.github.com/googleapis/java-service-management/commit/ad08f581ebac8cc5dbe4057dd0b766f5f3be3c8f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#167](https://www.github.com/googleapis/java-service-management/issues/167)) ([f82e415](https://www.github.com/googleapis/java-service-management/commit/f82e415e79a7addafe385d5ed8ead66390853bf9))
+
 ### [2.1.3](https://www.github.com/googleapis/java-service-management/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
