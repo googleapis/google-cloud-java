@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dms</artifactId>
-  <version>2.1.3</version>
+  <version>2.1.4</version>
 </dependency>
 
 ```
