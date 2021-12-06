@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-speech/compare/v2.1.2...v2.2.0) (2021-12-06)
+
+
+### Features
+
+* add result_end_time to SpeechRecognitionResult ([#741](https://www.github.com/googleapis/java-speech/issues/741)) ([9d13751](https://www.github.com/googleapis/java-speech/commit/9d13751da45b6b32d513d58c270dda523a722e4d))
+* added alternative_language_codes to RecognitionConfig feat: WEBM_OPUS codec feat: SpeechAdaptation configuration feat: word confidence feat: spoken punctuation and spoken emojis feat: hint boost in SpeechContext ([#740](https://www.github.com/googleapis/java-speech/issues/740)) ([c2754d7](https://www.github.com/googleapis/java-speech/commit/c2754d7062962fbbce39e1d7476c7adf282dbf0b))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-speech/issues/1299)) ([#746](https://www.github.com/googleapis/java-speech/issues/746)) ([0e4ad7f](https://www.github.com/googleapis/java-speech/commit/0e4ad7ff1720fa65424063c2db565ada8c966521))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-speech/issues/1266)) ([#717](https://www.github.com/googleapis/java-speech/issues/717)) ([6bb6966](https://www.github.com/googleapis/java-speech/commit/6bb6966d99805d5af9ff995826518582d9299b90))
+
+
+### Documentation
+
+* **samples:** refactors the export-to-gcs sample ([#737](https://www.github.com/googleapis/java-speech/issues/737)) ([9714f7b](https://www.github.com/googleapis/java-speech/commit/9714f7b085a79a2da8007eec3aebb632feb04fc4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#731](https://www.github.com/googleapis/java-speech/issues/731)) ([6155461](https://www.github.com/googleapis/java-speech/commit/61554618b3e53d0174d403845c9aa574a153f300))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#744](https://www.github.com/googleapis/java-speech/issues/744)) ([f2b992d](https://www.github.com/googleapis/java-speech/commit/f2b992d7c91b5d527dd4b4e4873f8e6e09177e11))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.0 ([#721](https://www.github.com/googleapis/java-speech/issues/721)) ([dcb87ba](https://www.github.com/googleapis/java-speech/commit/dcb87bad789d720364e81bddab381a18fe2d7d5d))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.1 ([#732](https://www.github.com/googleapis/java-speech/issues/732)) ([7071f2c](https://www.github.com/googleapis/java-speech/commit/7071f2cd4bb70429ca9156f70ced27d64f339b94))
+* update dependency com.google.errorprone:error_prone_annotations to v2.10.0 ([#723](https://www.github.com/googleapis/java-speech/issues/723)) ([2fa8ca9](https://www.github.com/googleapis/java-speech/commit/2fa8ca9c0a7c0489b2d3a271d5b9c2547e837434))
+* update dependency commons-cli:commons-cli to v1.5.0 ([#720](https://www.github.com/googleapis/java-speech/issues/720)) ([1360551](https://www.github.com/googleapis/java-speech/commit/13605512fc249e4049c1965a099f71ca68c22b2d))
+* update dependency org.json:json to v20211205 ([#745](https://www.github.com/googleapis/java-speech/issues/745)) ([02d0088](https://www.github.com/googleapis/java-speech/commit/02d00887de25a18752043b023cb71762b6f65994))
+
 ### [2.1.2](https://www.github.com/googleapis/java-speech/compare/v2.1.1...v2.1.2) (2021-10-19)
 
 
