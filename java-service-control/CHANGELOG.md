@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-service-control/compare/v1.1.3...v1.1.4) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-service-control/issues/1299)) ([#101](https://www.github.com/googleapis/java-service-control/issues/101)) ([704c29a](https://www.github.com/googleapis/java-service-control/commit/704c29a00ddf8da8d37b8c5ebcb92479aa0ea435))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-service-control/issues/1266)) ([#87](https://www.github.com/googleapis/java-service-control/issues/87)) ([b2c737f](https://www.github.com/googleapis/java-service-control/commit/b2c737fc51e16cd0e538124a017a049e17be2155))
+
+
+### Documentation
+
+* fix docstring formatting ([#79](https://www.github.com/googleapis/java-service-control/issues/79)) ([d8c5472](https://www.github.com/googleapis/java-service-control/commit/d8c54723a0979a2315b2e9f412aa64ab2c3381d3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#95](https://www.github.com/googleapis/java-service-control/issues/95)) ([f1984a8](https://www.github.com/googleapis/java-service-control/commit/f1984a8307e7996df194df74574e4a3d481e810a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#100](https://www.github.com/googleapis/java-service-control/issues/100)) ([cb21287](https://www.github.com/googleapis/java-service-control/commit/cb21287c758b6f1020ff8d530cc759d2103ce5d9))
+
 ### [1.1.3](https://www.github.com/googleapis/java-service-control/compare/v1.1.2...v1.1.3) (2021-10-19)
 
 
