@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.4.3](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.4.2...v0.4.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-policy-troubleshooter/issues/1299)) ([#147](https://www.github.com/googleapis/java-policy-troubleshooter/issues/147)) ([e7c1edd](https://www.github.com/googleapis/java-policy-troubleshooter/commit/e7c1edd726eed2a1013a78b343d5dd389047e865))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-policy-troubleshooter/issues/1266)) ([#132](https://www.github.com/googleapis/java-policy-troubleshooter/issues/132)) ([83aa235](https://www.github.com/googleapis/java-policy-troubleshooter/commit/83aa235f35ed73c53bd70affc4233087c434b008))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#141](https://www.github.com/googleapis/java-policy-troubleshooter/issues/141)) ([de73f7a](https://www.github.com/googleapis/java-policy-troubleshooter/commit/de73f7ac54b820403145a3ff1a8c941fe27ffdef))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#146](https://www.github.com/googleapis/java-policy-troubleshooter/issues/146)) ([0d5d910](https://www.github.com/googleapis/java-policy-troubleshooter/commit/0d5d9106b9ae3cbfcc5a452f0f461c5b5b1da879))
+
 ### [0.4.2](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.4.1...v0.4.2) (2021-10-19)
 
 
