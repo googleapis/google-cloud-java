@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-iam/compare/v1.1.7...v1.2.0) (2021-12-06)
+
+
+### Features
+
+* Introduce Native Image testing build script changes ([#219](https://www.github.com/googleapis/java-iam/issues/219)) ([58c9a81](https://www.github.com/googleapis/java-iam/commit/58c9a81c55274b64c5e6877c9f909466a672c385))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-iam/issues/1299)) ([#244](https://www.github.com/googleapis/java-iam/issues/244)) ([1a32e01](https://www.github.com/googleapis/java-iam/commit/1a32e01dc223e8ff11ff6483f1f7ae49f43b8de1))
+* **java:** java 17 dependency arguments ([#228](https://www.github.com/googleapis/java-iam/issues/228)) ([e609515](https://www.github.com/googleapis/java-iam/commit/e6095159733fb75e0fcc0620c7e6c93ef9586489))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.1.0 ([#225](https://www.github.com/googleapis/java-iam/issues/225)) ([ec4debe](https://www.github.com/googleapis/java-iam/commit/ec4debeb779d3561d6ce10d2bc7f871a1f84ae8c))
+* update dependency com.google.api:api-common to v2.1.1 ([#239](https://www.github.com/googleapis/java-iam/issues/239)) ([40da45b](https://www.github.com/googleapis/java-iam/commit/40da45bffe1ab87036e9d90121e9e9ed302d86a3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#237](https://www.github.com/googleapis/java-iam/issues/237)) ([8dd21a9](https://www.github.com/googleapis/java-iam/commit/8dd21a9bf054701abdded0e6dd231e08452c13af))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#243](https://www.github.com/googleapis/java-iam/issues/243)) ([fb72c8c](https://www.github.com/googleapis/java-iam/commit/fb72c8c4c19a580be8f17ee1ec5562c3200f37fb))
+* update dependency com.google.protobuf:protobuf-java to v3.19.1 ([#223](https://www.github.com/googleapis/java-iam/issues/223)) ([744abaf](https://www.github.com/googleapis/java-iam/commit/744abaf723ee59e5749bde76be6520f2e9e843e9))
+* update dependency io.grpc:grpc-protobuf to v1.42.0 ([#230](https://www.github.com/googleapis/java-iam/issues/230)) ([36a09e7](https://www.github.com/googleapis/java-iam/commit/36a09e753f1439d1975c5b388d460d84646f9190))
+* update dependency io.grpc:grpc-protobuf to v1.42.1 ([#235](https://www.github.com/googleapis/java-iam/issues/235)) ([1a3b49c](https://www.github.com/googleapis/java-iam/commit/1a3b49c3841709a4be09c342bc756c2824eba27c))
+* update dependency io.grpc:grpc-stub to v1.42.0 ([#231](https://www.github.com/googleapis/java-iam/issues/231)) ([d1903a9](https://www.github.com/googleapis/java-iam/commit/d1903a91193b22a1ec9ceac79770bf6ae6ea24d5))
+* update dependency io.grpc:grpc-stub to v1.42.1 ([#236](https://www.github.com/googleapis/java-iam/issues/236)) ([efa953f](https://www.github.com/googleapis/java-iam/commit/efa953f548cbf563fa88ee70ed538f898797c0f4))
+
 ### [1.1.7](https://www.github.com/googleapis/java-iam/compare/v1.1.6...v1.1.7) (2021-10-19)
 
 
