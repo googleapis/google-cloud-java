@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-service-usage/compare/v2.1.3...v2.2.0) (2021-12-06)
+
+
+### Features
+
+* next release from main branch is 2.2.0 ([#130](https://www.github.com/googleapis/java-service-usage/issues/130)) ([4fd94bb](https://www.github.com/googleapis/java-service-usage/commit/4fd94bb7bbf1acfeab0ffef7dac337eb0cc8a455))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-service-usage/issues/1299)) ([#150](https://www.github.com/googleapis/java-service-usage/issues/150)) ([109174e](https://www.github.com/googleapis/java-service-usage/commit/109174e1118ce937d6ee6dd4bc5c994b51b12972))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-service-usage/issues/1266)) ([#135](https://www.github.com/googleapis/java-service-usage/issues/135)) ([7a43687](https://www.github.com/googleapis/java-service-usage/commit/7a436874ebd46966f58027c00789ea57a8fca728))
+
+
+### Documentation
+
+* Remove erroneous space in a docstring ([#124](https://www.github.com/googleapis/java-service-usage/issues/124)) ([113607b](https://www.github.com/googleapis/java-service-usage/commit/113607b338f37c2556d236d5d93ea681b905a796))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#143](https://www.github.com/googleapis/java-service-usage/issues/143)) ([174c5ff](https://www.github.com/googleapis/java-service-usage/commit/174c5ff5a4e49442a5c1751a3a900572c78b49fd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#149](https://www.github.com/googleapis/java-service-usage/issues/149)) ([8c0355b](https://www.github.com/googleapis/java-service-usage/commit/8c0355b56e8007bc43744c5dca411ff2f2d5b816))
+
 ### [2.1.3](https://www.github.com/googleapis/java-service-usage/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
