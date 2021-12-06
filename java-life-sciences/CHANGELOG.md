@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/googleapis/java-life-sciences/compare/v0.3.1...v0.3.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-life-sciences/issues/1299)) ([#106](https://www.github.com/googleapis/java-life-sciences/issues/106)) ([2f0cde3](https://www.github.com/googleapis/java-life-sciences/commit/2f0cde30187389513a917db437dbce65db670a2e))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-life-sciences/issues/1266)) ([#91](https://www.github.com/googleapis/java-life-sciences/issues/91)) ([420e09a](https://www.github.com/googleapis/java-life-sciences/commit/420e09ab11fe1394aec8740d8b48ab69ee41fd85))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#100](https://www.github.com/googleapis/java-life-sciences/issues/100)) ([b23331f](https://www.github.com/googleapis/java-life-sciences/commit/b23331ff3624ae8ccd998f364c684c1f47df2660))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#105](https://www.github.com/googleapis/java-life-sciences/issues/105)) ([0f64d03](https://www.github.com/googleapis/java-life-sciences/commit/0f64d03ce4d0918663758f9ec032d82cdd25ad80))
+
 ### [0.3.1](https://www.github.com/googleapis/java-life-sciences/compare/v0.3.0...v0.3.1) (2021-10-19)
 
 

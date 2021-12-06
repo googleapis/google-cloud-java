@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-life-sciences-v2beta</artifactId>
-  <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-life-sciences-v2beta:current} -->
+  <version>0.3.2</version><!-- {x-version-update:proto-google-cloud-life-sciences-v2beta:current} -->
   <name>proto-google-cloud-life-sciences-v2beta</name>
   <description>Proto library for google-cloud-life-sciences</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-life-sciences-parent</artifactId>
-    <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+    <version>0.3.2</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   </parent>
   <dependencies>
     <dependency>
