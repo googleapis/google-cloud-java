@@ -1,5 +1,24 @@
 # Changelog
 
+### [2.2.3](https://www.github.com/googleapis/java-talent/compare/v2.2.2...v2.2.3) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-talent/issues/1266)) ([#662](https://www.github.com/googleapis/java-talent/issues/662)) ([b63808d](https://www.github.com/googleapis/java-talent/commit/b63808d1e1353627b2c3d75fca3c1db3653739d2))
+* **samples:** Move to java-docs-samples-testing ([#673](https://www.github.com/googleapis/java-talent/issues/673)) ([1bfd919](https://www.github.com/googleapis/java-talent/commit/1bfd9198381a4aa25725ea0499bf6ed79f9c8688))
+
+
+### Documentation
+
+* fix docstring formatting ([#665](https://www.github.com/googleapis/java-talent/issues/665)) ([08f322f](https://www.github.com/googleapis/java-talent/commit/08f322f6523e6e1849f16af1e9e9d505dbac129c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#674](https://www.github.com/googleapis/java-talent/issues/674)) ([cf1ecf0](https://www.github.com/googleapis/java-talent/commit/cf1ecf0a3d2039bb30c46ae89de58f3b53d51feb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#681](https://www.github.com/googleapis/java-talent/issues/681)) ([c5971ba](https://www.github.com/googleapis/java-talent/commit/c5971ba538a4356177709757b473e74d801249f0))
+
 ### [2.2.2](https://www.github.com/googleapis/java-talent/compare/v2.2.1...v2.2.2) (2021-10-20)
 
 
