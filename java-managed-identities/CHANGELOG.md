@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.3.6](https://www.github.com/googleapis/java-managed-identities/compare/v0.3.5...v0.3.6) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-managed-identities/issues/1299)) ([#154](https://www.github.com/googleapis/java-managed-identities/issues/154)) ([ac737a2](https://www.github.com/googleapis/java-managed-identities/commit/ac737a2d26fdcc688aedbfad31f431258a010b49))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-managed-identities/issues/1266)) ([#138](https://www.github.com/googleapis/java-managed-identities/issues/138)) ([4d279be](https://www.github.com/googleapis/java-managed-identities/commit/4d279be88b0e326b005ca507b4a041fc982bc992))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#147](https://www.github.com/googleapis/java-managed-identities/issues/147)) ([302c3ac](https://www.github.com/googleapis/java-managed-identities/commit/302c3acc30fac124f4b82e0ed40b67b708f494cc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#153](https://www.github.com/googleapis/java-managed-identities/issues/153)) ([f868fda](https://www.github.com/googleapis/java-managed-identities/commit/f868fda7b7da033ee3868ec624ffda7abf2c91d4))
+
 ### [0.3.5](https://www.github.com/googleapis/java-managed-identities/compare/v0.3.4...v0.3.5) (2021-10-19)
 
 
