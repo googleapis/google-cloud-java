@@ -1,5 +1,28 @@
 # Changelog
 
+### [2.1.8](https://www.github.com/googleapis/java-translate/compare/v2.1.7...v2.1.8) (2021-12-06)
+
+
+### Bug Fixes
+
+* add model signature for batch document translation ([#832](https://www.github.com/googleapis/java-translate/issues/832)) ([4e911b5](https://www.github.com/googleapis/java-translate/commit/4e911b54c66b61b75447423fa5e40ba34674c7a7))
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-translate/issues/1299)) ([#872](https://www.github.com/googleapis/java-translate/issues/872)) ([8932e66](https://www.github.com/googleapis/java-translate/commit/8932e66caa74532caa531963a71bce8a566db08e))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-translate/issues/1266)) ([#845](https://www.github.com/googleapis/java-translate/issues/845)) ([fdf06ff](https://www.github.com/googleapis/java-translate/commit/fdf06ffbcd96f94693346d0c7b2cf3d1cf172c29))
+* remove location proto ([9ce873d](https://www.github.com/googleapis/java-translate/commit/9ce873dde5ae33ae6fe50b4bcb14c3eb38050769))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.0 ([#859](https://www.github.com/googleapis/java-translate/issues/859)) ([dd53b75](https://www.github.com/googleapis/java-translate/commit/dd53b75e74c2a3d42b19db7438d6bb5e5b4f6cdb))
+* update dependency com.google.cloud:google-cloud-core to v2.3.1 ([#861](https://www.github.com/googleapis/java-translate/issues/861)) ([c9eb873](https://www.github.com/googleapis/java-translate/commit/c9eb873848fc1bdf6add67c59c91f8622e61b8cb))
+* update dependency com.google.cloud:google-cloud-core to v2.3.2 ([#868](https://www.github.com/googleapis/java-translate/issues/868)) ([51f6e63](https://www.github.com/googleapis/java-translate/commit/51f6e631b7245c80b05bdcaaae7ef2fa0399d79c))
+* update dependency com.google.cloud:google-cloud-core to v2.3.3 ([#871](https://www.github.com/googleapis/java-translate/issues/871)) ([34cff01](https://www.github.com/googleapis/java-translate/commit/34cff01a3b704f10baaf7eac35b8aa1c699f3b23))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#860](https://www.github.com/googleapis/java-translate/issues/860)) ([c772274](https://www.github.com/googleapis/java-translate/commit/c772274ecccf3001676e25db3855b3eed655340a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#870](https://www.github.com/googleapis/java-translate/issues/870)) ([9ce873d](https://www.github.com/googleapis/java-translate/commit/9ce873dde5ae33ae6fe50b4bcb14c3eb38050769))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.9 ([#843](https://www.github.com/googleapis/java-translate/issues/843)) ([3e54d94](https://www.github.com/googleapis/java-translate/commit/3e54d9495bbe079154f4ed4602e033ba80a40a03))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.0 ([#851](https://www.github.com/googleapis/java-translate/issues/851)) ([ce58c59](https://www.github.com/googleapis/java-translate/commit/ce58c59e60098e24e42743283162a4bed00ae1ca))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.1 ([#862](https://www.github.com/googleapis/java-translate/issues/862)) ([2b5ecd1](https://www.github.com/googleapis/java-translate/commit/2b5ecd1b95ac619c271e6b1b7a0ea0bbcd7f09a0))
+
 ### [2.1.7](https://www.github.com/googleapis/java-translate/compare/v2.1.6...v2.1.7) (2021-10-19)
 
 
