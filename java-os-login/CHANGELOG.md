@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.0.7](https://www.github.com/googleapis/java-os-login/compare/v2.0.6...v2.0.7) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-os-login/issues/1266)) ([#581](https://www.github.com/googleapis/java-os-login/issues/581)) ([117fe4c](https://www.github.com/googleapis/java-os-login/commit/117fe4c4fd741257199b64fedaf573b0947ae2e7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#591](https://www.github.com/googleapis/java-os-login/issues/591)) ([4ad7058](https://www.github.com/googleapis/java-os-login/commit/4ad70589a80264ee3d66570c93784f4e90fcee1b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#596](https://www.github.com/googleapis/java-os-login/issues/596)) ([f5dd645](https://www.github.com/googleapis/java-os-login/commit/f5dd6455d734ddaf2a86883a5fee9c7d7b43472f))
+
 ### [2.0.6](https://www.github.com/googleapis/java-os-login/compare/v2.0.5...v2.0.6) (2021-10-19)
 
 
