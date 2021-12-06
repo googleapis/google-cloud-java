@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.0.8](https://www.github.com/googleapis/java-websecurityscanner/compare/v2.0.7...v2.0.8) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-websecurityscanner/issues/1299)) ([#606](https://www.github.com/googleapis/java-websecurityscanner/issues/606)) ([0e0e9e9](https://www.github.com/googleapis/java-websecurityscanner/commit/0e0e9e97dfa4d985b9dbcedd8f9d3d9fefd2b392))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-websecurityscanner/issues/1266)) ([#588](https://www.github.com/googleapis/java-websecurityscanner/issues/588)) ([fa8929e](https://www.github.com/googleapis/java-websecurityscanner/commit/fa8929e89ee22969e634ea542ab0e9a8bacb3bb6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#599](https://www.github.com/googleapis/java-websecurityscanner/issues/599)) ([daa2ced](https://www.github.com/googleapis/java-websecurityscanner/commit/daa2cedba128b16b65ae790ba10b08b79b199c3d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#605](https://www.github.com/googleapis/java-websecurityscanner/issues/605)) ([9e7f508](https://www.github.com/googleapis/java-websecurityscanner/commit/9e7f508d90e7d00c06a0e0fa3a86d1840690ffd9))
+* update dependency joda-time:joda-time to v2.10.13 ([#590](https://www.github.com/googleapis/java-websecurityscanner/issues/590)) ([c458038](https://www.github.com/googleapis/java-websecurityscanner/commit/c458038155eb36c4c58251b3d2fd1841eae3e715))
+
 ### [2.0.7](https://www.github.com/googleapis/java-websecurityscanner/compare/v2.0.6...v2.0.7) (2021-10-20)
 
 
