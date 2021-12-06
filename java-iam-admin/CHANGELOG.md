@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-iam-admin/compare/v1.0.0...v1.1.0) (2021-12-06)
+
+
+### Features
+
+* next release from main branch is 1.1.0 ([#29](https://www.github.com/googleapis/java-iam-admin/issues/29)) ([9a41a9e](https://www.github.com/googleapis/java-iam-admin/commit/9a41a9ebb91915adaf2e250cbe1949690a8d8cb3))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-iam-admin/issues/1299)) ([#49](https://www.github.com/googleapis/java-iam-admin/issues/49)) ([ad0cadb](https://www.github.com/googleapis/java-iam-admin/commit/ad0cadb375c0ad642178677f6a45cad7c6c54ec5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#43](https://www.github.com/googleapis/java-iam-admin/issues/43)) ([f786742](https://www.github.com/googleapis/java-iam-admin/commit/f7867426bf82bcc9418e6688122c280fbbfbbd5b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#48](https://www.github.com/googleapis/java-iam-admin/issues/48)) ([71404b1](https://www.github.com/googleapis/java-iam-admin/commit/71404b1bca6885dfd2129d5623364f6fc4441827))
+
 ## [1.0.0](https://www.github.com/googleapis/java-iam-admin/compare/v0.1.2...v1.0.0) (2021-10-25)
 
 
