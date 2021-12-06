@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.0.5](https://www.github.com/googleapis/java-secretmanager/compare/v2.0.4...v2.0.5) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-secretmanager/issues/1299)) ([#648](https://www.github.com/googleapis/java-secretmanager/issues/648)) ([a617941](https://www.github.com/googleapis/java-secretmanager/commit/a6179419d8ae93480cc79ef432308dde7c4431ac))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-secretmanager/issues/1266)) ([#632](https://www.github.com/googleapis/java-secretmanager/issues/632)) ([d023065](https://www.github.com/googleapis/java-secretmanager/commit/d0230655d72b7ae4e44cd15aa7525046ede4e046))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#642](https://www.github.com/googleapis/java-secretmanager/issues/642)) ([ff7164a](https://www.github.com/googleapis/java-secretmanager/commit/ff7164a3564dcdf050b031e1764455f72ed746ab))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#647](https://www.github.com/googleapis/java-secretmanager/issues/647)) ([b33aec5](https://www.github.com/googleapis/java-secretmanager/commit/b33aec52ee7cac1e4007063c0ddeac8415f0fb7e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.1 ([#630](https://www.github.com/googleapis/java-secretmanager/issues/630)) ([de25d2a](https://www.github.com/googleapis/java-secretmanager/commit/de25d2afc1d2b60ca71d94f8e547657751b35059))
+
 ### [2.0.4](https://www.github.com/googleapis/java-secretmanager/compare/v2.0.3...v2.0.4) (2021-10-19)
 
 
