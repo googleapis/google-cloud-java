@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-orchestration-airflow/compare/v1.0.0...v1.1.0) (2021-12-03)
+
+
+### Features
+
+* next release from main branch is 1.1.0 ([#95](https://www.github.com/googleapis/java-orchestration-airflow/issues/95)) ([2b61fc5](https://www.github.com/googleapis/java-orchestration-airflow/commit/2b61fc53c82ca96bce4edb5ad50ad2ccb6c01299))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-orchestration-airflow/issues/1266)) ([#93](https://www.github.com/googleapis/java-orchestration-airflow/issues/93)) ([ddbeecb](https://www.github.com/googleapis/java-orchestration-airflow/commit/ddbeecb2717b40e91b6d027d712e6a9b13afae59))
+
+
+### Documentation
+
+* fix docstring formatting ([#92](https://www.github.com/googleapis/java-orchestration-airflow/issues/92)) ([acf562b](https://www.github.com/googleapis/java-orchestration-airflow/commit/acf562b9a3890a44f7e341c2db39d578dcbf8d1d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#105](https://www.github.com/googleapis/java-orchestration-airflow/issues/105)) ([a441634](https://www.github.com/googleapis/java-orchestration-airflow/commit/a4416346267079167a20e417de7bdb4c0a3ed1ef))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#111](https://www.github.com/googleapis/java-orchestration-airflow/issues/111)) ([b126908](https://www.github.com/googleapis/java-orchestration-airflow/commit/b1269084b3e59b11498210daca41687455f8deb2))
+
 ## [1.0.0](https://www.github.com/googleapis/java-orchestration-airflow/compare/v0.3.1...v1.0.0) (2021-10-20)
 
 
