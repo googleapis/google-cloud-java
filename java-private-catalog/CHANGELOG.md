@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/googleapis/java-private-catalog/compare/v0.2.1...v0.2.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-private-catalog/issues/1299)) ([#106](https://www.github.com/googleapis/java-private-catalog/issues/106)) ([d73145a](https://www.github.com/googleapis/java-private-catalog/commit/d73145a9f1a808d4be8681e31bd1c899a9dc3ef2))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-private-catalog/issues/1266)) ([#91](https://www.github.com/googleapis/java-private-catalog/issues/91)) ([b084f45](https://www.github.com/googleapis/java-private-catalog/commit/b084f45af58dd7c37e4a771b59b8899c82d9d082))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#100](https://www.github.com/googleapis/java-private-catalog/issues/100)) ([38e4ad3](https://www.github.com/googleapis/java-private-catalog/commit/38e4ad3d3217f96084ea230da794b3aaa53b030d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#105](https://www.github.com/googleapis/java-private-catalog/issues/105)) ([5828092](https://www.github.com/googleapis/java-private-catalog/commit/5828092dd7fd96b111fdd9d083859569d4da6a39))
+
 ### [0.2.1](https://www.github.com/googleapis/java-private-catalog/compare/v0.2.0...v0.2.1) (2021-10-19)
 
 
