@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-domains:0.5.0:0.5.0
-grpc-google-cloud-domains-v1beta1:0.5.0:0.5.0
-grpc-google-cloud-domains-v1alpha2:0.5.0:0.5.0
-grpc-google-cloud-domains-v1:0.5.0:0.5.0
-proto-google-cloud-domains-v1beta1:0.5.0:0.5.0
-proto-google-cloud-domains-v1alpha2:0.5.0:0.5.0
-proto-google-cloud-domains-v1:0.5.0:0.5.0
+google-cloud-domains:0.5.0:0.5.1-SNAPSHOT
+grpc-google-cloud-domains-v1beta1:0.5.0:0.5.1-SNAPSHOT
+grpc-google-cloud-domains-v1alpha2:0.5.0:0.5.1-SNAPSHOT
+grpc-google-cloud-domains-v1:0.5.0:0.5.1-SNAPSHOT
+proto-google-cloud-domains-v1beta1:0.5.0:0.5.1-SNAPSHOT
+proto-google-cloud-domains-v1alpha2:0.5.0:0.5.1-SNAPSHOT
+proto-google-cloud-domains-v1:0.5.0:0.5.1-SNAPSHOT
