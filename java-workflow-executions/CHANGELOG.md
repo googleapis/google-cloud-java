@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-workflow-executions/compare/v2.0.6...v2.1.0) (2021-12-06)
+
+
+### Features
+
+* add a stack_trace field to the Error messages specifying where the error occured feat: add call_log_level field to Execution messages doc: clarify requirement to escape strings within JSON arguments ([#220](https://www.github.com/googleapis/java-workflow-executions/issues/220)) ([8b4e352](https://www.github.com/googleapis/java-workflow-executions/commit/8b4e352c7fcaf57032c6b34f4cc9db74ef81c389))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-workflow-executions/issues/1299)) ([#234](https://www.github.com/googleapis/java-workflow-executions/issues/234)) ([5cbeda3](https://www.github.com/googleapis/java-workflow-executions/commit/5cbeda3e6265916e7006efe92edf1efb47a8dd70))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-workflow-executions/issues/1266)) ([#217](https://www.github.com/googleapis/java-workflow-executions/issues/217)) ([f95c8ac](https://www.github.com/googleapis/java-workflow-executions/commit/f95c8ac28d37a3952e99fd9e6bbd689aa6a6d8e8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#227](https://www.github.com/googleapis/java-workflow-executions/issues/227)) ([32077fb](https://www.github.com/googleapis/java-workflow-executions/commit/32077fbc695ffce99d8aea1f55a424cf56e84792))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#233](https://www.github.com/googleapis/java-workflow-executions/issues/233)) ([6c2b01e](https://www.github.com/googleapis/java-workflow-executions/commit/6c2b01ee92686c9864eaff28d1d40d6b7cd3b8d4))
+
 ### [2.0.6](https://www.github.com/googleapis/java-workflow-executions/compare/v2.0.5...v2.0.6) (2021-10-20)
 
 
