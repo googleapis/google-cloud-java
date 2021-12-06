@@ -1,5 +1,27 @@
 # Changelog
 
+### [0.6.1](https://www.github.com/googleapis/java-notebooks/compare/v0.6.0...v0.6.1) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-notebooks/issues/1299)) ([#293](https://www.github.com/googleapis/java-notebooks/issues/293)) ([0b99148](https://www.github.com/googleapis/java-notebooks/commit/0b99148379eeb65d5e0637735f78bf2b5e2a74f8))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-notebooks/issues/1266)) ([#278](https://www.github.com/googleapis/java-notebooks/issues/278)) ([41de5f8](https://www.github.com/googleapis/java-notebooks/commit/41de5f805e9afec1470104f0e690f62a367b5a09))
+* remove location proto ([4131cb6](https://www.github.com/googleapis/java-notebooks/commit/4131cb6c75d0d6604a78754cc521b0e08d58a499))
+
+
+### Documentation
+
+* fix typos and docstring formatting ([#275](https://www.github.com/googleapis/java-notebooks/issues/275)) ([d01f502](https://www.github.com/googleapis/java-notebooks/commit/d01f50232082a43911774e765c7b4d8e12075040))
+* Fixed several broken links and formatting issues in the reference documentation ([#269](https://www.github.com/googleapis/java-notebooks/issues/269)) ([609f7e9](https://www.github.com/googleapis/java-notebooks/commit/609f7e9d603f55ee591199251c10288c531dc54f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#276](https://www.github.com/googleapis/java-notebooks/issues/276)) ([8af9ed8](https://www.github.com/googleapis/java-notebooks/commit/8af9ed805a128f76c0311b0239ed2ba619cbc502))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#286](https://www.github.com/googleapis/java-notebooks/issues/286)) ([acf2917](https://www.github.com/googleapis/java-notebooks/commit/acf2917f7109fac517e3ee598dc104cf4d5451aa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#292](https://www.github.com/googleapis/java-notebooks/issues/292)) ([4131cb6](https://www.github.com/googleapis/java-notebooks/commit/4131cb6c75d0d6604a78754cc521b0e08d58a499))
+
 ## [0.6.0](https://www.github.com/googleapis/java-notebooks/compare/v0.5.0...v0.6.0) (2021-09-27)
 
 
