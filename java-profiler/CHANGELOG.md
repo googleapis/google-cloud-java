@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-profiler/compare/v2.1.3...v2.1.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-profiler/issues/1266)) ([#175](https://www.github.com/googleapis/java-profiler/issues/175)) ([404af88](https://www.github.com/googleapis/java-profiler/commit/404af880dc06e2ae4d24da57045ae35ea2a00c9d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#184](https://www.github.com/googleapis/java-profiler/issues/184)) ([398da2e](https://www.github.com/googleapis/java-profiler/commit/398da2e7c5037dbfc646c4c2a3375253edeee253))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#189](https://www.github.com/googleapis/java-profiler/issues/189)) ([3d4f878](https://www.github.com/googleapis/java-profiler/commit/3d4f878b7fdec5a3f96bd1a2fbef752b280ba11b))
+
 ### [2.1.3](https://www.github.com/googleapis/java-profiler/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
