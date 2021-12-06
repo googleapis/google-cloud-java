@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.3](https://www.github.com/googleapis/java-appengine-admin/compare/v2.1.2...v2.1.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-appengine-admin/issues/1299)) ([#156](https://www.github.com/googleapis/java-appengine-admin/issues/156)) ([5bd2a53](https://www.github.com/googleapis/java-appengine-admin/commit/5bd2a534305ce8de498c5515221b6a81fc1c6279))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-appengine-admin/issues/1266)) ([#141](https://www.github.com/googleapis/java-appengine-admin/issues/141)) ([8822f34](https://www.github.com/googleapis/java-appengine-admin/commit/8822f3491aae2f683c4412c6061bcca2caeecebb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#150](https://www.github.com/googleapis/java-appengine-admin/issues/150)) ([aaa08cc](https://www.github.com/googleapis/java-appengine-admin/commit/aaa08cc81fa440a6efd5ff1b6ed0b9b3cc517c2d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#155](https://www.github.com/googleapis/java-appengine-admin/issues/155)) ([5ce2d0d](https://www.github.com/googleapis/java-appengine-admin/commit/5ce2d0de6b612b47e16371d1f4d36fded798c0d6))
+
 ### [2.1.2](https://www.github.com/googleapis/java-appengine-admin/compare/v2.1.1...v2.1.2) (2021-10-19)
 
 
