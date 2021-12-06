@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/googleapis/java-data-fusion/compare/v0.3.1...v0.3.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-data-fusion/issues/1299)) ([#92](https://www.github.com/googleapis/java-data-fusion/issues/92)) ([4b6124f](https://www.github.com/googleapis/java-data-fusion/commit/4b6124f04c70a46f012a73766539287686914664))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-data-fusion/issues/1266)) ([#77](https://www.github.com/googleapis/java-data-fusion/issues/77)) ([a101132](https://www.github.com/googleapis/java-data-fusion/commit/a1011328cfa821b954c7cabbe1f277ace31beadf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#86](https://www.github.com/googleapis/java-data-fusion/issues/86)) ([f0f5e95](https://www.github.com/googleapis/java-data-fusion/commit/f0f5e950908712657d69843416687dfda725a1dc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#91](https://www.github.com/googleapis/java-data-fusion/issues/91)) ([e4e7787](https://www.github.com/googleapis/java-data-fusion/commit/e4e7787244cdf4e425f99c3d5d25d57037e6eec2))
+
 ### [0.3.1](https://www.github.com/googleapis/java-data-fusion/compare/v0.3.0...v0.3.1) (2021-10-19)
 
 
