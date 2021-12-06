@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-domains/compare/v0.4.2...v0.5.0) (2021-12-06)
+
+
+### Features
+
+* added library for Cloud Domains v1 API ([#128](https://www.github.com/googleapis/java-domains/issues/128)) ([d2b1aa9](https://www.github.com/googleapis/java-domains/commit/d2b1aa9245fadae117af62fb68b5fd4a17653ac0))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-domains/issues/1299)) ([#150](https://www.github.com/googleapis/java-domains/issues/150)) ([50a7adf](https://www.github.com/googleapis/java-domains/commit/50a7adfe39d01e0f1142adefe31958bfac05c68e))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-domains/issues/1266)) ([#135](https://www.github.com/googleapis/java-domains/issues/135)) ([9469ba1](https://www.github.com/googleapis/java-domains/commit/9469ba1317de7e20323bf1f4cc8c3312b8ff8c5c))
+
+
+### Documentation
+
+* improved API comments ([d2b1aa9](https://www.github.com/googleapis/java-domains/commit/d2b1aa9245fadae117af62fb68b5fd4a17653ac0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#144](https://www.github.com/googleapis/java-domains/issues/144)) ([813d887](https://www.github.com/googleapis/java-domains/commit/813d887370d705d41805bdb771bc29507f6cbb97))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#149](https://www.github.com/googleapis/java-domains/issues/149)) ([c4f54a4](https://www.github.com/googleapis/java-domains/commit/c4f54a44442f344dba5ea0072389b43342c8d63f))
+
 ### [0.4.2](https://www.github.com/googleapis/java-domains/compare/v0.4.1...v0.4.2) (2021-10-19)
 
 
