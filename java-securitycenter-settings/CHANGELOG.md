@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.5.7](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.5.6...v0.5.7) (2021-12-06)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-securitycenter-settings/issues/1299)) ([#427](https://www.github.com/googleapis/java-securitycenter-settings/issues/427)) ([d5ee5ca](https://www.github.com/googleapis/java-securitycenter-settings/commit/d5ee5cadc5d5ffcd8cee62017f7db7709a2d7646))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-securitycenter-settings/issues/1266)) ([#410](https://www.github.com/googleapis/java-securitycenter-settings/issues/410)) ([fd88de2](https://www.github.com/googleapis/java-securitycenter-settings/commit/fd88de2ac3a046f6cf02cfe20e7604230f504708))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#420](https://www.github.com/googleapis/java-securitycenter-settings/issues/420)) ([2e1b3d0](https://www.github.com/googleapis/java-securitycenter-settings/commit/2e1b3d0bad421b10f543d882d15c0f7cd2504499))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#425](https://www.github.com/googleapis/java-securitycenter-settings/issues/425)) ([329b625](https://www.github.com/googleapis/java-securitycenter-settings/commit/329b6255d669afeddbdde8ce729e90b0994c9e2c))
+
 ### [0.5.6](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.5.5...v0.5.6) (2021-10-20)
 
 
