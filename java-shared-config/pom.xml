@@ -790,8 +790,7 @@
         <dependency>
           <groupId>org.graalvm.buildtools</groupId>
           <artifactId>junit-platform-native</artifactId>
-          <!-- Using older version; upgrade to latest once issues are resolved. See #336 -->
-          <version>0.9.5</version>
+          <version>0.9.8</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -806,14 +805,17 @@
             <configuration>
               <!-- Include all tests during native image testing. -->
               <excludes combine.self="override" />
+              <includes>
+                <include>**/IT*.java</include>
+              </includes>
             </configuration>
           </plugin>
 
           <plugin>
             <groupId>org.graalvm.buildtools</groupId>
             <artifactId>native-maven-plugin</artifactId>
-            <!-- Using older version; upgrade to latest once issues are resolved. See #336. -->
             <version>0.9.8</version>
+            <extensions>true</extensions>
             <executions>
               <execution>
                 <id>test-native</id>
@@ -827,7 +829,6 @@
               <buildArgs>
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
-                <buildArg>--features=com.google.cloud.nativeimage.features.ProtobufMessageFeature</buildArg>
               </buildArgs>
             </configuration>
           </plugin>
