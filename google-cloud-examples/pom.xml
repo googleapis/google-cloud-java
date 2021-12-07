@@ -119,7 +119,7 @@
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpcore</artifactId>
-      <version>4.4.14</version>
+      <version>4.4.15</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
