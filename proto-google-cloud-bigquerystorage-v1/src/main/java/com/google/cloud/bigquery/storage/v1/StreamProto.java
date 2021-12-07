@@ -94,26 +94,29 @@ public final class StreamProto {
           + "\001(\tB\003\340A\003:{\352Ax\n)bigquerystorage.googleapi"
           + "s.com/ReadStream\022Kprojects/{project}/loc"
           + "ations/{location}/sessions/{session}/str"
-          + "eams/{stream}\"\335\003\n\013WriteStream\022\021\n\004name\030\001 "
+          + "eams/{stream}\"\344\004\n\013WriteStream\022\021\n\004name\030\001 "
           + "\001(\tB\003\340A\003\022E\n\004type\030\002 \001(\01622.google.cloud.bi"
           + "gquery.storage.v1.WriteStream.TypeB\003\340A\005\022"
           + "4\n\013create_time\030\003 \001(\0132\032.google.protobuf.T"
           + "imestampB\003\340A\003\0224\n\013commit_time\030\004 \001(\0132\032.goo"
           + "gle.protobuf.TimestampB\003\340A\003\022H\n\014table_sch"
           + "ema\030\005 \001(\0132-.google.cloud.bigquery.storag"
-          + "e.v1.TableSchemaB\003\340A\003\"F\n\004Type\022\024\n\020TYPE_UN"
-          + "SPECIFIED\020\000\022\r\n\tCOMMITTED\020\001\022\013\n\007PENDING\020\002\022"
-          + "\014\n\010BUFFERED\020\003:v\352As\n*bigquerystorage.goog"
-          + "leapis.com/WriteStream\022Eprojects/{projec"
-          + "t}/datasets/{dataset}/tables/{table}/str"
-          + "eams/{stream}*>\n\nDataFormat\022\033\n\027DATA_FORM"
-          + "AT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\002B\304\001"
-          + "\n$com.google.cloud.bigquery.storage.v1B\013"
-          + "StreamProtoP\001ZGgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/bigquery/storage/v1;s"
-          + "torage\252\002 Google.Cloud.BigQuery.Storage.V"
-          + "1\312\002 Google\\Cloud\\BigQuery\\Storage\\V1b\006pr"
-          + "oto3"
+          + "e.v1.TableSchemaB\003\340A\003\022P\n\nwrite_mode\030\007 \001("
+          + "\01627.google.cloud.bigquery.storage.v1.Wri"
+          + "teStream.WriteModeB\003\340A\005\"F\n\004Type\022\024\n\020TYPE_"
+          + "UNSPECIFIED\020\000\022\r\n\tCOMMITTED\020\001\022\013\n\007PENDING\020"
+          + "\002\022\014\n\010BUFFERED\020\003\"3\n\tWriteMode\022\032\n\026WRITE_MO"
+          + "DE_UNSPECIFIED\020\000\022\n\n\006INSERT\020\001:v\352As\n*bigqu"
+          + "erystorage.googleapis.com/WriteStream\022Ep"
+          + "rojects/{project}/datasets/{dataset}/tab"
+          + "les/{table}/streams/{stream}*>\n\nDataForm"
+          + "at\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020"
+          + "\001\022\t\n\005ARROW\020\002B\304\001\n$com.google.cloud.bigque"
+          + "ry.storage.v1B\013StreamProtoP\001ZGgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/bigque"
+          + "ry/storage/v1;storage\252\002 Google.Cloud.Big"
+          + "Query.Storage.V1\312\002 Google\\Cloud\\BigQuery"
+          + "\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -181,7 +184,7 @@ public final class StreamProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1_WriteStream_descriptor,
             new java.lang.String[] {
-              "Name", "Type", "CreateTime", "CommitTime", "TableSchema",
+              "Name", "Type", "CreateTime", "CommitTime", "TableSchema", "WriteMode",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

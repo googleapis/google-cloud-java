@@ -40,6 +40,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
   private WriteStream() {
     name_ = "";
     type_ = 0;
+    writeMode_ = 0;
   }
 
   @java.lang.Override
@@ -129,6 +130,13 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
                 tableSchema_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+
+              writeMode_ = rawValue;
               break;
             }
           default:
@@ -344,6 +352,143 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1.WriteStream.Type)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Mode enum of the stream.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.bigquery.storage.v1.WriteStream.WriteMode}
+   */
+  public enum WriteMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unknown type.
+     * </pre>
+     *
+     * <code>WRITE_MODE_UNSPECIFIED = 0;</code>
+     */
+    WRITE_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Insert new records into the table.
+     * It is the default value if customers do not specify it.
+     * </pre>
+     *
+     * <code>INSERT = 1;</code>
+     */
+    INSERT(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unknown type.
+     * </pre>
+     *
+     * <code>WRITE_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int WRITE_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Insert new records into the table.
+     * It is the default value if customers do not specify it.
+     * </pre>
+     *
+     * <code>INSERT = 1;</code>
+     */
+    public static final int INSERT_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WriteMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WriteMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return WRITE_MODE_UNSPECIFIED;
+        case 1:
+          return INSERT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WriteMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<WriteMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<WriteMode>() {
+          public WriteMode findValueByNumber(int number) {
+            return WriteMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1.WriteStream.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final WriteMode[] VALUES = values();
+
+    public static WriteMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WriteMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1.WriteStream.WriteMode)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -612,6 +757,48 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     return getTableSchema();
   }
 
+  public static final int WRITE_MODE_FIELD_NUMBER = 7;
+  private int writeMode_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Mode of the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for writeMode.
+   */
+  @java.lang.Override
+  public int getWriteModeValue() {
+    return writeMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Mode of the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The writeMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode getWriteMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode result =
+        com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.valueOf(writeMode_);
+    return result == null
+        ? com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -642,6 +829,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     if (tableSchema_ != null) {
       output.writeMessage(5, getTableSchema());
     }
+    if (writeMode_
+        != com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.WRITE_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, writeMode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -666,6 +858,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     }
     if (tableSchema_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTableSchema());
+    }
+    if (writeMode_
+        != com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.WRITE_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, writeMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -697,6 +894,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     if (hasTableSchema()) {
       if (!getTableSchema().equals(other.getTableSchema())) return false;
     }
+    if (writeMode_ != other.writeMode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -724,6 +922,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TABLE_SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getTableSchema().hashCode();
     }
+    hash = (37 * hash) + WRITE_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + writeMode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -891,6 +1091,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         tableSchema_ = null;
         tableSchemaBuilder_ = null;
       }
+      writeMode_ = 0;
+
       return this;
     }
 
@@ -935,6 +1137,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.tableSchema_ = tableSchemaBuilder_.build();
       }
+      result.writeMode_ = writeMode_;
       onBuilt();
       return result;
     }
@@ -1000,6 +1203,9 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTableSchema()) {
         mergeTableSchema(other.getTableSchema());
+      }
+      if (other.writeMode_ != 0) {
+        setWriteModeValue(other.getWriteModeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1911,6 +2117,109 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         tableSchema_ = null;
       }
       return tableSchemaBuilder_;
+    }
+
+    private int writeMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Mode of the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for writeMode.
+     */
+    @java.lang.Override
+    public int getWriteModeValue() {
+      return writeMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Mode of the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for writeMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWriteModeValue(int value) {
+
+      writeMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Mode of the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The writeMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode getWriteMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode result =
+          com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.valueOf(writeMode_);
+      return result == null
+          ? com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Mode of the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The writeMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWriteMode(com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      writeMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Mode of the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWriteMode() {
+
+      writeMode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
