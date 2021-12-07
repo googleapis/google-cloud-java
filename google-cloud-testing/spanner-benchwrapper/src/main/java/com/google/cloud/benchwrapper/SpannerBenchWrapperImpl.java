@@ -19,6 +19,7 @@ package com.google.cloud.benchwrapper;
 import static com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.cloud.benchwrapper.SpannerBenchWrapperGrpc.SpannerBenchWrapperImplBase;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
@@ -28,6 +29,7 @@ import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerBatchUpdateException;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TransactionContext;
 import io.grpc.ManagedChannelBuilder;
@@ -40,12 +42,15 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
   private DatabaseClient dbClient;
 
   public SpannerBenchWrapperImpl() {
-    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("test-project-id").build();
+    final SpannerOptions.Builder optionsBuilder = SpannerOptions.newBuilder();
+    final SpannerOptions options = optionsBuilder
+        .setEmulatorHost("localhost:9010")
+        .build();
     spanner = options.getService();
 
     dbClient =
         spanner.getDatabaseClient(
-            DatabaseId.of(options.getProjectId(), "test-instance", "test-db"));
+            DatabaseId.of(options.getProjectId(), "someinstance", "somedatabase"));
   }
 
   public void read(ReadQuery request, StreamObserver<EmptyResponse> responseObserver) {
@@ -67,13 +72,15 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
     System.out.println("insert has been called");
 
     List<Mutation> mutations = new ArrayList<>();
-    for (User user : request.getUsersList()) {
+    for (Singer singer : request.getSingersList()) {
       mutations.add(
-          Mutation.newInsertBuilder("sometable")
-              .set("name")
-              .to(user.getName())
-              .set("age")
-              .to(Long.toString(user.getAge()))
+          Mutation.newInsertBuilder("Singers")
+              .set("SingerId")
+              .to(singer.getId())
+              .set("FirstName")
+              .to(singer.getFirstName())
+              .set("LastName")
+              .to(singer.getLastName())
               .build());
     }
     dbClient.write(mutations);

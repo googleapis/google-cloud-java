@@ -20,7 +20,7 @@ import io.grpc.Server;
 import io.grpc.netty.NettyServerBuilder;
 import java.util.Properties;
 
-class Main {
+public class Main {
   public static void main(String[] args) throws Exception {
     String port = System.getProperty("port");
     if (port == null || port.equals("")) {
