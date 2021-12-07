@@ -63,6 +63,10 @@ public final class ResponseMessageProto {
       internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_MixedAudio_Segment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_MixedAudio_Segment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -76,7 +80,7 @@ public final class ResponseMessageProto {
           + "_message.proto\022\035google.cloud.dialogflow."
           + "cx.v3\032\037google/api/field_behavior.proto\032\034"
           + "google/protobuf/struct.proto\032\034google/api"
-          + "/annotations.proto\"\205\n\n\017ResponseMessage\022C"
+          + "/annotations.proto\"\253\013\n\017ResponseMessage\022C"
           + "\n\004text\030\001 \001(\01323.google.cloud.dialogflow.c"
           + "x.v3.ResponseMessage.TextH\000\022*\n\007payload\030\002"
           + " \001(\0132\027.google.protobuf.StructH\000\022b\n\024conve"
@@ -93,27 +97,32 @@ public final class ResponseMessageProto {
           + "gle.cloud.dialogflow.cx.v3.ResponseMessa"
           + "ge.PlayAudioH\000\022U\n\013mixed_audio\030\r \001(\01329.go"
           + "ogle.cloud.dialogflow.cx.v3.ResponseMess"
-          + "age.MixedAudioB\003\340A\003H\000\032C\n\004Text\022\021\n\004text\030\001 "
-          + "\003(\tB\003\340A\002\022(\n\033allow_playback_interruption\030"
-          + "\002 \001(\010B\003\340A\003\032=\n\020LiveAgentHandoff\022)\n\010metada"
-          + "ta\030\001 \001(\0132\027.google.protobuf.Struct\032@\n\023Con"
-          + "versationSuccess\022)\n\010metadata\030\001 \001(\0132\027.goo"
-          + "gle.protobuf.Struct\032e\n\017OutputAudioText\022\016"
-          + "\n\004text\030\001 \001(\tH\000\022\016\n\004ssml\030\002 \001(\tH\000\022(\n\033allow_"
-          + "playback_interruption\030\003 \001(\010B\003\340A\003B\010\n\006sour"
-          + "ce\032\020\n\016EndInteraction\032M\n\tPlayAudio\022\026\n\taud"
-          + "io_uri\030\001 \001(\tB\003\340A\002\022(\n\033allow_playback_inte"
-          + "rruption\030\002 \001(\010B\003\340A\003\032\301\001\n\nMixedAudio\022S\n\010se"
-          + "gments\030\001 \003(\0132A.google.cloud.dialogflow.c"
-          + "x.v3.ResponseMessage.MixedAudio.Segment\032"
-          + "^\n\007Segment\022\017\n\005audio\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\t"
-          + "H\000\022(\n\033allow_playback_interruption\030\003 \001(\010B"
-          + "\003\340A\003B\t\n\007contentB\t\n\007messageB\310\001\n!com.googl"
-          + "e.cloud.dialogflow.cx.v3B\024ResponseMessag"
-          + "eProtoP\001Z?google.golang.org/genproto/goo"
-          + "gleapis/cloud/dialogflow/cx/v3;cx\370\001\001\242\002\002D"
-          + "F\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Goog"
-          + "le::Cloud::Dialogflow::CX::V3b\006proto3"
+          + "age.MixedAudioB\003\340A\003H\000\022g\n\027telephony_trans"
+          + "fer_call\030\022 \001(\0132D.google.cloud.dialogflow"
+          + ".cx.v3.ResponseMessage.TelephonyTransfer"
+          + "CallH\000\032C\n\004Text\022\021\n\004text\030\001 \003(\tB\003\340A\002\022(\n\033all"
+          + "ow_playback_interruption\030\002 \001(\010B\003\340A\003\032=\n\020L"
+          + "iveAgentHandoff\022)\n\010metadata\030\001 \001(\0132\027.goog"
+          + "le.protobuf.Struct\032@\n\023ConversationSucces"
+          + "s\022)\n\010metadata\030\001 \001(\0132\027.google.protobuf.St"
+          + "ruct\032e\n\017OutputAudioText\022\016\n\004text\030\001 \001(\tH\000\022"
+          + "\016\n\004ssml\030\002 \001(\tH\000\022(\n\033allow_playback_interr"
+          + "uption\030\003 \001(\010B\003\340A\003B\010\n\006source\032\020\n\016EndIntera"
+          + "ction\032M\n\tPlayAudio\022\026\n\taudio_uri\030\001 \001(\tB\003\340"
+          + "A\002\022(\n\033allow_playback_interruption\030\002 \001(\010B"
+          + "\003\340A\003\032\301\001\n\nMixedAudio\022S\n\010segments\030\001 \003(\0132A."
+          + "google.cloud.dialogflow.cx.v3.ResponseMe"
+          + "ssage.MixedAudio.Segment\032^\n\007Segment\022\017\n\005a"
+          + "udio\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\tH\000\022(\n\033allow_pla"
+          + "yback_interruption\030\003 \001(\010B\003\340A\003B\t\n\007content"
+          + "\032;\n\025TelephonyTransferCall\022\026\n\014phone_numbe"
+          + "r\030\001 \001(\tH\000B\n\n\010endpointB\t\n\007messageB\310\001\n!com"
+          + ".google.cloud.dialogflow.cx.v3B\024Response"
+          + "MessageProtoP\001Z?google.golang.org/genpro"
+          + "to/googleapis/cloud/dialogflow/cx/v3;cx\370"
+          + "\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352"
+          + "\002!Google::Cloud::Dialogflow::CX::V3b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -137,6 +146,7 @@ public final class ResponseMessageProto {
               "EndInteraction",
               "PlayAudio",
               "MixedAudio",
+              "TelephonyTransferCall",
               "Message",
             });
     internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_Text_descriptor =
@@ -216,6 +226,16 @@ public final class ResponseMessageProto {
             internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_MixedAudio_Segment_descriptor,
             new java.lang.String[] {
               "Audio", "Uri", "AllowPlaybackInterruption", "Content",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_descriptor
+            .getNestedTypes()
+            .get(7);
+    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_descriptor,
+            new java.lang.String[] {
+              "PhoneNumber", "Endpoint",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

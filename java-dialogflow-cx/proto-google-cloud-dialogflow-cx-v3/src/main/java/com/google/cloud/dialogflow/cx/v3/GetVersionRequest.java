@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * The request message for
- * [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
+ * The request message for [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.GetVersionRequest}
@@ -119,8 +118,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-   * Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>
@@ -146,8 +145,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-   * Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>
@@ -332,8 +331,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for
-   * [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
+   * The request message for [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.GetVersionRequest}
@@ -494,8 +492,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -520,8 +518,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -546,8 +544,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -571,8 +569,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -592,8 +590,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>

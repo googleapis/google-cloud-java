@@ -367,5 +367,51 @@ public interface ResponseMessageOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudioOrBuilder getMixedAudioOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A signal that the client should transfer the phone call connected to
+   * this agent to a third-party endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+   * </code>
+   *
+   * @return Whether the telephonyTransferCall field is set.
+   */
+  boolean hasTelephonyTransferCall();
+  /**
+   *
+   *
+   * <pre>
+   * A signal that the client should transfer the phone call connected to
+   * this agent to a third-party endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+   * </code>
+   *
+   * @return The telephonyTransferCall.
+   */
+  com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+      getTelephonyTransferCall();
+  /**
+   *
+   *
+   * <pre>
+   * A signal that the client should transfer the phone call connected to
+   * this agent to a third-party endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallOrBuilder
+      getTelephonyTransferCallOrBuilder();
+
   public com.google.cloud.dialogflow.cx.v3.ResponseMessage.MessageCase getMessageCase();
 }

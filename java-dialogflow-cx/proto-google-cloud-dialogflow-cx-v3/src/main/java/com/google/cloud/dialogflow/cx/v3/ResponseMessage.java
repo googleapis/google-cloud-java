@@ -242,6 +242,30 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               messageCase_ = 13;
               break;
             }
+          case 146:
+            {
+              com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder
+                  subBuilder = null;
+              if (messageCase_ == 18) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+                            message_)
+                        .toBuilder();
+              }
+              message_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+                        message_);
+                message_ = subBuilder.buildPartial();
+              }
+              messageCase_ = 18;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -7447,6 +7471,837 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface TelephonyTransferCallOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Transfer the call to a phone number
+     * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return Whether the phoneNumber field is set.
+     */
+    boolean hasPhoneNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Transfer the call to a phone number
+     * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The phoneNumber.
+     */
+    java.lang.String getPhoneNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Transfer the call to a phone number
+     * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The bytes for phoneNumber.
+     */
+    com.google.protobuf.ByteString getPhoneNumberBytes();
+
+    public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.EndpointCase
+        getEndpointCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the signal that telles the client to transfer the phone call
+   * connected to the agent to a third-party endpoint.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall}
+   */
+  public static final class TelephonyTransferCall extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+      TelephonyTransferCallOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TelephonyTransferCall.newBuilder() to construct.
+    private TelephonyTransferCall(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TelephonyTransferCall() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TelephonyTransferCall();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private TelephonyTransferCall(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                endpointCase_ = 1;
+                endpoint_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.class,
+              com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder
+                  .class);
+    }
+
+    private int endpointCase_ = 0;
+    private java.lang.Object endpoint_;
+
+    public enum EndpointCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      PHONE_NUMBER(1),
+      ENDPOINT_NOT_SET(0);
+      private final int value;
+
+      private EndpointCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EndpointCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static EndpointCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return PHONE_NUMBER;
+          case 0:
+            return ENDPOINT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public EndpointCase getEndpointCase() {
+      return EndpointCase.forNumber(endpointCase_);
+    }
+
+    public static final int PHONE_NUMBER_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Transfer the call to a phone number
+     * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return Whether the phoneNumber field is set.
+     */
+    public boolean hasPhoneNumber() {
+      return endpointCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transfer the call to a phone number
+     * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The phoneNumber.
+     */
+    public java.lang.String getPhoneNumber() {
+      java.lang.Object ref = "";
+      if (endpointCase_ == 1) {
+        ref = endpoint_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (endpointCase_ == 1) {
+          endpoint_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transfer the call to a phone number
+     * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The bytes for phoneNumber.
+     */
+    public com.google.protobuf.ByteString getPhoneNumberBytes() {
+      java.lang.Object ref = "";
+      if (endpointCase_ == 1) {
+        ref = endpoint_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (endpointCase_ == 1) {
+          endpoint_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (endpointCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, endpoint_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (endpointCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, endpoint_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall other =
+          (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) obj;
+
+      if (!getEndpointCase().equals(other.getEndpointCase())) return false;
+      switch (endpointCase_) {
+        case 1:
+          if (!getPhoneNumber().equals(other.getPhoneNumber())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (endpointCase_) {
+        case 1:
+          hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
+          hash = (53 * hash) + getPhoneNumber().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the signal that telles the client to transfer the phone call
+     * connected to the agent to a third-party endpoint.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.class,
+                com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        endpointCase_ = 0;
+        endpoint_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall build() {
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+          buildPartial() {
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall result =
+            new com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall(this);
+        if (endpointCase_ == 1) {
+          result.endpoint_ = endpoint_;
+        }
+        result.endpointCase_ = endpointCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+                .getDefaultInstance()) return this;
+        switch (other.getEndpointCase()) {
+          case PHONE_NUMBER:
+            {
+              endpointCase_ = 1;
+              endpoint_ = other.endpoint_;
+              onChanged();
+              break;
+            }
+          case ENDPOINT_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int endpointCase_ = 0;
+      private java.lang.Object endpoint_;
+
+      public EndpointCase getEndpointCase() {
+        return EndpointCase.forNumber(endpointCase_);
+      }
+
+      public Builder clearEndpoint() {
+        endpointCase_ = 0;
+        endpoint_ = null;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Transfer the call to a phone number
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @return Whether the phoneNumber field is set.
+       */
+      @java.lang.Override
+      public boolean hasPhoneNumber() {
+        return endpointCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transfer the call to a phone number
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @return The phoneNumber.
+       */
+      @java.lang.Override
+      public java.lang.String getPhoneNumber() {
+        java.lang.Object ref = "";
+        if (endpointCase_ == 1) {
+          ref = endpoint_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (endpointCase_ == 1) {
+            endpoint_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transfer the call to a phone number
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @return The bytes for phoneNumber.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getPhoneNumberBytes() {
+        java.lang.Object ref = "";
+        if (endpointCase_ == 1) {
+          ref = endpoint_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (endpointCase_ == 1) {
+            endpoint_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transfer the call to a phone number
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @param value The phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endpointCase_ = 1;
+        endpoint_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transfer the call to a phone number
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPhoneNumber() {
+        if (endpointCase_ == 1) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transfer the call to a phone number
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @param value The bytes for phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        endpointCase_ = 1;
+        endpoint_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+    private static final com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TelephonyTransferCall> PARSER =
+        new com.google.protobuf.AbstractParser<TelephonyTransferCall>() {
+          @java.lang.Override
+          public TelephonyTransferCall parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TelephonyTransferCall(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<TelephonyTransferCall> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TelephonyTransferCall> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int messageCase_ = 0;
   private java.lang.Object message_;
 
@@ -7462,6 +8317,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     END_INTERACTION(11),
     PLAY_AUDIO(12),
     MIXED_AUDIO(13),
+    TELEPHONY_TRANSFER_CALL(18),
     MESSAGE_NOT_SET(0);
     private final int value;
 
@@ -7496,6 +8352,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           return PLAY_AUDIO;
         case 13:
           return MIXED_AUDIO;
+        case 18:
+          return TELEPHONY_TRANSFER_CALL;
         case 0:
           return MESSAGE_NOT_SET;
         default:
@@ -7989,6 +8847,70 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio.getDefaultInstance();
   }
 
+  public static final int TELEPHONY_TRANSFER_CALL_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * A signal that the client should transfer the phone call connected to
+   * this agent to a third-party endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+   * </code>
+   *
+   * @return Whether the telephonyTransferCall field is set.
+   */
+  @java.lang.Override
+  public boolean hasTelephonyTransferCall() {
+    return messageCase_ == 18;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A signal that the client should transfer the phone call connected to
+   * this agent to a third-party endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+   * </code>
+   *
+   * @return The telephonyTransferCall.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+      getTelephonyTransferCall() {
+    if (messageCase_ == 18) {
+      return (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) message_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A signal that the client should transfer the phone call connected to
+   * this agent to a third-party endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallOrBuilder
+      getTelephonyTransferCallOrBuilder() {
+    if (messageCase_ == 18) {
+      return (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) message_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8032,6 +8954,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     if (messageCase_ == 13) {
       output.writeMessage(
           13, (com.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio) message_);
+    }
+    if (messageCase_ == 18) {
+      output.writeMessage(
+          18, (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) message_);
     }
     unknownFields.writeTo(output);
   }
@@ -8082,6 +9008,12 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio) message_);
     }
+    if (messageCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18,
+              (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) message_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8123,6 +9055,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         break;
       case 13:
         if (!getMixedAudio().equals(other.getMixedAudio())) return false;
+        break;
+      case 18:
+        if (!getTelephonyTransferCall().equals(other.getTelephonyTransferCall())) return false;
         break;
       case 0:
       default:
@@ -8170,6 +9105,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       case 13:
         hash = (37 * hash) + MIXED_AUDIO_FIELD_NUMBER;
         hash = (53 * hash) + getMixedAudio().hashCode();
+        break;
+      case 18:
+        hash = (37 * hash) + TELEPHONY_TRANSFER_CALL_FIELD_NUMBER;
+        hash = (53 * hash) + getTelephonyTransferCall().hashCode();
         break;
       case 0:
       default:
@@ -8417,6 +9356,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           result.message_ = mixedAudioBuilder_.build();
         }
       }
+      if (messageCase_ == 18) {
+        if (telephonyTransferCallBuilder_ == null) {
+          result.message_ = message_;
+        } else {
+          result.message_ = telephonyTransferCallBuilder_.build();
+        }
+      }
       result.messageCase_ = messageCase_;
       onBuilt();
       return result;
@@ -8507,6 +9453,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         case MIXED_AUDIO:
           {
             mergeMixedAudio(other.getMixedAudio());
+            break;
+          }
+        case TELEPHONY_TRANSFER_CALL:
+          {
+            mergeTelephonyTransferCall(other.getTelephonyTransferCall());
             break;
           }
         case MESSAGE_NOT_SET:
@@ -10474,6 +11425,256 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return mixedAudioBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall,
+            com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder,
+            com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallOrBuilder>
+        telephonyTransferCallBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     *
+     * @return Whether the telephonyTransferCall field is set.
+     */
+    @java.lang.Override
+    public boolean hasTelephonyTransferCall() {
+      return messageCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     *
+     * @return The telephonyTransferCall.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+        getTelephonyTransferCall() {
+      if (telephonyTransferCallBuilder_ == null) {
+        if (messageCase_ == 18) {
+          return (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) message_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+            .getDefaultInstance();
+      } else {
+        if (messageCase_ == 18) {
+          return telephonyTransferCallBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     */
+    public Builder setTelephonyTransferCall(
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall value) {
+      if (telephonyTransferCallBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        message_ = value;
+        onChanged();
+      } else {
+        telephonyTransferCallBuilder_.setMessage(value);
+      }
+      messageCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     */
+    public Builder setTelephonyTransferCall(
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder
+            builderForValue) {
+      if (telephonyTransferCallBuilder_ == null) {
+        message_ = builderForValue.build();
+        onChanged();
+      } else {
+        telephonyTransferCallBuilder_.setMessage(builderForValue.build());
+      }
+      messageCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     */
+    public Builder mergeTelephonyTransferCall(
+        com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall value) {
+      if (telephonyTransferCallBuilder_ == null) {
+        if (messageCase_ == 18
+            && message_
+                != com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+                    .getDefaultInstance()) {
+          message_ =
+              com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall)
+                          message_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          message_ = value;
+        }
+        onChanged();
+      } else {
+        if (messageCase_ == 18) {
+          telephonyTransferCallBuilder_.mergeFrom(value);
+        }
+        telephonyTransferCallBuilder_.setMessage(value);
+      }
+      messageCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     */
+    public Builder clearTelephonyTransferCall() {
+      if (telephonyTransferCallBuilder_ == null) {
+        if (messageCase_ == 18) {
+          messageCase_ = 0;
+          message_ = null;
+          onChanged();
+        }
+      } else {
+        if (messageCase_ == 18) {
+          messageCase_ = 0;
+          message_ = null;
+        }
+        telephonyTransferCallBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder
+        getTelephonyTransferCallBuilder() {
+      return getTelephonyTransferCallFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallOrBuilder
+        getTelephonyTransferCallOrBuilder() {
+      if ((messageCase_ == 18) && (telephonyTransferCallBuilder_ != null)) {
+        return telephonyTransferCallBuilder_.getMessageOrBuilder();
+      } else {
+        if (messageCase_ == 18) {
+          return (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) message_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 18;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall,
+            com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder,
+            com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallOrBuilder>
+        getTelephonyTransferCallFieldBuilder() {
+      if (telephonyTransferCallBuilder_ == null) {
+        if (!(messageCase_ == 18)) {
+          message_ =
+              com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall
+                  .getDefaultInstance();
+        }
+        telephonyTransferCallBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall,
+                com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.Builder,
+                com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall) message_,
+                getParentForChildren(),
+                isClean());
+        message_ = null;
+      }
+      messageCase_ = 18;
+      onChanged();
+      ;
+      return telephonyTransferCallBuilder_;
     }
 
     @java.lang.Override
